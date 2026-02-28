@@ -1,0 +1,22 @@
+{
+  "date": "2025-12-31 00:00:00",
+  "score": -16.3202,
+  "signal": "BEARISH",
+  "lag": 9,
+  "weights": {
+    "NL_level": 0.5,
+    "GM2_resid": 0.0,
+    "SOFR_binary": -4.0,
+    "HY_level": -0.5,
+    "CME_basis": 0.0
+  },
+  "correlation": 0.6175842986993936,
+  "variables": {
+    "NL_level": -0.2307,
+    "GM2_resid": 0.3616,
+    "SOFR_binary": 4.0848,
+    "HY_level": -0.2682,
+    "CME_basis": -0.0556
+  },
+  "timestamp": "2026-03-01T02:23:36.504111"
+}

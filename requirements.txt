@@ -1,0 +1,28 @@
+# BTC Liquidity Prediction Model v1.0.0
+# Core
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Data Sources
+fredapi>=0.5.0
+yfinance>=0.2.30
+requests>=2.31.0
+
+# Optimization
+scipy>=1.11.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Storage
+# sqlite3 is built-in
+
+# Config
+python-dotenv>=1.0.0
+
+# CLI
+tqdm>=4.65.0
+
+# Testing
+pytest>=7.4.0

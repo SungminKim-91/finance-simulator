@@ -1,0 +1,684 @@
+{
+  "weights": {
+    "NL_level": 0.5,
+    "GM2_resid": 0.0,
+    "SOFR_binary": -4.0,
+    "HY_level": -0.5,
+    "CME_basis": 0.0
+  },
+  "optimal_lag": 9,
+  "correlation": 0.6175842986993936,
+  "top_50": [
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -0.5,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.6175842986993936
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": 0.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.610054818798919
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": -0.5,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.5830485739381449
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": 0.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.5764083204713102
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -0.5,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.5593009673318097
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": 0.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.5539023717520356
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.0,
+        "HY_level": -0.5,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.5408700548022619
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.0,
+        "HY_level": 0.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.5336066320761257
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": -0.5,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.523542844527896
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": 0.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.5172138785840553
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -2.5,
+        "HY_level": -0.5,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.4906796622375006
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.0,
+        "HY_level": -0.5,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.48279342524235697
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -0.5,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.4806278482324581
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -2.5,
+        "HY_level": 0.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.48059525598258823
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -0.5,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.4749787589326694
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.0,
+        "HY_level": 0.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.474406142232081
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -0.5,
+        "CME_basis": -0.5
+      },
+      "lag": 7,
+      "correlation": 0.47190739868878506
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": -0.5,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.44400932931432235
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -1.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.44372767743409036
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": -0.5,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.4400512621418905
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -2.5,
+        "HY_level": -0.5,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.43724711590910126
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": -0.5,
+        "CME_basis": -0.5
+      },
+      "lag": 7,
+      "correlation": 0.43474068109420955
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -1.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.43303681812061007
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -2.0,
+        "HY_level": -0.5,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.4327499245796023
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -1.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.4327499245796023
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -1.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.4317715921490994
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": 0.0,
+        "CME_basis": -0.5
+      },
+      "lag": 7,
+      "correlation": 0.43036081031421003
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -0.5,
+        "CME_basis": 1.0
+      },
+      "lag": 9,
+      "correlation": 0.42727938341243427
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -2.5,
+        "HY_level": 0.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.42552211176054267
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": 0.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.4222469783242149
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -2.0,
+        "HY_level": 0.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.4171536109970276
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": 0.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.4171536109970276
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": -1.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.4117894969763882
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": 0.0,
+        "CME_basis": 1.0
+      },
+      "lag": 9,
+      "correlation": 0.4117148197863767
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -0.5,
+        "CME_basis": 1.0
+      },
+      "lag": 9,
+      "correlation": 0.4078812431526615
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.0,
+        "HY_level": -0.5,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.4048824425309741
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.0,
+        "HY_level": -0.5,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.4031263123322377
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": -1.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.4026537643295325
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": -1.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.40154639527181046
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": -1.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.4011845801296833
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": -0.5,
+        "CME_basis": 1.0
+      },
+      "lag": 9,
+      "correlation": 0.39642031772266173
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -0.5,
+        "CME_basis": -0.5
+      },
+      "lag": 9,
+      "correlation": 0.39476857228570417
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.0,
+        "HY_level": -0.5,
+        "CME_basis": -0.5
+      },
+      "lag": 7,
+      "correlation": 0.3930642272661688
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": 0.0,
+        "CME_basis": -0.5
+      },
+      "lag": 7,
+      "correlation": 0.3920085155243719
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -1.0,
+        "CME_basis": -0.5
+      },
+      "lag": 5,
+      "correlation": 0.3892639423593297
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": 0.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.3882145245778527
+    },
+    {
+      "weights": {
+        "NL_level": 0.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -2.0,
+        "HY_level": -0.5,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.38741336786420333
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -1.0,
+        "CME_basis": 1.0
+      },
+      "lag": 9,
+      "correlation": 0.38741336786420333
+    },
+    {
+      "weights": {
+        "NL_level": 1.5,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -4.0,
+        "HY_level": -1.0,
+        "CME_basis": 0.5
+      },
+      "lag": 9,
+      "correlation": 0.38240107125809747
+    },
+    {
+      "weights": {
+        "NL_level": 1.0,
+        "GM2_resid": 0.0,
+        "SOFR_binary": -3.5,
+        "HY_level": 0.0,
+        "CME_basis": 0.0
+      },
+      "lag": 9,
+      "correlation": 0.381792519888021
+    }
+  ],
+  "lag_distribution": {
+    "9": 44,
+    "7": 5,
+    "5": 1
+  },
+  "total_evaluated": 88209,
+  "walk_forward": {
+    "n_windows": 9,
+    "oos_correlations": [
+      0.8104,
+      0.6507,
+      -0.8718,
+      -0.5852,
+      0.3462,
+      -0.0995,
+      0.7321,
+      0.4698,
+      0.7616
+    ],
+    "mean_oos_corr": 0.246,
+    "std_oos_corr": 0.5873,
+    "all_positive": false,
+    "windows": [
+      {
+        "window": 1,
+        "train_range": "0-59",
+        "test_range": "60-65",
+        "n_test": 6,
+        "correlation": 0.8104,
+        "p_value": 0.0505
+      },
+      {
+        "window": 2,
+        "train_range": "0-65",
+        "test_range": "66-71",
+        "n_test": 6,
+        "correlation": 0.6507,
+        "p_value": 0.1617
+      },
+      {
+        "window": 3,
+        "train_range": "0-71",
+        "test_range": "72-77",
+        "n_test": 6,
+        "correlation": -0.8718,
+        "p_value": 0.0236
+      },
+      {
+        "window": 4,
+        "train_range": "0-77",
+        "test_range": "78-83",
+        "n_test": 6,
+        "correlation": -0.5852,
+        "p_value": 0.2224
+      },
+      {
+        "window": 5,
+        "train_range": "0-83",
+        "test_range": "84-89",
+        "n_test": 6,
+        "correlation": 0.3462,
+        "p_value": 0.5015
+      },
+      {
+        "window": 6,
+        "train_range": "0-89",
+        "test_range": "90-95",
+        "n_test": 6,
+        "correlation": -0.0995,
+        "p_value": 0.8513
+      },
+      {
+        "window": 7,
+        "train_range": "0-95",
+        "test_range": "96-101",
+        "n_test": 6,
+        "correlation": 0.7321,
+        "p_value": 0.098
+      },
+      {
+        "window": 8,
+        "train_range": "0-101",
+        "test_range": "102-107",
+        "n_test": 6,
+        "correlation": 0.4698,
+        "p_value": 0.3471
+      },
+      {
+        "window": 9,
+        "train_range": "0-107",
+        "test_range": "108-113",
+        "n_test": 3,
+        "correlation": 0.7616,
+        "p_value": 0.4488
+      }
+    ]
+  },
+  "orthogonalization": [],
+  "zscore_params": {
+    "NL_level": {
+      "mean": 2.2833072863662713,
+      "std": 11.620080793852747
+    },
+    "GM2_resid": {
+      "mean": -9.262731734759253,
+      "std": 30.619733805407165
+    },
+    "SOFR_binary": {
+      "mean": 0.05555555555555555,
+      "std": 0.23121228232266414
+    },
+    "HY_level": {
+      "mean": -2.402376520711641,
+      "std": 19.34626514277369
+    },
+    "CME_basis": {
+      "mean": 0.5074620876469549,
+      "std": 1872.8562409914662
+    }
+  },
+  "date": "2026-03-01"
+}
