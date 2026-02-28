@@ -1,0 +1,1467 @@
+{
+  "data": [
+    {
+      "date": "2016-01",
+      "score": 0.0,
+      "btc": 369,
+      "log_btc": 2.5668,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-02",
+      "score": 0.0,
+      "btc": 438,
+      "log_btc": 2.6412,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-03",
+      "score": 0.0,
+      "btc": 417,
+      "log_btc": 2.6199,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-04",
+      "score": 0.0,
+      "btc": 448,
+      "log_btc": 2.6516,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-05",
+      "score": 0.0,
+      "btc": 531,
+      "log_btc": 2.7254,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-06",
+      "score": 0.0,
+      "btc": 673,
+      "log_btc": 2.8282,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-07",
+      "score": 0.0,
+      "btc": 625,
+      "log_btc": 2.7957,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-08",
+      "score": 0.0,
+      "btc": 575,
+      "log_btc": 2.76,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-09",
+      "score": 0.0,
+      "btc": 610,
+      "log_btc": 2.7851,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-10",
+      "score": 0.0,
+      "btc": 701,
+      "log_btc": 2.8457,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-11",
+      "score": 0.0,
+      "btc": 746,
+      "log_btc": 2.8726,
+      "NL_level": null,
+      "GM2_resid": null,
+      "SOFR_binary": null,
+      "HY_level": null,
+      "CME_basis": null
+    },
+    {
+      "date": "2016-12",
+      "score": 0.555,
+      "btc": 964,
+      "log_btc": 2.984,
+      "NL_level": -0.224,
+      "GM2_resid": 0.365,
+      "SOFR_binary": null,
+      "HY_level": -1.333,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-01",
+      "score": 0.556,
+      "btc": 970,
+      "log_btc": 2.987,
+      "NL_level": -0.216,
+      "GM2_resid": 0.368,
+      "SOFR_binary": null,
+      "HY_level": -1.328,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-02",
+      "score": 0.583,
+      "btc": 1180,
+      "log_btc": 3.0719,
+      "NL_level": -0.181,
+      "GM2_resid": 0.368,
+      "SOFR_binary": null,
+      "HY_level": -1.347,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-03",
+      "score": 0.394,
+      "btc": 1072,
+      "log_btc": 3.0301,
+      "NL_level": -0.178,
+      "GM2_resid": 0.368,
+      "SOFR_binary": null,
+      "HY_level": -0.966,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-04",
+      "score": 0.369,
+      "btc": 1348,
+      "log_btc": 3.1297,
+      "NL_level": -0.176,
+      "GM2_resid": 0.36,
+      "SOFR_binary": null,
+      "HY_level": -0.914,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-05",
+      "score": 0.315,
+      "btc": 2286,
+      "log_btc": 3.3592,
+      "NL_level": -0.195,
+      "GM2_resid": 0.355,
+      "SOFR_binary": null,
+      "HY_level": -0.825,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-06",
+      "score": 0.203,
+      "btc": 2481,
+      "log_btc": 3.3946,
+      "NL_level": -0.189,
+      "GM2_resid": 0.363,
+      "SOFR_binary": null,
+      "HY_level": -0.594,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-07",
+      "score": 0.211,
+      "btc": 2875,
+      "log_btc": 3.4587,
+      "NL_level": -0.185,
+      "GM2_resid": 0.36,
+      "SOFR_binary": null,
+      "HY_level": -0.607,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-08",
+      "score": -0.008,
+      "btc": 4703,
+      "log_btc": 3.6724,
+      "NL_level": -0.209,
+      "GM2_resid": 0.359,
+      "SOFR_binary": null,
+      "HY_level": -0.192,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-09",
+      "score": 0.111,
+      "btc": 4339,
+      "log_btc": 3.6374,
+      "NL_level": -0.203,
+      "GM2_resid": 0.359,
+      "SOFR_binary": null,
+      "HY_level": -0.425,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-10",
+      "score": 0.08,
+      "btc": 6468,
+      "log_btc": 3.8108,
+      "NL_level": -0.194,
+      "GM2_resid": 0.356,
+      "SOFR_binary": null,
+      "HY_level": -0.353,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-11",
+      "score": -0.065,
+      "btc": 10234,
+      "log_btc": 4.01,
+      "NL_level": -0.236,
+      "GM2_resid": 0.359,
+      "SOFR_binary": null,
+      "HY_level": -0.106,
+      "CME_basis": null
+    },
+    {
+      "date": "2017-12",
+      "score": -0.102,
+      "btc": 14156,
+      "log_btc": 4.151,
+      "NL_level": -0.216,
+      "GM2_resid": 0.355,
+      "SOFR_binary": null,
+      "HY_level": -0.013,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-01",
+      "score": 0.072,
+      "btc": 10221,
+      "log_btc": 4.0095,
+      "NL_level": -0.267,
+      "GM2_resid": 0.358,
+      "SOFR_binary": null,
+      "HY_level": -0.411,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-02",
+      "score": -0.089,
+      "btc": 10398,
+      "log_btc": 4.0169,
+      "NL_level": -0.305,
+      "GM2_resid": 0.354,
+      "SOFR_binary": null,
+      "HY_level": -0.127,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-03",
+      "score": -0.273,
+      "btc": 6974,
+      "log_btc": 3.8435,
+      "NL_level": -0.295,
+      "GM2_resid": 0.352,
+      "SOFR_binary": null,
+      "HY_level": 0.251,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-04",
+      "score": -0.119,
+      "btc": 9241,
+      "log_btc": 3.9657,
+      "NL_level": -0.318,
+      "GM2_resid": 0.348,
+      "SOFR_binary": null,
+      "HY_level": -0.079,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-05",
+      "score": -0.281,
+      "btc": 7494,
+      "log_btc": 3.8747,
+      "NL_level": -0.384,
+      "GM2_resid": 0.343,
+      "SOFR_binary": null,
+      "HY_level": 0.178,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-06",
+      "score": -0.352,
+      "btc": 6404,
+      "log_btc": 3.8065,
+      "NL_level": -0.403,
+      "GM2_resid": 0.35,
+      "SOFR_binary": null,
+      "HY_level": 0.301,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-07",
+      "score": -0.192,
+      "btc": 7780,
+      "log_btc": 3.891,
+      "NL_level": -0.427,
+      "GM2_resid": 0.348,
+      "SOFR_binary": null,
+      "HY_level": -0.042,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-08",
+      "score": -0.275,
+      "btc": 7038,
+      "log_btc": 3.8474,
+      "NL_level": -0.505,
+      "GM2_resid": 0.347,
+      "SOFR_binary": null,
+      "HY_level": 0.044,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-09",
+      "score": -0.142,
+      "btc": 6626,
+      "log_btc": 3.8212,
+      "NL_level": -0.515,
+      "GM2_resid": 0.347,
+      "SOFR_binary": null,
+      "HY_level": -0.231,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-10",
+      "score": -0.539,
+      "btc": 6318,
+      "log_btc": 3.8006,
+      "NL_level": -0.57,
+      "GM2_resid": 0.344,
+      "SOFR_binary": null,
+      "HY_level": 0.508,
+      "CME_basis": null
+    },
+    {
+      "date": "2018-11",
+      "score": -0.855,
+      "btc": 4017,
+      "log_btc": 3.6039,
+      "NL_level": -0.6,
+      "GM2_resid": 0.343,
+      "SOFR_binary": null,
+      "HY_level": 1.109,
+      "CME_basis": -0.172
+    },
+    {
+      "date": "2018-12",
+      "score": -1.448,
+      "btc": 3743,
+      "log_btc": 3.5732,
+      "NL_level": -0.584,
+      "GM2_resid": 0.343,
+      "SOFR_binary": null,
+      "HY_level": 2.312,
+      "CME_basis": -0.004
+    },
+    {
+      "date": "2019-01",
+      "score": -0.72,
+      "btc": 3458,
+      "log_btc": 3.5388,
+      "NL_level": -0.596,
+      "GM2_resid": 0.348,
+      "SOFR_binary": null,
+      "HY_level": 0.845,
+      "CME_basis": 0.005
+    },
+    {
+      "date": "2019-02",
+      "score": -0.424,
+      "btc": 3855,
+      "log_btc": 3.586,
+      "NL_level": -0.661,
+      "GM2_resid": 0.344,
+      "SOFR_binary": null,
+      "HY_level": 0.188,
+      "CME_basis": 0.023
+    },
+    {
+      "date": "2019-03",
+      "score": -0.476,
+      "btc": 4105,
+      "log_btc": 3.6134,
+      "NL_level": -0.629,
+      "GM2_resid": 0.346,
+      "SOFR_binary": null,
+      "HY_level": 0.323,
+      "CME_basis": -0.079
+    },
+    {
+      "date": "2019-04",
+      "score": -0.242,
+      "btc": 5351,
+      "log_btc": 3.7284,
+      "NL_level": -0.613,
+      "GM2_resid": 0.341,
+      "SOFR_binary": null,
+      "HY_level": -0.129,
+      "CME_basis": 0.033
+    },
+    {
+      "date": "2019-05",
+      "score": -0.789,
+      "btc": 8575,
+      "log_btc": 3.9332,
+      "NL_level": -0.694,
+      "GM2_resid": 0.34,
+      "SOFR_binary": null,
+      "HY_level": 0.883,
+      "CME_basis": -0.066
+    },
+    {
+      "date": "2019-06",
+      "score": -0.42,
+      "btc": 10817,
+      "log_btc": 4.0341,
+      "NL_level": -0.667,
+      "GM2_resid": 0.342,
+      "SOFR_binary": null,
+      "HY_level": 0.172,
+      "CME_basis": -0.066
+    },
+    {
+      "date": "2019-07",
+      "score": -0.315,
+      "btc": 10086,
+      "log_btc": 4.0037,
+      "NL_level": -0.685,
+      "GM2_resid": 0.339,
+      "SOFR_binary": null,
+      "HY_level": -0.056,
+      "CME_basis": 0.055
+    },
+    {
+      "date": "2019-08",
+      "score": -0.389,
+      "btc": 9631,
+      "log_btc": 3.9837,
+      "NL_level": -0.648,
+      "GM2_resid": 0.341,
+      "SOFR_binary": null,
+      "HY_level": 0.13,
+      "CME_basis": 0.015
+    },
+    {
+      "date": "2019-09",
+      "score": -0.148,
+      "btc": 8294,
+      "log_btc": 3.9188,
+      "NL_level": -0.377,
+      "GM2_resid": 0.34,
+      "SOFR_binary": null,
+      "HY_level": -0.082,
+      "CME_basis": 0.058
+    },
+    {
+      "date": "2019-10",
+      "score": -0.023,
+      "btc": 9200,
+      "log_btc": 3.9638,
+      "NL_level": -0.001,
+      "GM2_resid": 0.34,
+      "SOFR_binary": null,
+      "HY_level": 0.044,
+      "CME_basis": 0.063
+    },
+    {
+      "date": "2019-11",
+      "score": 0.084,
+      "btc": 7570,
+      "log_btc": 3.8791,
+      "NL_level": 0.08,
+      "GM2_resid": 0.342,
+      "SOFR_binary": null,
+      "HY_level": -0.088,
+      "CME_basis": 0.121
+    },
+    {
+      "date": "2019-12",
+      "score": 0.379,
+      "btc": 7194,
+      "log_btc": 3.8569,
+      "NL_level": 0.309,
+      "GM2_resid": -0.032,
+      "SOFR_binary": null,
+      "HY_level": -0.448,
+      "CME_basis": 0.056
+    },
+    {
+      "date": "2020-01",
+      "score": 0.06,
+      "btc": 9351,
+      "log_btc": 3.9708,
+      "NL_level": 0.257,
+      "GM2_resid": -0.001,
+      "SOFR_binary": null,
+      "HY_level": 0.137,
+      "CME_basis": -0.112
+    },
+    {
+      "date": "2020-02",
+      "score": -0.537,
+      "btc": 8600,
+      "log_btc": 3.9345,
+      "NL_level": 0.237,
+      "GM2_resid": 0.031,
+      "SOFR_binary": null,
+      "HY_level": 1.311,
+      "CME_basis": 0.021
+    },
+    {
+      "date": "2020-03",
+      "score": -1.348,
+      "btc": 6439,
+      "log_btc": 3.8088,
+      "NL_level": 2.315,
+      "GM2_resid": 0.068,
+      "SOFR_binary": null,
+      "HY_level": 5.01,
+      "CME_basis": 0.062
+    },
+    {
+      "date": "2020-04",
+      "score": 0.71,
+      "btc": 8659,
+      "log_btc": 3.9374,
+      "NL_level": 4.535,
+      "GM2_resid": 0.107,
+      "SOFR_binary": null,
+      "HY_level": 3.115,
+      "CME_basis": 0.099
+    },
+    {
+      "date": "2020-05",
+      "score": 1.427,
+      "btc": 9461,
+      "log_btc": 3.9759,
+      "NL_level": 4.576,
+      "GM2_resid": 0.17,
+      "SOFR_binary": null,
+      "HY_level": 1.722,
+      "CME_basis": 0.085
+    },
+    {
+      "date": "2020-06",
+      "score": 1.217,
+      "btc": 9138,
+      "log_btc": 3.9609,
+      "NL_level": 3.799,
+      "GM2_resid": 0.245,
+      "SOFR_binary": null,
+      "HY_level": 1.365,
+      "CME_basis": 0.084
+    },
+    {
+      "date": "2020-07",
+      "score": 1.465,
+      "btc": 11323,
+      "log_btc": 4.054,
+      "NL_level": 2.921,
+      "GM2_resid": 0.289,
+      "SOFR_binary": null,
+      "HY_level": -0.008,
+      "CME_basis": -0.334
+    },
+    {
+      "date": "2020-08",
+      "score": 1.307,
+      "btc": 11681,
+      "log_btc": 4.0675,
+      "NL_level": 2.4,
+      "GM2_resid": 0.33,
+      "SOFR_binary": null,
+      "HY_level": -0.213,
+      "CME_basis": 0.101
+    },
+    {
+      "date": "2020-09",
+      "score": 0.959,
+      "btc": 10784,
+      "log_btc": 4.0328,
+      "NL_level": 1.971,
+      "GM2_resid": 0.366,
+      "SOFR_binary": null,
+      "HY_level": 0.053,
+      "CME_basis": 0.049
+    },
+    {
+      "date": "2020-10",
+      "score": 0.873,
+      "btc": 13781,
+      "log_btc": 4.1393,
+      "NL_level": 1.627,
+      "GM2_resid": 0.395,
+      "SOFR_binary": null,
+      "HY_level": -0.12,
+      "CME_basis": -0.2
+    },
+    {
+      "date": "2020-11",
+      "score": 1.167,
+      "btc": 19626,
+      "log_btc": 4.2928,
+      "NL_level": 1.279,
+      "GM2_resid": 0.425,
+      "SOFR_binary": null,
+      "HY_level": -1.055,
+      "CME_basis": 0.063
+    },
+    {
+      "date": "2020-12",
+      "score": 1.279,
+      "btc": 29002,
+      "log_btc": 4.4624,
+      "NL_level": 1.057,
+      "GM2_resid": 0.416,
+      "SOFR_binary": null,
+      "HY_level": -1.501,
+      "CME_basis": 0.074
+    },
+    {
+      "date": "2021-01",
+      "score": 1.111,
+      "btc": 33114,
+      "log_btc": 4.52,
+      "NL_level": 0.712,
+      "GM2_resid": 0.408,
+      "SOFR_binary": null,
+      "HY_level": -1.51,
+      "CME_basis": 1.218
+    },
+    {
+      "date": "2021-02",
+      "score": 1.117,
+      "btc": 45138,
+      "log_btc": 4.6545,
+      "NL_level": 0.551,
+      "GM2_resid": 0.398,
+      "SOFR_binary": null,
+      "HY_level": -1.684,
+      "CME_basis": 0.933
+    },
+    {
+      "date": "2021-03",
+      "score": 1.002,
+      "btc": 58919,
+      "log_btc": 4.7703,
+      "NL_level": 0.405,
+      "GM2_resid": 0.388,
+      "SOFR_binary": null,
+      "HY_level": -1.599,
+      "CME_basis": -0.016
+    },
+    {
+      "date": "2021-04",
+      "score": 0.908,
+      "btc": 57750,
+      "log_btc": 4.7616,
+      "NL_level": 0.396,
+      "GM2_resid": 0.376,
+      "SOFR_binary": null,
+      "HY_level": -1.42,
+      "CME_basis": -1.105
+    },
+    {
+      "date": "2021-05",
+      "score": 0.793,
+      "btc": 37333,
+      "log_btc": 4.5721,
+      "NL_level": 0.455,
+      "GM2_resid": 0.371,
+      "SOFR_binary": null,
+      "HY_level": -1.131,
+      "CME_basis": 1.709
+    },
+    {
+      "date": "2021-06",
+      "score": 0.896,
+      "btc": 35041,
+      "log_btc": 4.5446,
+      "NL_level": 0.554,
+      "GM2_resid": 0.363,
+      "SOFR_binary": null,
+      "HY_level": -1.238,
+      "CME_basis": -0.18
+    },
+    {
+      "date": "2021-07",
+      "score": 1.617,
+      "btc": 41626,
+      "log_btc": 4.6194,
+      "NL_level": 0.585,
+      "GM2_resid": 0.357,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.727,
+      "CME_basis": -2.355
+    },
+    {
+      "date": "2021-08",
+      "score": 1.6,
+      "btc": 47167,
+      "log_btc": 4.6736,
+      "NL_level": 0.573,
+      "GM2_resid": 0.354,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.705,
+      "CME_basis": 0.052
+    },
+    {
+      "date": "2021-09",
+      "score": 1.524,
+      "btc": 43791,
+      "log_btc": 4.6414,
+      "NL_level": 0.561,
+      "GM2_resid": 0.351,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.565,
+      "CME_basis": -0.134
+    },
+    {
+      "date": "2021-10",
+      "score": 1.396,
+      "btc": 61319,
+      "log_btc": 4.7876,
+      "NL_level": 0.539,
+      "GM2_resid": 0.353,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.331,
+      "CME_basis": -5.596
+    },
+    {
+      "date": "2021-11",
+      "score": 0.959,
+      "btc": 57005,
+      "log_btc": 4.7559,
+      "NL_level": 0.532,
+      "GM2_resid": 0.35,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.536,
+      "CME_basis": 0.273
+    },
+    {
+      "date": "2021-12",
+      "score": 1.321,
+      "btc": 46306,
+      "log_btc": 4.6656,
+      "NL_level": 0.478,
+      "GM2_resid": 0.349,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.241,
+      "CME_basis": 0.543
+    },
+    {
+      "date": "2022-01",
+      "score": 0.881,
+      "btc": 38483,
+      "log_btc": 4.5853,
+      "NL_level": 0.449,
+      "GM2_resid": 0.349,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.61,
+      "CME_basis": -0.051
+    },
+    {
+      "date": "2022-02",
+      "score": 0.76,
+      "btc": 43193,
+      "log_btc": 4.6354,
+      "NL_level": 0.396,
+      "GM2_resid": 0.349,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.798,
+      "CME_basis": -0.061
+    },
+    {
+      "date": "2022-03",
+      "score": 0.976,
+      "btc": 45539,
+      "log_btc": 4.6584,
+      "NL_level": 0.292,
+      "GM2_resid": 0.348,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.262,
+      "CME_basis": 0.068
+    },
+    {
+      "date": "2022-04",
+      "score": 0.559,
+      "btc": 37715,
+      "log_btc": 4.5765,
+      "NL_level": 0.19,
+      "GM2_resid": 0.348,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.994,
+      "CME_basis": 0.69
+    },
+    {
+      "date": "2022-05",
+      "score": 0.381,
+      "btc": 31792,
+      "log_btc": 4.5023,
+      "NL_level": 0.078,
+      "GM2_resid": 0.346,
+      "SOFR_binary": -0.24,
+      "HY_level": 1.238,
+      "CME_basis": -0.073
+    },
+    {
+      "date": "2022-06",
+      "score": -0.605,
+      "btc": 19785,
+      "log_btc": 4.2963,
+      "NL_level": 0.006,
+      "GM2_resid": 0.345,
+      "SOFR_binary": -0.24,
+      "HY_level": 3.139,
+      "CME_basis": -0.418
+    },
+    {
+      "date": "2022-07",
+      "score": 0.191,
+      "btc": 23337,
+      "log_btc": 4.368,
+      "NL_level": -0.073,
+      "GM2_resid": 0.345,
+      "SOFR_binary": -0.24,
+      "HY_level": 1.468,
+      "CME_basis": 0.358
+    },
+    {
+      "date": "2022-08",
+      "score": 0.133,
+      "btc": 20050,
+      "log_btc": 4.3021,
+      "NL_level": -0.176,
+      "GM2_resid": 0.344,
+      "SOFR_binary": -0.24,
+      "HY_level": 1.48,
+      "CME_basis": -0.052
+    },
+    {
+      "date": "2022-09",
+      "score": 0.005,
+      "btc": 19432,
+      "log_btc": 4.2885,
+      "NL_level": -0.234,
+      "GM2_resid": 0.341,
+      "SOFR_binary": -0.24,
+      "HY_level": 1.678,
+      "CME_basis": 0.198
+    },
+    {
+      "date": "2022-10",
+      "score": 0.541,
+      "btc": 20496,
+      "log_btc": 4.3117,
+      "NL_level": -0.318,
+      "GM2_resid": 0.339,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.523,
+      "CME_basis": -0.061
+    },
+    {
+      "date": "2022-11",
+      "score": 0.571,
+      "btc": 17169,
+      "log_btc": 4.2347,
+      "NL_level": -0.444,
+      "GM2_resid": 0.339,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.335,
+      "CME_basis": -0.06
+    },
+    {
+      "date": "2022-12",
+      "score": 0.499,
+      "btc": 16547,
+      "log_btc": 4.2187,
+      "NL_level": -0.461,
+      "GM2_resid": 0.337,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.463,
+      "CME_basis": -0.512
+    },
+    {
+      "date": "2023-01",
+      "score": 0.797,
+      "btc": 23139,
+      "log_btc": 4.3643,
+      "NL_level": -0.509,
+      "GM2_resid": 0.333,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.181,
+      "CME_basis": -0.037
+    },
+    {
+      "date": "2023-02",
+      "score": 0.84,
+      "btc": 23147,
+      "log_btc": 4.3645,
+      "NL_level": -0.552,
+      "GM2_resid": 0.33,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.311,
+      "CME_basis": -0.029
+    },
+    {
+      "date": "2023-03",
+      "score": 0.859,
+      "btc": 28478,
+      "log_btc": 4.4545,
+      "NL_level": -0.215,
+      "GM2_resid": 0.329,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.011,
+      "CME_basis": -0.059
+    },
+    {
+      "date": "2023-04",
+      "score": 0.856,
+      "btc": 29269,
+      "log_btc": 4.4664,
+      "NL_level": -0.326,
+      "GM2_resid": 0.33,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.115,
+      "CME_basis": -1.845
+    },
+    {
+      "date": "2023-05",
+      "score": 0.723,
+      "btc": 27220,
+      "log_btc": 4.4349,
+      "NL_level": -0.458,
+      "GM2_resid": 0.33,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.017,
+      "CME_basis": -0.009
+    },
+    {
+      "date": "2023-06",
+      "score": 0.998,
+      "btc": 30477,
+      "log_btc": 4.484,
+      "NL_level": -0.457,
+      "GM2_resid": 0.331,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.531,
+      "CME_basis": -0.581
+    },
+    {
+      "date": "2023-07",
+      "score": 1.08,
+      "btc": 29230,
+      "log_btc": 4.4658,
+      "NL_level": -0.503,
+      "GM2_resid": 0.33,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.74,
+      "CME_basis": 0.058
+    },
+    {
+      "date": "2023-08",
+      "score": 0.964,
+      "btc": 25931,
+      "log_btc": 4.4138,
+      "NL_level": -0.569,
+      "GM2_resid": 0.33,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.575,
+      "CME_basis": 0.078
+    },
+    {
+      "date": "2023-09",
+      "score": 0.768,
+      "btc": 26968,
+      "log_btc": 4.4308,
+      "NL_level": -0.626,
+      "GM2_resid": 0.328,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.24,
+      "CME_basis": -0.004
+    },
+    {
+      "date": "2023-10",
+      "score": 0.51,
+      "btc": 34668,
+      "log_btc": 4.5399,
+      "NL_level": -0.657,
+      "GM2_resid": 0.33,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.246,
+      "CME_basis": 0.064
+    },
+    {
+      "date": "2023-11",
+      "score": 0.8,
+      "btc": 37713,
+      "log_btc": 4.5765,
+      "NL_level": -0.708,
+      "GM2_resid": 0.329,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.385,
+      "CME_basis": 0.07
+    },
+    {
+      "date": "2023-12",
+      "score": 1.004,
+      "btc": 42265,
+      "log_btc": 4.626,
+      "NL_level": -0.726,
+      "GM2_resid": 0.325,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.813,
+      "CME_basis": 0.69
+    },
+    {
+      "date": "2024-01",
+      "score": 0.838,
+      "btc": 42583,
+      "log_btc": 4.6292,
+      "NL_level": -0.744,
+      "GM2_resid": 0.32,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.498,
+      "CME_basis": 0.081
+    },
+    {
+      "date": "2024-02",
+      "score": 0.989,
+      "btc": 61198,
+      "log_btc": 4.7867,
+      "NL_level": -0.743,
+      "GM2_resid": 0.317,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.798,
+      "CME_basis": 0.167
+    },
+    {
+      "date": "2024-03",
+      "score": 1.023,
+      "btc": 71334,
+      "log_btc": 4.8533,
+      "NL_level": -0.73,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.854,
+      "CME_basis": 5.947
+    },
+    {
+      "date": "2024-04",
+      "score": 0.945,
+      "btc": 60637,
+      "log_btc": 4.7827,
+      "NL_level": -0.721,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.688,
+      "CME_basis": -0.132
+    },
+    {
+      "date": "2024-05",
+      "score": 0.839,
+      "btc": 67491,
+      "log_btc": 4.8292,
+      "NL_level": -0.756,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.511,
+      "CME_basis": 0.122
+    },
+    {
+      "date": "2024-06",
+      "score": 0.806,
+      "btc": 62678,
+      "log_btc": 4.7971,
+      "NL_level": -0.719,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.408,
+      "CME_basis": 0.135
+    },
+    {
+      "date": "2024-07",
+      "score": 0.764,
+      "btc": 64619,
+      "log_btc": 4.8104,
+      "NL_level": -0.684,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.29,
+      "CME_basis": -0.035
+    },
+    {
+      "date": "2024-08",
+      "score": 0.798,
+      "btc": 58970,
+      "log_btc": 4.7706,
+      "NL_level": -0.658,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.332,
+      "CME_basis": -0.028
+    },
+    {
+      "date": "2024-09",
+      "score": 0.864,
+      "btc": 63330,
+      "log_btc": 4.8016,
+      "NL_level": -0.624,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.429,
+      "CME_basis": -0.046
+    },
+    {
+      "date": "2024-10",
+      "score": 0.895,
+      "btc": 70215,
+      "log_btc": 4.8464,
+      "NL_level": -0.619,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.485,
+      "CME_basis": -0.05
+    },
+    {
+      "date": "2024-11",
+      "score": 0.92,
+      "btc": 96449,
+      "log_btc": 4.9843,
+      "NL_level": -0.663,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.582,
+      "CME_basis": 0.08
+    },
+    {
+      "date": "2024-12",
+      "score": 0.771,
+      "btc": 93429,
+      "log_btc": 4.9705,
+      "NL_level": -0.609,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.229,
+      "CME_basis": -0.046
+    },
+    {
+      "date": "2025-01",
+      "score": 0.913,
+      "btc": 102405,
+      "log_btc": 5.0103,
+      "NL_level": -0.612,
+      "GM2_resid": -2.963,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.515,
+      "CME_basis": 0.08
+    },
+    {
+      "date": "2025-02",
+      "score": 0.731,
+      "btc": 84373,
+      "log_btc": 4.9262,
+      "NL_level": -0.598,
+      "GM2_resid": 0.354,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.138,
+      "CME_basis": -0.231
+    },
+    {
+      "date": "2025-03",
+      "score": 0.203,
+      "btc": 82549,
+      "log_btc": 4.9167,
+      "NL_level": -0.558,
+      "GM2_resid": 0.356,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.958,
+      "CME_basis": -0.05
+    },
+    {
+      "date": "2025-04",
+      "score": -0.044,
+      "btc": 94207,
+      "log_btc": 4.9741,
+      "NL_level": -0.528,
+      "GM2_resid": 0.366,
+      "SOFR_binary": -0.24,
+      "HY_level": 1.483,
+      "CME_basis": -0.046
+    },
+    {
+      "date": "2025-05",
+      "score": 0.486,
+      "btc": 104638,
+      "log_btc": 5.0197,
+      "NL_level": -0.511,
+      "GM2_resid": 0.364,
+      "SOFR_binary": -0.24,
+      "HY_level": 0.438,
+      "CME_basis": 0.135
+    },
+    {
+      "date": "2025-06",
+      "score": 0.789,
+      "btc": 107135,
+      "log_btc": 5.0299,
+      "NL_level": -0.468,
+      "GM2_resid": 0.371,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.124,
+      "CME_basis": -0.034
+    },
+    {
+      "date": "2025-07",
+      "score": 0.862,
+      "btc": 115758,
+      "log_btc": 5.0636,
+      "NL_level": -0.438,
+      "GM2_resid": 0.371,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.24,
+      "CME_basis": -0.03
+    },
+    {
+      "date": "2025-08",
+      "score": 0.859,
+      "btc": 108237,
+      "log_btc": 5.0344,
+      "NL_level": -0.435,
+      "GM2_resid": 0.368,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.23,
+      "CME_basis": 0.042
+    },
+    {
+      "date": "2025-09",
+      "score": 0.905,
+      "btc": 114056,
+      "log_btc": 5.0571,
+      "NL_level": -0.38,
+      "GM2_resid": 0.369,
+      "SOFR_binary": -0.24,
+      "HY_level": -0.268,
+      "CME_basis": -0.04
+    },
+    {
+      "date": "2025-10",
+      "score": -16.502,
+      "btc": 109556,
+      "log_btc": 5.0396,
+      "NL_level": -0.363,
+      "GM2_resid": 0.368,
+      "SOFR_binary": 4.085,
+      "HY_level": -0.038,
+      "CME_basis": 0.118
+    },
+    {
+      "date": "2025-11",
+      "score": -16.476,
+      "btc": 90394,
+      "log_btc": 4.9561,
+      "NL_level": -0.37,
+      "GM2_resid": 0.36,
+      "SOFR_binary": 4.085,
+      "HY_level": -0.096,
+      "CME_basis": 0.118
+    },
+    {
+      "date": "2025-12",
+      "score": -16.32,
+      "btc": 88430,
+      "log_btc": 4.9466,
+      "NL_level": -0.231,
+      "GM2_resid": 0.362,
+      "SOFR_binary": 4.085,
+      "HY_level": -0.268,
+      "CME_basis": -0.056
+    }
+  ],
+  "xcorr": [
+    {
+      "lag": 0,
+      "r": -0.077
+    },
+    {
+      "lag": 1,
+      "r": -0.004
+    },
+    {
+      "lag": 2,
+      "r": 0.105
+    },
+    {
+      "lag": 3,
+      "r": 0.581
+    },
+    {
+      "lag": 4,
+      "r": 0.583
+    },
+    {
+      "lag": 5,
+      "r": 0.586
+    },
+    {
+      "lag": 6,
+      "r": 0.595
+    },
+    {
+      "lag": 7,
+      "r": 0.606
+    },
+    {
+      "lag": 8,
+      "r": 0.613
+    },
+    {
+      "lag": 9,
+      "r": 0.618
+    },
+    {
+      "lag": 10,
+      "r": 0.619
+    },
+    {
+      "lag": 11,
+      "r": 0.603
+    },
+    {
+      "lag": 12,
+      "r": 0.58
+    }
+  ],
+  "weights": {
+    "NL_level": 0.5,
+    "GM2_resid": 0.0,
+    "SOFR_binary": -4.0,
+    "HY_level": -0.5,
+    "CME_basis": 0.0
+  },
+  "optimal_lag": 9,
+  "correlation": 0.6175842986993936,
+  "walk_forward": {
+    "n_windows": 9,
+    "mean_oos_corr": 0.246,
+    "windows": [
+      {
+        "window": 1,
+        "train_range": "0-59",
+        "test_range": "60-65",
+        "n_test": 6,
+        "correlation": 0.8104,
+        "p_value": 0.0505
+      },
+      {
+        "window": 2,
+        "train_range": "0-65",
+        "test_range": "66-71",
+        "n_test": 6,
+        "correlation": 0.6507,
+        "p_value": 0.1617
+      },
+      {
+        "window": 3,
+        "train_range": "0-71",
+        "test_range": "72-77",
+        "n_test": 6,
+        "correlation": -0.8718,
+        "p_value": 0.0236
+      },
+      {
+        "window": 4,
+        "train_range": "0-77",
+        "test_range": "78-83",
+        "n_test": 6,
+        "correlation": -0.5852,
+        "p_value": 0.2224
+      },
+      {
+        "window": 5,
+        "train_range": "0-83",
+        "test_range": "84-89",
+        "n_test": 6,
+        "correlation": 0.3462,
+        "p_value": 0.5015
+      },
+      {
+        "window": 6,
+        "train_range": "0-89",
+        "test_range": "90-95",
+        "n_test": 6,
+        "correlation": -0.0995,
+        "p_value": 0.8513
+      },
+      {
+        "window": 7,
+        "train_range": "0-95",
+        "test_range": "96-101",
+        "n_test": 6,
+        "correlation": 0.7321,
+        "p_value": 0.098
+      },
+      {
+        "window": 8,
+        "train_range": "0-101",
+        "test_range": "102-107",
+        "n_test": 6,
+        "correlation": 0.4698,
+        "p_value": 0.3471
+      },
+      {
+        "window": 9,
+        "train_range": "0-107",
+        "test_range": "108-113",
+        "n_test": 3,
+        "correlation": 0.7616,
+        "p_value": 0.4488
+      }
+    ]
+  },
+  "signal": "BEARISH",
+  "current_score": -16.32
+}

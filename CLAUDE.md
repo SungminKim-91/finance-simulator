@@ -1,10 +1,36 @@
 # Finance Simulator — BTC Liquidity Prediction Model
 
-> v1.0.0 | BTC 가격 방향성 선행 예측 시뮬레이터
+> v1.0.0 (completed) → v2.0.0 (planning) | BTC 가격 방향성 선행 예측 시뮬레이터
 
 ## Project Overview
 글로벌 유동성 지표(5개 변수)를 기반으로 BTC 가격의 큰 흐름을 5-9개월 선행 예측하는 모델.
 실제 데이터 크롤링 파이프라인 포함.
+
+## v2.0.0 Roadmap (Planning)
+
+### 핵심 철학
+- **독립 구성 원칙**: BTC를 절대 보지 않고 유동성 인덱스를 독립 구성 → 사후 검증
+- **방향성 매칭**: 상관계수(r)보다 방향 일치(MDA)가 핵심 — score 상승 시 BTC도 상승
+- **과적합 거부**: Grid Search 짜맞추기 대신 PCA/ICA/DFM 비지도 학습으로 구성
+- **Phase 1c 기준**: r=0.318이지만 모든 lag에서 양의 상관, 방향 100% 일치가 진짜 성공
+
+### 3-Stage Pipeline
+1. **Stage 1 — 독립 인덱스 구성** (BTC-blind): PCA, ICA, DFM, Sparse PCA
+2. **Stage 2 — 방향성 검증**: MDA, SBD, Cosine Similarity, Kendall Tau → CWS 복합 메트릭
+3. **Stage 3 — 과적합 방지**: Bootstrap CI, CPCV (45-path), Granger Causality, Wavelet Coherence
+
+### v1.0.0 Known Issues
+- NL 가중치 0.5 하락 (유동성 메인 변수가 보조지표급)
+- SOFR binary weight=-4.0 → score -16 spike (lag=0에서 r=-0.077)
+- Grid Search 88,209 조합으로 BTC에 과적합
+- Walk-Forward OOS 변동성 높음 (Std=0.5873)
+
+### 주요 변경사항 (v1.0 → v2.0)
+- SOFR: Binary(0/1) → Logistic smooth transition + Markov Regime
+- 혼합 주기: 월간 집계 → DFM+Kalman 일간 그리드
+- 최적화: Grid Search → 비지도 학습 (PCA/ICA/DFM)
+- 검증: Pearson r → CWS (MDA+SBD+CosSim+Tau)
+- 데이터: ~2025-12 → ~2026-02 (DATA_END 업데이트)
 
 ## v1.0.0 Results
 - **In-Sample Correlation**: 0.6176
@@ -27,7 +53,8 @@
 - 과적합 방지: 변수 수 × 15 <= 데이터 포인트
 
 ## Tech Stack
-Python 3.12 | uv (venv) | pandas | fredapi | yfinance | scipy | matplotlib | SQLite
+**v1.0**: Python 3.12 | uv (venv) | pandas | fredapi | yfinance | scipy | matplotlib | SQLite
+**v2.0 추가**: statsmodels (DFM, MarkovRegression) | sklearn (PCA, ICA, FastICA) | pycwt (Wavelet Coherence) | tslearn (DTW, SBD) | skfolio (CPCV) | tsbootstrap (Block Bootstrap)
 
 ## Data Sources
 - FRED API: WALCL, RRP, SOFR, IORB, M2/M3 시리즈, HY Spread
@@ -52,6 +79,7 @@ python main.py status      # 모델 상태 확인
 - 캐시: 24h 만료, 만료 캐시 fallback 지원
 
 ## PDCA Status
-- **Phase**: Completed (v1.0.0)
-- **Match Rate**: 93%
+- **btc-liquidity-model v1.0.0**: Completed (Match Rate 93%)
+- **web-dashboard v1.0.0**: Check (Match Rate 87.7%)
+- **btc-liquidity-v2**: Plan phase (v2.0.0)
 - **Documents**: docs/01-plan/, docs/02-design/, docs/03-analysis/, docs/04-report/

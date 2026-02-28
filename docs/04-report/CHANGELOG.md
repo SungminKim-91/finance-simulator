@@ -1,5 +1,42 @@
 # Changelog — Finance Simulator
 
+## [v2.0.0] - Planning (2026-03-01)
+
+### BTC Liquidity v2 — 독립 인덱스 + 방향성 검증 파이프라인
+
+#### Background
+- v1.0.0의 Grid Search가 BTC에 과적합 (88,209 조합 직접 최적화)
+- NL 가중치 0.5 하락, SOFR binary -16 spike, lag=0 방향 불일치
+- Phase 1c (PCA 독립 구성)가 r=0.318이지만 모든 lag 양의 상관 → 방향성 원칙에 부합
+
+#### Planned Changes
+- **3-Stage Pipeline**: 독립 인덱스 구성 → 방향성 검증 → 과적합 방지
+- **Stage 1**: PCA/ICA/DFM으로 BTC-blind 인덱스 구성
+- **Stage 2**: MDA + SBD + Cosine Similarity + Kendall Tau → CWS 복합 메트릭
+- **Stage 3**: Bootstrap CI, CPCV (45-path), Granger Causality
+- **SOFR**: Binary(0/1) → Logistic smooth transition + Markov Regime Switching
+- **혼합 주기**: 월간 집계 → DFM + Kalman Filter 일간 그리드
+- **데이터 확장**: 2025-12 → 2026-02 (DATA_END 업데이트)
+
+#### New Tech Stack
+- statsmodels (DFM, MarkovRegression, Granger)
+- sklearn (PCA, FastICA, SparsePCA)
+- pycwt (Wavelet Coherence)
+- tslearn (SBD, DTW)
+- skfolio (CPCV)
+- tsbootstrap (Block Bootstrap)
+
+#### Success Criteria
+- MDA > 0.6 (방향 일치율 60%+)
+- 모든 lag 0-15에서 양의 상관
+- Bootstrap 95% CI가 0 포함하지 않을 것
+- Granger p < 0.05
+
+#### Plan Document
+- `docs/01-plan/features/btc-liquidity-v2.plan.md`
+
+---
+
 ## [v1.0.0] - 2026-03-01
 
 ### BTC Liquidity Prediction Model 완료

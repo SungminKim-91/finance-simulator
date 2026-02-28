@@ -6,5 +6,18 @@
     "startedAt": "2026-03-01T00:00:00Z",
     "completedAt": "2026-03-01T02:30:00Z",
     "version": "1.0.0"
+  },
+  "web-dashboard": {
+    "phase": "check",
+    "matchRate": 87.7,
+    "iterationCount": 0,
+    "startedAt": "2026-03-01T02:48:00Z",
+    "version": "1.0.0"
+  },
+  "btc-liquidity-v2": {
+    "phase": "plan",
+    "iterationCount": 0,
+    "startedAt": "2026-03-01T09:00:00Z",
+    "version": "2.0.0"
   }
 }
