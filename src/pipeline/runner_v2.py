@@ -61,6 +61,7 @@ class PipelineRunnerV2:
         self,
         z_matrix: pd.DataFrame,
         method: str | None = None,
+        daily_matrix: pd.DataFrame | None = None,
     ) -> dict:
         """
         Stage 1: Build liquidity index (BTC-blind).
@@ -68,6 +69,7 @@ class PipelineRunnerV2:
         Args:
             z_matrix: z-scored variable matrix (no BTC columns)
             method: override self.method if provided
+            daily_matrix: daily frequency matrix for DFM (optional)
 
         Returns:
             dict with index, loadings, method info
@@ -76,33 +78,69 @@ class PipelineRunnerV2:
         logger.info("=== STAGE 1: Independent Index Construction (%s) ===",
                      method.upper())
 
-        BuilderClass = self._get_builder_class(method)
-        builder = BuilderClass()
+        # Fallback chain: method → PCA on failure
+        fallback_used = False
+        original_method = method
 
-        if method == "dfm":
-            # DFM needs daily matrix — not supported in simple mode
-            logger.warning("DFM requires daily_matrix. Use prepare_daily_matrix first.")
-            raise NotImplementedError("DFM requires daily matrix input")
-
-        result = builder.build(z_matrix)
+        try:
+            result = self._build_index(z_matrix, method, daily_matrix)
+        except Exception as e:
+            if method in ("ica", "sparse", "dfm"):
+                logger.warning(
+                    "%s failed (%s), falling back to PCA", method.upper(), e
+                )
+                result = self._build_index(z_matrix, "pca")
+                fallback_used = True
+                method = "pca"
+            else:
+                raise
 
         # Sign correction: ensure positive correlation with NL
         nl_col = next(
             (c for c in z_matrix.columns if "NL" in c.upper()),
             z_matrix.columns[0],
         )
+        BuilderClass = self._get_builder_class(method)
+        builder = BuilderClass()
         result["index"] = builder.sign_correction(
             result["index"],
             z_matrix[nl_col].dropna(),
         ) if hasattr(builder, "sign_correction") else result["index"]
 
+        if fallback_used:
+            result["fallback_from"] = original_method
+            result["fallback_reason"] = "builder failure"
+
         # Save index
         self._save_result(INDICES_DIR, f"index_{method}", result)
 
         logger.info(
-            "Stage 1 complete: method=%s, n_obs=%d",
+            "Stage 1 complete: method=%s, n_obs=%d%s",
             method, result.get("n_observations", 0),
+            f" (fallback from {original_method})" if fallback_used else "",
         )
+        return result
+
+    def _build_index(
+        self,
+        z_matrix: pd.DataFrame,
+        method: str,
+        daily_matrix: pd.DataFrame | None = None,
+    ) -> dict:
+        """Build index with the specified method."""
+        BuilderClass = self._get_builder_class(method)
+        builder = BuilderClass()
+
+        if method == "dfm":
+            if daily_matrix is not None:
+                result = builder.build(daily_matrix)
+            else:
+                # Attempt DFM with monthly z_matrix (limited but functional)
+                logger.info("DFM: no daily_matrix provided, using monthly z_matrix")
+                result = builder.build(z_matrix)
+        else:
+            result = builder.build(z_matrix)
+
         return result
 
     def run_stage2(
@@ -307,17 +345,27 @@ class PipelineRunnerV2:
         self,
         z_matrix: pd.DataFrame,
         target: pd.Series,
+        daily_matrix: pd.DataFrame | None = None,
     ) -> pd.DataFrame:
-        """Compare PCA, ICA, SparsePCA by CWS."""
+        """Compare PCA, ICA, SparsePCA (+ DFM if daily_matrix provided) by CWS."""
         from src.validators.composite_score import CompositeWaveformScore
         scorer = CompositeWaveformScore()
 
+        methods = ["pca", "ica", "sparse"]
+        if daily_matrix is not None:
+            methods.append("dfm")
+
         indices = {}
-        for method in ["pca", "ica", "sparse"]:
+        for method in methods:
             try:
                 BuilderClass = self._get_builder_class(method)
                 builder = BuilderClass()
-                result = builder.build(z_matrix)
+
+                if method == "dfm" and daily_matrix is not None:
+                    result = builder.build(daily_matrix)
+                else:
+                    result = builder.build(z_matrix)
+
                 idx = result["index"]
 
                 # Sign correction

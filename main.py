@@ -153,6 +153,23 @@ def cmd_visualize(args):
         else:
             print("  No walk-forward data available")
 
+    if viz_type in ("wavelet", "all"):
+        try:
+            from src.validators.wavelet_coherence import WaveletCoherenceAnalyzer
+            wavelet = WaveletCoherenceAnalyzer()
+            wv_result = wavelet.analyze(
+                pd.Series(score_values), z_data["log_btc"],
+            )
+            if wv_result.get("available"):
+                wavelet.plot_coherence(
+                    wv_result, str(CHARTS_DIR / "wavelet_coherence.png")
+                )
+                print(f"  Wavelet coherence → {CHARTS_DIR / 'wavelet_coherence.png'}")
+            else:
+                print("  Wavelet: pycwt not available, skipped")
+        except Exception as e:
+            print(f"  Wavelet visualization skipped: {e}")
+
     print("\nVisualization complete!")
 
 
@@ -203,6 +220,11 @@ def cmd_status(args):
 def cmd_build_index(args):
     """Stage 1: Build liquidity index (BTC-blind)"""
     from src.pipeline.runner_v2 import PipelineRunnerV2
+
+    # --method all routes to compare
+    if args.method == "all":
+        cmd_compare(args)
+        return
 
     storage = StorageManager()
     z_data = storage.load_processed("z_matrix")
@@ -305,6 +327,11 @@ def cmd_run_v2(args):
     """Full 3-Stage pipeline"""
     from src.pipeline.runner_v2 import PipelineRunnerV2
 
+    # --method all routes to compare
+    if args.method == "all":
+        cmd_compare(args)
+        return
+
     storage = StorageManager()
     z_data = storage.load_processed("z_matrix")
     if z_data is None:
@@ -397,8 +424,8 @@ Examples:
         default="monthly", help="Time frequency (v2.0)",
     )
     parser.add_argument(
-        "--method", choices=["pca", "ica", "dfm", "sparse"],
-        default="pca", help="Index building method (v2.0)",
+        "--method", choices=["pca", "ica", "dfm", "sparse", "all"],
+        default="pca", help="Index building method (v2.0, 'all' for compare)",
     )
 
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
@@ -437,7 +464,7 @@ Examples:
     p_viz.add_argument(
         "--type",
         choices=["overlay", "correlation", "walkforward",
-                 "xcorr", "bootstrap", "comparison", "all"],
+                 "xcorr", "bootstrap", "comparison", "wavelet", "all"],
         default="all",
         help="Chart type",
     )
