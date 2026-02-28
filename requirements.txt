@@ -1,4 +1,5 @@
-# BTC Liquidity Prediction Model v1.0.0
+# BTC Liquidity Prediction Model v2.0.0
+
 # Core
 pandas>=2.0.0
 numpy>=1.24.0
@@ -8,15 +9,12 @@ fredapi>=0.5.0
 yfinance>=0.2.30
 requests>=2.31.0
 
-# Optimization
+# Optimization & Statistics
 scipy>=1.11.0
 
 # Visualization
 matplotlib>=3.7.0
 seaborn>=0.12.0
-
-# Storage
-# sqlite3 is built-in
 
 # Config
 python-dotenv>=1.0.0
@@ -26,3 +24,23 @@ tqdm>=4.65.0
 
 # Testing
 pytest>=7.4.0
+
+# ── v2.0 추가 ──
+
+# Index Builders (PCA, ICA, SparsePCA)
+scikit-learn>=1.4.0
+
+# DFM, Markov Regime, Granger Causality, ADF test
+statsmodels>=0.14.0
+
+# Shape-Based Distance (SBD)
+tslearn>=0.6.0
+
+# Wavelet Coherence
+pycwt>=0.4.0
+
+# Block Bootstrap (optional — numpy fallback if unavailable)
+# tsbootstrap>=0.1.0
+
+# CPCV (optional — self-implementation fallback)
+# skfolio>=0.3.0

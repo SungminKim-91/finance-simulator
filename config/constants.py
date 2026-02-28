@@ -117,3 +117,87 @@ VARIABLE_ORDER: list[str] = [
     "HY_level",
     "CME_basis",
 ]
+
+# ══════════════════════════════════════════════════
+# v2.0 파라미터
+# ══════════════════════════════════════════════════
+
+# v2.0 변수 순서 (SOFR_smooth로 교체)
+VARIABLE_ORDER_V2: list[str] = [
+    "NL_level",
+    "GM2_resid",
+    "SOFR_smooth",
+    "HY_level",
+    "CME_basis",
+]
+
+# ── SOFR Smooth Transition ──
+SOFR_LOGISTIC: dict = {
+    "gamma": 0.2,           # 전환 기울기 (0.1=완만, 0.5=급격)
+    "threshold_bps": 20,    # 중심점
+}
+
+SOFR_MARKOV: dict = {
+    "k_regimes": 2,         # 정상/위기
+    "order": 1,             # AR(1) within regime
+}
+
+# ── PCA/ICA 설정 ──
+INDEX_BUILDER: dict = {
+    "n_components": 1,       # 1차 팩터만 추출
+    "max_components": 3,     # ICA 비교 시 최대
+    "random_state": 42,
+    "sparse_alpha": 1.0,     # Sparse PCA L1 페널티
+}
+
+# ── DFM (Dynamic Factor Model) ──
+DFM_CONFIG: dict = {
+    "k_factors": 1,
+    "factor_order": 2,       # VAR(2) 팩터 동학
+    "max_iter": 500,
+    "tolerance": 1e-6,
+}
+
+# ── 방향성 검증 메트릭 가중치 ──
+WAVEFORM_WEIGHTS: dict = {
+    "MDA": 0.4,              # Sign Concordance Rate
+    "SBD": 0.3,              # Shape-Based Distance
+    "CosSim": 0.2,           # Cosine Similarity on derivatives
+    "Tau": 0.1,              # Kendall Tau
+}
+
+# ── Cross-Correlation ──
+XCORR_CONFIG: dict = {
+    "max_lag": 15,
+    "min_lag": 0,
+}
+
+# ── Bootstrap ──
+BOOTSTRAP_CONFIG: dict = {
+    "n_bootstraps": 1000,
+    "block_length": 12,      # 12개월 (연간 계절성 보존)
+    "confidence_level": 0.95,
+}
+
+# ── CPCV ──
+CPCV_CONFIG: dict = {
+    "n_folds": 10,
+    "n_test_folds": 2,       # C(10,2) = 45 paths
+    "purge_threshold": 9,    # lag 길이
+    "embargo": 2,
+}
+
+# ── Granger Causality ──
+GRANGER_CONFIG: dict = {
+    "max_lag": 12,
+    "alpha": 0.05,
+}
+
+# ── 성공 기준 ──
+SUCCESS_CRITERIA: dict = {
+    "min_mda": 0.60,
+    "all_lag_positive": True,
+    "bootstrap_ci_excludes_zero": True,
+    "granger_p_value": 0.05,
+    "min_cpcv_mean": 0.15,
+}

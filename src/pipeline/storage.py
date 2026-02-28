@@ -191,3 +191,31 @@ class StorageManager:
         if not path.exists():
             return None
         return pd.read_csv(path, parse_dates=["date"])
+
+    # ── v2.0 추가: Index/Validation 저장 ──
+
+    def save_index(self, method: str, result: dict) -> str:
+        """data/indices/{method}_{date}.json 저장"""
+        from config.settings import INDICES_DIR
+        date_str = datetime.now().strftime("%Y-%m-%d")
+        path = Path(INDICES_DIR) / f"index_{method}_{date_str}.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(result, f, indent=2, default=str, ensure_ascii=False)
+
+        logger.info(f"Index saved -> {path}")
+        return str(path)
+
+    def save_validation(self, result: dict) -> str:
+        """data/validation/validation_{date}.json 저장"""
+        from config.settings import VALIDATION_DIR
+        date_str = datetime.now().strftime("%Y-%m-%d")
+        path = Path(VALIDATION_DIR) / f"validation_{date_str}.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(result, f, indent=2, default=str, ensure_ascii=False)
+
+        logger.info(f"Validation saved -> {path}")
+        return str(path)
