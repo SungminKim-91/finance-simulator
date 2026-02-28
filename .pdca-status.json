@@ -15,16 +15,32 @@
     "version": "1.0.0"
   },
   "btc-liquidity-v2": {
-    "phase": "act",
-    "matchRate": 88.5,
+    "phase": "check",
+    "matchRate": 92.0,
     "iterationCount": 1,
     "startedAt": "2026-03-01T09:00:00Z",
     "checkedAt": "2026-03-01T12:00:00Z",
+    "recheckedAt": "2026-03-01T14:00:00Z",
     "version": "2.0.0",
     "gaps": {
-      "missing": 12,
+      "missing": 6,
       "added": 9,
-      "changed": 8
-    }
+      "changed": 7
+    },
+    "iterationHistory": [
+      {
+        "iteration": 0,
+        "matchRate": 88.5,
+        "date": "2026-03-01T12:00:00Z",
+        "gaps": { "missing": 12, "added": 9, "changed": 8 }
+      },
+      {
+        "iteration": 1,
+        "matchRate": 92.0,
+        "date": "2026-03-01T14:00:00Z",
+        "gaps": { "missing": 6, "added": 9, "changed": 7 },
+        "fixesSummary": "Fallback chains (ICA/SparsePCA/DFM->PCA), --method all CLI, --type wavelet CLI, plot_index_vs_btc(), DFM monthly fallback"
+      }
+    ]
   }
 }
