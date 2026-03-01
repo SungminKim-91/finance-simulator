@@ -1,12 +1,12 @@
 # Finance Simulator — BTC Liquidity Prediction Model
 
-> v1.0.0 (completed) → v2.0.0 (planning) | BTC 가격 방향성 선행 예측 시뮬레이터
+> v1.0.0 (completed) → v2.0.0 (completed, 92% Match Rate) | BTC 가격 방향성 선행 예측 시뮬레이터
 
 ## Project Overview
 글로벌 유동성 지표(5개 변수)를 기반으로 BTC 가격의 큰 흐름을 5-9개월 선행 예측하는 모델.
 실제 데이터 크롤링 파이프라인 포함.
 
-## v2.0.0 Roadmap (Planning)
+## v2.0.0 — 3-Stage Pipeline (Completed, Match Rate 92%)
 
 ### 핵심 철학
 - **독립 구성 원칙**: BTC를 절대 보지 않고 유동성 인덱스를 독립 구성 → 사후 검증
@@ -64,12 +64,23 @@
 
 ## CLI
 ```bash
-python main.py fetch       # 데이터 수집만
-python main.py optimize    # 전체 최적화 (fetch + calc + grid search + walk-forward)
-python main.py run         # 주간 업데이트 (저장된 가중치 사용)
-python main.py score       # 현재 Score만 계산
-python main.py visualize   # 차트 생성
-python main.py status      # 모델 상태 확인
+# === v1.0 호환 명령 ===
+python main.py fetch           # 데이터 수집만
+python main.py optimize        # v1.0 Grid Search (deprecated)
+python main.py score           # 현재 Score만 계산
+python main.py visualize       # 차트 생성 (overlay/correlation/walkforward/xcorr/bootstrap/comparison/wavelet/all)
+python main.py status          # 모델 상태 확인
+
+# === v2.0 신규 명령 ===
+python main.py build-index     # Stage 1: 인덱스 구성 (BTC-blind)
+python main.py validate        # Stage 2: 방향성 검증
+python main.py analyze         # Stage 3: 과적합 분석
+python main.py run             # 전체 3-Stage 파이프라인
+python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
+
+# === 공통 옵션 ===
+--freq daily|weekly|monthly    # 타임스케일 (기본: monthly)
+--method pca|ica|dfm|sparse|all # 인덱스 방법 (기본: pca)
 ```
 
 ## Key Implementation Notes
@@ -78,8 +89,15 @@ python main.py status      # 모델 상태 확인
 - 날짜 정규화: 모든 변수 MonthEnd(0)로 통일 후 merge (FRED 월초 vs resample 월말 불일치 방지)
 - 캐시: 24h 만료, 만료 캐시 fallback 지원
 
+## v2.0.0 Implementation Summary
+- **신규 모듈**: 14개 (index_builders 4, validators 4, robustness 3, pipeline 1, visualization 2)
+- **수정 파일**: 5개 (config 2, requirements, storage, main.py)
+- **총 코드**: ~3,200줄 (25파일)
+- **Fallback chains**: ICA→PCA, SparsePCA→PCA, DFM→PCA (pipeline crash 방지)
+- **CLI v2.0**: 5개 신규 명령 + `--method all` + `--type wavelet`
+
 ## PDCA Status
 - **btc-liquidity-model v1.0.0**: Completed (Match Rate 93%)
 - **web-dashboard v1.0.0**: Check (Match Rate 87.7%)
-- **btc-liquidity-v2**: Plan phase (v2.0.0)
+- **btc-liquidity-v2 v2.0.0**: Completed (Match Rate 92%, 1 iteration)
 - **Documents**: docs/01-plan/, docs/02-design/, docs/03-analysis/, docs/04-report/

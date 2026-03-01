@@ -15,12 +15,13 @@
     "version": "1.0.0"
   },
   "btc-liquidity-v2": {
-    "phase": "check",
+    "phase": "completed",
     "matchRate": 92.0,
     "iterationCount": 1,
     "startedAt": "2026-03-01T09:00:00Z",
     "checkedAt": "2026-03-01T12:00:00Z",
     "recheckedAt": "2026-03-01T14:00:00Z",
+    "completedAt": "2026-03-01T15:00:00Z",
     "version": "2.0.0",
     "gaps": {
       "missing": 6,
