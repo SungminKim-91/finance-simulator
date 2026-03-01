@@ -1,10 +1,35 @@
 # Finance Simulator — BTC Liquidity Prediction Model
 
-> v1.0.0 (completed) → v2.0.0 (completed, 92% Match Rate) | BTC 가격 방향성 선행 예측 시뮬레이터
+> v1.0.0 (completed) → v2.0.0 (completed, 92% Match Rate) → v2.1 web dual-band | BTC 가격 방향성 선행 예측 시뮬레이터
 
 ## Project Overview
 글로벌 유동성 지표(5개 변수)를 기반으로 BTC 가격의 큰 흐름을 5-9개월 선행 예측하는 모델.
 실제 데이터 크롤링 파이프라인 포함.
+
+## v2.1 — Dual-Band Web Dashboard
+
+### 핵심 개선
+- **Variable-specific Winsorize (Option H)**: NL±3σ, HY±2.5σ, GM2±2σ, CME±2σ
+- **HY 기반 Sign Correction**: NL→HY 변경 (경제 논리: 유동성↑ → HY↓)
+- **Dual-Band Architecture**: Structural(4-var PCA, shifted) + Tactical(-HY, realtime)
+- **Combined Signal**: 0.7×Structural + 0.3×EMA(Tactical) 합성
+
+### Dual-Band 모델 (Model D)
+| Band | 구성 | 역할 | Lag |
+|------|------|------|-----|
+| **Structural** | PCA(NL, GM2, HY, CME) + Option H clip | 전체 유동성 주기 | shifted by lag |
+| **Tactical** | -HY_z → EMA smoothed | 빠른 신용위험 신호 | realtime (no shift) |
+| **Combined** | 0.7×Struct + 0.3×EMA(Tact) | 합성 신호 | hybrid |
+
+### 성능
+- Structural: r=+0.491, MDA=64.7% (lag=0 기준)
+- Tactical: r=+0.417, MDA=65.9%
+- Pipeline CWS: 0.606, All r > 0
+
+### Web Dashboard (AppV2.jsx)
+- 4탭: Index vs BTC, Loadings, CWS Profile, Robustness
+- 컨트롤: Lag 슬라이더(0-15m), Tactical 토글, Combine 토글, Smooth 슬라이더(2-12m)
+- v1.0 ↔ v2.0 전환 버튼 (main.jsx Root 컴포넌트)
 
 ## v2.0.0 — 3-Stage Pipeline (Completed, Match Rate 92%)
 
@@ -100,5 +125,6 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **btc-liquidity-model v1.0.0**: Archived (Match Rate 93%) → `docs/archive/2026-03/btc-liquidity-model/`
 - **btc-liquidity-v2 v2.0.0**: Archived (Match Rate 92%, 1 iteration) → `docs/archive/2026-03/btc-liquidity-v2/`
 - **web-dashboard v1.0.0**: Completed (Match Rate 93.5%, 1 iteration)
+- **web v2.1 dual-band**: Do phase (dual-band + combined + smoothing 구현 완료)
 - **Active docs**: docs/03-analysis/web-dashboard.analysis.md
 - **Archive**: docs/archive/2026-03/

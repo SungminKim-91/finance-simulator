@@ -6,7 +6,10 @@ PC1 loadings, 최적 lag, MDA의 통계적 안정성을 검증.
 import logging
 import numpy as np
 import pandas as pd
-from scipy.stats import binom_test
+try:
+    from scipy.stats import binomtest
+except ImportError:
+    from scipy.stats import binom_test as binomtest
 
 from config.constants import BOOTSTRAP_CONFIG
 
@@ -215,13 +218,8 @@ class BootstrapAnalyzer:
         """
         k = int(round(mda_value * n_observations))
 
-        try:
-            # scipy >= 1.7 deprecated binom_test, use binomtest
-            from scipy.stats import binomtest
-            result = binomtest(k, n_observations, 0.5, alternative="greater")
-            p = result.pvalue
-        except ImportError:
-            p = binom_test(k, n_observations, 0.5, alternative="greater")
+        result = binomtest(k, n_observations, 0.5, alternative="greater")
+        p = result.pvalue if hasattr(result, 'pvalue') else result
 
         return {
             "mda": float(mda_value),

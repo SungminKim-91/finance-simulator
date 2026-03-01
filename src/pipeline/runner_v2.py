@@ -32,13 +32,27 @@ class PipelineRunnerV2:
         "sparse": "src.index_builders.sparse_pca_builder.SparsePCAIndexBuilder",
     }
 
+    # Variable-specific clip thresholds (σ units).
+    # NL ±3: keep structural variance, clip only COVID QE extreme (4.6σ)
+    # HY ±2.5: clip COVID (5.0σ) & 2022 (3.1σ), preserve normal credit events
+    # GM2 ±2: fix FRED M2→M3 data break (-2.96σ constant)
+    # CME ±2: remove futures basis noise (-5.6σ, +5.9σ)
+    DEFAULT_CLIP = {
+        "NL_level": 3.0,
+        "GM2_resid": 2.0,
+        "HY_level": 2.5,
+        "CME_basis": 2.0,
+    }
+
     def __init__(
         self,
         method: str = "pca",
         freq: str = "monthly",
+        clip_map: dict | None = None,
     ):
         self.method = method
         self.freq = freq
+        self.clip_map = clip_map if clip_map is not None else self.DEFAULT_CLIP
 
     def _get_builder_class(self, method: str):
         """Lazy import of builder class."""
@@ -78,6 +92,26 @@ class PipelineRunnerV2:
         logger.info("=== STAGE 1: Independent Index Construction (%s) ===",
                      method.upper())
 
+        # Variable-specific winsorize: NL±3, HY±2.5, GM2±2, CME±2
+        # NL dominant (structural liquidity) + HY responsive (credit risk)
+        if self.clip_map:
+            z_matrix = z_matrix.copy()
+            total_clipped = 0
+            for col, clip_val in self.clip_map.items():
+                if col in z_matrix.columns:
+                    n_clip = (z_matrix[col].abs() > clip_val).sum()
+                    if n_clip > 0:
+                        z_matrix[col] = z_matrix[col].clip(-clip_val, clip_val)
+                        total_clipped += n_clip
+                        logger.info(
+                            "  %s: clipped %d values at ±%.1fσ",
+                            col, n_clip, clip_val,
+                        )
+            if total_clipped > 0:
+                logger.info(
+                    "Winsorized %d total values (variable-specific)", total_clipped
+                )
+
         # Fallback chain: method → PCA on failure
         fallback_used = False
         original_method = method
@@ -95,17 +129,24 @@ class PipelineRunnerV2:
             else:
                 raise
 
-        # Sign correction: ensure positive correlation with NL
-        nl_col = next(
-            (c for c in z_matrix.columns if "NL" in c.upper()),
-            z_matrix.columns[0],
+        # Sign correction: ensure NEGATIVE correlation with HY spread
+        # Economic logic: higher HY spread = risk-off = bearish for BTC
+        # So the index should go DOWN when HY goes UP
+        hy_col = next(
+            (c for c in z_matrix.columns if "HY" in c.upper()),
+            None,
         )
-        BuilderClass = self._get_builder_class(method)
-        builder = BuilderClass()
-        result["index"] = builder.sign_correction(
-            result["index"],
-            z_matrix[nl_col].dropna(),
-        ) if hasattr(builder, "sign_correction") else result["index"]
+        if hy_col and hasattr(result.get("index", None), "index"):
+            BuilderClass = self._get_builder_class(method)
+            builder = BuilderClass()
+            if hasattr(builder, "sign_correction"):
+                result["index"] = builder.sign_correction(
+                    result["index"],
+                    z_matrix[hy_col].dropna(),
+                    positive=False,  # enforce negative corr with HY
+                )
+            else:
+                logger.info("No sign_correction method on %s", method)
 
         if fallback_used:
             result["fallback_from"] = original_method
@@ -368,13 +409,15 @@ class PipelineRunnerV2:
 
                 idx = result["index"]
 
-                # Sign correction
-                nl_col = next(
-                    (c for c in z_matrix.columns if "NL" in c.upper()),
-                    z_matrix.columns[0],
+                # Sign correction: negative corr with HY
+                hy_col = next(
+                    (c for c in z_matrix.columns if "HY" in c.upper()),
+                    None,
                 )
-                if hasattr(builder, "sign_correction"):
-                    idx = builder.sign_correction(idx, z_matrix[nl_col].dropna())
+                if hy_col and hasattr(builder, "sign_correction"):
+                    idx = builder.sign_correction(
+                        idx, z_matrix[hy_col].dropna(), positive=False
+                    )
 
                 indices[method.upper()] = idx
             except Exception as e:

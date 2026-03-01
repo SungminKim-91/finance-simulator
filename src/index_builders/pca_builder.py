@@ -101,25 +101,36 @@ class PCAIndexBuilder:
     def sign_correction(
         self,
         index: pd.Series,
-        nl_series: pd.Series,
+        reference_series: pd.Series,
+        positive: bool = False,
     ) -> pd.Series:
         """
-        Correct PC1 sign so it correlates positively with NL.
+        Correct PC1 sign using a reference variable.
 
-        PCA sign is arbitrary. We enforce: corr(PC1, NL) > 0,
-        because NL (Net Liquidity) should drive the index positively.
+        PCA sign is arbitrary. We enforce a direction using economic logic:
+        - HY spread: corr(PC1, HY) < 0 → higher spread = bearish
+        - NL level:  corr(PC1, NL) > 0 → higher liquidity = bullish
+
+        Args:
+            reference_series: Variable to align against (HY or NL)
+            positive: If True, enforce positive correlation with reference.
+                      If False, enforce negative correlation (default for HY).
         """
         # Align on common index
-        common = index.index.intersection(nl_series.index)
+        common = index.index.intersection(reference_series.index)
         if len(common) < 10:
             logger.warning("sign_correction: only %d common points", len(common))
             return index
 
-        corr = np.corrcoef(index.loc[common], nl_series.loc[common])[0, 1]
+        corr = np.corrcoef(index.loc[common], reference_series.loc[common])[0, 1]
 
-        if corr < 0:
-            logger.info("PC1 sign flipped (corr with NL was %.3f)", corr)
+        should_flip = (positive and corr < 0) or (not positive and corr > 0)
+
+        if should_flip:
+            logger.info("PC1 sign flipped (corr with ref was %.3f, positive=%s)",
+                        corr, positive)
             return -index
         else:
-            logger.info("PC1 sign OK (corr with NL = %.3f)", corr)
+            logger.info("PC1 sign OK (corr with ref = %.3f, positive=%s)",
+                        corr, positive)
             return index
