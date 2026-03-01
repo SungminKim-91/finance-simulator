@@ -359,8 +359,52 @@ PNG 차트 대비 큰 개선이다. 데이터 무결성과 모델 메타데이�
 
 ---
 
+## 10. Iteration 1 Re-Analysis (2026-03-01)
+
+### 10.1 Fixes Applied
+
+| Gap | Before | After | Change |
+|-----|--------|-------|--------|
+| G-1 Phase shading (bull/bear) | FAIL | PASS | `ReferenceArea` with green/red fill based on score sign |
+| G-3 Cumulative OOS overlay | FAIL | PASS | New `LineChart` with cumAvgCorr + BTC return (scaled) |
+| G-5 Std deviation lines | PARTIAL | PASS | `mean ± 1σ` reference lines added |
+| G-6 Y-axis domain | MINOR | PASS | Domain expanded from [-2,2] to [-4,4] for SOFR spike visibility |
+
+### 10.2 Updated Match Rate
+
+**Visualization Requirements (Section 6):**
+
+| Item | v1.0 | v1.1 |
+|------|:----:|:----:|
+| PASS | 8 | 11 |
+| PARTIAL | 2 | 1 |
+| FAIL | 3 | 1 |
+
+Remaining FAIL: G-2 (Variable correlation matrix) — needs additional data in web_data.json.
+Remaining PARTIAL: G-4 (Bar chart format → heatmap) — functionally equivalent, minor.
+
+**Weighted Score**: (11 * 1.0 + 1 * 0.5 + 1 * 0.0) / 13 = **88.5%** (Design Match)
+
+### 10.3 Updated Overall Score
+
+| Category | v1.0 | v1.1 | Change |
+|----------|:----:|:----:|:------:|
+| Design Match | 69.0% | 88.5% | +19.5% |
+| Data Integrity | 100% | 100% | — |
+| Model Summary | 100% | 100% | — |
+| Code Quality | 85% | 85% | — |
+| **Overall** | **87.7%** | **93.5%** | **+5.8%** |
+
+Score calculation: 0.885 * 30 + 1.00 * 30 + 1.00 * 20 + 0.85 * 20
+= 26.55 + 30.0 + 20.0 + 17.0 = **93.5%**
+
+**Match Rate: 93.5% -- PASS (>= 90%)**
+
+---
+
 ## Version History
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
 | 1.0 | 2026-03-01 | Initial web dashboard gap analysis | gap-detector |
+| 1.1 | 2026-03-01 | Iteration 1: Phase shading, cumulative OOS, std lines, Y-axis fix | pdca-iterator |

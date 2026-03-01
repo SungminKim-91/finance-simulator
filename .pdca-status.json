@@ -10,10 +10,11 @@
     "version": "1.0.0"
   },
   "web-dashboard": {
-    "phase": "check",
-    "matchRate": 87.7,
-    "iterationCount": 0,
+    "phase": "completed",
+    "matchRate": 93.5,
+    "iterationCount": 1,
     "startedAt": "2026-03-01T02:48:00Z",
+    "completedAt": "2026-03-01T17:00:00Z",
     "version": "1.0.0"
   },
   "btc-liquidity-v2": {

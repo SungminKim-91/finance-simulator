@@ -1,7 +1,8 @@
 import { useState, useMemo } from "react";
 import {
   ComposedChart, Line, Area, Bar, Cell, XAxis, YAxis, CartesianGrid,
-  Tooltip, ResponsiveContainer, ReferenceLine, BarChart,
+  Tooltip, ResponsiveContainer, ReferenceLine, ReferenceArea, BarChart,
+  LineChart,
 } from "recharts";
 import { DATA, XCORR, WALK_FORWARD, WEIGHTS, META } from "./data";
 
@@ -87,6 +88,24 @@ export default function App() {
   /* Live correlation at current shift (uses raw unclipped score) */
   const corr = useMemo(() => pearson(chartData, "shiftScoreRaw", "log_btc"), [chartData]);
 
+  /* G-1: Bull/Bear phase regions for background shading */
+  const phases = useMemo(() => {
+    const regions = [];
+    let start = null;
+    let ptype = null;
+    chartData.forEach((d, i) => {
+      if (d.shiftScore == null) return;
+      const cur = d.shiftScore > 0 ? "bull" : "bear";
+      if (cur !== ptype) {
+        if (start !== null) regions.push({ start, end: i, ptype });
+        start = i;
+        ptype = cur;
+      }
+    });
+    if (start !== null) regions.push({ start, end: chartData.length - 1, ptype });
+    return regions;
+  }, [chartData]);
+
   const labelDate = (v) => chartData[parseInt(v)]?.date || "";
 
   /* Walk-Forward bar data */
@@ -95,6 +114,34 @@ export default function App() {
     corr: w.correlation,
     fill: w.correlation >= 0 ? C.green : C.red,
   }));
+
+  /* G-5: Walk-Forward Std */
+  const wfStd = useMemo(() => {
+    const mean = WALK_FORWARD.mean_oos_corr;
+    return Math.sqrt(WALK_FORWARD.windows.reduce((s, w) => s + (w.correlation - mean) ** 2, 0) / WALK_FORWARD.windows.length);
+  }, []);
+
+  /* G-3: Cumulative OOS data — running average correlation + BTC log return per window */
+  const cumulOOS = useMemo(() => {
+    let sumCorr = 0;
+    return WALK_FORWARD.windows.map((w, i) => {
+      sumCorr += w.correlation;
+      const cumAvg = sumCorr / (i + 1);
+      // Extract test period dates and compute BTC return
+      const testEnd = w.test_range?.split(" ~ ")[1];
+      const testStart = w.test_range?.split(" ~ ")[0];
+      const startRec = DATA.find(d => d.date === testStart);
+      const endRec = DATA.find(d => d.date === testEnd);
+      const btcReturn = startRec && endRec ? ((endRec.log_btc - startRec.log_btc) * 10) : 0; // scaled
+      return {
+        name: `W${w.window}`,
+        testRange: w.test_range,
+        cumAvgCorr: +cumAvg.toFixed(4),
+        windowCorr: w.correlation,
+        btcReturn: +btcReturn.toFixed(3),
+      };
+    });
+  }, []);
 
   return (
     <div style={{ background: C.bg, minHeight: "100vh", color: C.text, fontFamily: "'JetBrains Mono', 'SF Mono', monospace", padding: "20px 16px" }}>
@@ -203,7 +250,12 @@ export default function App() {
                     tickFormatter={v => `$${Math.round(10 ** v).toLocaleString()}`}
                     domain={[2.4, 5.2]} width={58} />
                   <YAxis yAxisId="r" orientation="right" tick={{ fill: C.score, fontSize: 9 }} axisLine={false} tickLine={false}
-                    domain={[-2, 2]} width={36} />
+                    domain={[-4, 4]} width={36} />
+                  {/* G-1: Bull/Bear phase shading */}
+                  {phases.map((p, i) => (
+                    <ReferenceArea key={i} x1={p.start} x2={p.end} yAxisId="r"
+                      fill={p.ptype === "bull" ? C.green : C.red} fillOpacity={0.05} strokeOpacity={0} />
+                  ))}
                   <ReferenceLine yAxisId="r" y={0} stroke={C.borderHi} strokeDasharray="2 4" strokeOpacity={0.4} />
                   <Area yAxisId="r" dataKey="shiftScore" stroke="none" fill="url(#scoreGrad)" />
                   <Line yAxisId="l" dataKey="log_btc" stroke={C.btc} strokeWidth={2.2} dot={false} />
@@ -302,6 +354,9 @@ export default function App() {
                   <YAxis tick={{ fill: C.muted, fontSize: 10 }} axisLine={false} tickLine={false} domain={[-1, 1]} width={36} />
                   <ReferenceLine y={0} stroke={C.borderHi} />
                   <ReferenceLine y={WALK_FORWARD.mean_oos_corr} stroke={C.purple} strokeDasharray="4 4" label={{ value: `mean=${WALK_FORWARD.mean_oos_corr.toFixed(3)}`, fill: C.purple, fontSize: 10, position: "right" }} />
+                  {/* G-5: Std deviation lines */}
+                  <ReferenceLine y={WALK_FORWARD.mean_oos_corr + wfStd} stroke={C.dim} strokeDasharray="2 6" label={{ value: `+1σ`, fill: C.dim, fontSize: 9, position: "right" }} />
+                  <ReferenceLine y={WALK_FORWARD.mean_oos_corr - wfStd} stroke={C.dim} strokeDasharray="2 6" label={{ value: `−1σ`, fill: C.dim, fontSize: 9, position: "right" }} />
                   <Bar dataKey="corr" radius={[4, 4, 0, 0]}>
                     {wfData.map((entry, i) => (
                       <Cell key={i} fill={entry.fill} />
@@ -309,6 +364,28 @@ export default function App() {
                   </Bar>
                   <Tooltip formatter={v => v.toFixed(4)} contentStyle={{ background: C.panel, border: `1px solid ${C.borderHi}`, borderRadius: 8, color: C.text, fontSize: 12 }} />
                 </BarChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* G-3: Cumulative OOS Correlation vs BTC Return */}
+            <div style={{ background: C.panel, borderRadius: 12, padding: "14px 14px 8px", border: `1px solid ${C.border}`, marginTop: 14 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#f8fafc", marginBottom: 2 }}>
+                Cumulative OOS Correlation vs BTC Return
+              </div>
+              <div style={{ fontSize: 10, color: C.dim, marginBottom: 10 }}>
+                <span style={{ color: C.purple }}>&#9679; Cum. Avg Corr</span>
+                <span style={{ marginLeft: 10, color: C.btc }}>&#9679; BTC Return (scaled)</span>
+              </div>
+              <ResponsiveContainer width="100%" height={240}>
+                <LineChart data={cumulOOS} margin={{ top: 8, right: 20, left: 0, bottom: 8 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke={C.border} />
+                  <XAxis dataKey="name" tick={{ fill: C.muted, fontSize: 10 }} axisLine={{ stroke: C.borderHi }} tickLine={false} />
+                  <YAxis tick={{ fill: C.muted, fontSize: 10 }} axisLine={false} tickLine={false} width={40} />
+                  <ReferenceLine y={0} stroke={C.borderHi} />
+                  <Line dataKey="cumAvgCorr" stroke={C.purple} strokeWidth={2.2} dot={{ fill: C.purple, r: 3 }} name="Cum. Avg Corr" />
+                  <Line dataKey="btcReturn" stroke={C.btc} strokeWidth={1.5} dot={{ fill: C.btc, r: 3 }} strokeDasharray="4 2" name="BTC Return" />
+                  <Tooltip contentStyle={{ background: C.panel, border: `1px solid ${C.borderHi}`, borderRadius: 8, color: C.text, fontSize: 11 }} />
+                </LineChart>
               </ResponsiveContainer>
             </div>
 
