@@ -26,5 +26,13 @@
     "archivedAt": "2026-03-01T16:00:00Z",
     "archivedTo": "docs/archive/2026-03/btc-liquidity-v2/",
     "version": "2.0.0"
+  },
+  "web": {
+    "phase": "check",
+    "matchRate": 97.4,
+    "iterationCount": 0,
+    "startedAt": "2026-03-01T18:00:00Z",
+    "version": "2.1.0",
+    "description": "Dual-Band Web Dashboard (Model D)"
   }
 }
