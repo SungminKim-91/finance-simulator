@@ -1,5 +1,15 @@
 # Changelog — Finance Simulator
 
+## Archive Notice (2026-03-01)
+
+PDCA 완료 문서가 아카이빙되었습니다:
+- **btc-liquidity-model v1.0.0** → `docs/archive/2026-03/btc-liquidity-model/`
+- **btc-liquidity-v2 v2.0.0** → `docs/archive/2026-03/btc-liquidity-v2/`
+
+아카이브 인덱스: [`docs/archive/2026-03/_INDEX.md`](../archive/2026-03/_INDEX.md)
+
+---
+
 ## [v2.0.0] - 2026-03-01
 
 ### BTC Liquidity v2 — 3-Stage Pipeline 완료 (Match Rate 92%)

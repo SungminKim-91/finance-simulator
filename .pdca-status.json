@@ -1,10 +1,12 @@
 {
   "btc-liquidity-model": {
-    "phase": "completed",
+    "phase": "archived",
     "matchRate": 93,
     "iterationCount": 0,
     "startedAt": "2026-03-01T00:00:00Z",
     "completedAt": "2026-03-01T02:30:00Z",
+    "archivedAt": "2026-03-01T16:00:00Z",
+    "archivedTo": "docs/archive/2026-03/btc-liquidity-model/",
     "version": "1.0.0"
   },
   "web-dashboard": {
@@ -15,33 +17,13 @@
     "version": "1.0.0"
   },
   "btc-liquidity-v2": {
-    "phase": "completed",
+    "phase": "archived",
     "matchRate": 92.0,
     "iterationCount": 1,
     "startedAt": "2026-03-01T09:00:00Z",
-    "checkedAt": "2026-03-01T12:00:00Z",
-    "recheckedAt": "2026-03-01T14:00:00Z",
     "completedAt": "2026-03-01T15:00:00Z",
-    "version": "2.0.0",
-    "gaps": {
-      "missing": 6,
-      "added": 9,
-      "changed": 7
-    },
-    "iterationHistory": [
-      {
-        "iteration": 0,
-        "matchRate": 88.5,
-        "date": "2026-03-01T12:00:00Z",
-        "gaps": { "missing": 12, "added": 9, "changed": 8 }
-      },
-      {
-        "iteration": 1,
-        "matchRate": 92.0,
-        "date": "2026-03-01T14:00:00Z",
-        "gaps": { "missing": 6, "added": 9, "changed": 7 },
-        "fixesSummary": "Fallback chains (ICA/SparsePCA/DFM->PCA), --method all CLI, --type wavelet CLI, plot_index_vs_btc(), DFM monthly fallback"
-      }
-    ]
+    "archivedAt": "2026-03-01T16:00:00Z",
+    "archivedTo": "docs/archive/2026-03/btc-liquidity-v2/",
+    "version": "2.0.0"
   }
 }

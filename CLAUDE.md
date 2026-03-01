@@ -97,7 +97,8 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **CLI v2.0**: 5개 신규 명령 + `--method all` + `--type wavelet`
 
 ## PDCA Status
-- **btc-liquidity-model v1.0.0**: Completed (Match Rate 93%)
-- **web-dashboard v1.0.0**: Check (Match Rate 87.7%)
-- **btc-liquidity-v2 v2.0.0**: Completed (Match Rate 92%, 1 iteration)
-- **Documents**: docs/01-plan/, docs/02-design/, docs/03-analysis/, docs/04-report/
+- **btc-liquidity-model v1.0.0**: Archived (Match Rate 93%) → `docs/archive/2026-03/btc-liquidity-model/`
+- **btc-liquidity-v2 v2.0.0**: Archived (Match Rate 92%, 1 iteration) → `docs/archive/2026-03/btc-liquidity-v2/`
+- **web-dashboard v1.0.0**: Check (Match Rate 87.7%) — iterate 대기
+- **Active docs**: docs/03-analysis/web-dashboard.analysis.md
+- **Archive**: docs/archive/2026-03/
