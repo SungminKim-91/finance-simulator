@@ -1,5 +1,49 @@
 # Changelog — Finance Simulator
 
+## [v2.1.0] - 2026-03-02
+
+### Dual-Band Web Dashboard (Model D) — Match Rate 97.4%
+
+#### Background
+- v2.0 Pipeline(CWS=0.606)을 브라우저에서 시각 검증하고 싶은 요구
+- NL 주도 구조적 유동성 + HY 즉각 신용위험을 분리하여 볼 수 있는 인터랙티브 대시보드 필요
+- 스파이크 진단에서 변수별 극단값 처리 필요성 발견
+
+#### Added
+- **Dual-Band Architecture (Model D)**: Structural(4-var PCA, shifted) + Tactical(-HY, realtime)
+- **Combined Signal**: 0.7×Structural + 0.3×EMA(Tactical) 합성 라인
+- **Variable-specific Winsorize (Option H)**: NL±3σ, HY±2.5σ, GM2±2σ, CME±2σ
+- **AppV2.jsx** (717줄): 4-tab dashboard (Index, Loadings, CWS Profile, Robustness)
+- **export_v2_web.py** (302줄): pipeline JSON → data_v2.js 변환 + dual-band 계산
+- **Interactive Controls**: lag slider(0-15m), tactical toggle, combine toggle, smoothing slider(2-12m)
+- **v1/v2 Version Toggle**: main.jsx Root 컴포넌트
+- **Cross-Correlation Heatmap**: 클릭으로 lag 설정
+- **Live Stats**: Pearson r, MDA 실시간 재계산
+- **MODEL_DEVELOPMENT.md**: 모델 개발 전체 과정 정리 문서
+
+#### Changed
+- **Sign Correction**: NL 기반 → HY 기반 (경제 논리: 유동성↑ → HY↓)
+- **runner_v2.py**: uniform winsorize → variable-specific clip_map
+- **pca_builder.py**: sign_correction에 `positive` 파라미터 추가
+
+#### Performance
+- Structural: r=+0.491, MDA=64.7% (lag=0)
+- Tactical: r=+0.417, MDA=65.9% (lag=0)
+- Pipeline CWS: 0.606, All r > 0
+
+#### PDCA Results
+- **Match Rate**: 97.4% (PASS, 0 iterations)
+- **Plan Match**: 96% (27항목 중 20 exact + 5 enhanced + 2 partial)
+- **Dual-Band Extensions**: 100% (10/10)
+- **Added Beyond Plan**: 12개 추가 기능
+
+#### Documents
+- Analysis: `docs/03-analysis/web.analysis.md`
+- Report: `docs/04-report/web.report.md`
+- Model Development: `docs/MODEL_DEVELOPMENT.md`
+
+---
+
 ## Archive Notice (2026-03-01)
 
 PDCA 완료 문서가 아카이빙되었습니다:

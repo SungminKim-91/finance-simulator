@@ -28,10 +28,11 @@
     "version": "2.0.0"
   },
   "web": {
-    "phase": "check",
+    "phase": "completed",
     "matchRate": 97.4,
     "iterationCount": 0,
     "startedAt": "2026-03-01T18:00:00Z",
+    "completedAt": "2026-03-02T00:00:00Z",
     "version": "2.1.0",
     "description": "Dual-Band Web Dashboard (Model D)"
   }
