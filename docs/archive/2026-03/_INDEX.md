@@ -41,3 +41,23 @@
 - [Report](btc-liquidity-v2/report.md)
 
 **Summary:** 3-Stage Pipeline (BTC-blind 독립 인덱스 → 방향성 검증 → 과적합 방지). 14개 신규 모듈, PCA/ICA/SparsePCA/DFM, CWS 복합 메트릭. v1.0 과적합 문제 해결.
+
+---
+
+### web (v2.1.0) — Dual-Band Dashboard
+
+| Item | Value |
+|------|-------|
+| Phase | Completed |
+| Match Rate | 97.4% |
+| Iterations | 0 |
+| Started | 2026-03-01 |
+| Completed | 2026-03-02 |
+| Archived | 2026-03-02 |
+
+**Documents:**
+- [Analysis](web/analysis.md)
+- [Report](web/report.md)
+- [Model Development](web/model-development.md)
+
+**Summary:** Dual-Band Model D — Structural(4-var PCA, shifted) + Tactical(-HY, realtime) + Combined(0.7/0.3 EMA). Variable-specific winsorize (Option H). Interactive dashboard: lag slider, tactical/combine toggle, smoothing. Structural r=+0.491, MDA=64.7%, CWS=0.606.

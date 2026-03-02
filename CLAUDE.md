@@ -125,6 +125,5 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **btc-liquidity-model v1.0.0**: Archived (Match Rate 93%) → `docs/archive/2026-03/btc-liquidity-model/`
 - **btc-liquidity-v2 v2.0.0**: Archived (Match Rate 92%, 1 iteration) → `docs/archive/2026-03/btc-liquidity-v2/`
 - **web-dashboard v1.0.0**: Completed (Match Rate 93.5%, 1 iteration)
-- **web v2.1 dual-band**: Do phase (dual-band + combined + smoothing 구현 완료)
-- **Active docs**: docs/03-analysis/web-dashboard.analysis.md
+- **web v2.1 dual-band**: Archived (Match Rate 97.4%) → `docs/archive/2026-03/web/`
 - **Archive**: docs/archive/2026-03/
