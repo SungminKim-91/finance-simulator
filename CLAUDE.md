@@ -1,10 +1,12 @@
-# Finance Simulator — BTC Liquidity Prediction Model
+# Finance Simulator — Multi-Asset Analysis Platform
 
-> v1.0.0 (completed) → v2.0.0 (completed, 92% Match Rate) → v2.1 web dual-band | BTC 가격 방향성 선행 예측 시뮬레이터
+> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v1.0.0) | 통합 웹 대시보드
 
 ## Project Overview
-글로벌 유동성 지표(5개 변수)를 기반으로 BTC 가격의 큰 흐름을 5-9개월 선행 예측하는 모델.
-실제 데이터 크롤링 파이프라인 포함.
+1. **BTC Liquidity Model**: 글로벌 유동성 지표(5개 변수) 기반 BTC 가격 방향성 선행 예측
+2. **KOSPI Crisis Detector**: 한국 주식시장 신용잔고 코호트 분석, 반대매매 시뮬레이션, 위기 감지
+
+통합 프론트엔드 (`web/`) 에서 시뮬레이터 선택기로 BTC/KOSPI 전환.
 
 ## v2.1 — Dual-Band Web Dashboard
 
@@ -121,12 +123,69 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **Fallback chains**: ICA→PCA, SparsePCA→PCA, DFM→PCA (pipeline crash 방지)
 - **CLI v2.0**: 5개 신규 명령 + `--method all` + `--type wavelet`
 
+---
+
+## KOSPI Crisis Detector v1.0.0
+
+### Overview
+신용잔고 기반 코호트 분석, 반대매매 연쇄 시뮬레이션, Bayesian 시나리오 추적, 과거 사례 비교를 하나의 대시보드에서 수행. Phase 1 (Market Pulse) 완료.
+
+### Phase 1 구현 범위 (v1.0.0)
+- **main.jsx**: 시뮬레이터 선택기 (BTC ↔ KOSPI), ErrorBoundary, lazy import
+- **KospiApp.jsx**: 4탭 라우팅 (Pulse/Cohort/Scenario/History), Phase 2~4 placeholder
+- **MarketPulse.jsx**: 시장 현황 대시보드
+  - 헤더 카드: KOSPI, 삼성전자, SK하이닉스, USD/KRW, VIX
+  - 기간 토글: 1M/3M/6M/1Y/ALL
+  - 신용잔고 & 고객예탁금 (독립 좌/우 Y축 줌, 조원 단위)
+  - 반대매매 (억원 단위)
+  - 투자자 수급: 누적 Area / 일자별 Line+Area 토글, 투자자 필터, 요약 카드
+  - 공매도 + 정부 조치 이벤트 마커
+  - 글로벌 컨텍스트 미니차트 4개
+  - DRAM (Phase 2 placeholder)
+  - 이벤트 로그
+- **colors.js**: KOSPI 전용 색상 팔레트 (BTC 계승 + 확장)
+- **Python 파이프라인**: `kospi/scripts/` (fetch_daily, fetch_historical, kofia_scraper, compute_models, estimate_missing, export_web)
+
+### 차트 기능
+- **niceScale**: 깔끔한 Y축 눈금 자동 계산
+- **Drag Zoom**: Y축 드래그 줌 + 더블클릭 리셋
+- **Brush**: X축 범위 선택
+- **독립 줌**: Credit 좌/우축 독립 줌 (creditLeftZoom/creditRightZoom)
+- **단위 표시**: Y축 라벨 (조원/억원/십억원) + Tooltip 단위 포매팅
+- **투자자 수급**: 누적/일자별 모드 토글 + 개인/외국인/기관 필터 토글 + 요약 카드
+- **용어 사전**: 한국어 금융 용어 hover tooltip (TERM dictionary)
+
+### 폴더 구조
+```
+kospi/                           # Python 데이터 파이프라인
+├── scripts/                     # fetch_daily, kofia_scraper, compute_models, export_web, ...
+├── data/historical/             # 과거 사례 (2008, 2015 중국, 2020, 2021)
+└── config/
+
+web/src/simulators/kospi/        # React 대시보드
+├── KospiApp.jsx                 # 4탭 메인
+├── MarketPulse.jsx              # Tab A: 시장 현황 (1124줄)
+├── colors.js                    # 색상 팔레트
+├── data/kospi_data.js           # 정적 JSON 데이터
+└── shared/                      # 공유 컴포넌트 (Phase 2+)
+```
+
+### Phase 2~4 (미구현, 향후)
+- **Phase 2**: Cohort & Forced Liquidation (코호트 히트맵, 반대매매 인터랙티브 시뮬레이터)
+- **Phase 3**: Crisis Score + Historical Comparison (위기 지표 PCA, DTW 유사도)
+- **Phase 4**: Bayesian Scenario Tracker (시나리오 확률 일간 업데이트)
+- **Phase 5**: Deploy (GitHub Actions cron, Vercel)
+
+---
+
 ## PDCA Status
 - **btc-liquidity-model v1.0.0**: Archived (Match Rate 93%) → `docs/archive/2026-03/btc-liquidity-model/`
 - **btc-liquidity-v2 v2.0.0**: Archived (Match Rate 92%, 1 iteration) → `docs/archive/2026-03/btc-liquidity-v2/`
 - **web-dashboard v1.0.0**: Completed (Match Rate 93.5%, 1 iteration)
 - **web v2.1 dual-band**: Archived (Match Rate 97.4%) → `docs/archive/2026-03/web/`
+- **kospi-crisis v1.0.0**: Completed (Phase 1 Market Pulse)
 - **Archive**: docs/archive/2026-03/
 
 ## Backlog
 - **gm2-data-improvement**: 2025년 lag=6 불일치 개선 — GM2 데이터 고착(11개월), HY 단기 충격, BTC 독자 요인 → `docs/01-plan/features/gm2-data-improvement.plan.md`
+- **kospi-crisis Phase 2~4**: Cohort, Crisis Score, Scenario, Historical — `docs/01-plan/features/kospi-crisis.plan.md`

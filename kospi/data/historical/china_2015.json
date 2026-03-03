@@ -1,0 +1,45 @@
+{
+  "case_name": "china_2015",
+  "period": {"start": "2014-06-01", "end": "2016-03-31"},
+  "peak": {"date": "2015-04-27", "kospi": 2187.37},
+  "description": "중국 증시 버블 붕괴 → 한국 연쇄 하락. SSE 5178→2927 (-43%), KOSPI 2187→1829 (-16.4%)",
+  "data_source": "hardcoded (pykrx 미지원 — 중국 영향 간접 반영)",
+  "key_events": [
+    {"date": "2015-06-12", "desc": "상해종합지수 5178 고점 (버블 정점)"},
+    {"date": "2015-06-15", "desc": "중국 증시 폭락 시작, 신용거래 반대매매 촉발"},
+    {"date": "2015-07-08", "desc": "중국 서킷브레이커 발동, SSE -8.5%"},
+    {"date": "2015-07-27", "desc": "블랙먼데이: SSE -8.5%, KOSPI -2.5%"},
+    {"date": "2015-08-24", "desc": "중국발 글로벌 블랙먼데이: KOSPI 1829 (-4.2%)"},
+    {"date": "2016-01-04", "desc": "중국 서킷브레이커 재발동, CSI 300 -7%"},
+    {"date": "2016-01-07", "desc": "서킷브레이커 2차 발동 후 폐지"}
+  ],
+  "similarity_features": {
+    "trigger": "해외 증시 버블 붕괴 전이",
+    "mechanism": "외국인 동시 이탈 + 원화 약세 + 신용 손실",
+    "duration_days": 119,
+    "max_drop_pct": -16.4,
+    "foreign_cumulative_sell_trillion": -5.2,
+    "credit_peak_to_trough_pct": -15,
+    "recovery_months": 8,
+    "usd_krw_peak": 1243,
+    "vix_peak": 40.7
+  },
+  "kospi_milestones": [
+    {"date": "2015-04-27", "kospi": 2187.37, "note": "연고점"},
+    {"date": "2015-06-29", "kospi": 2060.49, "note": "중국 폭락 시작 후 첫 급락"},
+    {"date": "2015-07-08", "kospi": 1994.89, "note": "2000선 붕괴"},
+    {"date": "2015-08-24", "kospi": 1829.81, "note": "블랙먼데이 저점"},
+    {"date": "2015-09-02", "kospi": 1883.22, "note": "1차 반등"},
+    {"date": "2015-09-29", "kospi": 1949.26, "note": "박스권 형성"},
+    {"date": "2016-01-07", "kospi": 1894.58, "note": "중국 서킷브레이커 재발동"},
+    {"date": "2016-02-12", "kospi": 1835.28, "note": "2차 저점"},
+    {"date": "2016-03-31", "kospi": 1995.85, "note": "회복 진행"}
+  ],
+  "timeseries_summary": {
+    "total_trading_days": 456,
+    "decline_phase_days": 119,
+    "max_daily_drop_pct": -4.2,
+    "avg_daily_volume_trillion": 5.8,
+    "foreign_net_sell_days_pct": 62
+  }
+}

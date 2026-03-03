@@ -954,14 +954,18 @@ export const C = {
 
 ## 5. Verification Checklist
 
-### Phase 1 완료 기준
-- [ ] `main.jsx` 시뮬레이터 선택기: BTC ↔ KOSPI 전환 작동
-- [ ] `python kospi/scripts/fetch_daily.py` 정상 실행 (D01~D22)
-- [ ] `python kospi/scripts/fetch_historical.py` 과거 4개 사례 수집
-- [ ] `kospi/data/daily/*.json` 스냅샷 생성
-- [ ] `python kospi/scripts/export_web.py` → `kospi_data.js` 생성
-- [ ] Tab A (Market Pulse) 정상 렌더링: 숫자 카드, 시계열, 수급 차트
-- [ ] BTC 기존 대시보드 regression 없음
+### Phase 1 완료 기준 ✅ (v1.0.0 완료)
+- [x] `main.jsx` 시뮬레이터 선택기: BTC ↔ KOSPI 전환 작동
+- [x] `python kospi/scripts/fetch_daily.py` 정상 실행 (D01~D22)
+- [x] `python kospi/scripts/fetch_historical.py` 과거 4개 사례 수집
+- [x] `kospi/data/daily/*.json` 스냅샷 생성
+- [x] `python kospi/scripts/export_web.py` → `kospi_data.js` 생성
+- [x] Tab A (Market Pulse) 정상 렌더링: 숫자 카드, 시계열, 수급 차트
+- [x] BTC 기존 대시보드 regression 없음
+- [x] 독립 좌/우 Y축 줌 (Credit/Deposit)
+- [x] Y축 단위 표시 (조원/억원/십억원) + Tooltip 단위 포매팅
+- [x] 투자자 수급 리디자인: 누적 Area / 일자별 Line+Area 토글, 필터, 요약 카드
+- [x] 빌드 에러 없음 (Vite production build 통과)
 
 ### Phase 2 완료 기준
 - [ ] 코호트 모델: LIFO/FIFO 정상 작동, 가격대 분포 출력
