@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MarketPulse from "./MarketPulse";
+import KospiHeader from "./KospiHeader";
 import { C } from "./colors";
 
 const FONT = "'JetBrains Mono', monospace";
@@ -25,11 +26,14 @@ export default function KospiApp() {
 
   return (
     <div style={{ background: C.bg, minHeight: "100vh", color: C.text, fontFamily: FONT }}>
+      {/* ── Common Header (탭 전환 시에도 항상 표시) ── */}
+      <KospiHeader />
+
       {/* ── Tab Bar ── */}
       <div style={{
-        display: "flex", gap: 2, padding: "8px 16px",
+        display: "flex", gap: 2, padding: "6px 16px",
         background: C.panel, borderBottom: `1px solid ${C.border}`,
-        position: "sticky", top: 40, zIndex: 100,
+        position: "sticky", top: 76, zIndex: 99,
       }}>
         {TABS.map(t => (
           <button key={t.id} onClick={() => setTab(t.id)} style={{

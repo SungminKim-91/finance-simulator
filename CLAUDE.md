@@ -130,11 +130,11 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 ### Overview
 신용잔고 기반 코호트 분석, 반대매매 연쇄 시뮬레이션, Bayesian 시나리오 추적, 과거 사례 비교를 하나의 대시보드에서 수행. Phase 1 (Market Pulse) 완료.
 
-### Phase 1 구현 범위 (v1.0.0)
+### Phase 1 구현 범위 (v1.0.0 → v1.0.1)
 - **main.jsx**: 시뮬레이터 선택기 (BTC ↔ KOSPI), ErrorBoundary, lazy import
-- **KospiApp.jsx**: 4탭 라우팅 (Pulse/Cohort/Scenario/History), Phase 2~4 placeholder
+- **KospiApp.jsx**: 4탭 라우팅 (Pulse/Cohort/Scenario/History), KospiHeader 통합
+- **KospiHeader.jsx**: 공통 헤더 (KOSPI, 삼전, 하닉, USD/KRW, VIX) — 탭 전환 시에도 항상 표시
 - **MarketPulse.jsx**: 시장 현황 대시보드
-  - 헤더 카드: KOSPI, 삼성전자, SK하이닉스, USD/KRW, VIX
   - 기간 토글: 1M/3M/6M/1Y/ALL
   - 신용잔고 & 고객예탁금 (독립 좌/우 Y축 줌, 조원 단위)
   - 반대매매 (억원 단위)
@@ -145,10 +145,11 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
   - 이벤트 로그
 - **colors.js**: KOSPI 전용 색상 팔레트 (BTC 계승 + 확장)
 - **Python 파이프라인**: `kospi/scripts/` (fetch_daily, fetch_historical, kofia_scraper, compute_models, estimate_missing, export_web)
+- **kospi/config/constants.py**: 공용 상수 (경로, 종목, 날짜형식, 모델 파라미터, 위기지표)
 
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
-- **Drag Zoom (RAF + CSS Transform)**: 드래그 중 GPU scaleY → 드래그 끝 시 1회 re-render. 전 차트 지원 (6개 메인 + 4개 글로벌 미니)
+- **Y축 줌 (Domain-only)**: Drag + Wheel 지원, domain만 변경 (SVG 찌그러짐 없음). Non-passive wheel listener로 페이지 스크롤 차단. 호버 시 Y축 배경 하이라이트
 - **Brush**: X축 범위 선택
 - **독립 줌**: Credit 좌/우축 독립 줌 (creditLeftZoom/creditRightZoom)
 - **단위 표시**: Y축 라벨 (조원/억원/십억원) + Tooltip 단위 포매팅
@@ -160,11 +161,12 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 kospi/                           # Python 데이터 파이프라인
 ├── scripts/                     # fetch_daily, kofia_scraper, compute_models, export_web, ...
 ├── data/historical/             # 과거 사례 (2008, 2015 중국, 2020, 2021)
-└── config/
+└── config/constants.py          # 공용 상수 (경로, 종목, 모델 파라미터)
 
 web/src/simulators/kospi/        # React 대시보드
-├── KospiApp.jsx                 # 4탭 메인
-├── MarketPulse.jsx              # Tab A: 시장 현황 (1124줄)
+├── KospiApp.jsx                 # 4탭 메인 + KospiHeader 통합
+├── KospiHeader.jsx              # 공통 헤더 (탭 전환 시 유지)
+├── MarketPulse.jsx              # Tab A: 시장 현황 (1105줄)
 ├── colors.js                    # 색상 팔레트
 ├── data/kospi_data.js           # 정적 JSON 데이터
 └── shared/                      # 공유 컴포넌트 (Phase 2+)
@@ -183,7 +185,7 @@ web/src/simulators/kospi/        # React 대시보드
 - **btc-liquidity-v2 v2.0.0**: Archived (Match Rate 92%, 1 iteration) → `docs/archive/2026-03/btc-liquidity-v2/`
 - **web-dashboard v1.0.0**: Completed (Match Rate 93.5%, 1 iteration)
 - **web v2.1 dual-band**: Archived (Match Rate 97.4%) → `docs/archive/2026-03/web/`
-- **kospi-crisis v1.0.0**: Completed (Phase 1 Market Pulse)
+- **kospi-crisis v1.0.1**: Completed (Gap 보완 + Y축 줌 UX 개편)
 - **Archive**: docs/archive/2026-03/
 
 ## Backlog

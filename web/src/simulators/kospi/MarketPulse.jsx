@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useRef } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import {
   ComposedChart,
   Line,
@@ -23,7 +23,6 @@ import {
   GLOBAL_DATA,
   SHORT_SELLING,
   EVENTS,
-  META,
 } from "./data/kospi_data";
 
 const FONT = "'JetBrains Mono', monospace";
@@ -248,43 +247,6 @@ function PanelBox({ children, style }) {
   );
 }
 
-function MiniCard({ label, value, change, suffix = "", inverted = false }) {
-  const color =
-    change == null || change === 0
-      ? C.muted
-      : (inverted ? change < 0 : change > 0)
-        ? C.green
-        : C.red;
-  const arrow = change > 0 ? "+" : "";
-
-  return (
-    <div
-      style={{
-        background: C.panel,
-        border: `1px solid ${C.border}`,
-        borderRadius: 8,
-        padding: "10px 14px",
-        minWidth: 120,
-        flex: 1,
-      }}
-    >
-      <div style={{ color: C.muted, fontSize: 10, marginBottom: 4 }}>
-        {label}
-      </div>
-      <div style={{ color: C.text, fontSize: 16, fontWeight: 700 }}>
-        {typeof value === "number" ? value.toLocaleString() : value ?? "—"}
-        {suffix}
-      </div>
-      {change != null && (
-        <div style={{ color, fontSize: 11, marginTop: 2 }}>
-          {arrow}
-          {change.toFixed(2)}%
-        </div>
-      )}
-    </div>
-  );
-}
-
 /* ── TermLabel with Hover Tooltip ── */
 function TermLabel({ dataKey, color }) {
   const [show, setShow] = useState(false);
@@ -384,49 +346,60 @@ function CustomTooltipContent({ active, payload, label }) {
   );
 }
 
-/* ── Zoom Overlay (RAF + CSS Transform) ── */
-function ZoomOverlay({ zoom, onZoomChange, side = "left", chartRef, fullWidth = false }) {
+/* ── Zoom Overlay (Domain-only: Drag + Wheel) ── */
+/* TradingView 방식: Y축 domain만 변경 → SVG 찌그러짐 없음 */
+const AXIS_W = 72; // Y축 틱 숫자 + 라벨 영역 너비
+function ZoomOverlay({ zoom, onZoomChange, side = "left", fullWidth = false }) {
   const dragRef = useRef(null);
   const rafRef = useRef(null);
+  const overlayRef = useRef(null);
+  const [hovered, setHovered] = useState(false);
 
-  const applyVisualZoom = useCallback((factor) => {
-    if (!chartRef?.current) return;
-    const svg = chartRef.current.querySelector("svg");
-    if (!svg) return;
-    svg.style.transform = `scaleY(${factor})`;
-    svg.style.transformOrigin = "center center";
-    svg.style.willChange = "transform";
-    chartRef.current.style.overflow = "hidden";
-  }, [chartRef]);
+  // Refs for stable access inside non-passive wheel listener
+  const zoomRef = useRef(zoom);
+  zoomRef.current = zoom;
+  const cbRef = useRef(onZoomChange);
+  cbRef.current = onZoomChange;
 
-  const clearVisualZoom = useCallback(() => {
-    if (!chartRef?.current) return;
-    const svg = chartRef.current.querySelector("svg");
-    if (!svg) return;
-    svg.style.transform = "";
-    svg.style.willChange = "";
-    chartRef.current.style.overflow = "";
-  }, [chartRef]);
+  const clampZoom = (z) => Math.max(0.2, Math.min(10, z));
+
+  // Non-passive wheel listener — prevents page scroll on Y-axis area
+  useEffect(() => {
+    const el = overlayRef.current;
+    if (!el) return;
+    const handleWheel = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const factor = e.deltaY > 0 ? 1 / 1.08 : 1.08;
+      cbRef.current(clampZoom(zoomRef.current * factor));
+    };
+    el.addEventListener("wheel", handleWheel, { passive: false });
+    return () => el.removeEventListener("wheel", handleWheel);
+  }, []);
 
   return (
     <div
+      ref={overlayRef}
       style={{
         position: "absolute",
         top: 0,
         [side]: 0,
-        width: fullWidth ? "100%" : 55,
+        width: fullWidth ? "100%" : AXIS_W,
         height: "100%",
         cursor: "ns-resize",
         zIndex: 10,
+        background: hovered ? "rgba(255,255,255,0.06)" : "transparent",
+        transition: "background 0.15s",
       }}
-      title="드래그: Y축 줌 | 더블클릭: 리셋"
+      title="드래그/휠: Y축 줌 | 더블클릭: 리셋"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       onPointerDown={(e) => {
         e.currentTarget.setPointerCapture(e.pointerId);
         dragRef.current = {
           startY: e.clientY,
           lastY: e.clientY,
           startZoom: zoom,
-          currentZoom: zoom,
         };
       }}
       onPointerMove={(e) => {
@@ -436,23 +409,18 @@ function ZoomOverlay({ zoom, onZoomChange, side = "left", chartRef, fullWidth = 
         rafRef.current = requestAnimationFrame(() => {
           if (!dragRef.current) { rafRef.current = null; return; }
           const delta = dragRef.current.startY - dragRef.current.lastY;
-          const newZoom = Math.max(
-            0.2,
-            Math.min(10, dragRef.current.startZoom * Math.exp(delta * 0.004)),
+          const newZoom = clampZoom(
+            dragRef.current.startZoom * Math.exp(delta * 0.004),
           );
-          dragRef.current.currentZoom = newZoom;
-          applyVisualZoom(newZoom / dragRef.current.startZoom);
+          onZoomChange(newZoom);
           rafRef.current = null;
         });
       }}
       onPointerUp={() => {
         if (rafRef.current) { cancelAnimationFrame(rafRef.current); rafRef.current = null; }
-        const finalZoom = dragRef.current?.currentZoom ?? zoom;
         dragRef.current = null;
-        clearVisualZoom();
-        onZoomChange(finalZoom);
       }}
-      onDoubleClick={() => { clearVisualZoom(); onZoomChange(1); }}
+      onDoubleClick={() => onZoomChange(1)}
     />
   );
 }
@@ -474,12 +442,6 @@ export default function MarketPulse() {
   const [shortsZoom, setShortsZoom] = useState(1);
   const [globalZooms, setGlobalZooms] = useState({ vix: 1, sp500: 1, wti: 1, usd_krw: 1 });
 
-  // Chart refs (for CSS transform zoom)
-  const creditChartRef = useRef(null);
-  const forcedLiqChartRef = useRef(null);
-  const flowsChartRef = useRef(null);
-  const shortsChartRef = useRef(null);
-  const globalChartRefs = useRef({});
 
   // Investor flows view mode & filter
   const [flowsMode, setFlowsMode] = useState("cumulative");
@@ -589,7 +551,6 @@ export default function MarketPulse() {
   );
 
   const latest = market[market.length - 1] || {};
-  const latestG = global[global.length - 1] || {};
 
   // Visible-range cumulative summary (for summary cards)
   const flowsSummary = useMemo(() => ({
@@ -614,29 +575,6 @@ export default function MarketPulse() {
 
   return (
     <div style={{ fontFamily: FONT }}>
-      {/* ── Header Cards ── */}
-      <div
-        style={{ display: "flex", gap: 8, marginBottom: 12, flexWrap: "wrap" }}
-      >
-        <MiniCard
-          label="KOSPI"
-          value={latest.kospi}
-          change={latest.kospi_change_pct}
-        />
-        <MiniCard
-          label="Samsung"
-          value={latest.samsung}
-          change={latest.samsung_change_pct}
-        />
-        <MiniCard
-          label="SK Hynix"
-          value={latest.hynix}
-          change={latest.hynix_change_pct}
-        />
-        <MiniCard label="USD/KRW" value={latestG.usd_krw} change={null} />
-        <MiniCard label="VIX" value={latestG.vix} change={null} />
-      </div>
-
       {/* ── Period Selector ── */}
       <div style={{ display: "flex", gap: 2, marginBottom: 16 }}>
         {PERIODS.map((p) => (
@@ -659,19 +597,12 @@ export default function MarketPulse() {
             {p.id}
           </button>
         ))}
-        <div style={{ flex: 1 }} />
-        <div style={{ color: C.dim, fontSize: 10, alignSelf: "center" }}>
-          Updated: {META.last_updated?.slice(0, 16).replace("T", " ")}
-          {META.data_source === "sample" && (
-            <span style={{ color: C.yellow, marginLeft: 6 }}>[SAMPLE]</span>
-          )}
-        </div>
       </div>
 
       {/* ── Section 1a: 신용잔고 & 고객예탁금 ── */}
       <PanelBox>
         <SectionTitle>신용잔고 & 고객예탁금 (Credit & Deposit)</SectionTitle>
-        <div ref={creditChartRef} style={{ position: "relative" }}>
+        <div style={{ position: "relative" }}>
           <ResponsiveContainer width="100%" height={220}>
             <ComposedChart
               data={credit}
@@ -737,13 +668,11 @@ export default function MarketPulse() {
             zoom={creditLeftZoom}
             onZoomChange={setCreditLeftZoom}
             side="left"
-            chartRef={creditChartRef}
           />
           <ZoomOverlay
             zoom={creditRightZoom}
             onZoomChange={setCreditRightZoom}
             side="right"
-            chartRef={creditChartRef}
           />
         </div>
         {credit[credit.length - 1]?.estimated && (
@@ -764,7 +693,7 @@ export default function MarketPulse() {
       {/* ── Section 1b: 반대매매 ── */}
       <PanelBox>
         <SectionTitle>반대매매 (Forced Liquidation)</SectionTitle>
-        <div ref={forcedLiqChartRef} style={{ position: "relative" }}>
+        <div style={{ position: "relative" }}>
           <ResponsiveContainer width="100%" height={120}>
             <BarChart
               data={creditVisible}
@@ -794,7 +723,6 @@ export default function MarketPulse() {
             zoom={forcedLiqZoom}
             onZoomChange={setForcedLiqZoom}
             side="left"
-            chartRef={forcedLiqChartRef}
           />
         </div>
       </PanelBox>
@@ -908,7 +836,7 @@ export default function MarketPulse() {
         </div>
 
         {/* Chart */}
-        <div ref={flowsChartRef} style={{ position: "relative" }}>
+        <div style={{ position: "relative" }}>
           <ResponsiveContainer width="100%" height={260}>
             <ComposedChart
               data={flowsMode === "cumulative" ? cumFlows : flowsVisible}
@@ -1016,7 +944,6 @@ export default function MarketPulse() {
             zoom={flowsZoom}
             onZoomChange={setFlowsZoom}
             side="left"
-            chartRef={flowsChartRef}
           />
         </div>
       </PanelBox>
@@ -1024,7 +951,7 @@ export default function MarketPulse() {
       {/* ── Section 3: 공매도 ── */}
       <PanelBox>
         <SectionTitle>공매도 (Short Selling)</SectionTitle>
-        <div ref={shortsChartRef} style={{ position: "relative" }}>
+        <div style={{ position: "relative" }}>
           <ResponsiveContainer width="100%" height={180}>
             <LineChart
               data={shorts}
@@ -1067,7 +994,6 @@ export default function MarketPulse() {
             zoom={shortsZoom}
             onZoomChange={setShortsZoom}
             side="left"
-            chartRef={shortsChartRef}
           />
         </div>
       </PanelBox>
@@ -1095,10 +1021,7 @@ export default function MarketPulse() {
                   {global[global.length - 1]?.[key]}
                 </span>
               </div>
-              <div
-                ref={(el) => { globalChartRefs.current[key] = el; }}
-                style={{ position: "relative" }}
-              >
+              <div style={{ position: "relative" }}>
                 <ResponsiveContainer width="100%" height={90}>
                   <LineChart
                     data={global}
@@ -1123,7 +1046,6 @@ export default function MarketPulse() {
                   zoom={globalZooms[key]}
                   onZoomChange={(z) => setGlobalZooms((prev) => ({ ...prev, [key]: z }))}
                   side="left"
-                  chartRef={{ current: globalChartRefs.current[key] }}
                   fullWidth
                 />
               </div>
