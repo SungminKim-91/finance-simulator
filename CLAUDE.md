@@ -127,3 +127,6 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **web-dashboard v1.0.0**: Completed (Match Rate 93.5%, 1 iteration)
 - **web v2.1 dual-band**: Archived (Match Rate 97.4%) → `docs/archive/2026-03/web/`
 - **Archive**: docs/archive/2026-03/
+
+## Backlog
+- **gm2-data-improvement**: 2025년 lag=6 불일치 개선 — GM2 데이터 고착(11개월), HY 단기 충격, BTC 독자 요인 → `docs/01-plan/features/gm2-data-improvement.plan.md`
