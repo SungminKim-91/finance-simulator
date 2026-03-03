@@ -88,13 +88,16 @@ export const CREDIT_DATA = DATES.map((date, i) => ({
 
 export const INVESTOR_FLOWS = DATES.map((date) => {
   const indiv = Math.round(-4000 + rng() * 10000);
+  const finInvest = Math.round(-500 + rng() * 2000); // 금투(ETF): 개인의 ~20%
   const foreign = Math.round(-5000 + rng() * 8000);
+  const noise = Math.round((rng() - 0.5) * 500);
   return {
     date,
     individual_billion: indiv,
+    financial_invest_billion: finInvest,
+    retail_billion: indiv + finInvest, // 개인+금투 합산
     foreign_billion: foreign,
-    institution_billion:
-      -(indiv + foreign) + Math.round((rng() - 0.5) * 500),
+    institution_billion: -(indiv + finInvest + foreign) + noise,
   };
 });
 

@@ -125,35 +125,42 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 
 ---
 
-## KOSPI Crisis Detector v1.0.0
+## KOSPI Crisis Detector v1.0.2
 
 ### Overview
 신용잔고 기반 코호트 분석, 반대매매 연쇄 시뮬레이션, Bayesian 시나리오 추적, 과거 사례 비교를 하나의 대시보드에서 수행. Phase 1 (Market Pulse) 완료.
 
-### Phase 1 구현 범위 (v1.0.0 → v1.0.1)
+### Phase 1 구현 범위 (v1.0.0 → v1.0.2)
 - **main.jsx**: 시뮬레이터 선택기 (BTC ↔ KOSPI), ErrorBoundary, lazy import
 - **KospiApp.jsx**: 4탭 라우팅 (Pulse/Cohort/Scenario/History), KospiHeader 통합
 - **KospiHeader.jsx**: 공통 헤더 (KOSPI, 삼전, 하닉, USD/KRW, VIX) — 탭 전환 시에도 항상 표시
-- **MarketPulse.jsx**: 시장 현황 대시보드
-  - 기간 토글: 1M/3M/6M/1Y/ALL
+- **MarketPulse.jsx**: 시장 현황 대시보드 (1350줄)
+  - **DateRangeControl**: Period 버튼(1M/3M/6M/1Y/ALL) + 날짜 입력(년/월/일) + Brush 양방향 동기화
   - 신용잔고 & 고객예탁금 (독립 좌/우 Y축 줌, 조원 단위)
-  - 반대매매 (억원 단위)
-  - 투자자 수급: 누적 Area / 일자별 Line+Area 토글, 투자자 필터, 요약 카드
+  - 반대매매: Area Fill + Threshold 위험 기준선 (억원 단위)
+  - 투자자 수급: 누적 Area / 일자별 Grouped Bar 토글, 개인+금투/외국인/기관 필터, 요약 카드
   - 공매도 + 정부 조치 이벤트 마커
-  - 글로벌 컨텍스트 미니차트 4개
+  - 글로벌 컨텍스트 미니차트 4개 (시작/끝값 + 변동률%)
   - DRAM (Phase 2 placeholder)
   - 이벤트 로그
 - **colors.js**: KOSPI 전용 색상 팔레트 (BTC 계승 + 확장)
 - **Python 파이프라인**: `kospi/scripts/` (fetch_daily, fetch_historical, kofia_scraper, compute_models, estimate_missing, export_web)
 - **kospi/config/constants.py**: 공용 상수 (경로, 종목, 날짜형식, 모델 파라미터, 위기지표)
 
+### v1.0.2 변경사항 (차트 가독성 개선)
+- **개인+금투 합산**: individual → retail_billion (개인+금투 ETF 합산), 라벨/필터/요약카드 전환
+- **투자자 수급 일자별**: Line+Area → Grouped Bar (3색 막대, 양수/음수 시각적 비교)
+- **반대매매**: BarChart → Area Fill + Threshold ReferenceLine (위험 구간 강조)
+- **글로벌 미니차트**: 시작/끝값 오버레이 + 변동률% (VIX/USD_KRW 반전 색상)
+- **DateRangeControl 통합**: 개별 Brush 4개 → 상단 글로벌 1개 (Period + DateField + Brush)
+
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
 - **Y축 줌 (Domain-only)**: Drag + Wheel 지원, domain만 변경 (SVG 찌그러짐 없음). Non-passive wheel listener로 페이지 스크롤 차단. 호버 시 Y축 배경 하이라이트
-- **Brush**: X축 범위 선택
+- **DateRangeControl**: 글로벌 날짜 범위 (Period 버튼 + DateField 년/월/일 입력 + Brush 드래그) — 양방향 동기화
 - **독립 줌**: Credit 좌/우축 독립 줌 (creditLeftZoom/creditRightZoom)
 - **단위 표시**: Y축 라벨 (조원/억원/십억원) + Tooltip 단위 포매팅
-- **투자자 수급**: 누적/일자별 모드 토글 + 개인/외국인/기관 필터 토글 + 요약 카드
+- **투자자 수급**: 누적 Area / 일자별 Grouped Bar 토글 + 개인+금투/외국인/기관 필터 + 요약 카드
 - **용어 사전**: 한국어 금융 용어 hover tooltip (TERM dictionary)
 
 ### 폴더 구조
@@ -166,9 +173,9 @@ kospi/                           # Python 데이터 파이프라인
 web/src/simulators/kospi/        # React 대시보드
 ├── KospiApp.jsx                 # 4탭 메인 + KospiHeader 통합
 ├── KospiHeader.jsx              # 공통 헤더 (탭 전환 시 유지)
-├── MarketPulse.jsx              # Tab A: 시장 현황 (1105줄)
+├── MarketPulse.jsx              # Tab A: 시장 현황 (1350줄)
 ├── colors.js                    # 색상 팔레트
-├── data/kospi_data.js           # 정적 JSON 데이터
+├── data/kospi_data.js           # 정적 JSON 데이터 (retail_billion, financial_invest_billion 포함)
 └── shared/                      # 공유 컴포넌트 (Phase 2+)
 ```
 
@@ -185,7 +192,7 @@ web/src/simulators/kospi/        # React 대시보드
 - **btc-liquidity-v2 v2.0.0**: Archived (Match Rate 92%, 1 iteration) → `docs/archive/2026-03/btc-liquidity-v2/`
 - **web-dashboard v1.0.0**: Completed (Match Rate 93.5%, 1 iteration)
 - **web v2.1 dual-band**: Archived (Match Rate 97.4%) → `docs/archive/2026-03/web/`
-- **kospi-crisis v1.0.1**: Completed (Gap 보완 + Y축 줌 UX 개편)
+- **kospi-crisis v1.0.2**: Completed (차트 가독성 개선, Match Rate 100%)
 - **Archive**: docs/archive/2026-03/
 
 ## Backlog

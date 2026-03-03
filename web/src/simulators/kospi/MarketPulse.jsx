@@ -10,8 +10,8 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-  BarChart,
   LineChart,
+  AreaChart,
   ReferenceLine,
   Brush,
 } from "recharts";
@@ -26,6 +26,7 @@ import {
 } from "./data/kospi_data";
 
 const FONT = "'JetBrains Mono', monospace";
+const FORCED_LIQ_THRESHOLD = 200; // 십억원 = 2,000억원
 
 const PERIODS = [
   { id: "1M", days: 22 },
@@ -53,6 +54,10 @@ const TERM = {
     label: "개인 (Individual)",
     desc: "개인투자자 일별 순매수/순매도 금액",
   },
+  retail_billion: {
+    label: "개인+금투 (Retail)",
+    desc: "개인투자자 + 금융투자(ETF) 합산 순매수/순매도 금액",
+  },
   foreign_billion: {
     label: "외국인 (Foreign)",
     desc: "외국인투자자 일별 순매수/순매도 금액. 연속 순매도 시 경고",
@@ -69,6 +74,10 @@ const TERM = {
     label: "개인 누적 (Cum. Individual)",
     desc: "개인투자자 누적 순매수 금액",
   },
+  cum_retail: {
+    label: "개인+금투 누적 (Cum. Retail)",
+    desc: "개인+금투 합산 누적 순매수 금액",
+  },
   cum_foreign: {
     label: "외국인 누적 (Cum. Foreign)",
     desc: "외국인투자자 누적 순매수 금액",
@@ -80,17 +89,6 @@ const TERM = {
 };
 
 /* ── Shared Styles ── */
-const TT = {
-  contentStyle: {
-    background: C.panel,
-    border: `1px solid ${C.border}`,
-    borderRadius: 8,
-    fontSize: 11,
-    fontFamily: FONT,
-  },
-  labelStyle: { color: C.muted, fontSize: 10 },
-};
-
 const axisProps = { stroke: C.dim, fontSize: 10, fontFamily: FONT };
 
 /* ── Nice Scale Algorithm ── */
@@ -166,25 +164,22 @@ function fmtAxis(v) {
 }
 
 /* ── Unit Formatters ── */
-// 조원 (값: 십억원 → 조원)
 function fmtTril(v) {
   if (v === 0) return "0";
   return (v / 1000).toFixed(Math.abs(v) >= 10000 ? 0 : 1);
 }
 
-// 억원 (값: 십억원 → 억원)
 function fmtHundM(v) {
   if (v === 0) return "0";
   return (v * 10).toLocaleString();
 }
 
-// Tooltip value formatter
 function fmtTooltipVal(dataKey, value) {
   if (typeof value !== "number") return value;
   const trilKeys = [
     "credit_balance_billion", "deposit_billion",
-    "individual_billion", "foreign_billion", "institution_billion",
-    "cum_individual", "cum_foreign", "cum_institution",
+    "individual_billion", "retail_billion", "foreign_billion", "institution_billion",
+    "cum_individual", "cum_retail", "cum_foreign", "cum_institution",
   ];
   if (trilKeys.includes(dataKey)) {
     return `${(value / 1000).toFixed(1)} 조원`;
@@ -198,7 +193,6 @@ function fmtTooltipVal(dataKey, value) {
   return value.toLocaleString();
 }
 
-// YAxis label helper
 function yAxisLabel(text, side = "left") {
   return {
     value: text,
@@ -259,7 +253,7 @@ function TermLabel({ dataKey, color }) {
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
     >
-      <span style={{ color, fontSize: 10 }}>● {term.label}</span>
+      <span style={{ color, fontSize: 10 }}>{"\u25CF"} {term.label}</span>
       {show && (
         <div
           style={{
@@ -346,16 +340,57 @@ function CustomTooltipContent({ active, payload, label }) {
   );
 }
 
+/* ── Date Input Field ── */
+function DateField({ value, onChange, width = 32 }) {
+  const [local, setLocal] = useState(String(value));
+  useEffect(() => { setLocal(String(value)); }, [value]);
+
+  const commit = () => {
+    const num = parseInt(local, 10);
+    if (!isNaN(num) && num > 0) onChange(num);
+    else setLocal(String(value));
+  };
+
+  return (
+    <input
+      type="text"
+      value={local}
+      onChange={(e) => setLocal(e.target.value)}
+      onBlur={commit}
+      onKeyDown={(e) => e.key === "Enter" && (commit(), e.target.blur())}
+      style={{
+        background: "transparent",
+        border: `1px solid ${C.border}`,
+        borderRadius: 4,
+        color: C.text,
+        fontFamily: FONT,
+        fontSize: 11,
+        fontWeight: 600,
+        padding: "3px 4px",
+        width,
+        textAlign: "center",
+        outline: "none",
+        transition: "border-color 0.15s",
+      }}
+      onFocus={(e) => {
+        e.target.select();
+        e.target.style.borderColor = C.kospi;
+      }}
+      onBlurCapture={(e) => {
+        e.target.style.borderColor = C.border;
+      }}
+    />
+  );
+}
+
 /* ── Zoom Overlay (Domain-only: Drag + Wheel) ── */
-/* TradingView 방식: Y축 domain만 변경 → SVG 찌그러짐 없음 */
-const AXIS_W = 72; // Y축 틱 숫자 + 라벨 영역 너비
+const AXIS_W = 72;
 function ZoomOverlay({ zoom, onZoomChange, side = "left", fullWidth = false }) {
   const dragRef = useRef(null);
   const rafRef = useRef(null);
   const overlayRef = useRef(null);
   const [hovered, setHovered] = useState(false);
 
-  // Refs for stable access inside non-passive wheel listener
   const zoomRef = useRef(zoom);
   zoomRef.current = zoom;
   const cbRef = useRef(onZoomChange);
@@ -363,7 +398,6 @@ function ZoomOverlay({ zoom, onZoomChange, side = "left", fullWidth = false }) {
 
   const clampZoom = (z) => Math.max(0.2, Math.min(10, z));
 
-  // Non-passive wheel listener — prevents page scroll on Y-axis area
   useEffect(() => {
     const el = overlayRef.current;
     if (!el) return;
@@ -428,13 +462,15 @@ function ZoomOverlay({ zoom, onZoomChange, side = "left", fullWidth = false }) {
 /* ── Main Component ── */
 
 export default function MarketPulse() {
-  const [period, setPeriod] = useState("3M");
+  // All available dates (shared across datasets)
+  const allDates = useMemo(() => MARKET_DATA.map((d) => d.date), []);
 
-  // Brush indices
-  const [creditBrush, setCreditBrush] = useState(null);
-  const [flowsBrush, setFlowsBrush] = useState(null);
+  // Global date range — default: full data
+  const [startDate, setStartDate] = useState(() => allDates[0]);
+  const [endDate, setEndDate] = useState(() => allDates[allDates.length - 1]);
+  const [brushKey, setBrushKey] = useState(0);
 
-  // Zoom states (default 1.0, range 0.2~10)
+  // Zoom states
   const [creditLeftZoom, setCreditLeftZoom] = useState(1);
   const [creditRightZoom, setCreditRightZoom] = useState(1);
   const [forcedLiqZoom, setForcedLiqZoom] = useState(1);
@@ -442,40 +478,135 @@ export default function MarketPulse() {
   const [shortsZoom, setShortsZoom] = useState(1);
   const [globalZooms, setGlobalZooms] = useState({ vix: 1, sp500: 1, wti: 1, usd_krw: 1 });
 
-
-  // Investor flows view mode & filter
+  // Investor flows UI
   const [flowsMode, setFlowsMode] = useState("cumulative");
   const [flowsFilter, setFlowsFilter] = useState(
-    () => new Set(["individual", "foreign", "institution"]),
+    () => new Set(["retail", "foreign", "institution"]),
   );
 
-  const days = PERIODS.find((p) => p.id === period)?.days ?? 9999;
-  const market = useMemo(() => MARKET_DATA.slice(-days), [days]);
-  const credit = useMemo(() => CREDIT_DATA.slice(-days), [days]);
-  const flows = useMemo(() => INVESTOR_FLOWS.slice(-days), [days]);
-  const global = useMemo(() => GLOBAL_DATA.slice(-days), [days]);
-  const shorts = useMemo(() => SHORT_SELLING.slice(-days), [days]);
+  // Derive active period from dates
+  const activePeriod = useMemo(() => {
+    if (endDate !== allDates[allDates.length - 1]) return null;
+    const startIdx = allDates.indexOf(startDate);
+    if (startIdx === 0) return "ALL";
+    for (const p of PERIODS) {
+      const expectedIdx = Math.max(0, allDates.length - p.days);
+      if (startIdx === expectedIdx) return p.id;
+    }
+    return null;
+  }, [allDates, startDate, endDate]);
 
-  // Reset brush and zoom when period changes
-  const handlePeriod = useCallback((id) => {
-    setPeriod(id);
-    setCreditBrush(null);
-    setFlowsBrush(null);
-    setCreditLeftZoom(1);
-    setCreditRightZoom(1);
-    setForcedLiqZoom(1);
-    setFlowsZoom(1);
-    setShortsZoom(1);
-    setGlobalZooms({ vix: 1, sp500: 1, wti: 1, usd_krw: 1 });
-  }, []);
+  // Brush position (for controlled Brush)
+  const brushStartIdx = useMemo(() => {
+    const idx = allDates.indexOf(startDate);
+    return idx >= 0 ? idx : 0;
+  }, [allDates, startDate]);
 
-  // Investor flows filter toggle
+  const brushEndIdx = useMemo(() => {
+    const idx = allDates.indexOf(endDate);
+    return idx >= 0 ? idx : allDates.length - 1;
+  }, [allDates, endDate]);
+
+  // Filter all datasets by global date range
+  const market = useMemo(
+    () => MARKET_DATA.filter((d) => d.date >= startDate && d.date <= endDate),
+    [startDate, endDate],
+  );
+  const credit = useMemo(
+    () => CREDIT_DATA.filter((d) => d.date >= startDate && d.date <= endDate),
+    [startDate, endDate],
+  );
+  const flows = useMemo(
+    () => INVESTOR_FLOWS.filter((d) => d.date >= startDate && d.date <= endDate),
+    [startDate, endDate],
+  );
+  const global = useMemo(
+    () => GLOBAL_DATA.filter((d) => d.date >= startDate && d.date <= endDate),
+    [startDate, endDate],
+  );
+  const shorts = useMemo(
+    () => SHORT_SELLING.filter((d) => d.date >= startDate && d.date <= endDate),
+    [startDate, endDate],
+  );
+
+  // Find nearest valid date helper
+  const findNearestDate = useCallback(
+    (y, m, d) => {
+      const target = `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+      let best = allDates[0];
+      let bestDiff = Infinity;
+      for (const ad of allDates) {
+        const diff = Math.abs(new Date(ad + "T00:00:00") - new Date(target + "T00:00:00"));
+        if (diff < bestDiff) {
+          bestDiff = diff;
+          best = ad;
+        }
+      }
+      return best;
+    },
+    [allDates],
+  );
+
+  // Period handler
+  const handlePeriod = useCallback(
+    (id) => {
+      const p = PERIODS.find((pp) => pp.id === id);
+      const days = p?.days ?? 9999;
+      const startIdx = Math.max(0, allDates.length - days);
+      setStartDate(allDates[startIdx]);
+      setEndDate(allDates[allDates.length - 1]);
+      setBrushKey((k) => k + 1);
+      setCreditLeftZoom(1);
+      setCreditRightZoom(1);
+      setForcedLiqZoom(1);
+      setFlowsZoom(1);
+      setShortsZoom(1);
+      setGlobalZooms({ vix: 1, sp500: 1, wti: 1, usd_krw: 1 });
+    },
+    [allDates],
+  );
+
+  // Date input handlers
+  const handleStartDateChange = useCallback(
+    (y, m, d) => {
+      const nearest = findNearestDate(y, m, d);
+      if (nearest <= endDate) {
+        setStartDate(nearest);
+        setBrushKey((k) => k + 1);
+      }
+    },
+    [findNearestDate, endDate],
+  );
+
+  const handleEndDateChange = useCallback(
+    (y, m, d) => {
+      const nearest = findNearestDate(y, m, d);
+      if (nearest >= startDate) {
+        setEndDate(nearest);
+        setBrushKey((k) => k + 1);
+      }
+    },
+    [findNearestDate, startDate],
+  );
+
+  // Brush drag handler
+  const handleBrushChange = useCallback(
+    ({ startIndex, endIndex }) => {
+      if (startIndex != null && endIndex != null) {
+        setStartDate(allDates[startIndex]);
+        setEndDate(allDates[endIndex]);
+      }
+    },
+    [allDates],
+  );
+
+  // Flows filter toggle
   const toggleFilter = useCallback((key) => {
     setFlowsFilter((prev) => {
       if (key === "all") {
         return prev.size === 3
           ? new Set()
-          : new Set(["individual", "foreign", "institution"]);
+          : new Set(["retail", "foreign", "institution"]);
       }
       const next = new Set(prev);
       if (next.has(key)) next.delete(key);
@@ -484,120 +615,181 @@ export default function MarketPulse() {
     });
   }, []);
 
-  // Visible slices based on brush
-  const creditVisible = useMemo(() => {
-    if (!creditBrush) return credit;
-    return credit.slice(creditBrush.startIndex, creditBrush.endIndex + 1);
-  }, [credit, creditBrush]);
-
-  const flowsVisible = useMemo(() => {
-    if (!flowsBrush) return flows;
-    return flows.slice(flowsBrush.startIndex, flowsBrush.endIndex + 1);
-  }, [flows, flowsBrush]);
-
-  // Compute axes with zoom + niceScale
+  // Compute axes with zoom + niceScale (using filtered data)
   const creditAxis = useMemo(
-    () => computeAxis(creditVisible, ["credit_balance_billion"], creditLeftZoom),
-    [creditVisible, creditLeftZoom],
+    () => computeAxis(credit, ["credit_balance_billion"], creditLeftZoom),
+    [credit, creditLeftZoom],
   );
   const depositAxis = useMemo(
-    () => computeAxis(creditVisible, ["deposit_billion"], creditRightZoom),
-    [creditVisible, creditRightZoom],
+    () => computeAxis(credit, ["deposit_billion"], creditRightZoom),
+    [credit, creditRightZoom],
   );
   const forcedLiqAxis = useMemo(
-    () => computeAxis(creditVisible, ["forced_liq_billion"], forcedLiqZoom),
-    [creditVisible, forcedLiqZoom],
+    () => computeAxis(credit, ["forced_liq_billion"], forcedLiqZoom),
+    [credit, forcedLiqZoom],
   );
-  // Cumulative flows data
+
+  // Cumulative flows (from filtered data)
   const cumFlows = useMemo(() => {
-    let ci = 0, cf = 0, cn = 0;
-    return flowsVisible.map((row) => {
-      ci += row.individual_billion || 0;
+    let cr = 0, cf = 0, cn = 0;
+    return flows.map((row) => {
+      cr += row.retail_billion || 0;
       cf += row.foreign_billion || 0;
       cn += row.institution_billion || 0;
-      return { ...row, cum_individual: ci, cum_foreign: cf, cum_institution: cn };
+      return { ...row, cum_retail: cr, cum_foreign: cf, cum_institution: cn };
     });
-  }, [flowsVisible]);
+  }, [flows]);
 
-  // Active flow keys based on mode + filter
   const activeFlowKeys = useMemo(() => {
     const keys = [];
     const prefix = flowsMode === "cumulative" ? "cum_" : "";
     const suffix = flowsMode === "cumulative" ? "" : "_billion";
-    if (flowsFilter.has("individual")) keys.push(`${prefix}individual${suffix}`);
+    if (flowsFilter.has("retail")) keys.push(`${prefix}retail${suffix}`);
     if (flowsFilter.has("foreign")) keys.push(`${prefix}foreign${suffix}`);
     if (flowsFilter.has("institution")) keys.push(`${prefix}institution${suffix}`);
     return keys;
   }, [flowsMode, flowsFilter]);
 
   const flowsAxis = useMemo(() => {
-    const data = flowsMode === "cumulative" ? cumFlows : flowsVisible;
+    const data = flowsMode === "cumulative" ? cumFlows : flows;
     if (activeFlowKeys.length === 0) return niceScale(0, 1, 5);
     return computeAxis(data, activeFlowKeys, flowsZoom);
-  }, [flowsMode, cumFlows, flowsVisible, activeFlowKeys, flowsZoom]);
+  }, [flowsMode, cumFlows, flows, activeFlowKeys, flowsZoom]);
 
   const shortsAxis = useMemo(
     () => computeAxis(shorts, ["market_total_billion"], shortsZoom),
     [shorts, shortsZoom],
   );
   const globalAxes = useMemo(
-    () => Object.fromEntries(
-      ["vix", "sp500", "wti", "usd_krw"].map((k) => [
-        k,
-        computeAxis(global, [k], globalZooms[k], 3),
-      ]),
-    ),
+    () =>
+      Object.fromEntries(
+        ["vix", "sp500", "wti", "usd_krw"].map((k) => [
+          k,
+          computeAxis(global, [k], globalZooms[k], 3),
+        ]),
+      ),
     [global, globalZooms],
   );
 
   const latest = market[market.length - 1] || {};
 
-  // Visible-range cumulative summary (for summary cards)
-  const flowsSummary = useMemo(() => ({
-    individual: flowsVisible.reduce((a, r) => a + (r.individual_billion || 0), 0),
-    foreign: flowsVisible.reduce((a, r) => a + (r.foreign_billion || 0), 0),
-    institution: flowsVisible.reduce((a, r) => a + (r.institution_billion || 0), 0),
-  }), [flowsVisible]);
-
-  // Short selling gov ban start date
-  const banDate = useMemo(
-    () => shorts.find((s) => s.gov_ban)?.date,
-    [shorts],
+  const flowsSummary = useMemo(
+    () => ({
+      retail: flows.reduce((a, r) => a + (r.retail_billion || 0), 0),
+      foreign: flows.reduce((a, r) => a + (r.foreign_billion || 0), 0),
+      institution: flows.reduce((a, r) => a + (r.institution_billion || 0), 0),
+    }),
+    [flows],
   );
 
-  const handleCreditBrush = useCallback((brush) => {
-    setCreditBrush(brush);
-  }, []);
+  const banDate = useMemo(() => shorts.find((s) => s.gov_ban)?.date, [shorts]);
 
-  const handleFlowsBrush = useCallback((brush) => {
-    setFlowsBrush(brush);
-  }, []);
+  // Parse dates for DateField
+  const [sY, sM, sD] = startDate.split("-").map(Number);
+  const [eY, eM, eD] = endDate.split("-").map(Number);
 
   return (
     <div style={{ fontFamily: FONT }}>
-      {/* ── Period Selector ── */}
-      <div style={{ display: "flex", gap: 2, marginBottom: 16 }}>
-        {PERIODS.map((p) => (
-          <button
-            key={p.id}
-            onClick={() => handlePeriod(p.id)}
-            style={{
-              background: period === p.id ? C.kospi : "transparent",
-              color: period === p.id ? "#fff" : C.muted,
-              border: `1px solid ${period === p.id ? C.kospi : C.border}`,
-              borderRadius: 6,
-              padding: "4px 12px",
-              fontSize: 10,
-              fontWeight: 600,
-              cursor: "pointer",
-              fontFamily: FONT,
-              transition: "all 0.15s",
-            }}
+      {/* ── Global Date Range Control ── */}
+      <PanelBox style={{ marginBottom: 16, padding: "12px 16px" }}>
+        {/* Period Buttons */}
+        <div style={{ display: "flex", gap: 2, marginBottom: 10 }}>
+          {PERIODS.map((p) => (
+            <button
+              key={p.id}
+              onClick={() => handlePeriod(p.id)}
+              style={{
+                background: activePeriod === p.id ? C.kospi : "transparent",
+                color: activePeriod === p.id ? "#fff" : C.muted,
+                border: `1px solid ${activePeriod === p.id ? C.kospi : C.border}`,
+                borderRadius: 6,
+                padding: "4px 12px",
+                fontSize: 10,
+                fontWeight: 600,
+                cursor: "pointer",
+                fontFamily: FONT,
+                transition: "all 0.15s",
+              }}
+            >
+              {p.id}
+            </button>
+          ))}
+        </div>
+
+        {/* Date Input Row */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 3,
+            marginBottom: 8,
+            flexWrap: "wrap",
+          }}
+        >
+          <DateField
+            value={sY}
+            onChange={(v) => handleStartDateChange(v, sM, sD)}
+            width={42}
+          />
+          <span style={{ color: C.dim, fontSize: 10 }}>년</span>
+          <DateField
+            value={sM}
+            onChange={(v) => handleStartDateChange(sY, v, sD)}
+            width={28}
+          />
+          <span style={{ color: C.dim, fontSize: 10 }}>월</span>
+          <DateField
+            value={sD}
+            onChange={(v) => handleStartDateChange(sY, sM, v)}
+            width={28}
+          />
+          <span style={{ color: C.dim, fontSize: 10 }}>일</span>
+
+          <span style={{ color: C.muted, fontSize: 12, margin: "0 8px", fontWeight: 600 }}>
+            ~
+          </span>
+
+          <DateField
+            value={eY}
+            onChange={(v) => handleEndDateChange(v, eM, eD)}
+            width={42}
+          />
+          <span style={{ color: C.dim, fontSize: 10 }}>년</span>
+          <DateField
+            value={eM}
+            onChange={(v) => handleEndDateChange(eY, v, eD)}
+            width={28}
+          />
+          <span style={{ color: C.dim, fontSize: 10 }}>월</span>
+          <DateField
+            value={eD}
+            onChange={(v) => handleEndDateChange(eY, eM, v)}
+            width={28}
+          />
+          <span style={{ color: C.dim, fontSize: 10 }}>일</span>
+        </div>
+
+        {/* Date Brush */}
+        <ResponsiveContainer width="100%" height={36}>
+          <AreaChart
+            data={MARKET_DATA}
+            margin={{ top: 4, right: 10, bottom: 0, left: 10 }}
           >
-            {p.id}
-          </button>
-        ))}
-      </div>
+            <Brush
+              key={brushKey}
+              dataKey="date"
+              height={26}
+              travellerWidth={14}
+              stroke={C.dim}
+              fill={C.panel}
+              tickFormatter={fmtDate}
+              startIndex={brushStartIdx}
+              endIndex={brushEndIdx}
+              onChange={handleBrushChange}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </PanelBox>
 
       {/* ── Section 1a: 신용잔고 & 고객예탁금 ── */}
       <PanelBox>
@@ -609,11 +801,7 @@ export default function MarketPulse() {
               margin={{ top: 5, right: 20, bottom: 5, left: 10 }}
             >
               <CartesianGrid strokeDasharray="3 3" stroke={C.border} />
-              <XAxis
-                dataKey="date"
-                tickFormatter={fmtDate}
-                {...axisProps}
-              />
+              <XAxis dataKey="date" tickFormatter={fmtDate} {...axisProps} />
               <YAxis
                 yAxisId="left"
                 stroke={C.credit}
@@ -654,14 +842,6 @@ export default function MarketPulse() {
                   credit[credit.length - 1]?.estimated ? "5 3" : undefined
                 }
               />
-              <Brush
-                dataKey="date"
-                height={20}
-                stroke={C.dim}
-                fill={C.panel}
-                tickFormatter={fmtDate}
-                onChange={handleCreditBrush}
-              />
             </ComposedChart>
           </ResponsiveContainer>
           <ZoomOverlay
@@ -694,9 +874,9 @@ export default function MarketPulse() {
       <PanelBox>
         <SectionTitle>반대매매 (Forced Liquidation)</SectionTitle>
         <div style={{ position: "relative" }}>
-          <ResponsiveContainer width="100%" height={120}>
-            <BarChart
-              data={creditVisible}
+          <ResponsiveContainer width="100%" height={140}>
+            <ComposedChart
+              data={credit}
               margin={{ top: 5, right: 20, bottom: 5, left: 10 }}
             >
               <CartesianGrid strokeDasharray="3 3" stroke={C.border} />
@@ -711,13 +891,27 @@ export default function MarketPulse() {
               />
               <Tooltip content={<CustomTooltipContent />} />
               <Legend content={<CustomLegend />} />
-              <Bar
+              <Area
                 dataKey="forced_liq_billion"
+                type="monotone"
                 fill={C.forcedLiq}
-                opacity={0.8}
-                barSize={6}
+                fillOpacity={0.3}
+                stroke={C.forcedLiq}
+                strokeWidth={1.5}
+                dot={false}
               />
-            </BarChart>
+              <ReferenceLine
+                y={FORCED_LIQ_THRESHOLD}
+                stroke={C.yellow}
+                strokeDasharray="5 3"
+                label={{
+                  value: "위험 기준선",
+                  fill: C.yellow,
+                  fontSize: 9,
+                  fontFamily: FONT,
+                }}
+              />
+            </ComposedChart>
           </ResponsiveContainer>
           <ZoomOverlay
             zoom={forcedLiqZoom}
@@ -734,7 +928,7 @@ export default function MarketPulse() {
         {/* Summary Cards */}
         <div style={{ display: "flex", gap: 8, marginBottom: 10, flexWrap: "wrap" }}>
           {[
-            { key: "individual", label: "개인", color: C.individual },
+            { key: "retail", label: "개인+금투", color: C.individual },
             { key: "foreign", label: "외국인", color: C.foreign },
             { key: "institution", label: "기관", color: C.institution },
           ].map(({ key, label, color }) => {
@@ -773,7 +967,6 @@ export default function MarketPulse() {
 
         {/* Mode Toggle + Filter Toggle */}
         <div style={{ display: "flex", gap: 12, marginBottom: 10, flexWrap: "wrap", alignItems: "center" }}>
-          {/* View Mode */}
           <div style={{ display: "flex", gap: 2 }}>
             {[
               { id: "cumulative", label: "누적" },
@@ -802,11 +995,10 @@ export default function MarketPulse() {
 
           <div style={{ width: 1, height: 16, background: C.border }} />
 
-          {/* Filter Toggle */}
           <div style={{ display: "flex", gap: 2 }}>
             {[
               { id: "all", label: "전체", color: C.muted },
-              { id: "individual", label: "개인", color: C.individual },
+              { id: "retail", label: "개인+금투", color: C.individual },
               { id: "foreign", label: "외국인", color: C.foreign },
               { id: "institution", label: "기관", color: C.institution },
             ].map((f) => {
@@ -839,7 +1031,7 @@ export default function MarketPulse() {
         <div style={{ position: "relative" }}>
           <ResponsiveContainer width="100%" height={260}>
             <ComposedChart
-              data={flowsMode === "cumulative" ? cumFlows : flowsVisible}
+              data={flowsMode === "cumulative" ? cumFlows : flows}
               margin={{ top: 5, right: 20, bottom: 5, left: 10 }}
             >
               <CartesianGrid strokeDasharray="3 3" stroke={C.border} />
@@ -858,10 +1050,10 @@ export default function MarketPulse() {
 
               {flowsMode === "cumulative" ? (
                 <>
-                  {flowsFilter.has("individual") && (
+                  {flowsFilter.has("retail") && (
                     <Area
                       type="monotone"
-                      dataKey="cum_individual"
+                      dataKey="cum_retail"
                       stroke={C.individual}
                       fill={C.individual}
                       fillOpacity={0.15}
@@ -894,50 +1086,32 @@ export default function MarketPulse() {
                 </>
               ) : (
                 <>
-                  {flowsFilter.has("individual") && (
-                    <Area
-                      type="monotone"
-                      dataKey="individual_billion"
-                      stroke={C.individual}
+                  {flowsFilter.has("retail") && (
+                    <Bar
+                      dataKey="retail_billion"
                       fill={C.individual}
-                      fillOpacity={0.1}
-                      strokeWidth={1.5}
-                      dot={false}
+                      opacity={0.85}
+                      barSize={6}
                     />
                   )}
                   {flowsFilter.has("foreign") && (
-                    <Area
-                      type="monotone"
+                    <Bar
                       dataKey="foreign_billion"
-                      stroke={C.foreign}
                       fill={C.foreign}
-                      fillOpacity={0.1}
-                      strokeWidth={1.5}
-                      dot={false}
+                      opacity={0.85}
+                      barSize={6}
                     />
                   )}
                   {flowsFilter.has("institution") && (
-                    <Area
-                      type="monotone"
+                    <Bar
                       dataKey="institution_billion"
-                      stroke={C.institution}
                       fill={C.institution}
-                      fillOpacity={0.1}
-                      strokeWidth={1.5}
-                      dot={false}
+                      opacity={0.85}
+                      barSize={6}
                     />
                   )}
                 </>
               )}
-
-              <Brush
-                dataKey="date"
-                height={20}
-                stroke={C.dim}
-                fill={C.panel}
-                tickFormatter={fmtDate}
-                onChange={handleFlowsBrush}
-              />
             </ComposedChart>
           </ResponsiveContainer>
           <ZoomOverlay
@@ -953,7 +1127,7 @@ export default function MarketPulse() {
         <SectionTitle>공매도 (Short Selling)</SectionTitle>
         <div style={{ position: "relative" }}>
           <ResponsiveContainer width="100%" height={180}>
-            <LineChart
+            <ComposedChart
               data={shorts}
               margin={{ top: 5, right: 20, bottom: 5, left: 10 }}
             >
@@ -988,7 +1162,7 @@ export default function MarketPulse() {
                   }}
                 />
               )}
-            </LineChart>
+            </ComposedChart>
           </ResponsiveContainer>
           <ZoomOverlay
             zoom={shortsZoom}
@@ -1013,44 +1187,98 @@ export default function MarketPulse() {
             { key: "sp500", label: "S&P 500", color: C.green },
             { key: "wti", label: "WTI (USD)", color: "#a78bfa" },
             { key: "usd_krw", label: "USD/KRW", color: C.yellow },
-          ].map(({ key, label, color }) => (
-            <div key={key}>
-              <div style={{ color: C.muted, fontSize: 10, marginBottom: 4 }}>
-                {label}:{" "}
-                <span style={{ color: C.text, fontWeight: 600 }}>
-                  {global[global.length - 1]?.[key]}
-                </span>
-              </div>
-              <div style={{ position: "relative" }}>
-                <ResponsiveContainer width="100%" height={90}>
-                  <LineChart
-                    data={global}
-                    margin={{ top: 2, right: 4, bottom: 2, left: 4 }}
+          ].map(({ key, label, color }) => {
+            const first = global[0]?.[key];
+            const last = global[global.length - 1]?.[key];
+            const changePct = first ? ((last - first) / first) * 100 : 0;
+            const inverted = key === "vix" || key === "usd_krw";
+            const chgColor =
+              (inverted ? changePct <= 0 : changePct >= 0) ? C.green : C.red;
+            return (
+              <div key={key}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 6,
+                    marginBottom: 4,
+                  }}
+                >
+                  <span style={{ color: C.muted, fontSize: 10 }}>{label}</span>
+                  <span
+                    style={{ color: C.text, fontWeight: 600, fontSize: 12 }}
                   >
-                    <XAxis dataKey="date" hide />
-                    <YAxis
-                      domain={globalAxes[key]?.domain ?? ["auto", "auto"]}
-                      ticks={globalAxes[key]?.ticks}
-                      allowDataOverflow={true}
-                      hide
-                    />
-                    <Line
-                      dataKey={key}
-                      stroke={color}
-                      strokeWidth={1.5}
-                      dot={false}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-                <ZoomOverlay
-                  zoom={globalZooms[key]}
-                  onZoomChange={(z) => setGlobalZooms((prev) => ({ ...prev, [key]: z }))}
-                  side="left"
-                  fullWidth
-                />
+                    {last}
+                  </span>
+                  <span
+                    style={{ color: chgColor, fontSize: 10, fontWeight: 600 }}
+                  >
+                    {changePct >= 0 ? "+" : ""}
+                    {changePct.toFixed(1)}%
+                  </span>
+                </div>
+                <div style={{ position: "relative" }}>
+                  <ResponsiveContainer width="100%" height={70}>
+                    <LineChart
+                      data={global}
+                      margin={{ top: 2, right: 30, bottom: 2, left: 30 }}
+                    >
+                      <XAxis dataKey="date" hide />
+                      <YAxis
+                        domain={globalAxes[key]?.domain ?? ["auto", "auto"]}
+                        ticks={globalAxes[key]?.ticks}
+                        allowDataOverflow={true}
+                        hide
+                      />
+                      <Line
+                        dataKey={key}
+                        stroke={color}
+                        strokeWidth={1.5}
+                        dot={false}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
+                  {/* 시작값 (좌측) */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: 2,
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      fontSize: 8,
+                      color: C.dim,
+                      fontFamily: FONT,
+                    }}
+                  >
+                    {first}
+                  </div>
+                  {/* 끝값 (우측) */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      right: 2,
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      fontSize: 8,
+                      color: C.text,
+                      fontWeight: 600,
+                      fontFamily: FONT,
+                    }}
+                  >
+                    {last}
+                  </div>
+                  <ZoomOverlay
+                    zoom={globalZooms[key]}
+                    onZoomChange={(z) =>
+                      setGlobalZooms((prev) => ({ ...prev, [key]: z }))
+                    }
+                    side="left"
+                    fullWidth
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </PanelBox>
 
