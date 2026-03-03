@@ -115,6 +115,124 @@ export const SHORT_SELLING = DATES.map((date, i) => ({
   gov_ban: i >= 35,
 }));
 
+// --- Cohort Data (Phase 2) ---
+
+const MARGIN_DISTRIBUTION = { 0.40: 0.35, 0.45: 0.35, 0.50: 0.25, 0.60: 0.05 };
+const MAINTENANCE_RATIO = 1.40;
+const FORCED_LIQ_RATIO = 1.30;
+const IMPACT_COEFFICIENT = 1.5;
+
+function buildCohorts(mode) {
+  const cohorts = []; // { entry_date, entry_kospi, amount }
+  for (let i = 1; i < N; i++) {
+    const delta = creditBase[i] - creditBase[i - 1];
+    if (delta > 0) {
+      cohorts.push({
+        entry_date: DATES[i],
+        entry_kospi: Math.round(kospi[i]),
+        amount: Math.round(delta),
+      });
+    } else if (delta < 0) {
+      let remaining = Math.abs(Math.round(delta));
+      const order = mode === "LIFO" ? [...cohorts].reverse() : cohorts;
+      for (const c of order) {
+        if (remaining <= 0) break;
+        const repay = Math.min(remaining, c.amount);
+        c.amount -= repay;
+        remaining -= repay;
+      }
+      // remove empty cohorts
+      for (let j = cohorts.length - 1; j >= 0; j--) {
+        if (cohorts[j].amount <= 0) cohorts.splice(j, 1);
+      }
+    }
+  }
+  const currentKospi = Math.round(kospi[N - 1]);
+  return cohorts.map((c) => {
+    const pnl_pct = +((currentKospi - c.entry_kospi) / c.entry_kospi * 100).toFixed(2);
+    // weighted avg collateral ratio across margin distribution
+    let weightedRatio = 0;
+    for (const [mr, w] of Object.entries(MARGIN_DISTRIBUTION)) {
+      weightedRatio += ((currentKospi / c.entry_kospi) / (1 - Number(mr))) * w;
+    }
+    const ratio = +weightedRatio.toFixed(3);
+    let status;
+    if (ratio >= 1.60) status = "safe";
+    else if (ratio >= MAINTENANCE_RATIO) status = "watch";
+    else if (ratio >= FORCED_LIQ_RATIO) status = "marginCall";
+    else status = "danger";
+    return { ...c, pnl_pct, collateral_ratio: ratio, status };
+  });
+}
+
+function buildPriceDistribution(cohorts) {
+  const bins = {};
+  for (const c of cohorts) {
+    const bin = Math.floor(c.entry_kospi / 100) * 100;
+    const key = `${bin}-${bin + 100}`;
+    if (!bins[key]) bins[key] = { range: key, bin, safe: 0, watch: 0, marginCall: 0, danger: 0 };
+    bins[key][c.status] += c.amount;
+  }
+  return Object.values(bins).sort((a, b) => a.bin - b.bin);
+}
+
+function buildTriggerMap(currentKospi, currentFx) {
+  const shocks = [-3, -5, -10, -15, -20, -30];
+  return shocks.map((shock) => {
+    const expected_kospi = Math.round(currentKospi * (1 + shock / 100));
+    const expected_fx = Math.round(currentFx * (1 + Math.abs(shock) * 0.3 / 100));
+    // estimate margin_call & forced_liq from all active cohorts (LIFO)
+    let margin_call = 0;
+    let forced_liq = 0;
+    const cohorts = buildCohorts("LIFO");
+    for (const c of cohorts) {
+      for (const [mr, w] of Object.entries(MARGIN_DISTRIBUTION)) {
+        const ratio = (expected_kospi / c.entry_kospi) / (1 - Number(mr));
+        if (ratio < FORCED_LIQ_RATIO) forced_liq += c.amount * w;
+        else if (ratio < MAINTENANCE_RATIO) margin_call += c.amount * w;
+      }
+    }
+    return {
+      shock_pct: shock,
+      expected_kospi,
+      expected_fx,
+      margin_call_billion: Math.round(margin_call),
+      forced_liq_billion: Math.round(forced_liq),
+    };
+  });
+}
+
+const _currentKospi = Math.round(kospi[N - 1]);
+const _currentFx = +usdKrw[N - 1].toFixed(1);
+const _lifoCohorts = buildCohorts("LIFO");
+const _fifoCohorts = buildCohorts("FIFO");
+const _avgTradingValue = Math.round(
+  MARKET_DATA.reduce((s, d) => s + d.trading_value_billion, 0) / N
+);
+
+export const COHORT_DATA = {
+  lifo: _lifoCohorts,
+  fifo: _fifoCohorts,
+  price_distribution_lifo: buildPriceDistribution(_lifoCohorts),
+  price_distribution_fifo: buildPriceDistribution(_fifoCohorts),
+  trigger_map: buildTriggerMap(_currentKospi, _currentFx),
+  current_kospi: _currentKospi,
+  current_fx: _currentFx,
+  avg_daily_trading_value_billion: _avgTradingValue,
+  params: {
+    margin_distribution: MARGIN_DISTRIBUTION,
+    maintenance_ratio: MAINTENANCE_RATIO,
+    forced_liq_ratio: FORCED_LIQ_RATIO,
+    impact_coefficient: IMPACT_COEFFICIENT,
+    fx_sensitivity: {
+      low: { threshold: 1, multiplier: 0.5 },
+      mid: { threshold: 2, multiplier: 1.0 },
+      high: { threshold: 3, multiplier: 1.5 },
+      extreme: { threshold: Infinity, multiplier: 2.0 },
+    },
+  },
+};
+
 export const EVENTS = [
   {
     date: "2026-03-02",

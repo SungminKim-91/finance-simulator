@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MarketPulse from "./MarketPulse";
+import CohortAnalysis from "./CohortAnalysis";
 import KospiHeader from "./KospiHeader";
 import { C } from "./colors";
 
@@ -49,7 +50,7 @@ export default function KospiApp() {
       {/* ── Tab Content ── */}
       <div style={{ padding: "16px" }}>
         {tab === "pulse" && <MarketPulse />}
-        {tab === "cohort" && <Placeholder name="Cohort & Forced Liquidation" />}
+        {tab === "cohort" && <CohortAnalysis />}
         {tab === "scenario" && <Placeholder name="Scenario Tracker" />}
         {tab === "history" && <Placeholder name="Historical Comparison" />}
       </div>

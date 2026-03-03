@@ -16,6 +16,7 @@ import {
   Brush,
 } from "recharts";
 import { C } from "./colors";
+import { TERM, TermLabel, CustomLegend, CustomTooltipContent, fmtTooltipVal } from "./shared/terms";
 import {
   MARKET_DATA,
   CREDIT_DATA,
@@ -35,58 +36,6 @@ const PERIODS = [
   { id: "1Y", days: 252 },
   { id: "ALL", days: 9999 },
 ];
-
-/* ── Korean Term Dictionary ── */
-const TERM = {
-  credit_balance_billion: {
-    label: "신용잔고 (Credit)",
-    desc: "증권사 신용융자 잔고 — 개인투자자 레버리지 수준. 급증 시 반대매매 리스크 증가",
-  },
-  deposit_billion: {
-    label: "고객예탁금 (Deposit)",
-    desc: "증권사 예치 투자자 대기 자금. 증가 시 매수 여력 확대, 감소 시 자금 이탈",
-  },
-  forced_liq_billion: {
-    label: "반대매매 (Forced Liq)",
-    desc: "담보 부족 강제 청산 금액. 급증 시 시장 하방 압력 가중",
-  },
-  individual_billion: {
-    label: "개인 (Individual)",
-    desc: "개인투자자 일별 순매수/순매도 금액",
-  },
-  retail_billion: {
-    label: "개인+금투 (Retail)",
-    desc: "개인투자자 + 금융투자(ETF) 합산 순매수/순매도 금액",
-  },
-  foreign_billion: {
-    label: "외국인 (Foreign)",
-    desc: "외국인투자자 일별 순매수/순매도 금액. 연속 순매도 시 경고",
-  },
-  institution_billion: {
-    label: "기관 (Institution)",
-    desc: "기관투자자(연기금·보험·투신 등) 일별 순매수/순매도 금액",
-  },
-  market_total_billion: {
-    label: "공매도 (Short Selling)",
-    desc: "전체 시장 공매도 거래대금. 정부 금지 조치 시 급감",
-  },
-  cum_individual: {
-    label: "개인 누적 (Cum. Individual)",
-    desc: "개인투자자 누적 순매수 금액",
-  },
-  cum_retail: {
-    label: "개인+금투 누적 (Cum. Retail)",
-    desc: "개인+금투 합산 누적 순매수 금액",
-  },
-  cum_foreign: {
-    label: "외국인 누적 (Cum. Foreign)",
-    desc: "외국인투자자 누적 순매수 금액",
-  },
-  cum_institution: {
-    label: "기관 누적 (Cum. Institution)",
-    desc: "기관투자자 누적 순매수 금액",
-  },
-};
 
 /* ── Shared Styles ── */
 const axisProps = { stroke: C.dim, fontSize: 10, fontFamily: FONT };
@@ -174,25 +123,6 @@ function fmtHundM(v) {
   return (v * 10).toLocaleString();
 }
 
-function fmtTooltipVal(dataKey, value) {
-  if (typeof value !== "number") return value;
-  const trilKeys = [
-    "credit_balance_billion", "deposit_billion",
-    "individual_billion", "retail_billion", "foreign_billion", "institution_billion",
-    "cum_individual", "cum_retail", "cum_foreign", "cum_institution",
-  ];
-  if (trilKeys.includes(dataKey)) {
-    return `${(value / 1000).toFixed(1)} 조원`;
-  }
-  if (dataKey === "forced_liq_billion") {
-    return `${(value * 10).toLocaleString()} 억원`;
-  }
-  if (dataKey === "market_total_billion") {
-    return `${value.toFixed(2)} 십억원`;
-  }
-  return value.toLocaleString();
-}
-
 function yAxisLabel(text, side = "left") {
   return {
     value: text,
@@ -237,105 +167,6 @@ function PanelBox({ children, style }) {
       }}
     >
       {children}
-    </div>
-  );
-}
-
-/* ── TermLabel with Hover Tooltip ── */
-function TermLabel({ dataKey, color }) {
-  const [show, setShow] = useState(false);
-  const term = TERM[dataKey];
-  if (!term) return <span style={{ color, fontSize: 10 }}>{dataKey}</span>;
-
-  return (
-    <span
-      style={{ position: "relative", display: "inline-block", cursor: "default" }}
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}
-    >
-      <span style={{ color, fontSize: 10 }}>{"\u25CF"} {term.label}</span>
-      {show && (
-        <div
-          style={{
-            position: "absolute",
-            bottom: "100%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            background: "#1a1a2e",
-            border: `1px solid ${C.border}`,
-            borderRadius: 6,
-            padding: "8px 12px",
-            fontSize: 11,
-            color: C.text,
-            whiteSpace: "nowrap",
-            zIndex: 100,
-            fontFamily: FONT,
-            pointerEvents: "none",
-            marginBottom: 4,
-            boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
-          }}
-        >
-          {term.desc}
-        </div>
-      )}
-    </span>
-  );
-}
-
-/* ── Custom Legend ── */
-function CustomLegend({ payload }) {
-  if (!payload) return null;
-  return (
-    <div
-      style={{
-        display: "flex",
-        gap: 12,
-        justifyContent: "center",
-        flexWrap: "wrap",
-        fontSize: 10,
-        fontFamily: FONT,
-      }}
-    >
-      {payload.map((entry) => (
-        <TermLabel
-          key={entry.dataKey || entry.value}
-          dataKey={entry.dataKey}
-          color={entry.color}
-        />
-      ))}
-    </div>
-  );
-}
-
-/* ── Custom Tooltip Content ── */
-function CustomTooltipContent({ active, payload, label }) {
-  if (!active || !payload?.length) return null;
-  return (
-    <div
-      style={{
-        background: C.panel,
-        border: `1px solid ${C.border}`,
-        borderRadius: 8,
-        padding: "8px 12px",
-        fontSize: 11,
-        fontFamily: FONT,
-      }}
-    >
-      <div style={{ color: C.muted, fontSize: 10, marginBottom: 4 }}>
-        {label}
-      </div>
-      {payload.map((entry) => {
-        const term = TERM[entry.dataKey];
-        const displayName = term ? term.label : entry.name;
-        return (
-          <div
-            key={entry.dataKey || entry.name}
-            style={{ color: entry.color, marginBottom: 2 }}
-          >
-            {displayName}: {fmtTooltipVal(entry.dataKey, entry.value)}
-          </div>
-        );
-      })}
     </div>
   );
 }

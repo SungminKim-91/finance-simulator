@@ -1,5 +1,46 @@
 # Changelog — Finance Simulator
 
+## [KOSPI v1.1.0] - 2026-03-04
+
+### Phase 2 UX 전면 개선 — Cohort & Forced Liquidation 초보자 친화
+
+#### Background
+- Phase 2 (Cohort & Forced Liquidation) 첫 구현 후 5라운드 사용자 피드백 반영
+- 영어 전용 UI → 한글(영어) 이중 표기, 단위 통일, 가이드 박스 추가
+- FX(환율) 예측 완전 제거 (정부 개입 변수로 노이즈 과다)
+
+#### Added
+- **가이드 박스 3개**: 코호트 분포, 트리거 맵, 반대매매 시뮬레이터 각 섹션에 한글 개념 설명
+- **시나리오 프리셋**: "소폭 조정 -5%" / "급락 -15%" / "대폭락 -30%" 원클릭 버튼
+- **Auto 흡수율**: 최근 5일 개인+금투 매수 비율 기반 자동 계산 (설계문서 반영)
+- **fmtBillion() 헬퍼**: 십억원 raw → 조원/억원 표시 변환 (shared/terms.jsx)
+- **TERM 6개 추가**: shock_pct, expected_kospi, forced_liq, loop_a, initial_shock, max_rounds
+- **TermHint 컴포넌트**: 테이블 헤더용 "?" hover tooltip (범용)
+
+#### Changed
+- **트리거맵 헤더**: 영어 → 한글 자기설명적 ("마진콜 (추가 입금 요구 D+2)")
+- **시뮬레이터 Loop Mode**: A/B/AB → **A (반대매매) 고정** (엔진 코드 보존)
+- **차트 스타일**: 반대매매 Bar → TradingView volume 스타일 (하단 30%, opacity 0.35)
+- **KOSPI Line**: strokeWidth 2→2.5, dot r 3→4 (protagonist)
+- **전체 폰트**: 1-2px 증가 (SectionTitle 13→15, 가이드 12-13, 테이블 12, 안내 11)
+- **단위 통일**: B/십억원 → fmtBillion() 조원/억원 (코호트·트리거맵·시뮬레이터)
+- **Tooltip**: `cursor={false}` 하얀 박스 제거
+- **TERM 3개 수정**: margin_call desc 보강, collateral_ratio, forced_liq 범위 명시
+
+#### Removed
+- **expected_fx 컬럼**: 트리거맵에서 완전 삭제
+- **Loop B (환율 연쇄)**: 시뮬레이터 UI에서 제거 (엔진 보존)
+- **Loop A+B Combined**: UI에서 제거
+- **Foreign Sell**: 결과 카드·테이블에서 제거
+- **Final FX 카드**: 시뮬레이션 결과에서 제거
+
+#### Documents
+- Plan: `docs/01-plan/features/kospi-crisis-v1.1.0.plan.md`
+- Report: `docs/04-report/features/kospi-crisis-v1.1.0.report.md`
+- Gap Analysis: `docs/03-analysis/kospi-crisis-phase2.analysis.md`
+
+---
+
 ## [v2.1.0] - 2026-03-02
 
 ### Dual-Band Web Dashboard (Model D) — Match Rate 97.4%

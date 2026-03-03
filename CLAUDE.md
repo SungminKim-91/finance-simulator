@@ -1,6 +1,6 @@
 # Finance Simulator — Multi-Asset Analysis Platform
 
-> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v1.0.0) | 통합 웹 대시보드
+> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v1.1.0) | 통합 웹 대시보드
 
 ## Project Overview
 1. **BTC Liquidity Model**: 글로벌 유동성 지표(5개 변수) 기반 BTC 가격 방향성 선행 예측
@@ -125,10 +125,10 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 
 ---
 
-## KOSPI Crisis Detector v1.0.2
+## KOSPI Crisis Detector v1.1.0
 
 ### Overview
-신용잔고 기반 코호트 분석, 반대매매 연쇄 시뮬레이션, Bayesian 시나리오 추적, 과거 사례 비교를 하나의 대시보드에서 수행. Phase 1 (Market Pulse) 완료.
+신용잔고 기반 코호트 분석, 반대매매 연쇄 시뮬레이션, Bayesian 시나리오 추적, 과거 사례 비교를 하나의 대시보드에서 수행. Phase 1 (Market Pulse) + Phase 2 (Cohort & Forced Liquidation) 완료.
 
 ### Phase 1 구현 범위 (v1.0.0 → v1.0.2)
 - **main.jsx**: 시뮬레이터 선택기 (BTC ↔ KOSPI), ErrorBoundary, lazy import
@@ -147,21 +147,32 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **Python 파이프라인**: `kospi/scripts/` (fetch_daily, fetch_historical, kofia_scraper, compute_models, estimate_missing, export_web)
 - **kospi/config/constants.py**: 공용 상수 (경로, 종목, 날짜형식, 모델 파라미터, 위기지표)
 
-### v1.0.2 변경사항 (차트 가독성 개선)
-- **개인+금투 합산**: individual → retail_billion (개인+금투 ETF 합산), 라벨/필터/요약카드 전환
-- **투자자 수급 일자별**: Line+Area → Grouped Bar (3색 막대, 양수/음수 시각적 비교)
-- **반대매매**: BarChart → Area Fill + Threshold ReferenceLine (위험 구간 강조)
-- **글로벌 미니차트**: 시작/끝값 오버레이 + 변동률% (VIX/USD_KRW 반전 색상)
-- **DateRangeControl 통합**: 개별 Brush 4개 → 상단 글로벌 1개 (Period + DateField + Brush)
+### Phase 2 구현 범위 (v1.1.0)
+- **CohortAnalysis.jsx**: Tab B 코호트 & 반대매매 (703줄, 3 섹션)
+  - **Section 1 코호트 분포**: LIFO/FIFO 토글, 가격대별 수평 Stacked Bar (안전/주의/마진콜/위험 4색), 요약 카드 (총 잔고, 안전비율, 위험비율)
+  - **Section 2 트리거맵**: 가이드 박스 + 한글 자기설명적 헤더 (마진콜(추가 입금 요구 D+2), 반대매매(강제 청산)), 6단계 하락 시나리오, fmtBillion 단위
+  - **Section 3 시뮬레이터**: 반대매매 연쇄 시뮬레이션 (Loop A 고정), 시나리오 프리셋 (-5%/-15%/-30%), Auto 흡수율 (수급 기반), TradingView volume 차트, 라운드별 결과 테이블
+- **shared/terms.jsx**: TERM 6개 추가 (shock_pct, expected_kospi, forced_liq, loop_a, initial_shock, max_rounds), fmtBillion 헬퍼, TermHint 컴포넌트
+- **data/kospi_data.js**: COHORT_DATA export (buildCohorts LIFO/FIFO, price_distribution, trigger_map, params)
+- **compute_models.py**: CohortBuilder (get_price_distribution, get_trigger_map), ForcedLiqSimulator (dual-loop 지원)
+
+### v1.1.0 주요 개선 (Phase 2 UX)
+- **한글화**: 전체 UI 한글(영어) 이중 표기, 가이드 박스 3개 추가
+- **단위 통일**: B/십억원 → fmtBillion() 조원/억원
+- **FX 제거**: 트리거맵 expected_fx 컬럼 삭제, 시뮬레이터 Loop B/AB 삭제 (정부 개입 변수 노이즈)
+- **시뮬레이터 간소화**: Loop A 고정, 외국인 매도 제거, 시나리오 프리셋 3개
+- **Auto 흡수율**: 최근 5일 개인+금투 매수비율 기반 자동 계산
+- **TradingView volume**: 반대매매 Bar 하단 30%, KOSPI Line protagonist
+- **폰트 증가**: 전체 1-2px 증가 (9→11, 10→12, 13→15)
 
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
-- **Y축 줌 (Domain-only)**: Drag + Wheel 지원, domain만 변경 (SVG 찌그러짐 없음). Non-passive wheel listener로 페이지 스크롤 차단. 호버 시 Y축 배경 하이라이트
-- **DateRangeControl**: 글로벌 날짜 범위 (Period 버튼 + DateField 년/월/일 입력 + Brush 드래그) — 양방향 동기화
+- **Y축 줌 (Domain-only)**: Drag + Wheel 지원, domain만 변경 (SVG 찌그러짐 없음)
+- **DateRangeControl**: 글로벌 날짜 범위 (Period 버튼 + DateField + Brush) — 양방향 동기화
 - **독립 줌**: Credit 좌/우축 독립 줌 (creditLeftZoom/creditRightZoom)
-- **단위 표시**: Y축 라벨 (조원/억원/십억원) + Tooltip 단위 포매팅
+- **단위 표시**: Y축 라벨 (조원/억원) + Tooltip fmtBillion/fmtTooltipVal 포매팅
 - **투자자 수급**: 누적 Area / 일자별 Grouped Bar 토글 + 개인+금투/외국인/기관 필터 + 요약 카드
-- **용어 사전**: 한국어 금융 용어 hover tooltip (TERM dictionary)
+- **용어 사전**: shared/terms.jsx — 한국어 금융 용어 hover tooltip (TERM dictionary + TermLabel + TermHint)
 
 ### 폴더 구조
 ```
@@ -174,13 +185,14 @@ web/src/simulators/kospi/        # React 대시보드
 ├── KospiApp.jsx                 # 4탭 메인 + KospiHeader 통합
 ├── KospiHeader.jsx              # 공통 헤더 (탭 전환 시 유지)
 ├── MarketPulse.jsx              # Tab A: 시장 현황 (1350줄)
+├── CohortAnalysis.jsx           # Tab B: 코호트 & 반대매매 (703줄)
 ├── colors.js                    # 색상 팔레트
-├── data/kospi_data.js           # 정적 JSON 데이터 (retail_billion, financial_invest_billion 포함)
-└── shared/                      # 공유 컴포넌트 (Phase 2+)
+├── data/kospi_data.js           # 정적 JSON 데이터 (MARKET_DATA, CREDIT_DATA, INVESTOR_FLOWS, COHORT_DATA 등)
+└── shared/                      # 공유 컴포넌트
+    └── terms.jsx                # 용어 사전 (TERM), fmtBillion, TermLabel, TermHint, CustomLegend, CustomTooltipContent
 ```
 
-### Phase 2~4 (미구현, 향후)
-- **Phase 2**: Cohort & Forced Liquidation (코호트 히트맵, 반대매매 인터랙티브 시뮬레이터)
+### Phase 3~5 (미구현, 향후)
 - **Phase 3**: Crisis Score + Historical Comparison (위기 지표 PCA, DTW 유사도)
 - **Phase 4**: Bayesian Scenario Tracker (시나리오 확률 일간 업데이트)
 - **Phase 5**: Deploy (GitHub Actions cron, Vercel)
@@ -192,9 +204,10 @@ web/src/simulators/kospi/        # React 대시보드
 - **btc-liquidity-v2 v2.0.0**: Archived (Match Rate 92%, 1 iteration) → `docs/archive/2026-03/btc-liquidity-v2/`
 - **web-dashboard v1.0.0**: Completed (Match Rate 93.5%, 1 iteration)
 - **web v2.1 dual-band**: Archived (Match Rate 97.4%) → `docs/archive/2026-03/web/`
-- **kospi-crisis v1.0.2**: Completed (차트 가독성 개선, Match Rate 100%)
+- **kospi-crisis v1.0.2**: Completed (Phase 1 차트 가독성, Match Rate 100%)
+- **kospi-crisis-phase2 v1.1.0**: Completed (Phase 2 UX 전면 개선, Match Rate 98.9%)
 - **Archive**: docs/archive/2026-03/
 
 ## Backlog
 - **gm2-data-improvement**: 2025년 lag=6 불일치 개선 — GM2 데이터 고착(11개월), HY 단기 충격, BTC 독자 요인 → `docs/01-plan/features/gm2-data-improvement.plan.md`
-- **kospi-crisis Phase 2~4**: Cohort, Crisis Score, Scenario, Historical — `docs/01-plan/features/kospi-crisis.plan.md`
+- **kospi-crisis Phase 3~5**: Crisis Score, Scenario, Historical, Deploy — `docs/01-plan/features/kospi-crisis.plan.md`
