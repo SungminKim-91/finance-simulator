@@ -148,7 +148,7 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
-- **Drag Zoom**: Y축 드래그 줌 + 더블클릭 리셋
+- **Drag Zoom (RAF + CSS Transform)**: 드래그 중 GPU scaleY → 드래그 끝 시 1회 re-render. 전 차트 지원 (6개 메인 + 4개 글로벌 미니)
 - **Brush**: X축 범위 선택
 - **독립 줌**: Credit 좌/우축 독립 줌 (creditLeftZoom/creditRightZoom)
 - **단위 표시**: Y축 라벨 (조원/억원/십억원) + Tooltip 단위 포매팅

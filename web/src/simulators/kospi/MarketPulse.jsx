@@ -384,9 +384,29 @@ function CustomTooltipContent({ active, payload, label }) {
   );
 }
 
-/* ── Zoom Overlay ── */
-function ZoomOverlay({ zoom, onZoomChange, side = "left" }) {
+/* ── Zoom Overlay (RAF + CSS Transform) ── */
+function ZoomOverlay({ zoom, onZoomChange, side = "left", chartRef, fullWidth = false }) {
   const dragRef = useRef(null);
+  const rafRef = useRef(null);
+
+  const applyVisualZoom = useCallback((factor) => {
+    if (!chartRef?.current) return;
+    const svg = chartRef.current.querySelector("svg");
+    if (!svg) return;
+    svg.style.transform = `scaleY(${factor})`;
+    svg.style.transformOrigin = "center center";
+    svg.style.willChange = "transform";
+    chartRef.current.style.overflow = "hidden";
+  }, [chartRef]);
+
+  const clearVisualZoom = useCallback(() => {
+    if (!chartRef?.current) return;
+    const svg = chartRef.current.querySelector("svg");
+    if (!svg) return;
+    svg.style.transform = "";
+    svg.style.willChange = "";
+    chartRef.current.style.overflow = "";
+  }, [chartRef]);
 
   return (
     <div
@@ -394,7 +414,7 @@ function ZoomOverlay({ zoom, onZoomChange, side = "left" }) {
         position: "absolute",
         top: 0,
         [side]: 0,
-        width: 55,
+        width: fullWidth ? "100%" : 55,
         height: "100%",
         cursor: "ns-resize",
         zIndex: 10,
@@ -402,21 +422,37 @@ function ZoomOverlay({ zoom, onZoomChange, side = "left" }) {
       title="드래그: Y축 줌 | 더블클릭: 리셋"
       onPointerDown={(e) => {
         e.currentTarget.setPointerCapture(e.pointerId);
-        dragRef.current = { startY: e.clientY, startZoom: zoom };
+        dragRef.current = {
+          startY: e.clientY,
+          lastY: e.clientY,
+          startZoom: zoom,
+          currentZoom: zoom,
+        };
       }}
       onPointerMove={(e) => {
         if (!dragRef.current) return;
-        const delta = dragRef.current.startY - e.clientY;
-        const newZoom = Math.max(
-          0.2,
-          Math.min(10, dragRef.current.startZoom * (1 + delta * 0.005)),
-        );
-        onZoomChange(newZoom);
+        dragRef.current.lastY = e.clientY;
+        if (rafRef.current) return;
+        rafRef.current = requestAnimationFrame(() => {
+          if (!dragRef.current) { rafRef.current = null; return; }
+          const delta = dragRef.current.startY - dragRef.current.lastY;
+          const newZoom = Math.max(
+            0.2,
+            Math.min(10, dragRef.current.startZoom * Math.exp(delta * 0.004)),
+          );
+          dragRef.current.currentZoom = newZoom;
+          applyVisualZoom(newZoom / dragRef.current.startZoom);
+          rafRef.current = null;
+        });
       }}
       onPointerUp={() => {
+        if (rafRef.current) { cancelAnimationFrame(rafRef.current); rafRef.current = null; }
+        const finalZoom = dragRef.current?.currentZoom ?? zoom;
         dragRef.current = null;
+        clearVisualZoom();
+        onZoomChange(finalZoom);
       }}
-      onDoubleClick={() => onZoomChange(1)}
+      onDoubleClick={() => { clearVisualZoom(); onZoomChange(1); }}
     />
   );
 }
@@ -436,6 +472,14 @@ export default function MarketPulse() {
   const [forcedLiqZoom, setForcedLiqZoom] = useState(1);
   const [flowsZoom, setFlowsZoom] = useState(1);
   const [shortsZoom, setShortsZoom] = useState(1);
+  const [globalZooms, setGlobalZooms] = useState({ vix: 1, sp500: 1, wti: 1, usd_krw: 1 });
+
+  // Chart refs (for CSS transform zoom)
+  const creditChartRef = useRef(null);
+  const forcedLiqChartRef = useRef(null);
+  const flowsChartRef = useRef(null);
+  const shortsChartRef = useRef(null);
+  const globalChartRefs = useRef({});
 
   // Investor flows view mode & filter
   const [flowsMode, setFlowsMode] = useState("cumulative");
@@ -460,6 +504,7 @@ export default function MarketPulse() {
     setForcedLiqZoom(1);
     setFlowsZoom(1);
     setShortsZoom(1);
+    setGlobalZooms({ vix: 1, sp500: 1, wti: 1, usd_krw: 1 });
   }, []);
 
   // Investor flows filter toggle
@@ -532,6 +577,15 @@ export default function MarketPulse() {
   const shortsAxis = useMemo(
     () => computeAxis(shorts, ["market_total_billion"], shortsZoom),
     [shorts, shortsZoom],
+  );
+  const globalAxes = useMemo(
+    () => Object.fromEntries(
+      ["vix", "sp500", "wti", "usd_krw"].map((k) => [
+        k,
+        computeAxis(global, [k], globalZooms[k], 3),
+      ]),
+    ),
+    [global, globalZooms],
   );
 
   const latest = market[market.length - 1] || {};
@@ -617,7 +671,7 @@ export default function MarketPulse() {
       {/* ── Section 1a: 신용잔고 & 고객예탁금 ── */}
       <PanelBox>
         <SectionTitle>신용잔고 & 고객예탁금 (Credit & Deposit)</SectionTitle>
-        <div style={{ position: "relative" }}>
+        <div ref={creditChartRef} style={{ position: "relative" }}>
           <ResponsiveContainer width="100%" height={220}>
             <ComposedChart
               data={credit}
@@ -683,11 +737,13 @@ export default function MarketPulse() {
             zoom={creditLeftZoom}
             onZoomChange={setCreditLeftZoom}
             side="left"
+            chartRef={creditChartRef}
           />
           <ZoomOverlay
             zoom={creditRightZoom}
             onZoomChange={setCreditRightZoom}
             side="right"
+            chartRef={creditChartRef}
           />
         </div>
         {credit[credit.length - 1]?.estimated && (
@@ -708,7 +764,7 @@ export default function MarketPulse() {
       {/* ── Section 1b: 반대매매 ── */}
       <PanelBox>
         <SectionTitle>반대매매 (Forced Liquidation)</SectionTitle>
-        <div style={{ position: "relative" }}>
+        <div ref={forcedLiqChartRef} style={{ position: "relative" }}>
           <ResponsiveContainer width="100%" height={120}>
             <BarChart
               data={creditVisible}
@@ -738,6 +794,7 @@ export default function MarketPulse() {
             zoom={forcedLiqZoom}
             onZoomChange={setForcedLiqZoom}
             side="left"
+            chartRef={forcedLiqChartRef}
           />
         </div>
       </PanelBox>
@@ -851,7 +908,7 @@ export default function MarketPulse() {
         </div>
 
         {/* Chart */}
-        <div style={{ position: "relative" }}>
+        <div ref={flowsChartRef} style={{ position: "relative" }}>
           <ResponsiveContainer width="100%" height={260}>
             <ComposedChart
               data={flowsMode === "cumulative" ? cumFlows : flowsVisible}
@@ -959,6 +1016,7 @@ export default function MarketPulse() {
             zoom={flowsZoom}
             onZoomChange={setFlowsZoom}
             side="left"
+            chartRef={flowsChartRef}
           />
         </div>
       </PanelBox>
@@ -966,7 +1024,7 @@ export default function MarketPulse() {
       {/* ── Section 3: 공매도 ── */}
       <PanelBox>
         <SectionTitle>공매도 (Short Selling)</SectionTitle>
-        <div style={{ position: "relative" }}>
+        <div ref={shortsChartRef} style={{ position: "relative" }}>
           <ResponsiveContainer width="100%" height={180}>
             <LineChart
               data={shorts}
@@ -1009,6 +1067,7 @@ export default function MarketPulse() {
             zoom={shortsZoom}
             onZoomChange={setShortsZoom}
             side="left"
+            chartRef={shortsChartRef}
           />
         </div>
       </PanelBox>
@@ -1036,21 +1095,38 @@ export default function MarketPulse() {
                   {global[global.length - 1]?.[key]}
                 </span>
               </div>
-              <ResponsiveContainer width="100%" height={90}>
-                <LineChart
-                  data={global}
-                  margin={{ top: 2, right: 4, bottom: 2, left: 4 }}
-                >
-                  <XAxis dataKey="date" hide />
-                  <YAxis domain={["auto", "auto"]} hide />
-                  <Line
-                    dataKey={key}
-                    stroke={color}
-                    strokeWidth={1.5}
-                    dot={false}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
+              <div
+                ref={(el) => { globalChartRefs.current[key] = el; }}
+                style={{ position: "relative" }}
+              >
+                <ResponsiveContainer width="100%" height={90}>
+                  <LineChart
+                    data={global}
+                    margin={{ top: 2, right: 4, bottom: 2, left: 4 }}
+                  >
+                    <XAxis dataKey="date" hide />
+                    <YAxis
+                      domain={globalAxes[key]?.domain ?? ["auto", "auto"]}
+                      ticks={globalAxes[key]?.ticks}
+                      allowDataOverflow={true}
+                      hide
+                    />
+                    <Line
+                      dataKey={key}
+                      stroke={color}
+                      strokeWidth={1.5}
+                      dot={false}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+                <ZoomOverlay
+                  zoom={globalZooms[key]}
+                  onZoomChange={(z) => setGlobalZooms((prev) => ({ ...prev, [key]: z }))}
+                  side="left"
+                  chartRef={{ current: globalChartRefs.current[key] }}
+                  fullWidth
+                />
+              </div>
             </div>
           ))}
         </div>
