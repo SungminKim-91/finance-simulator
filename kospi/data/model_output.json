@@ -1,54 +1,2923 @@
 {
-  "computed_at": "2026-03-04T19:28:08.671238",
+  "computed_at": "2026-03-04T21:38:09.998807",
   "cohorts": {
-    "lifo": [],
-    "fifo": [],
-    "price_distribution_lifo": [],
-    "price_distribution_fifo": [],
+    "lifo": [
+      {
+        "cohort_id": "2025-01-06",
+        "entry_date": "2025-01-06",
+        "entry_kospi": 2488.64,
+        "remaining_amount_billion": 130.6999999999989,
+        "pnl_pct": 104.67,
+        "collateral_ratio": 3.411,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-01-07",
+        "entry_date": "2025-01-07",
+        "entry_kospi": 2492.1,
+        "remaining_amount_billion": 20.200000000000728,
+        "pnl_pct": 104.39,
+        "collateral_ratio": 3.406,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-01-08",
+        "entry_date": "2025-01-08",
+        "entry_kospi": 2521.05,
+        "remaining_amount_billion": 144.89999999999964,
+        "pnl_pct": 102.04,
+        "collateral_ratio": 3.367,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-01-09",
+        "entry_date": "2025-01-09",
+        "entry_kospi": 2521.9,
+        "remaining_amount_billion": 146.29999999999927,
+        "pnl_pct": 101.97,
+        "collateral_ratio": 3.366,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-01-10",
+        "entry_date": "2025-01-10",
+        "entry_kospi": 2515.78,
+        "remaining_amount_billion": 78.80000000000109,
+        "pnl_pct": 102.46,
+        "collateral_ratio": 3.374,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-01-13",
+        "entry_date": "2025-01-13",
+        "entry_kospi": 2489.56,
+        "remaining_amount_billion": 81.29999999999927,
+        "pnl_pct": 104.6,
+        "collateral_ratio": 3.41,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-01-14",
+        "entry_date": "2025-01-14",
+        "entry_kospi": 2497.4,
+        "remaining_amount_billion": 116.39999999999964,
+        "pnl_pct": 103.95,
+        "collateral_ratio": 3.399,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-04-15",
+        "entry_date": "2025-04-15",
+        "entry_kospi": 2477.41,
+        "remaining_amount_billion": 268.6000000000022,
+        "pnl_pct": 105.6,
+        "collateral_ratio": 3.427,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-04-16",
+        "entry_date": "2025-04-16",
+        "entry_kospi": 2447.43,
+        "remaining_amount_billion": 203.1999999999971,
+        "pnl_pct": 108.12,
+        "collateral_ratio": 3.469,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-04-17",
+        "entry_date": "2025-04-17",
+        "entry_kospi": 2470.41,
+        "remaining_amount_billion": 117.10000000000218,
+        "pnl_pct": 106.18,
+        "collateral_ratio": 3.436,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-04-18",
+        "entry_date": "2025-04-18",
+        "entry_kospi": 2483.42,
+        "remaining_amount_billion": 117.79999999999927,
+        "pnl_pct": 105.1,
+        "collateral_ratio": 3.418,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-04-21",
+        "entry_date": "2025-04-21",
+        "entry_kospi": 2488.42,
+        "remaining_amount_billion": 55.099999999998545,
+        "pnl_pct": 104.69,
+        "collateral_ratio": 3.411,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-04-22",
+        "entry_date": "2025-04-22",
+        "entry_kospi": 2486.64,
+        "remaining_amount_billion": 97.20000000000073,
+        "pnl_pct": 104.84,
+        "collateral_ratio": 3.414,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-04-23",
+        "entry_date": "2025-04-23",
+        "entry_kospi": 2525.56,
+        "remaining_amount_billion": 97.5,
+        "pnl_pct": 101.68,
+        "collateral_ratio": 3.361,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-04-24",
+        "entry_date": "2025-04-24",
+        "entry_kospi": 2522.33,
+        "remaining_amount_billion": 123.10000000000218,
+        "pnl_pct": 101.94,
+        "collateral_ratio": 3.366,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-04-28",
+        "entry_date": "2025-04-28",
+        "entry_kospi": 2548.86,
+        "remaining_amount_billion": 116.89999999999782,
+        "pnl_pct": 99.84,
+        "collateral_ratio": 3.331,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-09",
+        "entry_date": "2025-05-09",
+        "entry_kospi": 2577.27,
+        "remaining_amount_billion": 14.0,
+        "pnl_pct": 97.63,
+        "collateral_ratio": 3.294,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-12",
+        "entry_date": "2025-05-12",
+        "entry_kospi": 2607.33,
+        "remaining_amount_billion": 135.40000000000146,
+        "pnl_pct": 95.35,
+        "collateral_ratio": 3.256,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-13",
+        "entry_date": "2025-05-13",
+        "entry_kospi": 2608.42,
+        "remaining_amount_billion": 66.0,
+        "pnl_pct": 95.27,
+        "collateral_ratio": 3.255,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-15",
+        "entry_date": "2025-05-15",
+        "entry_kospi": 2621.36,
+        "remaining_amount_billion": 49.79999999999927,
+        "pnl_pct": 94.31,
+        "collateral_ratio": 3.238,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-19",
+        "entry_date": "2025-05-19",
+        "entry_kospi": 2603.42,
+        "remaining_amount_billion": 139.5,
+        "pnl_pct": 95.65,
+        "collateral_ratio": 3.261,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-20",
+        "entry_date": "2025-05-20",
+        "entry_kospi": 2601.8,
+        "remaining_amount_billion": 24.400000000001455,
+        "pnl_pct": 95.77,
+        "collateral_ratio": 3.263,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-21",
+        "entry_date": "2025-05-21",
+        "entry_kospi": 2625.58,
+        "remaining_amount_billion": 26.69999999999709,
+        "pnl_pct": 94.0,
+        "collateral_ratio": 3.233,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-22",
+        "entry_date": "2025-05-22",
+        "entry_kospi": 2593.67,
+        "remaining_amount_billion": 1.3000000000029104,
+        "pnl_pct": 96.38,
+        "collateral_ratio": 3.273,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-23",
+        "entry_date": "2025-05-23",
+        "entry_kospi": 2592.09,
+        "remaining_amount_billion": 22.19999999999709,
+        "pnl_pct": 96.5,
+        "collateral_ratio": 3.275,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-26",
+        "entry_date": "2025-05-26",
+        "entry_kospi": 2644.4,
+        "remaining_amount_billion": 148.3000000000029,
+        "pnl_pct": 92.62,
+        "collateral_ratio": 3.21,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-27",
+        "entry_date": "2025-05-27",
+        "entry_kospi": 2637.22,
+        "remaining_amount_billion": 22.69999999999709,
+        "pnl_pct": 93.14,
+        "collateral_ratio": 3.219,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-05-29",
+        "entry_date": "2025-05-29",
+        "entry_kospi": 2720.64,
+        "remaining_amount_billion": 107.40000000000146,
+        "pnl_pct": 87.22,
+        "collateral_ratio": 3.12,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-02",
+        "entry_date": "2025-06-02",
+        "entry_kospi": 2698.97,
+        "remaining_amount_billion": 76.09999999999854,
+        "pnl_pct": 88.72,
+        "collateral_ratio": 3.145,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-04",
+        "entry_date": "2025-06-04",
+        "entry_kospi": 2770.84,
+        "remaining_amount_billion": 164.3000000000029,
+        "pnl_pct": 83.83,
+        "collateral_ratio": 3.064,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-11",
+        "entry_date": "2025-06-11",
+        "entry_kospi": 2907.04,
+        "remaining_amount_billion": 201.1999999999971,
+        "pnl_pct": 75.21,
+        "collateral_ratio": 2.92,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-12",
+        "entry_date": "2025-06-12",
+        "entry_kospi": 2920.03,
+        "remaining_amount_billion": 118.80000000000291,
+        "pnl_pct": 74.43,
+        "collateral_ratio": 2.907,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-13",
+        "entry_date": "2025-06-13",
+        "entry_kospi": 2894.62,
+        "remaining_amount_billion": 135.5,
+        "pnl_pct": 75.97,
+        "collateral_ratio": 2.933,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-16",
+        "entry_date": "2025-06-16",
+        "entry_kospi": 2946.66,
+        "remaining_amount_billion": 216.5,
+        "pnl_pct": 72.86,
+        "collateral_ratio": 2.881,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-17",
+        "entry_date": "2025-06-17",
+        "entry_kospi": 2950.3,
+        "remaining_amount_billion": 174.6999999999971,
+        "pnl_pct": 72.64,
+        "collateral_ratio": 2.877,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-18",
+        "entry_date": "2025-06-18",
+        "entry_kospi": 2972.19,
+        "remaining_amount_billion": 180.0,
+        "pnl_pct": 71.37,
+        "collateral_ratio": 2.856,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-19",
+        "entry_date": "2025-06-19",
+        "entry_kospi": 2977.74,
+        "remaining_amount_billion": 47.5,
+        "pnl_pct": 71.05,
+        "collateral_ratio": 2.851,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-20",
+        "entry_date": "2025-06-20",
+        "entry_kospi": 3021.84,
+        "remaining_amount_billion": 215.5,
+        "pnl_pct": 68.56,
+        "collateral_ratio": 2.809,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-23",
+        "entry_date": "2025-06-23",
+        "entry_kospi": 3014.47,
+        "remaining_amount_billion": 274.40000000000146,
+        "pnl_pct": 68.97,
+        "collateral_ratio": 2.816,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-24",
+        "entry_date": "2025-06-24",
+        "entry_kospi": 3103.64,
+        "remaining_amount_billion": 40.900000000001455,
+        "pnl_pct": 64.12,
+        "collateral_ratio": 2.735,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-25",
+        "entry_date": "2025-06-25",
+        "entry_kospi": 3108.25,
+        "remaining_amount_billion": 399.0,
+        "pnl_pct": 63.87,
+        "collateral_ratio": 2.731,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-27",
+        "entry_date": "2025-06-27",
+        "entry_kospi": 3055.94,
+        "remaining_amount_billion": 146.5,
+        "pnl_pct": 66.68,
+        "collateral_ratio": 2.778,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-30",
+        "entry_date": "2025-06-30",
+        "entry_kospi": 3071.7,
+        "remaining_amount_billion": 107.0,
+        "pnl_pct": 65.82,
+        "collateral_ratio": 2.764,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-04",
+        "entry_date": "2025-07-04",
+        "entry_kospi": 3054.28,
+        "remaining_amount_billion": 13.0,
+        "pnl_pct": 66.77,
+        "collateral_ratio": 2.779,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-08",
+        "entry_date": "2025-07-08",
+        "entry_kospi": 3114.95,
+        "remaining_amount_billion": 25.69999999999709,
+        "pnl_pct": 63.52,
+        "collateral_ratio": 2.725,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-09",
+        "entry_date": "2025-07-09",
+        "entry_kospi": 3133.74,
+        "remaining_amount_billion": 31.600000000002183,
+        "pnl_pct": 62.54,
+        "collateral_ratio": 2.709,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-10",
+        "entry_date": "2025-07-10",
+        "entry_kospi": 3183.23,
+        "remaining_amount_billion": 154.5,
+        "pnl_pct": 60.01,
+        "collateral_ratio": 2.667,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-11",
+        "entry_date": "2025-07-11",
+        "entry_kospi": 3175.77,
+        "remaining_amount_billion": 255.09999999999854,
+        "pnl_pct": 60.39,
+        "collateral_ratio": 2.673,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-14",
+        "entry_date": "2025-07-14",
+        "entry_kospi": 3202.03,
+        "remaining_amount_billion": 68.5,
+        "pnl_pct": 59.07,
+        "collateral_ratio": 2.651,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-15",
+        "entry_date": "2025-07-15",
+        "entry_kospi": 3215.28,
+        "remaining_amount_billion": 63.20000000000073,
+        "pnl_pct": 58.42,
+        "collateral_ratio": 2.64,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-16",
+        "entry_date": "2025-07-16",
+        "entry_kospi": 3186.38,
+        "remaining_amount_billion": 67.79999999999927,
+        "pnl_pct": 59.85,
+        "collateral_ratio": 2.664,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-17",
+        "entry_date": "2025-07-17",
+        "entry_kospi": 3192.29,
+        "remaining_amount_billion": 15.700000000000728,
+        "pnl_pct": 59.56,
+        "collateral_ratio": 2.659,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-07",
+        "entry_date": "2025-08-07",
+        "entry_kospi": 3227.68,
+        "remaining_amount_billion": 72.90000000000146,
+        "pnl_pct": 57.81,
+        "collateral_ratio": 2.63,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-08",
+        "entry_date": "2025-08-08",
+        "entry_kospi": 3210.01,
+        "remaining_amount_billion": 208.79999999999927,
+        "pnl_pct": 58.68,
+        "collateral_ratio": 2.645,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-11",
+        "entry_date": "2025-08-11",
+        "entry_kospi": 3206.77,
+        "remaining_amount_billion": 73.70000000000073,
+        "pnl_pct": 58.84,
+        "collateral_ratio": 2.647,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-27",
+        "entry_date": "2025-08-27",
+        "entry_kospi": 3187.16,
+        "remaining_amount_billion": 33.39999999999782,
+        "pnl_pct": 59.81,
+        "collateral_ratio": 2.664,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-28",
+        "entry_date": "2025-08-28",
+        "entry_kospi": 3196.32,
+        "remaining_amount_billion": 182.5,
+        "pnl_pct": 59.36,
+        "collateral_ratio": 2.656,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-29",
+        "entry_date": "2025-08-29",
+        "entry_kospi": 3186.01,
+        "remaining_amount_billion": 73.70000000000073,
+        "pnl_pct": 59.87,
+        "collateral_ratio": 2.665,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-05",
+        "entry_date": "2025-09-05",
+        "entry_kospi": 3205.12,
+        "remaining_amount_billion": 69.0,
+        "pnl_pct": 58.92,
+        "collateral_ratio": 2.649,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-08",
+        "entry_date": "2025-09-08",
+        "entry_kospi": 3219.59,
+        "remaining_amount_billion": 33.400000000001455,
+        "pnl_pct": 58.2,
+        "collateral_ratio": 2.637,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-09",
+        "entry_date": "2025-09-09",
+        "entry_kospi": 3260.05,
+        "remaining_amount_billion": 96.69999999999709,
+        "pnl_pct": 56.24,
+        "collateral_ratio": 2.604,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-10",
+        "entry_date": "2025-09-10",
+        "entry_kospi": 3314.53,
+        "remaining_amount_billion": 45.10000000000218,
+        "pnl_pct": 53.67,
+        "collateral_ratio": 2.561,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-11",
+        "entry_date": "2025-09-11",
+        "entry_kospi": 3344.2,
+        "remaining_amount_billion": 12.399999999997817,
+        "pnl_pct": 52.31,
+        "collateral_ratio": 2.538,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-15",
+        "entry_date": "2025-09-15",
+        "entry_kospi": 3407.31,
+        "remaining_amount_billion": 89.20000000000073,
+        "pnl_pct": 49.49,
+        "collateral_ratio": 2.491,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-16",
+        "entry_date": "2025-09-16",
+        "entry_kospi": 3449.62,
+        "remaining_amount_billion": 26.100000000002183,
+        "pnl_pct": 47.66,
+        "collateral_ratio": 2.461,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-17",
+        "entry_date": "2025-09-17",
+        "entry_kospi": 3413.4,
+        "remaining_amount_billion": 247.5,
+        "pnl_pct": 49.22,
+        "collateral_ratio": 2.487,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-18",
+        "entry_date": "2025-09-18",
+        "entry_kospi": 3461.3,
+        "remaining_amount_billion": 99.39999999999782,
+        "pnl_pct": 47.16,
+        "collateral_ratio": 2.453,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-19",
+        "entry_date": "2025-09-19",
+        "entry_kospi": 3445.24,
+        "remaining_amount_billion": 162.5,
+        "pnl_pct": 47.84,
+        "collateral_ratio": 2.464,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-22",
+        "entry_date": "2025-09-22",
+        "entry_kospi": 3468.65,
+        "remaining_amount_billion": 121.5,
+        "pnl_pct": 46.85,
+        "collateral_ratio": 2.447,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-23",
+        "entry_date": "2025-09-23",
+        "entry_kospi": 3486.19,
+        "remaining_amount_billion": 82.40000000000146,
+        "pnl_pct": 46.11,
+        "collateral_ratio": 2.435,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-13",
+        "entry_date": "2025-10-13",
+        "entry_kospi": 3584.55,
+        "remaining_amount_billion": 24.899999999997817,
+        "pnl_pct": 42.1,
+        "collateral_ratio": 2.368,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-14",
+        "entry_date": "2025-10-14",
+        "entry_kospi": 3561.81,
+        "remaining_amount_billion": 288.40000000000146,
+        "pnl_pct": 43.0,
+        "collateral_ratio": 2.383,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-15",
+        "entry_date": "2025-10-15",
+        "entry_kospi": 3657.28,
+        "remaining_amount_billion": 206.0,
+        "pnl_pct": 39.27,
+        "collateral_ratio": 2.321,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-17",
+        "entry_date": "2025-10-17",
+        "entry_kospi": 3748.89,
+        "remaining_amount_billion": 108.0,
+        "pnl_pct": 35.87,
+        "collateral_ratio": 2.264,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-20",
+        "entry_date": "2025-10-20",
+        "entry_kospi": 3814.69,
+        "remaining_amount_billion": 34.0,
+        "pnl_pct": 33.52,
+        "collateral_ratio": 2.225,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-22",
+        "entry_date": "2025-10-22",
+        "entry_kospi": 3883.68,
+        "remaining_amount_billion": 314.09999999999854,
+        "pnl_pct": 31.15,
+        "collateral_ratio": 2.186,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-23",
+        "entry_date": "2025-10-23",
+        "entry_kospi": 3845.56,
+        "remaining_amount_billion": 173.60000000000218,
+        "pnl_pct": 32.45,
+        "collateral_ratio": 2.208,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-24",
+        "entry_date": "2025-10-24",
+        "entry_kospi": 3941.59,
+        "remaining_amount_billion": 229.20000000000073,
+        "pnl_pct": 29.23,
+        "collateral_ratio": 2.154,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-27",
+        "entry_date": "2025-10-27",
+        "entry_kospi": 4042.83,
+        "remaining_amount_billion": 134.6999999999971,
+        "pnl_pct": 25.99,
+        "collateral_ratio": 2.1,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-28",
+        "entry_date": "2025-10-28",
+        "entry_kospi": 4010.41,
+        "remaining_amount_billion": 36.400000000001455,
+        "pnl_pct": 27.01,
+        "collateral_ratio": 2.117,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-29",
+        "entry_date": "2025-10-29",
+        "entry_kospi": 4081.15,
+        "remaining_amount_billion": 267.2000000000007,
+        "pnl_pct": 24.81,
+        "collateral_ratio": 2.08,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-30",
+        "entry_date": "2025-10-30",
+        "entry_kospi": 4086.89,
+        "remaining_amount_billion": 177.70000000000073,
+        "pnl_pct": 24.63,
+        "collateral_ratio": 2.077,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-31",
+        "entry_date": "2025-10-31",
+        "entry_kospi": 4107.5,
+        "remaining_amount_billion": 180.5,
+        "pnl_pct": 24.01,
+        "collateral_ratio": 2.067,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-04",
+        "entry_date": "2025-11-04",
+        "entry_kospi": 4121.74,
+        "remaining_amount_billion": 49.29999999999927,
+        "pnl_pct": 23.58,
+        "collateral_ratio": 2.06,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-05",
+        "entry_date": "2025-11-05",
+        "entry_kospi": 4004.42,
+        "remaining_amount_billion": 305.2000000000007,
+        "pnl_pct": 27.2,
+        "collateral_ratio": 2.12,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-06",
+        "entry_date": "2025-11-06",
+        "entry_kospi": 4026.45,
+        "remaining_amount_billion": 45.69999999999709,
+        "pnl_pct": 26.5,
+        "collateral_ratio": 2.108,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-07",
+        "entry_date": "2025-11-07",
+        "entry_kospi": 3953.76,
+        "remaining_amount_billion": 117.5,
+        "pnl_pct": 28.83,
+        "collateral_ratio": 2.147,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-12",
+        "entry_date": "2025-11-12",
+        "entry_kospi": 4150.39,
+        "remaining_amount_billion": 14.400000000001455,
+        "pnl_pct": 22.72,
+        "collateral_ratio": 2.045,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-13",
+        "entry_date": "2025-11-13",
+        "entry_kospi": 4170.63,
+        "remaining_amount_billion": 232.5,
+        "pnl_pct": 22.13,
+        "collateral_ratio": 2.035,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-14",
+        "entry_date": "2025-11-14",
+        "entry_kospi": 4011.57,
+        "remaining_amount_billion": 143.79999999999927,
+        "pnl_pct": 26.97,
+        "collateral_ratio": 2.116,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-17",
+        "entry_date": "2025-11-17",
+        "entry_kospi": 4089.25,
+        "remaining_amount_billion": 71.10000000000218,
+        "pnl_pct": 24.56,
+        "collateral_ratio": 2.076,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-28",
+        "entry_date": "2025-11-28",
+        "entry_kospi": 3926.59,
+        "remaining_amount_billion": 7.099999999998545,
+        "pnl_pct": 29.72,
+        "collateral_ratio": 2.162,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-01",
+        "entry_date": "2025-12-01",
+        "entry_kospi": 3920.37,
+        "remaining_amount_billion": 136.20000000000073,
+        "pnl_pct": 29.92,
+        "collateral_ratio": 2.165,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-02",
+        "entry_date": "2025-12-02",
+        "entry_kospi": 3994.93,
+        "remaining_amount_billion": 209.5,
+        "pnl_pct": 27.5,
+        "collateral_ratio": 2.125,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-03",
+        "entry_date": "2025-12-03",
+        "entry_kospi": 4036.3,
+        "remaining_amount_billion": 24.200000000000728,
+        "pnl_pct": 26.19,
+        "collateral_ratio": 2.103,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-04",
+        "entry_date": "2025-12-04",
+        "entry_kospi": 4028.51,
+        "remaining_amount_billion": 71.39999999999782,
+        "pnl_pct": 26.44,
+        "collateral_ratio": 2.107,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-05",
+        "entry_date": "2025-12-05",
+        "entry_kospi": 4100.05,
+        "remaining_amount_billion": 182.90000000000146,
+        "pnl_pct": 24.23,
+        "collateral_ratio": 2.071,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-08",
+        "entry_date": "2025-12-08",
+        "entry_kospi": 4154.85,
+        "remaining_amount_billion": 152.5,
+        "pnl_pct": 22.59,
+        "collateral_ratio": 2.043,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-24",
+        "entry_date": "2025-12-24",
+        "entry_kospi": 4108.62,
+        "remaining_amount_billion": 10.099999999998545,
+        "pnl_pct": 23.97,
+        "collateral_ratio": 2.066,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-29",
+        "entry_date": "2025-12-29",
+        "entry_kospi": 4220.56,
+        "remaining_amount_billion": 13.799999999999272,
+        "pnl_pct": 20.68,
+        "collateral_ratio": 2.011,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-02",
+        "entry_date": "2026-01-02",
+        "entry_kospi": 4309.63,
+        "remaining_amount_billion": 159.8000000000029,
+        "pnl_pct": 18.19,
+        "collateral_ratio": 1.97,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-05",
+        "entry_date": "2026-01-05",
+        "entry_kospi": 4457.52,
+        "remaining_amount_billion": 203.89999999999782,
+        "pnl_pct": 14.27,
+        "collateral_ratio": 1.904,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-06",
+        "entry_date": "2026-01-06",
+        "entry_kospi": 4525.48,
+        "remaining_amount_billion": 69.0,
+        "pnl_pct": 12.55,
+        "collateral_ratio": 1.876,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-07",
+        "entry_date": "2026-01-07",
+        "entry_kospi": 4551.06,
+        "remaining_amount_billion": 170.90000000000146,
+        "pnl_pct": 11.92,
+        "collateral_ratio": 1.865,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-08",
+        "entry_date": "2026-01-08",
+        "entry_kospi": 4552.37,
+        "remaining_amount_billion": 317.2999999999993,
+        "pnl_pct": 11.89,
+        "collateral_ratio": 1.865,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-09",
+        "entry_date": "2026-01-09",
+        "entry_kospi": 4586.32,
+        "remaining_amount_billion": 158.70000000000073,
+        "pnl_pct": 11.06,
+        "collateral_ratio": 1.851,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-12",
+        "entry_date": "2026-01-12",
+        "entry_kospi": 4624.79,
+        "remaining_amount_billion": 176.70000000000073,
+        "pnl_pct": 10.14,
+        "collateral_ratio": 1.836,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-13",
+        "entry_date": "2026-01-13",
+        "entry_kospi": 4692.64,
+        "remaining_amount_billion": 34.29999999999927,
+        "pnl_pct": 8.54,
+        "collateral_ratio": 1.809,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-14",
+        "entry_date": "2026-01-14",
+        "entry_kospi": 4723.1,
+        "remaining_amount_billion": 36.29999999999927,
+        "pnl_pct": 7.84,
+        "collateral_ratio": 1.797,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-15",
+        "entry_date": "2026-01-15",
+        "entry_kospi": 4797.55,
+        "remaining_amount_billion": 150.59999999999854,
+        "pnl_pct": 6.17,
+        "collateral_ratio": 1.769,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-16",
+        "entry_date": "2026-01-16",
+        "entry_kospi": 4840.74,
+        "remaining_amount_billion": 163.3000000000029,
+        "pnl_pct": 5.22,
+        "collateral_ratio": 1.754,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-23",
+        "entry_date": "2026-01-23",
+        "entry_kospi": 4990.07,
+        "remaining_amount_billion": 100.09999999999854,
+        "pnl_pct": 2.07,
+        "collateral_ratio": 1.701,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-26",
+        "entry_date": "2026-01-26",
+        "entry_kospi": 4949.59,
+        "remaining_amount_billion": 219.70000000000073,
+        "pnl_pct": 2.91,
+        "collateral_ratio": 1.715,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-28",
+        "entry_date": "2026-01-28",
+        "entry_kospi": 5170.81,
+        "remaining_amount_billion": 298.2999999999993,
+        "pnl_pct": -1.49,
+        "collateral_ratio": 1.642,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-29",
+        "entry_date": "2026-01-29",
+        "entry_kospi": 5221.25,
+        "remaining_amount_billion": 475.59999999999854,
+        "pnl_pct": -2.45,
+        "collateral_ratio": 1.626,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-30",
+        "entry_date": "2026-01-30",
+        "entry_kospi": 5224.36,
+        "remaining_amount_billion": 136.0,
+        "pnl_pct": -2.5,
+        "collateral_ratio": 1.625,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-02-02",
+        "entry_date": "2026-02-02",
+        "entry_kospi": 4949.67,
+        "remaining_amount_billion": 161.60000000000218,
+        "pnl_pct": 2.91,
+        "collateral_ratio": 1.715,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-02-03",
+        "entry_date": "2026-02-03",
+        "entry_kospi": 5288.08,
+        "remaining_amount_billion": 54.0,
+        "pnl_pct": -3.68,
+        "collateral_ratio": 1.605,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-02-04",
+        "entry_date": "2026-02-04",
+        "entry_kospi": 5371.1,
+        "remaining_amount_billion": 261.0,
+        "pnl_pct": -5.17,
+        "collateral_ratio": 1.581,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-06",
+        "entry_date": "2026-02-06",
+        "entry_kospi": 5089.14,
+        "remaining_amount_billion": 299.5,
+        "pnl_pct": 0.09,
+        "collateral_ratio": 1.668,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-02-09",
+        "entry_date": "2026-02-09",
+        "entry_kospi": 5298.04,
+        "remaining_amount_billion": 224.0,
+        "pnl_pct": -3.86,
+        "collateral_ratio": 1.602,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-02-12",
+        "entry_date": "2026-02-12",
+        "entry_kospi": 5522.27,
+        "remaining_amount_billion": 146.70000000000073,
+        "pnl_pct": -7.76,
+        "collateral_ratio": 1.537,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-13",
+        "entry_date": "2026-02-13",
+        "entry_kospi": 5507.01,
+        "remaining_amount_billion": 11.399999999997817,
+        "pnl_pct": -7.51,
+        "collateral_ratio": 1.542,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-19",
+        "entry_date": "2026-02-19",
+        "entry_kospi": 5677.25,
+        "remaining_amount_billion": 110.70000000000073,
+        "pnl_pct": -10.28,
+        "collateral_ratio": 1.495,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-20",
+        "entry_date": "2026-02-20",
+        "entry_kospi": 5808.53,
+        "remaining_amount_billion": 39.900000000001455,
+        "pnl_pct": -12.31,
+        "collateral_ratio": 1.462,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-23",
+        "entry_date": "2026-02-23",
+        "entry_kospi": 5846.09,
+        "remaining_amount_billion": 62.29999999999927,
+        "pnl_pct": -12.87,
+        "collateral_ratio": 1.452,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-24",
+        "entry_date": "2026-02-24",
+        "entry_kospi": 5969.64,
+        "remaining_amount_billion": 240.29999999999927,
+        "pnl_pct": -14.68,
+        "collateral_ratio": 1.422,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-25",
+        "entry_date": "2026-02-25",
+        "entry_kospi": 6083.86,
+        "remaining_amount_billion": 160.09999999999854,
+        "pnl_pct": -16.28,
+        "collateral_ratio": 1.395,
+        "status": "margin_call"
+      },
+      {
+        "cohort_id": "2026-02-26",
+        "entry_date": "2026-02-26",
+        "entry_kospi": 6307.27,
+        "remaining_amount_billion": 237.0,
+        "pnl_pct": -19.24,
+        "collateral_ratio": 1.346,
+        "status": "margin_call"
+      },
+      {
+        "cohort_id": "2026-02-27",
+        "entry_date": "2026-02-27",
+        "entry_kospi": 6244.13,
+        "remaining_amount_billion": 285.0,
+        "pnl_pct": -18.43,
+        "collateral_ratio": 1.36,
+        "status": "margin_call"
+      }
+    ],
+    "fifo": [
+      {
+        "cohort_id": "2025-06-17",
+        "entry_date": "2025-06-17",
+        "entry_kospi": 2950.3,
+        "remaining_amount_billion": 51.800000000010186,
+        "pnl_pct": 72.64,
+        "collateral_ratio": 2.877,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-18",
+        "entry_date": "2025-06-18",
+        "entry_kospi": 2972.19,
+        "remaining_amount_billion": 180.0,
+        "pnl_pct": 71.37,
+        "collateral_ratio": 2.856,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-19",
+        "entry_date": "2025-06-19",
+        "entry_kospi": 2977.74,
+        "remaining_amount_billion": 47.5,
+        "pnl_pct": 71.05,
+        "collateral_ratio": 2.851,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-20",
+        "entry_date": "2025-06-20",
+        "entry_kospi": 3021.84,
+        "remaining_amount_billion": 215.5,
+        "pnl_pct": 68.56,
+        "collateral_ratio": 2.809,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-23",
+        "entry_date": "2025-06-23",
+        "entry_kospi": 3014.47,
+        "remaining_amount_billion": 274.40000000000146,
+        "pnl_pct": 68.97,
+        "collateral_ratio": 2.816,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-24",
+        "entry_date": "2025-06-24",
+        "entry_kospi": 3103.64,
+        "remaining_amount_billion": 40.900000000001455,
+        "pnl_pct": 64.12,
+        "collateral_ratio": 2.735,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-25",
+        "entry_date": "2025-06-25",
+        "entry_kospi": 3108.25,
+        "remaining_amount_billion": 439.2999999999993,
+        "pnl_pct": 63.87,
+        "collateral_ratio": 2.731,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-27",
+        "entry_date": "2025-06-27",
+        "entry_kospi": 3055.94,
+        "remaining_amount_billion": 146.5,
+        "pnl_pct": 66.68,
+        "collateral_ratio": 2.778,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-06-30",
+        "entry_date": "2025-06-30",
+        "entry_kospi": 3071.7,
+        "remaining_amount_billion": 108.79999999999927,
+        "pnl_pct": 65.82,
+        "collateral_ratio": 2.764,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-01",
+        "entry_date": "2025-07-01",
+        "entry_kospi": 3089.65,
+        "remaining_amount_billion": 96.0,
+        "pnl_pct": 64.86,
+        "collateral_ratio": 2.748,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-02",
+        "entry_date": "2025-07-02",
+        "entry_kospi": 3075.06,
+        "remaining_amount_billion": 2.0,
+        "pnl_pct": 65.64,
+        "collateral_ratio": 2.761,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-04",
+        "entry_date": "2025-07-04",
+        "entry_kospi": 3054.28,
+        "remaining_amount_billion": 24.099999999998545,
+        "pnl_pct": 66.77,
+        "collateral_ratio": 2.779,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-08",
+        "entry_date": "2025-07-08",
+        "entry_kospi": 3114.95,
+        "remaining_amount_billion": 25.69999999999709,
+        "pnl_pct": 63.52,
+        "collateral_ratio": 2.725,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-09",
+        "entry_date": "2025-07-09",
+        "entry_kospi": 3133.74,
+        "remaining_amount_billion": 31.600000000002183,
+        "pnl_pct": 62.54,
+        "collateral_ratio": 2.709,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-10",
+        "entry_date": "2025-07-10",
+        "entry_kospi": 3183.23,
+        "remaining_amount_billion": 154.5,
+        "pnl_pct": 60.01,
+        "collateral_ratio": 2.667,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-11",
+        "entry_date": "2025-07-11",
+        "entry_kospi": 3175.77,
+        "remaining_amount_billion": 255.09999999999854,
+        "pnl_pct": 60.39,
+        "collateral_ratio": 2.673,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-14",
+        "entry_date": "2025-07-14",
+        "entry_kospi": 3202.03,
+        "remaining_amount_billion": 68.5,
+        "pnl_pct": 59.07,
+        "collateral_ratio": 2.651,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-15",
+        "entry_date": "2025-07-15",
+        "entry_kospi": 3215.28,
+        "remaining_amount_billion": 63.20000000000073,
+        "pnl_pct": 58.42,
+        "collateral_ratio": 2.64,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-16",
+        "entry_date": "2025-07-16",
+        "entry_kospi": 3186.38,
+        "remaining_amount_billion": 67.79999999999927,
+        "pnl_pct": 59.85,
+        "collateral_ratio": 2.664,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-17",
+        "entry_date": "2025-07-17",
+        "entry_kospi": 3192.29,
+        "remaining_amount_billion": 117.90000000000146,
+        "pnl_pct": 59.56,
+        "collateral_ratio": 2.659,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-18",
+        "entry_date": "2025-07-18",
+        "entry_kospi": 3188.07,
+        "remaining_amount_billion": 154.59999999999854,
+        "pnl_pct": 59.77,
+        "collateral_ratio": 2.663,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-21",
+        "entry_date": "2025-07-21",
+        "entry_kospi": 3210.81,
+        "remaining_amount_billion": 11.200000000000728,
+        "pnl_pct": 58.64,
+        "collateral_ratio": 2.644,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-24",
+        "entry_date": "2025-07-24",
+        "entry_kospi": 3190.45,
+        "remaining_amount_billion": 101.20000000000073,
+        "pnl_pct": 59.65,
+        "collateral_ratio": 2.661,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-25",
+        "entry_date": "2025-07-25",
+        "entry_kospi": 3196.05,
+        "remaining_amount_billion": 5.099999999998545,
+        "pnl_pct": 59.37,
+        "collateral_ratio": 2.656,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-29",
+        "entry_date": "2025-07-29",
+        "entry_kospi": 3230.57,
+        "remaining_amount_billion": 9.100000000002183,
+        "pnl_pct": 57.67,
+        "collateral_ratio": 2.628,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-07-30",
+        "entry_date": "2025-07-30",
+        "entry_kospi": 3254.47,
+        "remaining_amount_billion": 70.09999999999854,
+        "pnl_pct": 56.51,
+        "collateral_ratio": 2.608,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-04",
+        "entry_date": "2025-08-04",
+        "entry_kospi": 3147.75,
+        "remaining_amount_billion": 4.0,
+        "pnl_pct": 61.82,
+        "collateral_ratio": 2.697,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-07",
+        "entry_date": "2025-08-07",
+        "entry_kospi": 3227.68,
+        "remaining_amount_billion": 72.90000000000146,
+        "pnl_pct": 57.81,
+        "collateral_ratio": 2.63,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-08",
+        "entry_date": "2025-08-08",
+        "entry_kospi": 3210.01,
+        "remaining_amount_billion": 208.79999999999927,
+        "pnl_pct": 58.68,
+        "collateral_ratio": 2.645,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-11",
+        "entry_date": "2025-08-11",
+        "entry_kospi": 3206.77,
+        "remaining_amount_billion": 248.20000000000073,
+        "pnl_pct": 58.84,
+        "collateral_ratio": 2.647,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-12",
+        "entry_date": "2025-08-12",
+        "entry_kospi": 3189.91,
+        "remaining_amount_billion": 151.59999999999854,
+        "pnl_pct": 59.68,
+        "collateral_ratio": 2.661,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-13",
+        "entry_date": "2025-08-13",
+        "entry_kospi": 3224.37,
+        "remaining_amount_billion": 12.099999999998545,
+        "pnl_pct": 57.97,
+        "collateral_ratio": 2.633,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-14",
+        "entry_date": "2025-08-14",
+        "entry_kospi": 3225.66,
+        "remaining_amount_billion": 8.900000000001455,
+        "pnl_pct": 57.91,
+        "collateral_ratio": 2.632,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-18",
+        "entry_date": "2025-08-18",
+        "entry_kospi": 3177.28,
+        "remaining_amount_billion": 31.799999999999272,
+        "pnl_pct": 60.31,
+        "collateral_ratio": 2.672,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-19",
+        "entry_date": "2025-08-19",
+        "entry_kospi": 3151.56,
+        "remaining_amount_billion": 35.20000000000073,
+        "pnl_pct": 61.62,
+        "collateral_ratio": 2.694,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-20",
+        "entry_date": "2025-08-20",
+        "entry_kospi": 3130.09,
+        "remaining_amount_billion": 17.0,
+        "pnl_pct": 62.73,
+        "collateral_ratio": 2.712,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-25",
+        "entry_date": "2025-08-25",
+        "entry_kospi": 3209.86,
+        "remaining_amount_billion": 3.7000000000007276,
+        "pnl_pct": 58.68,
+        "collateral_ratio": 2.645,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-27",
+        "entry_date": "2025-08-27",
+        "entry_kospi": 3187.16,
+        "remaining_amount_billion": 33.39999999999782,
+        "pnl_pct": 59.81,
+        "collateral_ratio": 2.664,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-28",
+        "entry_date": "2025-08-28",
+        "entry_kospi": 3196.32,
+        "remaining_amount_billion": 182.5,
+        "pnl_pct": 59.36,
+        "collateral_ratio": 2.656,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-08-29",
+        "entry_date": "2025-08-29",
+        "entry_kospi": 3186.01,
+        "remaining_amount_billion": 84.10000000000218,
+        "pnl_pct": 59.87,
+        "collateral_ratio": 2.665,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-01",
+        "entry_date": "2025-09-01",
+        "entry_kospi": 3142.93,
+        "remaining_amount_billion": 63.79999999999927,
+        "pnl_pct": 62.06,
+        "collateral_ratio": 2.701,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-02",
+        "entry_date": "2025-09-02",
+        "entry_kospi": 3172.35,
+        "remaining_amount_billion": 37.099999999998545,
+        "pnl_pct": 60.56,
+        "collateral_ratio": 2.676,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-05",
+        "entry_date": "2025-09-05",
+        "entry_kospi": 3205.12,
+        "remaining_amount_billion": 69.0,
+        "pnl_pct": 58.92,
+        "collateral_ratio": 2.649,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-08",
+        "entry_date": "2025-09-08",
+        "entry_kospi": 3219.59,
+        "remaining_amount_billion": 33.400000000001455,
+        "pnl_pct": 58.2,
+        "collateral_ratio": 2.637,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-09",
+        "entry_date": "2025-09-09",
+        "entry_kospi": 3260.05,
+        "remaining_amount_billion": 96.69999999999709,
+        "pnl_pct": 56.24,
+        "collateral_ratio": 2.604,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-10",
+        "entry_date": "2025-09-10",
+        "entry_kospi": 3314.53,
+        "remaining_amount_billion": 45.10000000000218,
+        "pnl_pct": 53.67,
+        "collateral_ratio": 2.561,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-11",
+        "entry_date": "2025-09-11",
+        "entry_kospi": 3344.2,
+        "remaining_amount_billion": 50.099999999998545,
+        "pnl_pct": 52.31,
+        "collateral_ratio": 2.538,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-15",
+        "entry_date": "2025-09-15",
+        "entry_kospi": 3407.31,
+        "remaining_amount_billion": 89.20000000000073,
+        "pnl_pct": 49.49,
+        "collateral_ratio": 2.491,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-16",
+        "entry_date": "2025-09-16",
+        "entry_kospi": 3449.62,
+        "remaining_amount_billion": 26.100000000002183,
+        "pnl_pct": 47.66,
+        "collateral_ratio": 2.461,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-17",
+        "entry_date": "2025-09-17",
+        "entry_kospi": 3413.4,
+        "remaining_amount_billion": 247.5,
+        "pnl_pct": 49.22,
+        "collateral_ratio": 2.487,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-18",
+        "entry_date": "2025-09-18",
+        "entry_kospi": 3461.3,
+        "remaining_amount_billion": 99.39999999999782,
+        "pnl_pct": 47.16,
+        "collateral_ratio": 2.453,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-19",
+        "entry_date": "2025-09-19",
+        "entry_kospi": 3445.24,
+        "remaining_amount_billion": 162.5,
+        "pnl_pct": 47.84,
+        "collateral_ratio": 2.464,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-22",
+        "entry_date": "2025-09-22",
+        "entry_kospi": 3468.65,
+        "remaining_amount_billion": 121.5,
+        "pnl_pct": 46.85,
+        "collateral_ratio": 2.447,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-23",
+        "entry_date": "2025-09-23",
+        "entry_kospi": 3486.19,
+        "remaining_amount_billion": 120.60000000000218,
+        "pnl_pct": 46.11,
+        "collateral_ratio": 2.435,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-24",
+        "entry_date": "2025-09-24",
+        "entry_kospi": 3472.14,
+        "remaining_amount_billion": 71.0,
+        "pnl_pct": 46.7,
+        "collateral_ratio": 2.445,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-25",
+        "entry_date": "2025-09-25",
+        "entry_kospi": 3471.11,
+        "remaining_amount_billion": 154.59999999999854,
+        "pnl_pct": 46.74,
+        "collateral_ratio": 2.446,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-26",
+        "entry_date": "2025-09-26",
+        "entry_kospi": 3386.05,
+        "remaining_amount_billion": 23.599999999998545,
+        "pnl_pct": 50.43,
+        "collateral_ratio": 2.507,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-09-30",
+        "entry_date": "2025-09-30",
+        "entry_kospi": 3424.6,
+        "remaining_amount_billion": 36.599999999998545,
+        "pnl_pct": 48.73,
+        "collateral_ratio": 2.479,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-02",
+        "entry_date": "2025-10-02",
+        "entry_kospi": 3549.21,
+        "remaining_amount_billion": 1.7999999999992724,
+        "pnl_pct": 43.51,
+        "collateral_ratio": 2.392,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-13",
+        "entry_date": "2025-10-13",
+        "entry_kospi": 3584.55,
+        "remaining_amount_billion": 24.899999999997817,
+        "pnl_pct": 42.1,
+        "collateral_ratio": 2.368,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-14",
+        "entry_date": "2025-10-14",
+        "entry_kospi": 3561.81,
+        "remaining_amount_billion": 288.40000000000146,
+        "pnl_pct": 43.0,
+        "collateral_ratio": 2.383,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-15",
+        "entry_date": "2025-10-15",
+        "entry_kospi": 3657.28,
+        "remaining_amount_billion": 266.0,
+        "pnl_pct": 39.27,
+        "collateral_ratio": 2.321,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-17",
+        "entry_date": "2025-10-17",
+        "entry_kospi": 3748.89,
+        "remaining_amount_billion": 108.0,
+        "pnl_pct": 35.87,
+        "collateral_ratio": 2.264,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-20",
+        "entry_date": "2025-10-20",
+        "entry_kospi": 3814.69,
+        "remaining_amount_billion": 172.59999999999854,
+        "pnl_pct": 33.52,
+        "collateral_ratio": 2.225,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-22",
+        "entry_date": "2025-10-22",
+        "entry_kospi": 3883.68,
+        "remaining_amount_billion": 314.09999999999854,
+        "pnl_pct": 31.15,
+        "collateral_ratio": 2.186,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-23",
+        "entry_date": "2025-10-23",
+        "entry_kospi": 3845.56,
+        "remaining_amount_billion": 173.60000000000218,
+        "pnl_pct": 32.45,
+        "collateral_ratio": 2.208,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-24",
+        "entry_date": "2025-10-24",
+        "entry_kospi": 3941.59,
+        "remaining_amount_billion": 229.20000000000073,
+        "pnl_pct": 29.23,
+        "collateral_ratio": 2.154,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-27",
+        "entry_date": "2025-10-27",
+        "entry_kospi": 4042.83,
+        "remaining_amount_billion": 134.6999999999971,
+        "pnl_pct": 25.99,
+        "collateral_ratio": 2.1,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-28",
+        "entry_date": "2025-10-28",
+        "entry_kospi": 4010.41,
+        "remaining_amount_billion": 36.400000000001455,
+        "pnl_pct": 27.01,
+        "collateral_ratio": 2.117,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-29",
+        "entry_date": "2025-10-29",
+        "entry_kospi": 4081.15,
+        "remaining_amount_billion": 267.2000000000007,
+        "pnl_pct": 24.81,
+        "collateral_ratio": 2.08,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-30",
+        "entry_date": "2025-10-30",
+        "entry_kospi": 4086.89,
+        "remaining_amount_billion": 177.70000000000073,
+        "pnl_pct": 24.63,
+        "collateral_ratio": 2.077,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-10-31",
+        "entry_date": "2025-10-31",
+        "entry_kospi": 4107.5,
+        "remaining_amount_billion": 250.0,
+        "pnl_pct": 24.01,
+        "collateral_ratio": 2.067,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-04",
+        "entry_date": "2025-11-04",
+        "entry_kospi": 4121.74,
+        "remaining_amount_billion": 49.29999999999927,
+        "pnl_pct": 23.58,
+        "collateral_ratio": 2.06,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-05",
+        "entry_date": "2025-11-05",
+        "entry_kospi": 4004.42,
+        "remaining_amount_billion": 305.2000000000007,
+        "pnl_pct": 27.2,
+        "collateral_ratio": 2.12,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-06",
+        "entry_date": "2025-11-06",
+        "entry_kospi": 4026.45,
+        "remaining_amount_billion": 45.69999999999709,
+        "pnl_pct": 26.5,
+        "collateral_ratio": 2.108,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-07",
+        "entry_date": "2025-11-07",
+        "entry_kospi": 3953.76,
+        "remaining_amount_billion": 347.5,
+        "pnl_pct": 28.83,
+        "collateral_ratio": 2.147,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-12",
+        "entry_date": "2025-11-12",
+        "entry_kospi": 4150.39,
+        "remaining_amount_billion": 14.400000000001455,
+        "pnl_pct": 22.72,
+        "collateral_ratio": 2.045,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-13",
+        "entry_date": "2025-11-13",
+        "entry_kospi": 4170.63,
+        "remaining_amount_billion": 232.5,
+        "pnl_pct": 22.13,
+        "collateral_ratio": 2.035,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-14",
+        "entry_date": "2025-11-14",
+        "entry_kospi": 4011.57,
+        "remaining_amount_billion": 143.79999999999927,
+        "pnl_pct": 26.97,
+        "collateral_ratio": 2.116,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-17",
+        "entry_date": "2025-11-17",
+        "entry_kospi": 4089.25,
+        "remaining_amount_billion": 203.79999999999927,
+        "pnl_pct": 24.56,
+        "collateral_ratio": 2.076,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-18",
+        "entry_date": "2025-11-18",
+        "entry_kospi": 3953.62,
+        "remaining_amount_billion": 199.0,
+        "pnl_pct": 28.83,
+        "collateral_ratio": 2.147,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-19",
+        "entry_date": "2025-11-19",
+        "entry_kospi": 3929.51,
+        "remaining_amount_billion": 46.400000000001455,
+        "pnl_pct": 29.62,
+        "collateral_ratio": 2.16,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-20",
+        "entry_date": "2025-11-20",
+        "entry_kospi": 4004.85,
+        "remaining_amount_billion": 7.700000000000728,
+        "pnl_pct": 27.18,
+        "collateral_ratio": 2.12,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-11-28",
+        "entry_date": "2025-11-28",
+        "entry_kospi": 3926.59,
+        "remaining_amount_billion": 7.099999999998545,
+        "pnl_pct": 29.72,
+        "collateral_ratio": 2.162,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-01",
+        "entry_date": "2025-12-01",
+        "entry_kospi": 3920.37,
+        "remaining_amount_billion": 136.20000000000073,
+        "pnl_pct": 29.92,
+        "collateral_ratio": 2.165,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-02",
+        "entry_date": "2025-12-02",
+        "entry_kospi": 3994.93,
+        "remaining_amount_billion": 209.5,
+        "pnl_pct": 27.5,
+        "collateral_ratio": 2.125,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-03",
+        "entry_date": "2025-12-03",
+        "entry_kospi": 4036.3,
+        "remaining_amount_billion": 24.200000000000728,
+        "pnl_pct": 26.19,
+        "collateral_ratio": 2.103,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-04",
+        "entry_date": "2025-12-04",
+        "entry_kospi": 4028.51,
+        "remaining_amount_billion": 71.39999999999782,
+        "pnl_pct": 26.44,
+        "collateral_ratio": 2.107,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-05",
+        "entry_date": "2025-12-05",
+        "entry_kospi": 4100.05,
+        "remaining_amount_billion": 182.90000000000146,
+        "pnl_pct": 24.23,
+        "collateral_ratio": 2.071,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-08",
+        "entry_date": "2025-12-08",
+        "entry_kospi": 4154.85,
+        "remaining_amount_billion": 277.3999999999978,
+        "pnl_pct": 22.59,
+        "collateral_ratio": 2.043,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-10",
+        "entry_date": "2025-12-10",
+        "entry_kospi": 4135.0,
+        "remaining_amount_billion": 72.69999999999709,
+        "pnl_pct": 23.18,
+        "collateral_ratio": 2.053,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-15",
+        "entry_date": "2025-12-15",
+        "entry_kospi": 4090.59,
+        "remaining_amount_billion": 78.90000000000146,
+        "pnl_pct": 24.52,
+        "collateral_ratio": 2.075,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-17",
+        "entry_date": "2025-12-17",
+        "entry_kospi": 4056.41,
+        "remaining_amount_billion": 197.29999999999927,
+        "pnl_pct": 25.57,
+        "collateral_ratio": 2.093,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-24",
+        "entry_date": "2025-12-24",
+        "entry_kospi": 4108.62,
+        "remaining_amount_billion": 36.70000000000073,
+        "pnl_pct": 23.97,
+        "collateral_ratio": 2.066,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2025-12-29",
+        "entry_date": "2025-12-29",
+        "entry_kospi": 4220.56,
+        "remaining_amount_billion": 45.70000000000073,
+        "pnl_pct": 20.68,
+        "collateral_ratio": 2.011,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-02",
+        "entry_date": "2026-01-02",
+        "entry_kospi": 4309.63,
+        "remaining_amount_billion": 159.8000000000029,
+        "pnl_pct": 18.19,
+        "collateral_ratio": 1.97,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-05",
+        "entry_date": "2026-01-05",
+        "entry_kospi": 4457.52,
+        "remaining_amount_billion": 203.89999999999782,
+        "pnl_pct": 14.27,
+        "collateral_ratio": 1.904,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-06",
+        "entry_date": "2026-01-06",
+        "entry_kospi": 4525.48,
+        "remaining_amount_billion": 69.0,
+        "pnl_pct": 12.55,
+        "collateral_ratio": 1.876,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-07",
+        "entry_date": "2026-01-07",
+        "entry_kospi": 4551.06,
+        "remaining_amount_billion": 170.90000000000146,
+        "pnl_pct": 11.92,
+        "collateral_ratio": 1.865,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-08",
+        "entry_date": "2026-01-08",
+        "entry_kospi": 4552.37,
+        "remaining_amount_billion": 317.2999999999993,
+        "pnl_pct": 11.89,
+        "collateral_ratio": 1.865,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-09",
+        "entry_date": "2026-01-09",
+        "entry_kospi": 4586.32,
+        "remaining_amount_billion": 158.70000000000073,
+        "pnl_pct": 11.06,
+        "collateral_ratio": 1.851,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-12",
+        "entry_date": "2026-01-12",
+        "entry_kospi": 4624.79,
+        "remaining_amount_billion": 176.70000000000073,
+        "pnl_pct": 10.14,
+        "collateral_ratio": 1.836,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-13",
+        "entry_date": "2026-01-13",
+        "entry_kospi": 4692.64,
+        "remaining_amount_billion": 34.29999999999927,
+        "pnl_pct": 8.54,
+        "collateral_ratio": 1.809,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-14",
+        "entry_date": "2026-01-14",
+        "entry_kospi": 4723.1,
+        "remaining_amount_billion": 36.29999999999927,
+        "pnl_pct": 7.84,
+        "collateral_ratio": 1.797,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-15",
+        "entry_date": "2026-01-15",
+        "entry_kospi": 4797.55,
+        "remaining_amount_billion": 150.59999999999854,
+        "pnl_pct": 6.17,
+        "collateral_ratio": 1.769,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-16",
+        "entry_date": "2026-01-16",
+        "entry_kospi": 4840.74,
+        "remaining_amount_billion": 188.8000000000029,
+        "pnl_pct": 5.22,
+        "collateral_ratio": 1.754,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-19",
+        "entry_date": "2026-01-19",
+        "entry_kospi": 4904.66,
+        "remaining_amount_billion": 60.89999999999782,
+        "pnl_pct": 3.85,
+        "collateral_ratio": 1.731,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-21",
+        "entry_date": "2026-01-21",
+        "entry_kospi": 4909.93,
+        "remaining_amount_billion": 148.5,
+        "pnl_pct": 3.74,
+        "collateral_ratio": 1.729,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-23",
+        "entry_date": "2026-01-23",
+        "entry_kospi": 4990.07,
+        "remaining_amount_billion": 100.09999999999854,
+        "pnl_pct": 2.07,
+        "collateral_ratio": 1.701,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-26",
+        "entry_date": "2026-01-26",
+        "entry_kospi": 4949.59,
+        "remaining_amount_billion": 326.0,
+        "pnl_pct": 2.91,
+        "collateral_ratio": 1.715,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-28",
+        "entry_date": "2026-01-28",
+        "entry_kospi": 5170.81,
+        "remaining_amount_billion": 298.2999999999993,
+        "pnl_pct": -1.49,
+        "collateral_ratio": 1.642,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-29",
+        "entry_date": "2026-01-29",
+        "entry_kospi": 5221.25,
+        "remaining_amount_billion": 475.59999999999854,
+        "pnl_pct": -2.45,
+        "collateral_ratio": 1.626,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-01-30",
+        "entry_date": "2026-01-30",
+        "entry_kospi": 5224.36,
+        "remaining_amount_billion": 136.0,
+        "pnl_pct": -2.5,
+        "collateral_ratio": 1.625,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-02-02",
+        "entry_date": "2026-02-02",
+        "entry_kospi": 4949.67,
+        "remaining_amount_billion": 161.60000000000218,
+        "pnl_pct": 2.91,
+        "collateral_ratio": 1.715,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-02-03",
+        "entry_date": "2026-02-03",
+        "entry_kospi": 5288.08,
+        "remaining_amount_billion": 54.0,
+        "pnl_pct": -3.68,
+        "collateral_ratio": 1.605,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-02-04",
+        "entry_date": "2026-02-04",
+        "entry_kospi": 5371.1,
+        "remaining_amount_billion": 407.2000000000007,
+        "pnl_pct": -5.17,
+        "collateral_ratio": 1.581,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-06",
+        "entry_date": "2026-02-06",
+        "entry_kospi": 5089.14,
+        "remaining_amount_billion": 299.5,
+        "pnl_pct": 0.09,
+        "collateral_ratio": 1.668,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-02-09",
+        "entry_date": "2026-02-09",
+        "entry_kospi": 5298.04,
+        "remaining_amount_billion": 510.2000000000007,
+        "pnl_pct": -3.86,
+        "collateral_ratio": 1.602,
+        "status": "safe"
+      },
+      {
+        "cohort_id": "2026-02-12",
+        "entry_date": "2026-02-12",
+        "entry_kospi": 5522.27,
+        "remaining_amount_billion": 146.70000000000073,
+        "pnl_pct": -7.76,
+        "collateral_ratio": 1.537,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-13",
+        "entry_date": "2026-02-13",
+        "entry_kospi": 5507.01,
+        "remaining_amount_billion": 11.399999999997817,
+        "pnl_pct": -7.51,
+        "collateral_ratio": 1.542,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-19",
+        "entry_date": "2026-02-19",
+        "entry_kospi": 5677.25,
+        "remaining_amount_billion": 110.70000000000073,
+        "pnl_pct": -10.28,
+        "collateral_ratio": 1.495,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-20",
+        "entry_date": "2026-02-20",
+        "entry_kospi": 5808.53,
+        "remaining_amount_billion": 39.900000000001455,
+        "pnl_pct": -12.31,
+        "collateral_ratio": 1.462,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-23",
+        "entry_date": "2026-02-23",
+        "entry_kospi": 5846.09,
+        "remaining_amount_billion": 62.29999999999927,
+        "pnl_pct": -12.87,
+        "collateral_ratio": 1.452,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-24",
+        "entry_date": "2026-02-24",
+        "entry_kospi": 5969.64,
+        "remaining_amount_billion": 240.29999999999927,
+        "pnl_pct": -14.68,
+        "collateral_ratio": 1.422,
+        "status": "watch"
+      },
+      {
+        "cohort_id": "2026-02-25",
+        "entry_date": "2026-02-25",
+        "entry_kospi": 6083.86,
+        "remaining_amount_billion": 160.09999999999854,
+        "pnl_pct": -16.28,
+        "collateral_ratio": 1.395,
+        "status": "margin_call"
+      },
+      {
+        "cohort_id": "2026-02-26",
+        "entry_date": "2026-02-26",
+        "entry_kospi": 6307.27,
+        "remaining_amount_billion": 237.0,
+        "pnl_pct": -19.24,
+        "collateral_ratio": 1.346,
+        "status": "margin_call"
+      },
+      {
+        "cohort_id": "2026-02-27",
+        "entry_date": "2026-02-27",
+        "entry_kospi": 6244.13,
+        "remaining_amount_billion": 285.0,
+        "pnl_pct": -18.43,
+        "collateral_ratio": 1.36,
+        "status": "margin_call"
+      }
+    ],
+    "price_distribution_lifo": [
+      {
+        "range": "2400-2500",
+        "bin": 2400,
+        "safe": 1207.5999999999985,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "2500-2600",
+        "bin": 2500,
+        "safe": 745.0,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "2600-2700",
+        "bin": 2600,
+        "safe": 688.8999999999978,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "2700-2800",
+        "bin": 2700,
+        "safe": 271.70000000000437,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "2800-2900",
+        "bin": 2800,
+        "safe": 135.5,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "2900-3000",
+        "bin": 2900,
+        "safe": 938.6999999999971,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3000-3100",
+        "bin": 3000,
+        "safe": 756.4000000000015,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3100-3200",
+        "bin": 3100,
+        "safe": 1279.8999999999978,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3200-3300",
+        "bin": 3200,
+        "safe": 686.2000000000007,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3300-3400",
+        "bin": 3300,
+        "safe": 57.5,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3400-3500",
+        "bin": 3400,
+        "safe": 828.6000000000022,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3500-3600",
+        "bin": 3500,
+        "safe": 313.2999999999993,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3600-3700",
+        "bin": 3600,
+        "safe": 206.0,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3700-3800",
+        "bin": 3700,
+        "safe": 108.0,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3800-3900",
+        "bin": 3800,
+        "safe": 521.7000000000007,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3900-4000",
+        "bin": 3900,
+        "safe": 699.5,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4000-4100",
+        "bin": 4000,
+        "safe": 1277.3999999999978,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4100-4200",
+        "bin": 4100,
+        "safe": 822.2000000000007,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4200-4300",
+        "bin": 4200,
+        "safe": 13.799999999999272,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4300-4400",
+        "bin": 4300,
+        "safe": 159.8000000000029,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4400-4500",
+        "bin": 4400,
+        "safe": 203.89999999999782,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4500-4600",
+        "bin": 4500,
+        "safe": 715.9000000000015,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4600-4700",
+        "bin": 4600,
+        "safe": 211.0,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4700-4800",
+        "bin": 4700,
+        "safe": 186.89999999999782,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4800-4900",
+        "bin": 4800,
+        "safe": 163.3000000000029,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4900-5000",
+        "bin": 4900,
+        "safe": 481.40000000000146,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5000-5100",
+        "bin": 5000,
+        "safe": 299.5,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5100-5200",
+        "bin": 5100,
+        "safe": 298.2999999999993,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5200-5300",
+        "bin": 5200,
+        "safe": 889.5999999999985,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5300-5400",
+        "bin": 5300,
+        "safe": 0,
+        "watch": 261.0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5500-5600",
+        "bin": 5500,
+        "safe": 0,
+        "watch": 158.09999999999854,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5600-5700",
+        "bin": 5600,
+        "safe": 0,
+        "watch": 110.70000000000073,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5800-5900",
+        "bin": 5800,
+        "safe": 0,
+        "watch": 102.20000000000073,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5900-6000",
+        "bin": 5900,
+        "safe": 0,
+        "watch": 240.29999999999927,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "6000-6100",
+        "bin": 6000,
+        "safe": 0,
+        "watch": 0,
+        "margin_call": 160.09999999999854,
+        "forced_liq": 0
+      },
+      {
+        "range": "6200-6300",
+        "bin": 6200,
+        "safe": 0,
+        "watch": 0,
+        "margin_call": 285.0,
+        "forced_liq": 0
+      },
+      {
+        "range": "6300-6400",
+        "bin": 6300,
+        "safe": 0,
+        "watch": 0,
+        "margin_call": 237.0,
+        "forced_liq": 0
+      }
+    ],
+    "price_distribution_fifo": [
+      {
+        "range": "2900-3000",
+        "bin": 2900,
+        "safe": 279.3000000000102,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3000-3100",
+        "bin": 3000,
+        "safe": 867.2999999999993,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3100-3200",
+        "bin": 3100,
+        "safe": 2034.1999999999935,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3200-3300",
+        "bin": 3200,
+        "safe": 975.8000000000029,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3300-3400",
+        "bin": 3300,
+        "safe": 118.79999999999927,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3400-3500",
+        "bin": 3400,
+        "safe": 1129.0,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3500-3600",
+        "bin": 3500,
+        "safe": 315.09999999999854,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3600-3700",
+        "bin": 3600,
+        "safe": 266.0,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3700-3800",
+        "bin": 3700,
+        "safe": 108.0,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3800-3900",
+        "bin": 3800,
+        "safe": 660.2999999999993,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "3900-4000",
+        "bin": 3900,
+        "safe": 1174.9000000000015,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4000-4100",
+        "bin": 4000,
+        "safe": 1693.9999999999964,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4100-4200",
+        "bin": 4100,
+        "safe": 1115.8999999999978,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4200-4300",
+        "bin": 4200,
+        "safe": 45.70000000000073,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4300-4400",
+        "bin": 4300,
+        "safe": 159.8000000000029,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4400-4500",
+        "bin": 4400,
+        "safe": 203.89999999999782,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4500-4600",
+        "bin": 4500,
+        "safe": 715.9000000000015,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4600-4700",
+        "bin": 4600,
+        "safe": 211.0,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4700-4800",
+        "bin": 4700,
+        "safe": 186.89999999999782,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4800-4900",
+        "bin": 4800,
+        "safe": 188.8000000000029,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "4900-5000",
+        "bin": 4900,
+        "safe": 797.0999999999985,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5000-5100",
+        "bin": 5000,
+        "safe": 299.5,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5100-5200",
+        "bin": 5100,
+        "safe": 298.2999999999993,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5200-5300",
+        "bin": 5200,
+        "safe": 1175.7999999999993,
+        "watch": 0,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5300-5400",
+        "bin": 5300,
+        "safe": 0,
+        "watch": 407.2000000000007,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5500-5600",
+        "bin": 5500,
+        "safe": 0,
+        "watch": 158.09999999999854,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5600-5700",
+        "bin": 5600,
+        "safe": 0,
+        "watch": 110.70000000000073,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5800-5900",
+        "bin": 5800,
+        "safe": 0,
+        "watch": 102.20000000000073,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "5900-6000",
+        "bin": 5900,
+        "safe": 0,
+        "watch": 240.29999999999927,
+        "margin_call": 0,
+        "forced_liq": 0
+      },
+      {
+        "range": "6000-6100",
+        "bin": 6000,
+        "safe": 0,
+        "watch": 0,
+        "margin_call": 160.09999999999854,
+        "forced_liq": 0
+      },
+      {
+        "range": "6200-6300",
+        "bin": 6200,
+        "safe": 0,
+        "watch": 0,
+        "margin_call": 285.0,
+        "forced_liq": 0
+      },
+      {
+        "range": "6300-6400",
+        "bin": 6300,
+        "safe": 0,
+        "watch": 0,
+        "margin_call": 237.0,
+        "forced_liq": 0
+      }
+    ],
     "trigger_map": [
       {
         "shock_pct": -3,
         "expected_kospi": 4941,
-        "margin_call_billion": 0,
+        "margin_call_billion": 323,
         "forced_liq_billion": 0
       },
       {
         "shock_pct": -5,
         "expected_kospi": 4839,
-        "margin_call_billion": 0,
-        "forced_liq_billion": 0
+        "margin_call_billion": 259,
+        "forced_liq_billion": 183
       },
       {
         "shock_pct": -10,
         "expected_kospi": 4584,
-        "margin_call_billion": 0,
-        "forced_liq_billion": 0
+        "margin_call_billion": 453,
+        "forced_liq_billion": 323
       },
       {
         "shock_pct": -15,
         "expected_kospi": 4330,
-        "margin_call_billion": 0,
-        "forced_liq_billion": 0
+        "margin_call_billion": 852,
+        "forced_liq_billion": 636
       },
       {
         "shock_pct": -20,
         "expected_kospi": 4075,
-        "margin_call_billion": 0,
-        "forced_liq_billion": 0
+        "margin_call_billion": 995,
+        "forced_liq_billion": 1107
       },
       {
         "shock_pct": -30,
         "expected_kospi": 3565,
-        "margin_call_billion": 0,
-        "forced_liq_billion": 0
+        "margin_call_billion": 953,
+        "forced_liq_billion": 2908
       }
     ],
     "current_kospi": 5093.54,
-    "current_fx": 1463.3,
-    "total_active_billion": 0
+    "current_fx": 1466.7,
+    "total_active_billion": 16721.899999999998
   },
   "crisis_score": {
-    "current": 36.5,
+    "current": 35.9,
     "classification": "normal",
     "weights": {
       "leverage_heat": 0.1,
@@ -93,8 +2962,8 @@
         "desc": "예탁금 변화"
       },
       "vix_level": {
-        "value": 68.6,
-        "raw": 22.69,
+        "value": 70.3,
+        "raw": 23.17,
         "desc": "VIX"
       },
       "volume_explosion": {
@@ -123,13 +2992,13 @@
         "desc": "신용 중단"
       },
       "institutional_selling": {
-        "value": 43.8,
-        "raw": 0,
+        "value": 51.2,
+        "raw": -597.8,
         "desc": "기관 순매도"
       },
       "retail_exhaustion": {
-        "value": 18.2,
-        "raw": 0,
+        "value": 0.0,
+        "raw": -326.113,
         "desc": "개인 매수력 감소"
       },
       "bull_trap": {
@@ -141,302 +3010,302 @@
     "history": [
       {
         "date": "2025-12-02",
-        "score": 50.4,
+        "score": 63.5,
         "classification": "caution"
       },
       {
         "date": "2025-12-03",
-        "score": 53.3,
+        "score": 66.1,
         "classification": "caution"
       },
       {
         "date": "2025-12-04",
-        "score": 53.2,
+        "score": 66.6,
         "classification": "caution"
       },
       {
         "date": "2025-12-05",
-        "score": 54.2,
+        "score": 58.4,
         "classification": "caution"
       },
       {
         "date": "2025-12-08",
-        "score": 55.5,
+        "score": 60.0,
         "classification": "caution"
       },
       {
         "date": "2025-12-09",
-        "score": 51.7,
-        "classification": "caution"
-      },
-      {
-        "date": "2025-12-10",
-        "score": 51.4,
-        "classification": "caution"
-      },
-      {
-        "date": "2025-12-11",
-        "score": 52.2,
-        "classification": "caution"
-      },
-      {
-        "date": "2025-12-12",
         "score": 50.3,
         "classification": "caution"
       },
       {
-        "date": "2025-12-15",
-        "score": 50.6,
+        "date": "2025-12-10",
+        "score": 51.8,
         "classification": "caution"
       },
       {
-        "date": "2025-12-16",
-        "score": 49.4,
-        "classification": "normal"
-      },
-      {
-        "date": "2025-12-17",
-        "score": 49.9,
-        "classification": "normal"
-      },
-      {
-        "date": "2025-12-18",
-        "score": 51.7,
+        "date": "2025-12-11",
+        "score": 56.9,
         "classification": "caution"
       },
       {
-        "date": "2025-12-19",
-        "score": 52.7,
-        "classification": "caution"
-      },
-      {
-        "date": "2025-12-22",
-        "score": 50.6,
-        "classification": "caution"
-      },
-      {
-        "date": "2025-12-23",
-        "score": 51.9,
-        "classification": "caution"
-      },
-      {
-        "date": "2025-12-24",
-        "score": 49.2,
-        "classification": "normal"
-      },
-      {
-        "date": "2025-12-26",
-        "score": 48.4,
-        "classification": "normal"
-      },
-      {
-        "date": "2025-12-29",
-        "score": 48.4,
-        "classification": "normal"
-      },
-      {
-        "date": "2025-12-30",
-        "score": 48.1,
-        "classification": "normal"
-      },
-      {
-        "date": "2026-01-02",
-        "score": 49.6,
-        "classification": "normal"
-      },
-      {
-        "date": "2026-01-05",
-        "score": 51.6,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-01-06",
-        "score": 52.8,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-01-07",
-        "score": 53.7,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-01-08",
-        "score": 53.9,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-01-09",
-        "score": 56.1,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-01-12",
-        "score": 55.6,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-01-13",
-        "score": 56.4,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-01-14",
-        "score": 55.8,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-01-15",
+        "date": "2025-12-12",
         "score": 54.7,
         "classification": "caution"
       },
       {
-        "date": "2026-01-16",
-        "score": 53.5,
+        "date": "2025-12-15",
+        "score": 64.7,
         "classification": "caution"
       },
       {
-        "date": "2026-01-19",
-        "score": 49.6,
-        "classification": "normal"
-      },
-      {
-        "date": "2026-01-20",
-        "score": 52.2,
+        "date": "2025-12-16",
+        "score": 63.3,
         "classification": "caution"
       },
       {
-        "date": "2026-01-21",
-        "score": 52.2,
+        "date": "2025-12-17",
+        "score": 62.4,
         "classification": "caution"
       },
       {
-        "date": "2026-01-22",
-        "score": 51.4,
+        "date": "2025-12-18",
+        "score": 65.1,
         "classification": "caution"
       },
       {
-        "date": "2026-01-23",
-        "score": 50.9,
+        "date": "2025-12-19",
+        "score": 60.1,
         "classification": "caution"
       },
       {
-        "date": "2026-01-26",
-        "score": 51.6,
+        "date": "2025-12-22",
+        "score": 56.3,
         "classification": "caution"
       },
       {
-        "date": "2026-01-27",
-        "score": 50.9,
+        "date": "2025-12-23",
+        "score": 57.1,
         "classification": "caution"
       },
       {
-        "date": "2026-01-28",
-        "score": 51.3,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-01-29",
-        "score": 53.7,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-01-30",
-        "score": 53.6,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-02",
-        "score": 53.3,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-03",
-        "score": 53.4,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-04",
-        "score": 57.6,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-05",
-        "score": 55.8,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-06",
-        "score": 53.8,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-09",
-        "score": 57.6,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-10",
-        "score": 57.2,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-11",
-        "score": 54.4,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-12",
-        "score": 56.5,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-13",
-        "score": 56.5,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-19",
-        "score": 49.5,
-        "classification": "normal"
-      },
-      {
-        "date": "2026-02-20",
-        "score": 50.0,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-23",
-        "score": 51.5,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-24",
-        "score": 52.0,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-25",
-        "score": 52.0,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-26",
-        "score": 52.6,
-        "classification": "caution"
-      },
-      {
-        "date": "2026-02-27",
+        "date": "2025-12-24",
         "score": 54.5,
         "classification": "caution"
       },
       {
+        "date": "2025-12-26",
+        "score": 53.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-29",
+        "score": 48.2,
+        "classification": "normal"
+      },
+      {
+        "date": "2025-12-30",
+        "score": 54.3,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-02",
+        "score": 55.0,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-05",
+        "score": 58.1,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-06",
+        "score": 64.8,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-07",
+        "score": 61.8,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-08",
+        "score": 68.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-09",
+        "score": 62.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-12",
+        "score": 62.7,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-13",
+        "score": 68.4,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-14",
+        "score": 66.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-15",
+        "score": 59.0,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-16",
+        "score": 58.7,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-19",
+        "score": 54.9,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-20",
+        "score": 55.3,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-21",
+        "score": 57.4,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-22",
+        "score": 52.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-23",
+        "score": 56.9,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-26",
+        "score": 67.1,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-27",
+        "score": 59.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-28",
+        "score": 66.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-29",
+        "score": 67.4,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-30",
+        "score": 59.7,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-02",
+        "score": 61.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-03",
+        "score": 56.7,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-04",
+        "score": 61.0,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-05",
+        "score": 63.9,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-06",
+        "score": 58.3,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-09",
+        "score": 61.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-10",
+        "score": 62.0,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-11",
+        "score": 59.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-12",
+        "score": 68.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-13",
+        "score": 69.0,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-19",
+        "score": 60.9,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-20",
+        "score": 61.4,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-23",
+        "score": 65.1,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-24",
+        "score": 63.1,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-25",
+        "score": 58.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-26",
+        "score": 62.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-27",
+        "score": 59.4,
+        "classification": "caution"
+      },
+      {
         "date": "2026-03-03",
-        "score": 40.4,
+        "score": 47.1,
         "classification": "normal"
       },
       {
         "date": "2026-03-04",
-        "score": 36.5,
+        "score": 35.9,
         "classification": "normal"
       }
     ]
@@ -444,67 +3313,155 @@
   "forced_liq": {
     "shock_5": {
       "initial_price": 5093.54,
-      "initial_fx": 1463.3,
-      "final_price": 4839.0,
-      "final_fx": 1463.0,
-      "total_drop_pct": -5.0,
+      "initial_fx": 1466.7,
+      "final_price": 21014.0,
+      "final_fx": 1467.0,
+      "total_drop_pct": 312.57,
       "loop_mode": "A",
-      "converged_at_round": 1,
+      "converged_at_round": 4,
       "rounds": [
         {
           "round": 1,
-          "price": 4839.0,
-          "fx": 1463.0,
+          "price": 4028.0,
+          "fx": 1467.0,
+          "forced_liq_billion": 183.0,
+          "margin_call_billion": 259.0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 16.75,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": -20.91
+        },
+        {
+          "round": 2,
+          "price": -1466.0,
+          "fx": 1467.0,
+          "forced_liq_billion": 1488.0,
+          "margin_call_billion": 753.0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 136.4,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": -128.79
+        },
+        {
+          "round": 3,
+          "price": 21014.0,
+          "fx": 1467.0,
+          "forced_liq_billion": 16722.0,
+          "margin_call_billion": 0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 1533.18,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": 312.57
+        },
+        {
+          "round": 4,
+          "price": 21014.0,
+          "fx": 1467.0,
           "forced_liq_billion": 0,
           "margin_call_billion": 0,
           "foreign_sell_billion": 0.0,
           "impact_a_pct": 0.0,
           "impact_b_pct": 0.0,
-          "cumulative_drop_pct": -5.0
+          "cumulative_drop_pct": 312.57
         }
       ]
     },
     "shock_15": {
       "initial_price": 5093.54,
-      "initial_fx": 1463.3,
-      "final_price": 4330.0,
-      "final_fx": 1463.0,
-      "total_drop_pct": -15.0,
+      "initial_fx": 1466.7,
+      "final_price": 330352.0,
+      "final_fx": 1467.0,
+      "total_drop_pct": 6385.7,
       "loop_mode": "A",
-      "converged_at_round": 1,
+      "converged_at_round": 4,
       "rounds": [
         {
           "round": 1,
-          "price": 4330.0,
-          "fx": 1463.0,
+          "price": 1804.0,
+          "fx": 1467.0,
+          "forced_liq_billion": 636.0,
+          "margin_call_billion": 852.0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 58.32,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": -64.57
+        },
+        {
+          "round": 2,
+          "price": -23050.0,
+          "fx": 1467.0,
+          "forced_liq_billion": 15023.0,
+          "margin_call_billion": 890.0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 1377.38,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": -552.54
+        },
+        {
+          "round": 3,
+          "price": 330352.0,
+          "fx": 1467.0,
+          "forced_liq_billion": 16722.0,
+          "margin_call_billion": 0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 1533.18,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": 6385.7
+        },
+        {
+          "round": 4,
+          "price": 330352.0,
+          "fx": 1467.0,
           "forced_liq_billion": 0,
           "margin_call_billion": 0,
           "foreign_sell_billion": 0.0,
           "impact_a_pct": 0.0,
           "impact_b_pct": 0.0,
-          "cumulative_drop_pct": -15.0
+          "cumulative_drop_pct": 6385.7
         }
       ]
     },
     "shock_30": {
       "initial_price": 5093.54,
-      "initial_fx": 1463.3,
-      "final_price": 3565.0,
-      "final_fx": 1463.0,
-      "total_drop_pct": -30.0,
+      "initial_fx": 1466.7,
+      "final_price": 85150.0,
+      "final_fx": 1467.0,
+      "total_drop_pct": 1571.73,
       "loop_mode": "A",
-      "converged_at_round": 1,
+      "converged_at_round": 3,
       "rounds": [
         {
           "round": 1,
-          "price": 3565.0,
-          "fx": 1463.0,
+          "price": -5941.0,
+          "fx": 1467.0,
+          "forced_liq_billion": 2908.0,
+          "margin_call_billion": 953.0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 266.64,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": -216.64
+        },
+        {
+          "round": 2,
+          "price": 85150.0,
+          "fx": 1467.0,
+          "forced_liq_billion": 16722.0,
+          "margin_call_billion": 0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 1533.18,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": 1571.73
+        },
+        {
+          "round": 3,
+          "price": 85150.0,
+          "fx": 1467.0,
           "forced_liq_billion": 0,
           "margin_call_billion": 0,
           "foreign_sell_billion": 0.0,
           "impact_a_pct": 0.0,
           "impact_b_pct": 0.0,
-          "cumulative_drop_pct": -30.0
+          "cumulative_drop_pct": 1571.73
         }
       ]
     }
@@ -529,7 +3486,7 @@
           2400,
           2600
         ],
-        "current_prob": 1.0
+        "current_prob": 0.0
       },
       {
         "id": "S3",
@@ -539,7 +3496,7 @@
           2100,
           2400
         ],
-        "current_prob": 0.0
+        "current_prob": 1.0
       },
       {
         "id": "S4",
@@ -566,8 +3523,8 @@
       {
         "date": "2025-12-02",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -581,8 +3538,8 @@
       },
       {
         "date": "2025-12-04",
-        "s1": 0.0,
-        "s2": 1.0,
+        "s1": 1.0,
+        "s2": 0.0,
         "s3": 0.0,
         "s4": 0.0,
         "s5": 0.0
@@ -590,8 +3547,8 @@
       {
         "date": "2025-12-05",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -622,8 +3579,8 @@
       {
         "date": "2025-12-11",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -678,16 +3635,16 @@
       {
         "date": "2025-12-22",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
       {
         "date": "2025-12-23",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -702,8 +3659,8 @@
       {
         "date": "2025-12-26",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -734,8 +3691,8 @@
       {
         "date": "2026-01-05",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -750,16 +3707,16 @@
       {
         "date": "2026-01-07",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
       {
         "date": "2026-01-08",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -854,8 +3811,8 @@
       {
         "date": "2026-01-26",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -870,15 +3827,15 @@
       {
         "date": "2026-01-28",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
       {
         "date": "2026-01-29",
-        "s1": 0.0,
-        "s2": 1.0,
+        "s1": 1.0,
+        "s2": 0.0,
         "s3": 0.0,
         "s4": 0.0,
         "s5": 0.0
@@ -886,24 +3843,24 @@
       {
         "date": "2026-01-30",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
       {
         "date": "2026-02-02",
         "s1": 0.0,
-        "s2": 1.0,
+        "s2": 0.0,
         "s3": 0.0,
-        "s4": 0.0,
+        "s4": 1.0,
         "s5": 0.0
       },
       {
         "date": "2026-02-03",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -918,15 +3875,15 @@
       {
         "date": "2026-02-05",
         "s1": 0.0,
-        "s2": 1.0,
+        "s2": 0.0,
         "s3": 0.0,
-        "s4": 0.0,
+        "s4": 1.0,
         "s5": 0.0
       },
       {
         "date": "2026-02-06",
-        "s1": 0.0,
-        "s2": 1.0,
+        "s1": 1.0,
+        "s2": 0.0,
         "s3": 0.0,
         "s4": 0.0,
         "s5": 0.0
@@ -934,8 +3891,8 @@
       {
         "date": "2026-02-09",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -950,23 +3907,23 @@
       {
         "date": "2026-02-11",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
       {
         "date": "2026-02-12",
         "s1": 0.0,
-        "s2": 1.0,
+        "s2": 0.0,
         "s3": 0.0,
         "s4": 0.0,
-        "s5": 0.0
+        "s5": 1.0
       },
       {
         "date": "2026-02-13",
-        "s1": 0.0,
-        "s2": 1.0,
+        "s1": 1.0,
+        "s2": 0.0,
         "s3": 0.0,
         "s4": 0.0,
         "s5": 0.0
@@ -989,8 +3946,8 @@
       },
       {
         "date": "2026-02-23",
-        "s1": 0.0,
-        "s2": 1.0,
+        "s1": 0.1794,
+        "s2": 0.8206,
         "s3": 0.0,
         "s4": 0.0,
         "s5": 0.0
@@ -998,8 +3955,8 @@
       {
         "date": "2026-02-24",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       },
@@ -1022,24 +3979,24 @@
       {
         "date": "2026-02-27",
         "s1": 0.0,
-        "s2": 1.0,
+        "s2": 0.0,
         "s3": 0.0,
-        "s4": 0.0,
+        "s4": 1.0,
         "s5": 0.0
       },
       {
         "date": "2026-03-03",
         "s1": 0.0,
         "s2": 0.0,
-        "s3": 1.0,
-        "s4": 0.0,
+        "s3": 0.0,
+        "s4": 1.0,
         "s5": 0.0
       },
       {
         "date": "2026-03-04",
         "s1": 0.0,
-        "s2": 1.0,
-        "s3": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
         "s4": 0.0,
         "s5": 0.0
       }
@@ -1047,27 +4004,27 @@
     "key_drivers": [
       {
         "indicator": "institutional_flow",
-        "observed": 0,
-        "expected": -200,
-        "z_score": 6.32,
+        "observed": -597.8,
+        "expected": -1000,
+        "z_score": 11.38,
         "direction": "opposing",
-        "scenario": "S2"
+        "scenario": "S3"
       },
       {
         "indicator": "retail_flow",
-        "observed": 0,
-        "expected": 200,
-        "z_score": -5.66,
+        "observed": 79.6,
+        "expected": -200,
+        "z_score": 6.25,
         "direction": "opposing",
-        "scenario": "S2"
+        "scenario": "S3"
       },
       {
         "indicator": "fx_rate",
-        "observed": 1463.3,
-        "expected": 1380,
-        "z_score": 5.27,
+        "observed": 1466.7,
+        "expected": 1430,
+        "z_score": 2.01,
         "direction": "opposing",
-        "scenario": "S2"
+        "scenario": "S3"
       }
     ]
   },
@@ -1437,23 +4394,23 @@
   },
   "defense_walls": [
     {
-      "status": "weakened",
-      "capacity": 0.3,
+      "status": "active",
+      "capacity": 1.0,
       "id": "wall1",
       "name": "개인 매수",
-      "detail": "최근5일 평균 0억 / 20일 0억"
+      "detail": "최근5일 평균 2601억 / 20일 611억"
     },
     {
       "status": "weakened",
       "capacity": 0.35,
-      "detail": "기관 0억 (소폭 매도)",
+      "detail": "기관 -598억 (소폭 매도)",
       "id": "wall2",
       "name": "연기금/기관"
     },
     {
       "status": "weakened",
       "capacity": 0.4,
-      "detail": "USD/KRW 1463 (긴장)",
+      "detail": "USD/KRW 1467 (긴장)",
       "id": "wall3",
       "name": "한은 FX 개입"
     },
@@ -1490,7 +4447,7 @@
       "status": "dormant",
       "name": "펀드 환매 캐스케이드",
       "delay": "T+1~T+3",
-      "desc": "기관 0억 중 환매 매도 추정 0억",
+      "desc": "기관 -598억 중 환매 매도 추정 0억",
       "estimated_volume_billion": 0,
       "confidence": "low"
     }

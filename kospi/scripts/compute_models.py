@@ -989,13 +989,22 @@ def run_all_models() -> dict:
     # Module A: Cohort
     builder_lifo = CohortBuilder(mode="LIFO")
     builder_fifo = CohortBuilder(mode="FIFO")
+    last_known_credit = 0
     for i in range(1, len(ts)):
         prev = ts[i - 1]
         cur = ts[i]
+        # carry-forward: null credit → 직전 유효값 유지 (코호트 일괄 청산 방지)
+        cur_credit = cur.get("credit_balance_billion")
+        prev_credit_val = prev.get("credit_balance_billion")
+        if cur_credit is not None and cur_credit > 0:
+            last_known_credit = cur_credit
+        if prev_credit_val is None or prev_credit_val == 0:
+            prev_credit_val = last_known_credit
+        cur_credit_safe = cur_credit if (cur_credit is not None and cur_credit > 0) else last_known_credit
         kwargs = dict(
             date=cur.get("date", ""),
-            credit_balance=cur.get("credit_balance_billion", 0) or 0,
-            prev_credit=prev.get("credit_balance_billion", 0) or 0,
+            credit_balance=cur_credit_safe,
+            prev_credit=prev_credit_val,
             kospi=cur.get("kospi", 0) or 0,
             samsung=cur.get("samsung", 0) or 0,
             hynix=cur.get("hynix", 0) or 0,

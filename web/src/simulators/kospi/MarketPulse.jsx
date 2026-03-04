@@ -27,8 +27,6 @@ import {
 } from "./data/kospi_data";
 
 const FONT = "'JetBrains Mono', monospace";
-const FORCED_LIQ_THRESHOLD = 200; // 십억원 = 2,000억원
-
 const PERIODS = [
   { id: "1M", days: 22 },
   { id: "3M", days: 66 },
@@ -116,11 +114,6 @@ function fmtAxis(v) {
 function fmtTril(v) {
   if (v === 0) return "0";
   return (v / 1000).toFixed(Math.abs(v) >= 10000 ? 0 : 1);
-}
-
-function fmtHundM(v) {
-  if (v === 0) return "0";
-  return (v * 10).toLocaleString();
 }
 
 function yAxisLabel(text, side = "left") {
@@ -296,16 +289,19 @@ export default function MarketPulse() {
   // All available dates (shared across datasets)
   const allDates = useMemo(() => MARKET_DATA.map((d) => d.date), []);
 
-  // Global date range — default: full data
-  const [startDate, setStartDate] = useState(() => allDates[0]);
+  // Global date range — default: 3M
+  const [startDate, setStartDate] = useState(() => allDates[Math.max(0, allDates.length - 66)]);
   const [endDate, setEndDate] = useState(() => allDates[allDates.length - 1]);
   const [brushKey, setBrushKey] = useState(0);
 
   // Zoom states
   const [creditLeftZoom, setCreditLeftZoom] = useState(1);
   const [creditRightZoom, setCreditRightZoom] = useState(1);
-  const [forcedLiqZoom, setForcedLiqZoom] = useState(1);
   const [flowsZoom, setFlowsZoom] = useState(1);
+
+  // Credit/Deposit line toggles
+  const [showCredit, setShowCredit] = useState(true);
+  const [showDeposit, setShowDeposit] = useState(true);
   const [shortsZoom, setShortsZoom] = useState(1);
   const [globalZooms, setGlobalZooms] = useState({ vix: 1, sp500: 1, wti: 1, usd_krw: 1 });
 
@@ -389,7 +385,6 @@ export default function MarketPulse() {
       setBrushKey((k) => k + 1);
       setCreditLeftZoom(1);
       setCreditRightZoom(1);
-      setForcedLiqZoom(1);
       setFlowsZoom(1);
       setShortsZoom(1);
       setGlobalZooms({ vix: 1, sp500: 1, wti: 1, usd_krw: 1 });
@@ -455,11 +450,6 @@ export default function MarketPulse() {
     () => computeAxis(credit, ["deposit_billion"], creditRightZoom),
     [credit, creditRightZoom],
   );
-  const forcedLiqAxis = useMemo(
-    () => computeAxis(credit, ["forced_liq_billion"], forcedLiqZoom),
-    [credit, forcedLiqZoom],
-  );
-
   // Cumulative flows (from filtered data)
   const cumFlows = useMemo(() => {
     let cr = 0, cf = 0, cn = 0;
@@ -622,137 +612,7 @@ export default function MarketPulse() {
         </ResponsiveContainer>
       </PanelBox>
 
-      {/* ── Section 1a: 신용잔고 & 고객예탁금 ── */}
-      <PanelBox>
-        <SectionTitle>신용잔고 & 고객예탁금 (Credit & Deposit)</SectionTitle>
-        <div style={{ position: "relative" }}>
-          <ResponsiveContainer width="100%" height={220}>
-            <ComposedChart
-              data={credit}
-              margin={{ top: 5, right: 20, bottom: 5, left: 10 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" stroke={C.border} />
-              <XAxis dataKey="date" tickFormatter={fmtDate} {...axisProps} />
-              <YAxis
-                yAxisId="left"
-                stroke={C.credit}
-                fontSize={10}
-                tickFormatter={fmtTril}
-                domain={creditAxis.domain}
-                ticks={creditAxis.ticks}
-                allowDataOverflow={true}
-                label={yAxisLabel("(조원)", "left")}
-              />
-              <YAxis
-                yAxisId="right"
-                orientation="right"
-                stroke={C.deposit}
-                fontSize={10}
-                tickFormatter={fmtTril}
-                domain={depositAxis.domain}
-                ticks={depositAxis.ticks}
-                allowDataOverflow={true}
-                label={yAxisLabel("(조원)", "right")}
-              />
-              <Tooltip content={<CustomTooltipContent />} />
-              <Legend content={<CustomLegend />} />
-              <Line
-                yAxisId="left"
-                dataKey="credit_balance_billion"
-                stroke={C.credit}
-                strokeWidth={2}
-                dot={false}
-              />
-              <Line
-                yAxisId="right"
-                dataKey="deposit_billion"
-                stroke={C.deposit}
-                strokeWidth={2}
-                dot={false}
-                strokeDasharray={
-                  credit[credit.length - 1]?.estimated ? "5 3" : undefined
-                }
-              />
-            </ComposedChart>
-          </ResponsiveContainer>
-          <ZoomOverlay
-            zoom={creditLeftZoom}
-            onZoomChange={setCreditLeftZoom}
-            side="left"
-          />
-          <ZoomOverlay
-            zoom={creditRightZoom}
-            onZoomChange={setCreditRightZoom}
-            side="right"
-          />
-        </div>
-        {credit[credit.length - 1]?.estimated && (
-          <div
-            style={{
-              color: C.yellow,
-              fontSize: 10,
-              textAlign: "right",
-              marginTop: 4,
-              fontStyle: "italic",
-            }}
-          >
-            * 점선 = 추정치 (T+2 지연)
-          </div>
-        )}
-      </PanelBox>
-
-      {/* ── Section 1b: 반대매매 ── */}
-      <PanelBox>
-        <SectionTitle>반대매매 (Forced Liquidation)</SectionTitle>
-        <div style={{ position: "relative" }}>
-          <ResponsiveContainer width="100%" height={140}>
-            <ComposedChart
-              data={credit}
-              margin={{ top: 5, right: 20, bottom: 5, left: 10 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" stroke={C.border} />
-              <XAxis dataKey="date" tickFormatter={fmtDate} {...axisProps} />
-              <YAxis
-                {...axisProps}
-                tickFormatter={fmtHundM}
-                domain={forcedLiqAxis.domain}
-                ticks={forcedLiqAxis.ticks}
-                allowDataOverflow={true}
-                label={yAxisLabel("(억원)", "left")}
-              />
-              <Tooltip content={<CustomTooltipContent />} />
-              <Legend content={<CustomLegend />} />
-              <Area
-                dataKey="forced_liq_billion"
-                type="monotone"
-                fill={C.forcedLiq}
-                fillOpacity={0.3}
-                stroke={C.forcedLiq}
-                strokeWidth={1.5}
-                dot={false}
-              />
-              <ReferenceLine
-                y={FORCED_LIQ_THRESHOLD}
-                stroke={C.yellow}
-                strokeDasharray="5 3"
-                label={{
-                  value: "위험 기준선",
-                  fill: C.yellow,
-                  fontSize: 9,
-                  fontFamily: FONT,
-                }}
-              />
-            </ComposedChart>
-          </ResponsiveContainer>
-          <ZoomOverlay
-            zoom={forcedLiqZoom}
-            onZoomChange={setForcedLiqZoom}
-            side="left"
-          />
-        </div>
-      </PanelBox>
-
-      {/* ── Section 2: 투자자 수급 ── */}
+      {/* ── Section 1: 투자자 수급 ── */}
       <PanelBox>
         <SectionTitle>투자자 수급 (Investor Flows)</SectionTitle>
 
@@ -953,6 +813,125 @@ export default function MarketPulse() {
         </div>
       </PanelBox>
 
+      {/* ── Section 2: 신용잔고 & 고객예탁금 ── */}
+      <PanelBox>
+        <SectionTitle>신용잔고 & 고객예탁금 (Credit & Deposit)</SectionTitle>
+        {/* Toggle buttons */}
+        <div style={{ display: "flex", gap: 4, marginBottom: 8 }}>
+          {[
+            { key: "credit", label: "신용잔고", color: C.credit, active: showCredit, set: setShowCredit },
+            { key: "deposit", label: "고객예탁금", color: C.deposit, active: showDeposit, set: setShowDeposit },
+          ].map(({ key, label, color, active, set }) => (
+            <button
+              key={key}
+              onClick={() => set(!active)}
+              style={{
+                background: active ? color + "22" : "transparent",
+                color: active ? color : C.dim,
+                border: `1px solid ${active ? color + "66" : C.border}`,
+                borderRadius: 6,
+                padding: "3px 10px",
+                fontSize: 10,
+                fontWeight: 600,
+                cursor: "pointer",
+                fontFamily: FONT,
+                transition: "all 0.15s",
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+        <div style={{ position: "relative" }}>
+          <ResponsiveContainer width="100%" height={220}>
+            <ComposedChart
+              data={credit}
+              margin={{ top: 5, right: 20, bottom: 5, left: 10 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke={C.border} />
+              <XAxis dataKey="date" tickFormatter={fmtDate} {...axisProps} />
+              {showCredit && (
+                <YAxis
+                  yAxisId="left"
+                  stroke={C.credit}
+                  fontSize={10}
+                  tickFormatter={fmtTril}
+                  domain={creditAxis.domain}
+                  ticks={creditAxis.ticks}
+                  allowDataOverflow={true}
+                  label={yAxisLabel("(조원)", "left")}
+                />
+              )}
+              {showDeposit && (
+                <YAxis
+                  yAxisId="right"
+                  orientation="right"
+                  stroke={C.deposit}
+                  fontSize={10}
+                  tickFormatter={fmtTril}
+                  domain={depositAxis.domain}
+                  ticks={depositAxis.ticks}
+                  allowDataOverflow={true}
+                  label={yAxisLabel("(조원)", "right")}
+                />
+              )}
+              <Tooltip content={<CustomTooltipContent />} />
+              <Legend content={<CustomLegend />} />
+              {showCredit && (
+                <Line
+                  yAxisId="left"
+                  dataKey="credit_balance_billion"
+                  stroke={C.credit}
+                  strokeWidth={2}
+                  dot={false}
+                  connectNulls
+                />
+              )}
+              {showDeposit && (
+                <Line
+                  yAxisId="right"
+                  dataKey="deposit_billion"
+                  stroke={C.deposit}
+                  strokeWidth={2}
+                  dot={false}
+                  connectNulls
+                  strokeDasharray={
+                    credit[credit.length - 1]?.estimated ? "5 3" : undefined
+                  }
+                />
+              )}
+            </ComposedChart>
+          </ResponsiveContainer>
+          {showCredit && (
+            <ZoomOverlay
+              zoom={creditLeftZoom}
+              onZoomChange={setCreditLeftZoom}
+              side="left"
+            />
+          )}
+          {showDeposit && (
+            <ZoomOverlay
+              zoom={creditRightZoom}
+              onZoomChange={setCreditRightZoom}
+              side="right"
+            />
+          )}
+        </div>
+        {credit[credit.length - 1]?.estimated && (
+          <div
+            style={{
+              color: C.yellow,
+              fontSize: 10,
+              textAlign: "right",
+              marginTop: 4,
+              fontStyle: "italic",
+            }}
+          >
+            * 점선 = 추정치 (T+2 지연)
+          </div>
+        )}
+      </PanelBox>
+
       {/* ── Section 3: 공매도 ── */}
       <PanelBox>
         <SectionTitle>공매도 (Short Selling)</SectionTitle>
@@ -979,6 +958,7 @@ export default function MarketPulse() {
                 stroke={C.red}
                 strokeWidth={2}
                 dot={false}
+                connectNulls
               />
               {banDate && (
                 <ReferenceLine
@@ -1066,6 +1046,7 @@ export default function MarketPulse() {
                         stroke={color}
                         strokeWidth={1.5}
                         dot={false}
+                        connectNulls
                       />
                     </LineChart>
                   </ResponsiveContainer>

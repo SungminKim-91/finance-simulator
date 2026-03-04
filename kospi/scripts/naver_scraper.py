@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
-Naver Finance 스크래핑 — 고객예탁금 + 신용잔고 일간 조회.
+Naver Finance 스크래핑.
 
-URL: https://finance.naver.com/sise/sise_deposit.naver?page={n}
-테이블 구조: [날짜, 예탁금(억원), 증감, 신용잔고(억원), 증감, ...]
-페이지네이션: 역순(최신→과거), 날짜가 start 이전이면 중단.
+1. 고객예탁금 + 신용잔고: sise_deposit.naver
+2. 투자자별 매매동향: investorDealTrendDay.naver (개인/외국인/기관/금투, 억원)
 """
 import re
 import time
@@ -156,4 +155,117 @@ def fetch_naver_deposit_credit(start: str, end: str) -> dict[str, dict]:
         time.sleep(0.3)  # rate limit
 
     print(f"  [Naver] 총 {len(result)}일 예탁금/신용잔고 수집 완료")
+    return result
+
+
+# ──────────────────────────────────────────────
+# 투자자별 매매동향 (investorDealTrendDay)
+# ──────────────────────────────────────────────
+
+INVESTOR_URL = "https://finance.naver.com/sise/investorDealTrendDay.naver"
+
+
+def fetch_naver_investor_flows(start: str, end: str) -> dict[str, dict]:
+    """Naver 투자자별 일간 순매수 스크래핑 (억원 단위).
+
+    Args:
+        start: 시작일 (YYYYMMDD 또는 YYYY-MM-DD)
+        end: 종료일 (YYYYMMDD 또는 YYYY-MM-DD)
+
+    Returns: {
+        "2026-03-04": {
+            "individual_billion": 0.796,
+            "foreign_billion": 2.303,
+            "institution_billion": -5.978,
+            "financial_invest_billion": -5.830,
+        }, ...
+    }
+    """
+    if "-" in start:
+        start_dt = datetime.strptime(start, ISO_FMT)
+        end_dt = datetime.strptime(end, ISO_FMT)
+    else:
+        start_dt = datetime.strptime(start, "%Y%m%d")
+        end_dt = datetime.strptime(end, "%Y%m%d")
+
+    bizdate = end_dt.strftime("%Y%m%d")
+    session = requests.Session()
+    result: dict[str, dict] = {}
+    done = False
+    max_pages = 100  # ~1000 trading days
+
+    print(f"  [Naver Investor] {start_dt.date()} ~ {end_dt.date()} 조회")
+
+    for page in range(1, max_pages + 1):
+        if done:
+            break
+        try:
+            resp = session.get(
+                INVESTOR_URL,
+                params={"bizdate": bizdate, "sosok": "01", "page": page},
+                headers=HEADERS,
+                timeout=15,
+            )
+            resp.encoding = "euc-kr"
+            soup = BeautifulSoup(resp.text, "html.parser")
+        except Exception as e:
+            print(f"  [WARN] Naver investor page {page} 실패: {e}")
+            break
+
+        table = soup.select_one("table.type_1")
+        if not table:
+            continue
+
+        rows = table.select("tr")
+        for row in rows:
+            cols = row.select("td")
+            if len(cols) < 11:
+                continue
+
+            date_cell = cols[0]
+            if "date2" not in (date_cell.get("class") or []):
+                continue
+
+            date_text = date_cell.get_text(strip=True)
+            try:
+                if re.match(r"\d{2}\.\d{2}\.\d{2}$", date_text):
+                    row_dt = datetime.strptime(date_text, "%y.%m.%d")
+                elif re.match(r"\d{4}\.\d{2}\.\d{2}$", date_text):
+                    row_dt = datetime.strptime(date_text, "%Y.%m.%d")
+                else:
+                    continue
+            except ValueError:
+                continue
+
+            if row_dt > end_dt:
+                continue
+            if row_dt < start_dt:
+                done = True
+                break
+
+            iso_date = row_dt.strftime(ISO_FMT)
+            # 억원 → 십억원 (/10)
+            individual = _parse_number(cols[1].get_text(strip=True))
+            foreign = _parse_number(cols[2].get_text(strip=True))
+            institution = _parse_number(cols[3].get_text(strip=True))
+            financial_invest = _parse_number(cols[4].get_text(strip=True))
+
+            record = {}
+            if individual is not None:
+                record["individual_billion"] = round(individual / 10, 2)
+            if foreign is not None:
+                record["foreign_billion"] = round(foreign / 10, 2)
+            if institution is not None:
+                record["institution_billion"] = round(institution / 10, 2)
+            if financial_invest is not None:
+                record["financial_invest_billion"] = round(financial_invest / 10, 2)
+
+            if record:
+                result[iso_date] = record
+
+        if page % 10 == 0:
+            print(f"  [Naver Investor] {page}/{max_pages} 페이지, {len(result)}일 수집")
+        time.sleep(0.3)
+
+    print(f"  [Naver Investor] 총 {len(result)}일 투자자별 수급 수집 완료")
     return result

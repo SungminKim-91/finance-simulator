@@ -117,9 +117,14 @@ def export_all() -> None:
         indiv = r.get("individual_billion")
         foreign = r.get("foreign_billion")
         institution = r.get("institution_billion")
-        # financial_invest_billion 추정: 개인의 ~20%
-        fin_invest = round(indiv * 0.2, 1) if indiv is not None else None
-        retail = round(indiv + fin_invest, 1) if indiv is not None and fin_invest is not None else indiv
+        fin_invest = r.get("financial_invest_billion")
+        # retail = 개인 + 금융투자 (둘 다 있을 때)
+        if indiv is not None and fin_invest is not None:
+            retail = round(indiv + fin_invest, 1)
+        elif indiv is not None:
+            retail = indiv
+        else:
+            retail = None
         investor_flows.append({
             "date": r["date"],
             "individual_billion": indiv,

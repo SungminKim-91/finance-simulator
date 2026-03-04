@@ -215,9 +215,9 @@ web/src/simulators/kospi/        # React 대시보드
 - **kospi-crisis v1.0.2**: Completed (Phase 1 차트 가독성, Match Rate 100%)
 - **kospi-crisis-phase2 v1.1.0**: Completed (Phase 2 UX 전면 개선, Match Rate 98.9%)
 - **kospi-phase4.1-data-sources v4.1**: Completed (ECOS+Naver+KRX 실데이터 통합, Match Rate 93%)
+- **kospi-crisis-v1.1.1-bugfix**: Completed (Naver investor, 코호트 bugfix, UI개선, Match Rate 100%)
 - **Archive**: docs/archive/2026-03/
 
 ## Backlog
 - **gm2-data-improvement**: 2025년 lag=6 불일치 개선 — GM2 데이터 고착(11개월), HY 단기 충격, BTC 독자 요인 → `docs/01-plan/features/gm2-data-improvement.plan.md`
-- **kospi-crisis Phase 4.2**: pykrx 대체 투자자 수급 소스 확보 (individual/institution 데이터)
 - **kospi-crisis Phase 5**: Deploy (GitHub Actions cron + Vercel) — `docs/01-plan/features/kospi-crisis.plan.md`

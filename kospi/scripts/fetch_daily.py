@@ -37,7 +37,7 @@ except ImportError:
     krx = None
 
 from scripts.ecos_fetcher import fetch_ecos_daily
-from scripts.naver_scraper import fetch_naver_deposit_credit
+from scripts.naver_scraper import fetch_naver_deposit_credit, fetch_naver_investor_flows
 from scripts.krx_auth import create_krx_session, inject_pykrx_session
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -195,14 +195,16 @@ def build_snapshot(
     yf_data: pd.DataFrame,
     ecos_data: dict | None = None,
     naver_data: dict | None = None,
+    naver_investor_data: dict | None = None,
 ) -> dict:
     """모든 데이터를 하나의 일간 스냅샷으로 조합.
 
-    데이터 우선순위: ECOS > yfinance (지수), Naver (예탁금/신용잔고)
+    데이터 우선순위: ECOS > yfinance (지수), Naver (예탁금/신용잔고/투자자수급)
     """
     data = extract_date_data(yf_data, date)
     ecos_day = (ecos_data or {}).get(date, {})
     naver_day = (naver_data or {}).get(date, {})
+    naver_inv_day = (naver_investor_data or {}).get(date, {})
 
     # ECOS 데이터로 보강 (우선순위: ECOS > yfinance)
     kospi_close = ecos_day.get("kospi") or data["kospi"]
@@ -212,10 +214,15 @@ def build_snapshot(
     market_cap_b = ecos_day.get("market_cap_billion")
     foreign_net_b = ecos_day.get("foreign_net_billion")
 
-    # pykrx 투자자 수급
-    flows = fetch_investor_flows(date)
+    # 투자자 수급: Naver > pykrx > ECOS(foreign only)
+    flows = {
+        "individual_billion": naver_inv_day.get("individual_billion"),
+        "foreign_billion": naver_inv_day.get("foreign_billion"),
+        "institution_billion": naver_inv_day.get("institution_billion"),
+        "financial_invest_billion": naver_inv_day.get("financial_invest_billion"),
+    }
 
-    # ECOS 외국인 순매수로 보강 (pykrx 실패시 fallback)
+    # Naver 없으면 ECOS 외국인 fallback
     if flows["foreign_billion"] is None and foreign_net_b is not None:
         flows["foreign_billion"] = round(foreign_net_b, 1)
 
@@ -324,6 +331,7 @@ def append_timeseries(date: str, snapshot: dict) -> None:
         "individual_billion": flows_mkt.get("individual_billion"),
         "foreign_billion": flows_mkt.get("foreign_billion"),
         "institution_billion": flows_mkt.get("institution_billion"),
+        "financial_invest_billion": flows_mkt.get("financial_invest_billion"),
         "credit_balance_billion": credit.get("total_balance_billion"),
         "credit_estimated": credit.get("estimated", False),
         "deposit_billion": deposit.get("customer_deposit_billion"),
@@ -401,20 +409,24 @@ def run_range(start: str, end: str):
     ecos_data = fetch_ecos_daily(ecos_start, ecos_end)
 
     # 3. Naver 배치 조회
-    print("[3/5] Naver 예탁금/신용잔고 조회...")
+    print("[3/6] Naver 예탁금/신용잔고 조회...")
     naver_data = fetch_naver_deposit_credit(start, end)
 
-    # 4. yfinance 배치 다운로드
-    print("[4/5] yfinance 배치 다운로드...")
+    # 4. Naver 투자자별 매매동향
+    print("[4/6] Naver 투자자별 매매동향 조회...")
+    naver_investor_data = fetch_naver_investor_flows(start, end)
+
+    # 5. yfinance 배치 다운로드
+    print("[5/6] yfinance 배치 다운로드...")
     yf_data = fetch_yfinance_batch(start, end)
     if yf_data.empty:
         print("  [WARN] yfinance 데이터 없음 — ECOS 단독 진행")
 
     yf_days = len(yf_data) if not yf_data.empty else 0
-    print(f"  yfinance: {yf_days}일, ECOS: {len(ecos_data)}일, Naver: {len(naver_data)}일")
+    print(f"  yfinance: {yf_days}일, ECOS: {len(ecos_data)}일, Naver: {len(naver_data)}일, Investor: {len(naver_investor_data)}일")
 
-    # 5. 각 날짜별 스냅샷 생성
-    print("[5/5] 스냅샷 생성 + 저장...")
+    # 6. 각 날짜별 스냅샷 생성
+    print("[6/6] 스냅샷 생성 + 저장...")
     current = datetime.strptime(start, ISO_FMT)
     end_dt = datetime.strptime(end, ISO_FMT)
     count = 0
@@ -423,7 +435,7 @@ def run_range(start: str, end: str):
     while current <= end_dt:
         if current.weekday() < 5:  # 평일만
             date = current.strftime(ISO_FMT)
-            snapshot = build_snapshot(date, yf_data, ecos_data, naver_data)
+            snapshot = build_snapshot(date, yf_data, ecos_data, naver_data, naver_investor_data)
             save_daily_snapshot(date, snapshot)
             added = append_timeseries(date, snapshot)
             if added:
@@ -448,9 +460,10 @@ def run_single(date: str):
     ecos_d = date.replace("-", "")
     ecos_data = fetch_ecos_daily(ecos_d, ecos_d)
     naver_data = fetch_naver_deposit_credit(date, date)
+    naver_investor_data = fetch_naver_investor_flows(date, date)
     yf_data = fetch_yfinance_batch(date, date)
 
-    snapshot = build_snapshot(date, yf_data, ecos_data, naver_data)
+    snapshot = build_snapshot(date, yf_data, ecos_data, naver_data, naver_investor_data)
     save_daily_snapshot(date, snapshot)
     append_timeseries(date, snapshot)
     update_metadata(date)

@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-04T19:28:12.657326
+ * Generated: 2026-03-04T21:38:13.977764
  * Source: kospi/data/ (pipeline)
  * Exports: 13
  */
@@ -83,7 +83,7 @@ export const MARKET_DATA = [
     "kospi": 2515.78,
     "kosdaq": null,
     "samsung": 54132,
-    "hynix": 201021,
+    "hynix": 201022,
     "kospi_change_pct": -0.24,
     "samsung_change_pct": -1.43,
     "hynix_change_pct": -0.73,
@@ -263,7 +263,7 @@ export const MARKET_DATA = [
     "kospi": 2536.75,
     "kosdaq": null,
     "samsung": 52859,
-    "hynix": 201021,
+    "hynix": 201022,
     "kospi_change_pct": 1.1,
     "samsung_change_pct": 2.08,
     "hynix_change_pct": 2.36,
@@ -5540,2259 +5540,2259 @@ export const CREDIT_DATA = [
 export const INVESTOR_FLOWS = [
   {
     "date": "2025-01-02",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.4,
-    "institution_billion": null
+    "individual_billion": 414.3,
+    "financial_invest_billion": -267.6,
+    "retail_billion": 146.7,
+    "foreign_billion": -238.8,
+    "institution_billion": -258.9
   },
   {
     "date": "2025-01-03",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.8,
-    "institution_billion": null
+    "individual_billion": -698.5,
+    "financial_invest_billion": 272.0,
+    "retail_billion": -426.5,
+    "foreign_billion": 280.1,
+    "institution_billion": 320.4
   },
   {
     "date": "2025-01-06",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.7,
-    "institution_billion": null
+    "individual_billion": -537.0,
+    "financial_invest_billion": -30.7,
+    "retail_billion": -567.7,
+    "foreign_billion": 366.2,
+    "institution_billion": 65.4
   },
   {
     "date": "2025-01-07",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.6,
-    "institution_billion": null
+    "individual_billion": -204.9,
+    "financial_invest_billion": -149.5,
+    "retail_billion": -354.4,
+    "foreign_billion": 158.7,
+    "institution_billion": -42.3
   },
   {
     "date": "2025-01-08",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.2,
-    "institution_billion": null
+    "individual_billion": -385.5,
+    "financial_invest_billion": -109.7,
+    "retail_billion": -495.2,
+    "foreign_billion": 220.9,
+    "institution_billion": 109.6
   },
   {
     "date": "2025-01-09",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 7.5,
-    "institution_billion": null
+    "individual_billion": -327.0,
+    "financial_invest_billion": -532.0,
+    "retail_billion": -859.0,
+    "foreign_billion": 748.2,
+    "institution_billion": -505.6
   },
   {
     "date": "2025-01-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.0,
-    "institution_billion": null
+    "individual_billion": 338.1,
+    "financial_invest_billion": -484.8,
+    "retail_billion": -146.7,
+    "foreign_billion": -1.6,
+    "institution_billion": -397.6
   },
   {
     "date": "2025-01-13",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -8.7,
-    "institution_billion": null
+    "individual_billion": 748.6,
+    "financial_invest_billion": -99.3,
+    "retail_billion": 649.3,
+    "foreign_billion": -871.7,
+    "institution_billion": 26.0
   },
   {
     "date": "2025-01-14",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.0,
-    "institution_billion": null
+    "individual_billion": 299.2,
+    "financial_invest_billion": -53.6,
+    "retail_billion": 245.6,
+    "foreign_billion": -294.6,
+    "institution_billion": -58.0
   },
   {
     "date": "2025-01-15",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.6,
-    "institution_billion": null
+    "individual_billion": 123.1,
+    "financial_invest_billion": -209.7,
+    "retail_billion": -86.6,
+    "foreign_billion": 56.1,
+    "institution_billion": -259.0
   },
   {
     "date": "2025-01-16",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.3,
-    "institution_billion": null
+    "individual_billion": -575.7,
+    "financial_invest_billion": 22.1,
+    "retail_billion": -553.6,
+    "foreign_billion": 624.4,
+    "institution_billion": 19.0
   },
   {
     "date": "2025-01-17",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.3,
-    "institution_billion": null
+    "individual_billion": 286.4,
+    "financial_invest_billion": -119.3,
+    "retail_billion": 167.1,
+    "foreign_billion": -233.1,
+    "institution_billion": -100.7
   },
   {
     "date": "2025-01-20",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.2,
-    "institution_billion": null
+    "individual_billion": 276.7,
+    "financial_invest_billion": 40.4,
+    "retail_billion": 317.1,
+    "foreign_billion": -416.2,
+    "institution_billion": 66.4
   },
   {
     "date": "2025-01-21",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.7,
-    "institution_billion": null
+    "individual_billion": 53.4,
+    "financial_invest_billion": 55.1,
+    "retail_billion": 108.5,
+    "foreign_billion": -173.1,
+    "institution_billion": 62.0
   },
   {
     "date": "2025-01-22",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.5,
-    "institution_billion": null
+    "individual_billion": -823.2,
+    "financial_invest_billion": 294.9,
+    "retail_billion": -528.3,
+    "foreign_billion": 350.0,
+    "institution_billion": 420.8
   },
   {
     "date": "2025-01-23",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -6.2,
-    "institution_billion": null
+    "individual_billion": 759.6,
+    "financial_invest_billion": -244.7,
+    "retail_billion": 514.9,
+    "foreign_billion": -617.4,
+    "institution_billion": -203.2
   },
   {
     "date": "2025-01-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.7,
-    "institution_billion": null
+    "individual_billion": -383.0,
+    "financial_invest_billion": -15.7,
+    "retail_billion": -398.7,
+    "foreign_billion": 275.1,
+    "institution_billion": 43.6
   },
   {
     "date": "2025-01-31",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -11.8,
-    "institution_billion": null
+    "individual_billion": 962.0,
+    "financial_invest_billion": 297.7,
+    "retail_billion": 1259.7,
+    "foreign_billion": -1167.9,
+    "institution_billion": 285.9
   },
   {
     "date": "2025-02-03",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -8.7,
-    "institution_billion": null
+    "individual_billion": 1122.0,
+    "financial_invest_billion": -450.6,
+    "retail_billion": 671.4,
+    "foreign_billion": -868.9,
+    "institution_billion": -370.4
   },
   {
     "date": "2025-02-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.8,
-    "institution_billion": null
+    "individual_billion": -293.2,
+    "financial_invest_billion": 11.6,
+    "retail_billion": -281.6,
+    "foreign_billion": 79.9,
+    "institution_billion": 123.1
   },
   {
     "date": "2025-02-05",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.7,
-    "institution_billion": null
+    "individual_billion": -192.9,
+    "financial_invest_billion": 27.6,
+    "retail_billion": -165.3,
+    "foreign_billion": 64.5,
+    "institution_billion": 31.2
   },
   {
     "date": "2025-02-06",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.6,
-    "institution_billion": null
+    "individual_billion": -606.0,
+    "financial_invest_billion": 140.4,
+    "retail_billion": -465.6,
+    "foreign_billion": 351.6,
+    "institution_billion": 161.2
   },
   {
     "date": "2025-02-07",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.4,
-    "institution_billion": null
+    "individual_billion": 330.2,
+    "financial_invest_billion": -179.6,
+    "retail_billion": 150.6,
+    "foreign_billion": -238.9,
+    "institution_billion": -209.9
   },
   {
     "date": "2025-02-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.8,
-    "institution_billion": null
+    "individual_billion": -70.0,
+    "financial_invest_billion": 182.7,
+    "retail_billion": 112.7,
+    "foreign_billion": -278.6,
+    "institution_billion": 262.6
   },
   {
     "date": "2025-02-11",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.4,
-    "institution_billion": null
+    "individual_billion": -469.4,
+    "financial_invest_billion": 190.4,
+    "retail_billion": -279.0,
+    "foreign_billion": 140.2,
+    "institution_billion": 243.7
   },
   {
     "date": "2025-02-12",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.7,
-    "institution_billion": null
+    "individual_billion": -198.2,
+    "financial_invest_billion": 52.6,
+    "retail_billion": -145.6,
+    "foreign_billion": 372.9,
+    "institution_billion": -221.7
   },
   {
     "date": "2025-02-13",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.1,
-    "institution_billion": null
+    "individual_billion": -609.6,
+    "financial_invest_billion": 371.3,
+    "retail_billion": -238.3,
+    "foreign_billion": -113.8,
+    "institution_billion": 673.0
   },
   {
     "date": "2025-02-14",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.2,
-    "institution_billion": null
+    "individual_billion": -65.2,
+    "financial_invest_billion": 271.8,
+    "retail_billion": 206.6,
+    "foreign_billion": -321.8,
+    "institution_billion": 366.1
   },
   {
     "date": "2025-02-17",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.2,
-    "institution_billion": null
+    "individual_billion": -33.6,
+    "financial_invest_billion": 263.5,
+    "retail_billion": 229.9,
+    "foreign_billion": -222.8,
+    "institution_billion": 243.1
   },
   {
     "date": "2025-02-18",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.2,
-    "institution_billion": null
+    "individual_billion": -188.4,
+    "financial_invest_billion": 100.2,
+    "retail_billion": -88.2,
+    "foreign_billion": 18.5,
+    "institution_billion": 164.8
   },
   {
     "date": "2025-02-19",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.0,
-    "institution_billion": null
+    "individual_billion": -1218.6,
+    "financial_invest_billion": 659.8,
+    "retail_billion": -558.8,
+    "foreign_billion": 392.7,
+    "institution_billion": 776.7
   },
   {
     "date": "2025-02-20",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.9,
-    "institution_billion": null
+    "individual_billion": 290.7,
+    "financial_invest_billion": -9.0,
+    "retail_billion": 281.7,
+    "foreign_billion": -290.4,
+    "institution_billion": -107.9
   },
   {
     "date": "2025-02-21",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.2,
-    "institution_billion": null
+    "individual_billion": 2.8,
+    "financial_invest_billion": 61.0,
+    "retail_billion": 63.8,
+    "foreign_billion": -218.1,
+    "institution_billion": 118.1
   },
   {
     "date": "2025-02-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.0,
-    "institution_billion": null
+    "individual_billion": 192.9,
+    "financial_invest_billion": -91.9,
+    "retail_billion": 101.0,
+    "foreign_billion": -204.0,
+    "institution_billion": -92.5
   },
   {
     "date": "2025-02-25",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.2,
-    "institution_billion": null
+    "individual_billion": 312.1,
+    "financial_invest_billion": -92.1,
+    "retail_billion": 220.0,
+    "foreign_billion": -319.0,
+    "institution_billion": -94.4
   },
   {
     "date": "2025-02-26",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.2,
-    "institution_billion": null
+    "individual_billion": -20.1,
+    "financial_invest_billion": 174.2,
+    "retail_billion": 154.1,
+    "foreign_billion": -322.8,
+    "institution_billion": 240.4
   },
   {
     "date": "2025-02-27",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.8,
-    "institution_billion": null
+    "individual_billion": 481.0,
+    "financial_invest_billion": -343.1,
+    "retail_billion": 137.9,
+    "foreign_billion": -175.4,
+    "institution_billion": -338.9
   },
   {
     "date": "2025-02-28",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -15.6,
-    "institution_billion": null
+    "individual_billion": 2032.4,
+    "financial_invest_billion": -518.5,
+    "retail_billion": 1513.9,
+    "foreign_billion": -1552.4,
+    "institution_billion": -616.7
   },
   {
     "date": "2025-03-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.9,
-    "institution_billion": null
+    "individual_billion": 204.4,
+    "financial_invest_billion": -263.3,
+    "retail_billion": -58.9,
+    "foreign_billion": -189.6,
+    "institution_billion": -147.3
   },
   {
     "date": "2025-03-05",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.3,
-    "institution_billion": null
+    "individual_billion": 91.1,
+    "financial_invest_billion": -210.1,
+    "retail_billion": -119.0,
+    "foreign_billion": -223.3,
+    "institution_billion": 47.9
   },
   {
     "date": "2025-03-06",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.4,
-    "institution_billion": null
+    "individual_billion": -369.3,
+    "financial_invest_billion": 69.5,
+    "retail_billion": -299.8,
+    "foreign_billion": 138.2,
+    "institution_billion": 156.1
   },
   {
     "date": "2025-03-07",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.6,
-    "institution_billion": null
+    "individual_billion": -194.1,
+    "financial_invest_billion": -135.9,
+    "retail_billion": -330.0,
+    "foreign_billion": 59.6,
+    "institution_billion": 27.9
   },
   {
     "date": "2025-03-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.3,
-    "institution_billion": null
+    "individual_billion": 209.7,
+    "financial_invest_billion": 74.6,
+    "retail_billion": 284.3,
+    "foreign_billion": -424.2,
+    "institution_billion": 142.8
   },
   {
     "date": "2025-03-11",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -15.4,
-    "institution_billion": null
+    "individual_billion": 492.9,
+    "financial_invest_billion": -174.1,
+    "retail_billion": 318.8,
+    "foreign_billion": -1537.3,
+    "institution_billion": -238.1
   },
   {
     "date": "2025-03-12",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.8,
-    "institution_billion": null
+    "individual_billion": -505.0,
+    "financial_invest_billion": 38.8,
+    "retail_billion": -466.2,
+    "foreign_billion": 379.0,
+    "institution_billion": 31.9
   },
   {
     "date": "2025-03-13",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.8,
-    "institution_billion": null
+    "individual_billion": -73.7,
+    "financial_invest_billion": 293.8,
+    "retail_billion": 220.1,
+    "foreign_billion": -480.4,
+    "institution_billion": 444.8
   },
   {
     "date": "2025-03-14",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.0,
-    "institution_billion": null
+    "individual_billion": 207.9,
+    "financial_invest_billion": 50.1,
+    "retail_billion": 258.0,
+    "foreign_billion": -289.4,
+    "institution_billion": -20.5
   },
   {
     "date": "2025-03-17",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.2,
-    "institution_billion": null
+    "individual_billion": -1180.4,
+    "financial_invest_billion": 501.3,
+    "retail_billion": -679.1,
+    "foreign_billion": 615.2,
+    "institution_billion": 494.7
   },
   {
     "date": "2025-03-18",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.4,
-    "institution_billion": null
+    "individual_billion": -612.6,
+    "financial_invest_billion": 134.0,
+    "retail_billion": -478.6,
+    "foreign_billion": 440.8,
+    "institution_billion": 95.0
   },
   {
     "date": "2025-03-19",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.0,
-    "institution_billion": null
+    "individual_billion": -674.4,
+    "financial_invest_billion": 270.6,
+    "retail_billion": -403.8,
+    "foreign_billion": 302.6,
+    "institution_billion": 287.3
   },
   {
     "date": "2025-03-20",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 5.5,
-    "institution_billion": null
+    "individual_billion": -701.3,
+    "financial_invest_billion": 124.2,
+    "retail_billion": -577.1,
+    "foreign_billion": 548.7,
+    "institution_billion": 66.4
   },
   {
     "date": "2025-03-21",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 8.5,
-    "institution_billion": null
+    "individual_billion": -537.9,
+    "financial_invest_billion": -342.3,
+    "retail_billion": -880.2,
+    "foreign_billion": 847.8,
+    "institution_billion": -402.0
   },
   {
     "date": "2025-03-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.1,
-    "institution_billion": null
+    "individual_billion": -78.1,
+    "financial_invest_billion": 7.8,
+    "retail_billion": -70.3,
+    "foreign_billion": 7.6,
+    "institution_billion": -28.8
   },
   {
     "date": "2025-03-25",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.8,
-    "institution_billion": null
+    "individual_billion": -64.2,
+    "financial_invest_billion": 129.6,
+    "retail_billion": 65.4,
+    "foreign_billion": -78.7,
+    "institution_billion": 69.1
   },
   {
     "date": "2025-03-26",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.5,
-    "institution_billion": null
+    "individual_billion": -679.8,
+    "financial_invest_billion": 240.2,
+    "retail_billion": -439.6,
+    "foreign_billion": 350.4,
+    "institution_billion": 260.3
   },
   {
     "date": "2025-03-27",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.9,
-    "institution_billion": null
+    "individual_billion": 119.6,
+    "financial_invest_billion": -117.5,
+    "retail_billion": 2.1,
+    "foreign_billion": 87.7,
+    "institution_billion": -315.2
   },
   {
     "date": "2025-03-28",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -6.4,
-    "institution_billion": null
+    "individual_billion": 540.8,
+    "financial_invest_billion": 21.7,
+    "retail_billion": 562.5,
+    "foreign_billion": -640.3,
+    "institution_billion": 3.1
   },
   {
     "date": "2025-03-31",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -15.8,
-    "institution_billion": null
+    "individual_billion": 789.1,
+    "financial_invest_billion": 556.0,
+    "retail_billion": 1345.1,
+    "foreign_billion": -1575.4,
+    "institution_billion": 667.3
   },
   {
     "date": "2025-04-01",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.9,
-    "institution_billion": null
+    "individual_billion": 86.6,
+    "financial_invest_billion": -7.4,
+    "retail_billion": 79.2,
+    "foreign_billion": -390.1,
+    "institution_billion": 180.6
   },
   {
     "date": "2025-04-02",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -7.3,
-    "institution_billion": null
+    "individual_billion": 479.1,
+    "financial_invest_billion": -22.1,
+    "retail_billion": 457.0,
+    "foreign_billion": -724.2,
+    "institution_billion": 148.0
   },
   {
     "date": "2025-04-03",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -13.8,
-    "institution_billion": null
+    "individual_billion": 801.4,
+    "financial_invest_billion": 68.9,
+    "retail_billion": 870.3,
+    "foreign_billion": -1375.2,
+    "institution_billion": 461.0
   },
   {
     "date": "2025-04-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -17.9,
-    "institution_billion": null
+    "individual_billion": 1077.0,
+    "financial_invest_billion": 350.2,
+    "retail_billion": 1427.2,
+    "foreign_billion": -1786.9,
+    "institution_billion": 621.1
   },
   {
     "date": "2025-04-07",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -21.0,
-    "institution_billion": null
+    "individual_billion": 1672.1,
+    "financial_invest_billion": -95.7,
+    "retail_billion": 1576.4,
+    "foreign_billion": -2095.7,
+    "institution_billion": 257.1
   },
   {
     "date": "2025-04-08",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -6.5,
-    "institution_billion": null
+    "individual_billion": 602.9,
+    "financial_invest_billion": -367.4,
+    "retail_billion": 235.5,
+    "foreign_billion": -642.5,
+    "institution_billion": -89.8
   },
   {
     "date": "2025-04-09",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -10.1,
-    "institution_billion": null
+    "individual_billion": 938.9,
+    "financial_invest_billion": 40.1,
+    "retail_billion": 979.0,
+    "foreign_billion": -1000.7,
+    "institution_billion": -69.8
   },
   {
     "date": "2025-04-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.3,
-    "institution_billion": null
+    "individual_billion": -1069.3,
+    "financial_invest_billion": 179.2,
+    "retail_billion": -890.1,
+    "foreign_billion": 328.7,
+    "institution_billion": 668.2
   },
   {
     "date": "2025-04-11",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -6.9,
-    "institution_billion": null
+    "individual_billion": 433.9,
+    "financial_invest_billion": -135.5,
+    "retail_billion": 298.4,
+    "foreign_billion": -688.8,
+    "institution_billion": 137.8
   },
   {
     "date": "2025-04-14",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.4,
-    "institution_billion": null
+    "individual_billion": 193.9,
+    "financial_invest_billion": -64.1,
+    "retail_billion": 129.8,
+    "foreign_billion": -242.0,
+    "institution_billion": -6.7
   },
   {
     "date": "2025-04-15",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.2,
-    "institution_billion": null
+    "individual_billion": -146.8,
+    "financial_invest_billion": 64.5,
+    "retail_billion": -82.3,
+    "foreign_billion": -117.7,
+    "institution_billion": 183.1
   },
   {
     "date": "2025-04-16",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.6,
-    "institution_billion": null
+    "individual_billion": 383.5,
+    "financial_invest_billion": -47.7,
+    "retail_billion": 335.8,
+    "foreign_billion": -457.7,
+    "institution_billion": -15.3
   },
   {
     "date": "2025-04-17",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.5,
-    "institution_billion": null
+    "individual_billion": -110.2,
+    "financial_invest_billion": 275.1,
+    "retail_billion": 164.9,
+    "foreign_billion": -351.9,
+    "institution_billion": 368.9
   },
   {
     "date": "2025-04-18",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.0,
-    "institution_billion": null
+    "individual_billion": -22.3,
+    "financial_invest_billion": -12.8,
+    "retail_billion": -35.1,
+    "foreign_billion": -105.2,
+    "institution_billion": 81.6
   },
   {
     "date": "2025-04-21",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.9,
-    "institution_billion": null
+    "individual_billion": 186.4,
+    "financial_invest_billion": -17.4,
+    "retail_billion": 169.0,
+    "foreign_billion": -288.6,
+    "institution_billion": 23.4
   },
   {
     "date": "2025-04-22",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.4,
-    "institution_billion": null
+    "individual_billion": 166.7,
+    "financial_invest_billion": -36.5,
+    "retail_billion": 130.2,
+    "foreign_billion": -243.0,
+    "institution_billion": 10.7
   },
   {
     "date": "2025-04-23",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.0,
-    "institution_billion": null
+    "individual_billion": -548.5,
+    "financial_invest_billion": 546.6,
+    "retail_billion": -1.9,
+    "foreign_billion": -197.7,
+    "institution_billion": 686.6
   },
   {
     "date": "2025-04-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.1,
-    "institution_billion": null
+    "individual_billion": 135.1,
+    "financial_invest_billion": -168.3,
+    "retail_billion": -33.2,
+    "foreign_billion": -7.7,
+    "institution_billion": -198.7
   },
   {
     "date": "2025-04-25",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.2,
-    "institution_billion": null
+    "individual_billion": -774.1,
+    "financial_invest_billion": 440.5,
+    "retail_billion": -333.6,
+    "foreign_billion": 612.6,
+    "institution_billion": 507.2
   },
   {
     "date": "2025-04-28",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.9,
-    "institution_billion": null
+    "individual_billion": -49.6,
+    "financial_invest_billion": 138.8,
+    "retail_billion": 89.2,
+    "foreign_billion": -85.4,
+    "institution_billion": 91.6
   },
   {
     "date": "2025-04-29",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.9,
-    "institution_billion": null
+    "individual_billion": -159.1,
+    "financial_invest_billion": 391.0,
+    "retail_billion": 231.9,
+    "foreign_billion": 692.5,
+    "institution_billion": -580.4
   },
   {
     "date": "2025-04-30",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.7,
-    "institution_billion": null
+    "individual_billion": 305.5,
+    "financial_invest_billion": -127.3,
+    "retail_billion": 178.2,
+    "foreign_billion": -168.8,
+    "institution_billion": -221.0
   },
   {
     "date": "2025-05-02",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.7,
-    "institution_billion": null
+    "individual_billion": -234.9,
+    "financial_invest_billion": 200.6,
+    "retail_billion": -34.3,
+    "foreign_billion": -170.2,
+    "institution_billion": 322.8
   },
   {
     "date": "2025-05-07",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.5,
-    "institution_billion": null
+    "individual_billion": -464.6,
+    "financial_invest_billion": 126.6,
+    "retail_billion": -338.0,
+    "foreign_billion": 348.8,
+    "institution_billion": 86.9
   },
   {
     "date": "2025-05-08",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.3,
-    "institution_billion": null
+    "individual_billion": -1.3,
+    "financial_invest_billion": -236.6,
+    "retail_billion": -237.9,
+    "foreign_billion": 130.3,
+    "institution_billion": -189.8
   },
   {
     "date": "2025-05-09",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.7,
-    "institution_billion": null
+    "individual_billion": 63.2,
+    "financial_invest_billion": -218.1,
+    "retail_billion": -154.9,
+    "foreign_billion": 67.5,
+    "institution_billion": -187.3
   },
   {
     "date": "2025-05-12",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.0,
-    "institution_billion": null
+    "individual_billion": -390.7,
+    "financial_invest_billion": 310.2,
+    "retail_billion": -80.5,
+    "foreign_billion": -7.1,
+    "institution_billion": 342.9
   },
   {
     "date": "2025-05-13",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.7,
-    "institution_billion": null
+    "individual_billion": -136.0,
+    "financial_invest_billion": -41.9,
+    "retail_billion": -177.9,
+    "foreign_billion": 171.4,
+    "institution_billion": -89.3
   },
   {
     "date": "2025-05-14",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.8,
-    "institution_billion": null
+    "individual_billion": -1002.4,
+    "financial_invest_billion": 440.1,
+    "retail_billion": -562.3,
+    "foreign_billion": 470.4,
+    "institution_billion": 534.8
   },
   {
     "date": "2025-05-15",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.7,
-    "institution_billion": null
+    "individual_billion": 46.0,
+    "financial_invest_billion": -165.5,
+    "retail_billion": -119.5,
+    "foreign_billion": 272.3,
+    "institution_billion": -368.1
   },
   {
     "date": "2025-05-16",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.7,
-    "institution_billion": null
+    "individual_billion": -282.3,
+    "financial_invest_billion": 148.8,
+    "retail_billion": -133.5,
+    "foreign_billion": 169.4,
+    "institution_billion": 113.4
   },
   {
     "date": "2025-05-19",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.1,
-    "institution_billion": null
+    "individual_billion": 298.6,
+    "financial_invest_billion": -91.7,
+    "retail_billion": 206.9,
+    "foreign_billion": -113.4,
+    "institution_billion": -194.8
   },
   {
     "date": "2025-05-20",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.1,
-    "institution_billion": null
+    "individual_billion": 20.6,
+    "financial_invest_billion": 138.8,
+    "retail_billion": 159.4,
+    "foreign_billion": -114.5,
+    "institution_billion": 61.0
   },
   {
     "date": "2025-05-21",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.9,
-    "institution_billion": null
+    "individual_billion": -331.5,
+    "financial_invest_billion": 84.0,
+    "retail_billion": -247.5,
+    "foreign_billion": 192.0,
+    "institution_billion": 104.6
   },
   {
     "date": "2025-05-22",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.3,
-    "institution_billion": null
+    "individual_billion": 684.8,
+    "financial_invest_billion": -262.5,
+    "retail_billion": 422.3,
+    "foreign_billion": -223.7,
+    "institution_billion": -431.9
   },
   {
     "date": "2025-05-23",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.6,
-    "institution_billion": null
+    "individual_billion": 134.7,
+    "financial_invest_billion": -113.5,
+    "retail_billion": 21.2,
+    "foreign_billion": -58.5,
+    "institution_billion": -102.6
   },
   {
     "date": "2025-05-26",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.0,
-    "institution_billion": null
+    "individual_billion": -515.8,
+    "financial_invest_billion": 372.6,
+    "retail_billion": -143.2,
+    "foreign_billion": 101.5,
+    "institution_billion": 432.3
   },
   {
     "date": "2025-05-27",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.8,
-    "institution_billion": null
+    "individual_billion": 53.7,
+    "financial_invest_billion": 13.0,
+    "retail_billion": 66.7,
+    "foreign_billion": -78.1,
+    "institution_billion": -20.1
   },
   {
     "date": "2025-05-28",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.0,
-    "institution_billion": null
+    "individual_billion": -990.7,
+    "financial_invest_billion": 756.6,
+    "retail_billion": -234.1,
+    "foreign_billion": 299.9,
+    "institution_billion": 743.8
   },
   {
     "date": "2025-05-29",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.0,
-    "institution_billion": null
+    "individual_billion": -996.3,
+    "financial_invest_billion": 562.1,
+    "retail_billion": -434.2,
+    "foreign_billion": 289.7,
+    "institution_billion": 684.2
   },
   {
     "date": "2025-05-30",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -6.1,
-    "institution_billion": null
+    "individual_billion": 605.1,
+    "financial_invest_billion": 157.5,
+    "retail_billion": 762.6,
+    "foreign_billion": -607.0,
+    "institution_billion": -16.0
   },
   {
     "date": "2025-06-02",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.3,
-    "institution_billion": null
+    "individual_billion": 98.2,
+    "financial_invest_billion": -190.8,
+    "retail_billion": -92.6,
+    "foreign_billion": 125.0,
+    "institution_billion": -241.5
   },
   {
     "date": "2025-06-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 10.6,
-    "institution_billion": null
+    "individual_billion": -1226.0,
+    "financial_invest_billion": 122.4,
+    "retail_billion": -1103.6,
+    "foreign_billion": 1050.7,
+    "institution_billion": 204.6
   },
   {
     "date": "2025-06-05",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 9.8,
-    "institution_billion": null
+    "individual_billion": -1189.2,
+    "financial_invest_billion": 337.0,
+    "retail_billion": -852.2,
+    "foreign_billion": 980.1,
+    "institution_billion": 220.7
   },
   {
     "date": "2025-06-09",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 9.8,
-    "institution_billion": null
+    "individual_billion": -230.1,
+    "financial_invest_billion": -453.7,
+    "retail_billion": -683.8,
+    "foreign_billion": 976.7,
+    "institution_billion": -733.2
   },
   {
     "date": "2025-06-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.3,
-    "institution_billion": null
+    "individual_billion": -626.9,
+    "financial_invest_billion": 182.5,
+    "retail_billion": -444.4,
+    "foreign_billion": 632.3,
+    "institution_billion": 14.2
   },
   {
     "date": "2025-06-11",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.7,
-    "institution_billion": null
+    "individual_billion": -366.3,
+    "financial_invest_billion": 384.3,
+    "retail_billion": 18.0,
+    "foreign_billion": 166.1,
+    "institution_billion": 230.4
   },
   {
     "date": "2025-06-12",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.1,
-    "institution_billion": null
+    "individual_billion": -179.4,
+    "financial_invest_billion": -421.6,
+    "retail_billion": -601.0,
+    "foreign_billion": 407.3,
+    "institution_billion": -230.4
   },
   {
     "date": "2025-06-13",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.2,
-    "institution_billion": null
+    "individual_billion": 467.4,
+    "financial_invest_billion": -340.9,
+    "retail_billion": 126.5,
+    "foreign_billion": 121.0,
+    "institution_billion": -646.1
   },
   {
     "date": "2025-06-16",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.2,
-    "institution_billion": null
+    "individual_billion": 46.3,
+    "financial_invest_billion": 346.6,
+    "retail_billion": 392.9,
+    "foreign_billion": -322.4,
+    "institution_billion": 252.4
   },
   {
     "date": "2025-06-17",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.0,
-    "institution_billion": null
+    "individual_billion": 224.5,
+    "financial_invest_billion": 227.8,
+    "retail_billion": 452.3,
+    "foreign_billion": -95.3,
+    "institution_billion": -100.6
   },
   {
     "date": "2025-06-18",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.9,
-    "institution_billion": null
+    "individual_billion": -431.8,
+    "financial_invest_billion": 174.1,
+    "retail_billion": -257.7,
+    "foreign_billion": 287.0,
+    "institution_billion": 110.1
   },
   {
     "date": "2025-06-19",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.9,
-    "institution_billion": null
+    "individual_billion": 350.0,
+    "financial_invest_billion": -92.0,
+    "retail_billion": 258.0,
+    "foreign_billion": -82.6,
+    "institution_billion": -301.8
   },
   {
     "date": "2025-06-20",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 5.6,
-    "institution_billion": null
+    "individual_billion": -596.6,
+    "financial_invest_billion": 90.8,
+    "retail_billion": -505.8,
+    "foreign_billion": 562.6,
+    "institution_billion": 37.2
   },
   {
     "date": "2025-06-23",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.7,
-    "institution_billion": null
+    "individual_billion": 1379.7,
+    "financial_invest_billion": -856.9,
+    "retail_billion": 522.8,
+    "foreign_billion": -366.8,
+    "institution_billion": -948.5
   },
   {
     "date": "2025-06-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.4,
-    "institution_billion": null
+    "individual_billion": -567.6,
+    "financial_invest_billion": 479.2,
+    "retail_billion": -88.4,
+    "foreign_billion": 438.3,
+    "institution_billion": 259.4
   },
   {
     "date": "2025-06-25",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.1,
-    "institution_billion": null
+    "individual_billion": 758.0,
+    "financial_invest_billion": -212.8,
+    "retail_billion": 545.2,
+    "foreign_billion": -110.8,
+    "institution_billion": -588.3
   },
   {
     "date": "2025-06-26",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -5.8,
-    "institution_billion": null
+    "individual_billion": 832.5,
+    "financial_invest_billion": -155.2,
+    "retail_billion": 677.3,
+    "foreign_billion": -579.4,
+    "institution_billion": -408.0
   },
   {
     "date": "2025-06-27",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -8.6,
-    "institution_billion": null
+    "individual_billion": 486.8,
+    "financial_invest_billion": 266.6,
+    "retail_billion": 753.4,
+    "foreign_billion": -858.0,
+    "institution_billion": 343.4
   },
   {
     "date": "2025-06-30",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -6.5,
-    "institution_billion": null
+    "individual_billion": 189.2,
+    "financial_invest_billion": 522.1,
+    "retail_billion": 711.3,
+    "foreign_billion": -648.9,
+    "institution_billion": 475.7
   },
   {
     "date": "2025-07-01",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.8,
-    "institution_billion": null
+    "individual_billion": -640.5,
+    "financial_invest_billion": 520.6,
+    "retail_billion": -119.9,
+    "foreign_billion": 176.0,
+    "institution_billion": 474.5
   },
   {
     "date": "2025-07-02",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.3,
-    "institution_billion": null
+    "individual_billion": 232.9,
+    "financial_invest_billion": 310.3,
+    "retail_billion": 543.2,
+    "foreign_billion": -327.8,
+    "institution_billion": 72.0
   },
   {
     "date": "2025-07-03",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.5,
-    "institution_billion": null
+    "individual_billion": -1233.0,
+    "financial_invest_billion": 326.4,
+    "retail_billion": -906.6,
+    "foreign_billion": 642.7,
+    "institution_billion": 548.4
   },
   {
     "date": "2025-07-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.6,
-    "institution_billion": null
+    "individual_billion": 257.5,
+    "financial_invest_billion": -159.7,
+    "retail_billion": 97.8,
+    "foreign_billion": 162.4,
+    "institution_billion": -382.2
   },
   {
     "date": "2025-07-07",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.9,
-    "institution_billion": null
+    "individual_billion": 155.8,
+    "financial_invest_billion": -93.9,
+    "retail_billion": 61.9,
+    "foreign_billion": -93.7,
+    "institution_billion": -81.1
   },
   {
     "date": "2025-07-08",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.4,
-    "institution_billion": null
+    "individual_billion": -254.9,
+    "financial_invest_billion": 5.1,
+    "retail_billion": -249.8,
+    "foreign_billion": 246.1,
+    "institution_billion": -32.6
   },
   {
     "date": "2025-07-09",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.1,
-    "institution_billion": null
+    "individual_billion": 431.0,
+    "financial_invest_billion": -139.7,
+    "retail_billion": 291.3,
+    "foreign_billion": -410.5,
+    "institution_billion": -57.1
   },
   {
     "date": "2025-07-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.7,
-    "institution_billion": null
+    "individual_billion": -586.9,
+    "financial_invest_billion": -131.8,
+    "retail_billion": -718.7,
+    "foreign_billion": 469.4,
+    "institution_billion": 44.7
   },
   {
     "date": "2025-07-11",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.3,
-    "institution_billion": null
+    "individual_billion": 125.0,
+    "financial_invest_billion": 62.4,
+    "retail_billion": 187.4,
+    "foreign_billion": 325.9,
+    "institution_billion": -74.3
   },
   {
     "date": "2025-07-14",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.7,
-    "institution_billion": null
+    "individual_billion": -356.8,
+    "financial_invest_billion": 41.0,
+    "retail_billion": -315.8,
+    "foreign_billion": 370.7,
+    "institution_billion": -94.7
   },
   {
     "date": "2025-07-15",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.1,
-    "institution_billion": null
+    "individual_billion": -310.2,
+    "financial_invest_billion": -46.4,
+    "retail_billion": -356.6,
+    "foreign_billion": 212.3,
+    "institution_billion": -16.7
   },
   {
     "date": "2025-07-16",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.5,
-    "institution_billion": null
+    "individual_billion": 401.6,
+    "financial_invest_billion": -178.2,
+    "retail_billion": 223.4,
+    "foreign_billion": 55.5,
+    "institution_billion": -552.5
   },
   {
     "date": "2025-07-17",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.5,
-    "institution_billion": null
+    "individual_billion": -335.6,
+    "financial_invest_billion": 245.4,
+    "retail_billion": -90.2,
+    "foreign_billion": 49.3,
+    "institution_billion": 158.3
   },
   {
     "date": "2025-07-18",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.9,
-    "institution_billion": null
+    "individual_billion": -341.1,
+    "financial_invest_billion": 213.8,
+    "retail_billion": -127.3,
+    "foreign_billion": 187.8,
+    "institution_billion": 32.0
   },
   {
     "date": "2025-07-21",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 9.0,
-    "institution_billion": null
+    "individual_billion": -1057.8,
+    "financial_invest_billion": 66.9,
+    "retail_billion": -990.9,
+    "foreign_billion": 893.5,
+    "institution_billion": 99.4
   },
   {
     "date": "2025-07-22",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.3,
-    "institution_billion": null
+    "individual_billion": 478.0,
+    "financial_invest_billion": 14.0,
+    "retail_billion": 492.0,
+    "foreign_billion": -128.8,
+    "institution_billion": -412.8
   },
   {
     "date": "2025-07-23",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.2,
-    "institution_billion": null
+    "individual_billion": -698.2,
+    "financial_invest_billion": 379.5,
+    "retail_billion": -318.7,
+    "foreign_billion": 422.8,
+    "institution_billion": 191.7
   },
   {
     "date": "2025-07-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 7.4,
-    "institution_billion": null
+    "individual_billion": -951.3,
+    "financial_invest_billion": 60.9,
+    "retail_billion": -890.4,
+    "foreign_billion": 738.6,
+    "institution_billion": 127.3
   },
   {
     "date": "2025-07-25",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.7,
-    "institution_billion": null
+    "individual_billion": -461.6,
+    "financial_invest_billion": 4.0,
+    "retail_billion": -457.6,
+    "foreign_billion": 270.6,
+    "institution_billion": 110.0
   },
   {
     "date": "2025-07-28",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.8,
-    "institution_billion": null
+    "individual_billion": -997.5,
+    "financial_invest_billion": 522.3,
+    "retail_billion": -475.2,
+    "foreign_billion": 475.3,
+    "institution_billion": 452.0
   },
   {
     "date": "2025-07-29",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.0,
-    "institution_billion": null
+    "individual_billion": -825.9,
+    "financial_invest_billion": 136.2,
+    "retail_billion": -689.7,
+    "foreign_billion": 605.4,
+    "institution_billion": 116.7
   },
   {
     "date": "2025-07-30",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 5.8,
-    "institution_billion": null
+    "individual_billion": -984.4,
+    "financial_invest_billion": 319.6,
+    "retail_billion": -664.8,
+    "foreign_billion": 578.3,
+    "institution_billion": 330.7
   },
   {
     "date": "2025-07-31",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.4,
-    "institution_billion": null
+    "individual_billion": 223.5,
+    "financial_invest_billion": -367.7,
+    "retail_billion": -144.2,
+    "foreign_billion": 345.0,
+    "institution_billion": -705.3
   },
   {
     "date": "2025-08-01",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -6.6,
-    "institution_billion": null
+    "individual_billion": 1628.3,
+    "financial_invest_billion": -461.6,
+    "retail_billion": 1166.7,
+    "foreign_billion": -652.4,
+    "institution_billion": -1072.0
   },
   {
     "date": "2025-08-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.8,
-    "institution_billion": null
+    "individual_billion": -299.6,
+    "financial_invest_billion": 117.8,
+    "retail_billion": -181.8,
+    "foreign_billion": 83.0,
+    "institution_billion": 131.6
   },
   {
     "date": "2025-08-05",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.0,
-    "institution_billion": null
+    "individual_billion": -478.5,
+    "financial_invest_billion": -44.6,
+    "retail_billion": -523.1,
+    "foreign_billion": 291.9,
+    "institution_billion": 94.7
   },
   {
     "date": "2025-08-06",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.8,
-    "institution_billion": null
+    "individual_billion": 47.4,
+    "financial_invest_billion": 48.3,
+    "retail_billion": 95.7,
+    "foreign_billion": 280.4,
+    "institution_billion": -402.0
   },
   {
     "date": "2025-08-07",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.2,
-    "institution_billion": null
+    "individual_billion": -204.8,
+    "financial_invest_billion": 116.4,
+    "retail_billion": -88.4,
+    "foreign_billion": -17.1,
+    "institution_billion": 109.2
   },
   {
     "date": "2025-08-08",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.6,
-    "institution_billion": null
+    "individual_billion": 183.5,
+    "financial_invest_billion": 195.9,
+    "retail_billion": 379.4,
+    "foreign_billion": -157.6,
+    "institution_billion": -131.8
   },
   {
     "date": "2025-08-11",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.2,
-    "institution_billion": null
+    "individual_billion": -140.7,
+    "financial_invest_billion": 41.7,
+    "retail_billion": -99.0,
+    "foreign_billion": 216.9,
+    "institution_billion": -216.0
   },
   {
     "date": "2025-08-12",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.6,
-    "institution_billion": null
+    "individual_billion": 63.4,
+    "financial_invest_billion": 3.5,
+    "retail_billion": 66.9,
+    "foreign_billion": -60.4,
+    "institution_billion": -98.1
   },
   {
     "date": "2025-08-13",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.4,
-    "institution_billion": null
+    "individual_billion": -664.8,
+    "financial_invest_billion": 46.5,
+    "retail_billion": -618.3,
+    "foreign_billion": 634.9,
+    "institution_billion": -80.9
   },
   {
     "date": "2025-08-14",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.8,
-    "institution_billion": null
+    "individual_billion": -53.4,
+    "financial_invest_billion": 151.8,
+    "retail_billion": 98.4,
+    "foreign_billion": -77.9,
+    "institution_billion": 19.7
   },
   {
     "date": "2025-08-18",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.9,
-    "institution_billion": null
+    "individual_billion": 357.0,
+    "financial_invest_billion": 139.1,
+    "retail_billion": 496.1,
+    "foreign_billion": -488.1,
+    "institution_billion": 81.3
   },
   {
     "date": "2025-08-19",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.5,
-    "institution_billion": null
+    "individual_billion": 90.4,
+    "financial_invest_billion": 312.8,
+    "retail_billion": 403.2,
+    "foreign_billion": -454.4,
+    "institution_billion": 253.9
   },
   {
     "date": "2025-08-20",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.1,
-    "institution_billion": null
+    "individual_billion": -392.9,
+    "financial_invest_billion": 619.9,
+    "retail_billion": 227.0,
+    "foreign_billion": -218.5,
+    "institution_billion": 502.4
   },
   {
     "date": "2025-08-21",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.2,
-    "institution_billion": null
+    "individual_billion": -259.1,
+    "financial_invest_billion": -64.4,
+    "retail_billion": -323.5,
+    "foreign_billion": -15.2,
+    "institution_billion": 159.8
   },
   {
     "date": "2025-08-22",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.8,
-    "institution_billion": null
+    "individual_billion": -457.2,
+    "financial_invest_billion": 33.6,
+    "retail_billion": -423.6,
+    "foreign_billion": 182.6,
+    "institution_billion": 155.6
   },
   {
     "date": "2025-08-25",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.2,
-    "institution_billion": null
+    "individual_billion": -385.7,
+    "financial_invest_billion": 67.5,
+    "retail_billion": -318.2,
+    "foreign_billion": 122.4,
+    "institution_billion": 154.3
   },
   {
     "date": "2025-08-26",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -6.9,
-    "institution_billion": null
+    "individual_billion": 851.9,
+    "financial_invest_billion": -200.4,
+    "retail_billion": 651.5,
+    "foreign_billion": -683.6,
+    "institution_billion": -265.7
   },
   {
     "date": "2025-08-27",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.0,
-    "institution_billion": null
+    "individual_billion": 56.9,
+    "financial_invest_billion": -87.2,
+    "retail_billion": -30.3,
+    "foreign_billion": -202.3,
+    "institution_billion": 27.7
   },
   {
     "date": "2025-08-28",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.2,
-    "institution_billion": null
+    "individual_billion": -393.9,
+    "financial_invest_billion": 137.2,
+    "retail_billion": -256.7,
+    "foreign_billion": -24.1,
+    "institution_billion": 326.4
   },
   {
     "date": "2025-08-29",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.7,
-    "institution_billion": null
+    "individual_billion": 235.3,
+    "financial_invest_billion": 156.3,
+    "retail_billion": 391.6,
+    "foreign_billion": -372.4,
+    "institution_billion": 64.8
   },
   {
     "date": "2025-09-01",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.7,
-    "institution_billion": null
+    "individual_billion": 346.9,
+    "financial_invest_billion": -26.4,
+    "retail_billion": 320.5,
+    "foreign_billion": -272.0,
+    "institution_billion": -194.0
   },
   {
     "date": "2025-09-02",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.0,
-    "institution_billion": null
+    "individual_billion": -347.4,
+    "financial_invest_billion": -148.0,
+    "retail_billion": -495.4,
+    "foreign_billion": 401.0,
+    "institution_billion": -141.6
   },
   {
     "date": "2025-09-03",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.4,
-    "institution_billion": null
+    "individual_billion": -156.3,
+    "financial_invest_billion": -261.6,
+    "retail_billion": -417.9,
+    "foreign_billion": 435.9,
+    "institution_billion": -375.6
   },
   {
     "date": "2025-09-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.0,
-    "institution_billion": null
+    "individual_billion": -284.7,
+    "financial_invest_billion": 4.5,
+    "retail_billion": -280.2,
+    "foreign_billion": 202.5,
+    "institution_billion": -23.2
   },
   {
     "date": "2025-09-05",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.4,
-    "institution_billion": null
+    "individual_billion": -55.2,
+    "financial_invest_billion": 164.6,
+    "retail_billion": 109.4,
+    "foreign_billion": -137.4,
+    "institution_billion": 112.4
   },
   {
     "date": "2025-09-08",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.3,
-    "institution_billion": null
+    "individual_billion": -384.8,
+    "financial_invest_billion": 112.9,
+    "retail_billion": -271.9,
+    "foreign_billion": 230.1,
+    "institution_billion": 77.8
   },
   {
     "date": "2025-09-09",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.8,
-    "institution_billion": null
+    "individual_billion": -1037.1,
+    "financial_invest_billion": 206.4,
+    "retail_billion": -830.7,
+    "foreign_billion": 680.8,
+    "institution_billion": 280.6
   },
   {
     "date": "2025-09-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 13.8,
-    "institution_billion": null
+    "individual_billion": -2263.4,
+    "financial_invest_billion": 907.7,
+    "retail_billion": -1355.7,
+    "foreign_billion": 1381.7,
+    "institution_billion": 904.6
   },
   {
     "date": "2025-09-11",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.0,
-    "institution_billion": null
+    "individual_billion": -1149.3,
+    "financial_invest_billion": 1076.1,
+    "retail_billion": -73.2,
+    "foreign_billion": 300.0,
+    "institution_billion": 822.5
   },
   {
     "date": "2025-09-12",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 14.2,
-    "institution_billion": null
+    "individual_billion": -2028.7,
+    "financial_invest_billion": 711.7,
+    "retail_billion": -1317.0,
+    "foreign_billion": 1435.5,
+    "institution_billion": 611.9
   },
   {
     "date": "2025-09-15",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.7,
-    "institution_billion": null
+    "individual_billion": -137.4,
+    "financial_invest_billion": 60.3,
+    "retail_billion": -77.1,
+    "foreign_billion": 266.7,
+    "institution_billion": -137.6
   },
   {
     "date": "2025-09-16",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 18.0,
-    "institution_billion": null
+    "individual_billion": -1763.7,
+    "financial_invest_billion": 229.3,
+    "retail_billion": -1534.4,
+    "foreign_billion": 1792.7,
+    "institution_billion": 108.3
   },
   {
     "date": "2025-09-17",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.4,
-    "institution_billion": null
+    "individual_billion": 252.2,
+    "financial_invest_billion": -181.5,
+    "retail_billion": 70.7,
+    "foreign_billion": -34.7,
+    "institution_billion": -307.5
   },
   {
     "date": "2025-09-18",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.9,
-    "institution_billion": null
+    "individual_billion": -781.6,
+    "financial_invest_billion": 312.9,
+    "retail_billion": -468.7,
+    "foreign_billion": 285.1,
+    "institution_billion": 429.4
   },
   {
     "date": "2025-09-19",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.1,
-    "institution_billion": null
+    "individual_billion": 533.2,
+    "financial_invest_billion": -89.5,
+    "retail_billion": 443.7,
+    "foreign_billion": -308.0,
+    "institution_billion": -335.7
   },
   {
     "date": "2025-09-22",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 5.7,
-    "institution_billion": null
+    "individual_billion": -768.2,
+    "financial_invest_billion": 419.6,
+    "retail_billion": -348.6,
+    "foreign_billion": 565.3,
+    "institution_billion": 267.2
   },
   {
     "date": "2025-09-23",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.4,
-    "institution_billion": null
+    "individual_billion": -246.2,
+    "financial_invest_billion": -33.7,
+    "retail_billion": -279.9,
+    "foreign_billion": 341.4,
+    "institution_billion": -136.3
   },
   {
     "date": "2025-09-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.5,
-    "institution_billion": null
+    "individual_billion": 1.7,
+    "financial_invest_billion": 387.2,
+    "retail_billion": 388.9,
+    "foreign_billion": -248.6,
+    "institution_billion": 212.4
   },
   {
     "date": "2025-09-25",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.2,
-    "institution_billion": null
+    "individual_billion": -541.1,
+    "financial_invest_billion": 212.1,
+    "retail_billion": -329.0,
+    "foreign_billion": 219.6,
+    "institution_billion": 270.7
   },
   {
     "date": "2025-09-26",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -5.7,
-    "institution_billion": null
+    "individual_billion": 1099.7,
+    "financial_invest_billion": -272.4,
+    "retail_billion": 827.3,
+    "foreign_billion": -570.7,
+    "institution_billion": -489.2
   },
   {
     "date": "2025-09-29",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.5,
-    "institution_billion": null
+    "individual_billion": -748.0,
+    "financial_invest_billion": 112.9,
+    "retail_billion": -635.1,
+    "foreign_billion": 447.2,
+    "institution_billion": 301.4
   },
   {
     "date": "2025-09-30",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.3,
-    "institution_billion": null
+    "individual_billion": -26.5,
+    "financial_invest_billion": -209.2,
+    "retail_billion": -235.7,
+    "foreign_billion": 23.0,
+    "institution_billion": -49.7
   },
   {
     "date": "2025-10-01",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 8.3,
-    "institution_billion": null
+    "individual_billion": -1081.2,
+    "financial_invest_billion": 149.5,
+    "retail_billion": -931.7,
+    "foreign_billion": 845.5,
+    "institution_billion": 220.8
   },
   {
     "date": "2025-10-02",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 31.4,
-    "institution_billion": null
+    "individual_billion": -3071.5,
+    "financial_invest_billion": -6.6,
+    "retail_billion": -3078.1,
+    "foreign_billion": 3126.5,
+    "institution_billion": -67.5
   },
   {
     "date": "2025-10-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 10.6,
-    "institution_billion": null
+    "individual_billion": -502.2,
+    "financial_invest_billion": -492.0,
+    "retail_billion": -994.2,
+    "foreign_billion": 1059.2,
+    "institution_billion": -593.6
   },
   {
     "date": "2025-10-13",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -8.2,
-    "institution_billion": null
+    "individual_billion": 1164.9,
+    "financial_invest_billion": -380.6,
+    "retail_billion": 784.3,
+    "foreign_billion": -822.0,
+    "institution_billion": -447.1
   },
   {
     "date": "2025-10-14",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 5.5,
-    "institution_billion": null
+    "individual_billion": 2.0,
+    "financial_invest_billion": -421.7,
+    "retail_billion": -419.7,
+    "foreign_billion": 558.1,
+    "institution_billion": -629.9
   },
   {
     "date": "2025-10-15",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.6,
-    "institution_billion": null
+    "individual_billion": -970.6,
+    "financial_invest_billion": 515.8,
+    "retail_billion": -454.8,
+    "foreign_billion": 163.1,
+    "institution_billion": 751.2
   },
   {
     "date": "2025-10-16",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.6,
-    "institution_billion": null
+    "individual_billion": -1393.6,
+    "financial_invest_billion": 676.1,
+    "retail_billion": -717.5,
+    "foreign_billion": 653.3,
+    "institution_billion": 781.3
   },
   {
     "date": "2025-10-17",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.4,
-    "institution_billion": null
+    "individual_billion": -312.2,
+    "financial_invest_billion": -23.8,
+    "retail_billion": -336.0,
+    "foreign_billion": 443.8,
+    "institution_billion": -168.8
   },
   {
     "date": "2025-10-20",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.5,
-    "institution_billion": null
+    "individual_billion": -410.9,
+    "financial_invest_billion": 870.4,
+    "retail_billion": 459.5,
+    "foreign_billion": -250.0,
+    "institution_billion": 642.8
   },
   {
     "date": "2025-10-21",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.2,
-    "institution_billion": null
+    "individual_billion": -155.6,
+    "financial_invest_billion": 497.0,
+    "retail_billion": 341.4,
+    "foreign_billion": -12.4,
+    "institution_billion": 211.6
   },
   {
     "date": "2025-10-22",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -7.0,
-    "institution_billion": null
+    "individual_billion": -76.9,
+    "financial_invest_billion": 539.9,
+    "retail_billion": 463.0,
+    "foreign_billion": -703.3,
+    "institution_billion": 763.3
   },
   {
     "date": "2025-10-23",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.1,
-    "institution_billion": null
+    "individual_billion": 750.5,
+    "financial_invest_billion": -180.0,
+    "retail_billion": 570.5,
+    "foreign_billion": -407.1,
+    "institution_billion": -397.2
   },
   {
     "date": "2025-10-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 5.8,
-    "institution_billion": null
+    "individual_billion": -2000.5,
+    "financial_invest_billion": 1082.6,
+    "retail_billion": -917.9,
+    "foreign_billion": 575.6,
+    "institution_billion": 1405.4
   },
   {
     "date": "2025-10-27",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.5,
-    "institution_billion": null
+    "individual_billion": -796.9,
+    "financial_invest_billion": 691.3,
+    "retail_billion": -105.6,
+    "foreign_billion": 647.1,
+    "institution_billion": 234.3
   },
   {
     "date": "2025-10-28",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -16.4,
-    "institution_billion": null
+    "individual_billion": 1572.8,
+    "financial_invest_billion": 311.2,
+    "retail_billion": 1884.0,
+    "foreign_billion": -1637.9,
+    "institution_billion": 92.5
   },
   {
     "date": "2025-10-29",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.0,
-    "institution_billion": null
+    "individual_billion": -358.3,
+    "financial_invest_billion": 1068.0,
+    "retail_billion": 709.7,
+    "foreign_billion": -106.6,
+    "institution_billion": 519.6
   },
   {
     "date": "2025-10-30",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.2,
-    "institution_billion": null
+    "individual_billion": 936.3,
+    "financial_invest_billion": -193.0,
+    "retail_billion": 743.3,
+    "foreign_billion": -117.3,
+    "institution_billion": -837.9
   },
   {
     "date": "2025-10-31",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 13.2,
-    "institution_billion": null
+    "individual_billion": -201.8,
+    "financial_invest_billion": 1166.0,
+    "retail_billion": 964.2,
+    "foreign_billion": 1321.2,
+    "institution_billion": -1106.4
   },
   {
     "date": "2025-11-03",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -8.0,
-    "institution_billion": null
+    "individual_billion": 625.6,
+    "financial_invest_billion": 427.7,
+    "retail_billion": 1053.3,
+    "foreign_billion": -794.9,
+    "institution_billion": 184.1
   },
   {
     "date": "2025-11-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -22.4,
-    "institution_billion": null
+    "individual_billion": 2700.9,
+    "financial_invest_billion": -51.4,
+    "retail_billion": 2649.5,
+    "foreign_billion": -2228.2,
+    "institution_billion": -498.9
   },
   {
     "date": "2025-11-05",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -20.7,
-    "institution_billion": null
+    "individual_billion": 2553.8,
+    "financial_invest_billion": 87.4,
+    "retail_billion": 2641.2,
+    "foreign_billion": -2069.5,
+    "institution_billion": -187.7
   },
   {
     "date": "2025-11-06",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -17.0,
-    "institution_billion": null
+    "individual_billion": 884.0,
+    "financial_invest_billion": 587.9,
+    "retail_billion": 1471.9,
+    "foreign_billion": -1695.0,
+    "institution_billion": 830.1
   },
   {
     "date": "2025-11-07",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.6,
-    "institution_billion": null
+    "individual_billion": 679.1,
+    "financial_invest_billion": 164.0,
+    "retail_billion": 843.1,
+    "foreign_billion": -455.0,
+    "institution_billion": -244.6
   },
   {
     "date": "2025-11-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.4,
-    "institution_billion": null
+    "individual_billion": -1160.7,
+    "financial_invest_billion": 922.2,
+    "retail_billion": -238.5,
+    "foreign_billion": -151.0,
+    "institution_billion": 1306.6
   },
   {
     "date": "2025-11-11",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.7,
-    "institution_billion": null
+    "individual_billion": -283.0,
+    "financial_invest_billion": 367.0,
+    "retail_billion": 84.0,
+    "foreign_billion": 77.0,
+    "institution_billion": 224.7
   },
   {
     "date": "2025-11-12",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.3,
-    "institution_billion": null
+    "individual_billion": -442.3,
+    "financial_invest_billion": 868.7,
+    "retail_billion": 426.4,
+    "foreign_billion": -426.5,
+    "institution_billion": 909.3
   },
   {
     "date": "2025-11-13",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 10.0,
-    "institution_billion": null
+    "individual_billion": -234.3,
+    "financial_invest_billion": -743.5,
+    "retail_billion": -977.8,
+    "foreign_billion": 998.9,
+    "institution_billion": -717.9
   },
   {
     "date": "2025-11-14",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -23.7,
-    "institution_billion": null
+    "individual_billion": 3234.6,
+    "financial_invest_billion": -655.2,
+    "retail_billion": 2579.4,
+    "foreign_billion": -2357.5,
+    "institution_billion": -900.5
   },
   {
     "date": "2025-11-17",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 5.2,
-    "institution_billion": null
+    "individual_billion": -500.0,
+    "financial_invest_billion": 6.0,
+    "retail_billion": -494.0,
+    "foreign_billion": 518.9,
+    "institution_billion": -24.5
   },
   {
     "date": "2025-11-18",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -5.5,
-    "institution_billion": null
+    "individual_billion": 1238.2,
+    "financial_invest_billion": -428.7,
+    "retail_billion": 809.5,
+    "foreign_billion": -550.0,
+    "institution_billion": -678.8
   },
   {
     "date": "2025-11-19",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -10.5,
-    "institution_billion": null
+    "individual_billion": 445.0,
+    "financial_invest_billion": 461.1,
+    "retail_billion": 906.1,
+    "foreign_billion": -1049.5,
+    "institution_billion": 625.6
   },
   {
     "date": "2025-11-20",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 7.5,
-    "institution_billion": null
+    "individual_billion": -1381.7,
+    "financial_invest_billion": 747.6,
+    "retail_billion": -634.1,
+    "foreign_billion": 740.6,
+    "institution_billion": 756.6
   },
   {
     "date": "2025-11-21",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -28.3,
-    "institution_billion": null
+    "individual_billion": 2269.5,
+    "financial_invest_billion": 411.5,
+    "retail_billion": 2681.0,
+    "foreign_billion": -2822.9,
+    "institution_billion": 493.5
   },
   {
     "date": "2025-11-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -8.0,
-    "institution_billion": null
+    "individual_billion": -461.9,
+    "financial_invest_billion": 1109.5,
+    "retail_billion": 647.6,
+    "foreign_billion": -799.3,
+    "institution_billion": 1271.9
   },
   {
     "date": "2025-11-25",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.0,
-    "institution_billion": null
+    "individual_billion": -27.6,
+    "financial_invest_billion": 19.7,
+    "retail_billion": -7.9,
+    "foreign_billion": 4.9,
+    "institution_billion": 31.5
   },
   {
     "date": "2025-11-26",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 5.2,
-    "institution_billion": null
+    "individual_billion": -1804.8,
+    "financial_invest_billion": 1037.6,
+    "retail_billion": -767.2,
+    "foreign_billion": 515.8,
+    "institution_billion": 1228.0
   },
   {
     "date": "2025-11-27",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.6,
-    "institution_billion": null
+    "individual_billion": -615.2,
+    "financial_invest_billion": 326.1,
+    "retail_billion": -289.1,
+    "foreign_billion": 154.6,
+    "institution_billion": 432.6
   },
   {
     "date": "2025-11-28",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -20.4,
-    "institution_billion": null
+    "individual_billion": 1568.5,
+    "financial_invest_billion": 839.2,
+    "retail_billion": 2407.7,
+    "foreign_billion": -2036.9,
+    "institution_billion": 458.7
   },
   {
     "date": "2025-12-01",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.2,
-    "institution_billion": null
+    "individual_billion": 52.8,
+    "financial_invest_billion": -68.9,
+    "retail_billion": -16.1,
+    "foreign_billion": 223.5,
+    "institution_billion": -233.3
   },
   {
     "date": "2025-12-02",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 12.2,
-    "institution_billion": null
+    "individual_billion": -1576.3,
+    "financial_invest_billion": 247.5,
+    "retail_billion": -1328.8,
+    "foreign_billion": 1214.7,
+    "institution_billion": 392.9
   },
   {
     "date": "2025-12-03",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 2.8,
-    "institution_billion": null
+    "individual_billion": -898.4,
+    "financial_invest_billion": 487.3,
+    "retail_billion": -411.1,
+    "foreign_billion": 281.6,
+    "institution_billion": 736.4
   },
   {
     "date": "2025-12-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -7.0,
-    "institution_billion": null
+    "individual_billion": 558.5,
+    "financial_invest_billion": 107.1,
+    "retail_billion": 665.6,
+    "foreign_billion": -696.0,
+    "institution_billion": 131.8
   },
   {
     "date": "2025-12-05",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 10.0,
-    "institution_billion": null
+    "individual_billion": -2115.6,
+    "financial_invest_billion": 849.0,
+    "retail_billion": -1266.6,
+    "foreign_billion": 993.4,
+    "institution_billion": 1152.8
   },
   {
     "date": "2025-12-08",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.2,
-    "institution_billion": null
+    "individual_billion": -344.9,
+    "financial_invest_billion": -140.8,
+    "retail_billion": -485.7,
+    "foreign_billion": 321.1,
+    "institution_billion": -30.8
   },
   {
     "date": "2025-12-09",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.9,
-    "institution_billion": null
+    "individual_billion": -13.3,
+    "financial_invest_billion": -98.3,
+    "retail_billion": -111.6,
+    "foreign_billion": -88.9,
+    "institution_billion": 49.4
   },
   {
     "date": "2025-12-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.7,
-    "institution_billion": null
+    "individual_billion": -88.9,
+    "financial_invest_billion": -102.3,
+    "retail_billion": -191.2,
+    "foreign_billion": 373.9,
+    "institution_billion": -300.3
   },
   {
     "date": "2025-12-11",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.6,
-    "institution_billion": null
+    "individual_billion": 392.2,
+    "financial_invest_billion": -688.2,
+    "retail_billion": -296.0,
+    "foreign_billion": 365.6,
+    "institution_billion": -775.3
   },
   {
     "date": "2025-12-12",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 0.5,
-    "institution_billion": null
+    "individual_billion": -1462.5,
+    "financial_invest_billion": 1438.7,
+    "retail_billion": -23.8,
+    "foreign_billion": 41.4,
+    "institution_billion": 1418.4
   },
   {
     "date": "2025-12-15",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -9.6,
-    "institution_billion": null
+    "individual_billion": 1421.0,
+    "financial_invest_billion": -392.0,
+    "retail_billion": 1029.0,
+    "foreign_billion": -956.9,
+    "institution_billion": -480.3
   },
   {
     "date": "2025-12-16",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -10.3,
-    "institution_billion": null
+    "individual_billion": 1241.0,
+    "financial_invest_billion": 148.1,
+    "retail_billion": 1389.1,
+    "foreign_billion": -1030.5,
+    "institution_billion": -230.9
   },
   {
     "date": "2025-12-17",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -0.3,
-    "institution_billion": null
+    "individual_billion": -337.4,
+    "financial_invest_billion": 379.4,
+    "retail_billion": 42.0,
+    "foreign_billion": -32.2,
+    "institution_billion": 335.3
   },
   {
     "date": "2025-12-18",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.5,
-    "institution_billion": null
+    "individual_billion": 413.0,
+    "financial_invest_billion": 156.3,
+    "retail_billion": 569.3,
+    "foreign_billion": -345.9,
+    "institution_billion": -100.6
   },
   {
     "date": "2025-12-19",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -7.5,
-    "institution_billion": null
+    "individual_billion": -141.2,
+    "financial_invest_billion": 964.2,
+    "retail_billion": 823.0,
+    "foreign_billion": -757.3,
+    "institution_billion": 854.1
   },
   {
     "date": "2025-12-22",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 11.1,
-    "institution_billion": null
+    "individual_billion": -2671.4,
+    "financial_invest_billion": 1622.1,
+    "retail_billion": -1049.3,
+    "foreign_billion": 1101.7,
+    "institution_billion": 1605.5
   },
   {
     "date": "2025-12-23",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 9.5,
-    "institution_billion": null
+    "individual_billion": -1285.3,
+    "financial_invest_billion": 533.3,
+    "retail_billion": -752.0,
+    "foreign_billion": 955.1,
+    "institution_billion": 352.7
   },
   {
     "date": "2025-12-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 5.2,
-    "institution_billion": null
+    "individual_billion": -717.1,
+    "financial_invest_billion": 252.3,
+    "retail_billion": -464.8,
+    "foreign_billion": 522.5,
+    "institution_billion": 203.9
   },
   {
     "date": "2025-12-26",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 17.8,
-    "institution_billion": null
+    "individual_billion": -2326.5,
+    "financial_invest_billion": 529.3,
+    "retail_billion": -1797.2,
+    "foreign_billion": 1779.0,
+    "institution_billion": 443.5
   },
   {
     "date": "2025-12-29",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.4,
-    "institution_billion": null
+    "individual_billion": 66.1,
+    "financial_invest_billion": -363.6,
+    "retail_billion": -297.5,
+    "foreign_billion": 333.7,
+    "institution_billion": -313.3
   },
   {
     "date": "2025-12-30",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -4.9,
-    "institution_billion": null
+    "individual_billion": 844.8,
+    "financial_invest_billion": -229.0,
+    "retail_billion": 615.8,
+    "foreign_billion": -476.8,
+    "institution_billion": -376.3
   },
   {
     "date": "2026-01-02",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 6.5,
-    "institution_billion": null
+    "individual_billion": -425.2,
+    "financial_invest_billion": -113.8,
+    "retail_billion": -539.0,
+    "foreign_billion": 630.9,
+    "institution_billion": -247.7
   },
   {
     "date": "2026-01-05",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 21.8,
-    "institution_billion": null
+    "individual_billion": -1514.1,
+    "financial_invest_billion": -50.8,
+    "retail_billion": -1564.9,
+    "foreign_billion": 2172.6,
+    "institution_billion": -704.6
   },
   {
     "date": "2026-01-06",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -6.3,
-    "institution_billion": null
+    "individual_billion": 596.3,
+    "financial_invest_billion": 169.7,
+    "retail_billion": 766.0,
+    "foreign_billion": -618.4,
+    "institution_billion": -66.4
   },
   {
     "date": "2026-01-07",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 12.5,
-    "institution_billion": null
+    "individual_billion": -294.4,
+    "financial_invest_billion": -359.4,
+    "retail_billion": -653.8,
+    "foreign_billion": 1254.8,
+    "institution_billion": -939.7
   },
   {
     "date": "2026-01-08",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.1,
-    "institution_billion": null
+    "individual_billion": 1254.0,
+    "financial_invest_billion": -854.7,
+    "retail_billion": 399.3,
+    "foreign_billion": -97.9,
+    "institution_billion": -1401.4
   },
   {
     "date": "2026-01-09",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -16.1,
-    "institution_billion": null
+    "individual_billion": 133.9,
+    "financial_invest_billion": 1165.4,
+    "retail_billion": 1299.3,
+    "foreign_billion": -1606.8,
+    "institution_billion": 1204.6
   },
   {
     "date": "2026-01-12",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.5,
-    "institution_billion": null
+    "individual_billion": -101.3,
+    "financial_invest_billion": 568.2,
+    "retail_billion": 466.9,
+    "foreign_billion": -351.2,
+    "institution_billion": 210.1
   },
   {
     "date": "2026-01-13",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.8,
-    "institution_billion": null
+    "individual_billion": -712.5,
+    "financial_invest_billion": 776.9,
+    "retail_billion": 64.4,
+    "foreign_billion": -279.3,
+    "institution_billion": 788.1
   },
   {
     "date": "2026-01-14",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -3.8,
-    "institution_billion": null
+    "individual_billion": -437.7,
+    "financial_invest_billion": 604.5,
+    "retail_billion": 166.8,
+    "foreign_billion": -376.0,
+    "institution_billion": 588.7
   },
   {
     "date": "2026-01-15",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.5,
-    "institution_billion": null
+    "individual_billion": -1823.5,
+    "financial_invest_billion": 1457.7,
+    "retail_billion": -365.8,
+    "foreign_billion": 345.0,
+    "institution_billion": 1290.5
   },
   {
     "date": "2026-01-16",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.4,
-    "institution_billion": null
+    "individual_billion": -938.3,
+    "financial_invest_billion": 511.4,
+    "retail_billion": -426.9,
+    "foreign_billion": 435.0,
+    "institution_billion": 308.3
   },
   {
     "date": "2026-01-19",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 5.5,
-    "institution_billion": null
+    "individual_billion": -751.3,
+    "financial_invest_billion": 205.4,
+    "retail_billion": -545.9,
+    "foreign_billion": 553.2,
+    "institution_billion": -25.6
   },
   {
     "date": "2026-01-20",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.2,
-    "institution_billion": null
+    "individual_billion": 352.4,
+    "financial_invest_billion": -208.9,
+    "retail_billion": 143.5,
+    "foreign_billion": 123.2,
+    "institution_billion": -650.0
   },
   {
     "date": "2026-01-21",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.5,
-    "institution_billion": null
+    "individual_billion": -996.5,
+    "financial_invest_billion": 294.6,
+    "retail_billion": -701.9,
+    "foreign_billion": 439.4,
+    "institution_billion": 321.7
   },
   {
     "date": "2026-01-22",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -2.5,
-    "institution_billion": null
+    "individual_billion": 155.5,
+    "financial_invest_billion": 316.1,
+    "retail_billion": 471.6,
+    "foreign_billion": -243.2,
+    "institution_billion": -156.8
   },
   {
     "date": "2026-01-23",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.4,
-    "institution_billion": null
+    "individual_billion": -723.9,
+    "financial_invest_billion": 929.0,
+    "retail_billion": 205.1,
+    "foreign_billion": 143.8,
+    "institution_billion": 479.0
   },
   {
     "date": "2026-01-26",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.7,
-    "institution_billion": null
+    "individual_billion": 1715.7,
+    "financial_invest_billion": -952.8,
+    "retail_billion": 762.9,
+    "foreign_billion": -158.8,
+    "institution_billion": -1541.4
   },
   {
     "date": "2026-01-27",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 8.4,
-    "institution_billion": null
+    "individual_billion": -1019.7,
+    "financial_invest_billion": 569.5,
+    "retail_billion": -450.2,
+    "foreign_billion": 844.8,
+    "institution_billion": 247.4
   },
   {
     "date": "2026-01-28",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 3.9,
-    "institution_billion": null
+    "individual_billion": 1213.1,
+    "financial_invest_billion": -571.0,
+    "retail_billion": 642.1,
+    "foreign_billion": 400.8,
+    "institution_billion": -1402.1
   },
   {
     "date": "2026-01-29",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -14.9,
-    "institution_billion": null
+    "individual_billion": 1617.3,
+    "financial_invest_billion": 156.9,
+    "retail_billion": 1774.2,
+    "foreign_billion": -1489.7,
+    "institution_billion": -167.3
   },
   {
     "date": "2026-01-30",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -19.8,
-    "institution_billion": null
+    "individual_billion": 2297.9,
+    "financial_invest_billion": -30.9,
+    "retail_billion": 2267.0,
+    "foreign_billion": -1972.9,
+    "institution_billion": -424.1
   },
   {
     "date": "2026-02-02",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -25.3,
-    "institution_billion": null
+    "individual_billion": 4587.4,
+    "financial_invest_billion": -2175.5,
+    "retail_billion": 2411.9,
+    "foreign_billion": -2516.8,
+    "institution_billion": -2212.5
   },
   {
     "date": "2026-02-03",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 7.2,
-    "institution_billion": null
+    "individual_billion": -2942.3,
+    "financial_invest_billion": 1451.3,
+    "retail_billion": -1491.0,
+    "foreign_billion": 703.8,
+    "institution_billion": 2170.8
   },
   {
     "date": "2026-02-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -9.4,
-    "institution_billion": null
+    "individual_billion": -1011.9,
+    "financial_invest_billion": 1494.5,
+    "retail_billion": 482.6,
+    "foreign_billion": -941.3,
+    "institution_billion": 1783.6
   },
   {
     "date": "2026-02-05",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -50.4,
-    "institution_billion": null
+    "individual_billion": 6779.1,
+    "financial_invest_billion": -1882.9,
+    "retail_billion": 4896.2,
+    "foreign_billion": -5010.8,
+    "institution_billion": -2069.3
   },
   {
     "date": "2026-02-06",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -33.3,
-    "institution_billion": null
+    "individual_billion": 2173.6,
+    "financial_invest_billion": 578.2,
+    "retail_billion": 2751.8,
+    "foreign_billion": -3323.3,
+    "institution_billion": 941.4
   },
   {
     "date": "2026-02-09",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 4.4,
-    "institution_billion": null
+    "individual_billion": -3294.7,
+    "financial_invest_billion": 2424.4,
+    "retail_billion": -870.3,
+    "foreign_billion": 432.0,
+    "institution_billion": 2712.3
   },
   {
     "date": "2026-02-10",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 1.5,
-    "institution_billion": null
+    "individual_billion": -878.0,
+    "financial_invest_billion": 744.2,
+    "retail_billion": -133.8,
+    "foreign_billion": 147.4,
+    "institution_billion": 564.3
   },
   {
     "date": "2026-02-11",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 8.6,
-    "institution_billion": null
+    "individual_billion": -1714.9,
+    "financial_invest_billion": 522.3,
+    "retail_billion": -1192.6,
+    "foreign_billion": 846.1,
+    "institution_billion": 692.7
   },
   {
     "date": "2026-02-12",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": 30.1,
-    "institution_billion": null
+    "individual_billion": -4454.7,
+    "financial_invest_billion": 1081.6,
+    "retail_billion": -3373.1,
+    "foreign_billion": 2995.4,
+    "institution_billion": 1380.0
   },
   {
     "date": "2026-02-13",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -9.3,
-    "institution_billion": null
+    "individual_billion": 714.1,
+    "financial_invest_billion": 181.0,
+    "retail_billion": 895.1,
+    "foreign_billion": -922.0,
+    "institution_billion": 83.1
   },
   {
     "date": "2026-02-19",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -9.3,
-    "institution_billion": null
+    "individual_billion": -860.9,
+    "financial_invest_billion": 1669.1,
+    "retail_billion": 808.2,
+    "foreign_billion": -939.6,
+    "institution_billion": 1654.2
   },
   {
     "date": "2026-02-20",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -7.4,
-    "institution_billion": null
+    "individual_billion": -987.2,
+    "financial_invest_billion": 1935.1,
+    "retail_billion": 947.9,
+    "foreign_billion": -742.0,
+    "institution_billion": 1614.9
   },
   {
     "date": "2026-02-23",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -11.1,
-    "institution_billion": null
+    "individual_billion": 1081.5,
+    "financial_invest_billion": 533.0,
+    "retail_billion": 1614.5,
+    "foreign_billion": -1113.2,
+    "institution_billion": -127.1
   },
   {
     "date": "2026-02-24",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -1.9,
-    "institution_billion": null
+    "individual_billion": -2286.1,
+    "financial_invest_billion": 2666.9,
+    "retail_billion": 380.8,
+    "foreign_billion": -201.3,
+    "institution_billion": 2377.3
   },
   {
     "date": "2026-02-25",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -13.1,
-    "institution_billion": null
+    "individual_billion": 230.7,
+    "financial_invest_billion": 1993.7,
+    "retail_billion": 2224.4,
+    "foreign_billion": -1308.2,
+    "institution_billion": 1470.1
   },
   {
     "date": "2026-02-26",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -21.1,
-    "institution_billion": null
+    "individual_billion": 649.8,
+    "financial_invest_billion": 1637.1,
+    "retail_billion": 2286.9,
+    "foreign_billion": -2113.5,
+    "institution_billion": 1256.9
   },
   {
     "date": "2026-02-27",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -70.8,
-    "institution_billion": null
+    "individual_billion": 6249.6,
+    "financial_invest_billion": 1104.3,
+    "retail_billion": 7353.9,
+    "foreign_billion": -7052.8,
+    "institution_billion": 566.6
   },
   {
     "date": "2026-03-03",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": -51.8,
-    "institution_billion": null
+    "individual_billion": 5797.4,
+    "financial_invest_billion": -728.3,
+    "retail_billion": 5069.1,
+    "foreign_billion": -5148.7,
+    "institution_billion": -885.9
   },
   {
     "date": "2026-03-04",
-    "individual_billion": null,
-    "financial_invest_billion": null,
-    "retail_billion": null,
-    "foreign_billion": null,
-    "institution_billion": null
+    "individual_billion": 79.6,
+    "financial_invest_billion": -583.0,
+    "retail_billion": -503.4,
+    "foreign_billion": 230.3,
+    "institution_billion": -597.8
   }
 ];
 
@@ -9766,9 +9766,9 @@ export const GLOBAL_DATA = [
   },
   {
     "date": "2026-03-04",
-    "usd_krw": 1463.3,
-    "wti": 75.32,
-    "vix": 22.69,
+    "usd_krw": 1466.7,
+    "wti": 74.57,
+    "vix": 23.17,
     "sp500": null
   }
 ];
@@ -11307,50 +11307,2662 @@ export const SHORT_SELLING = [
 ];
 
 export const COHORT_DATA = {
-  "lifo": [],
-  "fifo": [],
-  "price_distribution_lifo": [],
-  "price_distribution_fifo": [],
+  "lifo": [
+    {
+      "entry_date": "2025-01-06",
+      "entry_kospi": 2488.64,
+      "amount": 130.6999999999989,
+      "pnl_pct": 104.67,
+      "collateral_ratio": 3.411,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-01-07",
+      "entry_kospi": 2492.1,
+      "amount": 20.200000000000728,
+      "pnl_pct": 104.39,
+      "collateral_ratio": 3.406,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-01-08",
+      "entry_kospi": 2521.05,
+      "amount": 144.89999999999964,
+      "pnl_pct": 102.04,
+      "collateral_ratio": 3.367,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-01-09",
+      "entry_kospi": 2521.9,
+      "amount": 146.29999999999927,
+      "pnl_pct": 101.97,
+      "collateral_ratio": 3.366,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-01-10",
+      "entry_kospi": 2515.78,
+      "amount": 78.80000000000109,
+      "pnl_pct": 102.46,
+      "collateral_ratio": 3.374,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-01-13",
+      "entry_kospi": 2489.56,
+      "amount": 81.29999999999927,
+      "pnl_pct": 104.6,
+      "collateral_ratio": 3.41,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-01-14",
+      "entry_kospi": 2497.4,
+      "amount": 116.39999999999964,
+      "pnl_pct": 103.95,
+      "collateral_ratio": 3.399,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-04-15",
+      "entry_kospi": 2477.41,
+      "amount": 268.6000000000022,
+      "pnl_pct": 105.6,
+      "collateral_ratio": 3.427,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-04-16",
+      "entry_kospi": 2447.43,
+      "amount": 203.1999999999971,
+      "pnl_pct": 108.12,
+      "collateral_ratio": 3.469,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-04-17",
+      "entry_kospi": 2470.41,
+      "amount": 117.10000000000218,
+      "pnl_pct": 106.18,
+      "collateral_ratio": 3.436,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-04-18",
+      "entry_kospi": 2483.42,
+      "amount": 117.79999999999927,
+      "pnl_pct": 105.1,
+      "collateral_ratio": 3.418,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-04-21",
+      "entry_kospi": 2488.42,
+      "amount": 55.099999999998545,
+      "pnl_pct": 104.69,
+      "collateral_ratio": 3.411,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-04-22",
+      "entry_kospi": 2486.64,
+      "amount": 97.20000000000073,
+      "pnl_pct": 104.84,
+      "collateral_ratio": 3.414,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-04-23",
+      "entry_kospi": 2525.56,
+      "amount": 97.5,
+      "pnl_pct": 101.68,
+      "collateral_ratio": 3.361,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-04-24",
+      "entry_kospi": 2522.33,
+      "amount": 123.10000000000218,
+      "pnl_pct": 101.94,
+      "collateral_ratio": 3.366,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-04-28",
+      "entry_kospi": 2548.86,
+      "amount": 116.89999999999782,
+      "pnl_pct": 99.84,
+      "collateral_ratio": 3.331,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-09",
+      "entry_kospi": 2577.27,
+      "amount": 14.0,
+      "pnl_pct": 97.63,
+      "collateral_ratio": 3.294,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-12",
+      "entry_kospi": 2607.33,
+      "amount": 135.40000000000146,
+      "pnl_pct": 95.35,
+      "collateral_ratio": 3.256,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-13",
+      "entry_kospi": 2608.42,
+      "amount": 66.0,
+      "pnl_pct": 95.27,
+      "collateral_ratio": 3.255,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-15",
+      "entry_kospi": 2621.36,
+      "amount": 49.79999999999927,
+      "pnl_pct": 94.31,
+      "collateral_ratio": 3.238,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-19",
+      "entry_kospi": 2603.42,
+      "amount": 139.5,
+      "pnl_pct": 95.65,
+      "collateral_ratio": 3.261,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-20",
+      "entry_kospi": 2601.8,
+      "amount": 24.400000000001455,
+      "pnl_pct": 95.77,
+      "collateral_ratio": 3.263,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-21",
+      "entry_kospi": 2625.58,
+      "amount": 26.69999999999709,
+      "pnl_pct": 94.0,
+      "collateral_ratio": 3.233,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-22",
+      "entry_kospi": 2593.67,
+      "amount": 1.3000000000029104,
+      "pnl_pct": 96.38,
+      "collateral_ratio": 3.273,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-23",
+      "entry_kospi": 2592.09,
+      "amount": 22.19999999999709,
+      "pnl_pct": 96.5,
+      "collateral_ratio": 3.275,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-26",
+      "entry_kospi": 2644.4,
+      "amount": 148.3000000000029,
+      "pnl_pct": 92.62,
+      "collateral_ratio": 3.21,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-27",
+      "entry_kospi": 2637.22,
+      "amount": 22.69999999999709,
+      "pnl_pct": 93.14,
+      "collateral_ratio": 3.219,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-05-29",
+      "entry_kospi": 2720.64,
+      "amount": 107.40000000000146,
+      "pnl_pct": 87.22,
+      "collateral_ratio": 3.12,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-02",
+      "entry_kospi": 2698.97,
+      "amount": 76.09999999999854,
+      "pnl_pct": 88.72,
+      "collateral_ratio": 3.145,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-04",
+      "entry_kospi": 2770.84,
+      "amount": 164.3000000000029,
+      "pnl_pct": 83.83,
+      "collateral_ratio": 3.064,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-11",
+      "entry_kospi": 2907.04,
+      "amount": 201.1999999999971,
+      "pnl_pct": 75.21,
+      "collateral_ratio": 2.92,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-12",
+      "entry_kospi": 2920.03,
+      "amount": 118.80000000000291,
+      "pnl_pct": 74.43,
+      "collateral_ratio": 2.907,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-13",
+      "entry_kospi": 2894.62,
+      "amount": 135.5,
+      "pnl_pct": 75.97,
+      "collateral_ratio": 2.933,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-16",
+      "entry_kospi": 2946.66,
+      "amount": 216.5,
+      "pnl_pct": 72.86,
+      "collateral_ratio": 2.881,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-17",
+      "entry_kospi": 2950.3,
+      "amount": 174.6999999999971,
+      "pnl_pct": 72.64,
+      "collateral_ratio": 2.877,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-18",
+      "entry_kospi": 2972.19,
+      "amount": 180.0,
+      "pnl_pct": 71.37,
+      "collateral_ratio": 2.856,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-19",
+      "entry_kospi": 2977.74,
+      "amount": 47.5,
+      "pnl_pct": 71.05,
+      "collateral_ratio": 2.851,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-20",
+      "entry_kospi": 3021.84,
+      "amount": 215.5,
+      "pnl_pct": 68.56,
+      "collateral_ratio": 2.809,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-23",
+      "entry_kospi": 3014.47,
+      "amount": 274.40000000000146,
+      "pnl_pct": 68.97,
+      "collateral_ratio": 2.816,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-24",
+      "entry_kospi": 3103.64,
+      "amount": 40.900000000001455,
+      "pnl_pct": 64.12,
+      "collateral_ratio": 2.735,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-25",
+      "entry_kospi": 3108.25,
+      "amount": 399.0,
+      "pnl_pct": 63.87,
+      "collateral_ratio": 2.731,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-27",
+      "entry_kospi": 3055.94,
+      "amount": 146.5,
+      "pnl_pct": 66.68,
+      "collateral_ratio": 2.778,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-30",
+      "entry_kospi": 3071.7,
+      "amount": 107.0,
+      "pnl_pct": 65.82,
+      "collateral_ratio": 2.764,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-04",
+      "entry_kospi": 3054.28,
+      "amount": 13.0,
+      "pnl_pct": 66.77,
+      "collateral_ratio": 2.779,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-08",
+      "entry_kospi": 3114.95,
+      "amount": 25.69999999999709,
+      "pnl_pct": 63.52,
+      "collateral_ratio": 2.725,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-09",
+      "entry_kospi": 3133.74,
+      "amount": 31.600000000002183,
+      "pnl_pct": 62.54,
+      "collateral_ratio": 2.709,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-10",
+      "entry_kospi": 3183.23,
+      "amount": 154.5,
+      "pnl_pct": 60.01,
+      "collateral_ratio": 2.667,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-11",
+      "entry_kospi": 3175.77,
+      "amount": 255.09999999999854,
+      "pnl_pct": 60.39,
+      "collateral_ratio": 2.673,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-14",
+      "entry_kospi": 3202.03,
+      "amount": 68.5,
+      "pnl_pct": 59.07,
+      "collateral_ratio": 2.651,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-15",
+      "entry_kospi": 3215.28,
+      "amount": 63.20000000000073,
+      "pnl_pct": 58.42,
+      "collateral_ratio": 2.64,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-16",
+      "entry_kospi": 3186.38,
+      "amount": 67.79999999999927,
+      "pnl_pct": 59.85,
+      "collateral_ratio": 2.664,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-17",
+      "entry_kospi": 3192.29,
+      "amount": 15.700000000000728,
+      "pnl_pct": 59.56,
+      "collateral_ratio": 2.659,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-07",
+      "entry_kospi": 3227.68,
+      "amount": 72.90000000000146,
+      "pnl_pct": 57.81,
+      "collateral_ratio": 2.63,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-08",
+      "entry_kospi": 3210.01,
+      "amount": 208.79999999999927,
+      "pnl_pct": 58.68,
+      "collateral_ratio": 2.645,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-11",
+      "entry_kospi": 3206.77,
+      "amount": 73.70000000000073,
+      "pnl_pct": 58.84,
+      "collateral_ratio": 2.647,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-27",
+      "entry_kospi": 3187.16,
+      "amount": 33.39999999999782,
+      "pnl_pct": 59.81,
+      "collateral_ratio": 2.664,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-28",
+      "entry_kospi": 3196.32,
+      "amount": 182.5,
+      "pnl_pct": 59.36,
+      "collateral_ratio": 2.656,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-29",
+      "entry_kospi": 3186.01,
+      "amount": 73.70000000000073,
+      "pnl_pct": 59.87,
+      "collateral_ratio": 2.665,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-05",
+      "entry_kospi": 3205.12,
+      "amount": 69.0,
+      "pnl_pct": 58.92,
+      "collateral_ratio": 2.649,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-08",
+      "entry_kospi": 3219.59,
+      "amount": 33.400000000001455,
+      "pnl_pct": 58.2,
+      "collateral_ratio": 2.637,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-09",
+      "entry_kospi": 3260.05,
+      "amount": 96.69999999999709,
+      "pnl_pct": 56.24,
+      "collateral_ratio": 2.604,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-10",
+      "entry_kospi": 3314.53,
+      "amount": 45.10000000000218,
+      "pnl_pct": 53.67,
+      "collateral_ratio": 2.561,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-11",
+      "entry_kospi": 3344.2,
+      "amount": 12.399999999997817,
+      "pnl_pct": 52.31,
+      "collateral_ratio": 2.538,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-15",
+      "entry_kospi": 3407.31,
+      "amount": 89.20000000000073,
+      "pnl_pct": 49.49,
+      "collateral_ratio": 2.491,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-16",
+      "entry_kospi": 3449.62,
+      "amount": 26.100000000002183,
+      "pnl_pct": 47.66,
+      "collateral_ratio": 2.461,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-17",
+      "entry_kospi": 3413.4,
+      "amount": 247.5,
+      "pnl_pct": 49.22,
+      "collateral_ratio": 2.487,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-18",
+      "entry_kospi": 3461.3,
+      "amount": 99.39999999999782,
+      "pnl_pct": 47.16,
+      "collateral_ratio": 2.453,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-19",
+      "entry_kospi": 3445.24,
+      "amount": 162.5,
+      "pnl_pct": 47.84,
+      "collateral_ratio": 2.464,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-22",
+      "entry_kospi": 3468.65,
+      "amount": 121.5,
+      "pnl_pct": 46.85,
+      "collateral_ratio": 2.447,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-23",
+      "entry_kospi": 3486.19,
+      "amount": 82.40000000000146,
+      "pnl_pct": 46.11,
+      "collateral_ratio": 2.435,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-13",
+      "entry_kospi": 3584.55,
+      "amount": 24.899999999997817,
+      "pnl_pct": 42.1,
+      "collateral_ratio": 2.368,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-14",
+      "entry_kospi": 3561.81,
+      "amount": 288.40000000000146,
+      "pnl_pct": 43.0,
+      "collateral_ratio": 2.383,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-15",
+      "entry_kospi": 3657.28,
+      "amount": 206.0,
+      "pnl_pct": 39.27,
+      "collateral_ratio": 2.321,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-17",
+      "entry_kospi": 3748.89,
+      "amount": 108.0,
+      "pnl_pct": 35.87,
+      "collateral_ratio": 2.264,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-20",
+      "entry_kospi": 3814.69,
+      "amount": 34.0,
+      "pnl_pct": 33.52,
+      "collateral_ratio": 2.225,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-22",
+      "entry_kospi": 3883.68,
+      "amount": 314.09999999999854,
+      "pnl_pct": 31.15,
+      "collateral_ratio": 2.186,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-23",
+      "entry_kospi": 3845.56,
+      "amount": 173.60000000000218,
+      "pnl_pct": 32.45,
+      "collateral_ratio": 2.208,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-24",
+      "entry_kospi": 3941.59,
+      "amount": 229.20000000000073,
+      "pnl_pct": 29.23,
+      "collateral_ratio": 2.154,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-27",
+      "entry_kospi": 4042.83,
+      "amount": 134.6999999999971,
+      "pnl_pct": 25.99,
+      "collateral_ratio": 2.1,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-28",
+      "entry_kospi": 4010.41,
+      "amount": 36.400000000001455,
+      "pnl_pct": 27.01,
+      "collateral_ratio": 2.117,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-29",
+      "entry_kospi": 4081.15,
+      "amount": 267.2000000000007,
+      "pnl_pct": 24.81,
+      "collateral_ratio": 2.08,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-30",
+      "entry_kospi": 4086.89,
+      "amount": 177.70000000000073,
+      "pnl_pct": 24.63,
+      "collateral_ratio": 2.077,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-31",
+      "entry_kospi": 4107.5,
+      "amount": 180.5,
+      "pnl_pct": 24.01,
+      "collateral_ratio": 2.067,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-04",
+      "entry_kospi": 4121.74,
+      "amount": 49.29999999999927,
+      "pnl_pct": 23.58,
+      "collateral_ratio": 2.06,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-05",
+      "entry_kospi": 4004.42,
+      "amount": 305.2000000000007,
+      "pnl_pct": 27.2,
+      "collateral_ratio": 2.12,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-06",
+      "entry_kospi": 4026.45,
+      "amount": 45.69999999999709,
+      "pnl_pct": 26.5,
+      "collateral_ratio": 2.108,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-07",
+      "entry_kospi": 3953.76,
+      "amount": 117.5,
+      "pnl_pct": 28.83,
+      "collateral_ratio": 2.147,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-12",
+      "entry_kospi": 4150.39,
+      "amount": 14.400000000001455,
+      "pnl_pct": 22.72,
+      "collateral_ratio": 2.045,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-13",
+      "entry_kospi": 4170.63,
+      "amount": 232.5,
+      "pnl_pct": 22.13,
+      "collateral_ratio": 2.035,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-14",
+      "entry_kospi": 4011.57,
+      "amount": 143.79999999999927,
+      "pnl_pct": 26.97,
+      "collateral_ratio": 2.116,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-17",
+      "entry_kospi": 4089.25,
+      "amount": 71.10000000000218,
+      "pnl_pct": 24.56,
+      "collateral_ratio": 2.076,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-28",
+      "entry_kospi": 3926.59,
+      "amount": 7.099999999998545,
+      "pnl_pct": 29.72,
+      "collateral_ratio": 2.162,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-01",
+      "entry_kospi": 3920.37,
+      "amount": 136.20000000000073,
+      "pnl_pct": 29.92,
+      "collateral_ratio": 2.165,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-02",
+      "entry_kospi": 3994.93,
+      "amount": 209.5,
+      "pnl_pct": 27.5,
+      "collateral_ratio": 2.125,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-03",
+      "entry_kospi": 4036.3,
+      "amount": 24.200000000000728,
+      "pnl_pct": 26.19,
+      "collateral_ratio": 2.103,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-04",
+      "entry_kospi": 4028.51,
+      "amount": 71.39999999999782,
+      "pnl_pct": 26.44,
+      "collateral_ratio": 2.107,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-05",
+      "entry_kospi": 4100.05,
+      "amount": 182.90000000000146,
+      "pnl_pct": 24.23,
+      "collateral_ratio": 2.071,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-08",
+      "entry_kospi": 4154.85,
+      "amount": 152.5,
+      "pnl_pct": 22.59,
+      "collateral_ratio": 2.043,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-24",
+      "entry_kospi": 4108.62,
+      "amount": 10.099999999998545,
+      "pnl_pct": 23.97,
+      "collateral_ratio": 2.066,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-29",
+      "entry_kospi": 4220.56,
+      "amount": 13.799999999999272,
+      "pnl_pct": 20.68,
+      "collateral_ratio": 2.011,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-02",
+      "entry_kospi": 4309.63,
+      "amount": 159.8000000000029,
+      "pnl_pct": 18.19,
+      "collateral_ratio": 1.97,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-05",
+      "entry_kospi": 4457.52,
+      "amount": 203.89999999999782,
+      "pnl_pct": 14.27,
+      "collateral_ratio": 1.904,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-06",
+      "entry_kospi": 4525.48,
+      "amount": 69.0,
+      "pnl_pct": 12.55,
+      "collateral_ratio": 1.876,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-07",
+      "entry_kospi": 4551.06,
+      "amount": 170.90000000000146,
+      "pnl_pct": 11.92,
+      "collateral_ratio": 1.865,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-08",
+      "entry_kospi": 4552.37,
+      "amount": 317.2999999999993,
+      "pnl_pct": 11.89,
+      "collateral_ratio": 1.865,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-09",
+      "entry_kospi": 4586.32,
+      "amount": 158.70000000000073,
+      "pnl_pct": 11.06,
+      "collateral_ratio": 1.851,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-12",
+      "entry_kospi": 4624.79,
+      "amount": 176.70000000000073,
+      "pnl_pct": 10.14,
+      "collateral_ratio": 1.836,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-13",
+      "entry_kospi": 4692.64,
+      "amount": 34.29999999999927,
+      "pnl_pct": 8.54,
+      "collateral_ratio": 1.809,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-14",
+      "entry_kospi": 4723.1,
+      "amount": 36.29999999999927,
+      "pnl_pct": 7.84,
+      "collateral_ratio": 1.797,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-15",
+      "entry_kospi": 4797.55,
+      "amount": 150.59999999999854,
+      "pnl_pct": 6.17,
+      "collateral_ratio": 1.769,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-16",
+      "entry_kospi": 4840.74,
+      "amount": 163.3000000000029,
+      "pnl_pct": 5.22,
+      "collateral_ratio": 1.754,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-23",
+      "entry_kospi": 4990.07,
+      "amount": 100.09999999999854,
+      "pnl_pct": 2.07,
+      "collateral_ratio": 1.701,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-26",
+      "entry_kospi": 4949.59,
+      "amount": 219.70000000000073,
+      "pnl_pct": 2.91,
+      "collateral_ratio": 1.715,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-28",
+      "entry_kospi": 5170.81,
+      "amount": 298.2999999999993,
+      "pnl_pct": -1.49,
+      "collateral_ratio": 1.642,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-29",
+      "entry_kospi": 5221.25,
+      "amount": 475.59999999999854,
+      "pnl_pct": -2.45,
+      "collateral_ratio": 1.626,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-30",
+      "entry_kospi": 5224.36,
+      "amount": 136.0,
+      "pnl_pct": -2.5,
+      "collateral_ratio": 1.625,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-02-02",
+      "entry_kospi": 4949.67,
+      "amount": 161.60000000000218,
+      "pnl_pct": 2.91,
+      "collateral_ratio": 1.715,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-02-03",
+      "entry_kospi": 5288.08,
+      "amount": 54.0,
+      "pnl_pct": -3.68,
+      "collateral_ratio": 1.605,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-02-04",
+      "entry_kospi": 5371.1,
+      "amount": 261.0,
+      "pnl_pct": -5.17,
+      "collateral_ratio": 1.581,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-06",
+      "entry_kospi": 5089.14,
+      "amount": 299.5,
+      "pnl_pct": 0.09,
+      "collateral_ratio": 1.668,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-02-09",
+      "entry_kospi": 5298.04,
+      "amount": 224.0,
+      "pnl_pct": -3.86,
+      "collateral_ratio": 1.602,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-02-12",
+      "entry_kospi": 5522.27,
+      "amount": 146.70000000000073,
+      "pnl_pct": -7.76,
+      "collateral_ratio": 1.537,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-13",
+      "entry_kospi": 5507.01,
+      "amount": 11.399999999997817,
+      "pnl_pct": -7.51,
+      "collateral_ratio": 1.542,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-19",
+      "entry_kospi": 5677.25,
+      "amount": 110.70000000000073,
+      "pnl_pct": -10.28,
+      "collateral_ratio": 1.495,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-20",
+      "entry_kospi": 5808.53,
+      "amount": 39.900000000001455,
+      "pnl_pct": -12.31,
+      "collateral_ratio": 1.462,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-23",
+      "entry_kospi": 5846.09,
+      "amount": 62.29999999999927,
+      "pnl_pct": -12.87,
+      "collateral_ratio": 1.452,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-24",
+      "entry_kospi": 5969.64,
+      "amount": 240.29999999999927,
+      "pnl_pct": -14.68,
+      "collateral_ratio": 1.422,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-25",
+      "entry_kospi": 6083.86,
+      "amount": 160.09999999999854,
+      "pnl_pct": -16.28,
+      "collateral_ratio": 1.395,
+      "status": "marginCall"
+    },
+    {
+      "entry_date": "2026-02-26",
+      "entry_kospi": 6307.27,
+      "amount": 237.0,
+      "pnl_pct": -19.24,
+      "collateral_ratio": 1.346,
+      "status": "marginCall"
+    },
+    {
+      "entry_date": "2026-02-27",
+      "entry_kospi": 6244.13,
+      "amount": 285.0,
+      "pnl_pct": -18.43,
+      "collateral_ratio": 1.36,
+      "status": "marginCall"
+    }
+  ],
+  "fifo": [
+    {
+      "entry_date": "2025-06-17",
+      "entry_kospi": 2950.3,
+      "amount": 51.800000000010186,
+      "pnl_pct": 72.64,
+      "collateral_ratio": 2.877,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-18",
+      "entry_kospi": 2972.19,
+      "amount": 180.0,
+      "pnl_pct": 71.37,
+      "collateral_ratio": 2.856,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-19",
+      "entry_kospi": 2977.74,
+      "amount": 47.5,
+      "pnl_pct": 71.05,
+      "collateral_ratio": 2.851,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-20",
+      "entry_kospi": 3021.84,
+      "amount": 215.5,
+      "pnl_pct": 68.56,
+      "collateral_ratio": 2.809,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-23",
+      "entry_kospi": 3014.47,
+      "amount": 274.40000000000146,
+      "pnl_pct": 68.97,
+      "collateral_ratio": 2.816,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-24",
+      "entry_kospi": 3103.64,
+      "amount": 40.900000000001455,
+      "pnl_pct": 64.12,
+      "collateral_ratio": 2.735,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-25",
+      "entry_kospi": 3108.25,
+      "amount": 439.2999999999993,
+      "pnl_pct": 63.87,
+      "collateral_ratio": 2.731,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-27",
+      "entry_kospi": 3055.94,
+      "amount": 146.5,
+      "pnl_pct": 66.68,
+      "collateral_ratio": 2.778,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-06-30",
+      "entry_kospi": 3071.7,
+      "amount": 108.79999999999927,
+      "pnl_pct": 65.82,
+      "collateral_ratio": 2.764,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-01",
+      "entry_kospi": 3089.65,
+      "amount": 96.0,
+      "pnl_pct": 64.86,
+      "collateral_ratio": 2.748,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-02",
+      "entry_kospi": 3075.06,
+      "amount": 2.0,
+      "pnl_pct": 65.64,
+      "collateral_ratio": 2.761,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-04",
+      "entry_kospi": 3054.28,
+      "amount": 24.099999999998545,
+      "pnl_pct": 66.77,
+      "collateral_ratio": 2.779,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-08",
+      "entry_kospi": 3114.95,
+      "amount": 25.69999999999709,
+      "pnl_pct": 63.52,
+      "collateral_ratio": 2.725,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-09",
+      "entry_kospi": 3133.74,
+      "amount": 31.600000000002183,
+      "pnl_pct": 62.54,
+      "collateral_ratio": 2.709,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-10",
+      "entry_kospi": 3183.23,
+      "amount": 154.5,
+      "pnl_pct": 60.01,
+      "collateral_ratio": 2.667,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-11",
+      "entry_kospi": 3175.77,
+      "amount": 255.09999999999854,
+      "pnl_pct": 60.39,
+      "collateral_ratio": 2.673,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-14",
+      "entry_kospi": 3202.03,
+      "amount": 68.5,
+      "pnl_pct": 59.07,
+      "collateral_ratio": 2.651,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-15",
+      "entry_kospi": 3215.28,
+      "amount": 63.20000000000073,
+      "pnl_pct": 58.42,
+      "collateral_ratio": 2.64,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-16",
+      "entry_kospi": 3186.38,
+      "amount": 67.79999999999927,
+      "pnl_pct": 59.85,
+      "collateral_ratio": 2.664,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-17",
+      "entry_kospi": 3192.29,
+      "amount": 117.90000000000146,
+      "pnl_pct": 59.56,
+      "collateral_ratio": 2.659,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-18",
+      "entry_kospi": 3188.07,
+      "amount": 154.59999999999854,
+      "pnl_pct": 59.77,
+      "collateral_ratio": 2.663,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-21",
+      "entry_kospi": 3210.81,
+      "amount": 11.200000000000728,
+      "pnl_pct": 58.64,
+      "collateral_ratio": 2.644,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-24",
+      "entry_kospi": 3190.45,
+      "amount": 101.20000000000073,
+      "pnl_pct": 59.65,
+      "collateral_ratio": 2.661,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-25",
+      "entry_kospi": 3196.05,
+      "amount": 5.099999999998545,
+      "pnl_pct": 59.37,
+      "collateral_ratio": 2.656,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-29",
+      "entry_kospi": 3230.57,
+      "amount": 9.100000000002183,
+      "pnl_pct": 57.67,
+      "collateral_ratio": 2.628,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-07-30",
+      "entry_kospi": 3254.47,
+      "amount": 70.09999999999854,
+      "pnl_pct": 56.51,
+      "collateral_ratio": 2.608,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-04",
+      "entry_kospi": 3147.75,
+      "amount": 4.0,
+      "pnl_pct": 61.82,
+      "collateral_ratio": 2.697,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-07",
+      "entry_kospi": 3227.68,
+      "amount": 72.90000000000146,
+      "pnl_pct": 57.81,
+      "collateral_ratio": 2.63,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-08",
+      "entry_kospi": 3210.01,
+      "amount": 208.79999999999927,
+      "pnl_pct": 58.68,
+      "collateral_ratio": 2.645,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-11",
+      "entry_kospi": 3206.77,
+      "amount": 248.20000000000073,
+      "pnl_pct": 58.84,
+      "collateral_ratio": 2.647,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-12",
+      "entry_kospi": 3189.91,
+      "amount": 151.59999999999854,
+      "pnl_pct": 59.68,
+      "collateral_ratio": 2.661,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-13",
+      "entry_kospi": 3224.37,
+      "amount": 12.099999999998545,
+      "pnl_pct": 57.97,
+      "collateral_ratio": 2.633,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-14",
+      "entry_kospi": 3225.66,
+      "amount": 8.900000000001455,
+      "pnl_pct": 57.91,
+      "collateral_ratio": 2.632,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-18",
+      "entry_kospi": 3177.28,
+      "amount": 31.799999999999272,
+      "pnl_pct": 60.31,
+      "collateral_ratio": 2.672,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-19",
+      "entry_kospi": 3151.56,
+      "amount": 35.20000000000073,
+      "pnl_pct": 61.62,
+      "collateral_ratio": 2.694,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-20",
+      "entry_kospi": 3130.09,
+      "amount": 17.0,
+      "pnl_pct": 62.73,
+      "collateral_ratio": 2.712,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-25",
+      "entry_kospi": 3209.86,
+      "amount": 3.7000000000007276,
+      "pnl_pct": 58.68,
+      "collateral_ratio": 2.645,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-27",
+      "entry_kospi": 3187.16,
+      "amount": 33.39999999999782,
+      "pnl_pct": 59.81,
+      "collateral_ratio": 2.664,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-28",
+      "entry_kospi": 3196.32,
+      "amount": 182.5,
+      "pnl_pct": 59.36,
+      "collateral_ratio": 2.656,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-08-29",
+      "entry_kospi": 3186.01,
+      "amount": 84.10000000000218,
+      "pnl_pct": 59.87,
+      "collateral_ratio": 2.665,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-01",
+      "entry_kospi": 3142.93,
+      "amount": 63.79999999999927,
+      "pnl_pct": 62.06,
+      "collateral_ratio": 2.701,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-02",
+      "entry_kospi": 3172.35,
+      "amount": 37.099999999998545,
+      "pnl_pct": 60.56,
+      "collateral_ratio": 2.676,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-05",
+      "entry_kospi": 3205.12,
+      "amount": 69.0,
+      "pnl_pct": 58.92,
+      "collateral_ratio": 2.649,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-08",
+      "entry_kospi": 3219.59,
+      "amount": 33.400000000001455,
+      "pnl_pct": 58.2,
+      "collateral_ratio": 2.637,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-09",
+      "entry_kospi": 3260.05,
+      "amount": 96.69999999999709,
+      "pnl_pct": 56.24,
+      "collateral_ratio": 2.604,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-10",
+      "entry_kospi": 3314.53,
+      "amount": 45.10000000000218,
+      "pnl_pct": 53.67,
+      "collateral_ratio": 2.561,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-11",
+      "entry_kospi": 3344.2,
+      "amount": 50.099999999998545,
+      "pnl_pct": 52.31,
+      "collateral_ratio": 2.538,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-15",
+      "entry_kospi": 3407.31,
+      "amount": 89.20000000000073,
+      "pnl_pct": 49.49,
+      "collateral_ratio": 2.491,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-16",
+      "entry_kospi": 3449.62,
+      "amount": 26.100000000002183,
+      "pnl_pct": 47.66,
+      "collateral_ratio": 2.461,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-17",
+      "entry_kospi": 3413.4,
+      "amount": 247.5,
+      "pnl_pct": 49.22,
+      "collateral_ratio": 2.487,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-18",
+      "entry_kospi": 3461.3,
+      "amount": 99.39999999999782,
+      "pnl_pct": 47.16,
+      "collateral_ratio": 2.453,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-19",
+      "entry_kospi": 3445.24,
+      "amount": 162.5,
+      "pnl_pct": 47.84,
+      "collateral_ratio": 2.464,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-22",
+      "entry_kospi": 3468.65,
+      "amount": 121.5,
+      "pnl_pct": 46.85,
+      "collateral_ratio": 2.447,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-23",
+      "entry_kospi": 3486.19,
+      "amount": 120.60000000000218,
+      "pnl_pct": 46.11,
+      "collateral_ratio": 2.435,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-24",
+      "entry_kospi": 3472.14,
+      "amount": 71.0,
+      "pnl_pct": 46.7,
+      "collateral_ratio": 2.445,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-25",
+      "entry_kospi": 3471.11,
+      "amount": 154.59999999999854,
+      "pnl_pct": 46.74,
+      "collateral_ratio": 2.446,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-26",
+      "entry_kospi": 3386.05,
+      "amount": 23.599999999998545,
+      "pnl_pct": 50.43,
+      "collateral_ratio": 2.507,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-09-30",
+      "entry_kospi": 3424.6,
+      "amount": 36.599999999998545,
+      "pnl_pct": 48.73,
+      "collateral_ratio": 2.479,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-02",
+      "entry_kospi": 3549.21,
+      "amount": 1.7999999999992724,
+      "pnl_pct": 43.51,
+      "collateral_ratio": 2.392,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-13",
+      "entry_kospi": 3584.55,
+      "amount": 24.899999999997817,
+      "pnl_pct": 42.1,
+      "collateral_ratio": 2.368,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-14",
+      "entry_kospi": 3561.81,
+      "amount": 288.40000000000146,
+      "pnl_pct": 43.0,
+      "collateral_ratio": 2.383,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-15",
+      "entry_kospi": 3657.28,
+      "amount": 266.0,
+      "pnl_pct": 39.27,
+      "collateral_ratio": 2.321,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-17",
+      "entry_kospi": 3748.89,
+      "amount": 108.0,
+      "pnl_pct": 35.87,
+      "collateral_ratio": 2.264,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-20",
+      "entry_kospi": 3814.69,
+      "amount": 172.59999999999854,
+      "pnl_pct": 33.52,
+      "collateral_ratio": 2.225,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-22",
+      "entry_kospi": 3883.68,
+      "amount": 314.09999999999854,
+      "pnl_pct": 31.15,
+      "collateral_ratio": 2.186,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-23",
+      "entry_kospi": 3845.56,
+      "amount": 173.60000000000218,
+      "pnl_pct": 32.45,
+      "collateral_ratio": 2.208,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-24",
+      "entry_kospi": 3941.59,
+      "amount": 229.20000000000073,
+      "pnl_pct": 29.23,
+      "collateral_ratio": 2.154,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-27",
+      "entry_kospi": 4042.83,
+      "amount": 134.6999999999971,
+      "pnl_pct": 25.99,
+      "collateral_ratio": 2.1,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-28",
+      "entry_kospi": 4010.41,
+      "amount": 36.400000000001455,
+      "pnl_pct": 27.01,
+      "collateral_ratio": 2.117,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-29",
+      "entry_kospi": 4081.15,
+      "amount": 267.2000000000007,
+      "pnl_pct": 24.81,
+      "collateral_ratio": 2.08,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-30",
+      "entry_kospi": 4086.89,
+      "amount": 177.70000000000073,
+      "pnl_pct": 24.63,
+      "collateral_ratio": 2.077,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-10-31",
+      "entry_kospi": 4107.5,
+      "amount": 250.0,
+      "pnl_pct": 24.01,
+      "collateral_ratio": 2.067,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-04",
+      "entry_kospi": 4121.74,
+      "amount": 49.29999999999927,
+      "pnl_pct": 23.58,
+      "collateral_ratio": 2.06,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-05",
+      "entry_kospi": 4004.42,
+      "amount": 305.2000000000007,
+      "pnl_pct": 27.2,
+      "collateral_ratio": 2.12,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-06",
+      "entry_kospi": 4026.45,
+      "amount": 45.69999999999709,
+      "pnl_pct": 26.5,
+      "collateral_ratio": 2.108,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-07",
+      "entry_kospi": 3953.76,
+      "amount": 347.5,
+      "pnl_pct": 28.83,
+      "collateral_ratio": 2.147,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-12",
+      "entry_kospi": 4150.39,
+      "amount": 14.400000000001455,
+      "pnl_pct": 22.72,
+      "collateral_ratio": 2.045,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-13",
+      "entry_kospi": 4170.63,
+      "amount": 232.5,
+      "pnl_pct": 22.13,
+      "collateral_ratio": 2.035,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-14",
+      "entry_kospi": 4011.57,
+      "amount": 143.79999999999927,
+      "pnl_pct": 26.97,
+      "collateral_ratio": 2.116,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-17",
+      "entry_kospi": 4089.25,
+      "amount": 203.79999999999927,
+      "pnl_pct": 24.56,
+      "collateral_ratio": 2.076,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-18",
+      "entry_kospi": 3953.62,
+      "amount": 199.0,
+      "pnl_pct": 28.83,
+      "collateral_ratio": 2.147,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-19",
+      "entry_kospi": 3929.51,
+      "amount": 46.400000000001455,
+      "pnl_pct": 29.62,
+      "collateral_ratio": 2.16,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-20",
+      "entry_kospi": 4004.85,
+      "amount": 7.700000000000728,
+      "pnl_pct": 27.18,
+      "collateral_ratio": 2.12,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-11-28",
+      "entry_kospi": 3926.59,
+      "amount": 7.099999999998545,
+      "pnl_pct": 29.72,
+      "collateral_ratio": 2.162,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-01",
+      "entry_kospi": 3920.37,
+      "amount": 136.20000000000073,
+      "pnl_pct": 29.92,
+      "collateral_ratio": 2.165,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-02",
+      "entry_kospi": 3994.93,
+      "amount": 209.5,
+      "pnl_pct": 27.5,
+      "collateral_ratio": 2.125,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-03",
+      "entry_kospi": 4036.3,
+      "amount": 24.200000000000728,
+      "pnl_pct": 26.19,
+      "collateral_ratio": 2.103,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-04",
+      "entry_kospi": 4028.51,
+      "amount": 71.39999999999782,
+      "pnl_pct": 26.44,
+      "collateral_ratio": 2.107,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-05",
+      "entry_kospi": 4100.05,
+      "amount": 182.90000000000146,
+      "pnl_pct": 24.23,
+      "collateral_ratio": 2.071,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-08",
+      "entry_kospi": 4154.85,
+      "amount": 277.3999999999978,
+      "pnl_pct": 22.59,
+      "collateral_ratio": 2.043,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-10",
+      "entry_kospi": 4135.0,
+      "amount": 72.69999999999709,
+      "pnl_pct": 23.18,
+      "collateral_ratio": 2.053,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-15",
+      "entry_kospi": 4090.59,
+      "amount": 78.90000000000146,
+      "pnl_pct": 24.52,
+      "collateral_ratio": 2.075,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-17",
+      "entry_kospi": 4056.41,
+      "amount": 197.29999999999927,
+      "pnl_pct": 25.57,
+      "collateral_ratio": 2.093,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-24",
+      "entry_kospi": 4108.62,
+      "amount": 36.70000000000073,
+      "pnl_pct": 23.97,
+      "collateral_ratio": 2.066,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2025-12-29",
+      "entry_kospi": 4220.56,
+      "amount": 45.70000000000073,
+      "pnl_pct": 20.68,
+      "collateral_ratio": 2.011,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-02",
+      "entry_kospi": 4309.63,
+      "amount": 159.8000000000029,
+      "pnl_pct": 18.19,
+      "collateral_ratio": 1.97,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-05",
+      "entry_kospi": 4457.52,
+      "amount": 203.89999999999782,
+      "pnl_pct": 14.27,
+      "collateral_ratio": 1.904,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-06",
+      "entry_kospi": 4525.48,
+      "amount": 69.0,
+      "pnl_pct": 12.55,
+      "collateral_ratio": 1.876,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-07",
+      "entry_kospi": 4551.06,
+      "amount": 170.90000000000146,
+      "pnl_pct": 11.92,
+      "collateral_ratio": 1.865,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-08",
+      "entry_kospi": 4552.37,
+      "amount": 317.2999999999993,
+      "pnl_pct": 11.89,
+      "collateral_ratio": 1.865,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-09",
+      "entry_kospi": 4586.32,
+      "amount": 158.70000000000073,
+      "pnl_pct": 11.06,
+      "collateral_ratio": 1.851,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-12",
+      "entry_kospi": 4624.79,
+      "amount": 176.70000000000073,
+      "pnl_pct": 10.14,
+      "collateral_ratio": 1.836,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-13",
+      "entry_kospi": 4692.64,
+      "amount": 34.29999999999927,
+      "pnl_pct": 8.54,
+      "collateral_ratio": 1.809,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-14",
+      "entry_kospi": 4723.1,
+      "amount": 36.29999999999927,
+      "pnl_pct": 7.84,
+      "collateral_ratio": 1.797,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-15",
+      "entry_kospi": 4797.55,
+      "amount": 150.59999999999854,
+      "pnl_pct": 6.17,
+      "collateral_ratio": 1.769,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-16",
+      "entry_kospi": 4840.74,
+      "amount": 188.8000000000029,
+      "pnl_pct": 5.22,
+      "collateral_ratio": 1.754,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-19",
+      "entry_kospi": 4904.66,
+      "amount": 60.89999999999782,
+      "pnl_pct": 3.85,
+      "collateral_ratio": 1.731,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-21",
+      "entry_kospi": 4909.93,
+      "amount": 148.5,
+      "pnl_pct": 3.74,
+      "collateral_ratio": 1.729,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-23",
+      "entry_kospi": 4990.07,
+      "amount": 100.09999999999854,
+      "pnl_pct": 2.07,
+      "collateral_ratio": 1.701,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-26",
+      "entry_kospi": 4949.59,
+      "amount": 326.0,
+      "pnl_pct": 2.91,
+      "collateral_ratio": 1.715,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-28",
+      "entry_kospi": 5170.81,
+      "amount": 298.2999999999993,
+      "pnl_pct": -1.49,
+      "collateral_ratio": 1.642,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-29",
+      "entry_kospi": 5221.25,
+      "amount": 475.59999999999854,
+      "pnl_pct": -2.45,
+      "collateral_ratio": 1.626,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-01-30",
+      "entry_kospi": 5224.36,
+      "amount": 136.0,
+      "pnl_pct": -2.5,
+      "collateral_ratio": 1.625,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-02-02",
+      "entry_kospi": 4949.67,
+      "amount": 161.60000000000218,
+      "pnl_pct": 2.91,
+      "collateral_ratio": 1.715,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-02-03",
+      "entry_kospi": 5288.08,
+      "amount": 54.0,
+      "pnl_pct": -3.68,
+      "collateral_ratio": 1.605,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-02-04",
+      "entry_kospi": 5371.1,
+      "amount": 407.2000000000007,
+      "pnl_pct": -5.17,
+      "collateral_ratio": 1.581,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-06",
+      "entry_kospi": 5089.14,
+      "amount": 299.5,
+      "pnl_pct": 0.09,
+      "collateral_ratio": 1.668,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-02-09",
+      "entry_kospi": 5298.04,
+      "amount": 510.2000000000007,
+      "pnl_pct": -3.86,
+      "collateral_ratio": 1.602,
+      "status": "safe"
+    },
+    {
+      "entry_date": "2026-02-12",
+      "entry_kospi": 5522.27,
+      "amount": 146.70000000000073,
+      "pnl_pct": -7.76,
+      "collateral_ratio": 1.537,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-13",
+      "entry_kospi": 5507.01,
+      "amount": 11.399999999997817,
+      "pnl_pct": -7.51,
+      "collateral_ratio": 1.542,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-19",
+      "entry_kospi": 5677.25,
+      "amount": 110.70000000000073,
+      "pnl_pct": -10.28,
+      "collateral_ratio": 1.495,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-20",
+      "entry_kospi": 5808.53,
+      "amount": 39.900000000001455,
+      "pnl_pct": -12.31,
+      "collateral_ratio": 1.462,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-23",
+      "entry_kospi": 5846.09,
+      "amount": 62.29999999999927,
+      "pnl_pct": -12.87,
+      "collateral_ratio": 1.452,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-24",
+      "entry_kospi": 5969.64,
+      "amount": 240.29999999999927,
+      "pnl_pct": -14.68,
+      "collateral_ratio": 1.422,
+      "status": "watch"
+    },
+    {
+      "entry_date": "2026-02-25",
+      "entry_kospi": 6083.86,
+      "amount": 160.09999999999854,
+      "pnl_pct": -16.28,
+      "collateral_ratio": 1.395,
+      "status": "marginCall"
+    },
+    {
+      "entry_date": "2026-02-26",
+      "entry_kospi": 6307.27,
+      "amount": 237.0,
+      "pnl_pct": -19.24,
+      "collateral_ratio": 1.346,
+      "status": "marginCall"
+    },
+    {
+      "entry_date": "2026-02-27",
+      "entry_kospi": 6244.13,
+      "amount": 285.0,
+      "pnl_pct": -18.43,
+      "collateral_ratio": 1.36,
+      "status": "marginCall"
+    }
+  ],
+  "price_distribution_lifo": [
+    {
+      "range": "2400-2500",
+      "bin": 2400,
+      "safe": 1207.5999999999985,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "2500-2600",
+      "bin": 2500,
+      "safe": 745.0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "2600-2700",
+      "bin": 2600,
+      "safe": 688.8999999999978,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "2700-2800",
+      "bin": 2700,
+      "safe": 271.70000000000437,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "2800-2900",
+      "bin": 2800,
+      "safe": 135.5,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "2900-3000",
+      "bin": 2900,
+      "safe": 938.6999999999971,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3000-3100",
+      "bin": 3000,
+      "safe": 756.4000000000015,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3100-3200",
+      "bin": 3100,
+      "safe": 1279.8999999999978,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3200-3300",
+      "bin": 3200,
+      "safe": 686.2000000000007,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3300-3400",
+      "bin": 3300,
+      "safe": 57.5,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3400-3500",
+      "bin": 3400,
+      "safe": 828.6000000000022,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3500-3600",
+      "bin": 3500,
+      "safe": 313.2999999999993,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3600-3700",
+      "bin": 3600,
+      "safe": 206.0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3700-3800",
+      "bin": 3700,
+      "safe": 108.0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3800-3900",
+      "bin": 3800,
+      "safe": 521.7000000000007,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3900-4000",
+      "bin": 3900,
+      "safe": 699.5,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4000-4100",
+      "bin": 4000,
+      "safe": 1277.3999999999978,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4100-4200",
+      "bin": 4100,
+      "safe": 822.2000000000007,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4200-4300",
+      "bin": 4200,
+      "safe": 13.799999999999272,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4300-4400",
+      "bin": 4300,
+      "safe": 159.8000000000029,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4400-4500",
+      "bin": 4400,
+      "safe": 203.89999999999782,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4500-4600",
+      "bin": 4500,
+      "safe": 715.9000000000015,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4600-4700",
+      "bin": 4600,
+      "safe": 211.0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4700-4800",
+      "bin": 4700,
+      "safe": 186.89999999999782,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4800-4900",
+      "bin": 4800,
+      "safe": 163.3000000000029,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4900-5000",
+      "bin": 4900,
+      "safe": 481.40000000000146,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5000-5100",
+      "bin": 5000,
+      "safe": 299.5,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5100-5200",
+      "bin": 5100,
+      "safe": 298.2999999999993,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5200-5300",
+      "bin": 5200,
+      "safe": 889.5999999999985,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5300-5400",
+      "bin": 5300,
+      "safe": 0,
+      "watch": 261.0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5500-5600",
+      "bin": 5500,
+      "safe": 0,
+      "watch": 158.09999999999854,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5600-5700",
+      "bin": 5600,
+      "safe": 0,
+      "watch": 110.70000000000073,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5800-5900",
+      "bin": 5800,
+      "safe": 0,
+      "watch": 102.20000000000073,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5900-6000",
+      "bin": 5900,
+      "safe": 0,
+      "watch": 240.29999999999927,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "6000-6100",
+      "bin": 6000,
+      "safe": 0,
+      "watch": 0,
+      "margin_call": 160.09999999999854,
+      "forced_liq": 0
+    },
+    {
+      "range": "6200-6300",
+      "bin": 6200,
+      "safe": 0,
+      "watch": 0,
+      "margin_call": 285.0,
+      "forced_liq": 0
+    },
+    {
+      "range": "6300-6400",
+      "bin": 6300,
+      "safe": 0,
+      "watch": 0,
+      "margin_call": 237.0,
+      "forced_liq": 0
+    }
+  ],
+  "price_distribution_fifo": [
+    {
+      "range": "2900-3000",
+      "bin": 2900,
+      "safe": 279.3000000000102,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3000-3100",
+      "bin": 3000,
+      "safe": 867.2999999999993,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3100-3200",
+      "bin": 3100,
+      "safe": 2034.1999999999935,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3200-3300",
+      "bin": 3200,
+      "safe": 975.8000000000029,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3300-3400",
+      "bin": 3300,
+      "safe": 118.79999999999927,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3400-3500",
+      "bin": 3400,
+      "safe": 1129.0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3500-3600",
+      "bin": 3500,
+      "safe": 315.09999999999854,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3600-3700",
+      "bin": 3600,
+      "safe": 266.0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3700-3800",
+      "bin": 3700,
+      "safe": 108.0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3800-3900",
+      "bin": 3800,
+      "safe": 660.2999999999993,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "3900-4000",
+      "bin": 3900,
+      "safe": 1174.9000000000015,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4000-4100",
+      "bin": 4000,
+      "safe": 1693.9999999999964,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4100-4200",
+      "bin": 4100,
+      "safe": 1115.8999999999978,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4200-4300",
+      "bin": 4200,
+      "safe": 45.70000000000073,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4300-4400",
+      "bin": 4300,
+      "safe": 159.8000000000029,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4400-4500",
+      "bin": 4400,
+      "safe": 203.89999999999782,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4500-4600",
+      "bin": 4500,
+      "safe": 715.9000000000015,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4600-4700",
+      "bin": 4600,
+      "safe": 211.0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4700-4800",
+      "bin": 4700,
+      "safe": 186.89999999999782,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4800-4900",
+      "bin": 4800,
+      "safe": 188.8000000000029,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "4900-5000",
+      "bin": 4900,
+      "safe": 797.0999999999985,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5000-5100",
+      "bin": 5000,
+      "safe": 299.5,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5100-5200",
+      "bin": 5100,
+      "safe": 298.2999999999993,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5200-5300",
+      "bin": 5200,
+      "safe": 1175.7999999999993,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5300-5400",
+      "bin": 5300,
+      "safe": 0,
+      "watch": 407.2000000000007,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5500-5600",
+      "bin": 5500,
+      "safe": 0,
+      "watch": 158.09999999999854,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5600-5700",
+      "bin": 5600,
+      "safe": 0,
+      "watch": 110.70000000000073,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5800-5900",
+      "bin": 5800,
+      "safe": 0,
+      "watch": 102.20000000000073,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "5900-6000",
+      "bin": 5900,
+      "safe": 0,
+      "watch": 240.29999999999927,
+      "margin_call": 0,
+      "forced_liq": 0
+    },
+    {
+      "range": "6000-6100",
+      "bin": 6000,
+      "safe": 0,
+      "watch": 0,
+      "margin_call": 160.09999999999854,
+      "forced_liq": 0
+    },
+    {
+      "range": "6200-6300",
+      "bin": 6200,
+      "safe": 0,
+      "watch": 0,
+      "margin_call": 285.0,
+      "forced_liq": 0
+    },
+    {
+      "range": "6300-6400",
+      "bin": 6300,
+      "safe": 0,
+      "watch": 0,
+      "margin_call": 237.0,
+      "forced_liq": 0
+    }
+  ],
   "trigger_map": [
     {
       "shock_pct": -3,
       "expected_kospi": 4941,
-      "margin_call_billion": 0,
+      "margin_call_billion": 323,
       "forced_liq_billion": 0
     },
     {
       "shock_pct": -5,
       "expected_kospi": 4839,
-      "margin_call_billion": 0,
-      "forced_liq_billion": 0
+      "margin_call_billion": 259,
+      "forced_liq_billion": 183
     },
     {
       "shock_pct": -10,
       "expected_kospi": 4584,
-      "margin_call_billion": 0,
-      "forced_liq_billion": 0
+      "margin_call_billion": 453,
+      "forced_liq_billion": 323
     },
     {
       "shock_pct": -15,
       "expected_kospi": 4330,
-      "margin_call_billion": 0,
-      "forced_liq_billion": 0
+      "margin_call_billion": 852,
+      "forced_liq_billion": 636
     },
     {
       "shock_pct": -20,
       "expected_kospi": 4075,
-      "margin_call_billion": 0,
-      "forced_liq_billion": 0
+      "margin_call_billion": 995,
+      "forced_liq_billion": 1107
     },
     {
       "shock_pct": -30,
       "expected_kospi": 3565,
-      "margin_call_billion": 0,
-      "forced_liq_billion": 0
+      "margin_call_billion": 953,
+      "forced_liq_billion": 2908
     }
   ],
   "current_kospi": 5093.54,
-  "current_fx": 1463.3,
+  "current_fx": 1466.7,
   "avg_daily_trading_value_billion": 318,
   "params": {
     "margin_distribution": {
@@ -11384,7 +13996,7 @@ export const COHORT_DATA = {
 };
 
 export const CRISIS_SCORE = {
-  "current": 36.5,
+  "current": 35.9,
   "classification": "normal",
   "weights": {
     "leverage_heat": 0.1,
@@ -11429,8 +14041,8 @@ export const CRISIS_SCORE = {
       "desc": "예탁금 변화"
     },
     "vix_level": {
-      "value": 68.6,
-      "raw": 22.69,
+      "value": 70.3,
+      "raw": 23.17,
       "desc": "VIX"
     },
     "volume_explosion": {
@@ -11459,13 +14071,13 @@ export const CRISIS_SCORE = {
       "desc": "신용 중단"
     },
     "institutional_selling": {
-      "value": 43.8,
-      "raw": 0,
+      "value": 51.2,
+      "raw": -597.8,
       "desc": "기관 순매도"
     },
     "retail_exhaustion": {
-      "value": 18.2,
-      "raw": 0,
+      "value": 0.0,
+      "raw": -326.113,
       "desc": "개인 매수력 감소"
     },
     "bull_trap": {
@@ -11477,302 +14089,302 @@ export const CRISIS_SCORE = {
   "history": [
     {
       "date": "2025-12-02",
-      "score": 50.4,
+      "score": 63.5,
       "classification": "caution"
     },
     {
       "date": "2025-12-03",
-      "score": 53.3,
+      "score": 66.1,
       "classification": "caution"
     },
     {
       "date": "2025-12-04",
-      "score": 53.2,
+      "score": 66.6,
       "classification": "caution"
     },
     {
       "date": "2025-12-05",
-      "score": 54.2,
+      "score": 58.4,
       "classification": "caution"
     },
     {
       "date": "2025-12-08",
-      "score": 55.5,
+      "score": 60.0,
       "classification": "caution"
     },
     {
       "date": "2025-12-09",
-      "score": 51.7,
-      "classification": "caution"
-    },
-    {
-      "date": "2025-12-10",
-      "score": 51.4,
-      "classification": "caution"
-    },
-    {
-      "date": "2025-12-11",
-      "score": 52.2,
-      "classification": "caution"
-    },
-    {
-      "date": "2025-12-12",
       "score": 50.3,
       "classification": "caution"
     },
     {
-      "date": "2025-12-15",
-      "score": 50.6,
+      "date": "2025-12-10",
+      "score": 51.8,
       "classification": "caution"
     },
     {
-      "date": "2025-12-16",
-      "score": 49.4,
-      "classification": "normal"
-    },
-    {
-      "date": "2025-12-17",
-      "score": 49.9,
-      "classification": "normal"
-    },
-    {
-      "date": "2025-12-18",
-      "score": 51.7,
+      "date": "2025-12-11",
+      "score": 56.9,
       "classification": "caution"
     },
     {
-      "date": "2025-12-19",
-      "score": 52.7,
-      "classification": "caution"
-    },
-    {
-      "date": "2025-12-22",
-      "score": 50.6,
-      "classification": "caution"
-    },
-    {
-      "date": "2025-12-23",
-      "score": 51.9,
-      "classification": "caution"
-    },
-    {
-      "date": "2025-12-24",
-      "score": 49.2,
-      "classification": "normal"
-    },
-    {
-      "date": "2025-12-26",
-      "score": 48.4,
-      "classification": "normal"
-    },
-    {
-      "date": "2025-12-29",
-      "score": 48.4,
-      "classification": "normal"
-    },
-    {
-      "date": "2025-12-30",
-      "score": 48.1,
-      "classification": "normal"
-    },
-    {
-      "date": "2026-01-02",
-      "score": 49.6,
-      "classification": "normal"
-    },
-    {
-      "date": "2026-01-05",
-      "score": 51.6,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-01-06",
-      "score": 52.8,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-01-07",
-      "score": 53.7,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-01-08",
-      "score": 53.9,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-01-09",
-      "score": 56.1,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-01-12",
-      "score": 55.6,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-01-13",
-      "score": 56.4,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-01-14",
-      "score": 55.8,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-01-15",
+      "date": "2025-12-12",
       "score": 54.7,
       "classification": "caution"
     },
     {
-      "date": "2026-01-16",
-      "score": 53.5,
+      "date": "2025-12-15",
+      "score": 64.7,
       "classification": "caution"
     },
     {
-      "date": "2026-01-19",
-      "score": 49.6,
-      "classification": "normal"
-    },
-    {
-      "date": "2026-01-20",
-      "score": 52.2,
+      "date": "2025-12-16",
+      "score": 63.3,
       "classification": "caution"
     },
     {
-      "date": "2026-01-21",
-      "score": 52.2,
+      "date": "2025-12-17",
+      "score": 62.4,
       "classification": "caution"
     },
     {
-      "date": "2026-01-22",
-      "score": 51.4,
+      "date": "2025-12-18",
+      "score": 65.1,
       "classification": "caution"
     },
     {
-      "date": "2026-01-23",
-      "score": 50.9,
+      "date": "2025-12-19",
+      "score": 60.1,
       "classification": "caution"
     },
     {
-      "date": "2026-01-26",
-      "score": 51.6,
+      "date": "2025-12-22",
+      "score": 56.3,
       "classification": "caution"
     },
     {
-      "date": "2026-01-27",
-      "score": 50.9,
+      "date": "2025-12-23",
+      "score": 57.1,
       "classification": "caution"
     },
     {
-      "date": "2026-01-28",
-      "score": 51.3,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-01-29",
-      "score": 53.7,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-01-30",
-      "score": 53.6,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-02",
-      "score": 53.3,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-03",
-      "score": 53.4,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-04",
-      "score": 57.6,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-05",
-      "score": 55.8,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-06",
-      "score": 53.8,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-09",
-      "score": 57.6,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-10",
-      "score": 57.2,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-11",
-      "score": 54.4,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-12",
-      "score": 56.5,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-13",
-      "score": 56.5,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-19",
-      "score": 49.5,
-      "classification": "normal"
-    },
-    {
-      "date": "2026-02-20",
-      "score": 50.0,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-23",
-      "score": 51.5,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-24",
-      "score": 52.0,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-25",
-      "score": 52.0,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-26",
-      "score": 52.6,
-      "classification": "caution"
-    },
-    {
-      "date": "2026-02-27",
+      "date": "2025-12-24",
       "score": 54.5,
       "classification": "caution"
     },
     {
+      "date": "2025-12-26",
+      "score": 53.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-29",
+      "score": 48.2,
+      "classification": "normal"
+    },
+    {
+      "date": "2025-12-30",
+      "score": 54.3,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-02",
+      "score": 55.0,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-05",
+      "score": 58.1,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-06",
+      "score": 64.8,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-07",
+      "score": 61.8,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-08",
+      "score": 68.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-09",
+      "score": 62.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-12",
+      "score": 62.7,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-13",
+      "score": 68.4,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-14",
+      "score": 66.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-15",
+      "score": 59.0,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-16",
+      "score": 58.7,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-19",
+      "score": 54.9,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-20",
+      "score": 55.3,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-21",
+      "score": 57.4,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-22",
+      "score": 52.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-23",
+      "score": 56.9,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-26",
+      "score": 67.1,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-27",
+      "score": 59.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-28",
+      "score": 66.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-29",
+      "score": 67.4,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-30",
+      "score": 59.7,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-02",
+      "score": 61.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-03",
+      "score": 56.7,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-04",
+      "score": 61.0,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-05",
+      "score": 63.9,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-06",
+      "score": 58.3,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-09",
+      "score": 61.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-10",
+      "score": 62.0,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-11",
+      "score": 59.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-12",
+      "score": 68.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-13",
+      "score": 69.0,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-19",
+      "score": 60.9,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-20",
+      "score": 61.4,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-23",
+      "score": 65.1,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-24",
+      "score": 63.1,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-25",
+      "score": 58.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-26",
+      "score": 62.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-27",
+      "score": 59.4,
+      "classification": "caution"
+    },
+    {
       "date": "2026-03-03",
-      "score": 40.4,
+      "score": 47.1,
       "classification": "normal"
     },
     {
       "date": "2026-03-04",
-      "score": 36.5,
+      "score": 35.9,
       "classification": "normal"
     }
   ]
@@ -11798,7 +14410,7 @@ export const SCENARIOS = {
         2400,
         2600
       ],
-      "current_prob": 1.0
+      "current_prob": 0.0
     },
     {
       "id": "S3",
@@ -11808,7 +14420,7 @@ export const SCENARIOS = {
         2100,
         2400
       ],
-      "current_prob": 0.0
+      "current_prob": 1.0
     },
     {
       "id": "S4",
@@ -11835,8 +14447,8 @@ export const SCENARIOS = {
     {
       "date": "2025-12-02",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -11850,8 +14462,8 @@ export const SCENARIOS = {
     },
     {
       "date": "2025-12-04",
-      "s1": 0.0,
-      "s2": 1.0,
+      "s1": 1.0,
+      "s2": 0.0,
       "s3": 0.0,
       "s4": 0.0,
       "s5": 0.0
@@ -11859,8 +14471,8 @@ export const SCENARIOS = {
     {
       "date": "2025-12-05",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -11891,8 +14503,8 @@ export const SCENARIOS = {
     {
       "date": "2025-12-11",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -11947,16 +14559,16 @@ export const SCENARIOS = {
     {
       "date": "2025-12-22",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
     {
       "date": "2025-12-23",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -11971,8 +14583,8 @@ export const SCENARIOS = {
     {
       "date": "2025-12-26",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -12003,8 +14615,8 @@ export const SCENARIOS = {
     {
       "date": "2026-01-05",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -12019,16 +14631,16 @@ export const SCENARIOS = {
     {
       "date": "2026-01-07",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
     {
       "date": "2026-01-08",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -12123,8 +14735,8 @@ export const SCENARIOS = {
     {
       "date": "2026-01-26",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -12139,15 +14751,15 @@ export const SCENARIOS = {
     {
       "date": "2026-01-28",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
     {
       "date": "2026-01-29",
-      "s1": 0.0,
-      "s2": 1.0,
+      "s1": 1.0,
+      "s2": 0.0,
       "s3": 0.0,
       "s4": 0.0,
       "s5": 0.0
@@ -12155,24 +14767,24 @@ export const SCENARIOS = {
     {
       "date": "2026-01-30",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
     {
       "date": "2026-02-02",
       "s1": 0.0,
-      "s2": 1.0,
+      "s2": 0.0,
       "s3": 0.0,
-      "s4": 0.0,
+      "s4": 1.0,
       "s5": 0.0
     },
     {
       "date": "2026-02-03",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -12187,15 +14799,15 @@ export const SCENARIOS = {
     {
       "date": "2026-02-05",
       "s1": 0.0,
-      "s2": 1.0,
+      "s2": 0.0,
       "s3": 0.0,
-      "s4": 0.0,
+      "s4": 1.0,
       "s5": 0.0
     },
     {
       "date": "2026-02-06",
-      "s1": 0.0,
-      "s2": 1.0,
+      "s1": 1.0,
+      "s2": 0.0,
       "s3": 0.0,
       "s4": 0.0,
       "s5": 0.0
@@ -12203,8 +14815,8 @@ export const SCENARIOS = {
     {
       "date": "2026-02-09",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -12219,23 +14831,23 @@ export const SCENARIOS = {
     {
       "date": "2026-02-11",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
     {
       "date": "2026-02-12",
       "s1": 0.0,
-      "s2": 1.0,
+      "s2": 0.0,
       "s3": 0.0,
       "s4": 0.0,
-      "s5": 0.0
+      "s5": 1.0
     },
     {
       "date": "2026-02-13",
-      "s1": 0.0,
-      "s2": 1.0,
+      "s1": 1.0,
+      "s2": 0.0,
       "s3": 0.0,
       "s4": 0.0,
       "s5": 0.0
@@ -12258,8 +14870,8 @@ export const SCENARIOS = {
     },
     {
       "date": "2026-02-23",
-      "s1": 0.0,
-      "s2": 1.0,
+      "s1": 0.1794,
+      "s2": 0.8206,
       "s3": 0.0,
       "s4": 0.0,
       "s5": 0.0
@@ -12267,8 +14879,8 @@ export const SCENARIOS = {
     {
       "date": "2026-02-24",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     },
@@ -12291,24 +14903,24 @@ export const SCENARIOS = {
     {
       "date": "2026-02-27",
       "s1": 0.0,
-      "s2": 1.0,
+      "s2": 0.0,
       "s3": 0.0,
-      "s4": 0.0,
+      "s4": 1.0,
       "s5": 0.0
     },
     {
       "date": "2026-03-03",
       "s1": 0.0,
       "s2": 0.0,
-      "s3": 1.0,
-      "s4": 0.0,
+      "s3": 0.0,
+      "s4": 1.0,
       "s5": 0.0
     },
     {
       "date": "2026-03-04",
       "s1": 0.0,
-      "s2": 1.0,
-      "s3": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
     }
@@ -12316,27 +14928,27 @@ export const SCENARIOS = {
   "key_drivers": [
     {
       "indicator": "institutional_flow",
-      "observed": 0,
-      "expected": -200,
-      "z_score": 6.32,
+      "observed": -597.8,
+      "expected": -1000,
+      "z_score": 11.38,
       "direction": "opposing",
-      "scenario": "S2"
+      "scenario": "S3"
     },
     {
       "indicator": "retail_flow",
-      "observed": 0,
-      "expected": 200,
-      "z_score": -5.66,
+      "observed": 79.6,
+      "expected": -200,
+      "z_score": 6.25,
       "direction": "opposing",
-      "scenario": "S2"
+      "scenario": "S3"
     },
     {
       "indicator": "fx_rate",
-      "observed": 1463.3,
-      "expected": 1380,
-      "z_score": 5.27,
+      "observed": 1466.7,
+      "expected": 1430,
+      "z_score": 2.01,
       "direction": "opposing",
-      "scenario": "S2"
+      "scenario": "S3"
     }
   ]
 };
@@ -12733,7 +15345,7 @@ export const HISTORICAL = {
     {
       "indicator": "vix_level",
       "label": "VIX",
-      "current": 22.69
+      "current": 23.17
     },
     {
       "indicator": "volume_explosion",
@@ -12763,12 +15375,12 @@ export const HISTORICAL = {
     {
       "indicator": "institutional_selling",
       "label": "기관 순매도",
-      "current": 0
+      "current": -597.8
     },
     {
       "indicator": "retail_exhaustion",
       "label": "개인 매수력 감소",
-      "current": 0
+      "current": -326.113
     },
     {
       "indicator": "bull_trap",
@@ -12780,23 +15392,23 @@ export const HISTORICAL = {
 
 export const DEFENSE_WALLS = [
   {
-    "status": "weakened",
-    "capacity": 0.3,
+    "status": "active",
+    "capacity": 1.0,
     "id": "wall1",
     "name": "개인 매수",
-    "detail": "최근5일 평균 0억 / 20일 0억"
+    "detail": "최근5일 평균 2601억 / 20일 611억"
   },
   {
     "status": "weakened",
     "capacity": 0.35,
-    "detail": "기관 0억 (소폭 매도)",
+    "detail": "기관 -598억 (소폭 매도)",
     "id": "wall2",
     "name": "연기금/기관"
   },
   {
     "status": "weakened",
     "capacity": 0.4,
-    "detail": "USD/KRW 1463 (긴장)",
+    "detail": "USD/KRW 1467 (긴장)",
     "id": "wall3",
     "name": "한은 FX 개입"
   },
@@ -12834,7 +15446,7 @@ export const LOOP_STATUS = {
     "status": "dormant",
     "name": "펀드 환매 캐스케이드",
     "delay": "T+1~T+3",
-    "desc": "기관 0억 중 환매 매도 추정 0억",
+    "desc": "기관 -598억 중 환매 매도 추정 0억",
     "estimated_volume_billion": 0,
     "confidence": "low"
   }
@@ -12843,7 +15455,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-04T19:28:12.657020",
+  "last_updated": "2026-03-04T21:38:13.977477",
   "last_date": "2026-03-04",
   "data_source": "pipeline",
   "data_quality": {

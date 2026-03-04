@@ -1,5 +1,31 @@
 # KOSPI Crisis Detector — Changelog
 
+## [2026-03-04] - v1.1.1 Bugfix & UX Improvement
+
+### Added
+- **Naver Investor Flow Scraper** (`naver_scraper.py`): investorDealTrendDay.naver 스크래핑 (개인/외국인/기관/금투, 억원 단위)
+- **Credit/Deposit Toggle**: 신용잔고/고객예탁금 개별 on/off 토글 버튼
+- **connectNulls**: 모든 Line 컴포넌트에 null 라인 끊김 방지
+
+### Changed
+- **Default Period**: ALL → 3M (66 trading days)
+- **Section Order**: 투자자 수급 → 신용잔고 순서 (투자자 수급 최상단)
+- **fetch_daily.py**: 6-step pipeline (env → KRX → ECOS → Naver deposit → Naver investor → yfinance)
+- **compute_models.py**: null credit carry-forward (코호트 일괄 청산 버그 수정)
+- **export_web.py**: financial_invest_billion 직접 사용 (추정 제거)
+- **Data fill**: individual 0%→100%, institution 0%→100%, Cohort LIFO 0→130, FIFO 0→127
+
+### Removed
+- **반대매매 섹션**: MarketPulse에서 완전 삭제 (forcedLiqAxis, fmtHundM 등)
+
+### Verified
+- 282일 투자자 수급 (개인/외국인/기관/금투 100%)
+- LIFO 130, FIFO 127 코호트 정상 생성
+- vite build 성공
+- **Match Rate: 100%**
+
+---
+
 ## [2026-03-04] - v4.1 Real Data Source Integration
 
 ### Added
