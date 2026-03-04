@@ -1,5 +1,30 @@
 # KOSPI Crisis Detector — Changelog
 
+## [2026-03-04] - v4.1 Real Data Source Integration
+
+### Added
+- **ECOS API Integration** (`ecos_fetcher.py`): 한국은행 802Y001 일간 데이터 (KOSPI/KOSDAQ, 외국인 순매수, 거래량/대금, 시가총액)
+- **Naver Finance Scraper** (`naver_scraper.py`): 고객예탁금 + 신용잔고 일간 스크래핑 (억원 단위, 294페이지 페이지네이션)
+- **KRX Auth Module** (`krx_auth.py`): KRX 로그인 세션 관리 + pykrx 세션 주입
+- **dotenv Integration**: `.env` 파일에서 API 키 자동 로드
+
+### Changed
+- **fetch_daily.py**: 5단계 통합 파이프라인 (env → KRX → ECOS → Naver → yfinance → merge)
+- **build_snapshot()**: ECOS/Naver 데이터 수신, 우선순위 체인 (ECOS > yfinance, Naver > None)
+- **run_range()**: 배치 조회 후 날짜별 병합 (기존: yfinance 단독)
+- **Data fill rate**: Credit 0%→99%, Deposit 0%→99%, Foreign 0%→100%, Trading Value 0%→100%
+
+### Known Issues
+- **pykrx Investor Flows**: KRX API 포맷 변경으로 individual/institution 데이터 미수신 (foreign은 ECOS fallback)
+- **PublicDataReader**: requirements에 추가되었으나 미사용
+
+### Verified
+- 282일 데이터 저장 (2025-01-01 ~ 2026-03-04)
+- compute_models + export_web + vite build 성공
+- **Match Rate: 93%** (Gap Analysis PASS)
+
+---
+
 ## [2026-03-04] - v1.4 Loop B Refactoring + Loop C Cascade
 
 ### Added
@@ -109,6 +134,7 @@
 
 | Version | Date | Status | Completeness |
 |---------|------|--------|--------------|
+| **4.1** | 2026-03-04 | Approved | 93% (Real data source integration) |
 | **1.4** | 2026-03-04 | Approved | 100% (All phases: Plan/Design/Do/Check/Report) |
 | 1.1.0 | 2026-02-28 | Archived | 98.9% (Phase 2 UX) |
 | 1.0.2 | 2026-02-10 | Archived | 100% (Chart readability) |
@@ -117,4 +143,4 @@
 
 ---
 
-**Last Updated**: 2026-03-04 16:35:00 KST
+**Last Updated**: 2026-03-04 19:40:00 KST

@@ -1,488 +1,12855 @@
 /**
- * KOSPI Crisis Detector — Sample Data
- * export_web.py 실행 시 실제 데이터로 교체됨.
- *
- * @generated sample data for development
+ * KOSPI Crisis Detector Data (auto-generated)
+ * Generated: 2026-03-04T19:28:12.657326
+ * Source: kospi/data/ (pipeline)
+ * Exports: 13
  */
 
-// --- Helpers ---
-function bizDays(start, n) {
-  const dates = [];
-  const d = new Date(start + "T00:00:00");
-  while (dates.length < n) {
-    if (d.getDay() !== 0 && d.getDay() !== 6) {
-      dates.push(d.toISOString().slice(0, 10));
-    }
-    d.setDate(d.getDate() + 1);
+export const MARKET_DATA = [
+  {
+    "date": "2025-01-02",
+    "kospi": 2398.94,
+    "kosdaq": null,
+    "samsung": 52272,
+    "hynix": 169115,
+    "kospi_change_pct": null,
+    "samsung_change_pct": null,
+    "hynix_change_pct": null,
+    "volume": 35069000,
+    "trading_value_billion": 69.59
+  },
+  {
+    "date": "2025-01-03",
+    "kospi": 2441.92,
+    "kosdaq": null,
+    "samsung": 53251,
+    "hynix": 179685,
+    "kospi_change_pct": 1.79,
+    "samsung_change_pct": 1.87,
+    "hynix_change_pct": 6.25,
+    "volume": 40754000,
+    "trading_value_billion": 82.3
+  },
+  {
+    "date": "2025-01-06",
+    "kospi": 2488.64,
+    "kosdaq": null,
+    "samsung": 54719,
+    "hynix": 197367,
+    "kospi_change_pct": 1.91,
+    "samsung_change_pct": 2.76,
+    "hynix_change_pct": 9.84,
+    "volume": 30276000,
+    "trading_value_billion": 81.42
+  },
+  {
+    "date": "2025-01-07",
+    "kospi": 2492.1,
+    "kosdaq": null,
+    "samsung": 54230,
+    "hynix": 192625,
+    "kospi_change_pct": 0.14,
+    "samsung_change_pct": -0.89,
+    "hynix_change_pct": -2.4,
+    "volume": 40769000,
+    "trading_value_billion": 94.06
+  },
+  {
+    "date": "2025-01-08",
+    "kospi": 2521.05,
+    "kosdaq": null,
+    "samsung": 56090,
+    "hynix": 192329,
+    "kospi_change_pct": 1.16,
+    "samsung_change_pct": 3.43,
+    "hynix_change_pct": -0.15,
+    "volume": 36291000,
+    "trading_value_billion": 103.91
+  },
+  {
+    "date": "2025-01-09",
+    "kospi": 2521.9,
+    "kosdaq": null,
+    "samsung": 54915,
+    "hynix": 202503,
+    "kospi_change_pct": 0.03,
+    "samsung_change_pct": -2.09,
+    "hynix_change_pct": 5.29,
+    "volume": 40429000,
+    "trading_value_billion": 115.25
+  },
+  {
+    "date": "2025-01-10",
+    "kospi": 2515.78,
+    "kosdaq": null,
+    "samsung": 54132,
+    "hynix": 201021,
+    "kospi_change_pct": -0.24,
+    "samsung_change_pct": -1.43,
+    "hynix_change_pct": -0.73,
+    "volume": 37759000,
+    "trading_value_billion": 96.91
+  },
+  {
+    "date": "2025-01-13",
+    "kospi": 2489.56,
+    "kosdaq": null,
+    "samsung": 52957,
+    "hynix": 191934,
+    "kospi_change_pct": -1.04,
+    "samsung_change_pct": -2.17,
+    "hynix_change_pct": -4.52,
+    "volume": 57857000,
+    "trading_value_billion": 90.49
+  },
+  {
+    "date": "2025-01-14",
+    "kospi": 2497.4,
+    "kosdaq": null,
+    "samsung": 52761,
+    "hynix": 192625,
+    "kospi_change_pct": 0.31,
+    "samsung_change_pct": -0.37,
+    "hynix_change_pct": 0.36,
+    "volume": 41449000,
+    "trading_value_billion": 81.99
+  },
+  {
+    "date": "2025-01-15",
+    "kospi": 2496.81,
+    "kosdaq": null,
+    "samsung": 52566,
+    "hynix": 195786,
+    "kospi_change_pct": -0.02,
+    "samsung_change_pct": -0.37,
+    "hynix_change_pct": 1.64,
+    "volume": 53853000,
+    "trading_value_billion": 91.76
+  },
+  {
+    "date": "2025-01-16",
+    "kospi": 2527.49,
+    "kosdaq": null,
+    "samsung": 53153,
+    "hynix": 207442,
+    "kospi_change_pct": 1.23,
+    "samsung_change_pct": 1.12,
+    "hynix_change_pct": 5.95,
+    "volume": 45106000,
+    "trading_value_billion": 94.32
+  },
+  {
+    "date": "2025-01-17",
+    "kospi": 2523.55,
+    "kosdaq": null,
+    "samsung": 52566,
+    "hynix": 211888,
+    "kospi_change_pct": -0.16,
+    "samsung_change_pct": -1.1,
+    "hynix_change_pct": 2.14,
+    "volume": 44588000,
+    "trading_value_billion": 100.12
+  },
+  {
+    "date": "2025-01-20",
+    "kospi": 2520.05,
+    "kosdaq": null,
+    "samsung": 52272,
+    "hynix": 209418,
+    "kospi_change_pct": -0.14,
+    "samsung_change_pct": -0.56,
+    "hynix_change_pct": -1.17,
+    "volume": 43755000,
+    "trading_value_billion": 86.64
+  },
+  {
+    "date": "2025-01-21",
+    "kospi": 2518.03,
+    "kosdaq": null,
+    "samsung": 52370,
+    "hynix": 215345,
+    "kospi_change_pct": -0.08,
+    "samsung_change_pct": 0.19,
+    "hynix_change_pct": 2.83,
+    "volume": 57201000,
+    "trading_value_billion": 93.24
+  },
+  {
+    "date": "2025-01-22",
+    "kospi": 2547.06,
+    "kosdaq": null,
+    "samsung": 53153,
+    "hynix": 222754,
+    "kospi_change_pct": 1.15,
+    "samsung_change_pct": 1.5,
+    "hynix_change_pct": 3.44,
+    "volume": 58374000,
+    "trading_value_billion": 110.75
+  },
+  {
+    "date": "2025-01-23",
+    "kospi": 2515.49,
+    "kosdaq": null,
+    "samsung": 52566,
+    "hynix": 216827,
+    "kospi_change_pct": -1.24,
+    "samsung_change_pct": -1.1,
+    "hynix_change_pct": -2.66,
+    "volume": 60974000,
+    "trading_value_billion": 99.08
+  },
+  {
+    "date": "2025-01-24",
+    "kospi": 2536.8,
+    "kosdaq": null,
+    "samsung": 52566,
+    "hynix": 218308,
+    "kospi_change_pct": 0.85,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": 0.68,
+    "volume": 60201000,
+    "trading_value_billion": 101.79
+  },
+  {
+    "date": "2025-01-31",
+    "kospi": 2517.37,
+    "kosdaq": null,
+    "samsung": 51293,
+    "hynix": 196774,
+    "kospi_change_pct": -0.77,
+    "samsung_change_pct": -2.42,
+    "hynix_change_pct": -9.86,
+    "volume": 45440000,
+    "trading_value_billion": 137.59
+  },
+  {
+    "date": "2025-02-03",
+    "kospi": 2453.95,
+    "kosdaq": null,
+    "samsung": 49923,
+    "hynix": 188575,
+    "kospi_change_pct": -2.52,
+    "samsung_change_pct": -2.67,
+    "hynix_change_pct": -4.17,
+    "volume": 52285000,
+    "trading_value_billion": 116.5
+  },
+  {
+    "date": "2025-02-04",
+    "kospi": 2481.69,
+    "kosdaq": null,
+    "samsung": 51587,
+    "hynix": 188772,
+    "kospi_change_pct": 1.13,
+    "samsung_change_pct": 3.33,
+    "hynix_change_pct": 0.1,
+    "volume": 47938000,
+    "trading_value_billion": 110.01
+  },
+  {
+    "date": "2025-02-05",
+    "kospi": 2509.27,
+    "kosdaq": null,
+    "samsung": 51783,
+    "hynix": 196379,
+    "kospi_change_pct": 1.11,
+    "samsung_change_pct": 0.38,
+    "hynix_change_pct": 4.03,
+    "volume": 43734000,
+    "trading_value_billion": 99.5
+  },
+  {
+    "date": "2025-02-06",
+    "kospi": 2536.75,
+    "kosdaq": null,
+    "samsung": 52859,
+    "hynix": 201021,
+    "kospi_change_pct": 1.1,
+    "samsung_change_pct": 2.08,
+    "hynix_change_pct": 2.36,
+    "volume": 47970000,
+    "trading_value_billion": 118.63
+  },
+  {
+    "date": "2025-02-07",
+    "kospi": 2521.92,
+    "kosdaq": null,
+    "samsung": 52566,
+    "hynix": 200528,
+    "kospi_change_pct": -0.58,
+    "samsung_change_pct": -0.55,
+    "hynix_change_pct": -0.25,
+    "volume": 41987000,
+    "trading_value_billion": 102.4
+  },
+  {
+    "date": "2025-02-10",
+    "kospi": 2521.27,
+    "kosdaq": null,
+    "samsung": 54426,
+    "hynix": 195687,
+    "kospi_change_pct": -0.03,
+    "samsung_change_pct": 3.54,
+    "hynix_change_pct": -2.41,
+    "volume": 39356000,
+    "trading_value_billion": 105.83
+  },
+  {
+    "date": "2025-02-11",
+    "kospi": 2539.05,
+    "kosdaq": null,
+    "samsung": 54523,
+    "hynix": 197268,
+    "kospi_change_pct": 0.71,
+    "samsung_change_pct": 0.18,
+    "hynix_change_pct": 0.81,
+    "volume": 45109000,
+    "trading_value_billion": 110.23
+  },
+  {
+    "date": "2025-02-12",
+    "kospi": 2548.39,
+    "kosdaq": null,
+    "samsung": 54621,
+    "hynix": 196478,
+    "kospi_change_pct": 0.37,
+    "samsung_change_pct": 0.18,
+    "hynix_change_pct": -0.4,
+    "volume": 46489000,
+    "trading_value_billion": 136.69
+  },
+  {
+    "date": "2025-02-13",
+    "kospi": 2583.17,
+    "kosdaq": null,
+    "samsung": 54621,
+    "hynix": 205961,
+    "kospi_change_pct": 1.36,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": 4.83,
+    "volume": 68034000,
+    "trading_value_billion": 171.04
+  },
+  {
+    "date": "2025-02-14",
+    "kospi": 2591.05,
+    "kosdaq": null,
+    "samsung": 54817,
+    "hynix": 207442,
+    "kospi_change_pct": 0.31,
+    "samsung_change_pct": 0.36,
+    "hynix_change_pct": 0.72,
+    "volume": 49936000,
+    "trading_value_billion": 139.18
+  },
+  {
+    "date": "2025-02-17",
+    "kospi": 2610.42,
+    "kosdaq": null,
+    "samsung": 54817,
+    "hynix": 209418,
+    "kospi_change_pct": 0.75,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": 0.95,
+    "volume": 36634000,
+    "trading_value_billion": 110.17
+  },
+  {
+    "date": "2025-02-18",
+    "kospi": 2626.81,
+    "kosdaq": null,
+    "samsung": 55698,
+    "hynix": 207442,
+    "kospi_change_pct": 0.63,
+    "samsung_change_pct": 1.61,
+    "hynix_change_pct": -0.94,
+    "volume": 42199000,
+    "trading_value_billion": 126.18
+  },
+  {
+    "date": "2025-02-19",
+    "kospi": 2671.52,
+    "kosdaq": null,
+    "samsung": 57460,
+    "hynix": 215839,
+    "kospi_change_pct": 1.7,
+    "samsung_change_pct": 3.16,
+    "hynix_change_pct": 4.05,
+    "volume": 52580000,
+    "trading_value_billion": 148.52
+  },
+  {
+    "date": "2025-02-20",
+    "kospi": 2654.06,
+    "kosdaq": null,
+    "samsung": 57166,
+    "hynix": 209418,
+    "kospi_change_pct": -0.65,
+    "samsung_change_pct": -0.51,
+    "hynix_change_pct": -2.97,
+    "volume": 52930000,
+    "trading_value_billion": 145.51
+  },
+  {
+    "date": "2025-02-21",
+    "kospi": 2654.58,
+    "kosdaq": null,
+    "samsung": 56971,
+    "hynix": 206948,
+    "kospi_change_pct": 0.02,
+    "samsung_change_pct": -0.34,
+    "hynix_change_pct": -1.18,
+    "volume": 44470000,
+    "trading_value_billion": 113.81
+  },
+  {
+    "date": "2025-02-24",
+    "kospi": 2645.27,
+    "kosdaq": null,
+    "samsung": 56090,
+    "hynix": 202503,
+    "kospi_change_pct": -0.35,
+    "samsung_change_pct": -1.55,
+    "hynix_change_pct": -2.15,
+    "volume": 53635000,
+    "trading_value_billion": 108.02
+  },
+  {
+    "date": "2025-02-25",
+    "kospi": 2630.29,
+    "kosdaq": null,
+    "samsung": 55992,
+    "hynix": 198058,
+    "kospi_change_pct": -0.57,
+    "samsung_change_pct": -0.17,
+    "hynix_change_pct": -2.2,
+    "volume": 41028000,
+    "trading_value_billion": 105.08
+  },
+  {
+    "date": "2025-02-26",
+    "kospi": 2641.09,
+    "kosdaq": null,
+    "samsung": 55404,
+    "hynix": 200528,
+    "kospi_change_pct": 0.41,
+    "samsung_change_pct": -1.05,
+    "hynix_change_pct": 1.25,
+    "volume": 38676000,
+    "trading_value_billion": 112.19
+  },
+  {
+    "date": "2025-02-27",
+    "kospi": 2621.75,
+    "kosdaq": null,
+    "samsung": 55111,
+    "hynix": 198046,
+    "kospi_change_pct": -0.73,
+    "samsung_change_pct": -0.53,
+    "hynix_change_pct": -1.24,
+    "volume": 51391000,
+    "trading_value_billion": 108.02
+  },
+  {
+    "date": "2025-02-28",
+    "kospi": 2532.78,
+    "kosdaq": null,
+    "samsung": 53349,
+    "hynix": 189098,
+    "kospi_change_pct": -3.39,
+    "samsung_change_pct": -3.2,
+    "hynix_change_pct": -4.52,
+    "volume": 58857000,
+    "trading_value_billion": 156.37
+  },
+  {
+    "date": "2025-03-04",
+    "kospi": 2528.92,
+    "kosdaq": null,
+    "samsung": 53349,
+    "hynix": 185022,
+    "kospi_change_pct": -0.15,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": -2.16,
+    "volume": 48408000,
+    "trading_value_billion": 131.15
+  },
+  {
+    "date": "2025-03-05",
+    "kospi": 2558.13,
+    "kosdaq": null,
+    "samsung": 52859,
+    "hynix": 191981,
+    "kospi_change_pct": 1.16,
+    "samsung_change_pct": -0.92,
+    "hynix_change_pct": 3.76,
+    "volume": 56941000,
+    "trading_value_billion": 130.22
+  },
+  {
+    "date": "2025-03-06",
+    "kospi": 2576.16,
+    "kosdaq": null,
+    "samsung": 53153,
+    "hynix": 191285,
+    "kospi_change_pct": 0.7,
+    "samsung_change_pct": 0.56,
+    "hynix_change_pct": -0.36,
+    "volume": 60962000,
+    "trading_value_billion": 113.2
+  },
+  {
+    "date": "2025-03-07",
+    "kospi": 2563.48,
+    "kosdaq": null,
+    "samsung": 52566,
+    "hynix": 191285,
+    "kospi_change_pct": -0.49,
+    "samsung_change_pct": -1.1,
+    "hynix_change_pct": 0.0,
+    "volume": 56719000,
+    "trading_value_billion": 121.55
+  },
+  {
+    "date": "2025-03-10",
+    "kospi": 2570.39,
+    "kosdaq": null,
+    "samsung": 52566,
+    "hynix": 186811,
+    "kospi_change_pct": 0.27,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": -2.34,
+    "volume": 43569000,
+    "trading_value_billion": 98.81
+  },
+  {
+    "date": "2025-03-11",
+    "kospi": 2537.6,
+    "kosdaq": null,
+    "samsung": 52468,
+    "hynix": 186712,
+    "kospi_change_pct": -1.28,
+    "samsung_change_pct": -0.19,
+    "hynix_change_pct": -0.05,
+    "volume": 39902000,
+    "trading_value_billion": 109.17
+  },
+  {
+    "date": "2025-03-12",
+    "kospi": 2574.82,
+    "kosdaq": null,
+    "samsung": 53740,
+    "hynix": 197748,
+    "kospi_change_pct": 1.47,
+    "samsung_change_pct": 2.42,
+    "hynix_change_pct": 5.91,
+    "volume": 40164000,
+    "trading_value_billion": 122.85
+  },
+  {
+    "date": "2025-03-13",
+    "kospi": 2573.64,
+    "kosdaq": null,
+    "samsung": 53545,
+    "hynix": 198543,
+    "kospi_change_pct": -0.05,
+    "samsung_change_pct": -0.36,
+    "hynix_change_pct": 0.4,
+    "volume": 42729000,
+    "trading_value_billion": 131.13
+  },
+  {
+    "date": "2025-03-14",
+    "kospi": 2566.36,
+    "kosdaq": null,
+    "samsung": 53545,
+    "hynix": 203315,
+    "kospi_change_pct": -0.28,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": 2.4,
+    "volume": 36233000,
+    "trading_value_billion": 99.42
+  },
+  {
+    "date": "2025-03-17",
+    "kospi": 2610.69,
+    "kosdaq": null,
+    "samsung": 56383,
+    "hynix": 204807,
+    "kospi_change_pct": 1.73,
+    "samsung_change_pct": 5.3,
+    "hynix_change_pct": 0.73,
+    "volume": 39657000,
+    "trading_value_billion": 119.95
+  },
+  {
+    "date": "2025-03-18",
+    "kospi": 2612.34,
+    "kosdaq": null,
+    "samsung": 56383,
+    "hynix": 201824,
+    "kospi_change_pct": 0.06,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": -1.46,
+    "volume": 55553000,
+    "trading_value_billion": 120.35
+  },
+  {
+    "date": "2025-03-19",
+    "kospi": 2628.62,
+    "kosdaq": null,
+    "samsung": 57264,
+    "hynix": 204310,
+    "kospi_change_pct": 0.62,
+    "samsung_change_pct": 1.56,
+    "hynix_change_pct": 1.23,
+    "volume": 65333000,
+    "trading_value_billion": 118.42
+  },
+  {
+    "date": "2025-03-20",
+    "kospi": 2637.1,
+    "kosdaq": null,
+    "samsung": 58928,
+    "hynix": 208784,
+    "kospi_change_pct": 0.32,
+    "samsung_change_pct": 2.91,
+    "hynix_change_pct": 2.19,
+    "volume": 45502000,
+    "trading_value_billion": 119.89
+  },
+  {
+    "date": "2025-03-21",
+    "kospi": 2643.13,
+    "kosdaq": null,
+    "samsung": 60397,
+    "hynix": 214252,
+    "kospi_change_pct": 0.23,
+    "samsung_change_pct": 2.49,
+    "hynix_change_pct": 2.62,
+    "volume": 49753000,
+    "trading_value_billion": 141.88
+  },
+  {
+    "date": "2025-03-24",
+    "kospi": 2632.07,
+    "kosdaq": null,
+    "samsung": 59222,
+    "hynix": 210275,
+    "kospi_change_pct": -0.42,
+    "samsung_change_pct": -1.95,
+    "hynix_change_pct": -1.86,
+    "volume": 37243000,
+    "trading_value_billion": 69.24
+  },
+  {
+    "date": "2025-03-25",
+    "kospi": 2615.81,
+    "kosdaq": null,
+    "samsung": 58537,
+    "hynix": 206795,
+    "kospi_change_pct": -0.62,
+    "samsung_change_pct": -1.16,
+    "hynix_change_pct": -1.65,
+    "volume": 43928000,
+    "trading_value_billion": 83.05
+  },
+  {
+    "date": "2025-03-26",
+    "kospi": 2643.94,
+    "kosdaq": null,
+    "samsung": 60103,
+    "hynix": 212760,
+    "kospi_change_pct": 1.08,
+    "samsung_change_pct": 2.68,
+    "hynix_change_pct": 2.88,
+    "volume": 50792000,
+    "trading_value_billion": 76.55
+  },
+  {
+    "date": "2025-03-27",
+    "kospi": 2607.15,
+    "kosdaq": null,
+    "samsung": 60495,
+    "hynix": 205801,
+    "kospi_change_pct": -1.39,
+    "samsung_change_pct": 0.65,
+    "hynix_change_pct": -3.27,
+    "volume": 40331000,
+    "trading_value_billion": 76.76
+  },
+  {
+    "date": "2025-03-28",
+    "kospi": 2557.98,
+    "kosdaq": null,
+    "samsung": 59279,
+    "hynix": 198145,
+    "kospi_change_pct": -1.89,
+    "samsung_change_pct": -2.01,
+    "hynix_change_pct": -3.72,
+    "volume": 51356000,
+    "trading_value_billion": 71.5
+  },
+  {
+    "date": "2025-03-31",
+    "kospi": 2481.12,
+    "kosdaq": null,
+    "samsung": 56915,
+    "hynix": 189595,
+    "kospi_change_pct": -3.0,
+    "samsung_change_pct": -3.99,
+    "hynix_change_pct": -4.32,
+    "volume": 39159000,
+    "trading_value_billion": 82.36
+  },
+  {
+    "date": "2025-04-01",
+    "kospi": 2521.39,
+    "kosdaq": null,
+    "samsung": 57900,
+    "hynix": 195859,
+    "kospi_change_pct": 1.62,
+    "samsung_change_pct": 1.73,
+    "hynix_change_pct": 3.3,
+    "volume": 45339000,
+    "trading_value_billion": 69.39
+  },
+  {
+    "date": "2025-04-02",
+    "kospi": 2505.86,
+    "kosdaq": null,
+    "samsung": 57900,
+    "hynix": 196754,
+    "kospi_change_pct": -0.62,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": 0.46,
+    "volume": 51560000,
+    "trading_value_billion": 73.16
+  },
+  {
+    "date": "2025-04-03",
+    "kospi": 2486.7,
+    "kosdaq": null,
+    "samsung": 56718,
+    "hynix": 193473,
+    "kospi_change_pct": -0.76,
+    "samsung_change_pct": -2.04,
+    "hynix_change_pct": -1.67,
+    "volume": 48006000,
+    "trading_value_billion": 82.67
+  },
+  {
+    "date": "2025-04-04",
+    "kospi": 2465.42,
+    "kosdaq": null,
+    "samsung": 55241,
+    "hynix": 181144,
+    "kospi_change_pct": -0.86,
+    "samsung_change_pct": -2.6,
+    "hynix_change_pct": -6.37,
+    "volume": 69507000,
+    "trading_value_billion": 107.43
+  },
+  {
+    "date": "2025-04-07",
+    "kospi": 2328.2,
+    "kosdaq": null,
+    "samsung": 52386,
+    "hynix": 163845,
+    "kospi_change_pct": -5.57,
+    "samsung_change_pct": -5.17,
+    "hynix_change_pct": -9.55,
+    "volume": 61950000,
+    "trading_value_billion": 105.06
+  },
+  {
+    "date": "2025-04-08",
+    "kospi": 2334.23,
+    "kosdaq": null,
+    "samsung": 52681,
+    "hynix": 168518,
+    "kospi_change_pct": 0.26,
+    "samsung_change_pct": 0.56,
+    "hynix_change_pct": 2.85,
+    "volume": 55702000,
+    "trading_value_billion": 91.22
+  },
+  {
+    "date": "2025-04-09",
+    "kospi": 2293.7,
+    "kosdaq": null,
+    "samsung": 52189,
+    "hynix": 164044,
+    "kospi_change_pct": -1.74,
+    "samsung_change_pct": -0.93,
+    "hynix_change_pct": -2.65,
+    "volume": 69964000,
+    "trading_value_billion": 95.6
+  },
+  {
+    "date": "2025-04-10",
+    "kospi": 2445.06,
+    "kosdaq": null,
+    "samsung": 55537,
+    "hynix": 182139,
+    "kospi_change_pct": 6.6,
+    "samsung_change_pct": 6.42,
+    "hynix_change_pct": 11.03,
+    "volume": 67039000,
+    "trading_value_billion": 110.55
+  },
+  {
+    "date": "2025-04-11",
+    "kospi": 2432.72,
+    "kosdaq": null,
+    "samsung": 54355,
+    "hynix": 179753,
+    "kospi_change_pct": -0.5,
+    "samsung_change_pct": -2.13,
+    "hynix_change_pct": -1.31,
+    "volume": 36970000,
+    "trading_value_billion": 76.87
+  },
+  {
+    "date": "2025-04-14",
+    "kospi": 2455.89,
+    "kosdaq": null,
+    "samsung": 55340,
+    "hynix": 179156,
+    "kospi_change_pct": 0.95,
+    "samsung_change_pct": 1.81,
+    "hynix_change_pct": -0.33,
+    "volume": 48862000,
+    "trading_value_billion": 66.88
+  },
+  {
+    "date": "2025-04-15",
+    "kospi": 2477.41,
+    "kosdaq": null,
+    "samsung": 55734,
+    "hynix": 179554,
+    "kospi_change_pct": 0.88,
+    "samsung_change_pct": 0.71,
+    "hynix_change_pct": 0.22,
+    "volume": 56034000,
+    "trading_value_billion": 65.11
+  },
+  {
+    "date": "2025-04-16",
+    "kospi": 2447.43,
+    "kosdaq": null,
+    "samsung": 53863,
+    "hynix": 172992,
+    "kospi_change_pct": -1.21,
+    "samsung_change_pct": -3.36,
+    "hynix_change_pct": -3.65,
+    "volume": 61317000,
+    "trading_value_billion": 67.26
+  },
+  {
+    "date": "2025-04-17",
+    "kospi": 2470.41,
+    "kosdaq": null,
+    "samsung": 54257,
+    "hynix": 173986,
+    "kospi_change_pct": 0.94,
+    "samsung_change_pct": 0.73,
+    "hynix_change_pct": 0.57,
+    "volume": 60174000,
+    "trading_value_billion": 66.06
+  },
+  {
+    "date": "2025-04-18",
+    "kospi": 2483.42,
+    "kosdaq": null,
+    "samsung": 54454,
+    "hynix": 173986,
+    "kospi_change_pct": 0.53,
+    "samsung_change_pct": 0.36,
+    "hynix_change_pct": 0.0,
+    "volume": 45099000,
+    "trading_value_billion": 56.5
+  },
+  {
+    "date": "2025-04-21",
+    "kospi": 2488.42,
+    "kosdaq": null,
+    "samsung": 54552,
+    "hynix": 175577,
+    "kospi_change_pct": 0.2,
+    "samsung_change_pct": 0.18,
+    "hynix_change_pct": 0.91,
+    "volume": 42898000,
+    "trading_value_billion": 52.4
+  },
+  {
+    "date": "2025-04-22",
+    "kospi": 2486.64,
+    "kosdaq": null,
+    "samsung": 54158,
+    "hynix": 172793,
+    "kospi_change_pct": -0.07,
+    "samsung_change_pct": -0.72,
+    "hynix_change_pct": -1.59,
+    "volume": 41668000,
+    "trading_value_billion": 61.83
+  },
+  {
+    "date": "2025-04-23",
+    "kospi": 2525.56,
+    "kosdaq": null,
+    "samsung": 54847,
+    "hynix": 179951,
+    "kospi_change_pct": 1.57,
+    "samsung_change_pct": 1.27,
+    "hynix_change_pct": 4.14,
+    "volume": 53812000,
+    "trading_value_billion": 77.64
+  },
+  {
+    "date": "2025-04-24",
+    "kospi": 2522.33,
+    "kosdaq": null,
+    "samsung": 54847,
+    "hynix": 177267,
+    "kospi_change_pct": -0.13,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": -1.49,
+    "volume": 32794000,
+    "trading_value_billion": 72.72
+  },
+  {
+    "date": "2025-04-25",
+    "kospi": 2546.3,
+    "kosdaq": null,
+    "samsung": 54847,
+    "hynix": 183332,
+    "kospi_change_pct": 0.95,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": 3.42,
+    "volume": 40353000,
+    "trading_value_billion": 87.61
+  },
+  {
+    "date": "2025-04-28",
+    "kospi": 2548.86,
+    "kosdaq": null,
+    "samsung": 54946,
+    "hynix": 180946,
+    "kospi_change_pct": 0.1,
+    "samsung_change_pct": 0.18,
+    "hynix_change_pct": -1.3,
+    "volume": 45410000,
+    "trading_value_billion": 78.03
+  },
+  {
+    "date": "2025-04-29",
+    "kospi": 2565.42,
+    "kosdaq": null,
+    "samsung": 54946,
+    "hynix": 179753,
+    "kospi_change_pct": 0.65,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": -0.66,
+    "volume": 54708000,
+    "trading_value_billion": 92.15
+  },
+  {
+    "date": "2025-04-30",
+    "kospi": 2556.61,
+    "kosdaq": null,
+    "samsung": 54650,
+    "hynix": 176472,
+    "kospi_change_pct": -0.34,
+    "samsung_change_pct": -0.54,
+    "hynix_change_pct": -1.83,
+    "volume": 48749000,
+    "trading_value_billion": 84.36
+  },
+  {
+    "date": "2025-05-02",
+    "kospi": 2559.79,
+    "kosdaq": null,
+    "samsung": 53469,
+    "hynix": 184922,
+    "kospi_change_pct": 0.12,
+    "samsung_change_pct": -2.16,
+    "hynix_change_pct": 4.79,
+    "volume": 58549000,
+    "trading_value_billion": 83.27
+  },
+  {
+    "date": "2025-05-07",
+    "kospi": 2573.8,
+    "kosdaq": null,
+    "samsung": 53764,
+    "hynix": 189695,
+    "kospi_change_pct": 0.55,
+    "samsung_change_pct": 0.55,
+    "hynix_change_pct": 2.58,
+    "volume": 54676000,
+    "trading_value_billion": 89.35
+  },
+  {
+    "date": "2025-05-08",
+    "kospi": 2579.48,
+    "kosdaq": null,
+    "samsung": 53764,
+    "hynix": 189198,
+    "kospi_change_pct": 0.22,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": -0.26,
+    "volume": 47164000,
+    "trading_value_billion": 102.7
+  },
+  {
+    "date": "2025-05-09",
+    "kospi": 2577.27,
+    "kosdaq": null,
+    "samsung": 53961,
+    "hynix": 188999,
+    "kospi_change_pct": -0.09,
+    "samsung_change_pct": 0.37,
+    "hynix_change_pct": -0.11,
+    "volume": 48555000,
+    "trading_value_billion": 80.35
+  },
+  {
+    "date": "2025-05-12",
+    "kospi": 2607.33,
+    "kosdaq": null,
+    "samsung": 56718,
+    "hynix": 193870,
+    "kospi_change_pct": 1.17,
+    "samsung_change_pct": 5.11,
+    "hynix_change_pct": 2.58,
+    "volume": 40975000,
+    "trading_value_billion": 85.28
+  },
+  {
+    "date": "2025-05-13",
+    "kospi": 2608.42,
+    "kosdaq": null,
+    "samsung": 56029,
+    "hynix": 197350,
+    "kospi_change_pct": 0.04,
+    "samsung_change_pct": -1.21,
+    "hynix_change_pct": 1.8,
+    "volume": 42246000,
+    "trading_value_billion": 87.46
+  },
+  {
+    "date": "2025-05-14",
+    "kospi": 2640.57,
+    "kosdaq": null,
+    "samsung": 56521,
+    "hynix": 204807,
+    "kospi_change_pct": 1.23,
+    "samsung_change_pct": 0.88,
+    "hynix_change_pct": 3.78,
+    "volume": 39050000,
+    "trading_value_billion": 88.93
+  },
+  {
+    "date": "2025-05-15",
+    "kospi": 2621.36,
+    "kosdaq": null,
+    "samsung": 56423,
+    "hynix": 199339,
+    "kospi_change_pct": -0.73,
+    "samsung_change_pct": -0.17,
+    "hynix_change_pct": -2.67,
+    "volume": 33958000,
+    "trading_value_billion": 72.54
+  },
+  {
+    "date": "2025-05-16",
+    "kospi": 2626.87,
+    "kosdaq": null,
+    "samsung": 55931,
+    "hynix": 203315,
+    "kospi_change_pct": 0.21,
+    "samsung_change_pct": -0.87,
+    "hynix_change_pct": 1.99,
+    "volume": 35971000,
+    "trading_value_billion": 80.25
+  },
+  {
+    "date": "2025-05-19",
+    "kospi": 2603.42,
+    "kosdaq": null,
+    "samsung": 54946,
+    "hynix": 198245,
+    "kospi_change_pct": -0.89,
+    "samsung_change_pct": -1.76,
+    "hynix_change_pct": -2.49,
+    "volume": 31330000,
+    "trading_value_billion": 67.52
+  },
+  {
+    "date": "2025-05-20",
+    "kospi": 2601.8,
+    "kosdaq": null,
+    "samsung": 55044,
+    "hynix": 200830,
+    "kospi_change_pct": -0.06,
+    "samsung_change_pct": 0.18,
+    "hynix_change_pct": 1.3,
+    "volume": 45699000,
+    "trading_value_billion": 76.61
+  },
+  {
+    "date": "2025-05-21",
+    "kospi": 2625.58,
+    "kosdaq": null,
+    "samsung": 54847,
+    "hynix": 199339,
+    "kospi_change_pct": 0.91,
+    "samsung_change_pct": -0.36,
+    "hynix_change_pct": -0.74,
+    "volume": 37153000,
+    "trading_value_billion": 74.41
+  },
+  {
+    "date": "2025-05-22",
+    "kospi": 2593.67,
+    "kosdaq": null,
+    "samsung": 53863,
+    "hynix": 195759,
+    "kospi_change_pct": -1.22,
+    "samsung_change_pct": -1.79,
+    "hynix_change_pct": -1.8,
+    "volume": 35806000,
+    "trading_value_billion": 89.66
+  },
+  {
+    "date": "2025-05-23",
+    "kospi": 2592.09,
+    "kosdaq": null,
+    "samsung": 53370,
+    "hynix": 198841,
+    "kospi_change_pct": -0.06,
+    "samsung_change_pct": -0.92,
+    "hynix_change_pct": 1.57,
+    "volume": 43402000,
+    "trading_value_billion": 86.6
+  },
+  {
+    "date": "2025-05-26",
+    "kospi": 2644.4,
+    "kosdaq": null,
+    "samsung": 53863,
+    "hynix": 201824,
+    "kospi_change_pct": 2.02,
+    "samsung_change_pct": 0.92,
+    "hynix_change_pct": 1.5,
+    "volume": 38017000,
+    "trading_value_billion": 83.43
+  },
+  {
+    "date": "2025-05-27",
+    "kospi": 2637.22,
+    "kosdaq": null,
+    "samsung": 53075,
+    "hynix": 201327,
+    "kospi_change_pct": -0.27,
+    "samsung_change_pct": -1.46,
+    "hynix_change_pct": -0.25,
+    "volume": 31829000,
+    "trading_value_billion": 79.09
+  },
+  {
+    "date": "2025-05-28",
+    "kospi": 2670.15,
+    "kosdaq": null,
+    "samsung": 55044,
+    "hynix": 206795,
+    "kospi_change_pct": 1.25,
+    "samsung_change_pct": 3.71,
+    "hynix_change_pct": 2.72,
+    "volume": 40547000,
+    "trading_value_billion": 112.39
+  },
+  {
+    "date": "2025-05-29",
+    "kospi": 2720.64,
+    "kosdaq": null,
+    "samsung": 55241,
+    "hynix": 211153,
+    "kospi_change_pct": 1.89,
+    "samsung_change_pct": 0.36,
+    "hynix_change_pct": 2.11,
+    "volume": 44834000,
+    "trading_value_billion": 108.96
+  },
+  {
+    "date": "2025-05-30",
+    "kospi": 2697.67,
+    "kosdaq": null,
+    "samsung": 55340,
+    "hynix": 203683,
+    "kospi_change_pct": -0.84,
+    "samsung_change_pct": 0.18,
+    "hynix_change_pct": -3.54,
+    "volume": 52566000,
+    "trading_value_billion": 148.04
+  },
+  {
+    "date": "2025-06-02",
+    "kospi": 2698.97,
+    "kosdaq": null,
+    "samsung": 55931,
+    "hynix": 206671,
+    "kospi_change_pct": 0.05,
+    "samsung_change_pct": 1.07,
+    "hynix_change_pct": 1.47,
+    "volume": 32360000,
+    "trading_value_billion": 80.63
+  },
+  {
+    "date": "2025-06-04",
+    "kospi": 2770.84,
+    "kosdaq": null,
+    "samsung": 56915,
+    "hynix": 216631,
+    "kospi_change_pct": 2.66,
+    "samsung_change_pct": 1.76,
+    "hynix_change_pct": 4.82,
+    "volume": 48994000,
+    "trading_value_billion": 121.06
+  },
+  {
+    "date": "2025-06-05",
+    "kospi": 2812.05,
+    "kosdaq": null,
+    "samsung": 58195,
+    "hynix": 223603,
+    "kospi_change_pct": 1.49,
+    "samsung_change_pct": 2.25,
+    "hynix_change_pct": 3.22,
+    "volume": 55601000,
+    "trading_value_billion": 132.93
+  },
+  {
+    "date": "2025-06-09",
+    "kospi": 2855.77,
+    "kosdaq": null,
+    "samsung": 58885,
+    "hynix": 228085,
+    "kospi_change_pct": 1.55,
+    "samsung_change_pct": 1.19,
+    "hynix_change_pct": 2.0,
+    "volume": 53762000,
+    "trading_value_billion": 140.3
+  },
+  {
+    "date": "2025-06-10",
+    "kospi": 2871.85,
+    "kosdaq": null,
+    "samsung": 58294,
+    "hynix": 229579,
+    "kospi_change_pct": 0.56,
+    "samsung_change_pct": -1.0,
+    "hynix_change_pct": 0.66,
+    "volume": 50818000,
+    "trading_value_billion": 142.9
+  },
+  {
+    "date": "2025-06-11",
+    "kospi": 2907.04,
+    "kosdaq": null,
+    "samsung": 58983,
+    "hynix": 239041,
+    "kospi_change_pct": 1.23,
+    "samsung_change_pct": 1.18,
+    "hynix_change_pct": 4.12,
+    "volume": 39393000,
+    "trading_value_billion": 124.75
+  },
+  {
+    "date": "2025-06-12",
+    "kospi": 2920.03,
+    "kosdaq": null,
+    "samsung": 58589,
+    "hynix": 234559,
+    "kospi_change_pct": 0.45,
+    "samsung_change_pct": -0.67,
+    "hynix_change_pct": -1.87,
+    "volume": 71371000,
+    "trading_value_billion": 173.45
+  },
+  {
+    "date": "2025-06-13",
+    "kospi": 2894.62,
+    "kosdaq": null,
+    "samsung": 57408,
+    "hynix": 234559,
+    "kospi_change_pct": -0.87,
+    "samsung_change_pct": -2.02,
+    "hynix_change_pct": 0.0,
+    "volume": 93166000,
+    "trading_value_billion": 174.63
+  },
+  {
+    "date": "2025-06-16",
+    "kospi": 2946.66,
+    "kosdaq": null,
+    "samsung": 56324,
+    "hynix": 247009,
+    "kospi_change_pct": 1.8,
+    "samsung_change_pct": -1.89,
+    "hynix_change_pct": 5.31,
+    "volume": 72635000,
+    "trading_value_billion": 144.01
+  },
+  {
+    "date": "2025-06-17",
+    "kospi": 2950.3,
+    "kosdaq": null,
+    "samsung": 57211,
+    "hynix": 248005,
+    "kospi_change_pct": 0.12,
+    "samsung_change_pct": 1.57,
+    "hynix_change_pct": 0.4,
+    "volume": 93959000,
+    "trading_value_billion": 179.16
+  },
+  {
+    "date": "2025-06-18",
+    "kospi": 2972.19,
+    "kosdaq": null,
+    "samsung": 58885,
+    "hynix": 245515,
+    "kospi_change_pct": 0.74,
+    "samsung_change_pct": 2.93,
+    "hynix_change_pct": -1.0,
+    "volume": 57655000,
+    "trading_value_billion": 146.68
+  },
+  {
+    "date": "2025-06-19",
+    "kospi": 2977.74,
+    "kosdaq": null,
+    "samsung": 58294,
+    "hynix": 245017,
+    "kospi_change_pct": 0.19,
+    "samsung_change_pct": -1.0,
+    "hynix_change_pct": -0.2,
+    "volume": 43331000,
+    "trading_value_billion": 137.87
+  },
+  {
+    "date": "2025-06-20",
+    "kospi": 3021.84,
+    "kosdaq": null,
+    "samsung": 58589,
+    "hynix": 255973,
+    "kospi_change_pct": 1.48,
+    "samsung_change_pct": 0.51,
+    "hynix_change_pct": 4.47,
+    "volume": 48486000,
+    "trading_value_billion": 179.75
+  },
+  {
+    "date": "2025-06-23",
+    "kospi": 3014.47,
+    "kosdaq": null,
+    "samsung": 57112,
+    "hynix": 258463,
+    "kospi_change_pct": -0.24,
+    "samsung_change_pct": -2.52,
+    "hynix_change_pct": 0.97,
+    "volume": 62565000,
+    "trading_value_billion": 178.8
+  },
+  {
+    "date": "2025-06-24",
+    "kospi": 3103.64,
+    "kosdaq": null,
+    "samsung": 59574,
+    "hynix": 277387,
+    "kospi_change_pct": 2.96,
+    "samsung_change_pct": 4.31,
+    "hynix_change_pct": 7.32,
+    "volume": 57920000,
+    "trading_value_billion": 191.07
+  },
+  {
+    "date": "2025-06-25",
+    "kospi": 3108.25,
+    "kosdaq": null,
+    "samsung": 60362,
+    "hynix": 284857,
+    "kospi_change_pct": 0.15,
+    "samsung_change_pct": 1.32,
+    "hynix_change_pct": 2.69,
+    "volume": 64476000,
+    "trading_value_billion": 196.63
+  },
+  {
+    "date": "2025-06-26",
+    "kospi": 3079.56,
+    "kosdaq": null,
+    "samsung": 59279,
+    "hynix": 291829,
+    "kospi_change_pct": -0.92,
+    "samsung_change_pct": -1.79,
+    "hynix_change_pct": 2.45,
+    "volume": 46061000,
+    "trading_value_billion": 170.31
+  },
+  {
+    "date": "2025-06-27",
+    "kospi": 3055.94,
+    "kosdaq": null,
+    "samsung": 60237,
+    "hynix": 282865,
+    "kospi_change_pct": -0.77,
+    "samsung_change_pct": 1.62,
+    "hynix_change_pct": -3.07,
+    "volume": 38163000,
+    "trading_value_billion": 139.7
+  },
+  {
+    "date": "2025-06-30",
+    "kospi": 3071.7,
+    "kosdaq": null,
+    "samsung": 59246,
+    "hynix": 290833,
+    "kospi_change_pct": 0.52,
+    "samsung_change_pct": -1.65,
+    "hynix_change_pct": 2.82,
+    "volume": 46416000,
+    "trading_value_billion": 133.34
+  },
+  {
+    "date": "2025-07-01",
+    "kospi": 3089.65,
+    "kosdaq": null,
+    "samsung": 59642,
+    "hynix": 284359,
+    "kospi_change_pct": 0.58,
+    "samsung_change_pct": 0.67,
+    "hynix_change_pct": -2.23,
+    "volume": 57602000,
+    "trading_value_billion": 151.85
+  },
+  {
+    "date": "2025-07-02",
+    "kospi": 3075.06,
+    "kosdaq": null,
+    "samsung": 60237,
+    "hynix": 277885,
+    "kospi_change_pct": -0.47,
+    "samsung_change_pct": 1.0,
+    "hynix_change_pct": -2.28,
+    "volume": 69680000,
+    "trading_value_billion": 148.3
+  },
+  {
+    "date": "2025-07-03",
+    "kospi": 3116.27,
+    "kosdaq": null,
+    "samsung": 63209,
+    "hynix": 277387,
+    "kospi_change_pct": 1.34,
+    "samsung_change_pct": 4.93,
+    "hynix_change_pct": -0.18,
+    "volume": 53912000,
+    "trading_value_billion": 148.83
+  },
+  {
+    "date": "2025-07-04",
+    "kospi": 3054.28,
+    "kosdaq": null,
+    "samsung": 62713,
+    "hynix": 269419,
+    "kospi_change_pct": -1.99,
+    "samsung_change_pct": -0.78,
+    "hynix_change_pct": -2.87,
+    "volume": 52076000,
+    "trading_value_billion": 135.71
+  },
+  {
+    "date": "2025-07-07",
+    "kospi": 3059.47,
+    "kosdaq": null,
+    "samsung": 61128,
+    "hynix": 269917,
+    "kospi_change_pct": 0.17,
+    "samsung_change_pct": -2.53,
+    "hynix_change_pct": 0.18,
+    "volume": 35940000,
+    "trading_value_billion": 102.05
+  },
+  {
+    "date": "2025-07-08",
+    "kospi": 3114.95,
+    "kosdaq": null,
+    "samsung": 60831,
+    "hynix": 280873,
+    "kospi_change_pct": 1.81,
+    "samsung_change_pct": -0.49,
+    "hynix_change_pct": 4.06,
+    "volume": 74579000,
+    "trading_value_billion": 134.91
+  },
+  {
+    "date": "2025-07-09",
+    "kospi": 3133.74,
+    "kosdaq": null,
+    "samsung": 59840,
+    "hynix": 279877,
+    "kospi_change_pct": 0.6,
+    "samsung_change_pct": -1.63,
+    "hynix_change_pct": -0.35,
+    "volume": 64296000,
+    "trading_value_billion": 126.55
+  },
+  {
+    "date": "2025-07-10",
+    "kospi": 3183.23,
+    "kosdaq": null,
+    "samsung": 60435,
+    "hynix": 295813,
+    "kospi_change_pct": 1.58,
+    "samsung_change_pct": 0.99,
+    "hynix_change_pct": 5.69,
+    "volume": 59657000,
+    "trading_value_billion": 141.25
+  },
+  {
+    "date": "2025-07-11",
+    "kospi": 3175.77,
+    "kosdaq": null,
+    "samsung": 62020,
+    "hynix": 293323,
+    "kospi_change_pct": -0.23,
+    "samsung_change_pct": 2.62,
+    "hynix_change_pct": -0.84,
+    "volume": 46529000,
+    "trading_value_billion": 133.42
+  },
+  {
+    "date": "2025-07-14",
+    "kospi": 3202.03,
+    "kosdaq": null,
+    "samsung": 61921,
+    "hynix": 298801,
+    "kospi_change_pct": 0.83,
+    "samsung_change_pct": -0.16,
+    "hynix_change_pct": 1.87,
+    "volume": 44404000,
+    "trading_value_billion": 115.66
+  },
+  {
+    "date": "2025-07-15",
+    "kospi": 3215.28,
+    "kosdaq": null,
+    "samsung": 63110,
+    "hynix": 297307,
+    "kospi_change_pct": 0.41,
+    "samsung_change_pct": 1.92,
+    "hynix_change_pct": -0.5,
+    "volume": 41965000,
+    "trading_value_billion": 122.39
+  },
+  {
+    "date": "2025-07-16",
+    "kospi": 3186.38,
+    "kosdaq": null,
+    "samsung": 64101,
+    "hynix": 294817,
+    "kospi_change_pct": -0.9,
+    "samsung_change_pct": 1.57,
+    "hynix_change_pct": -0.84,
+    "volume": 53150000,
+    "trading_value_billion": 113.29
+  },
+  {
+    "date": "2025-07-17",
+    "kospi": 3192.29,
+    "kosdaq": null,
+    "samsung": 66082,
+    "hynix": 268423,
+    "kospi_change_pct": 0.19,
+    "samsung_change_pct": 3.09,
+    "hynix_change_pct": -8.95,
+    "volume": 42479000,
+    "trading_value_billion": 153.65
+  },
+  {
+    "date": "2025-07-18",
+    "kospi": 3188.07,
+    "kosdaq": null,
+    "samsung": 66478,
+    "hynix": 267925,
+    "kospi_change_pct": -0.13,
+    "samsung_change_pct": 0.6,
+    "hynix_change_pct": -0.19,
+    "volume": 39345000,
+    "trading_value_billion": 119.39
+  },
+  {
+    "date": "2025-07-21",
+    "kospi": 3210.81,
+    "kosdaq": null,
+    "samsung": 67172,
+    "hynix": 271411,
+    "kospi_change_pct": 0.71,
+    "samsung_change_pct": 1.04,
+    "hynix_change_pct": 1.3,
+    "volume": 34391000,
+    "trading_value_billion": 106.62
+  },
+  {
+    "date": "2025-07-22",
+    "kospi": 3169.94,
+    "kosdaq": null,
+    "samsung": 65388,
+    "hynix": 267427,
+    "kospi_change_pct": -1.27,
+    "samsung_change_pct": -2.66,
+    "hynix_change_pct": -1.47,
+    "volume": 37849000,
+    "trading_value_billion": 116.05
+  },
+  {
+    "date": "2025-07-23",
+    "kospi": 3183.77,
+    "kosdaq": null,
+    "samsung": 65785,
+    "hynix": 267925,
+    "kospi_change_pct": 0.44,
+    "samsung_change_pct": 0.61,
+    "hynix_change_pct": 0.19,
+    "volume": 66483000,
+    "trading_value_billion": 122.01
+  },
+  {
+    "date": "2025-07-24",
+    "kospi": 3190.45,
+    "kosdaq": null,
+    "samsung": 65388,
+    "hynix": 268423,
+    "kospi_change_pct": 0.21,
+    "samsung_change_pct": -0.6,
+    "hynix_change_pct": 0.19,
+    "volume": 42550000,
+    "trading_value_billion": 129.93
+  },
+  {
+    "date": "2025-07-25",
+    "kospi": 3196.05,
+    "kosdaq": null,
+    "samsung": 65289,
+    "hynix": 264937,
+    "kospi_change_pct": 0.18,
+    "samsung_change_pct": -0.15,
+    "hynix_change_pct": -1.3,
+    "volume": 38929000,
+    "trading_value_billion": 98.22
+  },
+  {
+    "date": "2025-07-28",
+    "kospi": 3209.52,
+    "kosdaq": null,
+    "samsung": 69748,
+    "hynix": 260953,
+    "kospi_change_pct": 0.42,
+    "samsung_change_pct": 6.83,
+    "hynix_change_pct": -1.5,
+    "volume": 50272000,
+    "trading_value_billion": 138.73
+  },
+  {
+    "date": "2025-07-29",
+    "kospi": 3230.57,
+    "kosdaq": null,
+    "samsung": 69946,
+    "hynix": 261451,
+    "kospi_change_pct": 0.66,
+    "samsung_change_pct": 0.28,
+    "hynix_change_pct": 0.19,
+    "volume": 37320000,
+    "trading_value_billion": 127.69
+  },
+  {
+    "date": "2025-07-30",
+    "kospi": 3254.47,
+    "kosdaq": null,
+    "samsung": 71927,
+    "hynix": 262447,
+    "kospi_change_pct": 0.74,
+    "samsung_change_pct": 2.83,
+    "hynix_change_pct": 0.38,
+    "volume": 33807000,
+    "trading_value_billion": 129.69
+  },
+  {
+    "date": "2025-07-31",
+    "kospi": 3245.44,
+    "kosdaq": null,
+    "samsung": 70738,
+    "hynix": 272407,
+    "kospi_change_pct": -0.28,
+    "samsung_change_pct": -1.65,
+    "hynix_change_pct": 3.8,
+    "volume": 54032000,
+    "trading_value_billion": 164.56
+  },
+  {
+    "date": "2025-08-01",
+    "kospi": 3119.41,
+    "kosdaq": null,
+    "samsung": 68262,
+    "hynix": 256969,
+    "kospi_change_pct": -3.88,
+    "samsung_change_pct": -3.5,
+    "hynix_change_pct": -5.67,
+    "volume": 50778000,
+    "trading_value_billion": 152.81
+  },
+  {
+    "date": "2025-08-04",
+    "kospi": 3147.75,
+    "kosdaq": null,
+    "samsung": 69054,
+    "hynix": 256969,
+    "kospi_change_pct": 0.91,
+    "samsung_change_pct": 1.16,
+    "hynix_change_pct": 0.0,
+    "volume": 29345000,
+    "trading_value_billion": 97.25
+  },
+  {
+    "date": "2025-08-05",
+    "kospi": 3198.0,
+    "kosdaq": null,
+    "samsung": 69252,
+    "hynix": 262447,
+    "kospi_change_pct": 1.6,
+    "samsung_change_pct": 0.29,
+    "hynix_change_pct": 2.13,
+    "volume": 27344000,
+    "trading_value_billion": 109.5
+  },
+  {
+    "date": "2025-08-06",
+    "kospi": 3198.14,
+    "kosdaq": null,
+    "samsung": 68163,
+    "hynix": 257467,
+    "kospi_change_pct": 0.0,
+    "samsung_change_pct": -1.57,
+    "hynix_change_pct": -1.9,
+    "volume": 32736000,
+    "trading_value_billion": 111.28
+  },
+  {
+    "date": "2025-08-07",
+    "kospi": 3227.68,
+    "kosdaq": null,
+    "samsung": 69847,
+    "hynix": 260953,
+    "kospi_change_pct": 0.92,
+    "samsung_change_pct": 2.47,
+    "hynix_change_pct": 1.35,
+    "volume": 32705000,
+    "trading_value_billion": 112.01
+  },
+  {
+    "date": "2025-08-08",
+    "kospi": 3210.01,
+    "kosdaq": null,
+    "samsung": 71135,
+    "hynix": 255475,
+    "kospi_change_pct": -0.55,
+    "samsung_change_pct": 1.84,
+    "hynix_change_pct": -2.1,
+    "volume": 34144000,
+    "trading_value_billion": 114.01
+  },
+  {
+    "date": "2025-08-11",
+    "kospi": 3206.77,
+    "kosdaq": null,
+    "samsung": 70342,
+    "hynix": 265933,
+    "kospi_change_pct": -0.1,
+    "samsung_change_pct": -1.11,
+    "hynix_change_pct": 4.09,
+    "volume": 30497000,
+    "trading_value_billion": 103.39
+  },
+  {
+    "date": "2025-08-12",
+    "kospi": 3189.91,
+    "kosdaq": null,
+    "samsung": 70441,
+    "hynix": 267925,
+    "kospi_change_pct": -0.53,
+    "samsung_change_pct": 0.14,
+    "hynix_change_pct": 0.75,
+    "volume": 37322000,
+    "trading_value_billion": 101.66
+  },
+  {
+    "date": "2025-08-13",
+    "kospi": 3224.37,
+    "kosdaq": null,
+    "samsung": 71234,
+    "hynix": 276889,
+    "kospi_change_pct": 1.08,
+    "samsung_change_pct": 1.13,
+    "hynix_change_pct": 3.35,
+    "volume": 32007000,
+    "trading_value_billion": 103.52
+  },
+  {
+    "date": "2025-08-14",
+    "kospi": 3225.66,
+    "kosdaq": null,
+    "samsung": 70937,
+    "hynix": 275395,
+    "kospi_change_pct": 0.04,
+    "samsung_change_pct": -0.42,
+    "hynix_change_pct": -0.54,
+    "volume": 44147000,
+    "trading_value_billion": 100.02
+  },
+  {
+    "date": "2025-08-18",
+    "kospi": 3177.28,
+    "kosdaq": null,
+    "samsung": 69351,
+    "hynix": 266431,
+    "kospi_change_pct": -1.5,
+    "samsung_change_pct": -2.24,
+    "hynix_change_pct": -3.25,
+    "volume": 32613000,
+    "trading_value_billion": 89.42
+  },
+  {
+    "date": "2025-08-19",
+    "kospi": 3151.56,
+    "kosdaq": null,
+    "samsung": 69351,
+    "hynix": 261949,
+    "kospi_change_pct": -0.81,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": -1.68,
+    "volume": 28529000,
+    "trading_value_billion": 86.24
+  },
+  {
+    "date": "2025-08-20",
+    "kospi": 3130.09,
+    "kosdaq": null,
+    "samsung": 69847,
+    "hynix": 254479,
+    "kospi_change_pct": -0.68,
+    "samsung_change_pct": 0.72,
+    "hynix_change_pct": -2.85,
+    "volume": 33529000,
+    "trading_value_billion": 117.74
+  },
+  {
+    "date": "2025-08-21",
+    "kospi": 3141.74,
+    "kosdaq": null,
+    "samsung": 69946,
+    "hynix": 244021,
+    "kospi_change_pct": 0.37,
+    "samsung_change_pct": 0.14,
+    "hynix_change_pct": -4.11,
+    "volume": 27692000,
+    "trading_value_billion": 108.93
+  },
+  {
+    "date": "2025-08-22",
+    "kospi": 3168.73,
+    "kosdaq": null,
+    "samsung": 70738,
+    "hynix": 249997,
+    "kospi_change_pct": 0.86,
+    "samsung_change_pct": 1.13,
+    "hynix_change_pct": 2.45,
+    "volume": 23680000,
+    "trading_value_billion": 83.38
+  },
+  {
+    "date": "2025-08-25",
+    "kospi": 3209.86,
+    "kosdaq": null,
+    "samsung": 70838,
+    "hynix": 258463,
+    "kospi_change_pct": 1.3,
+    "samsung_change_pct": 0.14,
+    "hynix_change_pct": 3.39,
+    "volume": 22017000,
+    "trading_value_billion": 80.92
+  },
+  {
+    "date": "2025-08-26",
+    "kospi": 3179.36,
+    "kosdaq": null,
+    "samsung": 69649,
+    "hynix": 260455,
+    "kospi_change_pct": -0.95,
+    "samsung_change_pct": -1.68,
+    "hynix_change_pct": 0.77,
+    "volume": 32535000,
+    "trading_value_billion": 129.55
+  },
+  {
+    "date": "2025-08-27",
+    "kospi": 3187.16,
+    "kosdaq": null,
+    "samsung": 69946,
+    "hynix": 258961,
+    "kospi_change_pct": 0.25,
+    "samsung_change_pct": 0.43,
+    "hynix_change_pct": -0.57,
+    "volume": 28172000,
+    "trading_value_billion": 88.52
+  },
+  {
+    "date": "2025-08-28",
+    "kospi": 3196.32,
+    "kosdaq": null,
+    "samsung": 68955,
+    "hynix": 267813,
+    "kospi_change_pct": 0.29,
+    "samsung_change_pct": -1.42,
+    "hynix_change_pct": 3.42,
+    "volume": 31219000,
+    "trading_value_billion": 98.76
+  },
+  {
+    "date": "2025-08-29",
+    "kospi": 3186.01,
+    "kosdaq": null,
+    "samsung": 69054,
+    "hynix": 268312,
+    "kospi_change_pct": -0.32,
+    "samsung_change_pct": 0.14,
+    "hynix_change_pct": 0.19,
+    "volume": 24513000,
+    "trading_value_billion": 89.69
+  },
+  {
+    "date": "2025-09-01",
+    "kospi": 3142.93,
+    "kosdaq": null,
+    "samsung": 66974,
+    "hynix": 255345,
+    "kospi_change_pct": -1.35,
+    "samsung_change_pct": -3.01,
+    "hynix_change_pct": -4.83,
+    "volume": 26014000,
+    "trading_value_billion": 80.03
+  },
+  {
+    "date": "2025-09-02",
+    "kospi": 3172.35,
+    "kosdaq": null,
+    "samsung": 68460,
+    "hynix": 259834,
+    "kospi_change_pct": 0.94,
+    "samsung_change_pct": 2.22,
+    "hynix_change_pct": 1.76,
+    "volume": 31068000,
+    "trading_value_billion": 86.77
+  },
+  {
+    "date": "2025-09-03",
+    "kospi": 3184.42,
+    "kosdaq": null,
+    "samsung": 69153,
+    "hynix": 261828,
+    "kospi_change_pct": 0.38,
+    "samsung_change_pct": 1.01,
+    "hynix_change_pct": 0.77,
+    "volume": 33582000,
+    "trading_value_billion": 88.12
+  },
+  {
+    "date": "2025-09-04",
+    "kospi": 3200.83,
+    "kosdaq": null,
+    "samsung": 69451,
+    "hynix": 264821,
+    "kospi_change_pct": 0.52,
+    "samsung_change_pct": 0.43,
+    "hynix_change_pct": 1.14,
+    "volume": 28626000,
+    "trading_value_billion": 79.78
+  },
+  {
+    "date": "2025-09-05",
+    "kospi": 3205.12,
+    "kosdaq": null,
+    "samsung": 68856,
+    "hynix": 272800,
+    "kospi_change_pct": 0.13,
+    "samsung_change_pct": -0.86,
+    "hynix_change_pct": 3.01,
+    "volume": 32384000,
+    "trading_value_billion": 109.42
+  },
+  {
+    "date": "2025-09-08",
+    "kospi": 3219.59,
+    "kosdaq": null,
+    "samsung": 69451,
+    "hynix": 276291,
+    "kospi_change_pct": 0.45,
+    "samsung_change_pct": 0.86,
+    "hynix_change_pct": 1.28,
+    "volume": 37230000,
+    "trading_value_billion": 82.18
+  },
+  {
+    "date": "2025-09-09",
+    "kospi": 3260.05,
+    "kosdaq": null,
+    "samsung": 70838,
+    "hynix": 287263,
+    "kospi_change_pct": 1.26,
+    "samsung_change_pct": 2.0,
+    "hynix_change_pct": 3.97,
+    "volume": 43995000,
+    "trading_value_billion": 106.29
+  },
+  {
+    "date": "2025-09-10",
+    "kospi": 3314.53,
+    "kosdaq": null,
+    "samsung": 71927,
+    "hynix": 303222,
+    "kospi_change_pct": 1.67,
+    "samsung_change_pct": 1.54,
+    "hynix_change_pct": 5.56,
+    "volume": 56471000,
+    "trading_value_billion": 137.03
+  },
+  {
+    "date": "2025-09-11",
+    "kospi": 3344.2,
+    "kosdaq": null,
+    "samsung": 72720,
+    "hynix": 306215,
+    "kospi_change_pct": 0.9,
+    "samsung_change_pct": 1.1,
+    "hynix_change_pct": 0.99,
+    "volume": 43559000,
+    "trading_value_billion": 149.47
+  },
+  {
+    "date": "2025-09-12",
+    "kospi": 3395.54,
+    "kosdaq": null,
+    "samsung": 74701,
+    "hynix": 327660,
+    "kospi_change_pct": 1.54,
+    "samsung_change_pct": 2.72,
+    "hynix_change_pct": 7.0,
+    "volume": 44886000,
+    "trading_value_billion": 139.32
+  },
+  {
+    "date": "2025-09-15",
+    "kospi": 3407.31,
+    "kosdaq": null,
+    "samsung": 75791,
+    "hynix": 330153,
+    "kospi_change_pct": 0.35,
+    "samsung_change_pct": 1.46,
+    "hynix_change_pct": 0.76,
+    "volume": 37885000,
+    "trading_value_billion": 127.93
+  },
+  {
+    "date": "2025-09-16",
+    "kospi": 3449.62,
+    "kosdaq": null,
+    "samsung": 78664,
+    "hynix": 347110,
+    "kospi_change_pct": 1.24,
+    "samsung_change_pct": 3.79,
+    "hynix_change_pct": 5.14,
+    "volume": 40621000,
+    "trading_value_billion": 140.59
+  },
+  {
+    "date": "2025-09-17",
+    "kospi": 3413.4,
+    "kosdaq": null,
+    "samsung": 77476,
+    "hynix": 332647,
+    "kospi_change_pct": -1.05,
+    "samsung_change_pct": -1.51,
+    "hynix_change_pct": -4.17,
+    "volume": 32661000,
+    "trading_value_billion": 116.12
+  },
+  {
+    "date": "2025-09-18",
+    "kospi": 3461.3,
+    "kosdaq": null,
+    "samsung": 79556,
+    "hynix": 354591,
+    "kospi_change_pct": 1.4,
+    "samsung_change_pct": 2.68,
+    "hynix_change_pct": 6.6,
+    "volume": 39118000,
+    "trading_value_billion": 124.09
+  },
+  {
+    "date": "2025-09-19",
+    "kospi": 3445.24,
+    "kosdaq": null,
+    "samsung": null,
+    "hynix": null,
+    "kospi_change_pct": -0.46,
+    "samsung_change_pct": null,
+    "hynix_change_pct": null,
+    "volume": 34884000,
+    "trading_value_billion": 151.11
+  },
+  {
+    "date": "2025-09-22",
+    "kospi": 3468.65,
+    "kosdaq": null,
+    "samsung": 82726,
+    "hynix": 350102,
+    "kospi_change_pct": 0.68,
+    "samsung_change_pct": null,
+    "hynix_change_pct": null,
+    "volume": 28787000,
+    "trading_value_billion": 119.96
+  },
+  {
+    "date": "2025-09-23",
+    "kospi": 3486.19,
+    "kosdaq": null,
+    "samsung": 83915,
+    "hynix": 360077,
+    "kospi_change_pct": 0.51,
+    "samsung_change_pct": 1.44,
+    "hynix_change_pct": 2.85,
+    "volume": 35834000,
+    "trading_value_billion": 121.52
+  },
+  {
+    "date": "2025-09-24",
+    "kospi": 3472.14,
+    "kosdaq": null,
+    "samsung": 84609,
+    "hynix": 356586,
+    "kospi_change_pct": -0.4,
+    "samsung_change_pct": 0.83,
+    "hynix_change_pct": -0.97,
+    "volume": 28715000,
+    "trading_value_billion": 118.07
+  },
+  {
+    "date": "2025-09-25",
+    "kospi": 3471.11,
+    "kosdaq": null,
+    "samsung": 85302,
+    "hynix": 355588,
+    "kospi_change_pct": -0.03,
+    "samsung_change_pct": 0.82,
+    "hynix_change_pct": -0.28,
+    "volume": 29307000,
+    "trading_value_billion": 126.41
+  },
+  {
+    "date": "2025-09-26",
+    "kospi": 3386.05,
+    "kosdaq": null,
+    "samsung": 82528,
+    "hynix": 335639,
+    "kospi_change_pct": -2.45,
+    "samsung_change_pct": -3.25,
+    "hynix_change_pct": -5.61,
+    "volume": 39915000,
+    "trading_value_billion": 126.06
+  },
+  {
+    "date": "2025-09-29",
+    "kospi": 3431.21,
+    "kosdaq": null,
+    "samsung": 83792,
+    "hynix": 348107,
+    "kospi_change_pct": 1.33,
+    "samsung_change_pct": 1.53,
+    "hynix_change_pct": 3.71,
+    "volume": 41648000,
+    "trading_value_billion": 100.09
+  },
+  {
+    "date": "2025-09-30",
+    "kospi": 3424.6,
+    "kosdaq": null,
+    "samsung": 83494,
+    "hynix": 346611,
+    "kospi_change_pct": -0.19,
+    "samsung_change_pct": -0.36,
+    "hynix_change_pct": -0.43,
+    "volume": 52640000,
+    "trading_value_billion": 111.57
+  },
+  {
+    "date": "2025-10-01",
+    "kospi": 3455.83,
+    "kosdaq": null,
+    "samsung": 85583,
+    "hynix": 359079,
+    "kospi_change_pct": 0.91,
+    "samsung_change_pct": 2.5,
+    "hynix_change_pct": 3.6,
+    "volume": 49364000,
+    "trading_value_billion": 123.45
+  },
+  {
+    "date": "2025-10-02",
+    "kospi": 3549.21,
+    "kosdaq": null,
+    "samsung": 89315,
+    "hynix": 394489,
+    "kospi_change_pct": 2.7,
+    "samsung_change_pct": 4.36,
+    "hynix_change_pct": 9.86,
+    "volume": 40211000,
+    "trading_value_billion": 194.56
+  },
+  {
+    "date": "2025-10-10",
+    "kospi": 3610.6,
+    "kosdaq": null,
+    "samsung": 93943,
+    "hynix": 426905,
+    "kospi_change_pct": 1.73,
+    "samsung_change_pct": 5.18,
+    "hynix_change_pct": 8.22,
+    "volume": 40741000,
+    "trading_value_billion": 196.01
+  },
+  {
+    "date": "2025-10-13",
+    "kospi": 3584.55,
+    "kosdaq": null,
+    "samsung": 92848,
+    "hynix": 413939,
+    "kospi_change_pct": -0.72,
+    "samsung_change_pct": -1.17,
+    "hynix_change_pct": -3.04,
+    "volume": 40803000,
+    "trading_value_billion": 142.71
+  },
+  {
+    "date": "2025-10-14",
+    "kospi": 3561.81,
+    "kosdaq": null,
+    "samsung": 91156,
+    "hynix": 410448,
+    "kospi_change_pct": -0.63,
+    "samsung_change_pct": -1.82,
+    "hynix_change_pct": -0.84,
+    "volume": 73408000,
+    "trading_value_billion": 189.26
+  },
+  {
+    "date": "2025-10-15",
+    "kospi": 3657.28,
+    "kosdaq": null,
+    "samsung": 94540,
+    "hynix": 421420,
+    "kospi_change_pct": 2.68,
+    "samsung_change_pct": 3.71,
+    "hynix_change_pct": 2.67,
+    "volume": 54361000,
+    "trading_value_billion": 138.8
+  },
+  {
+    "date": "2025-10-16",
+    "kospi": 3748.37,
+    "kosdaq": null,
+    "samsung": 97227,
+    "hynix": 451343,
+    "kospi_change_pct": 2.49,
+    "samsung_change_pct": 2.84,
+    "hynix_change_pct": 7.1,
+    "volume": 49579000,
+    "trading_value_billion": 176.65
+  },
+  {
+    "date": "2025-10-17",
+    "kospi": 3748.89,
+    "kosdaq": null,
+    "samsung": 97426,
+    "hynix": 464310,
+    "kospi_change_pct": 0.01,
+    "samsung_change_pct": 0.2,
+    "hynix_change_pct": 2.87,
+    "volume": 42077000,
+    "trading_value_billion": 172.69
+  },
+  {
+    "date": "2025-10-20",
+    "kospi": 3814.69,
+    "kosdaq": null,
+    "samsung": 97625,
+    "hynix": 484258,
+    "kospi_change_pct": 1.76,
+    "samsung_change_pct": 0.2,
+    "hynix_change_pct": 4.3,
+    "volume": 41015000,
+    "trading_value_billion": 141.91
+  },
+  {
+    "date": "2025-10-21",
+    "kospi": 3823.84,
+    "kosdaq": null,
+    "samsung": 97028,
+    "hynix": 477775,
+    "kospi_change_pct": 0.24,
+    "samsung_change_pct": -0.61,
+    "hynix_change_pct": -1.34,
+    "volume": 52685000,
+    "trading_value_billion": 193.74
+  },
+  {
+    "date": "2025-10-22",
+    "kospi": 3883.68,
+    "kosdaq": null,
+    "samsung": 98123,
+    "hynix": 480269,
+    "kospi_change_pct": 1.56,
+    "samsung_change_pct": 1.13,
+    "hynix_change_pct": 0.52,
+    "volume": 59722000,
+    "trading_value_billion": 154.51
+  },
+  {
+    "date": "2025-10-23",
+    "kospi": 3845.56,
+    "kosdaq": null,
+    "samsung": 96033,
+    "hynix": 477276,
+    "kospi_change_pct": -0.98,
+    "samsung_change_pct": -2.13,
+    "hynix_change_pct": -0.62,
+    "volume": 42359000,
+    "trading_value_billion": 162.56
+  },
+  {
+    "date": "2025-10-24",
+    "kospi": 3941.59,
+    "kosdaq": null,
+    "samsung": 98322,
+    "hynix": 508696,
+    "kospi_change_pct": 2.5,
+    "samsung_change_pct": 2.38,
+    "hynix_change_pct": 6.58,
+    "volume": 42690000,
+    "trading_value_billion": 178.01
+  },
+  {
+    "date": "2025-10-27",
+    "kospi": 4042.83,
+    "kosdaq": null,
+    "samsung": 101506,
+    "hynix": 533632,
+    "kospi_change_pct": 2.57,
+    "samsung_change_pct": 3.24,
+    "hynix_change_pct": 4.9,
+    "volume": 51700000,
+    "trading_value_billion": 201.23
+  },
+  {
+    "date": "2025-10-28",
+    "kospi": 4010.41,
+    "kosdaq": null,
+    "samsung": 99018,
+    "hynix": 519668,
+    "kospi_change_pct": -0.8,
+    "samsung_change_pct": -2.45,
+    "hynix_change_pct": -2.62,
+    "volume": 40822000,
+    "trading_value_billion": 197.2
+  },
+  {
+    "date": "2025-10-29",
+    "kospi": 4081.15,
+    "kosdaq": null,
+    "samsung": 100013,
+    "hynix": 556573,
+    "kospi_change_pct": 1.76,
+    "samsung_change_pct": 1.0,
+    "hynix_change_pct": 7.1,
+    "volume": 46690000,
+    "trading_value_billion": 220.33
+  },
+  {
+    "date": "2025-10-30",
+    "kospi": 4086.89,
+    "kosdaq": null,
+    "samsung": 103596,
+    "hynix": 566548,
+    "kospi_change_pct": 0.14,
+    "samsung_change_pct": 3.58,
+    "hynix_change_pct": 1.79,
+    "volume": 56654000,
+    "trading_value_billion": 241.98
+  },
+  {
+    "date": "2025-10-31",
+    "kospi": 4107.5,
+    "kosdaq": null,
+    "samsung": 106979,
+    "hynix": 557571,
+    "kospi_change_pct": 0.5,
+    "samsung_change_pct": 3.27,
+    "hynix_change_pct": -1.58,
+    "volume": 40828000,
+    "trading_value_billion": 229.5
+  },
+  {
+    "date": "2025-11-03",
+    "kospi": 4221.87,
+    "kosdaq": null,
+    "samsung": 110562,
+    "hynix": 618415,
+    "kospi_change_pct": 2.78,
+    "samsung_change_pct": 3.35,
+    "hynix_change_pct": 10.91,
+    "volume": 47268000,
+    "trading_value_billion": 227.29
+  },
+  {
+    "date": "2025-11-04",
+    "kospi": 4121.74,
+    "kosdaq": null,
+    "samsung": 104392,
+    "hynix": 584502,
+    "kospi_change_pct": -2.37,
+    "samsung_change_pct": -5.58,
+    "hynix_change_pct": -5.48,
+    "volume": 42354000,
+    "trading_value_billion": 207.86
+  },
+  {
+    "date": "2025-11-05",
+    "kospi": 4004.42,
+    "kosdaq": null,
+    "samsung": 100113,
+    "hynix": 577519,
+    "kospi_change_pct": -2.85,
+    "samsung_change_pct": -4.1,
+    "hynix_change_pct": -1.19,
+    "volume": 59416000,
+    "trading_value_billion": 291.86
+  },
+  {
+    "date": "2025-11-06",
+    "kospi": 4026.45,
+    "kosdaq": null,
+    "samsung": 98720,
+    "hynix": 591484,
+    "kospi_change_pct": 0.55,
+    "samsung_change_pct": -1.39,
+    "hynix_change_pct": 2.42,
+    "volume": 42342000,
+    "trading_value_billion": 214.84
+  },
+  {
+    "date": "2025-11-07",
+    "kospi": 3953.76,
+    "kosdaq": null,
+    "samsung": 97426,
+    "hynix": 578517,
+    "kospi_change_pct": -1.81,
+    "samsung_change_pct": -1.31,
+    "hynix_change_pct": -2.19,
+    "volume": 37705000,
+    "trading_value_billion": 187.94
+  },
+  {
+    "date": "2025-11-10",
+    "kospi": 4073.24,
+    "kosdaq": null,
+    "samsung": 100113,
+    "hynix": 604450,
+    "kospi_change_pct": 3.02,
+    "samsung_change_pct": 2.76,
+    "hynix_change_pct": 4.48,
+    "volume": 33951000,
+    "trading_value_billion": 166.86
+  },
+  {
+    "date": "2025-11-11",
+    "kospi": 4106.39,
+    "kosdaq": null,
+    "samsung": 102999,
+    "hynix": 617417,
+    "kospi_change_pct": 0.81,
+    "samsung_change_pct": 2.88,
+    "hynix_change_pct": 2.15,
+    "volume": 37755000,
+    "trading_value_billion": 201.19
+  },
+  {
+    "date": "2025-11-12",
+    "kospi": 4150.39,
+    "kosdaq": null,
+    "samsung": 102601,
+    "hynix": 615422,
+    "kospi_change_pct": 1.07,
+    "samsung_change_pct": -0.39,
+    "hynix_change_pct": -0.32,
+    "volume": 33458000,
+    "trading_value_billion": 156.71
+  },
+  {
+    "date": "2025-11-13",
+    "kospi": 4170.63,
+    "kosdaq": null,
+    "samsung": 102302,
+    "hynix": 610435,
+    "kospi_change_pct": 0.49,
+    "samsung_change_pct": -0.29,
+    "hynix_change_pct": -0.81,
+    "volume": 42419000,
+    "trading_value_billion": 175.17
+  },
+  {
+    "date": "2025-11-14",
+    "kospi": 4011.57,
+    "kosdaq": null,
+    "samsung": 96729,
+    "hynix": 558568,
+    "kospi_change_pct": -3.81,
+    "samsung_change_pct": -5.45,
+    "hynix_change_pct": -8.5,
+    "volume": 39999000,
+    "trading_value_billion": 179.69
+  },
+  {
+    "date": "2025-11-17",
+    "kospi": 4089.25,
+    "kosdaq": null,
+    "samsung": 100113,
+    "hynix": 604450,
+    "kospi_change_pct": 1.94,
+    "samsung_change_pct": 3.5,
+    "hynix_change_pct": 8.21,
+    "volume": 34410000,
+    "trading_value_billion": 143.53
+  },
+  {
+    "date": "2025-11-18",
+    "kospi": 3953.62,
+    "kosdaq": null,
+    "samsung": 97326,
+    "hynix": 568542,
+    "kospi_change_pct": -3.32,
+    "samsung_change_pct": -2.78,
+    "hynix_change_pct": -5.94,
+    "volume": 31966000,
+    "trading_value_billion": 140.78
+  },
+  {
+    "date": "2025-11-19",
+    "kospi": 3929.51,
+    "kosdaq": null,
+    "samsung": 96033,
+    "hynix": 560563,
+    "kospi_change_pct": -0.61,
+    "samsung_change_pct": -1.33,
+    "hynix_change_pct": -1.4,
+    "volume": 33824000,
+    "trading_value_billion": 145.87
+  },
+  {
+    "date": "2025-11-20",
+    "kospi": 4004.85,
+    "kosdaq": null,
+    "samsung": 100113,
+    "hynix": 569540,
+    "kospi_change_pct": 1.92,
+    "samsung_change_pct": 4.25,
+    "hynix_change_pct": 1.6,
+    "volume": 36028000,
+    "trading_value_billion": 151.44
+  },
+  {
+    "date": "2025-11-21",
+    "kospi": 3853.26,
+    "kosdaq": null,
+    "samsung": 94341,
+    "hynix": 519668,
+    "kospi_change_pct": -3.79,
+    "samsung_change_pct": -5.77,
+    "hynix_change_pct": -8.76,
+    "volume": 31932000,
+    "trading_value_billion": 141.67
+  },
+  {
+    "date": "2025-11-24",
+    "kospi": 3846.06,
+    "kosdaq": null,
+    "samsung": 96232,
+    "hynix": 518670,
+    "kospi_change_pct": -0.19,
+    "samsung_change_pct": 2.0,
+    "hynix_change_pct": -0.19,
+    "volume": 37312000,
+    "trading_value_billion": 214.11
+  },
+  {
+    "date": "2025-11-25",
+    "kospi": 3857.78,
+    "kosdaq": null,
+    "samsung": 98819,
+    "hynix": 517673,
+    "kospi_change_pct": 0.3,
+    "samsung_change_pct": 2.69,
+    "hynix_change_pct": -0.19,
+    "volume": 27929000,
+    "trading_value_billion": 132.76
+  },
+  {
+    "date": "2025-11-26",
+    "kospi": 3960.87,
+    "kosdaq": null,
+    "samsung": 102302,
+    "hynix": 522660,
+    "kospi_change_pct": 2.67,
+    "samsung_change_pct": 3.52,
+    "hynix_change_pct": 0.96,
+    "volume": 29533000,
+    "trading_value_billion": 157.78
+  },
+  {
+    "date": "2025-11-27",
+    "kospi": 3986.91,
+    "kosdaq": null,
+    "samsung": 102999,
+    "hynix": 542998,
+    "kospi_change_pct": 0.66,
+    "samsung_change_pct": 0.68,
+    "hynix_change_pct": 3.89,
+    "volume": 25785000,
+    "trading_value_billion": 130.09
+  },
+  {
+    "date": "2025-11-28",
+    "kospi": 3926.59,
+    "kosdaq": null,
+    "samsung": 100013,
+    "hynix": 529023,
+    "kospi_change_pct": -1.51,
+    "samsung_change_pct": -2.9,
+    "hynix_change_pct": -2.57,
+    "volume": 24192000,
+    "trading_value_billion": 119.27
+  },
+  {
+    "date": "2025-12-01",
+    "kospi": 3920.37,
+    "kosdaq": null,
+    "samsung": 100312,
+    "hynix": 537009,
+    "kospi_change_pct": -0.16,
+    "samsung_change_pct": 0.3,
+    "hynix_change_pct": 1.51,
+    "volume": 29691000,
+    "trading_value_billion": 118.06
+  },
+  {
+    "date": "2025-12-02",
+    "kospi": 3994.93,
+    "kosdaq": null,
+    "samsung": 102899,
+    "hynix": 556972,
+    "kospi_change_pct": 1.9,
+    "samsung_change_pct": 2.58,
+    "hynix_change_pct": 3.72,
+    "volume": 31903000,
+    "trading_value_billion": 124.39
+  },
+  {
+    "date": "2025-12-03",
+    "kospi": 4036.3,
+    "kosdaq": null,
+    "samsung": 103994,
+    "hynix": 550983,
+    "kospi_change_pct": 1.04,
+    "samsung_change_pct": 1.06,
+    "hynix_change_pct": -1.08,
+    "volume": 29090000,
+    "trading_value_billion": 133.76
+  },
+  {
+    "date": "2025-12-04",
+    "kospi": 4028.51,
+    "kosdaq": null,
+    "samsung": 104591,
+    "hynix": 541001,
+    "kospi_change_pct": -0.19,
+    "samsung_change_pct": 0.57,
+    "hynix_change_pct": -1.81,
+    "volume": 35204000,
+    "trading_value_billion": 137.16
+  },
+  {
+    "date": "2025-12-05",
+    "kospi": 4100.05,
+    "kosdaq": null,
+    "samsung": 107875,
+    "hynix": 542998,
+    "kospi_change_pct": 1.78,
+    "samsung_change_pct": 3.14,
+    "hynix_change_pct": 0.37,
+    "volume": 47851000,
+    "trading_value_billion": 163.09
+  },
+  {
+    "date": "2025-12-08",
+    "kospi": 4154.85,
+    "kosdaq": null,
+    "samsung": 108970,
+    "hynix": 575937,
+    "kospi_change_pct": 1.34,
+    "samsung_change_pct": 1.02,
+    "hynix_change_pct": 6.07,
+    "volume": 39558000,
+    "trading_value_billion": 152.08
+  },
+  {
+    "date": "2025-12-09",
+    "kospi": 4143.55,
+    "kosdaq": null,
+    "samsung": 107875,
+    "hynix": 564957,
+    "kospi_change_pct": -0.27,
+    "samsung_change_pct": -1.0,
+    "hynix_change_pct": -1.91,
+    "volume": 40064000,
+    "trading_value_billion": 133.29
+  },
+  {
+    "date": "2025-12-10",
+    "kospi": 4135.0,
+    "kosdaq": null,
+    "samsung": 107477,
+    "hynix": 585918,
+    "kospi_change_pct": -0.21,
+    "samsung_change_pct": -0.37,
+    "hynix_change_pct": 3.71,
+    "volume": 31790000,
+    "trading_value_billion": 126.26
+  },
+  {
+    "date": "2025-12-11",
+    "kospi": 4110.62,
+    "kosdaq": null,
+    "samsung": 106780,
+    "hynix": 563959,
+    "kospi_change_pct": -0.59,
+    "samsung_change_pct": -0.65,
+    "hynix_change_pct": -3.75,
+    "volume": 53984000,
+    "trading_value_billion": 203.08
+  },
+  {
+    "date": "2025-12-12",
+    "kospi": 4167.16,
+    "kosdaq": null,
+    "samsung": 108373,
+    "hynix": 569948,
+    "kospi_change_pct": 1.38,
+    "samsung_change_pct": 1.49,
+    "hynix_change_pct": 1.06,
+    "volume": 42662000,
+    "trading_value_billion": 165.46
+  },
+  {
+    "date": "2025-12-15",
+    "kospi": 4090.59,
+    "kosdaq": null,
+    "samsung": 104293,
+    "hynix": 552979,
+    "kospi_change_pct": -1.84,
+    "samsung_change_pct": -3.76,
+    "hynix_change_pct": -2.98,
+    "volume": 34684000,
+    "trading_value_billion": 154.38
+  },
+  {
+    "date": "2025-12-16",
+    "kospi": 3999.13,
+    "kosdaq": null,
+    "samsung": 102302,
+    "hynix": 529023,
+    "kospi_change_pct": -2.24,
+    "samsung_change_pct": -1.91,
+    "hynix_change_pct": -4.33,
+    "volume": 37399000,
+    "trading_value_billion": 165.26
+  },
+  {
+    "date": "2025-12-17",
+    "kospi": 4056.41,
+    "kosdaq": null,
+    "samsung": 107378,
+    "hynix": 549985,
+    "kospi_change_pct": 1.43,
+    "samsung_change_pct": 4.96,
+    "hynix_change_pct": 3.96,
+    "volume": 36096000,
+    "trading_value_billion": 129.68
+  },
+  {
+    "date": "2025-12-18",
+    "kospi": 3994.51,
+    "kosdaq": null,
+    "samsung": 107079,
+    "hynix": 550983,
+    "kospi_change_pct": -1.53,
+    "samsung_change_pct": -0.28,
+    "hynix_change_pct": 0.18,
+    "volume": 58145000,
+    "trading_value_billion": 130.78
+  },
+  {
+    "date": "2025-12-19",
+    "kospi": 4020.55,
+    "kosdaq": null,
+    "samsung": 105785,
+    "hynix": 545992,
+    "kospi_change_pct": 0.65,
+    "samsung_change_pct": -1.21,
+    "hynix_change_pct": -0.91,
+    "volume": 44266000,
+    "trading_value_billion": 164.7
+  },
+  {
+    "date": "2025-12-22",
+    "kospi": 4105.93,
+    "kosdaq": null,
+    "samsung": 109965,
+    "hynix": 578931,
+    "kospi_change_pct": 2.12,
+    "samsung_change_pct": 3.95,
+    "hynix_change_pct": 6.03,
+    "volume": 31563000,
+    "trading_value_billion": 130.14
+  },
+  {
+    "date": "2025-12-23",
+    "kospi": 4117.32,
+    "kosdaq": null,
+    "samsung": 110960,
+    "hynix": 582924,
+    "kospi_change_pct": 0.28,
+    "samsung_change_pct": 0.9,
+    "hynix_change_pct": 0.69,
+    "volume": 38585000,
+    "trading_value_billion": 134.61
+  },
+  {
+    "date": "2025-12-24",
+    "kospi": 4108.62,
+    "kosdaq": null,
+    "samsung": 110562,
+    "hynix": 586917,
+    "kospi_change_pct": -0.21,
+    "samsung_change_pct": -0.36,
+    "hynix_change_pct": 0.68,
+    "volume": 36361000,
+    "trading_value_billion": 121.15
+  },
+  {
+    "date": "2025-12-26",
+    "kospi": 4129.68,
+    "kosdaq": null,
+    "samsung": 116434,
+    "hynix": 597896,
+    "kospi_change_pct": 0.51,
+    "samsung_change_pct": 5.31,
+    "hynix_change_pct": 1.87,
+    "volume": 51016000,
+    "trading_value_billion": 162.74
+  },
+  {
+    "date": "2025-12-29",
+    "kospi": 4220.56,
+    "kosdaq": null,
+    "samsung": 119500,
+    "hynix": 638821,
+    "kospi_change_pct": 2.2,
+    "samsung_change_pct": 2.63,
+    "hynix_change_pct": 6.84,
+    "volume": 50239000,
+    "trading_value_billion": 145.35
+  },
+  {
+    "date": "2025-12-30",
+    "kospi": 4214.17,
+    "kosdaq": null,
+    "samsung": 119900,
+    "hynix": 649800,
+    "kospi_change_pct": -0.15,
+    "samsung_change_pct": 0.33,
+    "hynix_change_pct": 1.72,
+    "volume": 40820000,
+    "trading_value_billion": 132.13
+  },
+  {
+    "date": "2026-01-02",
+    "kospi": 4309.63,
+    "kosdaq": null,
+    "samsung": 128500,
+    "hynix": 675753,
+    "kospi_change_pct": 2.27,
+    "samsung_change_pct": 7.17,
+    "hynix_change_pct": 3.99,
+    "volume": 40634000,
+    "trading_value_billion": 175.22
+  },
+  {
+    "date": "2026-01-05",
+    "kospi": 4457.52,
+    "kosdaq": null,
+    "samsung": 138100,
+    "hynix": 694718,
+    "kospi_change_pct": 3.43,
+    "samsung_change_pct": 7.47,
+    "hynix_change_pct": 2.81,
+    "volume": 51387000,
+    "trading_value_billion": 227.84
+  },
+  {
+    "date": "2026-01-06",
+    "kospi": 4525.48,
+    "kosdaq": null,
+    "samsung": 138900,
+    "hynix": 724662,
+    "kospi_change_pct": 1.52,
+    "samsung_change_pct": 0.58,
+    "hynix_change_pct": 4.31,
+    "volume": 49839000,
+    "trading_value_billion": 255.18
+  },
+  {
+    "date": "2026-01-07",
+    "kospi": 4551.06,
+    "kosdaq": null,
+    "samsung": 141000,
+    "hynix": 740633,
+    "kospi_change_pct": 0.57,
+    "samsung_change_pct": 1.51,
+    "hynix_change_pct": 2.2,
+    "volume": 55365000,
+    "trading_value_billion": 291.4
+  },
+  {
+    "date": "2026-01-08",
+    "kospi": 4552.37,
+    "kosdaq": null,
+    "samsung": 138800,
+    "hynix": 754607,
+    "kospi_change_pct": 0.03,
+    "samsung_change_pct": -1.56,
+    "hynix_change_pct": 1.89,
+    "volume": 44009000,
+    "trading_value_billion": 274.77
+  },
+  {
+    "date": "2026-01-09",
+    "kospi": 4586.32,
+    "kosdaq": null,
+    "samsung": 139000,
+    "hynix": 742629,
+    "kospi_change_pct": 0.75,
+    "samsung_change_pct": 0.14,
+    "hynix_change_pct": -1.59,
+    "volume": 39922000,
+    "trading_value_billion": 234.79
+  },
+  {
+    "date": "2026-01-12",
+    "kospi": 4624.79,
+    "kosdaq": null,
+    "samsung": 138800,
+    "hynix": 747620,
+    "kospi_change_pct": 0.84,
+    "samsung_change_pct": -0.14,
+    "hynix_change_pct": 0.67,
+    "volume": 39475000,
+    "trading_value_billion": 230.74
+  },
+  {
+    "date": "2026-01-13",
+    "kospi": 4692.64,
+    "kosdaq": null,
+    "samsung": 137600,
+    "hynix": 736640,
+    "kospi_change_pct": 1.47,
+    "samsung_change_pct": -0.86,
+    "hynix_change_pct": -1.47,
+    "volume": 42915000,
+    "trading_value_billion": 252.41
+  },
+  {
+    "date": "2026-01-14",
+    "kospi": 4723.1,
+    "kosdaq": null,
+    "samsung": 140300,
+    "hynix": 740633,
+    "kospi_change_pct": 0.65,
+    "samsung_change_pct": 1.96,
+    "hynix_change_pct": 0.54,
+    "volume": 55042000,
+    "trading_value_billion": 242.18
+  },
+  {
+    "date": "2026-01-15",
+    "kospi": 4797.55,
+    "kosdaq": null,
+    "samsung": 143900,
+    "hynix": 747620,
+    "kospi_change_pct": 1.58,
+    "samsung_change_pct": 2.57,
+    "hynix_change_pct": 0.94,
+    "volume": 54518000,
+    "trading_value_billion": 238.26
+  },
+  {
+    "date": "2026-01-16",
+    "kospi": 4840.74,
+    "kosdaq": null,
+    "samsung": 148900,
+    "hynix": 754607,
+    "kospi_change_pct": 0.9,
+    "samsung_change_pct": 3.47,
+    "hynix_change_pct": 0.93,
+    "volume": 72091000,
+    "trading_value_billion": 269.48
+  },
+  {
+    "date": "2026-01-19",
+    "kospi": 4904.66,
+    "kosdaq": null,
+    "samsung": 149300,
+    "hynix": 762592,
+    "kospi_change_pct": 1.32,
+    "samsung_change_pct": 0.27,
+    "hynix_change_pct": 1.06,
+    "volume": 57084000,
+    "trading_value_billion": 252.15
+  },
+  {
+    "date": "2026-01-20",
+    "kospi": 4885.75,
+    "kosdaq": null,
+    "samsung": 145200,
+    "hynix": 741631,
+    "kospi_change_pct": -0.39,
+    "samsung_change_pct": -2.75,
+    "hynix_change_pct": -2.75,
+    "volume": 66771000,
+    "trading_value_billion": 271.49
+  },
+  {
+    "date": "2026-01-21",
+    "kospi": 4909.93,
+    "kosdaq": null,
+    "samsung": 149500,
+    "hynix": 738637,
+    "kospi_change_pct": 0.49,
+    "samsung_change_pct": 2.96,
+    "hynix_change_pct": -0.4,
+    "volume": 60010000,
+    "trading_value_billion": 300.93
+  },
+  {
+    "date": "2026-01-22",
+    "kospi": 4952.53,
+    "kosdaq": null,
+    "samsung": 152300,
+    "hynix": 753609,
+    "kospi_change_pct": 0.87,
+    "samsung_change_pct": 1.87,
+    "hynix_change_pct": 2.03,
+    "volume": 56862000,
+    "trading_value_billion": 329.2
+  },
+  {
+    "date": "2026-01-23",
+    "kospi": 4990.07,
+    "kosdaq": null,
+    "samsung": 152100,
+    "hynix": 765587,
+    "kospi_change_pct": 0.76,
+    "samsung_change_pct": -0.13,
+    "hynix_change_pct": 1.59,
+    "volume": 61260000,
+    "trading_value_billion": 300.17
+  },
+  {
+    "date": "2026-01-26",
+    "kospi": 4949.59,
+    "kosdaq": null,
+    "samsung": 152100,
+    "hynix": 734644,
+    "kospi_change_pct": -0.81,
+    "samsung_change_pct": 0.0,
+    "hynix_change_pct": -4.04,
+    "volume": 44690000,
+    "trading_value_billion": 228.43
+  },
+  {
+    "date": "2026-01-27",
+    "kospi": 5084.85,
+    "kosdaq": null,
+    "samsung": 159500,
+    "hynix": 798526,
+    "kospi_change_pct": 2.73,
+    "samsung_change_pct": 4.87,
+    "hynix_change_pct": 8.7,
+    "volume": 47616000,
+    "trading_value_billion": 284.96
+  },
+  {
+    "date": "2026-01-28",
+    "kospi": 5170.81,
+    "kosdaq": null,
+    "samsung": 162400,
+    "hynix": 839451,
+    "kospi_change_pct": 1.69,
+    "samsung_change_pct": 1.82,
+    "hynix_change_pct": 5.13,
+    "volume": 59311000,
+    "trading_value_billion": 308.56
+  },
+  {
+    "date": "2026-01-29",
+    "kospi": 5221.25,
+    "kosdaq": null,
+    "samsung": 160700,
+    "hynix": 859414,
+    "kospi_change_pct": 0.98,
+    "samsung_change_pct": -1.05,
+    "hynix_change_pct": 2.38,
+    "volume": 69966000,
+    "trading_value_billion": 358.7
+  },
+  {
+    "date": "2026-01-30",
+    "kospi": 5224.36,
+    "kosdaq": null,
+    "samsung": 160500,
+    "hynix": 907325,
+    "kospi_change_pct": 0.06,
+    "samsung_change_pct": -0.12,
+    "hynix_change_pct": 5.57,
+    "volume": 86254000,
+    "trading_value_billion": 354.93
+  },
+  {
+    "date": "2026-02-02",
+    "kospi": 4949.67,
+    "kosdaq": null,
+    "samsung": 150400,
+    "hynix": 828471,
+    "kospi_change_pct": -5.26,
+    "samsung_change_pct": -6.29,
+    "hynix_change_pct": -8.69,
+    "volume": 57254000,
+    "trading_value_billion": 320.91
+  },
+  {
+    "date": "2026-02-03",
+    "kospi": 5288.08,
+    "kosdaq": null,
+    "samsung": 167500,
+    "hynix": 905329,
+    "kospi_change_pct": 6.84,
+    "samsung_change_pct": 11.37,
+    "hynix_change_pct": 9.28,
+    "volume": 67261000,
+    "trading_value_billion": 300.16
+  },
+  {
+    "date": "2026-02-04",
+    "kospi": 5371.1,
+    "kosdaq": null,
+    "samsung": 169100,
+    "hynix": 898342,
+    "kospi_change_pct": 1.57,
+    "samsung_change_pct": 0.96,
+    "hynix_change_pct": -0.77,
+    "volume": 78992000,
+    "trading_value_billion": 304.33
+  },
+  {
+    "date": "2026-02-05",
+    "kospi": 5163.57,
+    "kosdaq": null,
+    "samsung": 159300,
+    "hynix": 840449,
+    "kospi_change_pct": -3.86,
+    "samsung_change_pct": -5.8,
+    "hynix_change_pct": -6.44,
+    "volume": 91191000,
+    "trading_value_billion": 323.86
+  },
+  {
+    "date": "2026-02-06",
+    "kospi": 5089.14,
+    "kosdaq": null,
+    "samsung": 158600,
+    "hynix": 837454,
+    "kospi_change_pct": -1.44,
+    "samsung_change_pct": -0.44,
+    "hynix_change_pct": -0.36,
+    "volume": 74576000,
+    "trading_value_billion": 299.12
+  },
+  {
+    "date": "2026-02-09",
+    "kospi": 5298.04,
+    "kosdaq": null,
+    "samsung": 166400,
+    "hynix": 885366,
+    "kospi_change_pct": 4.1,
+    "samsung_change_pct": 4.92,
+    "hynix_change_pct": 5.72,
+    "volume": 61766000,
+    "trading_value_billion": 264.54
+  },
+  {
+    "date": "2026-02-10",
+    "kospi": 5301.69,
+    "kosdaq": null,
+    "samsung": 165800,
+    "hynix": 874386,
+    "kospi_change_pct": 0.07,
+    "samsung_change_pct": -0.36,
+    "hynix_change_pct": -1.24,
+    "volume": 71227000,
+    "trading_value_billion": 232.76
+  },
+  {
+    "date": "2026-02-11",
+    "kospi": 5354.49,
+    "kosdaq": null,
+    "samsung": 167800,
+    "hynix": 858416,
+    "kospi_change_pct": 1.0,
+    "samsung_change_pct": 1.21,
+    "hynix_change_pct": -1.83,
+    "volume": 75377000,
+    "trading_value_billion": 256.26
+  },
+  {
+    "date": "2026-02-12",
+    "kospi": 5522.27,
+    "kosdaq": null,
+    "samsung": 178600,
+    "hynix": 886364,
+    "kospi_change_pct": 3.13,
+    "samsung_change_pct": 6.44,
+    "hynix_change_pct": 3.26,
+    "volume": 75061000,
+    "trading_value_billion": 323.23
+  },
+  {
+    "date": "2026-02-13",
+    "kospi": 5507.01,
+    "kosdaq": null,
+    "samsung": 181200,
+    "hynix": 878379,
+    "kospi_change_pct": -0.28,
+    "samsung_change_pct": 1.46,
+    "hynix_change_pct": -0.9,
+    "volume": 129066000,
+    "trading_value_billion": 308.21
+  },
+  {
+    "date": "2026-02-19",
+    "kospi": 5677.25,
+    "kosdaq": null,
+    "samsung": 190000,
+    "hynix": 892353,
+    "kospi_change_pct": 3.09,
+    "samsung_change_pct": 4.86,
+    "hynix_change_pct": 1.59,
+    "volume": 118584000,
+    "trading_value_billion": 289.46
+  },
+  {
+    "date": "2026-02-20",
+    "kospi": 5808.53,
+    "kosdaq": null,
+    "samsung": 190100,
+    "hynix": 947252,
+    "kospi_change_pct": 2.31,
+    "samsung_change_pct": 0.05,
+    "hynix_change_pct": 6.15,
+    "volume": 174930000,
+    "trading_value_billion": 331.2
+  },
+  {
+    "date": "2026-02-23",
+    "kospi": 5846.09,
+    "kosdaq": null,
+    "samsung": 193000,
+    "hynix": 949248,
+    "kospi_change_pct": 0.65,
+    "samsung_change_pct": 1.53,
+    "hynix_change_pct": 0.21,
+    "volume": 147779000,
+    "trading_value_billion": 320.44
+  },
+  {
+    "date": "2026-02-24",
+    "kospi": 5969.64,
+    "kosdaq": null,
+    "samsung": 200000,
+    "hynix": 1003148,
+    "kospi_change_pct": 2.11,
+    "samsung_change_pct": 3.63,
+    "hynix_change_pct": 5.68,
+    "volume": 160200000,
+    "trading_value_billion": 313.73
+  },
+  {
+    "date": "2026-02-25",
+    "kospi": 6083.86,
+    "kosdaq": null,
+    "samsung": 203500,
+    "hynix": 1016125,
+    "kospi_change_pct": 1.91,
+    "samsung_change_pct": 1.75,
+    "hynix_change_pct": 1.29,
+    "volume": 141525000,
+    "trading_value_billion": 352.85
+  },
+  {
+    "date": "2026-02-26",
+    "kospi": 6307.27,
+    "kosdaq": null,
+    "samsung": 218000,
+    "hynix": 1099000,
+    "kospi_change_pct": 3.67,
+    "samsung_change_pct": 7.13,
+    "hynix_change_pct": 8.16,
+    "volume": 140962000,
+    "trading_value_billion": 389.3
+  },
+  {
+    "date": "2026-02-27",
+    "kospi": 6244.13,
+    "kosdaq": null,
+    "samsung": 216500,
+    "hynix": 1061000,
+    "kospi_change_pct": -1.0,
+    "samsung_change_pct": -0.69,
+    "hynix_change_pct": -3.46,
+    "volume": 116606000,
+    "trading_value_billion": 549.39
+  },
+  {
+    "date": "2026-03-03",
+    "kospi": 5791.91,
+    "kosdaq": null,
+    "samsung": 195100,
+    "hynix": 939000,
+    "kospi_change_pct": -7.24,
+    "samsung_change_pct": -9.88,
+    "hynix_change_pct": -11.5,
+    "volume": 121818000,
+    "trading_value_billion": 525.32
+  },
+  {
+    "date": "2026-03-04",
+    "kospi": 5093.54,
+    "kosdaq": null,
+    "samsung": 172200,
+    "hynix": 849000,
+    "kospi_change_pct": -12.06,
+    "samsung_change_pct": -11.74,
+    "hynix_change_pct": -9.58,
+    "volume": 1637606,
+    "trading_value_billion": null
   }
-  return dates;
-}
+];
 
-// Deterministic pseudo-random (mulberry32)
-function mulberry32(seed) {
-  return function () {
-    let t = (seed += 0x6d2b79f5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-const rng = mulberry32(42);
-
-function walk(start, drift, vol, n) {
-  const out = [start];
-  for (let i = 1; i < n; i++) {
-    out.push(out[i - 1] * (1 + drift + vol * (rng() - 0.5)));
+export const CREDIT_DATA = [
+  {
+    "date": "2025-01-01",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-02",
+    "credit_balance_billion": 15572.9,
+    "deposit_billion": 57058.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-03",
+    "credit_balance_billion": 15466.2,
+    "deposit_billion": 54550.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-06",
+    "credit_balance_billion": 15596.9,
+    "deposit_billion": 53795.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-07",
+    "credit_balance_billion": 15617.1,
+    "deposit_billion": 52336.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-08",
+    "credit_balance_billion": 15762.0,
+    "deposit_billion": 51940.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-09",
+    "credit_balance_billion": 15908.3,
+    "deposit_billion": 52755.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-10",
+    "credit_balance_billion": 15987.1,
+    "deposit_billion": 52279.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-13",
+    "credit_balance_billion": 16068.4,
+    "deposit_billion": 53747.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-14",
+    "credit_balance_billion": 16202.2,
+    "deposit_billion": 53769.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-15",
+    "credit_balance_billion": 16309.2,
+    "deposit_billion": 52787.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-16",
+    "credit_balance_billion": 16379.9,
+    "deposit_billion": 51869.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-17",
+    "credit_balance_billion": 16395.6,
+    "deposit_billion": 51270.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-20",
+    "credit_balance_billion": 16347.5,
+    "deposit_billion": 53225.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-21",
+    "credit_balance_billion": 16468.1,
+    "deposit_billion": 52798.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-22",
+    "credit_balance_billion": 16567.2,
+    "deposit_billion": 52102.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-23",
+    "credit_balance_billion": 16640.4,
+    "deposit_billion": 52112.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-24",
+    "credit_balance_billion": 16572.0,
+    "deposit_billion": 54144.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-27",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-28",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-29",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-30",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-01-31",
+    "credit_balance_billion": 16725.8,
+    "deposit_billion": 55578.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-03",
+    "credit_balance_billion": 16646.5,
+    "deposit_billion": 58231.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-04",
+    "credit_balance_billion": 16795.0,
+    "deposit_billion": 57753.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-05",
+    "credit_balance_billion": 16699.0,
+    "deposit_billion": 53333.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-06",
+    "credit_balance_billion": 16603.7,
+    "deposit_billion": 54673.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-07",
+    "credit_balance_billion": 16650.8,
+    "deposit_billion": 52824.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-10",
+    "credit_balance_billion": 16727.4,
+    "deposit_billion": 53106.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-11",
+    "credit_balance_billion": 16883.1,
+    "deposit_billion": 53364.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-12",
+    "credit_balance_billion": 17012.5,
+    "deposit_billion": 52892.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-13",
+    "credit_balance_billion": 17097.8,
+    "deposit_billion": 53922.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-14",
+    "credit_balance_billion": 17219.3,
+    "deposit_billion": 54510.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-17",
+    "credit_balance_billion": 17248.5,
+    "deposit_billion": 53508.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-18",
+    "credit_balance_billion": 17384.7,
+    "deposit_billion": 53914.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-19",
+    "credit_balance_billion": 17486.1,
+    "deposit_billion": 55117.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-20",
+    "credit_balance_billion": 17669.8,
+    "deposit_billion": 54622.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-21",
+    "credit_balance_billion": 17687.7,
+    "deposit_billion": 54958.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-24",
+    "credit_balance_billion": 17764.0,
+    "deposit_billion": 54029.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-25",
+    "credit_balance_billion": 17818.8,
+    "deposit_billion": 54898.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-26",
+    "credit_balance_billion": 17955.9,
+    "deposit_billion": 54494.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-27",
+    "credit_balance_billion": 18067.3,
+    "deposit_billion": 55218.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-02-28",
+    "credit_balance_billion": 18108.2,
+    "deposit_billion": 56052.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-03",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-04",
+    "credit_balance_billion": 18178.6,
+    "deposit_billion": 57232.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-05",
+    "credit_balance_billion": 18236.0,
+    "deposit_billion": 53548.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-06",
+    "credit_balance_billion": 18081.3,
+    "deposit_billion": 52877.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-07",
+    "credit_balance_billion": 18092.8,
+    "deposit_billion": 51289.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-10",
+    "credit_balance_billion": 18128.5,
+    "deposit_billion": 53767.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-11",
+    "credit_balance_billion": 18029.8,
+    "deposit_billion": 53300.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-12",
+    "credit_balance_billion": 18055.7,
+    "deposit_billion": 52806.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-13",
+    "credit_balance_billion": 18030.5,
+    "deposit_billion": 52246.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-14",
+    "credit_balance_billion": 17983.0,
+    "deposit_billion": 51356.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-17",
+    "credit_balance_billion": 18044.2,
+    "deposit_billion": 51861.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-18",
+    "credit_balance_billion": 18080.1,
+    "deposit_billion": 50956.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-19",
+    "credit_balance_billion": 18093.6,
+    "deposit_billion": 51913.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-20",
+    "credit_balance_billion": 18161.4,
+    "deposit_billion": 52497.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-21",
+    "credit_balance_billion": 18164.0,
+    "deposit_billion": 53615.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-24",
+    "credit_balance_billion": 18031.9,
+    "deposit_billion": 53282.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-25",
+    "credit_balance_billion": 17842.7,
+    "deposit_billion": 55162.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-26",
+    "credit_balance_billion": 17830.8,
+    "deposit_billion": 55671.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-27",
+    "credit_balance_billion": 17718.4,
+    "deposit_billion": 54693.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-28",
+    "credit_balance_billion": 17572.4,
+    "deposit_billion": 56932.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-03-31",
+    "credit_balance_billion": 17471.2,
+    "deposit_billion": 58474.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-01",
+    "credit_balance_billion": 17259.6,
+    "deposit_billion": 59496.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-02",
+    "credit_balance_billion": 16992.8,
+    "deposit_billion": 54357.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-03",
+    "credit_balance_billion": 16855.2,
+    "deposit_billion": 55320.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-04",
+    "credit_balance_billion": 16920.1,
+    "deposit_billion": 55607.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-07",
+    "credit_balance_billion": 16833.8,
+    "deposit_billion": 57843.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-08",
+    "credit_balance_billion": 16843.1,
+    "deposit_billion": 55909.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-09",
+    "credit_balance_billion": 16667.6,
+    "deposit_billion": 54160.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-10",
+    "credit_balance_billion": 16426.5,
+    "deposit_billion": 54692.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-11",
+    "credit_balance_billion": 16321.7,
+    "deposit_billion": 53618.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-14",
+    "credit_balance_billion": 16184.8,
+    "deposit_billion": 54875.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-15",
+    "credit_balance_billion": 16453.4,
+    "deposit_billion": 54754.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-16",
+    "credit_balance_billion": 16656.6,
+    "deposit_billion": 52977.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-17",
+    "credit_balance_billion": 16773.7,
+    "deposit_billion": 53633.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-18",
+    "credit_balance_billion": 16891.5,
+    "deposit_billion": 53824.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-21",
+    "credit_balance_billion": 16946.6,
+    "deposit_billion": 53836.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-22",
+    "credit_balance_billion": 17043.8,
+    "deposit_billion": 53962.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-23",
+    "credit_balance_billion": 17141.3,
+    "deposit_billion": 54397.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-24",
+    "credit_balance_billion": 17297.2,
+    "deposit_billion": 54307.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-25",
+    "credit_balance_billion": 17264.4,
+    "deposit_billion": 55310.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-28",
+    "credit_balance_billion": 17384.7,
+    "deposit_billion": 55941.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-29",
+    "credit_balance_billion": 17395.8,
+    "deposit_billion": 57561.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-04-30",
+    "credit_balance_billion": 17429.0,
+    "deposit_billion": 57547.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-01",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-02",
+    "credit_balance_billion": 17401.1,
+    "deposit_billion": 56530.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-05",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-06",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-07",
+    "credit_balance_billion": 17483.8,
+    "deposit_billion": 56449.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-08",
+    "credit_balance_billion": 17381.3,
+    "deposit_billion": 56436.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-09",
+    "credit_balance_billion": 17395.3,
+    "deposit_billion": 54262.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-12",
+    "credit_balance_billion": 17530.7,
+    "deposit_billion": 56162.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-13",
+    "credit_balance_billion": 17654.8,
+    "deposit_billion": 55206.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-14",
+    "credit_balance_billion": 17596.7,
+    "deposit_billion": 57471.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-15",
+    "credit_balance_billion": 17672.1,
+    "deposit_billion": 56518.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-16",
+    "credit_balance_billion": 17646.5,
+    "deposit_billion": 56274.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-19",
+    "credit_balance_billion": 17786.0,
+    "deposit_billion": 56185.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-20",
+    "credit_balance_billion": 17810.4,
+    "deposit_billion": 56545.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-21",
+    "credit_balance_billion": 17837.1,
+    "deposit_billion": 56101.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-22",
+    "credit_balance_billion": 17838.4,
+    "deposit_billion": 56213.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-23",
+    "credit_balance_billion": 17860.6,
+    "deposit_billion": 56750.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-26",
+    "credit_balance_billion": 18008.9,
+    "deposit_billion": 56756.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-27",
+    "credit_balance_billion": 18039.4,
+    "deposit_billion": 57500.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-28",
+    "credit_balance_billion": 18031.6,
+    "deposit_billion": 56402.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-29",
+    "credit_balance_billion": 18207.0,
+    "deposit_billion": 58029.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-05-30",
+    "credit_balance_billion": 18139.0,
+    "deposit_billion": 57297.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-02",
+    "credit_balance_billion": 18215.1,
+    "deposit_billion": 60188.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-03",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-04",
+    "credit_balance_billion": 18379.8,
+    "deposit_billion": 60035.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-05",
+    "credit_balance_billion": 18418.4,
+    "deposit_billion": 58369.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-06",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-09",
+    "credit_balance_billion": 18397.6,
+    "deposit_billion": 59660.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-10",
+    "credit_balance_billion": 18379.4,
+    "deposit_billion": 62349.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-11",
+    "credit_balance_billion": 18580.6,
+    "deposit_billion": 61982.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-12",
+    "credit_balance_billion": 18699.4,
+    "deposit_billion": 62944.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-13",
+    "credit_balance_billion": 18834.9,
+    "deposit_billion": 63819.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-16",
+    "credit_balance_billion": 19051.4,
+    "deposit_billion": 64965.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-17",
+    "credit_balance_billion": 19226.1,
+    "deposit_billion": 65020.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-18",
+    "credit_balance_billion": 19406.1,
+    "deposit_billion": 63498.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-19",
+    "credit_balance_billion": 19453.6,
+    "deposit_billion": 63604.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-20",
+    "credit_balance_billion": 19669.1,
+    "deposit_billion": 64214.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-23",
+    "credit_balance_billion": 19943.5,
+    "deposit_billion": 65017.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-24",
+    "credit_balance_billion": 19984.4,
+    "deposit_billion": 66411.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-25",
+    "credit_balance_billion": 20423.7,
+    "deposit_billion": 66676.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-26",
+    "credit_balance_billion": 20383.4,
+    "deposit_billion": 69056.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-27",
+    "credit_balance_billion": 20529.9,
+    "deposit_billion": 67712.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-06-30",
+    "credit_balance_billion": 20638.7,
+    "deposit_billion": 68972.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-01",
+    "credit_balance_billion": 20734.7,
+    "deposit_billion": 70413.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-02",
+    "credit_balance_billion": 20736.7,
+    "deposit_billion": 66053.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-03",
+    "credit_balance_billion": 20636.9,
+    "deposit_billion": 66285.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-04",
+    "credit_balance_billion": 20661.0,
+    "deposit_billion": 65384.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-07",
+    "credit_balance_billion": 20649.9,
+    "deposit_billion": 67337.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-08",
+    "credit_balance_billion": 20675.6,
+    "deposit_billion": 66503.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-09",
+    "credit_balance_billion": 20707.2,
+    "deposit_billion": 65195.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-10",
+    "credit_balance_billion": 20861.7,
+    "deposit_billion": 65937.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-11",
+    "credit_balance_billion": 21116.8,
+    "deposit_billion": 66369.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-14",
+    "credit_balance_billion": 21185.3,
+    "deposit_billion": 68081.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-15",
+    "credit_balance_billion": 21248.5,
+    "deposit_billion": 66852.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-16",
+    "credit_balance_billion": 21316.3,
+    "deposit_billion": 65595.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-17",
+    "credit_balance_billion": 21434.2,
+    "deposit_billion": 66635.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-18",
+    "credit_balance_billion": 21588.8,
+    "deposit_billion": 65364.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-21",
+    "credit_balance_billion": 21600.0,
+    "deposit_billion": 65265.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-22",
+    "credit_balance_billion": 21573.6,
+    "deposit_billion": 65607.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-23",
+    "credit_balance_billion": 21566.2,
+    "deposit_billion": 66402.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-24",
+    "credit_balance_billion": 21667.4,
+    "deposit_billion": 64766.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-25",
+    "credit_balance_billion": 21672.5,
+    "deposit_billion": 65162.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-28",
+    "credit_balance_billion": 21626.1,
+    "deposit_billion": 67724.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-29",
+    "credit_balance_billion": 21635.2,
+    "deposit_billion": 67357.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-30",
+    "credit_balance_billion": 21705.3,
+    "deposit_billion": 68236.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-07-31",
+    "credit_balance_billion": 21635.3,
+    "deposit_billion": 68685.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-01",
+    "credit_balance_billion": 21611.4,
+    "deposit_billion": 71297.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-04",
+    "credit_balance_billion": 21615.4,
+    "deposit_billion": 70294.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-05",
+    "credit_balance_billion": 21481.8,
+    "deposit_billion": 67008.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-06",
+    "credit_balance_billion": 21332.0,
+    "deposit_billion": 66281.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-07",
+    "credit_balance_billion": 21404.9,
+    "deposit_billion": 66876.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-08",
+    "credit_balance_billion": 21613.7,
+    "deposit_billion": 67473.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-11",
+    "credit_balance_billion": 21861.9,
+    "deposit_billion": 67961.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-12",
+    "credit_balance_billion": 22013.5,
+    "deposit_billion": 68083.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-13",
+    "credit_balance_billion": 22025.6,
+    "deposit_billion": 67833.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-14",
+    "credit_balance_billion": 22034.5,
+    "deposit_billion": 69397.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-15",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-18",
+    "credit_balance_billion": 22066.3,
+    "deposit_billion": 67601.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-19",
+    "credit_balance_billion": 22101.5,
+    "deposit_billion": 67493.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-20",
+    "credit_balance_billion": 22118.5,
+    "deposit_billion": 68508.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-21",
+    "credit_balance_billion": 21983.1,
+    "deposit_billion": 67463.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-22",
+    "credit_balance_billion": 21776.2,
+    "deposit_billion": 66622.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-25",
+    "credit_balance_billion": 21779.9,
+    "deposit_billion": 66124.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-26",
+    "credit_balance_billion": 21687.4,
+    "deposit_billion": 68274.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-27",
+    "credit_balance_billion": 21720.8,
+    "deposit_billion": 66861.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-28",
+    "credit_balance_billion": 21903.3,
+    "deposit_billion": 67359.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-08-29",
+    "credit_balance_billion": 21987.4,
+    "deposit_billion": 66299.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-01",
+    "credit_balance_billion": 22051.2,
+    "deposit_billion": 68477.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-02",
+    "credit_balance_billion": 22088.3,
+    "deposit_billion": 66185.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-03",
+    "credit_balance_billion": 22016.9,
+    "deposit_billion": 65459.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-04",
+    "credit_balance_billion": 21977.0,
+    "deposit_billion": 65940.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-05",
+    "credit_balance_billion": 22046.0,
+    "deposit_billion": 64979.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-08",
+    "credit_balance_billion": 22079.4,
+    "deposit_billion": 65800.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-09",
+    "credit_balance_billion": 22176.1,
+    "deposit_billion": 68378.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-10",
+    "credit_balance_billion": 22221.2,
+    "deposit_billion": 70590.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-11",
+    "credit_balance_billion": 22271.3,
+    "deposit_billion": 71011.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-12",
+    "credit_balance_billion": 22233.6,
+    "deposit_billion": 72887.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-15",
+    "credit_balance_billion": 22322.8,
+    "deposit_billion": 74764.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-16",
+    "credit_balance_billion": 22348.9,
+    "deposit_billion": 74928.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-17",
+    "credit_balance_billion": 22596.4,
+    "deposit_billion": 73025.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-18",
+    "credit_balance_billion": 22695.8,
+    "deposit_billion": 73606.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-19",
+    "credit_balance_billion": 22858.3,
+    "deposit_billion": 72551.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-22",
+    "credit_balance_billion": 22979.8,
+    "deposit_billion": 73560.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-23",
+    "credit_balance_billion": 23100.4,
+    "deposit_billion": 74921.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-24",
+    "credit_balance_billion": 23171.4,
+    "deposit_billion": 75197.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-25",
+    "credit_balance_billion": 23326.0,
+    "deposit_billion": 75995.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-26",
+    "credit_balance_billion": 23349.6,
+    "deposit_billion": 75897.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-29",
+    "credit_balance_billion": 23268.9,
+    "deposit_billion": 76808.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-09-30",
+    "credit_balance_billion": 23305.5,
+    "deposit_billion": 76447.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-01",
+    "credit_balance_billion": 23160.0,
+    "deposit_billion": 76530.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-02",
+    "credit_balance_billion": 23161.8,
+    "deposit_billion": 73135.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-03",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-06",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-07",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-08",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-09",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-10",
+    "credit_balance_billion": 23062.2,
+    "deposit_billion": 76322.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-13",
+    "credit_balance_billion": 23087.1,
+    "deposit_billion": 80190.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-14",
+    "credit_balance_billion": 23375.5,
+    "deposit_billion": 79974.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-15",
+    "credit_balance_billion": 23641.5,
+    "deposit_billion": 78651.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-16",
+    "credit_balance_billion": 23581.5,
+    "deposit_billion": 76537.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-17",
+    "credit_balance_billion": 23689.5,
+    "deposit_billion": 78314.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-20",
+    "credit_balance_billion": 23862.1,
+    "deposit_billion": 80625.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-21",
+    "credit_balance_billion": 23723.5,
+    "deposit_billion": 80329.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-22",
+    "credit_balance_billion": 24037.6,
+    "deposit_billion": 80480.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-23",
+    "credit_balance_billion": 24211.2,
+    "deposit_billion": 80168.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-24",
+    "credit_balance_billion": 24440.4,
+    "deposit_billion": 79482.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-27",
+    "credit_balance_billion": 24575.1,
+    "deposit_billion": 81091.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-28",
+    "credit_balance_billion": 24611.5,
+    "deposit_billion": 83873.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-29",
+    "credit_balance_billion": 24878.7,
+    "deposit_billion": 85915.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-30",
+    "credit_balance_billion": 25056.4,
+    "deposit_billion": 85713.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-10-31",
+    "credit_balance_billion": 25306.4,
+    "deposit_billion": 85456.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-03",
+    "credit_balance_billion": 25236.9,
+    "deposit_billion": 86770.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-04",
+    "credit_balance_billion": 25286.2,
+    "deposit_billion": 86822.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-05",
+    "credit_balance_billion": 25591.4,
+    "deposit_billion": 88270.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-06",
+    "credit_balance_billion": 25637.1,
+    "deposit_billion": 86955.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-07",
+    "credit_balance_billion": 25984.6,
+    "deposit_billion": 85722.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-10",
+    "credit_balance_billion": 25882.9,
+    "deposit_billion": 83109.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-11",
+    "credit_balance_billion": 25754.6,
+    "deposit_billion": 83030.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-12",
+    "credit_balance_billion": 25769.0,
+    "deposit_billion": 82468.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-13",
+    "credit_balance_billion": 26001.5,
+    "deposit_billion": 82584.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-14",
+    "credit_balance_billion": 26145.3,
+    "deposit_billion": 82724.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-17",
+    "credit_balance_billion": 26349.1,
+    "deposit_billion": 85944.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-18",
+    "credit_balance_billion": 26548.1,
+    "deposit_billion": 79661.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-19",
+    "credit_balance_billion": 26594.5,
+    "deposit_billion": 80027.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-20",
+    "credit_balance_billion": 26602.2,
+    "deposit_billion": 78212.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-21",
+    "credit_balance_billion": 26524.8,
+    "deposit_billion": 78826.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-24",
+    "credit_balance_billion": 26515.5,
+    "deposit_billion": 80195.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-25",
+    "credit_balance_billion": 26416.9,
+    "deposit_billion": 75622.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-26",
+    "credit_balance_billion": 26260.9,
+    "deposit_billion": 77954.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-27",
+    "credit_balance_billion": 26216.4,
+    "deposit_billion": 77471.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-11-28",
+    "credit_balance_billion": 26223.5,
+    "deposit_billion": 77912.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-01",
+    "credit_balance_billion": 26359.7,
+    "deposit_billion": 80176.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-02",
+    "credit_balance_billion": 26569.2,
+    "deposit_billion": 77067.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-03",
+    "credit_balance_billion": 26593.4,
+    "deposit_billion": 76964.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-04",
+    "credit_balance_billion": 26664.8,
+    "deposit_billion": 77407.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-05",
+    "credit_balance_billion": 26847.7,
+    "deposit_billion": 78137.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-08",
+    "credit_balance_billion": 27125.1,
+    "deposit_billion": 79386.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-09",
+    "credit_balance_billion": 27103.4,
+    "deposit_billion": 80575.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-10",
+    "credit_balance_billion": 27176.1,
+    "deposit_billion": 80566.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-11",
+    "credit_balance_billion": 27161.6,
+    "deposit_billion": 81641.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-12",
+    "credit_balance_billion": 27095.0,
+    "deposit_billion": 83941.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-15",
+    "credit_balance_billion": 27173.9,
+    "deposit_billion": 82864.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-16",
+    "credit_balance_billion": 27097.0,
+    "deposit_billion": 84352.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-17",
+    "credit_balance_billion": 27294.3,
+    "deposit_billion": 83526.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-18",
+    "credit_balance_billion": 27108.6,
+    "deposit_billion": 81710.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-19",
+    "credit_balance_billion": 27034.1,
+    "deposit_billion": 81034.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-22",
+    "credit_balance_billion": 27009.7,
+    "deposit_billion": 81719.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-23",
+    "credit_balance_billion": 27000.2,
+    "deposit_billion": 81076.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-24",
+    "credit_balance_billion": 27036.9,
+    "deposit_billion": 83304.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-25",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-26",
+    "credit_balance_billion": 27010.3,
+    "deposit_billion": 85425.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-29",
+    "credit_balance_billion": 27056.0,
+    "deposit_billion": 86475.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-30",
+    "credit_balance_billion": 27024.1,
+    "deposit_billion": 87398.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2025-12-31",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-01",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-02",
+    "credit_balance_billion": 27183.9,
+    "deposit_billion": 89521.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-05",
+    "credit_balance_billion": 27387.8,
+    "deposit_billion": 89130.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-06",
+    "credit_balance_billion": 27456.8,
+    "deposit_billion": 88633.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-07",
+    "credit_balance_billion": 27627.7,
+    "deposit_billion": 89765.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-08",
+    "credit_balance_billion": 27945.0,
+    "deposit_billion": 92853.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-09",
+    "credit_balance_billion": 28103.7,
+    "deposit_billion": 88872.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-12",
+    "credit_balance_billion": 28280.4,
+    "deposit_billion": 88988.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-13",
+    "credit_balance_billion": 28314.7,
+    "deposit_billion": 88048.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-14",
+    "credit_balance_billion": 28351.0,
+    "deposit_billion": 89309.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-15",
+    "credit_balance_billion": 28501.6,
+    "deposit_billion": 92603.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-16",
+    "credit_balance_billion": 28690.4,
+    "deposit_billion": 91218.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-19",
+    "credit_balance_billion": 28751.3,
+    "deposit_billion": 93862.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-20",
+    "credit_balance_billion": 28680.7,
+    "deposit_billion": 95526.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-21",
+    "credit_balance_billion": 28829.2,
+    "deposit_billion": 96331.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-22",
+    "credit_balance_billion": 28664.9,
+    "deposit_billion": 95727.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-23",
+    "credit_balance_billion": 28765.0,
+    "deposit_billion": 93809.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-26",
+    "credit_balance_billion": 29091.0,
+    "deposit_billion": 97540.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-27",
+    "credit_balance_billion": 28984.7,
+    "deposit_billion": 100282.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-28",
+    "credit_balance_billion": 29283.0,
+    "deposit_billion": 103362.3,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-29",
+    "credit_balance_billion": 29758.6,
+    "deposit_billion": 103707.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-30",
+    "credit_balance_billion": 29894.6,
+    "deposit_billion": 106032.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-02",
+    "credit_balance_billion": 30056.2,
+    "deposit_billion": 111296.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-03",
+    "credit_balance_billion": 30110.2,
+    "deposit_billion": 105584.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-04",
+    "credit_balance_billion": 30517.4,
+    "deposit_billion": 100817.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-05",
+    "credit_balance_billion": 30371.2,
+    "deposit_billion": 104866.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-06",
+    "credit_balance_billion": 30670.7,
+    "deposit_billion": 109009.9,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-09",
+    "credit_balance_billion": 31180.9,
+    "deposit_billion": 98590.5,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-10",
+    "credit_balance_billion": 31139.8,
+    "deposit_billion": 95299.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-11",
+    "credit_balance_billion": 30894.7,
+    "deposit_billion": 98163.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-12",
+    "credit_balance_billion": 31041.4,
+    "deposit_billion": 103018.4,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-13",
+    "credit_balance_billion": 31052.8,
+    "deposit_billion": 99273.6,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-16",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-17",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-18",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-19",
+    "credit_balance_billion": 31163.5,
+    "deposit_billion": 106570.0,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-20",
+    "credit_balance_billion": 31203.4,
+    "deposit_billion": 104129.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-23",
+    "credit_balance_billion": 31265.7,
+    "deposit_billion": 108290.1,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-24",
+    "credit_balance_billion": 31506.0,
+    "deposit_billion": 107903.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-25",
+    "credit_balance_billion": 31666.1,
+    "deposit_billion": 109467.7,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-26",
+    "credit_balance_billion": 31903.1,
+    "deposit_billion": 119483.2,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-02-27",
+    "credit_balance_billion": 32188.1,
+    "deposit_billion": 118748.8,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-03-02",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-03-03",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-03-04",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
   }
-  return out;
-}
+];
 
-// --- Generate 42 business days (~2 months) ---
-const DATES = bizDays("2026-01-02", 42);
-const N = DATES.length;
-
-const kospi = walk(2580, -0.001, 0.04, N);
-const kosdaq = walk(780, -0.0015, 0.035, N);
-const samsung = walk(65000, -0.0012, 0.028, N);
-const hynix = walk(170000, -0.0008, 0.032, N);
-const usdKrw = walk(1420, 0.0008, 0.012, N);
-const wti = walk(72, 0.0005, 0.025, N);
-const vix = walk(18, 0.003, 0.06, N);
-const sp500 = walk(5800, -0.0003, 0.015, N);
-const creditBase = walk(20500, 0.002, 0.025, N);
-const depositBase = walk(55000, -0.001, 0.03, N);
-
-// Inject credit shock events: day 15 surge (+3%), day 30 plunge (-3%)
-if (N > 15) creditBase[15] *= 1.03;
-if (N > 30) creditBase[30] *= 0.97;
-// Propagate shock forward
-for (let i = 16; i < N && i <= 20; i++) creditBase[i] = creditBase[i - 1] * (1 + 0.002 + 0.025 * (rng() - 0.5));
-for (let i = 31; i < N && i <= 35; i++) creditBase[i] = creditBase[i - 1] * (1 + 0.002 + 0.025 * (rng() - 0.5));
-
-// --- Exports ---
-
-export const MARKET_DATA = DATES.map((date, i) => ({
-  date,
-  kospi: Math.round(kospi[i]),
-  kosdaq: Math.round(kosdaq[i]),
-  samsung: Math.round(samsung[i] / 100) * 100,
-  hynix: Math.round(hynix[i] / 1000) * 1000,
-  kospi_change_pct:
-    i > 0 ? +((kospi[i] / kospi[i - 1] - 1) * 100).toFixed(2) : 0,
-  samsung_change_pct:
-    i > 0 ? +((samsung[i] / samsung[i - 1] - 1) * 100).toFixed(2) : 0,
-  hynix_change_pct:
-    i > 0 ? +((hynix[i] / hynix[i - 1] - 1) * 100).toFixed(2) : 0,
-  volume: Math.round(400000000 + rng() * 200000000),
-  trading_value_billion: Math.round(8000 + rng() * 5000),
-}));
-
-export const CREDIT_DATA = DATES.map((date, i) => ({
-  date,
-  credit_balance_billion: Math.round(creditBase[i]),
-  deposit_billion: Math.round(depositBase[i]),
-  forced_liq_billion: Math.round(30 + rng() * 350),
-  estimated: i >= N - 2,
-}));
-
-export const INVESTOR_FLOWS = DATES.map((date) => {
-  const indiv = Math.round(-4000 + rng() * 10000);
-  const finInvest = Math.round(-500 + rng() * 2000); // 금투(ETF): 개인의 ~20%
-  const foreign = Math.round(-5000 + rng() * 8000);
-  const noise = Math.round((rng() - 0.5) * 500);
-  return {
-    date,
-    individual_billion: indiv,
-    financial_invest_billion: finInvest,
-    retail_billion: indiv + finInvest, // 개인+금투 합산
-    foreign_billion: foreign,
-    institution_billion: -(indiv + finInvest + foreign) + noise,
-  };
-});
-
-export const GLOBAL_DATA = DATES.map((date, i) => ({
-  date,
-  usd_krw: +usdKrw[i].toFixed(1),
-  wti: +wti[i].toFixed(2),
-  vix: +vix[i].toFixed(2),
-  sp500: +sp500[i].toFixed(1),
-}));
-
-export const SHORT_SELLING = DATES.map((date, i) => ({
-  date,
-  market_total_billion: +(rng() * 3).toFixed(2),
-  gov_ban: i >= 35,
-}));
-
-// --- Cohort Data (Phase 2) ---
-
-const MARGIN_DISTRIBUTION = { 0.40: 0.35, 0.45: 0.35, 0.50: 0.25, 0.60: 0.05 };
-const MAINTENANCE_RATIO = 1.40;
-const FORCED_LIQ_RATIO = 1.30;
-const IMPACT_COEFFICIENT = 1.5;
-
-function buildCohorts(mode) {
-  const cohorts = []; // { entry_date, entry_kospi, amount }
-  for (let i = 1; i < N; i++) {
-    const delta = creditBase[i] - creditBase[i - 1];
-    if (delta > 0) {
-      cohorts.push({
-        entry_date: DATES[i],
-        entry_kospi: Math.round(kospi[i]),
-        amount: Math.round(delta),
-      });
-    } else if (delta < 0) {
-      let remaining = Math.abs(Math.round(delta));
-      const order = mode === "LIFO" ? [...cohorts].reverse() : cohorts;
-      for (const c of order) {
-        if (remaining <= 0) break;
-        const repay = Math.min(remaining, c.amount);
-        c.amount -= repay;
-        remaining -= repay;
-      }
-      // remove empty cohorts
-      for (let j = cohorts.length - 1; j >= 0; j--) {
-        if (cohorts[j].amount <= 0) cohorts.splice(j, 1);
-      }
-    }
+export const INVESTOR_FLOWS = [
+  {
+    "date": "2025-01-02",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-03",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-06",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-07",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-08",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-09",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 7.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-13",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -8.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-14",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-15",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-16",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-17",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-20",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-21",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-22",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-23",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -6.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-01-31",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -11.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-03",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -8.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-05",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-06",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-07",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-11",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-12",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-13",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-14",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-17",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-18",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-19",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-20",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-21",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-25",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-26",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-27",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-02-28",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -15.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-05",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-06",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-07",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-11",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -15.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-12",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-13",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-14",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-17",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-18",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-19",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-20",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 5.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-21",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 8.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-25",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-26",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-27",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-28",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -6.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-03-31",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -15.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-01",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-02",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -7.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-03",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -13.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -17.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-07",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -21.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-08",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -6.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-09",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -10.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-11",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -6.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-14",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-15",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-16",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-17",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-18",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-21",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-22",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-23",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-25",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-28",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-29",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-04-30",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-02",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-07",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-08",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-09",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-12",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-13",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-14",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-15",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-16",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-19",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-20",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-21",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-22",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-23",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-26",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-27",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-28",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-29",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-05-30",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -6.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-02",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 10.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-05",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 9.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-09",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 9.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-11",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-12",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-13",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-16",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-17",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-18",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-19",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-20",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 5.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-23",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-25",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-26",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -5.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-27",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -8.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-06-30",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -6.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-01",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-02",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-03",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-07",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-08",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-09",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-11",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-14",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-15",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-16",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-17",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-18",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-21",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 9.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-22",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-23",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 7.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-25",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-28",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-29",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-30",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 5.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-07-31",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-01",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -6.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-05",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-06",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-07",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-08",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-11",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-12",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-13",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-14",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-18",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-19",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-20",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-21",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-22",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-25",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-26",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -6.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-27",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-28",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-08-29",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-01",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-02",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-03",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-05",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-08",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-09",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 13.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-11",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-12",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 14.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-15",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-16",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 18.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-17",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-18",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-19",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-22",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 5.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-23",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-25",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-26",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -5.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-29",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-09-30",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-01",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 8.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-02",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 31.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 10.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-13",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -8.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-14",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 5.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-15",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-16",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-17",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-20",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-21",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-22",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -7.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-23",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 5.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-27",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-28",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -16.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-29",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-30",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-10-31",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 13.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-03",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -8.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -22.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-05",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -20.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-06",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -17.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-07",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-11",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-12",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-13",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 10.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-14",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -23.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-17",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 5.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-18",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -5.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-19",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -10.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-20",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 7.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-21",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -28.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -8.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-25",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-26",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 5.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-27",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-11-28",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -20.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-01",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-02",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 12.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-03",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 2.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -7.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-05",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 10.0,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-08",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-09",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-11",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-12",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 0.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-15",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -9.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-16",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -10.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-17",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -0.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-18",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-19",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -7.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-22",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 11.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-23",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 9.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 5.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-26",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 17.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-29",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2025-12-30",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -4.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-02",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 6.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-05",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 21.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-06",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -6.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-07",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 12.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-08",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-09",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -16.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-12",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-13",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-14",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -3.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-15",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-16",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-19",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 5.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-20",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-21",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-22",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -2.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-23",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-26",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.7,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-27",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 8.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-28",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 3.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-29",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -14.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-01-30",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -19.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-02",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -25.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-03",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 7.2,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -9.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-05",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -50.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-06",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -33.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-09",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 4.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-10",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 1.5,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-11",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 8.6,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-12",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": 30.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-13",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -9.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-19",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -9.3,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-20",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -7.4,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-23",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -11.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-24",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -1.9,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-25",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -13.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-26",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -21.1,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-02-27",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -70.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-03-03",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": -51.8,
+    "institution_billion": null
+  },
+  {
+    "date": "2026-03-04",
+    "individual_billion": null,
+    "financial_invest_billion": null,
+    "retail_billion": null,
+    "foreign_billion": null,
+    "institution_billion": null
   }
-  const currentKospi = Math.round(kospi[N - 1]);
-  return cohorts.map((c) => {
-    const pnl_pct = +((currentKospi - c.entry_kospi) / c.entry_kospi * 100).toFixed(2);
-    // weighted avg collateral ratio across margin distribution
-    let weightedRatio = 0;
-    for (const [mr, w] of Object.entries(MARGIN_DISTRIBUTION)) {
-      weightedRatio += ((currentKospi / c.entry_kospi) / (1 - Number(mr))) * w;
-    }
-    const ratio = +weightedRatio.toFixed(3);
-    let status;
-    if (ratio >= 1.60) status = "safe";
-    else if (ratio >= MAINTENANCE_RATIO) status = "watch";
-    else if (ratio >= FORCED_LIQ_RATIO) status = "marginCall";
-    else status = "danger";
-    return { ...c, pnl_pct, collateral_ratio: ratio, status };
-  });
-}
+];
 
-function buildPriceDistribution(cohorts) {
-  const bins = {};
-  for (const c of cohorts) {
-    const bin = Math.floor(c.entry_kospi / 100) * 100;
-    const key = `${bin}-${bin + 100}`;
-    if (!bins[key]) bins[key] = { range: key, bin, safe: 0, watch: 0, marginCall: 0, danger: 0 };
-    bins[key][c.status] += c.amount;
+export const GLOBAL_DATA = [
+  {
+    "date": "2025-01-02",
+    "usd_krw": 1473.5,
+    "wti": 73.13,
+    "vix": 17.93,
+    "sp500": 577.9
+  },
+  {
+    "date": "2025-01-03",
+    "usd_krw": 1471.7,
+    "wti": 73.96,
+    "vix": 16.13,
+    "sp500": 585.1
+  },
+  {
+    "date": "2025-01-06",
+    "usd_krw": 1465.5,
+    "wti": 73.56,
+    "vix": 16.04,
+    "sp500": 588.4
+  },
+  {
+    "date": "2025-01-07",
+    "usd_krw": 1459.4,
+    "wti": 74.25,
+    "vix": 17.82,
+    "sp500": 581.8
+  },
+  {
+    "date": "2025-01-08",
+    "usd_krw": 1451.9,
+    "wti": 73.32,
+    "vix": 17.7,
+    "sp500": 582.6
+  },
+  {
+    "date": "2025-01-09",
+    "usd_krw": 1458.0,
+    "wti": 73.92,
+    "vix": null,
+    "sp500": null
+  },
+  {
+    "date": "2025-01-10",
+    "usd_krw": 1455.2,
+    "wti": 76.57,
+    "vix": 19.54,
+    "sp500": 573.8
+  },
+  {
+    "date": "2025-01-13",
+    "usd_krw": 1472.2,
+    "wti": 78.82,
+    "vix": 19.19,
+    "sp500": 574.6
+  },
+  {
+    "date": "2025-01-14",
+    "usd_krw": 1458.9,
+    "wti": 77.5,
+    "vix": 18.71,
+    "sp500": 575.4
+  },
+  {
+    "date": "2025-01-15",
+    "usd_krw": 1460.4,
+    "wti": 80.04,
+    "vix": 16.12,
+    "sp500": 585.9
+  },
+  {
+    "date": "2025-01-16",
+    "usd_krw": 1437.2,
+    "wti": 78.68,
+    "vix": 16.6,
+    "sp500": 584.8
+  },
+  {
+    "date": "2025-01-17",
+    "usd_krw": 1453.3,
+    "wti": 77.88,
+    "vix": 15.97,
+    "sp500": 590.6
+  },
+  {
+    "date": "2025-01-20",
+    "usd_krw": 1457.4,
+    "wti": null,
+    "vix": null,
+    "sp500": null
+  },
+  {
+    "date": "2025-01-21",
+    "usd_krw": 1435.5,
+    "wti": 75.89,
+    "vix": 15.06,
+    "sp500": 596.1
+  },
+  {
+    "date": "2025-01-22",
+    "usd_krw": 1425.8,
+    "wti": 75.44,
+    "vix": 15.1,
+    "sp500": 599.4
+  },
+  {
+    "date": "2025-01-23",
+    "usd_krw": 1434.3,
+    "wti": 74.62,
+    "vix": 15.02,
+    "sp500": 602.7
+  },
+  {
+    "date": "2025-01-24",
+    "usd_krw": 1433.9,
+    "wti": 74.66,
+    "vix": 14.85,
+    "sp500": 600.9
+  },
+  {
+    "date": "2025-01-31",
+    "usd_krw": 1441.7,
+    "wti": 72.53,
+    "vix": 16.43,
+    "sp500": 594.8
+  },
+  {
+    "date": "2025-02-03",
+    "usd_krw": 1456.8,
+    "wti": 73.16,
+    "vix": 18.62,
+    "sp500": 590.8
+  },
+  {
+    "date": "2025-02-04",
+    "usd_krw": 1459.1,
+    "wti": 72.7,
+    "vix": 17.21,
+    "sp500": 594.8
+  },
+  {
+    "date": "2025-02-05",
+    "usd_krw": 1450.2,
+    "wti": 71.03,
+    "vix": 15.77,
+    "sp500": 597.2
+  },
+  {
+    "date": "2025-02-06",
+    "usd_krw": 1443.9,
+    "wti": 70.61,
+    "vix": 15.5,
+    "sp500": 599.3
+  },
+  {
+    "date": "2025-02-07",
+    "usd_krw": 1442.2,
+    "wti": 71.0,
+    "vix": 16.54,
+    "sp500": 593.8
+  },
+  {
+    "date": "2025-02-10",
+    "usd_krw": 1450.6,
+    "wti": 72.32,
+    "vix": 15.81,
+    "sp500": 597.8
+  },
+  {
+    "date": "2025-02-11",
+    "usd_krw": 1453.2,
+    "wti": 73.32,
+    "vix": 16.02,
+    "sp500": 598.3
+  },
+  {
+    "date": "2025-02-12",
+    "usd_krw": 1450.8,
+    "wti": 71.37,
+    "vix": 15.89,
+    "sp500": 596.4
+  },
+  {
+    "date": "2025-02-13",
+    "usd_krw": 1452.1,
+    "wti": 71.29,
+    "vix": 15.1,
+    "sp500": 602.7
+  },
+  {
+    "date": "2025-02-14",
+    "usd_krw": 1438.7,
+    "wti": 70.74,
+    "vix": 14.77,
+    "sp500": 602.6
+  },
+  {
+    "date": "2025-02-17",
+    "usd_krw": 1432.6,
+    "wti": null,
+    "vix": null,
+    "sp500": null
+  },
+  {
+    "date": "2025-02-18",
+    "usd_krw": 1441.3,
+    "wti": 71.85,
+    "vix": 15.35,
+    "sp500": 604.4
+  },
+  {
+    "date": "2025-02-19",
+    "usd_krw": 1440.1,
+    "wti": 72.25,
+    "vix": 15.27,
+    "sp500": 605.8
+  },
+  {
+    "date": "2025-02-20",
+    "usd_krw": 1440.0,
+    "wti": 72.57,
+    "vix": 15.66,
+    "sp500": 603.3
+  },
+  {
+    "date": "2025-02-21",
+    "usd_krw": 1431.7,
+    "wti": 70.4,
+    "vix": 18.21,
+    "sp500": 593.0
+  },
+  {
+    "date": "2025-02-24",
+    "usd_krw": 1434.3,
+    "wti": 70.7,
+    "vix": 18.98,
+    "sp500": 590.3
+  },
+  {
+    "date": "2025-02-25",
+    "usd_krw": 1428.7,
+    "wti": 68.93,
+    "vix": 19.43,
+    "sp500": 587.3
+  },
+  {
+    "date": "2025-02-26",
+    "usd_krw": 1429.5,
+    "wti": 68.62,
+    "vix": 19.1,
+    "sp500": 587.6
+  },
+  {
+    "date": "2025-02-27",
+    "usd_krw": 1434.4,
+    "wti": 70.35,
+    "vix": 21.13,
+    "sp500": 578.3
+  },
+  {
+    "date": "2025-02-28",
+    "usd_krw": 1449.9,
+    "wti": 69.76,
+    "vix": 19.63,
+    "sp500": 587.3
+  },
+  {
+    "date": "2025-03-04",
+    "usd_krw": 1457.9,
+    "wti": 68.26,
+    "vix": 23.51,
+    "sp500": 570.2
+  },
+  {
+    "date": "2025-03-05",
+    "usd_krw": 1452.8,
+    "wti": 66.31,
+    "vix": 21.93,
+    "sp500": 576.3
+  },
+  {
+    "date": "2025-03-06",
+    "usd_krw": 1443.0,
+    "wti": 66.36,
+    "vix": 24.87,
+    "sp500": 566.1
+  },
+  {
+    "date": "2025-03-07",
+    "usd_krw": 1446.5,
+    "wti": 67.04,
+    "vix": 23.37,
+    "sp500": 569.2
+  },
+  {
+    "date": "2025-03-10",
+    "usd_krw": 1446.3,
+    "wti": 66.03,
+    "vix": 27.86,
+    "sp500": 554.1
+  },
+  {
+    "date": "2025-03-11",
+    "usd_krw": 1457.0,
+    "wti": 66.25,
+    "vix": 26.92,
+    "sp500": 549.5
+  },
+  {
+    "date": "2025-03-12",
+    "usd_krw": 1451.0,
+    "wti": 67.68,
+    "vix": 24.23,
+    "sp500": 552.4
+  },
+  {
+    "date": "2025-03-13",
+    "usd_krw": 1448.8,
+    "wti": 66.55,
+    "vix": 24.66,
+    "sp500": 545.0
+  },
+  {
+    "date": "2025-03-14",
+    "usd_krw": 1453.2,
+    "wti": 67.18,
+    "vix": 21.77,
+    "sp500": 556.3
+  },
+  {
+    "date": "2025-03-17",
+    "usd_krw": 1449.1,
+    "wti": 67.58,
+    "vix": 20.51,
+    "sp500": 560.6
+  },
+  {
+    "date": "2025-03-18",
+    "usd_krw": 1442.5,
+    "wti": 66.9,
+    "vix": 21.7,
+    "sp500": 554.5
+  },
+  {
+    "date": "2025-03-19",
+    "usd_krw": 1448.9,
+    "wti": 67.16,
+    "vix": 19.9,
+    "sp500": 560.5
+  },
+  {
+    "date": "2025-03-20",
+    "usd_krw": 1443.4,
+    "wti": 68.26,
+    "vix": 19.8,
+    "sp500": 558.9
+  },
+  {
+    "date": "2025-03-21",
+    "usd_krw": 1465.8,
+    "wti": 68.28,
+    "vix": 19.28,
+    "sp500": 559.1
+  },
+  {
+    "date": "2025-03-24",
+    "usd_krw": 1464.8,
+    "wti": 69.11,
+    "vix": 17.48,
+    "sp500": 569.1
+  },
+  {
+    "date": "2025-03-25",
+    "usd_krw": 1466.3,
+    "wti": 69.0,
+    "vix": 17.15,
+    "sp500": 570.5
+  },
+  {
+    "date": "2025-03-26",
+    "usd_krw": 1462.1,
+    "wti": 69.65,
+    "vix": 18.33,
+    "sp500": 563.7
+  },
+  {
+    "date": "2025-03-27",
+    "usd_krw": 1465.7,
+    "wti": 69.92,
+    "vix": 18.69,
+    "sp500": 562.2
+  },
+  {
+    "date": "2025-03-28",
+    "usd_krw": 1461.9,
+    "wti": 69.36,
+    "vix": 21.65,
+    "sp500": 550.9
+  },
+  {
+    "date": "2025-03-31",
+    "usd_krw": 1469.4,
+    "wti": 71.48,
+    "vix": 22.28,
+    "sp500": 554.6
+  },
+  {
+    "date": "2025-04-01",
+    "usd_krw": 1472.0,
+    "wti": 71.2,
+    "vix": 21.77,
+    "sp500": 556.1
+  },
+  {
+    "date": "2025-04-02",
+    "usd_krw": 1470.0,
+    "wti": 71.71,
+    "vix": 21.51,
+    "sp500": 559.6
+  },
+  {
+    "date": "2025-04-03",
+    "usd_krw": 1466.0,
+    "wti": 66.95,
+    "vix": 30.02,
+    "sp500": 532.1
+  },
+  {
+    "date": "2025-04-04",
+    "usd_krw": 1450.7,
+    "wti": 61.99,
+    "vix": 45.31,
+    "sp500": 500.9
+  },
+  {
+    "date": "2025-04-07",
+    "usd_krw": 1458.5,
+    "wti": 60.7,
+    "vix": 46.98,
+    "sp500": 500.0
+  },
+  {
+    "date": "2025-04-08",
+    "usd_krw": 1469.9,
+    "wti": 59.58,
+    "vix": 52.33,
+    "sp500": 492.2
+  },
+  {
+    "date": "2025-04-09",
+    "usd_krw": 1486.1,
+    "wti": 62.35,
+    "vix": 33.62,
+    "sp500": 543.9
+  },
+  {
+    "date": "2025-04-10",
+    "usd_krw": 1443.9,
+    "wti": 60.07,
+    "vix": 40.72,
+    "sp500": 520.1
+  },
+  {
+    "date": "2025-04-11",
+    "usd_krw": 1452.0,
+    "wti": 61.5,
+    "vix": 37.56,
+    "sp500": 529.3
+  },
+  {
+    "date": "2025-04-14",
+    "usd_krw": 1419.1,
+    "wti": 61.53,
+    "vix": 30.89,
+    "sp500": 534.5
+  },
+  {
+    "date": "2025-04-15",
+    "usd_krw": 1419.4,
+    "wti": 61.33,
+    "vix": 30.12,
+    "sp500": 533.0
+  },
+  {
+    "date": "2025-04-16",
+    "usd_krw": 1427.0,
+    "wti": 62.47,
+    "vix": 32.64,
+    "sp500": 521.1
+  },
+  {
+    "date": "2025-04-17",
+    "usd_krw": 1414.2,
+    "wti": 64.68,
+    "vix": 29.65,
+    "sp500": 521.9
+  },
+  {
+    "date": "2025-04-18",
+    "usd_krw": null,
+    "wti": null,
+    "vix": null,
+    "sp500": null
+  },
+  {
+    "date": "2025-04-21",
+    "usd_krw": null,
+    "wti": 63.08,
+    "vix": 33.82,
+    "sp500": 509.4
+  },
+  {
+    "date": "2025-04-22",
+    "usd_krw": 1421.6,
+    "wti": 64.31,
+    "vix": 30.57,
+    "sp500": 522.7
+  },
+  {
+    "date": "2025-04-23",
+    "usd_krw": 1429.2,
+    "wti": 62.27,
+    "vix": 28.45,
+    "sp500": 530.8
+  },
+  {
+    "date": "2025-04-24",
+    "usd_krw": 1426.4,
+    "wti": 62.79,
+    "vix": 26.47,
+    "sp500": 542.0
+  },
+  {
+    "date": "2025-04-25",
+    "usd_krw": 1430.1,
+    "wti": 63.02,
+    "vix": 24.84,
+    "sp500": 545.9
+  },
+  {
+    "date": "2025-04-28",
+    "usd_krw": 1437.4,
+    "wti": 62.05,
+    "vix": 25.15,
+    "sp500": 546.1
+  },
+  {
+    "date": "2025-04-29",
+    "usd_krw": 1435.9,
+    "wti": 60.42,
+    "vix": 24.17,
+    "sp500": 549.5
+  },
+  {
+    "date": "2025-04-30",
+    "usd_krw": 1431.2,
+    "wti": 58.21,
+    "vix": 24.7,
+    "sp500": 549.8
+  },
+  {
+    "date": "2025-05-02",
+    "usd_krw": 1435.1,
+    "wti": 58.29,
+    "vix": 22.68,
+    "sp500": 561.9
+  },
+  {
+    "date": "2025-05-07",
+    "usd_krw": 1374.8,
+    "wti": 58.07,
+    "vix": 23.55,
+    "sp500": 556.3
+  },
+  {
+    "date": "2025-05-08",
+    "usd_krw": 1397.3,
+    "wti": 59.91,
+    "vix": 22.48,
+    "sp500": 560.2
+  },
+  {
+    "date": "2025-05-09",
+    "usd_krw": 1403.8,
+    "wti": 61.02,
+    "vix": 21.9,
+    "sp500": 559.5
+  },
+  {
+    "date": "2025-05-12",
+    "usd_krw": 1395.2,
+    "wti": 61.95,
+    "vix": 18.39,
+    "sp500": 578.0
+  },
+  {
+    "date": "2025-05-13",
+    "usd_krw": 1416.0,
+    "wti": 63.67,
+    "vix": 18.22,
+    "sp500": 581.8
+  },
+  {
+    "date": "2025-05-14",
+    "usd_krw": 1416.0,
+    "wti": 63.15,
+    "vix": 18.62,
+    "sp500": 582.5
+  },
+  {
+    "date": "2025-05-15",
+    "usd_krw": 1407.3,
+    "wti": 61.62,
+    "vix": 17.83,
+    "sp500": 585.4
+  },
+  {
+    "date": "2025-05-16",
+    "usd_krw": 1397.0,
+    "wti": 62.49,
+    "vix": 17.24,
+    "sp500": 589.1
+  },
+  {
+    "date": "2025-05-19",
+    "usd_krw": 1398.1,
+    "wti": 62.69,
+    "vix": 18.14,
+    "sp500": 589.7
+  },
+  {
+    "date": "2025-05-20",
+    "usd_krw": 1388.6,
+    "wti": 62.56,
+    "vix": 18.09,
+    "sp500": 587.7
+  },
+  {
+    "date": "2025-05-21",
+    "usd_krw": 1392.7,
+    "wti": 61.57,
+    "vix": 20.87,
+    "sp500": 577.8
+  },
+  {
+    "date": "2025-05-22",
+    "usd_krw": 1373.9,
+    "wti": 61.2,
+    "vix": 20.28,
+    "sp500": 578.1
+  },
+  {
+    "date": "2025-05-23",
+    "usd_krw": 1381.3,
+    "wti": 61.53,
+    "vix": 22.29,
+    "sp500": 574.1
+  },
+  {
+    "date": "2025-05-26",
+    "usd_krw": 1364.7,
+    "wti": null,
+    "vix": null,
+    "sp500": null
+  },
+  {
+    "date": "2025-05-27",
+    "usd_krw": 1368.1,
+    "wti": 60.89,
+    "vix": 18.96,
+    "sp500": 586.0
+  },
+  {
+    "date": "2025-05-28",
+    "usd_krw": 1374.8,
+    "wti": 61.84,
+    "vix": 19.31,
+    "sp500": 582.7
+  },
+  {
+    "date": "2025-05-29",
+    "usd_krw": 1373.6,
+    "wti": 60.94,
+    "vix": 19.18,
+    "sp500": 585.0
+  },
+  {
+    "date": "2025-05-30",
+    "usd_krw": 1370.4,
+    "wti": 60.79,
+    "vix": 18.57,
+    "sp500": 584.3
+  },
+  {
+    "date": "2025-06-02",
+    "usd_krw": 1382.0,
+    "wti": 62.52,
+    "vix": 18.36,
+    "sp500": 587.6
+  },
+  {
+    "date": "2025-06-04",
+    "usd_krw": 1377.7,
+    "wti": 62.85,
+    "vix": 17.61,
+    "sp500": 590.8
+  },
+  {
+    "date": "2025-06-05",
+    "usd_krw": 1361.1,
+    "wti": 63.37,
+    "vix": 18.48,
+    "sp500": 587.9
+  },
+  {
+    "date": "2025-06-09",
+    "usd_krw": 1359.2,
+    "wti": 65.29,
+    "vix": 17.16,
+    "sp500": 594.5
+  },
+  {
+    "date": "2025-06-10",
+    "usd_krw": 1353.8,
+    "wti": 64.98,
+    "vix": 16.95,
+    "sp500": 597.9
+  },
+  {
+    "date": "2025-06-11",
+    "usd_krw": 1363.9,
+    "wti": 68.15,
+    "vix": 17.26,
+    "sp500": 596.2
+  },
+  {
+    "date": "2025-06-12",
+    "usd_krw": 1365.7,
+    "wti": 68.04,
+    "vix": 18.02,
+    "sp500": 598.5
+  },
+  {
+    "date": "2025-06-13",
+    "usd_krw": 1349.8,
+    "wti": 72.98,
+    "vix": 20.82,
+    "sp500": 591.8
+  },
+  {
+    "date": "2025-06-16",
+    "usd_krw": 1365.1,
+    "wti": 71.77,
+    "vix": 19.11,
+    "sp500": 597.5
+  },
+  {
+    "date": "2025-06-17",
+    "usd_krw": 1357.8,
+    "wti": 74.84,
+    "vix": 21.6,
+    "sp500": 592.4
+  },
+  {
+    "date": "2025-06-18",
+    "usd_krw": 1380.5,
+    "wti": 75.14,
+    "vix": 20.14,
+    "sp500": 592.3
+  },
+  {
+    "date": "2025-06-19",
+    "usd_krw": 1370.8,
+    "wti": null,
+    "vix": null,
+    "sp500": null
+  },
+  {
+    "date": "2025-06-20",
+    "usd_krw": 1374.9,
+    "wti": 74.93,
+    "vix": 20.62,
+    "sp500": 590.9
+  },
+  {
+    "date": "2025-06-23",
+    "usd_krw": 1369.5,
+    "wti": 68.51,
+    "vix": 19.83,
+    "sp500": 596.7
+  },
+  {
+    "date": "2025-06-24",
+    "usd_krw": 1361.9,
+    "wti": 64.37,
+    "vix": 17.48,
+    "sp500": 603.3
+  },
+  {
+    "date": "2025-06-25",
+    "usd_krw": 1353.8,
+    "wti": 64.92,
+    "vix": 16.76,
+    "sp500": 603.7
+  },
+  {
+    "date": "2025-06-26",
+    "usd_krw": 1357.0,
+    "wti": 65.24,
+    "vix": 16.59,
+    "sp500": 608.4
+  },
+  {
+    "date": "2025-06-27",
+    "usd_krw": 1352.8,
+    "wti": 65.52,
+    "vix": 16.32,
+    "sp500": 611.4
+  },
+  {
+    "date": "2025-06-30",
+    "usd_krw": 1363.6,
+    "wti": 65.11,
+    "vix": 16.73,
+    "sp500": 614.3
+  },
+  {
+    "date": "2025-07-01",
+    "usd_krw": 1348.5,
+    "wti": 65.45,
+    "vix": 16.83,
+    "sp500": 614.1
+  },
+  {
+    "date": "2025-07-02",
+    "usd_krw": 1355.6,
+    "wti": 67.45,
+    "vix": 16.64,
+    "sp500": 616.9
+  },
+  {
+    "date": "2025-07-03",
+    "usd_krw": 1354.8,
+    "wti": 67.0,
+    "vix": 16.38,
+    "sp500": 621.8
+  },
+  {
+    "date": "2025-07-04",
+    "usd_krw": 1357.1,
+    "wti": 66.5,
+    "vix": null,
+    "sp500": null
+  },
+  {
+    "date": "2025-07-07",
+    "usd_krw": 1362.2,
+    "wti": 67.93,
+    "vix": 17.79,
+    "sp500": 617.1
+  },
+  {
+    "date": "2025-07-08",
+    "usd_krw": 1374.6,
+    "wti": 68.33,
+    "vix": 16.81,
+    "sp500": 616.8
+  },
+  {
+    "date": "2025-07-09",
+    "usd_krw": 1370.3,
+    "wti": 68.38,
+    "vix": 15.94,
+    "sp500": 620.5
+  },
+  {
+    "date": "2025-07-10",
+    "usd_krw": 1373.0,
+    "wti": 66.57,
+    "vix": 15.78,
+    "sp500": 622.3
+  },
+  {
+    "date": "2025-07-11",
+    "usd_krw": 1372.6,
+    "wti": 68.45,
+    "vix": 16.4,
+    "sp500": 620.1
+  },
+  {
+    "date": "2025-07-14",
+    "usd_krw": 1378.2,
+    "wti": 66.98,
+    "vix": 17.2,
+    "sp500": 621.2
+  },
+  {
+    "date": "2025-07-15",
+    "usd_krw": 1382.0,
+    "wti": 66.52,
+    "vix": 17.38,
+    "sp500": 618.6
+  },
+  {
+    "date": "2025-07-16",
+    "usd_krw": 1386.4,
+    "wti": 66.38,
+    "vix": 17.16,
+    "sp500": 620.7
+  },
+  {
+    "date": "2025-07-17",
+    "usd_krw": 1384.9,
+    "wti": 67.54,
+    "vix": 16.52,
+    "sp500": 624.5
+  },
+  {
+    "date": "2025-07-18",
+    "usd_krw": 1391.6,
+    "wti": 67.34,
+    "vix": 16.41,
+    "sp500": 624.0
+  },
+  {
+    "date": "2025-07-21",
+    "usd_krw": 1390.6,
+    "wti": 67.2,
+    "vix": 16.65,
+    "sp500": 625.2
+  },
+  {
+    "date": "2025-07-22",
+    "usd_krw": 1381.8,
+    "wti": 66.21,
+    "vix": 16.5,
+    "sp500": 625.3
+  },
+  {
+    "date": "2025-07-23",
+    "usd_krw": 1379.8,
+    "wti": 65.25,
+    "vix": 15.37,
+    "sp500": 630.6
+  },
+  {
+    "date": "2025-07-24",
+    "usd_krw": 1373.7,
+    "wti": 66.03,
+    "vix": 15.39,
+    "sp500": 630.8
+  },
+  {
+    "date": "2025-07-25",
+    "usd_krw": 1372.0,
+    "wti": 65.16,
+    "vix": 14.93,
+    "sp500": 633.5
+  },
+  {
+    "date": "2025-07-28",
+    "usd_krw": 1382.8,
+    "wti": 66.71,
+    "vix": 15.03,
+    "sp500": 633.3
+  },
+  {
+    "date": "2025-07-29",
+    "usd_krw": 1388.3,
+    "wti": 69.21,
+    "vix": 15.98,
+    "sp500": 631.6
+  },
+  {
+    "date": "2025-07-30",
+    "usd_krw": 1388.9,
+    "wti": 70.0,
+    "vix": 15.48,
+    "sp500": 630.8
+  },
+  {
+    "date": "2025-07-31",
+    "usd_krw": 1392.5,
+    "wti": 69.26,
+    "vix": 16.72,
+    "sp500": 628.5
+  },
+  {
+    "date": "2025-08-01",
+    "usd_krw": 1391.5,
+    "wti": 67.33,
+    "vix": 20.38,
+    "sp500": 618.2
+  },
+  {
+    "date": "2025-08-04",
+    "usd_krw": 1390.2,
+    "wti": 66.29,
+    "vix": 17.52,
+    "sp500": 627.6
+  },
+  {
+    "date": "2025-08-05",
+    "usd_krw": 1383.6,
+    "wti": 65.16,
+    "vix": 17.85,
+    "sp500": 624.4
+  },
+  {
+    "date": "2025-08-06",
+    "usd_krw": 1386.6,
+    "wti": 64.35,
+    "vix": 16.77,
+    "sp500": 629.2
+  },
+  {
+    "date": "2025-08-07",
+    "usd_krw": 1384.4,
+    "wti": 63.88,
+    "vix": 16.57,
+    "sp500": 628.6
+  },
+  {
+    "date": "2025-08-08",
+    "usd_krw": 1385.0,
+    "wti": 63.88,
+    "vix": 15.15,
+    "sp500": 633.5
+  },
+  {
+    "date": "2025-08-11",
+    "usd_krw": 1387.8,
+    "wti": 63.96,
+    "vix": 16.25,
+    "sp500": 632.3
+  },
+  {
+    "date": "2025-08-12",
+    "usd_krw": 1389.8,
+    "wti": 63.17,
+    "vix": 14.73,
+    "sp500": 639.0
+  },
+  {
+    "date": "2025-08-13",
+    "usd_krw": 1383.1,
+    "wti": 62.65,
+    "vix": 14.49,
+    "sp500": 641.2
+  },
+  {
+    "date": "2025-08-14",
+    "usd_krw": 1378.8,
+    "wti": 63.96,
+    "vix": 14.83,
+    "sp500": 641.3
+  },
+  {
+    "date": "2025-08-18",
+    "usd_krw": 1388.0,
+    "wti": 63.42,
+    "vix": 14.99,
+    "sp500": 639.6
+  },
+  {
+    "date": "2025-08-19",
+    "usd_krw": 1386.9,
+    "wti": 62.35,
+    "vix": 15.57,
+    "sp500": 636.2
+  },
+  {
+    "date": "2025-08-20",
+    "usd_krw": 1391.3,
+    "wti": 63.21,
+    "vix": 15.69,
+    "sp500": 634.5
+  },
+  {
+    "date": "2025-08-21",
+    "usd_krw": 1396.9,
+    "wti": 63.52,
+    "vix": 16.6,
+    "sp500": 631.9
+  },
+  {
+    "date": "2025-08-22",
+    "usd_krw": 1399.6,
+    "wti": 63.66,
+    "vix": 14.22,
+    "sp500": 641.6
+  },
+  {
+    "date": "2025-08-25",
+    "usd_krw": 1382.9,
+    "wti": 64.8,
+    "vix": 14.79,
+    "sp500": 638.8
+  },
+  {
+    "date": "2025-08-26",
+    "usd_krw": 1389.1,
+    "wti": 63.25,
+    "vix": 14.62,
+    "sp500": 641.5
+  },
+  {
+    "date": "2025-08-27",
+    "usd_krw": 1393.9,
+    "wti": 64.15,
+    "vix": 14.85,
+    "sp500": 642.9
+  },
+  {
+    "date": "2025-08-28",
+    "usd_krw": 1392.8,
+    "wti": 64.6,
+    "vix": 14.43,
+    "sp500": 645.2
+  },
+  {
+    "date": "2025-08-29",
+    "usd_krw": 1384.4,
+    "wti": 64.01,
+    "vix": 15.36,
+    "sp500": 641.4
+  },
+  {
+    "date": "2025-09-01",
+    "usd_krw": 1388.8,
+    "wti": null,
+    "vix": null,
+    "sp500": null
+  },
+  {
+    "date": "2025-09-02",
+    "usd_krw": 1392.9,
+    "wti": 65.59,
+    "vix": 17.17,
+    "sp500": 636.6
+  },
+  {
+    "date": "2025-09-03",
+    "usd_krw": 1394.6,
+    "wti": 63.97,
+    "vix": 16.35,
+    "sp500": 640.1
+  },
+  {
+    "date": "2025-09-04",
+    "usd_krw": 1389.6,
+    "wti": 63.48,
+    "vix": 15.3,
+    "sp500": 645.4
+  },
+  {
+    "date": "2025-09-05",
+    "usd_krw": 1392.1,
+    "wti": 61.87,
+    "vix": 15.18,
+    "sp500": 643.5
+  },
+  {
+    "date": "2025-09-08",
+    "usd_krw": 1385.5,
+    "wti": 62.26,
+    "vix": 15.11,
+    "sp500": 645.1
+  },
+  {
+    "date": "2025-09-09",
+    "usd_krw": 1385.7,
+    "wti": 62.63,
+    "vix": 15.04,
+    "sp500": 646.6
+  },
+  {
+    "date": "2025-09-10",
+    "usd_krw": 1387.2,
+    "wti": 63.67,
+    "vix": 15.35,
+    "sp500": 648.5
+  },
+  {
+    "date": "2025-09-11",
+    "usd_krw": 1387.2,
+    "wti": 62.37,
+    "vix": 14.71,
+    "sp500": 653.9
+  },
+  {
+    "date": "2025-09-12",
+    "usd_krw": 1389.5,
+    "wti": 62.69,
+    "vix": 14.76,
+    "sp500": 653.7
+  },
+  {
+    "date": "2025-09-15",
+    "usd_krw": 1393.7,
+    "wti": 63.3,
+    "vix": 15.69,
+    "sp500": 657.1
+  },
+  {
+    "date": "2025-09-16",
+    "usd_krw": 1385.0,
+    "wti": 64.52,
+    "vix": 16.36,
+    "sp500": 656.2
+  },
+  {
+    "date": "2025-09-17",
+    "usd_krw": 1377.6,
+    "wti": 64.05,
+    "vix": 15.72,
+    "sp500": 655.4
+  },
+  {
+    "date": "2025-09-18",
+    "usd_krw": 1378.7,
+    "wti": 63.57,
+    "vix": 15.7,
+    "sp500": 658.5
+  },
+  {
+    "date": "2025-09-19",
+    "usd_krw": 1386.8,
+    "wti": 62.68,
+    "vix": 15.45,
+    "sp500": 661.7
+  },
+  {
+    "date": "2025-09-22",
+    "usd_krw": 1396.2,
+    "wti": 62.64,
+    "vix": 16.1,
+    "sp500": 664.9
+  },
+  {
+    "date": "2025-09-23",
+    "usd_krw": 1389.4,
+    "wti": 63.41,
+    "vix": 16.64,
+    "sp500": 661.3
+  },
+  {
+    "date": "2025-09-24",
+    "usd_krw": 1391.8,
+    "wti": 64.99,
+    "vix": 16.18,
+    "sp500": 659.2
+  },
+  {
+    "date": "2025-09-25",
+    "usd_krw": 1403.7,
+    "wti": 64.98,
+    "vix": 16.74,
+    "sp500": 656.1
+  },
+  {
+    "date": "2025-09-26",
+    "usd_krw": 1408.9,
+    "wti": 65.72,
+    "vix": 15.29,
+    "sp500": 659.9
+  },
+  {
+    "date": "2025-09-29",
+    "usd_krw": 1408.7,
+    "wti": 63.45,
+    "vix": 16.12,
+    "sp500": 661.7
+  },
+  {
+    "date": "2025-09-30",
+    "usd_krw": 1399.3,
+    "wti": 62.37,
+    "vix": 16.28,
+    "sp500": 664.2
+  },
+  {
+    "date": "2025-10-01",
+    "usd_krw": 1403.2,
+    "wti": 61.78,
+    "vix": 16.29,
+    "sp500": 666.5
+  },
+  {
+    "date": "2025-10-02",
+    "usd_krw": 1401.8,
+    "wti": 60.48,
+    "vix": 16.63,
+    "sp500": 667.2
+  },
+  {
+    "date": "2025-10-10",
+    "usd_krw": 1421.5,
+    "wti": 58.9,
+    "vix": 21.66,
+    "sp500": 651.1
+  },
+  {
+    "date": "2025-10-13",
+    "usd_krw": 1429.0,
+    "wti": 59.49,
+    "vix": 19.03,
+    "sp500": 661.1
+  },
+  {
+    "date": "2025-10-14",
+    "usd_krw": 1426.1,
+    "wti": 58.7,
+    "vix": 20.81,
+    "sp500": 660.3
+  },
+  {
+    "date": "2025-10-15",
+    "usd_krw": 1429.4,
+    "wti": 58.27,
+    "vix": 20.64,
+    "sp500": 663.2
+  },
+  {
+    "date": "2025-10-16",
+    "usd_krw": 1420.1,
+    "wti": 57.46,
+    "vix": 25.31,
+    "sp500": 658.7
+  },
+  {
+    "date": "2025-10-17",
+    "usd_krw": 1415.7,
+    "wti": 57.54,
+    "vix": 20.78,
+    "sp500": 662.4
+  },
+  {
+    "date": "2025-10-20",
+    "usd_krw": 1419.7,
+    "wti": 57.52,
+    "vix": 18.23,
+    "sp500": 669.3
+  },
+  {
+    "date": "2025-10-21",
+    "usd_krw": 1419.7,
+    "wti": 57.82,
+    "vix": 17.87,
+    "sp500": 669.3
+  },
+  {
+    "date": "2025-10-22",
+    "usd_krw": 1430.7,
+    "wti": 58.5,
+    "vix": 18.6,
+    "sp500": 665.8
+  },
+  {
+    "date": "2025-10-23",
+    "usd_krw": 1430.4,
+    "wti": 61.79,
+    "vix": 17.3,
+    "sp500": 669.8
+  },
+  {
+    "date": "2025-10-24",
+    "usd_krw": 1435.8,
+    "wti": 61.5,
+    "vix": 16.37,
+    "sp500": 675.3
+  },
+  {
+    "date": "2025-10-27",
+    "usd_krw": 1437.0,
+    "wti": 61.31,
+    "vix": 15.79,
+    "sp500": 683.2
+  },
+  {
+    "date": "2025-10-28",
+    "usd_krw": 1431.0,
+    "wti": 60.15,
+    "vix": 16.42,
+    "sp500": 685.0
+  },
+  {
+    "date": "2025-10-29",
+    "usd_krw": 1426.0,
+    "wti": 60.48,
+    "vix": 16.92,
+    "sp500": 685.4
+  },
+  {
+    "date": "2025-10-30",
+    "usd_krw": 1424.0,
+    "wti": 60.57,
+    "vix": 16.91,
+    "sp500": 677.8
+  },
+  {
+    "date": "2025-10-31",
+    "usd_krw": 1424.0,
+    "wti": 60.98,
+    "vix": 17.44,
+    "sp500": 680.1
+  },
+  {
+    "date": "2025-11-03",
+    "usd_krw": 1427.2,
+    "wti": 61.05,
+    "vix": 17.17,
+    "sp500": 681.3
+  },
+  {
+    "date": "2025-11-04",
+    "usd_krw": 1429.0,
+    "wti": 60.56,
+    "vix": 19.0,
+    "sp500": 673.3
+  },
+  {
+    "date": "2025-11-05",
+    "usd_krw": 1439.8,
+    "wti": 59.6,
+    "vix": 18.01,
+    "sp500": 675.6
+  },
+  {
+    "date": "2025-11-06",
+    "usd_krw": 1439.7,
+    "wti": 59.43,
+    "vix": 19.5,
+    "sp500": 668.3
+  },
+  {
+    "date": "2025-11-07",
+    "usd_krw": 1447.9,
+    "wti": 59.75,
+    "vix": 19.08,
+    "sp500": 669.0
+  },
+  {
+    "date": "2025-11-10",
+    "usd_krw": 1454.0,
+    "wti": 60.13,
+    "vix": 17.6,
+    "sp500": 679.4
+  },
+  {
+    "date": "2025-11-11",
+    "usd_krw": 1456.1,
+    "wti": 61.04,
+    "vix": 17.28,
+    "sp500": 681.0
+  },
+  {
+    "date": "2025-11-12",
+    "usd_krw": 1459.8,
+    "wti": 58.49,
+    "vix": 17.51,
+    "sp500": 681.4
+  },
+  {
+    "date": "2025-11-13",
+    "usd_krw": 1468.0,
+    "wti": 58.69,
+    "vix": 20.0,
+    "sp500": 670.1
+  },
+  {
+    "date": "2025-11-14",
+    "usd_krw": 1468.7,
+    "wti": 60.09,
+    "vix": 19.83,
+    "sp500": 670.0
+  },
+  {
+    "date": "2025-11-17",
+    "usd_krw": 1446.5,
+    "wti": 59.91,
+    "vix": 22.38,
+    "sp500": 663.7
+  },
+  {
+    "date": "2025-11-18",
+    "usd_krw": 1461.7,
+    "wti": 60.74,
+    "vix": 24.69,
+    "sp500": 658.1
+  },
+  {
+    "date": "2025-11-19",
+    "usd_krw": 1456.6,
+    "wti": 59.44,
+    "vix": 23.66,
+    "sp500": 660.7
+  },
+  {
+    "date": "2025-11-20",
+    "usd_krw": 1466.1,
+    "wti": 59.14,
+    "vix": 26.42,
+    "sp500": 650.6
+  },
+  {
+    "date": "2025-11-21",
+    "usd_krw": 1473.2,
+    "wti": 58.06,
+    "vix": 23.43,
+    "sp500": 657.1
+  },
+  {
+    "date": "2025-11-24",
+    "usd_krw": 1467.7,
+    "wti": 58.84,
+    "vix": 20.52,
+    "sp500": 666.8
+  },
+  {
+    "date": "2025-11-25",
+    "usd_krw": 1474.9,
+    "wti": 57.95,
+    "vix": 18.56,
+    "sp500": 673.0
+  },
+  {
+    "date": "2025-11-26",
+    "usd_krw": 1464.9,
+    "wti": 58.65,
+    "vix": 17.19,
+    "sp500": 677.7
+  },
+  {
+    "date": "2025-11-27",
+    "usd_krw": 1470.6,
+    "wti": null,
+    "vix": null,
+    "sp500": null
+  },
+  {
+    "date": "2025-11-28",
+    "usd_krw": 1461.4,
+    "wti": 58.55,
+    "vix": 16.35,
+    "sp500": 681.4
+  },
+  {
+    "date": "2025-12-01",
+    "usd_krw": 1465.6,
+    "wti": 59.32,
+    "vix": 17.24,
+    "sp500": 678.3
+  },
+  {
+    "date": "2025-12-02",
+    "usd_krw": 1470.2,
+    "wti": 58.64,
+    "vix": 16.59,
+    "sp500": 679.5
+  },
+  {
+    "date": "2025-12-03",
+    "usd_krw": 1467.4,
+    "wti": 58.95,
+    "vix": 16.08,
+    "sp500": 681.9
+  },
+  {
+    "date": "2025-12-04",
+    "usd_krw": 1465.0,
+    "wti": 59.67,
+    "vix": 15.78,
+    "sp500": 682.4
+  },
+  {
+    "date": "2025-12-05",
+    "usd_krw": 1472.4,
+    "wti": 60.08,
+    "vix": 15.41,
+    "sp500": 683.7
+  },
+  {
+    "date": "2025-12-08",
+    "usd_krw": 1471.8,
+    "wti": 58.88,
+    "vix": 16.66,
+    "sp500": 681.6
+  },
+  {
+    "date": "2025-12-09",
+    "usd_krw": 1468.5,
+    "wti": 58.25,
+    "vix": 16.93,
+    "sp500": 681.0
+  },
+  {
+    "date": "2025-12-10",
+    "usd_krw": 1467.9,
+    "wti": 58.46,
+    "vix": 15.77,
+    "sp500": 685.5
+  },
+  {
+    "date": "2025-12-11",
+    "usd_krw": 1469.0,
+    "wti": 57.6,
+    "vix": 14.85,
+    "sp500": 687.1
+  },
+  {
+    "date": "2025-12-12",
+    "usd_krw": 1470.8,
+    "wti": 57.44,
+    "vix": 15.74,
+    "sp500": 679.8
+  },
+  {
+    "date": "2025-12-15",
+    "usd_krw": 1472.9,
+    "wti": 56.82,
+    "vix": 16.5,
+    "sp500": 678.7
+  },
+  {
+    "date": "2025-12-16",
+    "usd_krw": 1467.5,
+    "wti": 55.27,
+    "vix": 16.48,
+    "sp500": 676.9
+  },
+  {
+    "date": "2025-12-17",
+    "usd_krw": 1471.7,
+    "wti": 55.94,
+    "vix": 17.62,
+    "sp500": 669.4
+  },
+  {
+    "date": "2025-12-18",
+    "usd_krw": 1474.0,
+    "wti": 56.15,
+    "vix": 16.87,
+    "sp500": 674.5
+  },
+  {
+    "date": "2025-12-19",
+    "usd_krw": 1474.4,
+    "wti": 56.66,
+    "vix": 14.91,
+    "sp500": 680.6
+  },
+  {
+    "date": "2025-12-22",
+    "usd_krw": 1473.7,
+    "wti": 58.01,
+    "vix": 14.08,
+    "sp500": 684.8
+  },
+  {
+    "date": "2025-12-23",
+    "usd_krw": 1476.8,
+    "wti": 58.38,
+    "vix": 14.0,
+    "sp500": 688.0
+  },
+  {
+    "date": "2025-12-24",
+    "usd_krw": 1478.7,
+    "wti": 58.35,
+    "vix": 13.47,
+    "sp500": 690.4
+  },
+  {
+    "date": "2025-12-26",
+    "usd_krw": 1446.5,
+    "wti": 56.74,
+    "vix": 13.6,
+    "sp500": 690.3
+  },
+  {
+    "date": "2025-12-29",
+    "usd_krw": 1441.3,
+    "wti": 58.08,
+    "vix": 14.2,
+    "sp500": 687.8
+  },
+  {
+    "date": "2025-12-30",
+    "usd_krw": 1434.7,
+    "wti": 57.95,
+    "vix": 14.33,
+    "sp500": 687.0
+  },
+  {
+    "date": "2026-01-02",
+    "usd_krw": 1443.6,
+    "wti": 57.32,
+    "vix": 14.51,
+    "sp500": 683.2
+  },
+  {
+    "date": "2026-01-05",
+    "usd_krw": 1440.5,
+    "wti": 58.32,
+    "vix": 14.9,
+    "sp500": 687.7
+  },
+  {
+    "date": "2026-01-06",
+    "usd_krw": 1445.6,
+    "wti": 57.13,
+    "vix": 14.75,
+    "sp500": 691.8
+  },
+  {
+    "date": "2026-01-07",
+    "usd_krw": 1445.0,
+    "wti": 55.99,
+    "vix": 15.38,
+    "sp500": 689.6
+  },
+  {
+    "date": "2026-01-08",
+    "usd_krw": 1446.1,
+    "wti": 57.76,
+    "vix": 15.45,
+    "sp500": 689.5
+  },
+  {
+    "date": "2026-01-09",
+    "usd_krw": 1450.1,
+    "wti": 59.12,
+    "vix": 14.49,
+    "sp500": 694.1
+  },
+  {
+    "date": "2026-01-12",
+    "usd_krw": 1455.2,
+    "wti": 59.5,
+    "vix": 15.12,
+    "sp500": 695.2
+  },
+  {
+    "date": "2026-01-13",
+    "usd_krw": 1464.9,
+    "wti": 61.15,
+    "vix": 15.98,
+    "sp500": 693.8
+  },
+  {
+    "date": "2026-01-14",
+    "usd_krw": 1473.0,
+    "wti": 62.02,
+    "vix": 16.75,
+    "sp500": 690.4
+  },
+  {
+    "date": "2026-01-15",
+    "usd_krw": 1462.9,
+    "wti": 59.19,
+    "vix": 15.84,
+    "sp500": 692.2
+  },
+  {
+    "date": "2026-01-16",
+    "usd_krw": 1468.8,
+    "wti": 59.44,
+    "vix": 15.86,
+    "sp500": 691.7
+  },
+  {
+    "date": "2026-01-19",
+    "usd_krw": 1471.6,
+    "wti": null,
+    "vix": null,
+    "sp500": null
+  },
+  {
+    "date": "2026-01-20",
+    "usd_krw": 1471.5,
+    "wti": 60.34,
+    "vix": 20.09,
+    "sp500": 677.6
+  },
+  {
+    "date": "2026-01-21",
+    "usd_krw": 1477.8,
+    "wti": 60.62,
+    "vix": 16.9,
+    "sp500": 685.4
+  },
+  {
+    "date": "2026-01-22",
+    "usd_krw": 1464.8,
+    "wti": 59.36,
+    "vix": 15.64,
+    "sp500": 689.0
+  },
+  {
+    "date": "2026-01-23",
+    "usd_krw": 1463.3,
+    "wti": 61.07,
+    "vix": 16.09,
+    "sp500": 689.2
+  },
+  {
+    "date": "2026-01-26",
+    "usd_krw": 1444.8,
+    "wti": 60.63,
+    "vix": 16.15,
+    "sp500": 692.7
+  },
+  {
+    "date": "2026-01-27",
+    "usd_krw": 1441.0,
+    "wti": 62.39,
+    "vix": 16.35,
+    "sp500": 695.5
+  },
+  {
+    "date": "2026-01-28",
+    "usd_krw": 1432.5,
+    "wti": 63.21,
+    "vix": 16.35,
+    "sp500": 695.4
+  },
+  {
+    "date": "2026-01-29",
+    "usd_krw": 1429.3,
+    "wti": 65.42,
+    "vix": 16.88,
+    "sp500": 694.0
+  },
+  {
+    "date": "2026-01-30",
+    "usd_krw": 1428.8,
+    "wti": 65.21,
+    "vix": 17.44,
+    "sp500": 692.0
+  },
+  {
+    "date": "2026-02-02",
+    "usd_krw": 1448.8,
+    "wti": 62.14,
+    "vix": 16.34,
+    "sp500": 695.4
+  },
+  {
+    "date": "2026-02-03",
+    "usd_krw": 1452.5,
+    "wti": 63.21,
+    "vix": 18.0,
+    "sp500": 689.5
+  },
+  {
+    "date": "2026-02-04",
+    "usd_krw": 1446.7,
+    "wti": 65.14,
+    "vix": 18.64,
+    "sp500": 686.2
+  },
+  {
+    "date": "2026-02-05",
+    "usd_krw": 1460.1,
+    "wti": 63.29,
+    "vix": 21.77,
+    "sp500": 677.6
+  },
+  {
+    "date": "2026-02-06",
+    "usd_krw": 1470.7,
+    "wti": 63.55,
+    "vix": 20.37,
+    "sp500": 690.6
+  },
+  {
+    "date": "2026-02-09",
+    "usd_krw": 1462.4,
+    "wti": 64.36,
+    "vix": 17.36,
+    "sp500": 694.0
+  },
+  {
+    "date": "2026-02-10",
+    "usd_krw": 1458.5,
+    "wti": 63.96,
+    "vix": 17.79,
+    "sp500": 692.1
+  },
+  {
+    "date": "2026-02-11",
+    "usd_krw": 1455.3,
+    "wti": 64.63,
+    "vix": 17.65,
+    "sp500": 692.0
+  },
+  {
+    "date": "2026-02-12",
+    "usd_krw": 1444.2,
+    "wti": 62.84,
+    "vix": 20.82,
+    "sp500": 681.3
+  },
+  {
+    "date": "2026-02-13",
+    "usd_krw": 1440.9,
+    "wti": 62.89,
+    "vix": 20.6,
+    "sp500": 681.8
+  },
+  {
+    "date": "2026-02-19",
+    "usd_krw": 1440.2,
+    "wti": 66.43,
+    "vix": 20.23,
+    "sp500": 684.5
+  },
+  {
+    "date": "2026-02-20",
+    "usd_krw": 1447.8,
+    "wti": 66.39,
+    "vix": 19.09,
+    "sp500": 689.4
+  },
+  {
+    "date": "2026-02-23",
+    "usd_krw": 1443.4,
+    "wti": 66.31,
+    "vix": 21.01,
+    "sp500": 682.4
+  },
+  {
+    "date": "2026-02-24",
+    "usd_krw": 1442.2,
+    "wti": 65.63,
+    "vix": 19.55,
+    "sp500": 687.3
+  },
+  {
+    "date": "2026-02-25",
+    "usd_krw": 1440.0,
+    "wti": 65.42,
+    "vix": 17.93,
+    "sp500": 693.2
+  },
+  {
+    "date": "2026-02-26",
+    "usd_krw": 1426.9,
+    "wti": 65.21,
+    "vix": 18.63,
+    "sp500": 689.3
+  },
+  {
+    "date": "2026-02-27",
+    "usd_krw": 1432.3,
+    "wti": 67.02,
+    "vix": 19.86,
+    "sp500": 686.0
+  },
+  {
+    "date": "2026-03-03",
+    "usd_krw": 1452.3,
+    "wti": 74.56,
+    "vix": 23.57,
+    "sp500": 680.3
+  },
+  {
+    "date": "2026-03-04",
+    "usd_krw": 1463.3,
+    "wti": 75.32,
+    "vix": 22.69,
+    "sp500": null
   }
-  return Object.values(bins).sort((a, b) => a.bin - b.bin);
-}
+];
 
-function buildTriggerMap(currentKospi, currentFx) {
-  const shocks = [-3, -5, -10, -15, -20, -30];
-  return shocks.map((shock) => {
-    const expected_kospi = Math.round(currentKospi * (1 + shock / 100));
-    const expected_fx = Math.round(currentFx * (1 + Math.abs(shock) * 0.3 / 100));
-    // estimate margin_call & forced_liq from all active cohorts (LIFO)
-    let margin_call = 0;
-    let forced_liq = 0;
-    const cohorts = buildCohorts("LIFO");
-    for (const c of cohorts) {
-      for (const [mr, w] of Object.entries(MARGIN_DISTRIBUTION)) {
-        const ratio = (expected_kospi / c.entry_kospi) / (1 - Number(mr));
-        if (ratio < FORCED_LIQ_RATIO) forced_liq += c.amount * w;
-        else if (ratio < MAINTENANCE_RATIO) margin_call += c.amount * w;
-      }
-    }
-    return {
-      shock_pct: shock,
-      expected_kospi,
-      expected_fx,
-      margin_call_billion: Math.round(margin_call),
-      forced_liq_billion: Math.round(forced_liq),
-    };
-  });
-}
-
-const _currentKospi = Math.round(kospi[N - 1]);
-const _currentFx = +usdKrw[N - 1].toFixed(1);
-const _lifoCohorts = buildCohorts("LIFO");
-const _fifoCohorts = buildCohorts("FIFO");
-const _avgTradingValue = Math.round(
-  MARKET_DATA.reduce((s, d) => s + d.trading_value_billion, 0) / N
-);
+export const SHORT_SELLING = [
+  {
+    "date": "2025-01-01",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-06",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-07",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-08",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-09",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-13",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-14",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-15",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-16",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-20",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-21",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-22",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-23",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-27",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-28",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-29",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-30",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-01-31",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-06",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-07",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-11",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-12",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-13",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-14",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-18",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-19",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-20",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-21",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-25",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-26",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-27",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-02-28",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-06",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-07",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-11",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-12",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-13",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-14",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-18",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-19",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-20",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-21",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-25",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-26",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-27",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-28",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-03-31",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-01",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-07",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-08",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-09",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-11",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-14",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-15",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-16",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-18",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-21",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-22",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-23",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-25",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-28",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-29",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-04-30",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-01",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-06",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-07",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-08",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-09",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-12",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-13",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-14",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-15",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-16",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-19",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-20",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-21",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-22",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-23",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-26",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-27",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-28",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-29",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-05-30",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-06",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-09",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-11",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-12",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-13",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-16",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-18",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-19",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-20",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-23",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-25",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-26",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-27",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-06-30",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-01",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-07",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-08",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-09",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-11",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-14",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-15",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-16",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-18",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-21",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-22",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-23",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-25",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-28",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-29",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-30",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-07-31",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-01",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-06",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-07",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-08",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-11",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-12",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-13",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-14",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-15",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-18",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-19",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-20",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-21",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-22",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-25",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-26",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-27",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-28",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-08-29",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-01",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-08",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-09",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-11",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-12",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-15",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-16",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-18",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-19",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-22",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-23",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-25",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-26",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-29",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-09-30",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-01",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-06",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-07",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-08",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-09",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-13",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-14",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-15",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-16",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-20",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-21",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-22",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-23",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-27",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-28",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-29",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-30",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-10-31",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-06",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-07",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-11",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-12",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-13",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-14",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-18",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-19",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-20",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-21",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-25",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-26",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-27",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-11-28",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-01",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-08",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-09",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-11",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-12",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-15",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-16",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-18",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-19",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-22",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-23",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-25",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-26",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-29",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-30",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2025-12-31",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-01",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-06",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-07",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-08",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-09",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-12",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-13",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-14",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-15",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-16",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-19",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-20",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-21",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-22",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-23",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-26",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-27",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-28",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-29",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-01-30",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-06",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-09",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-10",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-11",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-12",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-13",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-16",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-17",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-18",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-19",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-20",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-23",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-24",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-25",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-26",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-02-27",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-03-02",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-03-03",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-03-04",
+    "market_total_billion": null,
+    "gov_ban": false
+  }
+];
 
 export const COHORT_DATA = {
-  lifo: _lifoCohorts,
-  fifo: _fifoCohorts,
-  price_distribution_lifo: buildPriceDistribution(_lifoCohorts),
-  price_distribution_fifo: buildPriceDistribution(_fifoCohorts),
-  trigger_map: buildTriggerMap(_currentKospi, _currentFx),
-  current_kospi: _currentKospi,
-  current_fx: _currentFx,
-  avg_daily_trading_value_billion: _avgTradingValue,
-  params: {
-    margin_distribution: MARGIN_DISTRIBUTION,
-    maintenance_ratio: MAINTENANCE_RATIO,
-    forced_liq_ratio: FORCED_LIQ_RATIO,
-    impact_coefficient: IMPACT_COEFFICIENT,
-    fx_sensitivity: {
-      low: { threshold: 1, multiplier: 0.5 },
-      mid: { threshold: 2, multiplier: 1.0 },
-      high: { threshold: 3, multiplier: 1.5 },
-      extreme: { threshold: Infinity, multiplier: 2.0 },
+  "lifo": [],
+  "fifo": [],
+  "price_distribution_lifo": [],
+  "price_distribution_fifo": [],
+  "trigger_map": [
+    {
+      "shock_pct": -3,
+      "expected_kospi": 4941,
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0
     },
-  },
-};
-
-// --- Crisis Score (Phase 3) ---
-
-function classifyScore(s) {
-  if (s >= 95) return "extreme";
-  if (s >= 85) return "danger";
-  if (s >= 70) return "warning";
-  if (s >= 50) return "caution";
-  return "normal";
-}
-
-const _scoreWalk = (() => {
-  const out = [55];
-  for (let i = 1; i < N; i++) {
-    const target = 55 + (99 - 55) * (i / (N - 1));
-    const pull = (target - out[i - 1]) * 0.1;
-    const noise = (rng() - 0.5) * 4;
-    out.push(Math.max(50, Math.min(99, out[i - 1] + pull + noise)));
+    {
+      "shock_pct": -5,
+      "expected_kospi": 4839,
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0
+    },
+    {
+      "shock_pct": -10,
+      "expected_kospi": 4584,
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0
+    },
+    {
+      "shock_pct": -15,
+      "expected_kospi": 4330,
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0
+    },
+    {
+      "shock_pct": -20,
+      "expected_kospi": 4075,
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0
+    },
+    {
+      "shock_pct": -30,
+      "expected_kospi": 3565,
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0
+    }
+  ],
+  "current_kospi": 5093.54,
+  "current_fx": 1463.3,
+  "avg_daily_trading_value_billion": 318,
+  "params": {
+    "margin_distribution": {
+      "0.40": 0.35,
+      "0.45": 0.35,
+      "0.50": 0.25,
+      "0.60": 0.05
+    },
+    "maintenance_ratio": 1.4,
+    "forced_liq_ratio": 1.3,
+    "impact_coefficient": 1.5,
+    "fx_sensitivity": {
+      "low": {
+        "threshold": 1,
+        "multiplier": 0.5
+      },
+      "mid": {
+        "threshold": 2,
+        "multiplier": 1.0
+      },
+      "high": {
+        "threshold": 3,
+        "multiplier": 1.5
+      },
+      "extreme": {
+        "threshold": Infinity,
+        "multiplier": 2.0
+      }
+    }
   }
-  return out.map(v => +v.toFixed(1));
-})();
+};
 
 export const CRISIS_SCORE = {
-  current: 99,
-  classification: "extreme",
-  weights: {
-    leverage_heat: 0.10, flow_concentration: 0.08, price_deviation: 0.09,
-    credit_acceleration: 0.08, deposit_inflow: 0.05, vix_level: 0.06,
-    volume_explosion: 0.05, forced_liq_intensity: 0.08,
-    credit_deposit_ratio: 0.04, dram_cycle: 0.03,
-    credit_suspension: 0.12, institutional_selling: 0.10,
-    retail_exhaustion: 0.08, bull_trap: 0.04,
+  "current": 36.5,
+  "classification": "normal",
+  "weights": {
+    "leverage_heat": 0.1,
+    "flow_concentration": 0.08,
+    "price_deviation": 0.09,
+    "credit_acceleration": 0.08,
+    "deposit_inflow": 0.05,
+    "vix_level": 0.06,
+    "volume_explosion": 0.05,
+    "forced_liq_intensity": 0.08,
+    "credit_deposit_ratio": 0.04,
+    "dram_cycle": 0.03,
+    "credit_suspension": 0.12,
+    "institutional_selling": 0.1,
+    "retail_exhaustion": 0.08,
+    "bull_trap": 0.04
   },
-  indicators: {
-    leverage_heat: { value: 78, raw: 0.042, desc: "신용/시총" },
-    flow_concentration: { value: 65, raw: 2.1, desc: "개인편중" },
-    price_deviation: { value: 82, raw: 0.94, desc: "MA200 괴리" },
-    credit_acceleration: { value: 71, raw: 3.2, desc: "신용 증가속도" },
-    deposit_inflow: { value: 45, raw: -1.5, desc: "예탁금 변화" },
-    vix_level: { value: 68, raw: 28.5, desc: "VIX" },
-    volume_explosion: { value: 72, raw: 1.8, desc: "거래폭증" },
-    forced_liq_intensity: { value: 80, raw: 0.032, desc: "반대매매 강도" },
-    credit_deposit_ratio: { value: 55, raw: 0.27, desc: "신용/예탁" },
-    dram_cycle: { value: 40, raw: 5.2, desc: "DRAM 사이클" },
-    credit_suspension: { value: 95, raw: 2, desc: "신용 중단" },
-    institutional_selling: { value: 92, raw: -5887, desc: "기관 순매도" },
-    retail_exhaustion: { value: 98, raw: 98.6, desc: "개인 매수력 감소" },
-    bull_trap: { value: 85, raw: 1, desc: "불트랩" },
+  "indicators": {
+    "leverage_heat": {
+      "value": 2.9,
+      "raw": 0.0,
+      "desc": "신용/시총"
+    },
+    "flow_concentration": {
+      "value": 11.9,
+      "raw": 0,
+      "desc": "개인편중"
+    },
+    "price_deviation": {
+      "value": 98.8,
+      "raw": 0.3542,
+      "desc": "MA200 괴리"
+    },
+    "credit_acceleration": {
+      "value": 0.0,
+      "raw": -100.0,
+      "desc": "신용 증가속도"
+    },
+    "deposit_inflow": {
+      "value": 100,
+      "raw": -100.0,
+      "desc": "예탁금 변화"
+    },
+    "vix_level": {
+      "value": 68.6,
+      "raw": 22.69,
+      "desc": "VIX"
+    },
+    "volume_explosion": {
+      "value": 7.6,
+      "raw": 0.0,
+      "desc": "거래폭증"
+    },
+    "forced_liq_intensity": {
+      "value": 18.2,
+      "raw": 0,
+      "desc": "반대매매 강도"
+    },
+    "credit_deposit_ratio": {
+      "value": 1.8,
+      "raw": 0,
+      "desc": "신용/예탁"
+    },
+    "dram_cycle": {
+      "value": 50.0,
+      "raw": 0,
+      "desc": "DRAM 사이클"
+    },
+    "credit_suspension": {
+      "value": 50.0,
+      "raw": 0,
+      "desc": "신용 중단"
+    },
+    "institutional_selling": {
+      "value": 43.8,
+      "raw": 0,
+      "desc": "기관 순매도"
+    },
+    "retail_exhaustion": {
+      "value": 18.2,
+      "raw": 0,
+      "desc": "개인 매수력 감소"
+    },
+    "bull_trap": {
+      "value": 50.0,
+      "raw": 0,
+      "desc": "불트랩"
+    }
   },
-  history: DATES.map((d, i) => ({
-    date: d,
-    score: _scoreWalk[i],
-    classification: classifyScore(_scoreWalk[i]),
-  })),
+  "history": [
+    {
+      "date": "2025-12-02",
+      "score": 50.4,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-03",
+      "score": 53.3,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-04",
+      "score": 53.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-05",
+      "score": 54.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-08",
+      "score": 55.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-09",
+      "score": 51.7,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-10",
+      "score": 51.4,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-11",
+      "score": 52.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-12",
+      "score": 50.3,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-15",
+      "score": 50.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-16",
+      "score": 49.4,
+      "classification": "normal"
+    },
+    {
+      "date": "2025-12-17",
+      "score": 49.9,
+      "classification": "normal"
+    },
+    {
+      "date": "2025-12-18",
+      "score": 51.7,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-19",
+      "score": 52.7,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-22",
+      "score": 50.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-23",
+      "score": 51.9,
+      "classification": "caution"
+    },
+    {
+      "date": "2025-12-24",
+      "score": 49.2,
+      "classification": "normal"
+    },
+    {
+      "date": "2025-12-26",
+      "score": 48.4,
+      "classification": "normal"
+    },
+    {
+      "date": "2025-12-29",
+      "score": 48.4,
+      "classification": "normal"
+    },
+    {
+      "date": "2025-12-30",
+      "score": 48.1,
+      "classification": "normal"
+    },
+    {
+      "date": "2026-01-02",
+      "score": 49.6,
+      "classification": "normal"
+    },
+    {
+      "date": "2026-01-05",
+      "score": 51.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-06",
+      "score": 52.8,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-07",
+      "score": 53.7,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-08",
+      "score": 53.9,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-09",
+      "score": 56.1,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-12",
+      "score": 55.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-13",
+      "score": 56.4,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-14",
+      "score": 55.8,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-15",
+      "score": 54.7,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-16",
+      "score": 53.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-19",
+      "score": 49.6,
+      "classification": "normal"
+    },
+    {
+      "date": "2026-01-20",
+      "score": 52.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-21",
+      "score": 52.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-22",
+      "score": 51.4,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-23",
+      "score": 50.9,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-26",
+      "score": 51.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-27",
+      "score": 50.9,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-28",
+      "score": 51.3,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-29",
+      "score": 53.7,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-01-30",
+      "score": 53.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-02",
+      "score": 53.3,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-03",
+      "score": 53.4,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-04",
+      "score": 57.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-05",
+      "score": 55.8,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-06",
+      "score": 53.8,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-09",
+      "score": 57.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-10",
+      "score": 57.2,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-11",
+      "score": 54.4,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-12",
+      "score": 56.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-13",
+      "score": 56.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-19",
+      "score": 49.5,
+      "classification": "normal"
+    },
+    {
+      "date": "2026-02-20",
+      "score": 50.0,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-23",
+      "score": 51.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-24",
+      "score": 52.0,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-25",
+      "score": 52.0,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-26",
+      "score": 52.6,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-02-27",
+      "score": 54.5,
+      "classification": "caution"
+    },
+    {
+      "date": "2026-03-03",
+      "score": 40.4,
+      "classification": "normal"
+    },
+    {
+      "date": "2026-03-04",
+      "score": 36.5,
+      "classification": "normal"
+    }
+  ]
 };
-
-// --- Scenarios (Phase 3) ---
-
-const _probHistory = (() => {
-  const logits = [[-4.0, -1.5, 0.3, -0.3, -2.5]];
-  for (let i = 1; i < N; i++) {
-    const prev = logits[i - 1];
-    logits.push(prev.map(v => v + (rng() - 0.5) * 0.3));
-  }
-  return logits.map(l => {
-    const exps = l.map(v => Math.exp(v));
-    const sum = exps.reduce((a, b) => a + b, 0);
-    const probs = exps.map(v => +(v / sum).toFixed(3));
-    const diff = +(1 - probs.reduce((a, b) => a + b, 0)).toFixed(3);
-    probs[2] = +(probs[2] + diff).toFixed(3);
-    return probs;
-  });
-})();
 
 export const SCENARIOS = {
-  scenarios: [
-    { id: "S1", name: "연착륙",
-      desc: "소멸. 2일 -19.3%와 양립 불가",
-      kospi_range: [5400, 5800], current_prob: 0.00 },
-    { id: "S2", name: "방어",
-      desc: "이란 전쟁 진정 + 대규모 시장 안정 조치",
-      kospi_range: [5000, 5400], current_prob: 0.08 },
-    { id: "S3", name: "캐스케이드",
-      desc: "Loop A + Loop C 4~8주 지속, 코호트 순차 붕괴",
-      kospi_range: [4300, 5000], current_prob: 0.55 },
-    { id: "S4", name: "전면위기",
-      desc: "전쟁 장기화 + 유가 $100+ + Loop 가속",
-      kospi_range: [3200, 4300], current_prob: 0.33 },
-    { id: "S5", name: "펀더멘털 붕괴",
-      desc: "DRAM 마이너스 + AI capex 삭감, 실적 전제 붕괴",
-      kospi_range: [2500, 3200], current_prob: 0.04 },
+  "scenarios": [
+    {
+      "id": "S1",
+      "name": "연착륙",
+      "desc": "점진적 정상화, 신용 위축 완화",
+      "kospi_range": [
+        2600,
+        2800
+      ],
+      "current_prob": 0.0
+    },
+    {
+      "id": "S2",
+      "name": "방어",
+      "desc": "정부 안정조치 + 외국인 매도 진정",
+      "kospi_range": [
+        2400,
+        2600
+      ],
+      "current_prob": 1.0
+    },
+    {
+      "id": "S3",
+      "name": "캐스케이드",
+      "desc": "Loop A + Loop C 4~8주 지속, 코호트 순차 붕괴",
+      "kospi_range": [
+        2100,
+        2400
+      ],
+      "current_prob": 0.0
+    },
+    {
+      "id": "S4",
+      "name": "전면위기",
+      "desc": "글로벌 충격 + 국내 loop 가속",
+      "kospi_range": [
+        1800,
+        2100
+      ],
+      "current_prob": 0.0
+    },
+    {
+      "id": "S5",
+      "name": "펀더멘털 붕괴",
+      "desc": "DRAM 마이너스 + AI capex 삭감, 실적 전제 붕괴",
+      "kospi_range": [
+        1400,
+        1800
+      ],
+      "current_prob": 0.0
+    }
   ],
-  probability_history: DATES.map((d, i) => ({
-    date: d,
-    s1: _probHistory[i][0],
-    s2: _probHistory[i][1],
-    s3: _probHistory[i][2],
-    s4: _probHistory[i][3],
-    s5: _probHistory[i][4],
-  })),
-  key_drivers: [
-    { indicator: "institutional_selling", observed: -5887, expected: -1000,
-      z_score: -3.25, direction: "supporting", scenario: "S3" },
-    { indicator: "retail_exhaustion", observed: 98.6, expected: 30,
-      z_score: 4.57, direction: "supporting", scenario: "S3" },
-    { indicator: "forced_liq_intensity", observed: 850, expected: 500,
-      z_score: 2.33, direction: "supporting", scenario: "S3" },
+  "probability_history": [
+    {
+      "date": "2025-12-02",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-03",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-04",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-05",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-08",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-09",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-10",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-11",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-12",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-15",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-16",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-17",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-18",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-19",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-22",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-23",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-24",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-26",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-29",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2025-12-30",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-02",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-05",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-06",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-07",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-08",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-09",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-12",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-13",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-14",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-15",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-16",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-19",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-20",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-21",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-22",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-23",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-26",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-27",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-28",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-29",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-01-30",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-02",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-03",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-04",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-05",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-06",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-09",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-10",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-11",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-12",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-13",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-19",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-20",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-23",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-24",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-25",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-26",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-02-27",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-03-03",
+      "s1": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
+      "s4": 0.0,
+      "s5": 0.0
+    },
+    {
+      "date": "2026-03-04",
+      "s1": 0.0,
+      "s2": 1.0,
+      "s3": 0.0,
+      "s4": 0.0,
+      "s5": 0.0
+    }
   ],
+  "key_drivers": [
+    {
+      "indicator": "institutional_flow",
+      "observed": 0,
+      "expected": -200,
+      "z_score": 6.32,
+      "direction": "opposing",
+      "scenario": "S2"
+    },
+    {
+      "indicator": "retail_flow",
+      "observed": 0,
+      "expected": 200,
+      "z_score": -5.66,
+      "direction": "opposing",
+      "scenario": "S2"
+    },
+    {
+      "indicator": "fx_rate",
+      "observed": 1463.3,
+      "expected": 1380,
+      "z_score": 5.27,
+      "direction": "opposing",
+      "scenario": "S2"
+    }
+  ]
 };
-
-// --- Historical Comparison (Phase 3) ---
-
-const _overlayData = (() => {
-  const out = [];
-  let curPct = 0;
-  let chinaPct = 0;
-  for (let d = 0; d <= 60; d++) {
-    out.push({
-      day: d,
-      current_pct: +curPct.toFixed(2),
-      china_2015_pct: +chinaPct.toFixed(2),
-    });
-    curPct += (rng() - 0.55) * 1.2;
-    curPct = Math.max(-25, Math.min(3, curPct));
-    if (d < 20) chinaPct += (rng() - 0.65) * 1.5;
-    else if (d < 40) chinaPct += (rng() - 0.45) * 0.8;
-    else chinaPct += (rng() - 0.40) * 0.6;
-    chinaPct = Math.max(-25, Math.min(3, chinaPct));
-  }
-  return out;
-})();
 
 export const HISTORICAL = {
-  cases: [
-    { id: "china_2015", name: "2015 중국발 폭락", peak_date: "2015-04-27",
-      peak_kospi: 2173, bottom_kospi: 1829, drop_pct: -15.8, recovery_days: 89 },
+  "cases": [
+    {
+      "id": "crisis_2008",
+      "name": "2008 글로벌 금융위기",
+      "peak_date": "2007-10-31",
+      "peak_kospi": 2064,
+      "bottom_kospi": 938,
+      "drop_pct": -54.6,
+      "recovery_days": 456
+    },
+    {
+      "id": "china_2015",
+      "name": "2015 중국발 폭락",
+      "peak_date": "2015-04-27",
+      "peak_kospi": 2173,
+      "bottom_kospi": 1829,
+      "drop_pct": -15.8,
+      "recovery_days": 89
+    },
+    {
+      "id": "covid_2020",
+      "name": "2020 코로나 폭락",
+      "peak_date": "2020-01-20",
+      "peak_kospi": 2267,
+      "bottom_kospi": 1457,
+      "drop_pct": -35.7,
+      "recovery_days": 210
+    },
+    {
+      "id": "evergrande_2021",
+      "name": "2021 에버그란데",
+      "peak_date": "2021-06-25",
+      "peak_kospi": 3305,
+      "bottom_kospi": 2614,
+      "drop_pct": -20.9,
+      "recovery_days": 0
+    }
   ],
-  similarities: {
-    china_2015: { dtw: 0.72, cosine: 0.68, hybrid: 0.70 },
+  "similarities": {
+    "crisis_2008": {
+      "dtw": 0.909,
+      "cosine": 0.769,
+      "hybrid": 0.853
+    },
+    "china_2015": {
+      "dtw": 0.878,
+      "cosine": 0.776,
+      "hybrid": 0.837
+    },
+    "covid_2020": {
+      "dtw": 0.912,
+      "cosine": 0.769,
+      "hybrid": 0.855
+    },
+    "evergrande_2021": {
+      "dtw": 0.918,
+      "cosine": 0.907,
+      "hybrid": 0.914
+    }
   },
-  overlay: _overlayData,
-  indicator_comparison: [
-    { indicator: "leverage_heat", label: "신용/시총", current: 4.2, china_2015: 3.8 },
-    { indicator: "flow_concentration", label: "개인편중", current: 2.1, china_2015: 1.5 },
-    { indicator: "price_deviation", label: "MA200 괴리", current: 0.94, china_2015: 1.02 },
-    { indicator: "credit_acceleration", label: "신용 증가속도", current: 3.2, china_2015: 4.5 },
-    { indicator: "deposit_inflow", label: "예탁금 변화", current: -1.5, china_2015: -2.3 },
-    { indicator: "vix_level", label: "VIX", current: 28.5, china_2015: 24.3 },
-    { indicator: "volume_explosion", label: "거래폭증", current: 1.8, china_2015: 2.5 },
-    { indicator: "forced_liq_intensity", label: "반대매매 강도", current: 3.2, china_2015: 2.8 },
-    { indicator: "credit_deposit_ratio", label: "신용/예탁", current: 0.27, china_2015: 0.22 },
-    { indicator: "dram_cycle", label: "DRAM 사이클", current: 5.2, china_2015: -3.1 },
-    { indicator: "credit_suspension", label: "신용 중단", current: 2, china_2015: 0 },
-    { indicator: "institutional_selling", label: "기관 순매도", current: -5887, china_2015: -1200 },
-    { indicator: "retail_exhaustion", label: "개인 매수력 감소", current: 98.6, china_2015: 45.0 },
-    { indicator: "bull_trap", label: "불트랩", current: 1, china_2015: 0 },
+  "overlay": [
+    {
+      "day": 0,
+      "current_pct": -36.66,
+      "evergrande_2021_pct": -0.0
+    },
+    {
+      "day": 1,
+      "current_pct": -36.01,
+      "evergrande_2021_pct": -0.7
+    },
+    {
+      "day": 2,
+      "current_pct": -36.13,
+      "evergrande_2021_pct": -1.39
+    },
+    {
+      "day": 3,
+      "current_pct": -34.99,
+      "evergrande_2021_pct": -2.09
+    },
+    {
+      "day": 4,
+      "current_pct": -34.13,
+      "evergrande_2021_pct": -2.79
+    },
+    {
+      "day": 5,
+      "current_pct": -34.31,
+      "evergrande_2021_pct": -3.48
+    },
+    {
+      "day": 6,
+      "current_pct": -34.44,
+      "evergrande_2021_pct": -4.18
+    },
+    {
+      "day": 7,
+      "current_pct": -34.83,
+      "evergrande_2021_pct": -4.88
+    },
+    {
+      "day": 8,
+      "current_pct": -33.93,
+      "evergrande_2021_pct": -5.57
+    },
+    {
+      "day": 9,
+      "current_pct": -35.14,
+      "evergrande_2021_pct": -6.27
+    },
+    {
+      "day": 10,
+      "current_pct": -36.59,
+      "evergrande_2021_pct": -6.97
+    },
+    {
+      "day": 11,
+      "current_pct": -35.69,
+      "evergrande_2021_pct": -7.66
+    },
+    {
+      "day": 12,
+      "current_pct": -36.67,
+      "evergrande_2021_pct": -8.36
+    },
+    {
+      "day": 13,
+      "current_pct": -36.26,
+      "evergrande_2021_pct": -9.06
+    },
+    {
+      "day": 14,
+      "current_pct": -34.9,
+      "evergrande_2021_pct": -9.75
+    },
+    {
+      "day": 15,
+      "current_pct": -34.72,
+      "evergrande_2021_pct": -10.45
+    },
+    {
+      "day": 16,
+      "current_pct": -34.86,
+      "evergrande_2021_pct": -11.15
+    },
+    {
+      "day": 17,
+      "current_pct": -34.53,
+      "evergrande_2021_pct": -11.84
+    },
+    {
+      "day": 18,
+      "current_pct": -33.08,
+      "evergrande_2021_pct": -12.54
+    },
+    {
+      "day": 19,
+      "current_pct": -33.19,
+      "evergrande_2021_pct": -13.24
+    },
+    {
+      "day": 20,
+      "current_pct": -31.67,
+      "evergrande_2021_pct": -13.93
+    },
+    {
+      "day": 21,
+      "current_pct": -29.33,
+      "evergrande_2021_pct": -14.63
+    },
+    {
+      "day": 22,
+      "current_pct": -28.25,
+      "evergrande_2021_pct": -15.33
+    },
+    {
+      "day": 23,
+      "current_pct": -27.84,
+      "evergrande_2021_pct": -16.02
+    },
+    {
+      "day": 24,
+      "current_pct": -27.82,
+      "evergrande_2021_pct": -16.72
+    },
+    {
+      "day": 25,
+      "current_pct": -27.29,
+      "evergrande_2021_pct": -17.42
+    },
+    {
+      "day": 26,
+      "current_pct": -26.68,
+      "evergrande_2021_pct": -18.11
+    },
+    {
+      "day": 27,
+      "current_pct": -25.6,
+      "evergrande_2021_pct": -18.81
+    },
+    {
+      "day": 28,
+      "current_pct": -25.12,
+      "evergrande_2021_pct": -19.51
+    },
+    {
+      "day": 29,
+      "current_pct": -23.94,
+      "evergrande_2021_pct": -20.2
+    },
+    {
+      "day": 30,
+      "current_pct": -23.25,
+      "evergrande_2021_pct": -20.9
+    },
+    {
+      "day": 31,
+      "current_pct": -22.24,
+      "evergrande_2021_pct": -20.55
+    },
+    {
+      "day": 32,
+      "current_pct": -22.54,
+      "evergrande_2021_pct": -20.2
+    },
+    {
+      "day": 33,
+      "current_pct": -22.15,
+      "evergrande_2021_pct": -19.85
+    },
+    {
+      "day": 34,
+      "current_pct": -21.48,
+      "evergrande_2021_pct": -19.51
+    },
+    {
+      "day": 35,
+      "current_pct": -20.88,
+      "evergrande_2021_pct": -19.16
+    },
+    {
+      "day": 36,
+      "current_pct": -21.53,
+      "evergrande_2021_pct": -18.81
+    },
+    {
+      "day": 37,
+      "current_pct": -19.38,
+      "evergrande_2021_pct": -18.46
+    },
+    {
+      "day": 38,
+      "current_pct": -18.02,
+      "evergrande_2021_pct": -18.11
+    },
+    {
+      "day": 39,
+      "current_pct": -17.22,
+      "evergrande_2021_pct": -17.76
+    },
+    {
+      "day": 40,
+      "current_pct": -17.17,
+      "evergrande_2021_pct": -17.42
+    },
+    {
+      "day": 41,
+      "current_pct": -21.52,
+      "evergrande_2021_pct": -17.07
+    },
+    {
+      "day": 42,
+      "current_pct": -16.16,
+      "evergrande_2021_pct": -16.72
+    },
+    {
+      "day": 43,
+      "current_pct": -14.84,
+      "evergrande_2021_pct": -16.37
+    },
+    {
+      "day": 44,
+      "current_pct": -18.13,
+      "evergrande_2021_pct": -16.02
+    },
+    {
+      "day": 45,
+      "current_pct": -19.31,
+      "evergrande_2021_pct": -15.67
+    },
+    {
+      "day": 46,
+      "current_pct": -16.0,
+      "evergrande_2021_pct": -15.33
+    },
+    {
+      "day": 47,
+      "current_pct": -15.94,
+      "evergrande_2021_pct": -14.98
+    },
+    {
+      "day": 48,
+      "current_pct": -15.11,
+      "evergrande_2021_pct": -14.63
+    },
+    {
+      "day": 49,
+      "current_pct": -12.45,
+      "evergrande_2021_pct": -14.28
+    },
+    {
+      "day": 50,
+      "current_pct": -12.69,
+      "evergrande_2021_pct": -13.93
+    },
+    {
+      "day": 51,
+      "current_pct": -9.99,
+      "evergrande_2021_pct": -13.58
+    },
+    {
+      "day": 52,
+      "current_pct": -7.91,
+      "evergrande_2021_pct": -13.24
+    },
+    {
+      "day": 53,
+      "current_pct": -7.31,
+      "evergrande_2021_pct": -12.89
+    },
+    {
+      "day": 54,
+      "current_pct": -5.35,
+      "evergrande_2021_pct": -12.54
+    },
+    {
+      "day": 55,
+      "current_pct": -3.54,
+      "evergrande_2021_pct": -12.19
+    },
+    {
+      "day": 56,
+      "current_pct": 0.0,
+      "evergrande_2021_pct": -11.84
+    },
+    {
+      "day": 57,
+      "current_pct": -1.0,
+      "evergrande_2021_pct": -11.5
+    },
+    {
+      "day": 58,
+      "current_pct": -8.17,
+      "evergrande_2021_pct": -11.15
+    },
+    {
+      "day": 59,
+      "current_pct": -19.24,
+      "evergrande_2021_pct": -10.8
+    }
   ],
+  "indicator_comparison": [
+    {
+      "indicator": "leverage_heat",
+      "label": "신용/시총",
+      "current": 0.0
+    },
+    {
+      "indicator": "flow_concentration",
+      "label": "개인편중",
+      "current": 0
+    },
+    {
+      "indicator": "price_deviation",
+      "label": "MA200 괴리",
+      "current": 0.3542
+    },
+    {
+      "indicator": "credit_acceleration",
+      "label": "신용 증가속도",
+      "current": -100.0
+    },
+    {
+      "indicator": "deposit_inflow",
+      "label": "예탁금 변화",
+      "current": -100.0
+    },
+    {
+      "indicator": "vix_level",
+      "label": "VIX",
+      "current": 22.69
+    },
+    {
+      "indicator": "volume_explosion",
+      "label": "거래폭증",
+      "current": 0.0
+    },
+    {
+      "indicator": "forced_liq_intensity",
+      "label": "반대매매 강도",
+      "current": 0
+    },
+    {
+      "indicator": "credit_deposit_ratio",
+      "label": "신용/예탁",
+      "current": 0
+    },
+    {
+      "indicator": "dram_cycle",
+      "label": "DRAM 사이클",
+      "current": 0
+    },
+    {
+      "indicator": "credit_suspension",
+      "label": "신용 중단",
+      "current": 0
+    },
+    {
+      "indicator": "institutional_selling",
+      "label": "기관 순매도",
+      "current": 0
+    },
+    {
+      "indicator": "retail_exhaustion",
+      "label": "개인 매수력 감소",
+      "current": 0
+    },
+    {
+      "indicator": "bull_trap",
+      "label": "불트랩",
+      "current": 0
+    }
+  ]
 };
-
-// --- Defense Walls (v1.4) ---
 
 export const DEFENSE_WALLS = [
-  { id: "wall1", name: "개인 매수", status: "collapsed",
-    detail: "792억/5.8조 = 98.6% 감소", capacity: 0.01 },
-  { id: "wall2", name: "연기금/기관", status: "weakened",
-    detail: "기관 합산 매도 전환 (-5,887억)", capacity: 0.35 },
-  { id: "wall3", name: "한은 FX 개입", status: "active",
-    detail: "1,475 방어 성공", capacity: 0.80 },
-  { id: "wall4", name: "US 통화스왑", status: "destroyed",
-    detail: "3/4 거절 확인", capacity: 0.00 },
-  { id: "wall5", name: "IMF 지원", status: "standby",
-    detail: "미발동 (외환보유고 $4,000억+)", capacity: 1.00 },
+  {
+    "status": "weakened",
+    "capacity": 0.3,
+    "id": "wall1",
+    "name": "개인 매수",
+    "detail": "최근5일 평균 0억 / 20일 0억"
+  },
+  {
+    "status": "weakened",
+    "capacity": 0.35,
+    "detail": "기관 0억 (소폭 매도)",
+    "id": "wall2",
+    "name": "연기금/기관"
+  },
+  {
+    "status": "weakened",
+    "capacity": 0.4,
+    "detail": "USD/KRW 1463 (긴장)",
+    "id": "wall3",
+    "name": "한은 FX 개입"
+  },
+  {
+    "id": "wall4",
+    "name": "US 통화스왑",
+    "status": "standby",
+    "capacity": 0.5,
+    "detail": "미발동 (요청 시 가용)"
+  },
+  {
+    "id": "wall5",
+    "name": "IMF 지원",
+    "status": "standby",
+    "capacity": 1.0,
+    "detail": "미발동 (외환보유고 $4,000억+)"
+  }
 ];
-
-// --- Loop Status (v1.4) ---
 
 export const LOOP_STATUS = {
-  loop_a: {
-    status: "active", name: "반대매매 캐스케이드",
-    wave1: { time: "08:00-09:00", desc: "프리마켓 마진콜" },
-    wave2: { time: "12:00-14:00", desc: "추가담보 마감 후 강제매도" },
-    estimated_volume_billion: 500,
+  "loop_a": {
+    "status": "dormant",
+    "name": "반대매매 캐스케이드",
+    "wave1": {
+      "time": "08:00-09:00",
+      "desc": "프리마켓 마진콜"
+    },
+    "wave2": {
+      "time": "12:00-14:00",
+      "desc": "추가담보 마감 후 강제매도"
+    },
+    "estimated_volume_billion": 0
   },
-  loop_c: {
-    status: "active", name: "펀드 환매 캐스케이드",
-    delay: "T+1~T+3",
-    desc: "기관 -5,887억 중 환매 매도 추정 3,000~4,000억",
-    estimated_volume_billion: 3500,
-    confidence: "low",
-  },
+  "loop_c": {
+    "status": "dormant",
+    "name": "펀드 환매 캐스케이드",
+    "delay": "T+1~T+3",
+    "desc": "기관 0억 중 환매 매도 추정 0억",
+    "estimated_volume_billion": 0,
+    "confidence": "low"
+  }
 };
 
-export const EVENTS = [
-  {
-    date: "2026-03-02",
-    type: "market",
-    desc: "KOSPI 2400 이탈, 서킷브레이커 발동 경고",
-  },
-  {
-    date: "2026-02-28",
-    type: "government_action",
-    desc: "금융위원회 공매도 전면 금지 재발동 검토",
-  },
-  {
-    date: "2026-02-25",
-    type: "global",
-    desc: "미국 2월 CPI 예상치 상회, Fed 금리 인하 불확실",
-  },
-  {
-    date: "2026-02-20",
-    type: "flow",
-    desc: "외국인 20거래일 연속 순매도 (누적 -4.2조원)",
-  },
-  {
-    date: "2026-02-14",
-    type: "credit",
-    desc: "신용잔고 21조 돌파, 2021년 이후 최대",
-  },
-  {
-    date: "2026-02-10",
-    type: "market",
-    desc: "삼성전자 6만원 붕괴, 52주 신저가",
-  },
-  {
-    date: "2026-02-05",
-    type: "global",
-    desc: "중국 CSI 300 -3.2%, 아시아 동반 하락",
-  },
-  {
-    date: "2026-01-28",
-    type: "government_action",
-    desc: "한은 기준금리 25bp 인하 (3.25% -> 3.00%)",
-  },
-  {
-    date: "2026-01-20",
-    type: "flow",
-    desc: "기관 프로그램 매도 5000억 이상",
-  },
-  {
-    date: "2026-01-10",
-    type: "market",
-    desc: "KOSPI 연초 2580 출발, 전년 대비 -8%",
-  },
-];
+export const EVENTS = [];
 
 export const META = {
-  last_updated: "2026-03-03T16:35:00+09:00",
-  last_date: "2026-03-03",
-  data_source: "sample",
-  data_quality: {
-    credit_estimated_days: 2,
-    missing_fields: ["dram_spot"],
-  },
+  "last_updated": "2026-03-04T19:28:12.657020",
+  "last_date": "2026-03-04",
+  "data_source": "pipeline",
+  "data_quality": {
+    "total_days": 282,
+    "credit_estimated_days": 0,
+    "missing_fields": []
+  }
 };
+

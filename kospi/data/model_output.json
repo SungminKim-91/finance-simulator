@@ -1,0 +1,1498 @@
+{
+  "computed_at": "2026-03-04T19:28:08.671238",
+  "cohorts": {
+    "lifo": [],
+    "fifo": [],
+    "price_distribution_lifo": [],
+    "price_distribution_fifo": [],
+    "trigger_map": [
+      {
+        "shock_pct": -3,
+        "expected_kospi": 4941,
+        "margin_call_billion": 0,
+        "forced_liq_billion": 0
+      },
+      {
+        "shock_pct": -5,
+        "expected_kospi": 4839,
+        "margin_call_billion": 0,
+        "forced_liq_billion": 0
+      },
+      {
+        "shock_pct": -10,
+        "expected_kospi": 4584,
+        "margin_call_billion": 0,
+        "forced_liq_billion": 0
+      },
+      {
+        "shock_pct": -15,
+        "expected_kospi": 4330,
+        "margin_call_billion": 0,
+        "forced_liq_billion": 0
+      },
+      {
+        "shock_pct": -20,
+        "expected_kospi": 4075,
+        "margin_call_billion": 0,
+        "forced_liq_billion": 0
+      },
+      {
+        "shock_pct": -30,
+        "expected_kospi": 3565,
+        "margin_call_billion": 0,
+        "forced_liq_billion": 0
+      }
+    ],
+    "current_kospi": 5093.54,
+    "current_fx": 1463.3,
+    "total_active_billion": 0
+  },
+  "crisis_score": {
+    "current": 36.5,
+    "classification": "normal",
+    "weights": {
+      "leverage_heat": 0.1,
+      "flow_concentration": 0.08,
+      "price_deviation": 0.09,
+      "credit_acceleration": 0.08,
+      "deposit_inflow": 0.05,
+      "vix_level": 0.06,
+      "volume_explosion": 0.05,
+      "forced_liq_intensity": 0.08,
+      "credit_deposit_ratio": 0.04,
+      "dram_cycle": 0.03,
+      "credit_suspension": 0.12,
+      "institutional_selling": 0.1,
+      "retail_exhaustion": 0.08,
+      "bull_trap": 0.04
+    },
+    "indicators": {
+      "leverage_heat": {
+        "value": 2.9,
+        "raw": 0.0,
+        "desc": "신용/시총"
+      },
+      "flow_concentration": {
+        "value": 11.9,
+        "raw": 0,
+        "desc": "개인편중"
+      },
+      "price_deviation": {
+        "value": 98.8,
+        "raw": 0.3542,
+        "desc": "MA200 괴리"
+      },
+      "credit_acceleration": {
+        "value": 0.0,
+        "raw": -100.0,
+        "desc": "신용 증가속도"
+      },
+      "deposit_inflow": {
+        "value": 100,
+        "raw": -100.0,
+        "desc": "예탁금 변화"
+      },
+      "vix_level": {
+        "value": 68.6,
+        "raw": 22.69,
+        "desc": "VIX"
+      },
+      "volume_explosion": {
+        "value": 7.6,
+        "raw": 0.0,
+        "desc": "거래폭증"
+      },
+      "forced_liq_intensity": {
+        "value": 18.2,
+        "raw": 0,
+        "desc": "반대매매 강도"
+      },
+      "credit_deposit_ratio": {
+        "value": 1.8,
+        "raw": 0,
+        "desc": "신용/예탁"
+      },
+      "dram_cycle": {
+        "value": 50.0,
+        "raw": 0,
+        "desc": "DRAM 사이클"
+      },
+      "credit_suspension": {
+        "value": 50.0,
+        "raw": 0,
+        "desc": "신용 중단"
+      },
+      "institutional_selling": {
+        "value": 43.8,
+        "raw": 0,
+        "desc": "기관 순매도"
+      },
+      "retail_exhaustion": {
+        "value": 18.2,
+        "raw": 0,
+        "desc": "개인 매수력 감소"
+      },
+      "bull_trap": {
+        "value": 50.0,
+        "raw": 0,
+        "desc": "불트랩"
+      }
+    },
+    "history": [
+      {
+        "date": "2025-12-02",
+        "score": 50.4,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-03",
+        "score": 53.3,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-04",
+        "score": 53.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-05",
+        "score": 54.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-08",
+        "score": 55.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-09",
+        "score": 51.7,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-10",
+        "score": 51.4,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-11",
+        "score": 52.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-12",
+        "score": 50.3,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-15",
+        "score": 50.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-16",
+        "score": 49.4,
+        "classification": "normal"
+      },
+      {
+        "date": "2025-12-17",
+        "score": 49.9,
+        "classification": "normal"
+      },
+      {
+        "date": "2025-12-18",
+        "score": 51.7,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-19",
+        "score": 52.7,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-22",
+        "score": 50.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-23",
+        "score": 51.9,
+        "classification": "caution"
+      },
+      {
+        "date": "2025-12-24",
+        "score": 49.2,
+        "classification": "normal"
+      },
+      {
+        "date": "2025-12-26",
+        "score": 48.4,
+        "classification": "normal"
+      },
+      {
+        "date": "2025-12-29",
+        "score": 48.4,
+        "classification": "normal"
+      },
+      {
+        "date": "2025-12-30",
+        "score": 48.1,
+        "classification": "normal"
+      },
+      {
+        "date": "2026-01-02",
+        "score": 49.6,
+        "classification": "normal"
+      },
+      {
+        "date": "2026-01-05",
+        "score": 51.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-06",
+        "score": 52.8,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-07",
+        "score": 53.7,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-08",
+        "score": 53.9,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-09",
+        "score": 56.1,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-12",
+        "score": 55.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-13",
+        "score": 56.4,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-14",
+        "score": 55.8,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-15",
+        "score": 54.7,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-16",
+        "score": 53.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-19",
+        "score": 49.6,
+        "classification": "normal"
+      },
+      {
+        "date": "2026-01-20",
+        "score": 52.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-21",
+        "score": 52.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-22",
+        "score": 51.4,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-23",
+        "score": 50.9,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-26",
+        "score": 51.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-27",
+        "score": 50.9,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-28",
+        "score": 51.3,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-29",
+        "score": 53.7,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-01-30",
+        "score": 53.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-02",
+        "score": 53.3,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-03",
+        "score": 53.4,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-04",
+        "score": 57.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-05",
+        "score": 55.8,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-06",
+        "score": 53.8,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-09",
+        "score": 57.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-10",
+        "score": 57.2,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-11",
+        "score": 54.4,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-12",
+        "score": 56.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-13",
+        "score": 56.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-19",
+        "score": 49.5,
+        "classification": "normal"
+      },
+      {
+        "date": "2026-02-20",
+        "score": 50.0,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-23",
+        "score": 51.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-24",
+        "score": 52.0,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-25",
+        "score": 52.0,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-26",
+        "score": 52.6,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-02-27",
+        "score": 54.5,
+        "classification": "caution"
+      },
+      {
+        "date": "2026-03-03",
+        "score": 40.4,
+        "classification": "normal"
+      },
+      {
+        "date": "2026-03-04",
+        "score": 36.5,
+        "classification": "normal"
+      }
+    ]
+  },
+  "forced_liq": {
+    "shock_5": {
+      "initial_price": 5093.54,
+      "initial_fx": 1463.3,
+      "final_price": 4839.0,
+      "final_fx": 1463.0,
+      "total_drop_pct": -5.0,
+      "loop_mode": "A",
+      "converged_at_round": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "price": 4839.0,
+          "fx": 1463.0,
+          "forced_liq_billion": 0,
+          "margin_call_billion": 0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 0.0,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": -5.0
+        }
+      ]
+    },
+    "shock_15": {
+      "initial_price": 5093.54,
+      "initial_fx": 1463.3,
+      "final_price": 4330.0,
+      "final_fx": 1463.0,
+      "total_drop_pct": -15.0,
+      "loop_mode": "A",
+      "converged_at_round": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "price": 4330.0,
+          "fx": 1463.0,
+          "forced_liq_billion": 0,
+          "margin_call_billion": 0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 0.0,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": -15.0
+        }
+      ]
+    },
+    "shock_30": {
+      "initial_price": 5093.54,
+      "initial_fx": 1463.3,
+      "final_price": 3565.0,
+      "final_fx": 1463.0,
+      "total_drop_pct": -30.0,
+      "loop_mode": "A",
+      "converged_at_round": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "price": 3565.0,
+          "fx": 1463.0,
+          "forced_liq_billion": 0,
+          "margin_call_billion": 0,
+          "foreign_sell_billion": 0.0,
+          "impact_a_pct": 0.0,
+          "impact_b_pct": 0.0,
+          "cumulative_drop_pct": -30.0
+        }
+      ]
+    }
+  },
+  "scenarios": {
+    "scenarios": [
+      {
+        "id": "S1",
+        "name": "연착륙",
+        "desc": "점진적 정상화, 신용 위축 완화",
+        "kospi_range": [
+          2600,
+          2800
+        ],
+        "current_prob": 0.0
+      },
+      {
+        "id": "S2",
+        "name": "방어",
+        "desc": "정부 안정조치 + 외국인 매도 진정",
+        "kospi_range": [
+          2400,
+          2600
+        ],
+        "current_prob": 1.0
+      },
+      {
+        "id": "S3",
+        "name": "캐스케이드",
+        "desc": "Loop A + Loop C 4~8주 지속, 코호트 순차 붕괴",
+        "kospi_range": [
+          2100,
+          2400
+        ],
+        "current_prob": 0.0
+      },
+      {
+        "id": "S4",
+        "name": "전면위기",
+        "desc": "글로벌 충격 + 국내 loop 가속",
+        "kospi_range": [
+          1800,
+          2100
+        ],
+        "current_prob": 0.0
+      },
+      {
+        "id": "S5",
+        "name": "펀더멘털 붕괴",
+        "desc": "DRAM 마이너스 + AI capex 삭감, 실적 전제 붕괴",
+        "kospi_range": [
+          1400,
+          1800
+        ],
+        "current_prob": 0.0
+      }
+    ],
+    "probability_history": [
+      {
+        "date": "2025-12-02",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-03",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-04",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-05",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-08",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-09",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-10",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-11",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-12",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-15",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-16",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-17",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-18",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-19",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-22",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-23",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-24",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-26",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-29",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2025-12-30",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-02",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-05",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-06",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-07",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-08",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-09",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-12",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-13",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-14",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-15",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-16",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-19",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-20",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-21",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-22",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-23",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-26",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-27",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-28",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-29",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-01-30",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-02",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-03",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-04",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-05",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-06",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-09",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-10",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-11",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-12",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-13",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-19",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-20",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-23",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-24",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-25",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-26",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-02-27",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-03-03",
+        "s1": 0.0,
+        "s2": 0.0,
+        "s3": 1.0,
+        "s4": 0.0,
+        "s5": 0.0
+      },
+      {
+        "date": "2026-03-04",
+        "s1": 0.0,
+        "s2": 1.0,
+        "s3": 0.0,
+        "s4": 0.0,
+        "s5": 0.0
+      }
+    ],
+    "key_drivers": [
+      {
+        "indicator": "institutional_flow",
+        "observed": 0,
+        "expected": -200,
+        "z_score": 6.32,
+        "direction": "opposing",
+        "scenario": "S2"
+      },
+      {
+        "indicator": "retail_flow",
+        "observed": 0,
+        "expected": 200,
+        "z_score": -5.66,
+        "direction": "opposing",
+        "scenario": "S2"
+      },
+      {
+        "indicator": "fx_rate",
+        "observed": 1463.3,
+        "expected": 1380,
+        "z_score": 5.27,
+        "direction": "opposing",
+        "scenario": "S2"
+      }
+    ]
+  },
+  "historical": {
+    "cases": [
+      {
+        "id": "crisis_2008",
+        "name": "2008 글로벌 금융위기",
+        "peak_date": "2007-10-31",
+        "peak_kospi": 2064,
+        "bottom_kospi": 938,
+        "drop_pct": -54.6,
+        "recovery_days": 456
+      },
+      {
+        "id": "china_2015",
+        "name": "2015 중국발 폭락",
+        "peak_date": "2015-04-27",
+        "peak_kospi": 2173,
+        "bottom_kospi": 1829,
+        "drop_pct": -15.8,
+        "recovery_days": 89
+      },
+      {
+        "id": "covid_2020",
+        "name": "2020 코로나 폭락",
+        "peak_date": "2020-01-20",
+        "peak_kospi": 2267,
+        "bottom_kospi": 1457,
+        "drop_pct": -35.7,
+        "recovery_days": 210
+      },
+      {
+        "id": "evergrande_2021",
+        "name": "2021 에버그란데",
+        "peak_date": "2021-06-25",
+        "peak_kospi": 3305,
+        "bottom_kospi": 2614,
+        "drop_pct": -20.9,
+        "recovery_days": 0
+      }
+    ],
+    "similarities": {
+      "crisis_2008": {
+        "dtw": 0.909,
+        "cosine": 0.769,
+        "hybrid": 0.853
+      },
+      "china_2015": {
+        "dtw": 0.878,
+        "cosine": 0.776,
+        "hybrid": 0.837
+      },
+      "covid_2020": {
+        "dtw": 0.912,
+        "cosine": 0.769,
+        "hybrid": 0.855
+      },
+      "evergrande_2021": {
+        "dtw": 0.918,
+        "cosine": 0.907,
+        "hybrid": 0.914
+      }
+    },
+    "overlay": [
+      {
+        "day": 0,
+        "current_pct": -36.66,
+        "evergrande_2021_pct": -0.0
+      },
+      {
+        "day": 1,
+        "current_pct": -36.01,
+        "evergrande_2021_pct": -0.7
+      },
+      {
+        "day": 2,
+        "current_pct": -36.13,
+        "evergrande_2021_pct": -1.39
+      },
+      {
+        "day": 3,
+        "current_pct": -34.99,
+        "evergrande_2021_pct": -2.09
+      },
+      {
+        "day": 4,
+        "current_pct": -34.13,
+        "evergrande_2021_pct": -2.79
+      },
+      {
+        "day": 5,
+        "current_pct": -34.31,
+        "evergrande_2021_pct": -3.48
+      },
+      {
+        "day": 6,
+        "current_pct": -34.44,
+        "evergrande_2021_pct": -4.18
+      },
+      {
+        "day": 7,
+        "current_pct": -34.83,
+        "evergrande_2021_pct": -4.88
+      },
+      {
+        "day": 8,
+        "current_pct": -33.93,
+        "evergrande_2021_pct": -5.57
+      },
+      {
+        "day": 9,
+        "current_pct": -35.14,
+        "evergrande_2021_pct": -6.27
+      },
+      {
+        "day": 10,
+        "current_pct": -36.59,
+        "evergrande_2021_pct": -6.97
+      },
+      {
+        "day": 11,
+        "current_pct": -35.69,
+        "evergrande_2021_pct": -7.66
+      },
+      {
+        "day": 12,
+        "current_pct": -36.67,
+        "evergrande_2021_pct": -8.36
+      },
+      {
+        "day": 13,
+        "current_pct": -36.26,
+        "evergrande_2021_pct": -9.06
+      },
+      {
+        "day": 14,
+        "current_pct": -34.9,
+        "evergrande_2021_pct": -9.75
+      },
+      {
+        "day": 15,
+        "current_pct": -34.72,
+        "evergrande_2021_pct": -10.45
+      },
+      {
+        "day": 16,
+        "current_pct": -34.86,
+        "evergrande_2021_pct": -11.15
+      },
+      {
+        "day": 17,
+        "current_pct": -34.53,
+        "evergrande_2021_pct": -11.84
+      },
+      {
+        "day": 18,
+        "current_pct": -33.08,
+        "evergrande_2021_pct": -12.54
+      },
+      {
+        "day": 19,
+        "current_pct": -33.19,
+        "evergrande_2021_pct": -13.24
+      },
+      {
+        "day": 20,
+        "current_pct": -31.67,
+        "evergrande_2021_pct": -13.93
+      },
+      {
+        "day": 21,
+        "current_pct": -29.33,
+        "evergrande_2021_pct": -14.63
+      },
+      {
+        "day": 22,
+        "current_pct": -28.25,
+        "evergrande_2021_pct": -15.33
+      },
+      {
+        "day": 23,
+        "current_pct": -27.84,
+        "evergrande_2021_pct": -16.02
+      },
+      {
+        "day": 24,
+        "current_pct": -27.82,
+        "evergrande_2021_pct": -16.72
+      },
+      {
+        "day": 25,
+        "current_pct": -27.29,
+        "evergrande_2021_pct": -17.42
+      },
+      {
+        "day": 26,
+        "current_pct": -26.68,
+        "evergrande_2021_pct": -18.11
+      },
+      {
+        "day": 27,
+        "current_pct": -25.6,
+        "evergrande_2021_pct": -18.81
+      },
+      {
+        "day": 28,
+        "current_pct": -25.12,
+        "evergrande_2021_pct": -19.51
+      },
+      {
+        "day": 29,
+        "current_pct": -23.94,
+        "evergrande_2021_pct": -20.2
+      },
+      {
+        "day": 30,
+        "current_pct": -23.25,
+        "evergrande_2021_pct": -20.9
+      },
+      {
+        "day": 31,
+        "current_pct": -22.24,
+        "evergrande_2021_pct": -20.55
+      },
+      {
+        "day": 32,
+        "current_pct": -22.54,
+        "evergrande_2021_pct": -20.2
+      },
+      {
+        "day": 33,
+        "current_pct": -22.15,
+        "evergrande_2021_pct": -19.85
+      },
+      {
+        "day": 34,
+        "current_pct": -21.48,
+        "evergrande_2021_pct": -19.51
+      },
+      {
+        "day": 35,
+        "current_pct": -20.88,
+        "evergrande_2021_pct": -19.16
+      },
+      {
+        "day": 36,
+        "current_pct": -21.53,
+        "evergrande_2021_pct": -18.81
+      },
+      {
+        "day": 37,
+        "current_pct": -19.38,
+        "evergrande_2021_pct": -18.46
+      },
+      {
+        "day": 38,
+        "current_pct": -18.02,
+        "evergrande_2021_pct": -18.11
+      },
+      {
+        "day": 39,
+        "current_pct": -17.22,
+        "evergrande_2021_pct": -17.76
+      },
+      {
+        "day": 40,
+        "current_pct": -17.17,
+        "evergrande_2021_pct": -17.42
+      },
+      {
+        "day": 41,
+        "current_pct": -21.52,
+        "evergrande_2021_pct": -17.07
+      },
+      {
+        "day": 42,
+        "current_pct": -16.16,
+        "evergrande_2021_pct": -16.72
+      },
+      {
+        "day": 43,
+        "current_pct": -14.84,
+        "evergrande_2021_pct": -16.37
+      },
+      {
+        "day": 44,
+        "current_pct": -18.13,
+        "evergrande_2021_pct": -16.02
+      },
+      {
+        "day": 45,
+        "current_pct": -19.31,
+        "evergrande_2021_pct": -15.67
+      },
+      {
+        "day": 46,
+        "current_pct": -16.0,
+        "evergrande_2021_pct": -15.33
+      },
+      {
+        "day": 47,
+        "current_pct": -15.94,
+        "evergrande_2021_pct": -14.98
+      },
+      {
+        "day": 48,
+        "current_pct": -15.11,
+        "evergrande_2021_pct": -14.63
+      },
+      {
+        "day": 49,
+        "current_pct": -12.45,
+        "evergrande_2021_pct": -14.28
+      },
+      {
+        "day": 50,
+        "current_pct": -12.69,
+        "evergrande_2021_pct": -13.93
+      },
+      {
+        "day": 51,
+        "current_pct": -9.99,
+        "evergrande_2021_pct": -13.58
+      },
+      {
+        "day": 52,
+        "current_pct": -7.91,
+        "evergrande_2021_pct": -13.24
+      },
+      {
+        "day": 53,
+        "current_pct": -7.31,
+        "evergrande_2021_pct": -12.89
+      },
+      {
+        "day": 54,
+        "current_pct": -5.35,
+        "evergrande_2021_pct": -12.54
+      },
+      {
+        "day": 55,
+        "current_pct": -3.54,
+        "evergrande_2021_pct": -12.19
+      },
+      {
+        "day": 56,
+        "current_pct": 0.0,
+        "evergrande_2021_pct": -11.84
+      },
+      {
+        "day": 57,
+        "current_pct": -1.0,
+        "evergrande_2021_pct": -11.5
+      },
+      {
+        "day": 58,
+        "current_pct": -8.17,
+        "evergrande_2021_pct": -11.15
+      },
+      {
+        "day": 59,
+        "current_pct": -19.24,
+        "evergrande_2021_pct": -10.8
+      }
+    ]
+  },
+  "defense_walls": [
+    {
+      "status": "weakened",
+      "capacity": 0.3,
+      "id": "wall1",
+      "name": "개인 매수",
+      "detail": "최근5일 평균 0억 / 20일 0억"
+    },
+    {
+      "status": "weakened",
+      "capacity": 0.35,
+      "detail": "기관 0억 (소폭 매도)",
+      "id": "wall2",
+      "name": "연기금/기관"
+    },
+    {
+      "status": "weakened",
+      "capacity": 0.4,
+      "detail": "USD/KRW 1463 (긴장)",
+      "id": "wall3",
+      "name": "한은 FX 개입"
+    },
+    {
+      "id": "wall4",
+      "name": "US 통화스왑",
+      "status": "standby",
+      "capacity": 0.5,
+      "detail": "미발동 (요청 시 가용)"
+    },
+    {
+      "id": "wall5",
+      "name": "IMF 지원",
+      "status": "standby",
+      "capacity": 1.0,
+      "detail": "미발동 (외환보유고 $4,000억+)"
+    }
+  ],
+  "loop_status": {
+    "loop_a": {
+      "status": "dormant",
+      "name": "반대매매 캐스케이드",
+      "wave1": {
+        "time": "08:00-09:00",
+        "desc": "프리마켓 마진콜"
+      },
+      "wave2": {
+        "time": "12:00-14:00",
+        "desc": "추가담보 마감 후 강제매도"
+      },
+      "estimated_volume_billion": 0
+    },
+    "loop_c": {
+      "status": "dormant",
+      "name": "펀드 환매 캐스케이드",
+      "delay": "T+1~T+3",
+      "desc": "기관 0억 중 환매 매도 추정 0억",
+      "estimated_volume_billion": 0,
+      "confidence": "low"
+    }
+  }
+}

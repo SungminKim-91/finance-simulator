@@ -13,6 +13,7 @@
 
 | Feature | Version | Report | Status | Match Rate | Completion Date |
 |---------|---------|--------|--------|------------|-----------------|
+| **kospi-phase4.1-data-sources** | v4.1 | [Link](features/kospi-phase4.1-data-sources.report.md) | ✅ Approved | **93%** | 2026-03-04 |
 | **kospi-crisis-phase2-v1.4** | v1.4 | [Link](kospi-crisis-v1.4-refactor.report.md) | ✅ Approved | **100%** | 2026-03-04 |
 | **kospi-crisis-phase2** | v1.1.0 | Archived | ✅ Approved | 98.9% | 2026-02-28 |
 | **kospi-crisis-phase1** | v1.0.2 | Archived | ✅ Approved | 100% | 2026-02-10 |
@@ -26,43 +27,42 @@
 
 ---
 
-## Latest Report: KOSPI Crisis Detector v1.4
+## Latest Report: KOSPI Phase 4.1 Real Data Source Integration
 
 ### Overview
-- **Feature**: kospi-crisis-phase2 (Phase 2 refactoring)
-- **Version**: v1.1.0 → v1.4
+- **Feature**: kospi-phase4.1-data-sources
+- **Version**: v4.1
 - **Duration**: Full PDCA cycle
 - **Status**: ✅ Approved
-- **Match Rate**: 100% (8/8 verification tests passed)
+- **Match Rate**: 93%
 
 ### Key Changes
-1. **Loop B Removed**: FX-foreign investor feedback (50% accuracy → unreliable)
-2. **Loop C Added**: Fund redemption cascade (T+1~T+3 delayed mechanics)
-3. **Crisis Score**: 13→14 indicators (new: credit_suspension, institutional_selling, retail_exhaustion, bull_trap)
-4. **Scenarios**: 4→5 (S5 Fundamental Collapse added)
-5. **Defense Walls**: 5-stage system (retail → institution → BOK → US → IMF)
+1. **ECOS API**: KOSPI/KOSDAQ, foreign net, trading value, market cap (281/282 days)
+2. **Naver Scraper**: Customer deposit + credit balance (280/282 days, 99% fill)
+3. **KRX Auth**: Session login + pykrx injection (session acquired, API broken)
+4. **fetch_daily**: 5-step integrated pipeline (ECOS > yfinance priority chain)
+5. **Data fill**: Credit 0%→99%, Deposit 0%→99%, Foreign 0%→100%
 
 ### Files Changed
 ```
-web/src/simulators/kospi/
-├── colors.js                 (+1 line, S5 color)
-├── data/kospi_data.js        (+100 lines, data restructure)
-├── shared/terms.jsx          (+30 lines, 14 TERM updates)
-├── CrisisAnalysis.jsx        (+150 lines, NEW component, 6 sections)
-└── HistoricalComp.jsx        (0 lines, auto-updated from data)
+kospi/scripts/
+├── krx_auth.py         (NEW, 89 lines)
+├── ecos_fetcher.py     (NEW, 132 lines)
+├── naver_scraper.py    (NEW, 159 lines)
+├── fetch_daily.py      (modified, +100 lines)
+└── requirements.txt    (+2 dependencies)
 ```
 
 ### Test Results
 | Category | Result |
 |----------|--------|
-| Weights validation | ✅ PASS |
-| Probabilities validation | ✅ PASS |
-| Defense walls | ✅ PASS |
-| Loop structure | ✅ PASS |
-| Color definitions | ✅ PASS |
-| Terms dictionary | ✅ PASS |
-| Build (npm) | ✅ PASS |
-| Runtime | ✅ PASS |
+| ECOS API 7-day test | ✅ PASS |
+| Naver scraper 6-day test | ✅ PASS |
+| KRX session login | ✅ PASS |
+| Full pipeline 282 days | ✅ PASS |
+| compute_models | ✅ PASS |
+| export_web | ✅ PASS |
+| vite build | ✅ PASS |
 
 ---
 
@@ -70,7 +70,12 @@ web/src/simulators/kospi/
 
 ### Completed Features (PDCA Approved)
 
-1. **KOSPI Crisis Detector v1.4** (2026-03-04)
+1. **KOSPI Phase 4.1 Data Sources** (2026-03-04)
+   - Report: [kospi-phase4.1-data-sources.report.md](features/kospi-phase4.1-data-sources.report.md)
+   - Match Rate: 93%
+   - Changes: ECOS + Naver + KRX integration, 282-day real data pipeline
+
+2. **KOSPI Crisis Detector v1.4** (2026-03-04)
    - Report: [kospi-crisis-v1.4-refactor.report.md](kospi-crisis-v1.4-refactor.report.md)
    - Match Rate: 100%
    - Changes: Loop refactoring, defense walls, 14-indicator model
@@ -119,7 +124,7 @@ web/src/simulators/kospi/
 
 | Resource | Purpose |
 |----------|---------|
-| [Latest Report](kospi-crisis-v1.4-refactor.report.md) | v1.4 completion details |
+| [Latest Report](features/kospi-phase4.1-data-sources.report.md) | v4.1 data source integration |
 | [Changelog](changelog.md) | Full version history |
 | [PDCA Status](../.pdca-status.json) | Current feature phases |
 | [Plan Docs](../01-plan/) | Feature planning documents |
@@ -129,4 +134,4 @@ web/src/simulators/kospi/
 ---
 
 **Report Dashboard**: `/home/sungmin/finance-simulator/web/docs/04-report/`
-**Last Generated**: 2026-03-04 16:35:00 KST
+**Last Generated**: 2026-03-04 19:40:00 KST

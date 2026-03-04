@@ -3,6 +3,7 @@ import MarketPulse from "./MarketPulse";
 import CohortAnalysis from "./CohortAnalysis";
 import CrisisAnalysis from "./CrisisAnalysis";
 import HistoricalComp from "./HistoricalComp";
+import RawDataTable from "./RawDataTable";
 import KospiHeader from "./KospiHeader";
 import { C } from "./colors";
 
@@ -13,6 +14,7 @@ const TABS = [
   { id: "cohort", label: "코호트 분석 (Cohort)" },
   { id: "scenario", label: "위기 분석 (Crisis)" },
   { id: "history", label: "과거 비교 (History)" },
+  { id: "rawdata", label: "원시 데이터 (Raw Data)" },
 ];
 
 export default function KospiApp() {
@@ -46,6 +48,7 @@ export default function KospiApp() {
         {tab === "cohort" && <CohortAnalysis />}
         {tab === "scenario" && <CrisisAnalysis />}
         {tab === "history" && <HistoricalComp />}
+        {tab === "rawdata" && <RawDataTable />}
       </div>
     </div>
   );

@@ -192,9 +192,17 @@ web/src/simulators/kospi/        # React 대시보드
     └── terms.jsx                # 용어 사전 (TERM), fmtBillion, TermLabel, TermHint, CustomLegend, CustomTooltipContent
 ```
 
-### Phase 3~5 (미구현, 향후)
-- **Phase 3**: Crisis Score + Historical Comparison (위기 지표 PCA, DTW 유사도)
-- **Phase 4**: Bayesian Scenario Tracker (시나리오 확률 일간 업데이트)
+### Phase 4.1 구현 범위 (v4.1 — Real Data Source Integration)
+- **ecos_fetcher.py**: ECOS 802Y001 일간 데이터 (6개 항목코드: KOSPI/KOSDAQ/외국인/거래량/거래대금/시가총액)
+- **naver_scraper.py**: Naver Finance sise_deposit 스크래핑 (고객예탁금 + 신용잔고, 억원, 294페이지)
+- **krx_auth.py**: KRX 로그인 세션 + pykrx webio monkey-patch
+- **fetch_daily.py 통합**: 5단계 파이프라인 (env → KRX → ECOS → Naver → yfinance → merge)
+- **데이터 우선순위**: ECOS > yfinance (지수), pykrx > ECOS (외국인), Naver (예탁금/신용잔고)
+- **실적**: 282일, Credit 99%, Deposit 99%, Foreign 100%, Trading Value 100%
+- **환경변수**: `ECOS_API_KEY`, `KRX_USER_ID`, `KRX_USER_PW` (`.env`)
+
+### Phase 4.2~5 (미구현, 향후)
+- **Phase 4.2**: pykrx 대체 투자자 수급 소스 (individual/institution 데이터)
 - **Phase 5**: Deploy (GitHub Actions cron, Vercel)
 
 ---
@@ -206,8 +214,10 @@ web/src/simulators/kospi/        # React 대시보드
 - **web v2.1 dual-band**: Archived (Match Rate 97.4%) → `docs/archive/2026-03/web/`
 - **kospi-crisis v1.0.2**: Completed (Phase 1 차트 가독성, Match Rate 100%)
 - **kospi-crisis-phase2 v1.1.0**: Completed (Phase 2 UX 전면 개선, Match Rate 98.9%)
+- **kospi-phase4.1-data-sources v4.1**: Completed (ECOS+Naver+KRX 실데이터 통합, Match Rate 93%)
 - **Archive**: docs/archive/2026-03/
 
 ## Backlog
 - **gm2-data-improvement**: 2025년 lag=6 불일치 개선 — GM2 데이터 고착(11개월), HY 단기 충격, BTC 독자 요인 → `docs/01-plan/features/gm2-data-improvement.plan.md`
-- **kospi-crisis Phase 3~5**: Crisis Score, Scenario, Historical, Deploy — `docs/01-plan/features/kospi-crisis.plan.md`
+- **kospi-crisis Phase 4.2**: pykrx 대체 투자자 수급 소스 확보 (individual/institution 데이터)
+- **kospi-crisis Phase 5**: Deploy (GitHub Actions cron + Vercel) — `docs/01-plan/features/kospi-crisis.plan.md`

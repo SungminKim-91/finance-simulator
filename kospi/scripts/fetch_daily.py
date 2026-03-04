@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """
-KOSPI 일간 데이터 수집 스크립트.
+KOSPI 일간 데이터 수집 스크립트 (yfinance + ECOS + Naver + pykrx hybrid).
+
+yfinance: 삼전/하닉 가격, 글로벌 (USD/KRW, WTI, VIX, SPY)
+ECOS: KOSPI/KOSDAQ 지수, 외국인 순매수, 거래량/대금, 시가총액
+Naver: 고객예탁금, 신용잔고
+pykrx: 투자자 수급 (매매동향), 공매도
 
 Usage:
-    python kospi/scripts/fetch_daily.py                        # 오늘 데이터
-    python kospi/scripts/fetch_daily.py --date 2026-03-03      # 특정 날짜
-    python kospi/scripts/fetch_daily.py --range 2026-01-01 2026-03-03  # 범위
+    python -m scripts.fetch_daily                              # 오늘 데이터
+    python -m scripts.fetch_daily --date 2026-03-03            # 특정 날짜
+    python -m scripts.fetch_daily --range 2026-01-01 2026-03-03  # 범위
 """
 import argparse
 import json
@@ -16,20 +21,44 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-# pykrx / FDR imports
-from pykrx import stock as krx
 try:
-    import FinanceDataReader as fdr
+    from dotenv import load_dotenv
 except ImportError:
-    fdr = None
+    load_dotenv = None
+
+try:
+    import yfinance as yf
+except ImportError:
+    yf = None
+
+try:
+    from pykrx import stock as krx
+except ImportError:
+    krx = None
+
+from scripts.ecos_fetcher import fetch_ecos_daily
+from scripts.naver_scraper import fetch_naver_deposit_credit
+from scripts.krx_auth import create_krx_session, inject_pykrx_session
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 DAILY_DIR = DATA_DIR / "daily"
 
 TICKERS = {"005930": "삼성전자", "000660": "SK하이닉스"}
-DATE_FMT = "%Y%m%d"     # pykrx format
+DATE_FMT = "%Y%m%d"
 ISO_FMT = "%Y-%m-%d"
+
+# yfinance 심볼 매핑
+YF_SYMBOLS = {
+    "kospi": "^KS11",
+    "kosdaq": "^KQ11",
+    "samsung": "005930.KS",
+    "hynix": "000660.KS",
+    "usd_krw": "USDKRW=X",
+    "wti": "CL=F",
+    "vix": "^VIX",
+    "sp500": "SPY",
+}
 
 
 def _fmt(date_str: str) -> str:
@@ -37,143 +66,118 @@ def _fmt(date_str: str) -> str:
     return date_str.replace("-", "")
 
 
-def fetch_market_data(date: str) -> dict:
-    """D01, D19, D22 — KOSPI OHLCV, 시가총액, 거래대금"""
-    d = _fmt(date)
-    try:
-        # KOSPI 지수 OHLCV
-        df = krx.get_index_ohlcv_by_date(d, d, "1001")  # 1001 = KOSPI
-        if df.empty:
-            return {"kospi": None, "kosdaq": None, "kospi_market_cap_trillion": None}
+def fetch_yfinance_batch(start: str, end: str) -> pd.DataFrame:
+    """yfinance로 모든 심볼 일괄 다운로드."""
+    if yf is None:
+        print("  [WARN] yfinance not installed")
+        return pd.DataFrame()
 
-        row = df.iloc[0]
-        kospi = {
-            "open": float(row.get("시가", 0)),
-            "high": float(row.get("고가", 0)),
-            "low": float(row.get("저가", 0)),
-            "close": float(row.get("종가", 0)),
-            "volume": int(row.get("거래량", 0)),
-            "trading_value_billion": round(float(row.get("거래대금", 0)) / 1e8, 1),
-        }
+    symbols = list(YF_SYMBOLS.values())
+    end_dt = datetime.strptime(end, ISO_FMT) + timedelta(days=1)
+    end_plus = end_dt.strftime(ISO_FMT)
+
+    try:
+        df = yf.download(symbols, start=start, end=end_plus, progress=False)
+        return df
     except Exception as e:
-        print(f"  [WARN] KOSPI OHLCV failed: {e}")
-        kospi = None
+        print(f"  [WARN] yfinance batch download failed: {e}")
+        return pd.DataFrame()
 
-    # KOSDAQ
-    try:
-        df2 = krx.get_index_ohlcv_by_date(d, d, "2001")  # 2001 = KOSDAQ
-        if not df2.empty:
-            row2 = df2.iloc[0]
-            kosdaq = {
-                "open": float(row2.get("시가", 0)),
-                "high": float(row2.get("고가", 0)),
-                "low": float(row2.get("저가", 0)),
-                "close": float(row2.get("종가", 0)),
-                "volume": int(row2.get("거래량", 0)),
-            }
-        else:
-            kosdaq = None
-    except Exception:
-        kosdaq = None
 
-    # 시가총액 — 전 종목 합계
-    try:
-        mcap_df = krx.get_market_cap_by_date(d, d, "005930")
-        kospi_mcap = None  # 개별 종목 시총은 아래 stock_data에서 처리
-    except Exception:
-        pass
-
-    kospi_mcap = None  # 시장 전체 시총은 별도 계산 필요 — 일단 None
-
-    return {
-        "kospi": kospi,
-        "kosdaq": kosdaq,
-        "kospi_market_cap_trillion": kospi_mcap,
+def extract_date_data(yf_data: pd.DataFrame, date: str) -> dict:
+    """yfinance DataFrame에서 특정 날짜 데이터 추출."""
+    result = {
+        "kospi": None, "kosdaq": None, "samsung": None, "hynix": None,
+        "kospi_volume": None, "kospi_trading_value_billion": None,
+        "samsung_volume": None, "hynix_volume": None,
+        "usd_krw": None, "wti": None, "vix": None, "sp500": None,
     }
 
+    if yf_data.empty:
+        return result
 
-def fetch_stock_data(date: str) -> dict:
-    """D02~D03 — 삼성전자/SK하이닉스 OHLCV"""
-    d = _fmt(date)
-    result = {}
-    for ticker, name in TICKERS.items():
-        try:
-            df = krx.get_market_ohlcv_by_date(d, d, ticker)
-            if df.empty:
-                result[ticker] = {"name": name}
-                continue
-            row = df.iloc[0]
-            result[ticker] = {
-                "name": name,
-                "open": int(row.get("시가", 0)),
-                "high": int(row.get("고가", 0)),
-                "low": int(row.get("저가", 0)),
-                "close": int(row.get("종가", 0)),
-                "volume": int(row.get("거래량", 0)),
-            }
-        except Exception as e:
-            print(f"  [WARN] {name} OHLCV failed: {e}")
-            result[ticker] = {"name": name}
+    try:
+        dt = pd.Timestamp(date)
+        if dt not in yf_data.index:
+            return result
+
+        row = yf_data.loc[dt]
+
+        # 지수/종목 종가
+        for key, symbol in YF_SYMBOLS.items():
+            try:
+                val = row[("Close", symbol)]
+                if pd.notna(val):
+                    if key in ("kospi", "kosdaq"):
+                        result[key] = round(float(val), 2)
+                    elif key in ("samsung", "hynix"):
+                        result[key] = int(float(val))
+                    elif key == "usd_krw":
+                        result[key] = round(float(val), 1)
+                    elif key == "sp500":
+                        result[key] = round(float(val), 1)
+                    else:
+                        result[key] = round(float(val), 2)
+            except (KeyError, TypeError):
+                pass
+
+        # 거래량
+        for key, symbol in YF_SYMBOLS.items():
+            try:
+                vol = row[("Volume", symbol)]
+                if pd.notna(vol):
+                    if key == "kospi":
+                        result["kospi_volume"] = int(vol)
+                    elif key == "samsung":
+                        result["samsung_volume"] = int(vol)
+                    elif key == "hynix":
+                        result["hynix_volume"] = int(vol)
+            except (KeyError, TypeError):
+                pass
+
+    except Exception as e:
+        print(f"  [WARN] extract_date_data error for {date}: {e}")
+
     return result
 
 
 def fetch_investor_flows(date: str) -> dict:
-    """D04~D06 — 주체별 매매동향"""
-    d = _fmt(date)
-    result = {}
+    """pykrx로 투자자 수급 데이터 수집."""
+    result = {
+        "individual_billion": None,
+        "foreign_billion": None,
+        "institution_billion": None,
+    }
 
-    # 시장 전체
+    if krx is None:
+        return result
+
+    d = _fmt(date)
     try:
         df = krx.get_market_trading_value_by_date(d, d, "KOSPI")
         if not df.empty:
             row = df.iloc[0]
-            # 컬럼: 기관합계, 기타법인, 개인, 외국인합계, 전체
-            result["market_total"] = {
-                "individual_billion": round(float(row.get("개인", 0)) / 1e8, 1),
-                "foreign_billion": round(float(row.get("외국인합계", 0)) / 1e8, 1),
-                "institution_billion": round(float(row.get("기관합계", 0)) / 1e8, 1),
-            }
-        else:
-            result["market_total"] = {
-                "individual_billion": None,
-                "foreign_billion": None,
-                "institution_billion": None,
-            }
+            result["individual_billion"] = round(float(row.get("개인", 0)) / 1e8, 1)
+            result["foreign_billion"] = round(float(row.get("외국인합계", 0)) / 1e8, 1)
+            result["institution_billion"] = round(float(row.get("기관합계", 0)) / 1e8, 1)
     except Exception as e:
-        print(f"  [WARN] Market flows failed: {e}")
-        result["market_total"] = {
-            "individual_billion": None,
-            "foreign_billion": None,
-            "institution_billion": None,
-        }
-
-    # 종목별 — pykrx로 가능한지 시도
-    for ticker, name in TICKERS.items():
-        try:
-            df = krx.get_market_trading_value_by_date(d, d, ticker)
-            if not df.empty:
-                row = df.iloc[0]
-                result[ticker] = {
-                    "individual_billion": round(float(row.get("개인", 0)) / 1e8, 1),
-                    "foreign_billion": round(float(row.get("외국인합계", 0)) / 1e8, 1),
-                    "institution_billion": round(float(row.get("기관합계", 0)) / 1e8, 1),
-                }
-            else:
-                result[ticker] = {"individual_billion": None, "foreign_billion": None, "institution_billion": None}
-        except Exception:
-            result[ticker] = {"individual_billion": None, "foreign_billion": None, "institution_billion": None}
+        print(f"  [WARN] Investor flows failed for {date}: {e}")
 
     return result
 
 
 def fetch_short_selling(date: str) -> dict:
-    """D09~D11 — 공매도"""
-    d = _fmt(date)
+    """pykrx로 공매도 데이터 수집."""
     result = {
         "market_total_shares": None,
         "market_total_billion": None,
         "government_ban_active": False,
     }
+
+    if krx is None:
+        return result
+
+    d = _fmt(date)
     try:
         df = krx.get_shorting_volume_by_date(d, d, "KOSPI")
         if not df.empty:
@@ -181,90 +185,96 @@ def fetch_short_selling(date: str) -> dict:
             result["market_total_shares"] = int(total.get("공매도거래량", 0))
             result["market_total_billion"] = round(float(total.get("공매도거래대금", 0)) / 1e8, 2)
     except Exception as e:
-        print(f"  [WARN] Short selling failed: {e}")
-
-    for ticker in TICKERS:
-        try:
-            df = krx.get_shorting_volume_by_date(d, d, ticker)
-            if not df.empty:
-                row = df.iloc[0]
-                result[f"{ticker}_shares"] = int(row.get("공매도거래량", 0))
-            else:
-                result[f"{ticker}_shares"] = None
-        except Exception:
-            result[f"{ticker}_shares"] = None
+        pass  # 공매도 실패는 무시 (비필수)
 
     return result
 
 
-def fetch_global_data(date: str) -> dict:
-    """D07, D08, D20, D21 — USD/KRW, WTI, VIX, S&P 500"""
-    if fdr is None:
-        print("  [WARN] FinanceDataReader not installed, skipping global data")
-        return {"usd_krw": None, "wti": None, "vix": None, "sp500": None}
+def build_snapshot(
+    date: str,
+    yf_data: pd.DataFrame,
+    ecos_data: dict | None = None,
+    naver_data: dict | None = None,
+) -> dict:
+    """모든 데이터를 하나의 일간 스냅샷으로 조합.
 
-    result = {}
-    mappings = {
-        "usd_krw": "USD/KRW",
-        "wti": "CL=F",
-        "vix": "VIX",
-        "sp500": "SPY",  # S&P 500 ETF as proxy
-    }
+    데이터 우선순위: ECOS > yfinance (지수), Naver (예탁금/신용잔고)
+    """
+    data = extract_date_data(yf_data, date)
+    ecos_day = (ecos_data or {}).get(date, {})
+    naver_day = (naver_data or {}).get(date, {})
 
-    for key, symbol in mappings.items():
-        try:
-            df = fdr.DataReader(symbol, date, date)
-            if not df.empty:
-                result[key] = round(float(df.iloc[-1]["Close"]), 2)
-            else:
-                result[key] = None
-        except Exception as e:
-            print(f"  [WARN] {symbol} failed: {e}")
-            result[key] = None
+    # ECOS 데이터로 보강 (우선순위: ECOS > yfinance)
+    kospi_close = ecos_day.get("kospi") or data["kospi"]
+    kosdaq_close = ecos_day.get("kosdaq") or data["kosdaq"]
+    trading_value_b = ecos_day.get("trading_value_billion")
+    volume_k = ecos_day.get("volume_thousand")
+    market_cap_b = ecos_day.get("market_cap_billion")
+    foreign_net_b = ecos_day.get("foreign_net_billion")
 
-    return result
-
-
-def build_snapshot(date: str) -> dict:
-    """모든 데이터를 하나의 일간 스냅샷으로 조합"""
-    print(f"[{date}] Fetching data...")
-
-    market = fetch_market_data(date)
-    print(f"  Market: {'OK' if market.get('kospi') else 'EMPTY'}")
-
-    stocks = fetch_stock_data(date)
-    print(f"  Stocks: {len([v for v in stocks.values() if v.get('close')])}/{len(TICKERS)}")
-
+    # pykrx 투자자 수급
     flows = fetch_investor_flows(date)
-    print(f"  Flows: {'OK' if flows.get('market_total', {}).get('individual_billion') is not None else 'EMPTY'}")
 
+    # ECOS 외국인 순매수로 보강 (pykrx 실패시 fallback)
+    if flows["foreign_billion"] is None and foreign_net_b is not None:
+        flows["foreign_billion"] = round(foreign_net_b, 1)
+
+    # pykrx 공매도
     shorts = fetch_short_selling(date)
-    print(f"  Shorts: {'OK' if shorts.get('market_total_shares') else 'EMPTY'}")
 
-    global_data = fetch_global_data(date)
-    print(f"  Global: {sum(1 for v in global_data.values() if v is not None)}/4")
+    # Naver 예탁금/신용잔고
+    deposit_b = naver_day.get("deposit_billion")
+    credit_b = naver_day.get("credit_balance_billion")
 
     snapshot = {
         "date": date,
         "fetched_at": datetime.now().isoformat(),
-        "market": market,
-        "stocks": stocks,
-        "investor_flows": flows,
+        "market": {
+            "kospi": {
+                "close": kospi_close,
+                "volume": int(volume_k * 1000) if volume_k else data["kospi_volume"],
+                "trading_value_billion": trading_value_b,
+            } if kospi_close else None,
+            "kosdaq": {
+                "close": kosdaq_close,
+            } if kosdaq_close else None,
+            "kospi_market_cap_trillion": round(market_cap_b / 1000, 2) if market_cap_b else None,
+        },
+        "stocks": {
+            "005930": {
+                "name": "삼성전자",
+                "close": data["samsung"],
+                "volume": data.get("samsung_volume"),
+            },
+            "000660": {
+                "name": "SK하이닉스",
+                "close": data["hynix"],
+                "volume": data.get("hynix_volume"),
+            },
+        },
+        "investor_flows": {
+            "market_total": flows,
+        },
         "credit": {
-            "total_balance_billion": None,
+            "total_balance_billion": credit_b,
             "estimated": False,
         },
         "deposit": {
-            "customer_deposit_billion": None,
+            "customer_deposit_billion": deposit_b,
             "estimated": False,
         },
         "settlement": {
             "unsettled_margin_billion": None,
-            "forced_liquidation_billion": None,
+            "forced_liquidation_billion": None,  # OLS 추정 (estimate_missing.py)
             "estimated": False,
         },
         "short_selling": shorts,
-        "global": global_data,
+        "global": {
+            "usd_krw": data["usd_krw"],
+            "wti": data["wti"],
+            "vix": data["vix"],
+            "sp500": data["sp500"],
+        },
         "manual_inputs": {
             "events": [],
         },
@@ -273,17 +283,16 @@ def build_snapshot(date: str) -> dict:
 
 
 def save_daily_snapshot(date: str, snapshot: dict) -> Path:
-    """kospi/data/daily/{date}.json 저장"""
+    """kospi/data/daily/{date}.json 저장."""
     DAILY_DIR.mkdir(parents=True, exist_ok=True)
     path = DAILY_DIR / f"{date}.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, ensure_ascii=False, indent=2, default=str)
-    print(f"  Saved: {path}")
     return path
 
 
 def append_timeseries(date: str, snapshot: dict) -> None:
-    """kospi/data/timeseries.json 에 append"""
+    """kospi/data/timeseries.json 에 append."""
     ts_path = DATA_DIR / "timeseries.json"
     if ts_path.exists():
         with open(ts_path, "r", encoding="utf-8") as f:
@@ -296,7 +305,6 @@ def append_timeseries(date: str, snapshot: dict) -> None:
     if date in existing_dates:
         ts = [r for r in ts if r["date"] != date]
 
-    # 간결한 시계열 레코드
     kospi = snapshot.get("market", {}).get("kospi") or {}
     samsung = snapshot.get("stocks", {}).get("005930") or {}
     hynix = snapshot.get("stocks", {}).get("000660") or {}
@@ -325,15 +333,20 @@ def append_timeseries(date: str, snapshot: dict) -> None:
         "vix": global_d.get("vix"),
         "sp500": global_d.get("sp500"),
     }
-    ts.append(record)
-    ts.sort(key=lambda r: r["date"])
 
-    with open(ts_path, "w", encoding="utf-8") as f:
-        json.dump(ts, f, ensure_ascii=False, indent=2, default=str)
+    # 데이터가 있는 날만 추가 (kospi 또는 samsung 존재)
+    if record["kospi"] or record["samsung"]:
+        ts.append(record)
+        ts.sort(key=lambda r: r["date"])
+
+        with open(ts_path, "w", encoding="utf-8") as f:
+            json.dump(ts, f, ensure_ascii=False, indent=2, default=str)
+        return True
+    return False
 
 
 def update_metadata(date: str) -> None:
-    """kospi/data/metadata.json 업데이트"""
+    """kospi/data/metadata.json 업데이트."""
     meta_path = DATA_DIR / "metadata.json"
     meta = {
         "last_updated": datetime.now().isoformat(),
@@ -344,24 +357,104 @@ def update_metadata(date: str) -> None:
         json.dump(meta, f, ensure_ascii=False, indent=2)
 
 
-def run_single(date: str):
-    """단일 날짜 수집"""
-    snapshot = build_snapshot(date)
-    save_daily_snapshot(date, snapshot)
-    append_timeseries(date, snapshot)
-    update_metadata(date)
-    print(f"[{date}] Done.\n")
+def _init_env():
+    """dotenv 로드."""
+    if load_dotenv:
+        env_path = PROJECT_ROOT.parent / ".env"
+        if env_path.exists():
+            load_dotenv(env_path)
+            print(f"  [ENV] {env_path} 로드 완료")
+        else:
+            print(f"  [WARN] .env 파일 없음: {env_path}")
+    else:
+        print("  [WARN] python-dotenv 미설치 — 환경변수 직접 설정 필요")
+
+
+def _init_krx():
+    """KRX 로그인 + pykrx 세션 주입. 실패 시 None."""
+    try:
+        session = create_krx_session()
+        inject_pykrx_session(session)
+        return session
+    except Exception as e:
+        print(f"  [WARN] KRX 로그인 실패: {e} — pykrx fallback 사용")
+        return None
 
 
 def run_range(start: str, end: str):
-    """날짜 범위 수집"""
+    """날짜 범위 수집 — ECOS + Naver + yfinance + pykrx 통합."""
+    print(f"\n{'='*60}")
+    print(f"KOSPI 일간 데이터 수집: {start} ~ {end}")
+    print(f"{'='*60}\n")
+
+    # 0. 환경변수 로드
+    _init_env()
+
+    # 1. KRX 로그인 (1회)
+    print("[1/5] KRX 로그인...")
+    _init_krx()
+
+    # 2. ECOS 배치 조회
+    print("[2/5] ECOS 데이터 조회...")
+    ecos_start = start.replace("-", "")
+    ecos_end = end.replace("-", "")
+    ecos_data = fetch_ecos_daily(ecos_start, ecos_end)
+
+    # 3. Naver 배치 조회
+    print("[3/5] Naver 예탁금/신용잔고 조회...")
+    naver_data = fetch_naver_deposit_credit(start, end)
+
+    # 4. yfinance 배치 다운로드
+    print("[4/5] yfinance 배치 다운로드...")
+    yf_data = fetch_yfinance_batch(start, end)
+    if yf_data.empty:
+        print("  [WARN] yfinance 데이터 없음 — ECOS 단독 진행")
+
+    yf_days = len(yf_data) if not yf_data.empty else 0
+    print(f"  yfinance: {yf_days}일, ECOS: {len(ecos_data)}일, Naver: {len(naver_data)}일")
+
+    # 5. 각 날짜별 스냅샷 생성
+    print("[5/5] 스냅샷 생성 + 저장...")
     current = datetime.strptime(start, ISO_FMT)
     end_dt = datetime.strptime(end, ISO_FMT)
+    count = 0
+    skipped = 0
+
     while current <= end_dt:
-        # 주말 건너뛰기
-        if current.weekday() < 5:
-            run_single(current.strftime(ISO_FMT))
+        if current.weekday() < 5:  # 평일만
+            date = current.strftime(ISO_FMT)
+            snapshot = build_snapshot(date, yf_data, ecos_data, naver_data)
+            save_daily_snapshot(date, snapshot)
+            added = append_timeseries(date, snapshot)
+            if added:
+                count += 1
+            else:
+                skipped += 1
+
         current += timedelta(days=1)
+
+    update_metadata(end)
+    print(f"\n{'='*60}")
+    print(f"완료: {count}일 저장, {skipped}일 건너뜀 (데이터 없음)")
+    print(f"  ECOS: {len(ecos_data)}일 | Naver: {len(naver_data)}일 | yfinance: {yf_days}일")
+    print(f"{'='*60}")
+
+
+def run_single(date: str):
+    """단일 날짜 수집."""
+    _init_env()
+    _init_krx()
+
+    ecos_d = date.replace("-", "")
+    ecos_data = fetch_ecos_daily(ecos_d, ecos_d)
+    naver_data = fetch_naver_deposit_credit(date, date)
+    yf_data = fetch_yfinance_batch(date, date)
+
+    snapshot = build_snapshot(date, yf_data, ecos_data, naver_data)
+    save_daily_snapshot(date, snapshot)
+    append_timeseries(date, snapshot)
+    update_metadata(date)
+    print(f"[{date}] 완료.")
 
 
 def main():
@@ -376,7 +469,6 @@ def main():
     elif args.date:
         run_single(args.date)
     else:
-        # 가장 최근 영업일
         today = datetime.now()
         if today.weekday() >= 5:
             today -= timedelta(days=today.weekday() - 4)
