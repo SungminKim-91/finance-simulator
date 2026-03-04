@@ -233,6 +233,197 @@ export const COHORT_DATA = {
   },
 };
 
+// --- Crisis Score (Phase 3) ---
+
+function classifyScore(s) {
+  if (s >= 95) return "extreme";
+  if (s >= 85) return "danger";
+  if (s >= 70) return "warning";
+  if (s >= 50) return "caution";
+  return "normal";
+}
+
+const _scoreWalk = (() => {
+  const out = [55];
+  for (let i = 1; i < N; i++) {
+    const target = 55 + (99 - 55) * (i / (N - 1));
+    const pull = (target - out[i - 1]) * 0.1;
+    const noise = (rng() - 0.5) * 4;
+    out.push(Math.max(50, Math.min(99, out[i - 1] + pull + noise)));
+  }
+  return out.map(v => +v.toFixed(1));
+})();
+
+export const CRISIS_SCORE = {
+  current: 99,
+  classification: "extreme",
+  weights: {
+    leverage_heat: 0.10, flow_concentration: 0.08, price_deviation: 0.09,
+    credit_acceleration: 0.08, deposit_inflow: 0.05, vix_level: 0.06,
+    volume_explosion: 0.05, forced_liq_intensity: 0.08,
+    credit_deposit_ratio: 0.04, dram_cycle: 0.03,
+    credit_suspension: 0.12, institutional_selling: 0.10,
+    retail_exhaustion: 0.08, bull_trap: 0.04,
+  },
+  indicators: {
+    leverage_heat: { value: 78, raw: 0.042, desc: "신용/시총" },
+    flow_concentration: { value: 65, raw: 2.1, desc: "개인편중" },
+    price_deviation: { value: 82, raw: 0.94, desc: "MA200 괴리" },
+    credit_acceleration: { value: 71, raw: 3.2, desc: "신용 증가속도" },
+    deposit_inflow: { value: 45, raw: -1.5, desc: "예탁금 변화" },
+    vix_level: { value: 68, raw: 28.5, desc: "VIX" },
+    volume_explosion: { value: 72, raw: 1.8, desc: "거래폭증" },
+    forced_liq_intensity: { value: 80, raw: 0.032, desc: "반대매매 강도" },
+    credit_deposit_ratio: { value: 55, raw: 0.27, desc: "신용/예탁" },
+    dram_cycle: { value: 40, raw: 5.2, desc: "DRAM 사이클" },
+    credit_suspension: { value: 95, raw: 2, desc: "신용 중단" },
+    institutional_selling: { value: 92, raw: -5887, desc: "기관 순매도" },
+    retail_exhaustion: { value: 98, raw: 98.6, desc: "개인 매수력 감소" },
+    bull_trap: { value: 85, raw: 1, desc: "불트랩" },
+  },
+  history: DATES.map((d, i) => ({
+    date: d,
+    score: _scoreWalk[i],
+    classification: classifyScore(_scoreWalk[i]),
+  })),
+};
+
+// --- Scenarios (Phase 3) ---
+
+const _probHistory = (() => {
+  const logits = [[-4.0, -1.5, 0.3, -0.3, -2.5]];
+  for (let i = 1; i < N; i++) {
+    const prev = logits[i - 1];
+    logits.push(prev.map(v => v + (rng() - 0.5) * 0.3));
+  }
+  return logits.map(l => {
+    const exps = l.map(v => Math.exp(v));
+    const sum = exps.reduce((a, b) => a + b, 0);
+    const probs = exps.map(v => +(v / sum).toFixed(3));
+    const diff = +(1 - probs.reduce((a, b) => a + b, 0)).toFixed(3);
+    probs[2] = +(probs[2] + diff).toFixed(3);
+    return probs;
+  });
+})();
+
+export const SCENARIOS = {
+  scenarios: [
+    { id: "S1", name: "연착륙",
+      desc: "소멸. 2일 -19.3%와 양립 불가",
+      kospi_range: [5400, 5800], current_prob: 0.00 },
+    { id: "S2", name: "방어",
+      desc: "이란 전쟁 진정 + 대규모 시장 안정 조치",
+      kospi_range: [5000, 5400], current_prob: 0.08 },
+    { id: "S3", name: "캐스케이드",
+      desc: "Loop A + Loop C 4~8주 지속, 코호트 순차 붕괴",
+      kospi_range: [4300, 5000], current_prob: 0.55 },
+    { id: "S4", name: "전면위기",
+      desc: "전쟁 장기화 + 유가 $100+ + Loop 가속",
+      kospi_range: [3200, 4300], current_prob: 0.33 },
+    { id: "S5", name: "펀더멘털 붕괴",
+      desc: "DRAM 마이너스 + AI capex 삭감, 실적 전제 붕괴",
+      kospi_range: [2500, 3200], current_prob: 0.04 },
+  ],
+  probability_history: DATES.map((d, i) => ({
+    date: d,
+    s1: _probHistory[i][0],
+    s2: _probHistory[i][1],
+    s3: _probHistory[i][2],
+    s4: _probHistory[i][3],
+    s5: _probHistory[i][4],
+  })),
+  key_drivers: [
+    { indicator: "institutional_selling", observed: -5887, expected: -1000,
+      z_score: -3.25, direction: "supporting", scenario: "S3" },
+    { indicator: "retail_exhaustion", observed: 98.6, expected: 30,
+      z_score: 4.57, direction: "supporting", scenario: "S3" },
+    { indicator: "forced_liq_intensity", observed: 850, expected: 500,
+      z_score: 2.33, direction: "supporting", scenario: "S3" },
+  ],
+};
+
+// --- Historical Comparison (Phase 3) ---
+
+const _overlayData = (() => {
+  const out = [];
+  let curPct = 0;
+  let chinaPct = 0;
+  for (let d = 0; d <= 60; d++) {
+    out.push({
+      day: d,
+      current_pct: +curPct.toFixed(2),
+      china_2015_pct: +chinaPct.toFixed(2),
+    });
+    curPct += (rng() - 0.55) * 1.2;
+    curPct = Math.max(-25, Math.min(3, curPct));
+    if (d < 20) chinaPct += (rng() - 0.65) * 1.5;
+    else if (d < 40) chinaPct += (rng() - 0.45) * 0.8;
+    else chinaPct += (rng() - 0.40) * 0.6;
+    chinaPct = Math.max(-25, Math.min(3, chinaPct));
+  }
+  return out;
+})();
+
+export const HISTORICAL = {
+  cases: [
+    { id: "china_2015", name: "2015 중국발 폭락", peak_date: "2015-04-27",
+      peak_kospi: 2173, bottom_kospi: 1829, drop_pct: -15.8, recovery_days: 89 },
+  ],
+  similarities: {
+    china_2015: { dtw: 0.72, cosine: 0.68, hybrid: 0.70 },
+  },
+  overlay: _overlayData,
+  indicator_comparison: [
+    { indicator: "leverage_heat", label: "신용/시총", current: 4.2, china_2015: 3.8 },
+    { indicator: "flow_concentration", label: "개인편중", current: 2.1, china_2015: 1.5 },
+    { indicator: "price_deviation", label: "MA200 괴리", current: 0.94, china_2015: 1.02 },
+    { indicator: "credit_acceleration", label: "신용 증가속도", current: 3.2, china_2015: 4.5 },
+    { indicator: "deposit_inflow", label: "예탁금 변화", current: -1.5, china_2015: -2.3 },
+    { indicator: "vix_level", label: "VIX", current: 28.5, china_2015: 24.3 },
+    { indicator: "volume_explosion", label: "거래폭증", current: 1.8, china_2015: 2.5 },
+    { indicator: "forced_liq_intensity", label: "반대매매 강도", current: 3.2, china_2015: 2.8 },
+    { indicator: "credit_deposit_ratio", label: "신용/예탁", current: 0.27, china_2015: 0.22 },
+    { indicator: "dram_cycle", label: "DRAM 사이클", current: 5.2, china_2015: -3.1 },
+    { indicator: "credit_suspension", label: "신용 중단", current: 2, china_2015: 0 },
+    { indicator: "institutional_selling", label: "기관 순매도", current: -5887, china_2015: -1200 },
+    { indicator: "retail_exhaustion", label: "개인 매수력 감소", current: 98.6, china_2015: 45.0 },
+    { indicator: "bull_trap", label: "불트랩", current: 1, china_2015: 0 },
+  ],
+};
+
+// --- Defense Walls (v1.4) ---
+
+export const DEFENSE_WALLS = [
+  { id: "wall1", name: "개인 매수", status: "collapsed",
+    detail: "792억/5.8조 = 98.6% 감소", capacity: 0.01 },
+  { id: "wall2", name: "연기금/기관", status: "weakened",
+    detail: "기관 합산 매도 전환 (-5,887억)", capacity: 0.35 },
+  { id: "wall3", name: "한은 FX 개입", status: "active",
+    detail: "1,475 방어 성공", capacity: 0.80 },
+  { id: "wall4", name: "US 통화스왑", status: "destroyed",
+    detail: "3/4 거절 확인", capacity: 0.00 },
+  { id: "wall5", name: "IMF 지원", status: "standby",
+    detail: "미발동 (외환보유고 $4,000억+)", capacity: 1.00 },
+];
+
+// --- Loop Status (v1.4) ---
+
+export const LOOP_STATUS = {
+  loop_a: {
+    status: "active", name: "반대매매 캐스케이드",
+    wave1: { time: "08:00-09:00", desc: "프리마켓 마진콜" },
+    wave2: { time: "12:00-14:00", desc: "추가담보 마감 후 강제매도" },
+    estimated_volume_billion: 500,
+  },
+  loop_c: {
+    status: "active", name: "펀드 환매 캐스케이드",
+    delay: "T+1~T+3",
+    desc: "기관 -5,887억 중 환매 매도 추정 3,000~4,000억",
+    estimated_volume_billion: 3500,
+    confidence: "low",
+  },
+};
+
 export const EVENTS = [
   {
     date: "2026-03-02",

@@ -205,12 +205,15 @@ web/src/simulators/kospi/  # KOSPI React 컴포넌트
 - **흡수율 모드**: 자동(수급기반) / 보수적(0.3) / 중립(0.5) / 낙관(0.7) / 커스텀
 
 ### 4.3 Module C: 위기 스코어 (Crisis Score)
-- **13개 후보 지표**: 레버리지 과열도, 수급 편중도, 가격 괴리도, 신용 가속도, 예탁금 유입, 외국인 매도 강도, 환율 스트레스, 공매도 이상도, VIX, 거래대금 폭발도, 반대매매 강도, 신용/예탁금 비율, DRAM 사이클
+- **14개 scored 지표 (v1.4)**: 레버리지 과열도, 수급 편중도, 가격 괴리도, 신용 가속도, 예탁금 유입, VIX, 거래대금 폭발도, 반대매매 강도, 신용/예탁금 비율, DRAM 사이클, **신용 중단(I16)**, **기관 순매도(I17)**, **개인 매수력 감소(I18)**, **불트랩(I19)**
+- **제거 (v1.4)**: 외국인 매도 강도(I06, 관측만), 환율 스트레스(I07, 관측만), 공매도 이상(I08, 근거 부족)
 - **처리**: Percentile rank 정규화(0~100) → PCA → 가중치 결정 → 위기 점수(0~100)
 - **등급**: 0~50 보통 / 50~70 주의 / 70~85 위험 / 85~95 심각 / 95+ 극단
 
 ### 4.4 Module D: 시나리오 확률 (Bayesian Tracker)
-- **4개 기본 시나리오**: 연착륙(S1, 15%) / C방어(S2, 45%) / C붕괴(S3, 30%) / 전면위기(S4, 10%)
+- **5개 시나리오 (v1.4)**: 연착륙(S1, 소멸) / 방어(S2, 8%) / 캐스케이드(S3, 55%) / 전면위기(S4, 33%) / 펀더멘털 붕괴(S5, 4%)
+- **Loop B 폐기 → Loop C 추가**: 외국인 매도 예측 실패 → 펀드 환매 캐스케이드(T+1~T+3 지연)
+- **방어벽 5단계**: 개인매수(붕괴) / 연기금(약화) / 한은FX(작동) / US통화스왑(거절) / IMF(미발동)
 - **업데이트**: 일간 Bayesian (6개 관측 지표 × 정규분포 likelihood)
 - **Key Drivers**: 각 시나리오 확률 변동의 상위 3개 원인 지표
 - **유연성**: 시나리오 추가/수정/제거 가능, 확률 <2% 시 자동 비활성화
@@ -279,12 +282,12 @@ web/src/simulators/kospi/  # KOSPI React 컴포넌트
 2.4 Tab B 구현 (히트맵, 트리거 맵, 인터랙티브 시뮬레이터)
 ```
 
-### Phase 3: Crisis Score + Historical + Tab C/D — 4~5일
+### Phase 3: Crisis Score + Scenario + Historical + Tab C/D — 4~5일
 ```
-3.1 위기 지표 13개 산출 + PCA
-3.2 백테스팅 (2008, 2020, 2021)
+3.1 위기 지표 14개 산출 + PCA (v1.4: I06/I07/I08 제거, I16~I19 추가)
+3.2 5개 시나리오 (v1.4: S5 펀더멘털 붕괴 추가, Loop C 반영)
 3.3 과거 사례 유사도 (DTW + Cosine)
-3.4 Tab C (Scenario Tracker) + Tab D (Historical Comparison)
+3.4 Tab C (Crisis Analysis: Score + Scenario + Loop + Defense) + Tab D (Historical)
 ```
 
 ### Phase 4: Scenario Engine + Integration — 3~4일

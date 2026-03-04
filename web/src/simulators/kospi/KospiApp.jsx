@@ -1,26 +1,19 @@
 import { useState } from "react";
 import MarketPulse from "./MarketPulse";
 import CohortAnalysis from "./CohortAnalysis";
+import CrisisAnalysis from "./CrisisAnalysis";
+import HistoricalComp from "./HistoricalComp";
 import KospiHeader from "./KospiHeader";
 import { C } from "./colors";
 
 const FONT = "'JetBrains Mono', monospace";
 
 const TABS = [
-  { id: "pulse", label: "Market Pulse" },
-  { id: "cohort", label: "Cohort & Forced Liq." },
-  { id: "scenario", label: "Scenario Tracker" },
-  { id: "history", label: "Historical Compare" },
+  { id: "pulse", label: "시장 현황 (Market Pulse)" },
+  { id: "cohort", label: "코호트 분석 (Cohort)" },
+  { id: "scenario", label: "위기 분석 (Crisis)" },
+  { id: "history", label: "과거 비교 (History)" },
 ];
-
-function Placeholder({ name }) {
-  return (
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "center",
-      height: 400, color: C.dim, fontFamily: FONT, fontSize: 14 }}>
-      {name} — Phase 2~4 구현 예정
-    </div>
-  );
-}
 
 export default function KospiApp() {
   const [tab, setTab] = useState("pulse");
@@ -51,8 +44,8 @@ export default function KospiApp() {
       <div style={{ padding: "16px" }}>
         {tab === "pulse" && <MarketPulse />}
         {tab === "cohort" && <CohortAnalysis />}
-        {tab === "scenario" && <Placeholder name="Scenario Tracker" />}
-        {tab === "history" && <Placeholder name="Historical Comparison" />}
+        {tab === "scenario" && <CrisisAnalysis />}
+        {tab === "history" && <HistoricalComp />}
       </div>
     </div>
   );

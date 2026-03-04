@@ -9,5 +9,5 @@ export const C = {
   credit: "#f97316", deposit: "#22d3ee", forcedLiq: "#dc2626",
 
   safe: "#4ade80", watch: "#facc15", marginCall: "#fb923c", danger: "#ef4444",
-  s1: "#4ade80", s2: "#60a5fa", s3: "#f97316", s4: "#ef4444",
+  s1: "#4ade80", s2: "#60a5fa", s3: "#f97316", s4: "#ef4444", s5: "#991b1b",
 };

@@ -94,7 +94,7 @@ export const TERM = {
   },
   fx_loop: {
     label: "환율 루프 (FX Loop)",
-    desc: "주가 하락 → 환율 상승 → 외국인 매도 → 추가 하락의 악순환",
+    desc: "v1.4에서 폐기. Loop C(펀드 환매)로 대체됨",
   },
 
   /* Trigger Map terms */
@@ -122,6 +122,168 @@ export const TERM = {
   max_rounds: {
     label: "반복 횟수 (Max Rounds)",
     desc: "연쇄 반응이 몇 번 반복되는지. 보통 3-5회에 수렴",
+  },
+
+  /* Crisis Score indicators (Phase 3) */
+  leverage_heat: {
+    label: "레버리지 열기 (Leverage Heat)",
+    desc: "신용잔고 ÷ 시가총액. 시장 과열 수준",
+  },
+  flow_concentration: {
+    label: "수급 편중 (Flow Concentration)",
+    desc: "개인 순매수 ÷ (외+기관 절대값). 개인 쏠림 정도",
+  },
+  price_deviation: {
+    label: "가격 괴리 (Price Deviation)",
+    desc: "KOSPI ÷ 200일 이동평균. 1 미만이면 평균 이하",
+  },
+  credit_acceleration: {
+    label: "신용 가속 (Credit Acceleration)",
+    desc: "최근 20일 신용잔고 변화율 (%)",
+  },
+  deposit_inflow: {
+    label: "예탁금 유입 (Deposit Inflow)",
+    desc: "최근 20일 고객예탁금 변화율 (%)",
+  },
+  foreign_selling: {
+    label: "외인 매도압력 (Foreign Selling)",
+    desc: "관측 전용. 예측에 사용하지 않음 (v1.4)",
+  },
+  fx_stress: {
+    label: "환율 스트레스 (FX Stress)",
+    desc: "관측 전용. 위기점수 산정에서 제외됨 (v1.4)",
+  },
+  short_anomaly: {
+    label: "공매도 이상 (Short Anomaly)",
+    desc: "v1.4에서 제거됨 (예측 근거 부족)",
+  },
+  vix_level: {
+    label: "VIX (공포지수)",
+    desc: "미국 S&P500 옵션 내재변동성. 30 이상 경계",
+  },
+  volume_explosion: {
+    label: "거래 폭증 (Volume Explosion)",
+    desc: "당일 거래대금 ÷ 20일 평균. 2 이상 이상 급증",
+  },
+  forced_liq_intensity: {
+    label: "반대매매 강도 (Forced Liq Intensity)",
+    desc: "반대매매 금액 ÷ 거래대금. 시장 충격 정도",
+  },
+  credit_deposit_ratio: {
+    label: "신용/예탁 비율 (Credit/Deposit)",
+    desc: "신용잔고 ÷ 고객예탁금. 높을수록 레버리지 과다",
+  },
+  dram_cycle: {
+    label: "DRAM 사이클 (DRAM Cycle)",
+    desc: "DRAM QoQ 가격 전망 (%). 하이닉스 실적 선행지표",
+  },
+  credit_suspension: {
+    label: "신용 중단 (Credit Suspension)",
+    desc: "증권사 신규 신용매수 중단. 물타기 불가 → 반대매매 전환율 상승",
+  },
+  institutional_selling: {
+    label: "기관 순매도 (Institutional Selling)",
+    desc: "기관 순매수→순매도 전환 여부. 환매 캐스케이드 신호",
+  },
+  retail_exhaustion: {
+    label: "개인 매수력 감소 (Retail Exhaustion)",
+    desc: "전일 대비 개인 순매수 감소율. 90%+ = 매수력 소진",
+  },
+  bull_trap: {
+    label: "불트랩 (Bull Trap)",
+    desc: "프리마켓 급락 → V자 반등 → 전일종가 회복 → 재차 저점 갱신 패턴",
+  },
+
+  /* Crisis classification */
+  crisis_normal: {
+    label: "정상 (Normal)",
+    desc: "위기점수 0~50. 특이사항 없음",
+  },
+  crisis_caution: {
+    label: "주의 (Caution)",
+    desc: "위기점수 50~70. 일부 지표 경고",
+  },
+  crisis_warning: {
+    label: "경고 (Warning)",
+    desc: "위기점수 70~85. 복수 지표 악화",
+  },
+  crisis_danger: {
+    label: "위험 (Danger)",
+    desc: "위기점수 85~95. 즉각 대응 필요",
+  },
+  crisis_extreme: {
+    label: "극단 (Extreme)",
+    desc: "위기점수 95+. 시스템 리스크 수준",
+  },
+
+  /* Scenarios */
+  scenario_s1: {
+    label: "S1 연착륙 (Soft Landing)",
+    desc: "소멸. 2일 -19.3%와 양립 불가. KOSPI 5,400~5,800",
+  },
+  scenario_s2: {
+    label: "S2 방어 (Defense)",
+    desc: "이란 전쟁 진정 + 대규모 시장 안정 조치. KOSPI 5,000~5,400",
+  },
+  scenario_s3: {
+    label: "S3 캐스케이드 (Cascade)",
+    desc: "Loop A + Loop C 4~8주 지속, 코호트 순차 붕괴. KOSPI 4,300~5,000",
+  },
+  scenario_s4: {
+    label: "S4 전면위기 (Full Crisis)",
+    desc: "전쟁 장기화 + 유가 $100+ + Loop 가속. KOSPI 3,200~4,300",
+  },
+  scenario_s5: {
+    label: "S5 펀더멘털 붕괴 (Fundamental Collapse)",
+    desc: "DRAM 마이너스 + AI capex 삭감. KOSPI 2,500~3,200",
+  },
+  key_driver: {
+    label: "핵심 동인 (Key Driver)",
+    desc: "시나리오 확률 변동에 가장 큰 영향을 준 지표",
+  },
+  bayesian_update: {
+    label: "베이지안 업데이트 (Bayesian)",
+    desc: "새 데이터가 들어올 때마다 확률을 갱신하는 방법",
+  },
+
+  /* Historical comparison */
+  dtw_similarity: {
+    label: "DTW 유사도 (DTW)",
+    desc: "Dynamic Time Warping. 시계열 형태 매칭 (시간 왜곡 허용)",
+  },
+  cosine_sim: {
+    label: "코사인 유사도 (Cosine)",
+    desc: "벡터 방향 유사도. 지표 패턴의 방향 일치 정도",
+  },
+  hybrid_sim: {
+    label: "종합 유사도 (Hybrid)",
+    desc: "DTW 60% + Cosine 40% 가중 합산",
+  },
+  overlay_chart: {
+    label: "오버레이 차트 (Overlay)",
+    desc: "현재 시장과 과거 사례를 고점 기준으로 겹쳐 비교",
+  },
+
+  /* Loop C / Defense / Observation (v1.4) */
+  loop_c: {
+    label: "펀드 환매 루프 (Fund Redemption Loop)",
+    desc: "수익률 하락 → 환매 신청 → 매도 → 추가 하락의 T+1~T+3 지연 악순환",
+  },
+  defense_wall: {
+    label: "방어벽 (Defense Wall)",
+    desc: "시장 하락을 방어하는 제도적/자금적 장치 (5단계)",
+  },
+  observation_only: {
+    label: "관측 전용 (Observation Only)",
+    desc: "대시보드에 표시하되 예측이나 점수화에 사용하지 않는 데이터",
+  },
+  wave_pattern: {
+    label: "2파동 패턴 (Two-Wave)",
+    desc: "반대매매 Wave 1(프리마켓 08:00~09:00) + Wave 2(후장 12:00~14:00)",
+  },
+  absorption_rate_dynamic: {
+    label: "동적 흡수율 (Dynamic Absorption)",
+    desc: "개인 매수력(I17)에 연동하여 조정. 매수력 소진 시 흡수율 하락",
   },
 };
 

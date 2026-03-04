@@ -33,14 +33,15 @@ Phase 1을 먼저 완성한 뒤 Phase 2~4 순차 진행.
 | 2.2 | 반대매매 시뮬레이터 엔진 | `kospi/scripts/compute_models.py` (forced_liq) | 2.1 |
 | 2.3 | Tab B (CohortAnalysis.jsx) | `web/src/simulators/kospi/` | 2.2 |
 
-### Phase 3: Crisis Score + Historical + Tab C/D
+### Phase 3: Crisis Score + Scenario + Historical + Tab C/D (v1.4)
 
 | # | Task | File(s) | Depends |
 |---|------|---------|---------|
-| 3.1 | 위기 지표 13개 산출 + PCA | `kospi/scripts/compute_models.py` (crisis) | Phase 1 |
-| 3.2 | 과거 사례 유사도 엔진 | `kospi/scripts/compute_models.py` (historical) | 1.3, 1.4 |
-| 3.3 | Tab C (ScenarioTracker.jsx) | `web/src/simulators/kospi/` | 3.1 |
-| 3.4 | Tab D (HistoricalComp.jsx) | `web/src/simulators/kospi/` | 3.2 |
+| 3.1 | 위기 지표 14개 산출 + PCA (v1.4: I16~I19 추가, I06/I07/I08 제거) | `kospi/scripts/compute_models.py` (crisis) | Phase 1 |
+| 3.2 | 5개 시나리오 + Loop C + 방어벽 (v1.4) | `kospi/scripts/compute_models.py` (scenario) | 3.1 |
+| 3.3 | 과거 사례 유사도 엔진 | `kospi/scripts/compute_models.py` (historical) | 1.3, 1.4 |
+| 3.4 | Tab C (CrisisAnalysis.jsx: Score + Scenario + Loop + Defense) | `web/src/simulators/kospi/` | 3.1, 3.2 |
+| 3.5 | Tab D (HistoricalComp.jsx) | `web/src/simulators/kospi/` | 3.3 |
 
 ### Phase 4: Bayesian Scenario Engine + Integration
 
@@ -454,14 +455,18 @@ CRISIS_INDICATORS = [
     "price_deviation",     # I03: KOSPI / 200일 MA
     "credit_acceleration", # I04: 20일 신용 변화율
     "deposit_inflow",      # I05: 20일 예탁금 변화율
-    "foreign_selling",     # I06: 20일 외국인 누적 순매도 / 거래대금
-    "fx_stress",           # I07: 원달러 20일 변화율
-    "short_anomaly",       # I08: |공매도 비중 - 20일 MA| / 20일σ
+    # I06 foreign_selling — 제거 (v1.4, 관측 전용)
+    # I07 fx_stress — 제거 (v1.4, 관측 전용)
+    # I08 short_anomaly — 제거 (v1.4, 예측 근거 부족)
     "vix_level",           # I09: VIX 절대 + 변화율
     "volume_explosion",    # I10: 당일 거래대금 / 20일 MA
     "forced_liq_intensity",# I11: 반대매매 / 거래대금
     "credit_deposit_ratio",# I12: 신용잔고 / 예탁금
     "dram_cycle",          # I13: DRAM QoQ 전망
+    "credit_suspension",   # I16: 증권사 신규 신용매수 중단 (v1.4)
+    "institutional_selling",# I17: 기관 순매도 전환 (v1.4)
+    "retail_exhaustion",   # I18: 개인 매수력 감소율 (v1.4)
+    "bull_trap",           # I19: 불트랩 패턴 (v1.4)
 ]
 
 class CrisisScorer:
@@ -972,11 +977,12 @@ export const C = {
 - [ ] 반대매매 시뮬레이터: 5라운드 내 수렴, JS 인터랙티브
 - [ ] Tab B: 히트맵 + 트리거 맵 + 시뮬레이터 UI 작동
 
-### Phase 3 완료 기준
-- [ ] 13개 위기 지표 산출, PCA 가중치
+### Phase 3 완료 기준 (v1.4)
+- [ ] 14개 위기 지표 산출, PCA 가중치 (I06/I07/I08 제거, I16~I19 추가)
+- [ ] 5개 시나리오 (S5 추가, Loop C + 방어벽 5단계)
 - [ ] 과거 사례 유사도 (DTW + Cosine) 산출
-- [ ] Tab C: 시나리오 확률 바 + 시계열
-- [ ] Tab D: 오버레이 차트 + 비교 테이블
+- [ ] Tab C: Score + 지표 + 시나리오 + Loop 상태 + 방어벽 상태
+- [ ] Tab D: 오버레이 차트 + 비교 테이블 (v1.4 지표 반영)
 
 ### Phase 4 완료 기준
 - [ ] Bayesian 업데이트 정상 작동 (일간)
