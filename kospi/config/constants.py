@@ -87,3 +87,56 @@ HISTORICAL_PERIODS = {
     "korea_2020": ("2019-06-01", "2020-12-31"),
     "korea_2021": ("2020-06-01", "2022-12-31"),
 }
+
+# ── v1.5.0 VLPI 상수 ──
+LOAN_RATE = 1 - MARGIN_RATE          # 0.55 (융자비율)
+LEVERAGE = 1 / MARGIN_RATE            # 2.22 (실질 레버리지)
+DAILY_LIMIT = 0.30                    # KOSPI 가격제한폭 ±30%
+
+# 6단계 상태 분류 기준 (담보비율 %)
+STATUS_THRESHOLDS = {
+    "debt_exceed": 100,   # 담보비율 < 100% → 채무초과
+    "forced_liq":  120,   # 담보비율 < 120% → 강제청산
+    "margin_call": 140,   # 담보비율 < 140% → 마진콜
+    "caution":     155,   # 담보비율 < 155% → 주의
+    "good":        170,   # 담보비율 < 170% → 양호
+    # >= 170% → 안전
+}
+
+# VLPI 기본 가중치
+VLPI_DEFAULT_WEIGHTS = {
+    "w1": 0.25,  # 주의구간 코호트 비중
+    "w2": 0.10,  # 신용잔고 모멘텀
+    "w3": 0.20,  # 정책 쇼크
+    "w4": 0.20,  # 야간 갭 시그널
+    "w5": 0.15,  # 연속 하락 심각도
+    "w6": 0.10,  # 전일 개인 수급 방향
+}
+
+# VLPI 정책 쇼크 유형
+POLICY_SHOCK_MAP = {
+    "credit_suspension_major":   1.0,
+    "credit_suspension_minor":   0.5,
+    "credit_tightening":         0.3,
+    "short_selling_ban":         0.2,
+    "regulator_warning":         0.4,
+    "circuit_breaker_triggered": 0.8,
+}
+
+# Samsung 신용잔고 추정 비중
+SAMSUNG_CREDIT_WEIGHT = 0.50
+
+# EWY → KOSPI 갭 파라미터
+EWY_GAP_WEIGHTS = {"ewy": 0.6, "futures": 0.3, "fx": 0.1}
+EWY_GAP_DIVISOR = 5.0  # 5% 하락 = signal 1.0
+
+# Impact Function 파라미터
+VLPI_SENSITIVITY = 0.15          # VLPI 100일 때 매도 비율
+VLPI_SIGMOID_K = 0.08            # sigmoid 기울기
+VLPI_SIGMOID_MID = 50            # sigmoid 중점
+VLPI_POLICY_MULTIPLIER = 1.5     # 정책 쇼크 시 배율
+VLPI_LIQUIDITY_NORMAL = 0.5      # 정상 시장 유동성
+VLPI_LIQUIDITY_CRISIS = 0.4      # 위기 시장 유동성
+
+# KOFIA API (공공데이터포털)
+KOFIA_API_BASE = "https://apis.data.go.kr/1160100/service/GetFinaStatInfoSvc"

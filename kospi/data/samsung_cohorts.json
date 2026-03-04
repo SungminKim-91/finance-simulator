@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "source": "samsung_credit_cohort_data.md",
+    "period": "2026-02-13 ~ 2026-03-04",
+    "samsung_credit_weight": 0.50
+  },
+  "cohorts": [
+    {"id": "F", "label": "장기보유(2/13이전)", "entry_price": 181000, "weight": 0.800},
+    {"id": "A", "label": "베이스(2/13~2/19)",  "entry_price": 190000, "weight": 0.009},
+    {"id": "B", "label": "상승초기(2/23~2/24)", "entry_price": 196500, "weight": 0.024},
+    {"id": "C", "label": "급등기(2/25~2/26)",   "entry_price": 210750, "weight": 0.016},
+    {"id": "D", "label": "고점(2/27)",           "entry_price": 216500, "weight": 0.013},
+    {"id": "E", "label": "급락물타기(3/3)",      "entry_price": 195100, "weight": 0.008}
+  ],
+  "daily_prices": [
+    {"date": "2026-02-13", "close": 181200, "change_pct": 1.46, "volume": 34454192},
+    {"date": "2026-02-19", "close": 190000, "change_pct": 4.86, "volume": 27049388},
+    {"date": "2026-02-20", "close": 190100, "change_pct": 0.05, "volume": 24213880},
+    {"date": "2026-02-23", "close": 193000, "change_pct": 1.53, "volume": 26364684},
+    {"date": "2026-02-24", "close": 200000, "change_pct": 3.63, "volume": 28060617},
+    {"date": "2026-02-25", "close": 203500, "change_pct": 1.75, "volume": 26987996},
+    {"date": "2026-02-26", "close": 218000, "change_pct": 7.13, "volume": 30095763},
+    {"date": "2026-02-27", "close": 216500, "change_pct": -0.69, "volume": 51774768},
+    {"date": "2026-03-03", "close": 195100, "change_pct": -9.88, "volume": 54879010},
+    {"date": "2026-03-04", "close": 172200, "change_pct": -11.74, "volume": 89225029}
+  ],
+  "daily_flows": [
+    {"date": "2026-02-13", "individual": 7141},
+    {"date": "2026-02-19", "individual": -8609},
+    {"date": "2026-02-20", "individual": -9872},
+    {"date": "2026-02-23", "individual": 10815},
+    {"date": "2026-02-24", "individual": -22861},
+    {"date": "2026-02-25", "individual": 2307},
+    {"date": "2026-02-26", "individual": 6498},
+    {"date": "2026-02-27", "individual": 62496},
+    {"date": "2026-03-03", "individual": 57974},
+    {"date": "2026-03-04", "individual": 796}
+  ],
+  "credit_balance": [
+    {"date": "2026-02-13", "kospi_stock_mm": 20942212},
+    {"date": "2026-02-19", "kospi_stock_mm": 20944448},
+    {"date": "2026-02-20", "kospi_stock_mm": 20977105},
+    {"date": "2026-02-23", "kospi_stock_mm": 21121450},
+    {"date": "2026-02-24", "kospi_stock_mm": 21279520},
+    {"date": "2026-02-25", "kospi_stock_mm": 21399130},
+    {"date": "2026-02-26", "kospi_stock_mm": 21496796},
+    {"date": "2026-02-27", "kospi_stock_mm": 21672790},
+    {"date": "2026-03-03", "kospi_stock_mm": 21778077}
+  ],
+  "policy_events": [
+    {"date": "2026-03-03", "type": "credit_suspension_major", "desc": "한투 신용거래 무기한 중단"},
+    {"date": "2026-03-03", "type": "credit_suspension_major", "desc": "NH 신용거래 무기한 중단"}
+  ]
+}

@@ -3,7 +3,7 @@
 Python 모델 결과 → React 데이터 파일 내보내기.
 kospi/data/ → web/src/simulators/kospi/data/kospi_data.js
 
-Exports (15):
+Exports (18):
   1. MARKET_DATA       — KOSPI/KOSDAQ/삼전/하닉 일간
   2. CREDIT_DATA       — 신용잔고, 예탁금, 반대매매
   3. INVESTOR_FLOWS    — 주체별 수급
@@ -20,6 +20,8 @@ Exports (15):
  14. COHORT_HISTORY    — 코호트 히스토리 (레지스트리 + 일별 스냅샷)
  15. BACKTEST_DATES    — 급변동일 목록 + D+1~D+5 실제 데이터
  16. STOCK_CREDIT      — 종목별 신용잔고 배분 + 가중 트리거맵
+ 17. VLPI_DATA         — 자발적 청산 압력 지수 (히스토리 + 시나리오 매트릭스)
+ 18. VLPI_CONFIG       — VLPI 가중치, 상태기준, 변수 설명, 영향 파라미터
 
 Usage:
     python kospi/scripts/export_web.py
@@ -35,6 +37,12 @@ WEB_DATA_DIR = PROJECT_ROOT.parent / "web" / "src" / "simulators" / "kospi" / "d
 import sys as _sys
 if str(PROJECT_ROOT) not in _sys.path:
     _sys.path.insert(0, str(PROJECT_ROOT))
+
+from config.constants import (
+    MARGIN_RATE, LOAN_RATE, STATUS_THRESHOLDS, LEVERAGE,
+    VLPI_DEFAULT_WEIGHTS, VLPI_SENSITIVITY, VLPI_SIGMOID_K, VLPI_SIGMOID_MID,
+    SAMSUNG_CREDIT_WEIGHT,
+)
 
 
 def load_json(path: Path):
@@ -189,10 +197,10 @@ def export_all() -> None:
         "avg_daily_trading_value_billion": _avg_trading_value(ts),
         "portfolio_beta": cohorts.get("portfolio_beta", 1.0),
         "params": {
-            "margin_rate": 0.45,
-            "maintenance_ratio": 1.40,
-            "forced_liq_loss_pct": 39,
-            "impact_coefficient": 1.5,
+            "margin_rate": MARGIN_RATE,
+            "loan_rate": LOAN_RATE,
+            "status_thresholds": STATUS_THRESHOLDS,
+            "leverage": LEVERAGE,
             "stock_weighted": stock_credit_raw.get("stock_weighted", False),
         },
     }
@@ -280,6 +288,40 @@ def export_all() -> None:
     except ImportError:
         pass
 
+    # === 17. VLPI_DATA ===
+    vlpi_raw = model_output.get("vlpi", {})
+    vlpi_data = {
+        "history": vlpi_raw.get("history", []),
+        "latest": vlpi_raw.get("latest"),
+        "scenario_matrix": vlpi_raw.get("scenario_matrix", []),
+    }
+
+    # === 18. VLPI_CONFIG ===
+    vlpi_config = {
+        "weights": vlpi_raw.get("weights", VLPI_DEFAULT_WEIGHTS),
+        "status_thresholds": STATUS_THRESHOLDS,
+        "variables": [
+            {"key": "v1", "label": "주의구간 비중", "desc": "담보비율 140~170% 코호트 비중", "range": "0~1", "weight_key": "w1"},
+            {"key": "v2", "label": "신용잔고 모멘텀", "desc": "최근 3일 신용잔고 변화 방향", "range": "-0.3~0.7", "weight_key": "w2"},
+            {"key": "v3", "label": "정책 쇼크", "desc": "증권사 신용제한, 서킷브레이커 등", "range": "0~1", "weight_key": "w3"},
+            {"key": "v4", "label": "야간 갭", "desc": "EWY/선물 기반 갭다운 예상", "range": "-1~1", "weight_key": "w4"},
+            {"key": "v5", "label": "연속 하락", "desc": "연속 하락일수 + 누적 하락률", "range": "0~1", "weight_key": "w5"},
+            {"key": "v6", "label": "개인 수급", "desc": "전일 개인 순매수 패턴", "range": "0~1", "weight_key": "w6"},
+        ],
+        "levels": [
+            {"min": 0,  "max": 30, "label": "정상", "color": "#4caf50"},
+            {"min": 30, "max": 50, "label": "주의", "color": "#ffc107"},
+            {"min": 50, "max": 70, "label": "경고", "color": "#ff9800"},
+            {"min": 70, "max": 100, "label": "위험", "color": "#f44336"},
+        ],
+        "impact_params": {
+            "sensitivity": VLPI_SENSITIVITY,
+            "sigmoid_k": VLPI_SIGMOID_K,
+            "sigmoid_mid": VLPI_SIGMOID_MID,
+            "samsung_credit_weight": SAMSUNG_CREDIT_WEIGHT,
+        },
+    }
+
     # === Write JS ===
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     output_path = WEB_DATA_DIR / "kospi_data.js"
@@ -289,7 +331,7 @@ def export_all() -> None:
         f.write(f" * KOSPI Crisis Detector Data (auto-generated)\n")
         f.write(f" * Generated: {datetime.now().isoformat()}\n")
         f.write(f" * Source: kospi/data/ (pipeline)\n")
-        f.write(f" * Exports: 16\n")
+        f.write(f" * Exports: 18\n")
         f.write(f" */\n\n")
 
         f.write(to_js_export("MARKET_DATA", market_data))
@@ -308,6 +350,8 @@ def export_all() -> None:
         f.write(to_js_export("COHORT_HISTORY", cohort_history))
         f.write(to_js_export("BACKTEST_DATES", backtest_dates))
         f.write(to_js_export("STOCK_CREDIT", stock_credit))
+        f.write(to_js_export("VLPI_DATA", vlpi_data))
+        f.write(to_js_export("VLPI_CONFIG", vlpi_config))
 
     print(f"Exported to {output_path}")
     print(f"  Market:    {len(market_data)} days")
@@ -325,6 +369,9 @@ def export_all() -> None:
     print(f"  Backtest:  {len(backtest_dates)} events")
     sc_stocks = stock_credit.get("stocks", [])
     print(f"  StockCred: {len(sc_stocks)} stocks, weighted={stock_credit.get('stock_weighted', False)}")
+    vlpi_latest = vlpi_data.get("latest")
+    vlpi_score = vlpi_latest.get("pre_vlpi", "N/A") if vlpi_latest else "N/A"
+    print(f"  VLPI:      score={vlpi_score}, history={len(vlpi_data.get('history', []))}, scenarios={len(vlpi_data.get('scenario_matrix', []))}")
 
 
 def _remap_cohorts(cohorts: list[dict]) -> list[dict]:
@@ -332,17 +379,41 @@ def _remap_cohorts(cohorts: list[dict]) -> list[dict]:
 
     Python: remaining_amount_billion, status=forced_liq/margin_call
     Frontend: amount, status=danger/marginCall
+
+    v1.5.0: 6단계 status_map + 4단계 호환 (legacy_status)
     """
-    status_map = {"forced_liq": "danger", "margin_call": "marginCall", "watch": "watch", "safe": "safe"}
+    # v1.5.0 6단계 매핑
+    status_map_6 = {
+        "debt_exceed": "debtExceed",
+        "forced_liq": "forcedLiq",
+        "margin_call": "marginCall",
+        "caution": "caution",
+        "good": "good",
+        "safe": "safe",
+    }
+    # v1.4 호환 4단계 매핑
+    legacy_map = {
+        "debt_exceed": "danger",
+        "forced_liq": "danger",
+        "margin_call": "marginCall",
+        "caution": "watch",
+        "good": "watch",
+        "watch": "watch",
+        "safe": "safe",
+    }
     result = []
     for c in cohorts:
+        raw_status = c.get("status", "safe")
         entry = {
             "entry_date": c.get("entry_date", ""),
             "entry_kospi": c.get("entry_kospi", 0),
+            "entry_stock_price": c.get("entry_stock_price", 0),
             "amount": c.get("remaining_amount_billion", 0),
             "pnl_pct": c.get("pnl_pct", 0),
             "collateral_ratio": c.get("collateral_ratio", 0),
-            "status": status_map.get(c.get("status", "safe"), "safe"),
+            "collateral_ratio_pct": c.get("collateral_ratio_pct", 0),
+            "status": legacy_map.get(raw_status, "safe"),
+            "status_6": status_map_6.get(raw_status, raw_status),
         }
         liq_pct = c.get("liquidated_pct", 0)
         if liq_pct > 0:

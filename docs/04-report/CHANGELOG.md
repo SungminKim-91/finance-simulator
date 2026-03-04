@@ -1,5 +1,46 @@
 # Changelog — Finance Simulator
 
+## [KOSPI v1.5.0] - 2026-03-05
+
+### VLPI Backend Engine — 자발적 청산 압력 지수
+
+#### Background
+- 2026.03.04 삼성전자 -11.74% 폭락에서 마진콜 코호트 0개 — 반대매매 모델로 설명 불가
+- 실제 급락의 대부분은 반대매매가 아닌 자발적 투매(공포 매도)
+- VLPI(Voluntary Liquidation Pressure Index) 모델로 패러다임 전환
+
+#### Added
+- **vlpi_engine.py** (~380줄): 2단계 VLPI 엔진
+  - Stage 1: Pre-VLPI (V1~V6 6변수 → 0~100 스코어)
+  - Stage 2: Impact Function (Sigmoid → 매도비율 → Kyle's Lambda 가격영향)
+  - VLPIEngine 클래스: calculate_for_date, calculate_scenario_matrix, get_output
+- **6단계 상태 분류**: debt_exceed/forced_liq/margin_call/caution/good/safe (STATUS_THRESHOLDS)
+- **22개 VLPI 상수**: LOAN_RATE, 가중치(w1~w6), POLICY_SHOCK_MAP, Impact 파라미터
+- **samsung_cohorts.json**: 시드 데이터 (6코호트, 10일 시세/수급/신용잔고, 2정책이벤트)
+- **kofia_fetcher.py**: 금투협 공공데이터포털 API + FreeSIS + Naver 3-tier fallback (stub)
+- **EWY 수집**: fetch_daily.py에 iShares MSCI South Korea ETF 야간 갭 데이터 추가
+- **VLPI_DATA** (#17): Pre-VLPI 히스토리 + 컴포넌트 분해 + 시나리오 매트릭스
+- **VLPI_CONFIG** (#18): 가중치, 변수 설명, 레벨 색상, Impact 파라미터
+
+#### Changed
+- **담보비율 공식**: `effective_ratio/(1-margin_rate)` → `현재가/(매수가×LOAN_RATE)` (portfolio_beta 제거)
+- **Cohort.classify_status()**: 4단계 → 6단계 (STATUS_THRESHOLDS 기반)
+- **_remap_cohorts()**: `status`=legacy 4단계 + `status_6`=신규 6단계 (하위호환)
+- **export_web.py**: 16 → 18 exports
+- **compute_models.py**: ~8개 위치 6단계 마이그레이션 (bins, status_counts, liquidation checks, trigger 계산)
+
+#### PDCA Results
+- **Match Rate**: 99.1% (PASS, 1 iteration: 94.7% → 99.1%)
+- **Gaps Fixed**: 3/3 (kofia wiring, 6-stage classify, collateral formula)
+
+#### Documents
+- Plan: `docs/01-plan/features/kospi-vlpi-v1.5.0.plan.md`
+- Design: `docs/02-design/features/kospi-vlpi-v1.5.0.design.md`
+- Analysis: `docs/03-analysis/kospi-vlpi-v1.5.0.analysis.md`
+- Report: `docs/04-report/features/kospi-vlpi-v1.5.0.report.md`
+
+---
+
 ## [KOSPI v1.2.0] - 2026-03-04
 
 ### Cohort Backtest Simulator + Margin Reform — 신용거래 실태 조사 반영

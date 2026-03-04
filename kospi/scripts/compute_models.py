@@ -53,6 +53,7 @@ try:
         BETA_LOOKBACK, BETA_DOWNSIDE_WEIGHT, BETA_UPSIDE_WEIGHT,
         BETA_MIN_KOSPI_RETURN, BETA_CLIP_MIN, BETA_CLIP_MAX,
         MARGIN_RATE, MAINTENANCE_RATIO_FIXED, FORCED_LIQ_LOSS_PCT,
+        LOAN_RATE, STATUS_THRESHOLDS, SAMSUNG_CREDIT_WEIGHT,
     )
 except ImportError:
     TOP_10_TICKERS = {}
@@ -66,6 +67,9 @@ except ImportError:
     MARGIN_RATE = 0.45
     MAINTENANCE_RATIO_FIXED = 1.40
     FORCED_LIQ_LOSS_PCT = 39
+    LOAN_RATE = 0.55
+    STATUS_THRESHOLDS = {"debt_exceed": 100, "forced_liq": 120, "margin_call": 140, "caution": 155, "good": 170}
+    SAMSUNG_CREDIT_WEIGHT = 0.50
 
 
 # ──────────────────────────────────────────────
@@ -89,27 +93,36 @@ class Cohort:
         return (current_kospi - self.entry_kospi) / self.entry_kospi * 100
 
     def collateral_ratio(self, current_kospi: float, margin_rate: float = MARGIN_RATE) -> float:
-        if self.entry_kospi == 0:
+        """담보비율 = 현재가 / (매수가 × LOAN_RATE).
+
+        v1.5.0: 직접 주가 기반. entry_stock_price 우선, fallback entry_kospi.
+        반환값: 비율(예: 1.44 = 144%).
+        """
+        entry = self.entry_stock_price if self.entry_stock_price > 0 else self.entry_kospi
+        if entry <= 0:
             return 999
-        price_ratio = current_kospi / self.entry_kospi
-        return price_ratio / (1 - margin_rate)
+        return current_kospi / (entry * LOAN_RATE)
 
     @staticmethod
-    def classify_status(collateral_ratio: float, loss_pct: float) -> str:
-        """v1.4.1 단일 기준 상태 판정.
+    def classify_status(collateral_ratio: float, loss_pct: float = 0) -> str:
+        """v1.5.0 6단계 상태 판정 (담보비율 기준).
 
-        보증금 45%, 담보유지 140%, 청산임계 손실 39%.
-        - safe:       담보비율 >= 160%
-        - watch:      140% <= 담보비율 < 160%
-        - margin_call: 담보비율 < 140%, 손실 < 39%
-        - forced_liq:  손실 >= 39% (D+3 반대매매 확정)
+        collateral_ratio: 비율(1.44) 또는 %(144.6) 모두 지원.
+        loss_pct: 하위호환용 유지, 미사용.
         """
-        if loss_pct >= FORCED_LIQ_LOSS_PCT:
+        # 비율 형태(1.44) → % 형태(144)로 변환
+        ratio_pct = collateral_ratio * 100 if collateral_ratio < 10 else collateral_ratio
+
+        if ratio_pct < STATUS_THRESHOLDS["debt_exceed"]:
+            return "debt_exceed"
+        if ratio_pct < STATUS_THRESHOLDS["forced_liq"]:
             return "forced_liq"
-        if collateral_ratio < MAINTENANCE_RATIO_FIXED:
+        if ratio_pct < STATUS_THRESHOLDS["margin_call"]:
             return "margin_call"
-        if collateral_ratio < MAINTENANCE_RATIO_FIXED + 0.20:
-            return "watch"
+        if ratio_pct < STATUS_THRESHOLDS["caution"]:
+            return "caution"
+        if ratio_pct < STATUS_THRESHOLDS["good"]:
+            return "good"
         return "safe"
 
     def status(self, current_kospi: float, margin_rate: float = MARGIN_RATE) -> str:
@@ -119,11 +132,10 @@ class Cohort:
         return self.classify_status(ratio, loss)
 
     def collateral_ratio_by_stock(self, current_stock_price: float, margin_rate: float = MARGIN_RATE) -> float:
-        """종목 종가 기반 담보비율 (v1.4.0)."""
+        """종목 종가 기반 담보비율 (v1.5.0: LOAN_RATE 공식)."""
         if self.entry_stock_price <= 0:
             return self.collateral_ratio(current_stock_price, margin_rate)
-        price_ratio = current_stock_price / self.entry_stock_price
-        return price_ratio / (1 - margin_rate)
+        return current_stock_price / (self.entry_stock_price * LOAN_RATE)
 
     def status_by_stock(self, current_stock_price: float, margin_rate: float = MARGIN_RATE) -> str:
         """종목 종가 기반 상태 판정 (v1.4.1)."""
@@ -216,16 +228,19 @@ class CohortBuilder:
             b = int(c.entry_kospi // bin_size) * bin_size
             key = f"{b}-{b + bin_size}"
             if key not in bins:
-                bins[key] = {"range": key, "bin": b, "safe": 0, "watch": 0, "margin_call": 0, "forced_liq": 0}
+                bins[key] = {"range": key, "bin": b,
+                             "safe": 0, "good": 0, "caution": 0, "watch": 0,
+                             "margin_call": 0, "forced_liq": 0, "debt_exceed": 0}
             st = c.status(current_kospi)
-            bins[key][st] += c.remaining_amount_billion
+            if st in bins[key]:
+                bins[key][st] += c.remaining_amount_billion
         return sorted(bins.values(), key=lambda x: x["bin"])
 
     def get_trigger_map(
         self, current_kospi: float, current_fx: float,
         shocks: list[float] | None = None,
     ) -> list[dict]:
-        """충격별 margin_call/forced_liq 추정 (v1.4.1 단일 기준)."""
+        """충격별 margin_call/forced_liq 추정 (v1.5.0 6단계)."""
         if shocks is None:
             shocks = [-3, -5, -10, -15, -20, -30]
         result = []
@@ -236,11 +251,11 @@ class CohortBuilder:
             for c in self.active_cohorts:
                 if c.entry_kospi == 0:
                     continue
-                ratio = (expected_kospi / c.entry_kospi) / (1 - MARGIN_RATE)
-                loss = max(0, (1 - expected_kospi / c.entry_kospi) * 100)
-                if loss >= FORCED_LIQ_LOSS_PCT:
+                ratio = c.collateral_ratio(expected_kospi)
+                status = Cohort.classify_status(ratio)
+                if status in ("debt_exceed", "forced_liq"):
                     forced_liq += c.remaining_amount_billion
-                elif ratio < MAINTENANCE_RATIO_FIXED:
+                elif status == "margin_call":
                     margin_call += c.remaining_amount_billion
             result.append({
                 "shock_pct": shock,
@@ -437,9 +452,9 @@ def adjust_cohort_with_beta(
     loss_pct = max(0, -pnl_pct)
     status = Cohort.classify_status(collateral_ratio, loss_pct)
 
-    # v1.4.1: danger(forced_liq) → 전량 청산
+    # v1.5.0: debt_exceed/forced_liq → 전량 청산
     original_amount = cohort_dict.get("remaining_amount_billion", 0)
-    is_liquidated = status == "forced_liq"
+    is_liquidated = status in ("debt_exceed", "forced_liq")
     surviving_amount = 0.0 if is_liquidated else original_amount
 
     return {
@@ -448,6 +463,41 @@ def adjust_cohort_with_beta(
         "collateral_ratio": collateral_ratio,
         "status": status,
         "remaining_amount_billion": surviving_amount,
+        "liquidated_pct": 100.0 if is_liquidated else 0.0,
+    }
+
+
+def adjust_cohort_for_vlpi(
+    cohort_dict: dict, current_price: float,
+) -> dict:
+    """v1.5.0: 코호트에 6단계 상태 + 청산 여부 적용.
+
+    직접 주가 기반 담보비율: 현재가 / (매수가 × LOAN_RATE) × 100
+    debt_exceed/forced_liq → 100% 청산 (surviving_amount = 0)
+    margin_call 이하 → 잔액 유지 (자발적 투매는 VLPI로 모델링)
+    """
+    from scripts.vlpi_engine import classify_status_6
+
+    entry_price = cohort_dict.get("entry_stock_price", 0) or cohort_dict.get("entry_kospi", 0)
+    original_amount = cohort_dict.get("remaining_amount_billion", 0)
+
+    if entry_price <= 0:
+        ratio = 999.0
+        pnl_pct = 0
+    else:
+        ratio = (current_price / (entry_price * LOAN_RATE)) * 100
+        pnl_pct = round((current_price / entry_price - 1) * 100, 2)
+
+    status = classify_status_6(ratio)
+    is_liquidated = status in ("debt_exceed", "forced_liq")
+    surviving = 0.0 if is_liquidated else original_amount
+
+    return {
+        **cohort_dict,
+        "pnl_pct": pnl_pct,
+        "collateral_ratio_pct": round(ratio, 1),
+        "status": status,
+        "remaining_amount_billion": surviving,
         "liquidated_pct": 100.0 if is_liquidated else 0.0,
     }
 
@@ -554,13 +604,14 @@ class StockCohortManager:
             stock_close = stock_prices.get(ticker, 0) or 0
 
             # 상태 집계: 종목가 기반 (v1.4.0)
-            status_counts = {"safe": 0, "watch": 0, "margin_call": 0, "forced_liq": 0}
+            status_counts = {"safe": 0, "good": 0, "caution": 0, "watch": 0, "margin_call": 0, "forced_liq": 0, "debt_exceed": 0}
             for c in builder.active_cohorts:
                 if stock_close > 0 and c.entry_stock_price > 0:
                     st = c.status_by_stock(stock_close)
                 else:
                     st = c.status(current_kospi)  # fallback
-                status_counts[st] += c.remaining_amount_billion
+                if st in status_counts:
+                    status_counts[st] += c.remaining_amount_billion
 
             entry = {
                 "ticker": ticker,
@@ -577,10 +628,11 @@ class StockCohortManager:
 
         # Residual
         res_total = sum(c.remaining_amount_billion for c in self.residual.active_cohorts)
-        res_status = {"safe": 0, "watch": 0, "margin_call": 0, "forced_liq": 0}
+        res_status = {"safe": 0, "good": 0, "caution": 0, "watch": 0, "margin_call": 0, "forced_liq": 0, "debt_exceed": 0}
         for c in self.residual.active_cohorts:
             st = c.status(current_kospi)
-            res_status[st] += c.remaining_amount_billion
+            if st in res_status:
+                res_status[st] += c.remaining_amount_billion
 
         result.append({
             "ticker": "_residual",
@@ -667,17 +719,17 @@ class StockCohortManager:
 
     @staticmethod
     def _calc_stock_trigger(builder: CohortBuilder, expected_stock_price: float) -> tuple[float, float]:
-        """종목가 기반 마진콜/반대매매 산출 (v1.4.1 단일 기준)."""
+        """종목가 기반 마진콜/반대매매 산출 (v1.5.0 6단계)."""
         mc_total = 0.0
         fl_total = 0.0
         for c in builder.active_cohorts:
             if c.entry_stock_price <= 0:
                 continue
             ratio = c.collateral_ratio_by_stock(expected_stock_price, MARGIN_RATE)
-            loss = max(0, (1 - expected_stock_price / c.entry_stock_price) * 100)
-            if loss >= FORCED_LIQ_LOSS_PCT:
+            status = Cohort.classify_status(ratio)
+            if status in ("debt_exceed", "forced_liq"):
                 fl_total += c.remaining_amount_billion
-            elif ratio < MAINTENANCE_RATIO_FIXED:
+            elif status == "margin_call":
                 mc_total += c.remaining_amount_billion
         return round(mc_total, 2), round(fl_total, 2)
 
@@ -1450,6 +1502,19 @@ class HistoricalComparator:
 # Main Pipeline
 # ──────────────────────────────────────────────
 
+def _load_policy_events() -> list[dict]:
+    """samsung_cohorts.json에서 정책 이벤트 로드."""
+    path = DATA_DIR / "samsung_cohorts.json"
+    if not path.exists():
+        return []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get("policy_events", [])
+    except Exception:
+        return []
+
+
 def _identify_backtest_dates(ts: list[dict], threshold_pct: float = 2.0) -> list[dict]:
     """급변동일 식별 + D+1~D+5 실제 데이터 첨부.
 
@@ -1707,6 +1772,70 @@ def run_all_models() -> dict:
     # Loop Status (정적 — 수동 업데이트 필요)
     loop_status = _compute_loop_status(ts, latest)
 
+    # ── v1.5.0: VLPI 계산 ──
+    vlpi_result_data = {}
+    try:
+        from scripts.vlpi_engine import VLPIEngine
+        vlpi_engine = VLPIEngine()
+
+        samsung_price = latest.get("samsung", 0) or 0
+        ewy_pct = latest.get("ewy_change_pct")
+
+        # 삼성전자 추정 신용잔고 (조원) = 유가증권 신용 × SAMSUNG_CREDIT_WEIGHT
+        samsung_credit_bn = (total_credit * SAMSUNG_CREDIT_WEIGHT) if total_credit > 0 else 0
+
+        # 평균 일거래량 (천주) — 최근 20일
+        samsung_volumes = [r.get("samsung_volume", 0) or 0 for r in ts[-20:]]
+        samsung_adv = sum(samsung_volumes) / len(samsung_volumes) / 1000 if samsung_volumes else 30000
+
+        # 코호트를 VLPI 입력 형식으로 변환
+        vlpi_cohorts = []
+        total_amount = sum(c.get("remaining_amount_billion", 0) for c in lifo_adjusted)
+        if total_amount > 0:
+            for c in lifo_adjusted:
+                entry_price = c.get("entry_stock_price", 0) or c.get("entry_kospi", 0)
+                if entry_price > 0:
+                    vlpi_cohorts.append({
+                        "entry_price": entry_price,
+                        "weight": c.get("remaining_amount_billion", 0) / total_amount,
+                    })
+
+        # 정책 이벤트 로드 (samsung_cohorts.json seed)
+        policy_events = _load_policy_events()
+
+        if samsung_price > 0:
+            vlpi_result = vlpi_engine.calculate_for_date(
+                date=latest.get("date", ""),
+                ts=ts,
+                cohorts=vlpi_cohorts,
+                events=policy_events,
+                ewy_change_pct=ewy_pct,
+                samsung_credit_bn=samsung_credit_bn,
+                current_price=int(samsung_price),
+                adv_shares_k=samsung_adv,
+            )
+
+            # 시나리오 매트릭스
+            if vlpi_result.raw_variables and samsung_credit_bn > 0:
+                rv = vlpi_result.raw_variables
+                scenario_matrix = vlpi_engine.calculate_scenario_matrix(
+                    v1=rv["v1"], v2=rv["v2"], v3_base=rv["v3"],
+                    v5=rv["v5"], v6=rv["v6"],
+                    samsung_credit_bn=samsung_credit_bn,
+                    current_price=int(samsung_price),
+                    adv_shares_k=samsung_adv,
+                )
+            else:
+                scenario_matrix = []
+
+            vlpi_result_data = vlpi_engine.get_output()
+            vlpi_result_data["scenario_matrix"] = scenario_matrix
+            print(f"  VLPI: {vlpi_result.pre_vlpi} ({vlpi_result.level})")
+        else:
+            print("  VLPI: Skipped (no samsung price)")
+    except Exception as e:
+        print(f"  VLPI: Error ({e})")
+
     # Assemble
     output = {
         "computed_at": datetime.now().isoformat(),
@@ -1720,6 +1849,7 @@ def run_all_models() -> dict:
         "cohort_history": cohort_history,
         "backtest_dates": backtest_dates,
         "stock_credit": stock_credit_result,
+        "vlpi": vlpi_result_data,
     }
 
     # Save

@@ -1,6 +1,6 @@
 # Finance Simulator — Multi-Asset Analysis Platform
 
-> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v1.2.0) | 통합 웹 대시보드
+> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v1.5.0) | 통합 웹 대시보드
 
 ## Project Overview
 1. **BTC Liquidity Model**: 글로벌 유동성 지표(5개 변수) 기반 BTC 가격 방향성 선행 예측
@@ -125,10 +125,10 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 
 ---
 
-## KOSPI Crisis Detector v1.2.0
+## KOSPI Crisis Detector v1.5.0
 
 ### Overview
-신용잔고 기반 코호트 분석, 반대매매 연쇄 시뮬레이션, 코호트 백테스트, 신뢰도 대시보드를 하나의 대시보드에서 수행. Phase 1 (Market Pulse) + Phase 2 (Cohort & Forced Liquidation) + Phase 2.5 (Backtest & Margin Reform) 완료.
+신용잔고 기반 코호트 분석 + VLPI(Voluntary Liquidation Pressure Index) 자발적 투매 압력 모델. Phase 1 (Market Pulse) + Phase 2 (Cohort) + Phase 2.5 (Backtest) + Phase 3 (Stock-Weight) + Phase 4 (VLPI Backend) 완료.
 
 ### Phase 1 구현 범위 (v1.0.0 → v1.0.2)
 - **main.jsx**: 시뮬레이터 선택기 (BTC ↔ KOSPI), ErrorBoundary, lazy import
@@ -177,6 +177,21 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **TERM 8개 추가**: backtest, implied_absorption, direction_accuracy 등
 - **kospi_data.js**: 15 exports (기존 13 + COHORT_HISTORY + BACKTEST_DATES), ~899KB
 
+### v1.5.0 — VLPI Backend Engine (자발적 청산 압력 지수)
+- **핵심 철학 전환**: 반대매매 중심 → **자발적 투매(VLPI)** 모델. 2026.03.04 삼성전자 -11.74% 폭락에서 마진콜 코호트 0개 → 반대매매로 설명 불가, 공포 매도가 핵심
+- **VLPI 2단계 아키텍처**:
+  - Stage 1: Pre-VLPI (6변수 → 0~100 스코어)
+    - V1: 주의구간 비중 (w=0.25), V2: 신용잔고 모멘텀 (w=0.10), V3: 정책 쇼크 (w=0.20)
+    - V4: 야간 갭 EWY (w=0.20), V5: 연속 하락 심각도 (w=0.15), V6: 개인 수급 (w=0.10)
+  - Stage 2: Impact Function (Pre-VLPI → Sigmoid → 매도비율 → Kyle's Lambda 가격영향)
+- **6단계 상태 분류**: debt_exceed(<100%) → forced_liq(<120%) → margin_call(<140%) → caution(<155%) → good(<170%) → safe(≥170%)
+- **담보비율 공식 변경**: `현재가 / (매수가 × LOAN_RATE)` (LOAN_RATE=0.55, portfolio_beta 제거)
+- **신규 파일**: `vlpi_engine.py` (~380줄), `kofia_fetcher.py` (3-tier stub), `samsung_cohorts.json` (시드데이터)
+- **데이터 수집**: EWY (iShares MSCI South Korea ETF) yfinance 추가, KOFIA API 플러밍
+- **export**: 16 → 18 exports (VLPI_DATA #17 + VLPI_CONFIG #18)
+- **하위호환**: `status` = legacy 4단계, `status_6` = 신규 6단계 (프론트엔드 v1.6.0까지 기존 UI 유지)
+- **Match Rate**: 99.1% (1 iteration, 3 gaps fixed)
+
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
 - **Y축 줌 (Domain-only)**: Drag + Wheel 지원, domain만 변경 (SVG 찌그러짐 없음)
@@ -189,9 +204,9 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 ### 폴더 구조
 ```
 kospi/                           # Python 데이터 파이프라인
-├── scripts/                     # fetch_daily, kofia_scraper, compute_models, export_web, ...
-├── data/historical/             # 과거 사례 (2008, 2015 중국, 2020, 2021)
-└── config/constants.py          # 공용 상수 (경로, 종목, 모델 파라미터)
+├── scripts/                     # fetch_daily, kofia_scraper, kofia_fetcher, vlpi_engine, compute_models, export_web, ...
+├── data/                        # samsung_cohorts.json (시드), daily/, historical/
+└── config/constants.py          # 공용 상수 (경로, 종목, VLPI 파라미터, 6단계 기준)
 
 web/src/simulators/kospi/        # React 대시보드
 ├── KospiApp.jsx                 # 4탭 메인 + KospiHeader 통합
@@ -199,7 +214,7 @@ web/src/simulators/kospi/        # React 대시보드
 ├── MarketPulse.jsx              # Tab A: 시장 현황 (1350줄)
 ├── CohortAnalysis.jsx           # Tab B: 코호트 & 반대매매 + 백테스트 + 신뢰도 (~1400줄)
 ├── colors.js                    # 색상 팔레트
-├── data/kospi_data.js           # 정적 JSON 데이터 (15 exports: MARKET_DATA~BACKTEST_DATES, ~899KB)
+├── data/kospi_data.js           # 정적 JSON 데이터 (18 exports: MARKET_DATA~VLPI_CONFIG)
 └── shared/                      # 공유 컴포넌트
     └── terms.jsx                # 용어 사전 (TERM), fmtBillion, TermLabel, TermHint, CustomLegend, CustomTooltipContent
 ```
@@ -229,9 +244,12 @@ web/src/simulators/kospi/        # React 대시보드
 - **kospi-phase4.1-data-sources v4.1**: Completed (ECOS+Naver+KRX 실데이터 통합, Match Rate 93%)
 - **kospi-crisis-v1.1.1-bugfix**: Completed (Naver investor, 코호트 bugfix, UI개선, Match Rate 100%)
 - **kospi-crisis-v1.2.0**: Completed (백테스트 시뮬레이터 + 담보비율 분포 개편 + 신뢰도 대시보드)
+- **kospi-vlpi-v1.5.0**: Completed (VLPI Backend Engine — 6변수 투매 압력 모델, Match Rate 99.1%)
 - **Archive**: docs/archive/2026-03/
 
 ## Backlog
-- **kospi-stock-weight-model**: 종목별 가중 모델 — 상위 20종목 신용잔고 추적 → 지수 가중 합산 (v1.3.0)
+- **kospi-vlpi-v1.6.0**: Frontend Cohort Redesign — 6단계 UI + VLPI 게이지 + Component Breakdown + Impact 테이블
+- **kospi-vlpi-v1.7.0**: VLPI Simulator — EWY 슬라이더 + 정책 쇼크 체크박스 + 밤사이 시나리오
+- **kospi-vlpi-v1.8.0**: Model Learning Tab — Bayesian 가중치 학습 + 성과 대시보드
 - **gm2-data-improvement**: 2025년 lag=6 불일치 개선 — GM2 데이터 고착(11개월), HY 단기 충격, BTC 독자 요인 → `docs/01-plan/features/gm2-data-improvement.plan.md`
 - **kospi-crisis Phase 5**: Deploy (GitHub Actions cron + Vercel) — `docs/01-plan/features/kospi-crisis.plan.md`

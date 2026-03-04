@@ -39,6 +39,7 @@ except ImportError:
 from scripts.ecos_fetcher import fetch_ecos_daily
 from scripts.naver_scraper import fetch_naver_deposit_credit, fetch_naver_investor_flows, fetch_stock_market_caps, fetch_stock_daily_prices
 from scripts.krx_auth import create_krx_session, inject_pykrx_session
+from scripts.kofia_fetcher import fetch_credit_balance as fetch_kofia_credit
 from config.constants import TOP_10_TICKERS
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -59,6 +60,7 @@ YF_SYMBOLS = {
     "wti": "CL=F",
     "vix": "^VIX",
     "sp500": "SPY",
+    "ewy": "EWY",
 }
 
 
@@ -92,6 +94,7 @@ def extract_date_data(yf_data: pd.DataFrame, date: str) -> dict:
         "kospi_volume": None, "kospi_trading_value_billion": None,
         "samsung_volume": None, "hynix_volume": None,
         "usd_krw": None, "wti": None, "vix": None, "sp500": None,
+        "ewy_close": None, "ewy_change_pct": None,
     }
 
     if yf_data.empty:
@@ -117,8 +120,27 @@ def extract_date_data(yf_data: pd.DataFrame, date: str) -> dict:
                         result[key] = round(float(val), 1)
                     elif key == "sp500":
                         result[key] = round(float(val), 1)
+                    elif key == "ewy":
+                        result["ewy_close"] = round(float(val), 2)
                     else:
                         result[key] = round(float(val), 2)
+            except (KeyError, TypeError):
+                pass
+
+        # EWY 변동률 계산 (전일 대비)
+        if result["ewy_close"] is not None:
+            try:
+                prev_dt = dt - pd.Timedelta(days=1)
+                # 전 거래일 찾기 (최대 5일 역추적)
+                for offset in range(1, 6):
+                    check_dt = dt - pd.Timedelta(days=offset)
+                    if check_dt in yf_data.index:
+                        prev_ewy = yf_data.loc[check_dt][("Close", YF_SYMBOLS["ewy"])]
+                        if pd.notna(prev_ewy) and float(prev_ewy) > 0:
+                            result["ewy_change_pct"] = round(
+                                (result["ewy_close"] / float(prev_ewy) - 1) * 100, 2
+                            )
+                        break
             except (KeyError, TypeError):
                 pass
 
@@ -236,6 +258,14 @@ def build_snapshot(
     deposit_b = naver_day.get("deposit_billion")
     credit_b = naver_day.get("credit_balance_billion")
 
+    # v1.5.0: KOFIA 신용잔고 (D-1) > Naver (D-2) fallback
+    credit_source = "naver"
+    kofia_credit = fetch_kofia_credit(date)
+    if kofia_credit:
+        credit_b = kofia_credit["kospi_stock_credit_mm"] / 1e3  # 백만원 → 십억원
+        credit_source = kofia_credit["source"]
+        print(f"  [KOFIA] Credit from {credit_source}: {credit_b:.1f}B")
+
     snapshot = {
         "date": date,
         "fetched_at": datetime.now().isoformat(),
@@ -284,6 +314,8 @@ def build_snapshot(
             "wti": data["wti"],
             "vix": data["vix"],
             "sp500": data["sp500"],
+            "ewy_close": data.get("ewy_close"),
+            "ewy_change_pct": data.get("ewy_change_pct"),
         },
         "stock_credit": _build_stock_credit(credit_b, stock_caps),
         "stock_prices": _build_stock_prices(date, stock_daily_prices),
@@ -383,6 +415,8 @@ def append_timeseries(date: str, snapshot: dict) -> None:
         "wti": global_d.get("wti"),
         "vix": global_d.get("vix"),
         "sp500": global_d.get("sp500"),
+        "ewy_close": global_d.get("ewy_close"),
+        "ewy_change_pct": global_d.get("ewy_change_pct"),
     }
 
     # 종목별 신용잔고 (stock_credit)
