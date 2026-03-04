@@ -70,19 +70,19 @@ export const TERM = {
   },
   status_safe: {
     label: "안전 (Safe)",
-    desc: "담보비율 160% 이상. 충분한 여유",
+    desc: "대부분의 종목군에서 유지비율 충족. 충분한 여유",
   },
   status_watch: {
     label: "주의 (Watch)",
-    desc: "담보비율 140-160%. 추가 하락 시 마진콜 가능",
+    desc: "일부 종목군에서 유지비율 근접. 추가 하락 시 마진콜 가능",
   },
   status_marginCall: {
     label: "마진콜 (Margin Call)",
-    desc: "담보비율 130-140%. 추가 담보 입금 필요",
+    desc: "유지비율 미달(A군 140%~D군 160%). 추가 담보 입금 요구 D+2",
   },
   status_danger: {
     label: "위험 (Danger)",
-    desc: "담보비율 130% 미만. 반대매매 임박 또는 진행 중",
+    desc: "강제청산 기준 미달(A군 120%~D군 140%). 반대매매 임박 또는 진행 중",
   },
   trigger_map: {
     label: "트리거 맵 (Trigger Map)",
@@ -109,7 +109,7 @@ export const TERM = {
   /* Simulator terms */
   forced_liq: {
     label: "반대매매 (Forced Liq)",
-    desc: "담보유지비율 미달 시 증권사가 강제로 주식을 매도하는 것 (증권사별 상이, 약 120~140% 미만)",
+    desc: "담보유지비율 미달 후 추가담보 미납 시 강제 매도. 종목군별 A군 120%, B군 125%, C군 130%, D군 140% 미만에서 발생",
   },
   loop_a: {
     label: "반대매매 연쇄 (Forced Liq Loop)",
@@ -284,6 +284,40 @@ export const TERM = {
   absorption_rate_dynamic: {
     label: "동적 흡수율 (Dynamic Absorption)",
     desc: "개인 매수력(I17)에 연동하여 조정. 매수력 소진 시 흡수율 하락",
+  },
+
+  /* Backtest terms (v1.2.0) */
+  backtest: {
+    label: "백테스트 (Backtest)",
+    desc: "과거 급변동일의 코호트를 복원하여 시뮬레이션 결과와 실제 시장 데이터를 비교",
+  },
+  implied_absorption: {
+    label: "역산 흡수율 (Implied Absorption)",
+    desc: "실제 D+1 가격변동에서 역산한 시장 흡수율. 가정치와 비교하여 모델 보정에 활용",
+  },
+  direction_accuracy: {
+    label: "방향 정확도 (Direction Accuracy)",
+    desc: "시뮬레이션과 실제의 등락 방향이 일치한 비율 (%)",
+  },
+  backtest_rmse: {
+    label: "RMSE (Root Mean Square Error)",
+    desc: "시뮬레이션과 실제 가격 오차의 제곱평균제곱근 (%). 낮을수록 정확",
+  },
+  sim_vs_actual: {
+    label: "시뮬 vs 실제 (Sim vs Actual)",
+    desc: "시뮬레이션 예측 KOSPI와 실제 KOSPI 비교",
+  },
+  forward_day: {
+    label: "전방일 (Forward Day)",
+    desc: "충격일 기준 D+1~D+5 이후 실제 시장 데이터",
+  },
+  whatif_mode: {
+    label: "What-if 모드",
+    desc: "현재 코호트 기준 가상 충격 시나리오 시뮬레이션",
+  },
+  backtest_mode: {
+    label: "백테스트 모드",
+    desc: "과거 급변동일 선택 → 당시 코호트 복원 → 시뮬 vs 실제 비교",
   },
 };
 

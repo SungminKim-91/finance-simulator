@@ -1,6 +1,6 @@
 # Finance Simulator — Multi-Asset Analysis Platform
 
-> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v1.1.0) | 통합 웹 대시보드
+> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v1.2.0) | 통합 웹 대시보드
 
 ## Project Overview
 1. **BTC Liquidity Model**: 글로벌 유동성 지표(5개 변수) 기반 BTC 가격 방향성 선행 예측
@@ -125,10 +125,10 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 
 ---
 
-## KOSPI Crisis Detector v1.1.0
+## KOSPI Crisis Detector v1.2.0
 
 ### Overview
-신용잔고 기반 코호트 분석, 반대매매 연쇄 시뮬레이션, Bayesian 시나리오 추적, 과거 사례 비교를 하나의 대시보드에서 수행. Phase 1 (Market Pulse) + Phase 2 (Cohort & Forced Liquidation) 완료.
+신용잔고 기반 코호트 분석, 반대매매 연쇄 시뮬레이션, 코호트 백테스트, 신뢰도 대시보드를 하나의 대시보드에서 수행. Phase 1 (Market Pulse) + Phase 2 (Cohort & Forced Liquidation) + Phase 2.5 (Backtest & Margin Reform) 완료.
 
 ### Phase 1 구현 범위 (v1.0.0 → v1.0.2)
 - **main.jsx**: 시뮬레이터 선택기 (BTC ↔ KOSPI), ErrorBoundary, lazy import
@@ -165,6 +165,18 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **TradingView volume**: 반대매매 Bar 하단 30%, KOSPI Line protagonist
 - **폰트 증가**: 전체 1-2px 증가 (9→11, 10→12, 13→15)
 
+### v1.2.0 — Backtest Simulator + Margin Reform
+- **담보비율 분포 개편**: 단일 130%/140% → 증권사/종목군별 실제 분포 (3개 분포 가중 곱)
+  - MARGIN_DISTRIBUTION: 40~60%, MAINTENANCE_DISTRIBUTION: A군140%~D군160%, FORCED_LIQ_DISTRIBUTION: 120%~140%
+- **백테스트 모드**: 281일 중 임의 거래일 선택 → 충격% 입력 → 시뮬 vs 실제 D+1~D+5 비교
+- **코호트 히스토리**: COHORT_HISTORY export (201코호트 × 281일 일별 스냅샷, ~745KB)
+- **급변동일**: BACKTEST_DATES export (40건, |일간변동| > 2%)
+- **ReliabilityDashboard**: 40건 일괄 시뮬 → 방향 정확도, RMSE, 산점도
+- **BacktestComparison**: 듀얼 라인 차트 + 비교 테이블 + 역산 흡수율
+- **신용거래 실태 조사**: 95%+ 개별주식, ETF 거의 없음, 대형주 집중 → 모델 한계 UI 명시
+- **TERM 8개 추가**: backtest, implied_absorption, direction_accuracy 등
+- **kospi_data.js**: 15 exports (기존 13 + COHORT_HISTORY + BACKTEST_DATES), ~899KB
+
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
 - **Y축 줌 (Domain-only)**: Drag + Wheel 지원, domain만 변경 (SVG 찌그러짐 없음)
@@ -185,9 +197,9 @@ web/src/simulators/kospi/        # React 대시보드
 ├── KospiApp.jsx                 # 4탭 메인 + KospiHeader 통합
 ├── KospiHeader.jsx              # 공통 헤더 (탭 전환 시 유지)
 ├── MarketPulse.jsx              # Tab A: 시장 현황 (1350줄)
-├── CohortAnalysis.jsx           # Tab B: 코호트 & 반대매매 (703줄)
+├── CohortAnalysis.jsx           # Tab B: 코호트 & 반대매매 + 백테스트 + 신뢰도 (~1400줄)
 ├── colors.js                    # 색상 팔레트
-├── data/kospi_data.js           # 정적 JSON 데이터 (MARKET_DATA, CREDIT_DATA, INVESTOR_FLOWS, COHORT_DATA 등)
+├── data/kospi_data.js           # 정적 JSON 데이터 (15 exports: MARKET_DATA~BACKTEST_DATES, ~899KB)
 └── shared/                      # 공유 컴포넌트
     └── terms.jsx                # 용어 사전 (TERM), fmtBillion, TermLabel, TermHint, CustomLegend, CustomTooltipContent
 ```
@@ -216,8 +228,10 @@ web/src/simulators/kospi/        # React 대시보드
 - **kospi-crisis-phase2 v1.1.0**: Completed (Phase 2 UX 전면 개선, Match Rate 98.9%)
 - **kospi-phase4.1-data-sources v4.1**: Completed (ECOS+Naver+KRX 실데이터 통합, Match Rate 93%)
 - **kospi-crisis-v1.1.1-bugfix**: Completed (Naver investor, 코호트 bugfix, UI개선, Match Rate 100%)
+- **kospi-crisis-v1.2.0**: Completed (백테스트 시뮬레이터 + 담보비율 분포 개편 + 신뢰도 대시보드)
 - **Archive**: docs/archive/2026-03/
 
 ## Backlog
+- **kospi-stock-weight-model**: 종목별 가중 모델 — 상위 20종목 신용잔고 추적 → 지수 가중 합산 (v1.3.0)
 - **gm2-data-improvement**: 2025년 lag=6 불일치 개선 — GM2 데이터 고착(11개월), HY 단기 충격, BTC 독자 요인 → `docs/01-plan/features/gm2-data-improvement.plan.md`
 - **kospi-crisis Phase 5**: Deploy (GitHub Actions cron + Vercel) — `docs/01-plan/features/kospi-crisis.plan.md`

@@ -1,5 +1,50 @@
 # Changelog — Finance Simulator
 
+## [KOSPI v1.2.0] - 2026-03-04
+
+### Cohort Backtest Simulator + Margin Reform — 신용거래 실태 조사 반영
+
+#### Background
+- 코호트 시뮬레이터에 과거 검증(백테스트) 기능 부재 → 모델 신뢰도 확인 불가
+- 담보비율 단일 threshold (130%/140%) → 증권사/종목군별 실제 분포 미반영
+- 한국 신용거래 실태 조사: 95%+ 개별주식, 대형주 집중, ETF 거의 없음
+
+#### Added
+- **백테스트 모드**: 281일 중 임의 거래일 선택 → 충격% 입력 → 시뮬 vs 실제 D+1~D+5 비교
+- **코호트 히스토리**: 201코호트 × 281일 일별 스냅샷 (COHORT_HISTORY export, ~745KB)
+- **급변동일 자동 식별**: |일간변동| > 2% → 40건 (BACKTEST_DATES export)
+- **BacktestComparison 컴포넌트**: 듀얼 라인 차트 (시뮬 vs 실제), 비교 테이블, 역산 흡수율
+- **ReliabilityDashboard**: 40건 일괄 시뮬 → 방향 정확도%, RMSE%, 산점도
+- **TERM 8개**: backtest, implied_absorption, direction_accuracy, backtest_rmse 등
+- **위험 코호트 요약**: 백테스트 기준일 선택 시 위험/마진콜/주의 코호트 태그 표시
+- **모델 한계 명시**: "개별주식 기반 신용거래의 KOSPI 지수 근사치" 가이드 박스
+
+#### Changed
+- **담보비율 분포 개편**: 증거금률 40~60%, 유지비율 A군 140%~D군 160%, 강제청산 120%~140%
+- **시뮬레이션 엔진**: 단일 threshold → 3개 분포 가중 곱 (MARGIN × MAINTENANCE × FORCED_LIQ)
+- **코호트 접기/더보기**: 접기 버튼이 펼친 상태에서도 표시되도록 수정
+- **export_web.py**: 13→15 exports (COHORT_HISTORY, BACKTEST_DATES)
+
+#### Data
+- kospi_data.js: 324KB → 899KB (+575KB, COHORT_HISTORY + BACKTEST_DATES)
+
+#### Documents
+- Report: `docs/04-report/features/kospi-crisis-v1.2.0.report.md`
+
+---
+
+## [KOSPI v1.1.1] - 2026-03-04
+
+### 투자자 수급 Naver 스크래퍼 + 코호트 bugfix + UI 개선
+
+#### Summary
+v4.1 실데이터 통합 후 발견된 5개 이슈 수정.
+
+#### Documents
+- Report: `docs/04-report/features/kospi-crisis-v1.1.1-bugfix.report.md`
+
+---
+
 ## [KOSPI v1.1.0] - 2026-03-04
 
 ### Phase 2 UX 전면 개선 — Cohort & Forced Liquidation 초보자 친화

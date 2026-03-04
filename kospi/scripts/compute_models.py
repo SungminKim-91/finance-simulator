@@ -69,14 +69,27 @@ class Cohort:
         return price_ratio / (1 - margin_rate)
 
     def status(self, current_kospi: float, margin_rate: float = 0.40) -> str:
+        """분포 기반 가중평균 상태 판정."""
         ratio = self.collateral_ratio(current_kospi, margin_rate)
-        if ratio >= 1.60:
-            return "safe"
-        if ratio >= 1.40:
-            return "watch"
-        if ratio >= 1.30:
-            return "margin_call"
-        return "forced_liq"
+        # 분포 기반: 각 종목군별 threshold에서 가중 판정
+        forced_w = 0.0
+        margin_w = 0.0
+        watch_w = 0.0
+        safe_w = 0.0
+        for fl_ratio, fl_weight in FORCED_LIQ_DISTRIBUTION.items():
+            for mt_ratio, mt_weight in MAINTENANCE_DISTRIBUTION.items():
+                w = fl_weight * mt_weight
+                if ratio < fl_ratio:
+                    forced_w += w
+                elif ratio < mt_ratio:
+                    margin_w += w
+                elif ratio < mt_ratio + 0.20:
+                    watch_w += w
+                else:
+                    safe_w += w
+        # 가중평균으로 최다 상태 반환
+        scores = {"forced_liq": forced_w, "margin_call": margin_w, "watch": watch_w, "safe": safe_w}
+        return max(scores, key=scores.get)
 
 
 class CohortBuilder:
@@ -167,7 +180,7 @@ class CohortBuilder:
         self, current_kospi: float, current_fx: float,
         shocks: list[float] | None = None,
     ) -> list[dict]:
-        """충격별 margin_call/forced_liq 추정."""
+        """충격별 margin_call/forced_liq 추정 (분포 기반)."""
         if shocks is None:
             shocks = [-3, -5, -10, -15, -20, -30]
         result = []
@@ -176,14 +189,17 @@ class CohortBuilder:
             margin_call = 0.0
             forced_liq = 0.0
             for c in self.active_cohorts:
-                for margin_rate, weight in MARGIN_DISTRIBUTION.items():
-                    if c.entry_kospi == 0:
-                        continue
+                if c.entry_kospi == 0:
+                    continue
+                for margin_rate, mr_w in MARGIN_DISTRIBUTION.items():
                     ratio = (expected_kospi / c.entry_kospi) / (1 - margin_rate)
-                    if ratio < FORCED_LIQ_RATIO:
-                        forced_liq += c.remaining_amount_billion * weight
-                    elif ratio < MAINTENANCE_RATIO:
-                        margin_call += c.remaining_amount_billion * weight
+                    for fl_ratio, fl_w in FORCED_LIQ_DISTRIBUTION.items():
+                        for mt_ratio, mt_w in MAINTENANCE_DISTRIBUTION.items():
+                            w = mr_w * fl_w * mt_w
+                            if ratio < fl_ratio:
+                                forced_liq += c.remaining_amount_billion * w
+                            elif ratio < mt_ratio:
+                                margin_call += c.remaining_amount_billion * w
             result.append({
                 "shock_pct": shock,
                 "expected_kospi": round(expected_kospi),
@@ -197,15 +213,34 @@ class CohortBuilder:
 # Module B: 반대매매 시뮬레이터
 # ──────────────────────────────────────────────
 
+# 증거금률 분포 (증권사/종목별 상이)
 MARGIN_DISTRIBUTION = {
-    0.40: 0.35,
-    0.45: 0.35,
-    0.50: 0.25,
-    0.60: 0.05,
+    0.40: 0.30,  # 40% 증거금 (대형주 우량)
+    0.45: 0.30,  # 45% (일반)
+    0.50: 0.25,  # 50%
+    0.60: 0.15,  # 60% (고위험)
 }
 
-MAINTENANCE_RATIO = 1.40
-FORCED_LIQ_RATIO = 1.30
+# 담보유지비율 분포 (증권사 × 종목군 가중평균)
+# 금투협: A군=140%, B군=145%, C군=150%, D군=160%
+MAINTENANCE_DISTRIBUTION = {
+    1.40: 0.45,  # A종목군 대형주
+    1.45: 0.25,  # B종목군 중형주
+    1.50: 0.20,  # C종목군 소형주
+    1.60: 0.10,  # D종목군 고위험/테마주
+}
+
+# 강제청산 비율 분포 (유지비율 미달 후 추가담보 미납 시)
+FORCED_LIQ_DISTRIBUTION = {
+    1.20: 0.45,  # A종목군: 140% 미달 → D+1 미납 → ~120%에서 청산
+    1.25: 0.25,  # B종목군: 145% 미달 → 125%에서 청산
+    1.30: 0.20,  # C종목군: 150% 미달 → 130%에서 청산
+    1.40: 0.10,  # D종목군: 160% 미달 → 140%에서 청산
+}
+
+# 호환용 단일값 (가중평균)
+MAINTENANCE_RATIO = sum(k * v for k, v in MAINTENANCE_DISTRIBUTION.items())  # ~1.435
+FORCED_LIQ_RATIO = sum(k * v for k, v in FORCED_LIQ_DISTRIBUTION.items())    # ~1.245
 
 
 class ForcedLiqSimulator:
@@ -240,7 +275,7 @@ class ForcedLiqSimulator:
         fx = initial_fx
 
         for r in range(1, max_rounds + 1):
-            # Loop A: forced liquidation
+            # Loop A: forced liquidation (분포 기반)
             forced_liq = 0
             margin_call = 0
             impact_a = 0.0
@@ -248,14 +283,17 @@ class ForcedLiqSimulator:
                 for c in cohorts:
                     entry = c.get("entry_kospi", initial_price)
                     amount = c.get("remaining_amount_billion", 0)
-                    for margin_rate, weight in MARGIN_DISTRIBUTION.items():
-                        if entry == 0:
-                            continue
+                    if entry == 0:
+                        continue
+                    for margin_rate, mr_w in MARGIN_DISTRIBUTION.items():
                         ratio = (price / entry) / (1 - margin_rate)
-                        if ratio < FORCED_LIQ_RATIO:
-                            forced_liq += amount * weight
-                        elif ratio < MAINTENANCE_RATIO:
-                            margin_call += amount * weight
+                        for fl_ratio, fl_w in FORCED_LIQ_DISTRIBUTION.items():
+                            for mt_ratio, mt_w in MAINTENANCE_DISTRIBUTION.items():
+                                w = mr_w * fl_w * mt_w
+                                if ratio < fl_ratio:
+                                    forced_liq += amount * w
+                                elif ratio < mt_ratio:
+                                    margin_call += amount * w
                 sell_pressure_a = forced_liq * (1 - absorption_rate)
                 impact_a = (
                     (sell_pressure_a / avg_daily_trading_value) * impact_coefficient
@@ -966,6 +1004,52 @@ class HistoricalComparator:
 # Main Pipeline
 # ──────────────────────────────────────────────
 
+def _identify_backtest_dates(ts: list[dict], threshold_pct: float = 2.0) -> list[dict]:
+    """급변동일 식별 + D+1~D+5 실제 데이터 첨부.
+
+    Args:
+        ts: 전체 시계열
+        threshold_pct: 변동률 임계값 (기본 2%)
+
+    Returns:
+        [{date, shock_pct, kospi, prev_kospi, forward: [{day, date, kospi, credit, ...}]}]
+    """
+    results = []
+    for i in range(1, len(ts)):
+        prev_kospi = ts[i - 1].get("kospi") or 0
+        cur_kospi = ts[i].get("kospi") or 0
+        if prev_kospi == 0:
+            continue
+        change_pct = (cur_kospi - prev_kospi) / prev_kospi * 100
+        if abs(change_pct) < threshold_pct:
+            continue
+
+        forward = []
+        for d in range(1, 6):
+            if i + d >= len(ts):
+                break
+            fwd = ts[i + d]
+            forward.append({
+                "day": d,
+                "date": fwd.get("date", ""),
+                "kospi": fwd.get("kospi"),
+                "credit_balance_billion": fwd.get("credit_balance_billion"),
+                "individual_billion": fwd.get("individual_billion"),
+                "foreign_billion": fwd.get("foreign_billion"),
+                "institution_billion": fwd.get("institution_billion"),
+                "trading_value_billion": fwd.get("kospi_trading_value_billion"),
+            })
+
+        results.append({
+            "date": ts[i].get("date", ""),
+            "shock_pct": round(change_pct, 2),
+            "kospi": cur_kospi,
+            "prev_kospi": prev_kospi,
+            "forward": forward,
+        })
+    return results
+
+
 def load_timeseries() -> list[dict]:
     path = DATA_DIR / "timeseries.json"
     if path.exists():
@@ -986,10 +1070,15 @@ def run_all_models() -> dict:
 
     print(f"Computing models... (KOSPI: {kospi}, Date: {latest.get('date', 'N/A')})")
 
-    # Module A: Cohort
+    # Module A: Cohort (+ history capture)
     builder_lifo = CohortBuilder(mode="LIFO")
     builder_fifo = CohortBuilder(mode="FIFO")
     last_known_credit = 0
+
+    # Cohort history: registry (불변) + daily snapshots
+    cohort_registry = {}   # {entry_date: {entry_kospi}}
+    cohort_snapshots = []  # [{date, kospi, usd_krw, trading_value, amounts: {entry_date: amount}}]
+
     for i in range(1, len(ts)):
         prev = ts[i - 1]
         cur = ts[i]
@@ -1011,6 +1100,23 @@ def run_all_models() -> dict:
         )
         builder_lifo.process_day(**kwargs)
         builder_fifo.process_day(**kwargs)
+
+        # Capture snapshot (LIFO only — primary mode)
+        cur_date = cur.get("date", "")
+        amounts = {}
+        for c in builder_lifo.active_cohorts:
+            if c.remaining_amount_billion > 0:
+                # Register new cohorts
+                if c.entry_date not in cohort_registry:
+                    cohort_registry[c.entry_date] = {"entry_kospi": c.entry_kospi}
+                amounts[c.entry_date] = round(c.remaining_amount_billion, 1)
+        cohort_snapshots.append({
+            "date": cur_date,
+            "kospi": cur.get("kospi"),
+            "usd_krw": cur.get("usd_krw"),
+            "trading_value": cur.get("kospi_trading_value_billion"),
+            "amounts": amounts,
+        })
 
     current_fx = latest.get("usd_krw", 1400) or 1400
     lifo_status = builder_lifo.get_status(kospi)
@@ -1066,6 +1172,17 @@ def run_all_models() -> dict:
     historical_result = comparator.compare(kospi_series, peak_kospi)
     print(f"  Historical: {len(historical_result.get('cases', []))} cases compared")
 
+    # Backtest dates: 급변동일 식별
+    backtest_dates = _identify_backtest_dates(ts)
+    print(f"  Backtest dates: {len(backtest_dates)} events (|change| > 2%)")
+
+    # Cohort history
+    cohort_history = {
+        "registry": cohort_registry,
+        "snapshots": cohort_snapshots,
+    }
+    print(f"  Cohort history: {len(cohort_registry)} cohorts, {len(cohort_snapshots)} days")
+
     # Defense Walls (정적 — 수동 업데이트 필요)
     defense_walls = _compute_defense_walls(ts, latest)
 
@@ -1082,6 +1199,8 @@ def run_all_models() -> dict:
         "historical": historical_result,
         "defense_walls": defense_walls,
         "loop_status": loop_status,
+        "cohort_history": cohort_history,
+        "backtest_dates": backtest_dates,
     }
 
     # Save

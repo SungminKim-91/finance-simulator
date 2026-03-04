@@ -3,7 +3,7 @@
 Python 모델 결과 → React 데이터 파일 내보내기.
 kospi/data/ → web/src/simulators/kospi/data/kospi_data.js
 
-Exports (13):
+Exports (15):
   1. MARKET_DATA       — KOSPI/KOSDAQ/삼전/하닉 일간
   2. CREDIT_DATA       — 신용잔고, 예탁금, 반대매매
   3. INVESTOR_FLOWS    — 주체별 수급
@@ -17,6 +17,8 @@ Exports (13):
  11. LOOP_STATUS       — Loop A/C 상태
  12. EVENTS            — 이벤트 로그
  13. META              — 메타데이터
+ 14. COHORT_HISTORY    — 코호트 히스토리 (레지스트리 + 일별 스냅샷)
+ 15. BACKTEST_DATES    — 급변동일 목록 + D+1~D+5 실제 데이터
 
 Usage:
     python kospi/scripts/export_web.py
@@ -178,16 +180,10 @@ def export_all() -> None:
         "current_fx": cohorts.get("current_fx", 1400),
         "avg_daily_trading_value_billion": _avg_trading_value(ts),
         "params": {
-            "margin_distribution": {"0.40": 0.35, "0.45": 0.35, "0.50": 0.25, "0.60": 0.05},
-            "maintenance_ratio": 1.40,
-            "forced_liq_ratio": 1.30,
+            "margin_distribution": {"0.40": 0.30, "0.45": 0.30, "0.50": 0.25, "0.60": 0.15},
+            "maintenance_distribution": {"1.40": 0.45, "1.45": 0.25, "1.50": 0.20, "1.60": 0.10},
+            "forced_liq_distribution": {"1.20": 0.45, "1.25": 0.25, "1.30": 0.20, "1.40": 0.10},
             "impact_coefficient": 1.5,
-            "fx_sensitivity": {
-                "low": {"threshold": 1, "multiplier": 0.5},
-                "mid": {"threshold": 2, "multiplier": 1.0},
-                "high": {"threshold": 3, "multiplier": 1.5},
-                "extreme": {"threshold": float("inf"), "multiplier": 2.0},
-            },
         },
     }
 
@@ -243,6 +239,12 @@ def export_all() -> None:
         },
     }
 
+    # === 14. COHORT_HISTORY ===
+    cohort_history = model_output.get("cohort_history", {"registry": {}, "snapshots": []})
+
+    # === 15. BACKTEST_DATES ===
+    backtest_dates = model_output.get("backtest_dates", [])
+
     # === Write JS ===
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     output_path = WEB_DATA_DIR / "kospi_data.js"
@@ -252,7 +254,7 @@ def export_all() -> None:
         f.write(f" * KOSPI Crisis Detector Data (auto-generated)\n")
         f.write(f" * Generated: {datetime.now().isoformat()}\n")
         f.write(f" * Source: kospi/data/ (pipeline)\n")
-        f.write(f" * Exports: 13\n")
+        f.write(f" * Exports: 15\n")
         f.write(f" */\n\n")
 
         f.write(to_js_export("MARKET_DATA", market_data))
@@ -268,6 +270,8 @@ def export_all() -> None:
         f.write(to_js_export("LOOP_STATUS", loop_status))
         f.write(to_js_export("EVENTS", events))
         f.write(to_js_export("META", meta))
+        f.write(to_js_export("COHORT_HISTORY", cohort_history))
+        f.write(to_js_export("BACKTEST_DATES", backtest_dates))
 
     print(f"Exported to {output_path}")
     print(f"  Market:    {len(market_data)} days")
@@ -281,6 +285,8 @@ def export_all() -> None:
     print(f"  Historical:{len(historical.get('cases', []))} cases")
     print(f"  Defense:   {len(defense_walls)} walls")
     print(f"  Events:    {len(events)}")
+    print(f"  CohortHist:{len(cohort_history.get('registry', {}))} cohorts, {len(cohort_history.get('snapshots', []))} days")
+    print(f"  Backtest:  {len(backtest_dates)} events")
 
 
 def _remap_cohorts(cohorts: list[dict]) -> list[dict]:
