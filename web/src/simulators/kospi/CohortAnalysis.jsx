@@ -19,7 +19,7 @@ import { C } from "./colors";
 import { TERM, TermLabel, fmtBillion } from "./shared/terms";
 import {
   COHORT_DATA, INVESTOR_FLOWS, MARKET_DATA, SHORT_SELLING,
-  COHORT_HISTORY, BACKTEST_DATES,
+  COHORT_HISTORY, BACKTEST_DATES, STOCK_CREDIT,
 } from "./data/kospi_data";
 
 const FONT = "'JetBrains Mono', monospace";
@@ -639,6 +639,126 @@ function ReliabilityDashboard({ params, registry, snapshots, backtestDates, avgT
   );
 }
 
+/* ── Stock Credit Breakdown (v1.3.0) ── */
+const STOCK_COLORS = [
+  "#4fc3f7", "#81c784", "#ffb74d", "#e57373", "#ba68c8",
+  "#4dd0e1", "#aed581", "#ffd54f", "#f06292", "#7986cb", "#90a4ae",
+];
+
+function StockCreditBreakdown() {
+  const stocks = STOCK_CREDIT?.stocks || [];
+  const isWeighted = STOCK_CREDIT?.stock_weighted || false;
+
+  if (!stocks.length) return null;
+
+  const total = stocks.reduce((s, st) => s + (st.credit_billion || 0), 0);
+  const top10Only = stocks.filter(s => s.ticker !== "_residual");
+  const residual = stocks.find(s => s.ticker === "_residual");
+  const top10Total = top10Only.reduce((s, st) => s + (st.credit_billion || 0), 0);
+
+  return (
+    <PanelBox>
+      <SectionTitle termKey="stock_credit">Stock Credit Breakdown</SectionTitle>
+
+      {/* Summary cards */}
+      <div style={{ display: "flex", gap: 8, marginBottom: 12, flexWrap: "wrap" }}>
+        <SummaryCard label="Top 10 합계" value={(top10Total / 1000).toFixed(1)} unit="조원" color={C.kospi} />
+        <SummaryCard label="기타" value={residual ? (residual.credit_billion / 1000).toFixed(1) : "0"} unit="조원" />
+        <SummaryCard label="Top 10 비중" value={total > 0 ? ((top10Total / total) * 100).toFixed(1) : "0"} unit="%" color={C.samsung} />
+        <SummaryCard label="모델" value={isWeighted ? "가중" : "단일"} color={isWeighted ? C.safe : C.muted} />
+      </div>
+
+      {/* Horizontal stacked bar */}
+      <div style={{ marginBottom: 8 }}>
+        <div style={{ display: "flex", height: 28, borderRadius: 6, overflow: "hidden", border: `1px solid ${C.border}` }}>
+          {top10Only.map((st, i) => {
+            const pct = total > 0 ? (st.credit_billion / total) * 100 : 0;
+            if (pct < 0.5) return null;
+            return (
+              <div key={st.ticker} title={`${st.name}: ${fmtBillion(st.credit_billion)} (${pct.toFixed(1)}%)`}
+                style={{
+                  width: `${pct}%`, background: STOCK_COLORS[i % STOCK_COLORS.length],
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: pct > 8 ? 10 : 0, color: "#1a1a2e", fontWeight: 700, fontFamily: FONT,
+                  transition: "width 0.3s",
+                }}>
+                {pct > 8 ? st.name.slice(0, 4) : ""}
+              </div>
+            );
+          })}
+          {residual && residual.credit_billion > 0 && (
+            <div title={`기타: ${fmtBillion(residual.credit_billion)}`}
+              style={{
+                width: `${total > 0 ? (residual.credit_billion / total) * 100 : 0}%`,
+                background: "#555", display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: 10, color: C.muted, fontFamily: FONT,
+              }}>
+              기타
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Per-stock detail table */}
+      <div style={{ overflowX: "auto" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 11, fontFamily: FONT }}>
+          <thead>
+            <tr style={{ borderBottom: `1px solid ${C.border}` }}>
+              <th style={{ padding: "6px 8px", textAlign: "left", color: C.muted, fontWeight: 600 }}>종목</th>
+              <th style={{ padding: "6px 8px", textAlign: "right", color: C.muted, fontWeight: 600 }}>신용잔고</th>
+              <th style={{ padding: "6px 8px", textAlign: "right", color: C.muted, fontWeight: 600 }}>비중</th>
+              <th style={{ padding: "6px 8px", textAlign: "right", color: C.muted, fontWeight: 600 }}>KOSPI가중</th>
+            </tr>
+          </thead>
+          <tbody>
+            {top10Only.map((st, i) => (
+              <tr key={st.ticker} style={{ borderBottom: `1px solid ${C.border}22` }}>
+                <td style={{ padding: "5px 8px" }}>
+                  <span style={{ color: STOCK_COLORS[i % STOCK_COLORS.length], marginRight: 4 }}>{"\u25CF"}</span>
+                  <span style={{ color: C.text }}>{st.name}</span>
+                  <span style={{ color: C.dim, fontSize: 10, marginLeft: 4 }}>{st.ticker}</span>
+                </td>
+                <td style={{ padding: "5px 8px", textAlign: "right", color: C.text }}>
+                  {fmtBillion(st.credit_billion)}
+                </td>
+                <td style={{ padding: "5px 8px", textAlign: "right", color: C.muted }}>
+                  {total > 0 ? ((st.credit_billion / total) * 100).toFixed(1) : "0"}%
+                </td>
+                <td style={{ padding: "5px 8px", textAlign: "right", color: C.kospi }}>
+                  {st.kospi_weight_pct?.toFixed(1) || "0"}%
+                </td>
+              </tr>
+            ))}
+            {residual && (
+              <tr style={{ borderTop: `1px solid ${C.border}` }}>
+                <td style={{ padding: "5px 8px" }}>
+                  <span style={{ color: "#555", marginRight: 4 }}>{"\u25CF"}</span>
+                  <span style={{ color: C.muted }}>기타 (Top 10 외)</span>
+                </td>
+                <td style={{ padding: "5px 8px", textAlign: "right", color: C.muted }}>
+                  {fmtBillion(residual.credit_billion)}
+                </td>
+                <td style={{ padding: "5px 8px", textAlign: "right", color: C.muted }}>
+                  {total > 0 ? ((residual.credit_billion / total) * 100).toFixed(1) : "0"}%
+                </td>
+                <td style={{ padding: "5px 8px", textAlign: "right", color: C.dim }}>
+                  {residual.kospi_weight_pct?.toFixed(1) || "-"}%
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Methodology note */}
+      <div style={{ marginTop: 8, fontSize: 10, color: C.dim, lineHeight: 1.5, fontFamily: FONT }}>
+        * 시가총액 비중으로 시장 전체 신용잔고를 종목별 배분 (proxy). 개별 종목 신용잔고 공개 API 미제공.
+      </div>
+    </PanelBox>
+  );
+}
+
+
 /* ═══════════════════════════════════════════════════
    Main Component
    ═══════════════════════════════════════════════════ */
@@ -858,7 +978,7 @@ export default function CohortAnalysis() {
                 <span><span style={{ color: C.danger }}>&#9632;</span> 위험</span>
               </div>
               <div style={{ marginTop: 6, fontSize: 11, color: C.dim, lineHeight: 1.6 }}>
-                개별주식 신용거래 기반 (ETF 제외). 증권사/종목군별 실제 비율 분포 반영:<br/>
+                개별주식 신용거래 기반 (ETF 제외). Top 10 종목 가중 모델 + 증권사/종목군별 실제 비율 분포 반영:<br/>
                 마진콜: A군 140% ~ D군 160% | 강제청산: A군 120% ~ D군 140% | 증거금률: 40~60%
               </div>
             </div>
@@ -948,6 +1068,11 @@ export default function CohortAnalysis() {
           ))}
         </div>
       </PanelBox>
+
+      {/* ══════════════════════════════════════════
+          Section 1.5: Stock Credit Breakdown (v1.3.0)
+          ══════════════════════════════════════════ */}
+      <StockCreditBreakdown />
 
       {/* ══════════════════════════════════════════
           Section 2: Trigger Map

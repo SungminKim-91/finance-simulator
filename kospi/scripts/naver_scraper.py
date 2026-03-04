@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-Naver Finance 스크래핑.
+Naver Finance 스크래핑 + 종목별 시가총액.
 
 1. 고객예탁금 + 신용잔고: sise_deposit.naver
 2. 투자자별 매매동향: investorDealTrendDay.naver (개인/외국인/기관/금투, 억원)
+3. 종목별 시가총액 + 가격: yfinance (신용잔고 가중 배분용)
 """
 import re
 import time
@@ -268,4 +269,78 @@ def fetch_naver_investor_flows(start: str, end: str) -> dict[str, dict]:
         time.sleep(0.3)
 
     print(f"  [Naver Investor] 총 {len(result)}일 투자자별 수급 수집 완료")
+    return result
+
+
+# ──────────────────────────────────────────────
+# 종목별 시가총액 + 가격 (yfinance)
+# ──────────────────────────────────────────────
+
+def fetch_stock_market_caps(tickers_config: dict) -> dict:
+    """Top N 종목의 시가총액·종가를 yfinance로 조회.
+
+    Args:
+        tickers_config: {ticker: {name, group}} from constants.TOP_10_TICKERS
+
+    Returns: {
+        "005930": {"name": "삼성전자", "market_cap_billion": 1151300, "close": 172200},
+        ...
+        "_total_market_cap_billion": 2185100,
+        "_weights": {"005930": 0.527, ...},
+    }
+
+    Note: 개별 종목 신용잔고 데이터가 공개 API로 제공되지 않으므로,
+          시가총액 비중을 신용잔고 배분 가중치로 사용 (proxy).
+    """
+    try:
+        import yfinance as yf
+    except ImportError:
+        print("  [WARN] yfinance not installed — stock market cap unavailable")
+        return {}
+
+    result = {}
+    yf_symbols = {t: f"{t}.KS" for t in tickers_config}
+
+    symbols_list = list(yf_symbols.values())
+    try:
+        tickers_obj = yf.Tickers(" ".join(symbols_list))
+    except Exception as e:
+        print(f"  [WARN] yfinance Tickers failed: {e}")
+        return {}
+
+    total_cap = 0
+    for ticker, yf_sym in yf_symbols.items():
+        try:
+            info = tickers_obj.tickers[yf_sym].info
+            cap = info.get("marketCap", 0) or 0
+            close = info.get("currentPrice") or info.get("regularMarketPrice", 0) or 0
+            cap_billion = round(cap / 1e9)  # Won → 십억원
+            result[ticker] = {
+                "name": tickers_config[ticker]["name"],
+                "group": tickers_config[ticker]["group"],
+                "market_cap_billion": cap_billion,
+                "close": round(close),
+            }
+            total_cap += cap_billion
+        except Exception as e:
+            print(f"  [WARN] {ticker} market cap failed: {e}")
+            result[ticker] = {
+                "name": tickers_config[ticker]["name"],
+                "group": tickers_config[ticker]["group"],
+                "market_cap_billion": 0,
+                "close": 0,
+            }
+
+    # Compute weights
+    weights = {}
+    if total_cap > 0:
+        for ticker in result:
+            cap = result[ticker]["market_cap_billion"]
+            weights[ticker] = round(cap / total_cap, 4) if cap > 0 else 0
+
+    result["_total_market_cap_billion"] = total_cap
+    result["_weights"] = weights
+
+    n_ok = sum(1 for t in tickers_config if result.get(t, {}).get("market_cap_billion", 0) > 0)
+    print(f"  [Stock MarketCap] {n_ok}/{len(tickers_config)} 종목 시가총액 조회 완료, 합계 {total_cap/1000:.0f}조원")
     return result

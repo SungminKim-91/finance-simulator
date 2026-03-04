@@ -1,8 +1,8 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-04T22:51:34.925827
+ * Generated: 2026-03-05T00:23:31.187070
  * Source: kospi/data/ (pipeline)
- * Exports: 15
+ * Exports: 16
  */
 
 export const MARKET_DATA = [
@@ -13983,7 +13983,8 @@ export const COHORT_DATA = {
       "1.30": 0.2,
       "1.40": 0.1
     },
-    "impact_coefficient": 1.5
+    "impact_coefficient": 1.5,
+    "stock_weighted": true
   }
 };
 
@@ -15447,7 +15448,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-04T22:51:34.925511",
+  "last_updated": "2026-03-05T00:23:31.186451",
   "last_date": "2026-03-04",
   "data_source": "pipeline",
   "data_quality": {
@@ -36566,4 +36567,291 @@ export const BACKTEST_DATES = [
     "forward": []
   }
 ];
+
+export const STOCK_CREDIT = {
+  "stocks": [
+    {
+      "ticker": "005930",
+      "name": "삼성전자",
+      "group": "A",
+      "credit_billion": 16956.69,
+      "kospi_weight_pct": 52.68,
+      "status_breakdown": {
+        "safe": 15512.04,
+        "watch": 958.73,
+        "margin_call": 485.92,
+        "forced_liq": 0
+      }
+    },
+    {
+      "ticker": "000660",
+      "name": "SK하이닉스",
+      "group": "A",
+      "credit_billion": 8632.85,
+      "kospi_weight_pct": 26.82,
+      "status_breakdown": {
+        "safe": 7897.36,
+        "watch": 488.1,
+        "margin_call": 247.39,
+        "forced_liq": 0
+      }
+    },
+    {
+      "ticker": "005380",
+      "name": "현대차",
+      "group": "A",
+      "credit_billion": 1921.63,
+      "kospi_weight_pct": 5.97,
+      "status_breakdown": {
+        "safe": 1757.92,
+        "watch": 108.64,
+        "margin_call": 55.07,
+        "forced_liq": 0
+      }
+    },
+    {
+      "ticker": "373220",
+      "name": "LG에너지솔루션",
+      "group": "A",
+      "credit_billion": 1197.4,
+      "kospi_weight_pct": 3.72,
+      "status_breakdown": {
+        "safe": 1095.38,
+        "watch": 67.7,
+        "margin_call": 34.32,
+        "forced_liq": 0
+      }
+    },
+    {
+      "ticker": "000270",
+      "name": "기아",
+      "group": "A",
+      "credit_billion": 891.61,
+      "kospi_weight_pct": 2.77,
+      "status_breakdown": {
+        "safe": 815.66,
+        "watch": 50.4,
+        "margin_call": 25.55,
+        "forced_liq": 0
+      }
+    },
+    {
+      "ticker": "105560",
+      "name": "KB금융",
+      "group": "A",
+      "credit_billion": 727.45,
+      "kospi_weight_pct": 2.26,
+      "status_breakdown": {
+        "safe": 665.47,
+        "watch": 41.13,
+        "margin_call": 20.85,
+        "forced_liq": 0
+      }
+    },
+    {
+      "ticker": "068270",
+      "name": "셀트리온",
+      "group": "A",
+      "credit_billion": 637.32,
+      "kospi_weight_pct": 1.98,
+      "status_breakdown": {
+        "safe": 583.03,
+        "watch": 36.03,
+        "margin_call": 18.26,
+        "forced_liq": 0
+      }
+    },
+    {
+      "ticker": "035420",
+      "name": "NAVER",
+      "group": "A",
+      "credit_billion": 457.07,
+      "kospi_weight_pct": 1.42,
+      "status_breakdown": {
+        "safe": 418.13,
+        "watch": 25.84,
+        "margin_call": 13.1,
+        "forced_liq": 0
+      }
+    },
+    {
+      "ticker": "006400",
+      "name": "삼성SDI",
+      "group": "A",
+      "credit_billion": 405.57,
+      "kospi_weight_pct": 1.26,
+      "status_breakdown": {
+        "safe": 371.02,
+        "watch": 22.93,
+        "margin_call": 11.62,
+        "forced_liq": 0
+      }
+    },
+    {
+      "ticker": "005490",
+      "name": "POSCO홀딩스",
+      "group": "A",
+      "credit_billion": 357.29,
+      "kospi_weight_pct": 1.11,
+      "status_breakdown": {
+        "safe": 326.84,
+        "watch": 20.21,
+        "margin_call": 10.24,
+        "forced_liq": 0
+      }
+    },
+    {
+      "ticker": "_residual",
+      "name": "기타",
+      "group": "mixed",
+      "credit_billion": 3.22,
+      "kospi_weight_pct": 0.01,
+      "status_breakdown": {
+        "safe": 2.95,
+        "watch": 0.18,
+        "margin_call": 0.09,
+        "forced_liq": 0
+      }
+    }
+  ],
+  "weighted_trigger_map": [
+    {
+      "shock_pct": -3,
+      "expected_kospi": 4941,
+      "margin_call_billion": 462,
+      "forced_liq_billion": 28,
+      "weighted_impact_billion": 10
+    },
+    {
+      "shock_pct": -5,
+      "expected_kospi": 4839,
+      "margin_call_billion": 518,
+      "forced_liq_billion": 70,
+      "weighted_impact_billion": 25
+    },
+    {
+      "shock_pct": -10,
+      "expected_kospi": 4584,
+      "margin_call_billion": 825,
+      "forced_liq_billion": 161,
+      "weighted_impact_billion": 57
+    },
+    {
+      "shock_pct": -15,
+      "expected_kospi": 4330,
+      "margin_call_billion": 1196,
+      "forced_liq_billion": 425,
+      "weighted_impact_billion": 152
+    },
+    {
+      "shock_pct": -20,
+      "expected_kospi": 4075,
+      "margin_call_billion": 1531,
+      "forced_liq_billion": 764,
+      "weighted_impact_billion": 273
+    },
+    {
+      "shock_pct": -30,
+      "expected_kospi": 3565,
+      "margin_call_billion": 2062,
+      "forced_liq_billion": 2087,
+      "weighted_impact_billion": 744
+    }
+  ],
+  "stock_weighted": true,
+  "tickers": {
+    "005930": {
+      "name": "삼성전자",
+      "group": "A",
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    },
+    "000660": {
+      "name": "SK하이닉스",
+      "group": "A",
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    },
+    "005380": {
+      "name": "현대차",
+      "group": "A",
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    },
+    "000270": {
+      "name": "기아",
+      "group": "A",
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    },
+    "035420": {
+      "name": "NAVER",
+      "group": "A",
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    },
+    "006400": {
+      "name": "삼성SDI",
+      "group": "A",
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    },
+    "373220": {
+      "name": "LG에너지솔루션",
+      "group": "A",
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    },
+    "068270": {
+      "name": "셀트리온",
+      "group": "A",
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    },
+    "105560": {
+      "name": "KB금융",
+      "group": "A",
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    },
+    "005490": {
+      "name": "POSCO홀딩스",
+      "group": "A",
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    }
+  },
+  "stock_params": {
+    "A": {
+      "margin": 0.4,
+      "maintenance": 1.4,
+      "forced_liq": 1.2
+    },
+    "B": {
+      "margin": 0.45,
+      "maintenance": 1.45,
+      "forced_liq": 1.25
+    },
+    "C": {
+      "margin": 0.5,
+      "maintenance": 1.5,
+      "forced_liq": 1.3
+    },
+    "D": {
+      "margin": 0.6,
+      "maintenance": 1.6,
+      "forced_liq": 1.4
+    }
+  }
+};
 

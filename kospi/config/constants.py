@@ -16,6 +16,28 @@ WEB_DATA_DIR = PROJECT_ROOT.parent / "web" / "src" / "simulators" / "kospi" / "d
 # ── 종목 상수 ──
 TICKERS = {"005930": "삼성전자", "000660": "SK하이닉스"}
 
+# ── Top 10 종목 (시총 상위, 신용잔고 집중) ──
+TOP_10_TICKERS = {
+    "005930": {"name": "삼성전자", "group": "A"},
+    "000660": {"name": "SK하이닉스", "group": "A"},
+    "005380": {"name": "현대차", "group": "A"},
+    "000270": {"name": "기아", "group": "A"},
+    "035420": {"name": "NAVER", "group": "A"},
+    "006400": {"name": "삼성SDI", "group": "A"},
+    "373220": {"name": "LG에너지솔루션", "group": "A"},
+    "068270": {"name": "셀트리온", "group": "A"},
+    "105560": {"name": "KB금융", "group": "A"},
+    "005490": {"name": "POSCO홀딩스", "group": "A"},
+}
+
+# ── 종목군별 신용거래 파라미터 ──
+STOCK_GROUP_PARAMS = {
+    "A": {"margin": 0.40, "maintenance": 1.40, "forced_liq": 1.20},
+    "B": {"margin": 0.45, "maintenance": 1.45, "forced_liq": 1.25},
+    "C": {"margin": 0.50, "maintenance": 1.50, "forced_liq": 1.30},
+    "D": {"margin": 0.60, "maintenance": 1.60, "forced_liq": 1.40},
+}
+
 # ── 날짜 형식 ──
 DATE_FMT = "%Y%m%d"      # pykrx format
 ISO_FMT = "%Y-%m-%d"     # 내부 저장 format

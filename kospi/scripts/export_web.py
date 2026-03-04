@@ -19,6 +19,7 @@ Exports (15):
  13. META              — 메타데이터
  14. COHORT_HISTORY    — 코호트 히스토리 (레지스트리 + 일별 스냅샷)
  15. BACKTEST_DATES    — 급변동일 목록 + D+1~D+5 실제 데이터
+ 16. STOCK_CREDIT      — 종목별 신용잔고 배분 + 가중 트리거맵
 
 Usage:
     python kospi/scripts/export_web.py
@@ -165,6 +166,9 @@ def export_all() -> None:
                 "gov_ban": False,
             })
 
+    # Pre-load stock_credit for use in COHORT_DATA params
+    stock_credit_raw = model_output.get("stock_credit", {})
+
     # === 6. COHORT_DATA (from model_output) ===
     # Remap Python field names to frontend expectations
     cohorts = model_output.get("cohorts", {})
@@ -184,6 +188,7 @@ def export_all() -> None:
             "maintenance_distribution": {"1.40": 0.45, "1.45": 0.25, "1.50": 0.20, "1.60": 0.10},
             "forced_liq_distribution": {"1.20": 0.45, "1.25": 0.25, "1.30": 0.20, "1.40": 0.10},
             "impact_coefficient": 1.5,
+            "stock_weighted": stock_credit_raw.get("stock_weighted", False),
         },
     }
 
@@ -245,6 +250,30 @@ def export_all() -> None:
     # === 15. BACKTEST_DATES ===
     backtest_dates = model_output.get("backtest_dates", [])
 
+    # === 16. STOCK_CREDIT ===
+    stock_credit = {
+        "stocks": stock_credit_raw.get("stocks", []),
+        "weighted_trigger_map": stock_credit_raw.get("weighted_trigger_map", []),
+        "stock_weighted": stock_credit_raw.get("stock_weighted", False),
+    }
+
+    # 종목별 파라미터 추가 (from constants)
+    try:
+        from config.constants import TOP_10_TICKERS, STOCK_GROUP_PARAMS
+        tickers_info = {}
+        for ticker, info in TOP_10_TICKERS.items():
+            group = info["group"]
+            params = STOCK_GROUP_PARAMS.get(group, {})
+            tickers_info[ticker] = {
+                "name": info["name"],
+                "group": group,
+                **params,
+            }
+        stock_credit["tickers"] = tickers_info
+        stock_credit["stock_params"] = STOCK_GROUP_PARAMS
+    except ImportError:
+        pass
+
     # === Write JS ===
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     output_path = WEB_DATA_DIR / "kospi_data.js"
@@ -254,7 +283,7 @@ def export_all() -> None:
         f.write(f" * KOSPI Crisis Detector Data (auto-generated)\n")
         f.write(f" * Generated: {datetime.now().isoformat()}\n")
         f.write(f" * Source: kospi/data/ (pipeline)\n")
-        f.write(f" * Exports: 15\n")
+        f.write(f" * Exports: 16\n")
         f.write(f" */\n\n")
 
         f.write(to_js_export("MARKET_DATA", market_data))
@@ -272,6 +301,7 @@ def export_all() -> None:
         f.write(to_js_export("META", meta))
         f.write(to_js_export("COHORT_HISTORY", cohort_history))
         f.write(to_js_export("BACKTEST_DATES", backtest_dates))
+        f.write(to_js_export("STOCK_CREDIT", stock_credit))
 
     print(f"Exported to {output_path}")
     print(f"  Market:    {len(market_data)} days")
@@ -287,6 +317,8 @@ def export_all() -> None:
     print(f"  Events:    {len(events)}")
     print(f"  CohortHist:{len(cohort_history.get('registry', {}))} cohorts, {len(cohort_history.get('snapshots', []))} days")
     print(f"  Backtest:  {len(backtest_dates)} events")
+    sc_stocks = stock_credit.get("stocks", [])
+    print(f"  StockCred: {len(sc_stocks)} stocks, weighted={stock_credit.get('stock_weighted', False)}")
 
 
 def _remap_cohorts(cohorts: list[dict]) -> list[dict]:

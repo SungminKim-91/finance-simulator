@@ -42,6 +42,12 @@ except ImportError:
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 
+try:
+    from config.constants import TOP_10_TICKERS, STOCK_GROUP_PARAMS
+except ImportError:
+    TOP_10_TICKERS = {}
+    STOCK_GROUP_PARAMS = {}
+
 
 # ──────────────────────────────────────────────
 # Module A: 코호트 모델
@@ -206,6 +212,172 @@ class CohortBuilder:
                 "margin_call_billion": round(margin_call),
                 "forced_liq_billion": round(forced_liq),
             })
+        return result
+
+
+# ──────────────────────────────────────────────
+# Module A-2: 종목별 가중 코호트 매니저
+# ──────────────────────────────────────────────
+
+class StockCohortManager:
+    """Top N 종목별 독립 코호트 + 잔여 코호트 관리자.
+
+    - 각 종목: 시가총액 비중으로 시장 전체 신용잔고를 배분
+    - 잔여: (전체 - Top N 합계) → residual CohortBuilder
+    - 종목별 코호트는 해당 종목 가격 기반으로 status 판정
+    - KOSPI 가중치로 반대매매 지수 영향 산출
+    """
+
+    def __init__(self, tickers_config: dict, mode: str = "LIFO"):
+        """
+        Args:
+            tickers_config: {ticker: {name, group, ...}} from constants.TOP_10_TICKERS
+        """
+        self.tickers_config = tickers_config
+        self.mode = mode
+        self.builders: dict[str, CohortBuilder] = {
+            t: CohortBuilder(mode) for t in tickers_config
+        }
+        self.residual = CohortBuilder(mode)
+        self.stock_weights: dict[str, float] = {}  # KOSPI weight per stock
+
+    def process_day(
+        self, date: str, ts_row: dict, stock_credit: dict | None,
+    ) -> None:
+        """일별 처리: 종목별 코호트 갱신.
+
+        Args:
+            ts_row: timeseries row (kospi, samsung, hynix, credit_balance_billion, ...)
+            stock_credit: {ticker: credit_billion} or None (fallback to market-level)
+        """
+        total_credit = ts_row.get("credit_balance_billion") or 0
+        kospi = ts_row.get("kospi") or 0
+
+        if not stock_credit or not total_credit:
+            return
+
+        # 각 종목별 처리
+        top10_sum = 0
+        for ticker, builder in self.builders.items():
+            credit_b = stock_credit.get(ticker, 0) or 0
+            top10_sum += credit_b
+
+            # 종목 종가: timeseries에 있으면 사용, 없으면 stock_credit의 close
+            stock_close = ts_row.get(f"stock_{ticker}_close") or 0
+
+            # 이전 상태에서의 잔고 (builder의 현재 합계)
+            prev_amount = sum(c.remaining_amount_billion for c in builder.active_cohorts)
+            if prev_amount == 0 and credit_b > 0:
+                prev_amount = credit_b * 0.98  # 첫 날 bootstrap: 약간의 신규 진입
+            builder.process_day(
+                date=date,
+                credit_balance=credit_b,
+                prev_credit=prev_amount,
+                kospi=stock_close if stock_close > 0 else kospi,
+                samsung=ts_row.get("samsung", 0) or 0,
+                hynix=ts_row.get("hynix", 0) or 0,
+            )
+
+        # 잔여 = 전체 - Top10
+        residual_credit = max(0, total_credit - top10_sum)
+        prev_residual = sum(c.remaining_amount_billion for c in self.residual.active_cohorts)
+        if prev_residual == 0 and residual_credit > 0:
+            prev_residual = residual_credit * 0.98
+        self.residual.process_day(
+            date=date,
+            credit_balance=residual_credit,
+            prev_credit=prev_residual,
+            kospi=kospi,
+            samsung=ts_row.get("samsung", 0) or 0,
+            hynix=ts_row.get("hynix", 0) or 0,
+        )
+
+    def set_weights(self, weights: dict[str, float]) -> None:
+        """KOSPI 시가총액 가중치 설정 (from fetch_stock_market_caps)."""
+        self.stock_weights = weights
+
+    def get_stock_summary(self, current_kospi: float) -> list[dict]:
+        """종목별 신용잔고 요약 (프론트엔드용)."""
+        result = []
+        for ticker, builder in self.builders.items():
+            info = self.tickers_config[ticker]
+            total = sum(c.remaining_amount_billion for c in builder.active_cohorts)
+            weight = self.stock_weights.get(ticker, 0)
+
+            # 상태 집계
+            status_counts = {"safe": 0, "watch": 0, "margin_call": 0, "forced_liq": 0}
+            for c in builder.active_cohorts:
+                st = c.status(current_kospi)
+                status_counts[st] += c.remaining_amount_billion
+
+            result.append({
+                "ticker": ticker,
+                "name": info["name"],
+                "group": info["group"],
+                "credit_billion": round(total, 2),
+                "kospi_weight_pct": round(weight * 100, 2),
+                "status_breakdown": {k: round(v, 2) for k, v in status_counts.items()},
+            })
+
+        # Residual
+        res_total = sum(c.remaining_amount_billion for c in self.residual.active_cohorts)
+        res_status = {"safe": 0, "watch": 0, "margin_call": 0, "forced_liq": 0}
+        for c in self.residual.active_cohorts:
+            st = c.status(current_kospi)
+            res_status[st] += c.remaining_amount_billion
+
+        result.append({
+            "ticker": "_residual",
+            "name": "기타",
+            "group": "mixed",
+            "credit_billion": round(res_total, 2),
+            "kospi_weight_pct": round((1 - sum(self.stock_weights.values())) * 100, 2),
+            "status_breakdown": {k: round(v, 2) for k, v in res_status.items()},
+        })
+
+        return sorted(result, key=lambda x: x["credit_billion"], reverse=True)
+
+    def get_weighted_trigger_map(
+        self, current_kospi: float, current_fx: float,
+        shocks: list[float] | None = None,
+    ) -> list[dict]:
+        """종목별 가중 트리거맵: 종목별 반대매매 × KOSPI 가중치 = 지수 영향."""
+        if shocks is None:
+            shocks = [-3, -5, -10, -15, -20, -30]
+
+        result = []
+        for shock in shocks:
+            total_margin = 0
+            total_forced = 0
+            weighted_impact = 0
+
+            for ticker, builder in self.builders.items():
+                w = self.stock_weights.get(ticker, 0)
+                tm = builder.get_trigger_map(current_kospi, current_fx, [shock])
+                if tm:
+                    mc = tm[0]["margin_call_billion"]
+                    fl = tm[0]["forced_liq_billion"]
+                    total_margin += mc
+                    total_forced += fl
+                    weighted_impact += fl * w
+
+            # Residual
+            res_w = 1 - sum(self.stock_weights.values())
+            res_tm = self.residual.get_trigger_map(current_kospi, current_fx, [shock])
+            if res_tm:
+                total_margin += res_tm[0]["margin_call_billion"]
+                total_forced += res_tm[0]["forced_liq_billion"]
+                weighted_impact += res_tm[0]["forced_liq_billion"] * max(0, res_w)
+
+            expected_kospi = current_kospi * (1 + shock / 100)
+            result.append({
+                "shock_pct": shock,
+                "expected_kospi": round(expected_kospi),
+                "margin_call_billion": round(total_margin),
+                "forced_liq_billion": round(total_forced),
+                "weighted_impact_billion": round(weighted_impact),
+            })
+
         return result
 
 
@@ -1183,6 +1355,46 @@ def run_all_models() -> dict:
     }
     print(f"  Cohort history: {len(cohort_registry)} cohorts, {len(cohort_snapshots)} days")
 
+    # Module A-2: 종목별 가중 코호트
+    stock_credit_result = {}
+    total_credit = latest.get("credit_balance_billion") or last_known_credit or 0
+    if TOP_10_TICKERS and total_credit > 0:
+        stock_mgr = StockCohortManager(TOP_10_TICKERS, mode="LIFO")
+
+        # Determine weights: from stock_credit if available, else fetch from yfinance
+        latest_sc = latest.get("stock_credit", {})
+        if latest_sc:
+            weights = {t: latest_sc.get(t, 0) / total_credit for t in TOP_10_TICKERS if latest_sc.get(t, 0) > 0}
+        else:
+            # Fallback: fetch market cap weights at compute time
+            try:
+                from scripts.naver_scraper import fetch_stock_market_caps
+                caps = fetch_stock_market_caps(TOP_10_TICKERS)
+                weights = caps.get("_weights", {})
+            except Exception as e:
+                print(f"  [WARN] Stock market cap fetch failed: {e}")
+                weights = {}
+        stock_mgr.set_weights(weights)
+
+        # Build synthetic stock_credit for each day from weights
+        for i in range(1, len(ts)):
+            cur = ts[i]
+            sc = cur.get("stock_credit")
+            if not sc and weights:
+                # Synthesize from total credit * weights
+                day_credit = cur.get("credit_balance_billion") or 0
+                if day_credit > 0:
+                    sc = {t: round(day_credit * w, 2) for t, w in weights.items()}
+            stock_mgr.process_day(cur.get("date", ""), cur, sc)
+
+        stock_credit_result = {
+            "stocks": stock_mgr.get_stock_summary(kospi),
+            "weighted_trigger_map": stock_mgr.get_weighted_trigger_map(kospi, current_fx),
+            "stock_weighted": True,
+        }
+        n_stocks = len([s for s in stock_credit_result["stocks"] if s["ticker"] != "_residual"])
+        print(f"  Stock Cohorts: {n_stocks} stocks + residual")
+
     # Defense Walls (정적 — 수동 업데이트 필요)
     defense_walls = _compute_defense_walls(ts, latest)
 
@@ -1201,6 +1413,7 @@ def run_all_models() -> dict:
         "loop_status": loop_status,
         "cohort_history": cohort_history,
         "backtest_dates": backtest_dates,
+        "stock_credit": stock_credit_result,
     }
 
     # Save

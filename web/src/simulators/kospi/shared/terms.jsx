@@ -319,6 +319,24 @@ export const TERM = {
     label: "백테스트 모드",
     desc: "과거 급변동일 선택 → 당시 코호트 복원 → 시뮬 vs 실제 비교",
   },
+
+  /* Stock-weighted cohort terms (v1.3.0) */
+  stock_weight: {
+    label: "종목별 가중 (Stock Weight)",
+    desc: "KOSPI 시가총액 비중으로 반대매매 영향을 산출. 삼성전자 52%면 반대매매의 52%가 지수에 반영",
+  },
+  stock_credit: {
+    label: "종목별 신용잔고 (Stock Credit)",
+    desc: "Top 10 종목의 시가총액 비중으로 배분한 신용잔고. 시총이 클수록 더 많은 신용잔고가 해당 종목에 배분",
+  },
+  residual_credit: {
+    label: "기타 신용잔고 (Residual)",
+    desc: "Top 10 외 나머지 종목의 신용잔고 합계. 소형주/테마주 포함으로 담보비율이 더 높음",
+  },
+  weighted_impact: {
+    label: "가중 영향 (Weighted Impact)",
+    desc: "종목별 반대매매 × KOSPI 가중치로 산출한 지수 영향 금액. 단순 합산보다 정확한 지수 영향 추정",
+  },
 };
 
 /* ── Unit Formatter: 십억원 → 조원/억원 ── */

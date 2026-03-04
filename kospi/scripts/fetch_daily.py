@@ -37,8 +37,9 @@ except ImportError:
     krx = None
 
 from scripts.ecos_fetcher import fetch_ecos_daily
-from scripts.naver_scraper import fetch_naver_deposit_credit, fetch_naver_investor_flows
+from scripts.naver_scraper import fetch_naver_deposit_credit, fetch_naver_investor_flows, fetch_stock_market_caps
 from scripts.krx_auth import create_krx_session, inject_pykrx_session
+from config.constants import TOP_10_TICKERS
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
@@ -196,6 +197,7 @@ def build_snapshot(
     ecos_data: dict | None = None,
     naver_data: dict | None = None,
     naver_investor_data: dict | None = None,
+    stock_caps: dict | None = None,
 ) -> dict:
     """모든 데이터를 하나의 일간 스냅샷으로 조합.
 
@@ -282,11 +284,36 @@ def build_snapshot(
             "vix": data["vix"],
             "sp500": data["sp500"],
         },
+        "stock_credit": _build_stock_credit(credit_b, stock_caps),
         "manual_inputs": {
             "events": [],
         },
     }
     return snapshot
+
+
+def _build_stock_credit(total_credit_billion: float | None, stock_caps: dict | None) -> dict | None:
+    """시가총액 비중으로 종목별 신용잔고 배분."""
+    if not stock_caps or not total_credit_billion:
+        return None
+    weights = stock_caps.get("_weights", {})
+    if not weights:
+        return None
+    stocks = {}
+    for ticker, w in weights.items():
+        info = stock_caps.get(ticker, {})
+        stocks[ticker] = {
+            "name": info.get("name", ticker),
+            "credit_billion": round(total_credit_billion * w, 2),
+            "weight_pct": round(w * 100, 2),
+            "close": info.get("close", 0),
+            "market_cap_billion": info.get("market_cap_billion", 0),
+        }
+    return {
+        "method": "market_cap_proxy",
+        "stocks": stocks,
+        "top10_total_billion": round(sum(s["credit_billion"] for s in stocks.values()), 2),
+    }
 
 
 def save_daily_snapshot(date: str, snapshot: dict) -> Path:
@@ -320,6 +347,7 @@ def append_timeseries(date: str, snapshot: dict) -> None:
     credit = snapshot.get("credit") or {}
     deposit = snapshot.get("deposit") or {}
     settlement = snapshot.get("settlement") or {}
+    stock_credit = snapshot.get("stock_credit") or {}
 
     record = {
         "date": date,
@@ -341,6 +369,13 @@ def append_timeseries(date: str, snapshot: dict) -> None:
         "vix": global_d.get("vix"),
         "sp500": global_d.get("sp500"),
     }
+
+    # 종목별 신용잔고 (stock_credit)
+    if stock_credit and stock_credit.get("stocks"):
+        record["stock_credit"] = {
+            t: s["credit_billion"]
+            for t, s in stock_credit["stocks"].items()
+        }
 
     # 데이터가 있는 날만 추가 (kospi 또는 samsung 존재)
     if record["kospi"] or record["samsung"]:
@@ -416,17 +451,22 @@ def run_range(start: str, end: str):
     print("[4/6] Naver 투자자별 매매동향 조회...")
     naver_investor_data = fetch_naver_investor_flows(start, end)
 
+    # 3.5. 종목별 시가총액 (신용잔고 배분용)
+    print("[3.5/7] 종목별 시가총액 조회...")
+    stock_caps = fetch_stock_market_caps(TOP_10_TICKERS)
+
     # 5. yfinance 배치 다운로드
-    print("[5/6] yfinance 배치 다운로드...")
+    print("[5/7] yfinance 배치 다운로드...")
     yf_data = fetch_yfinance_batch(start, end)
     if yf_data.empty:
         print("  [WARN] yfinance 데이터 없음 — ECOS 단독 진행")
 
     yf_days = len(yf_data) if not yf_data.empty else 0
-    print(f"  yfinance: {yf_days}일, ECOS: {len(ecos_data)}일, Naver: {len(naver_data)}일, Investor: {len(naver_investor_data)}일")
+    n_stocks = sum(1 for k in stock_caps if not k.startswith("_") and stock_caps[k].get("market_cap_billion", 0) > 0)
+    print(f"  yfinance: {yf_days}일, ECOS: {len(ecos_data)}일, Naver: {len(naver_data)}일, Investor: {len(naver_investor_data)}일, Stocks: {n_stocks}")
 
     # 6. 각 날짜별 스냅샷 생성
-    print("[6/6] 스냅샷 생성 + 저장...")
+    print("[6/7] 스냅샷 생성 + 저장...")
     current = datetime.strptime(start, ISO_FMT)
     end_dt = datetime.strptime(end, ISO_FMT)
     count = 0
@@ -435,7 +475,7 @@ def run_range(start: str, end: str):
     while current <= end_dt:
         if current.weekday() < 5:  # 평일만
             date = current.strftime(ISO_FMT)
-            snapshot = build_snapshot(date, yf_data, ecos_data, naver_data, naver_investor_data)
+            snapshot = build_snapshot(date, yf_data, ecos_data, naver_data, naver_investor_data, stock_caps)
             save_daily_snapshot(date, snapshot)
             added = append_timeseries(date, snapshot)
             if added:
@@ -461,9 +501,10 @@ def run_single(date: str):
     ecos_data = fetch_ecos_daily(ecos_d, ecos_d)
     naver_data = fetch_naver_deposit_credit(date, date)
     naver_investor_data = fetch_naver_investor_flows(date, date)
+    stock_caps = fetch_stock_market_caps(TOP_10_TICKERS)
     yf_data = fetch_yfinance_batch(date, date)
 
-    snapshot = build_snapshot(date, yf_data, ecos_data, naver_data, naver_investor_data)
+    snapshot = build_snapshot(date, yf_data, ecos_data, naver_data, naver_investor_data, stock_caps)
     save_daily_snapshot(date, snapshot)
     append_timeseries(date, snapshot)
     update_metadata(date)
