@@ -61,3 +61,24 @@
 - [Model Development](web/model-development.md)
 
 **Summary:** Dual-Band Model D — Structural(4-var PCA, shifted) + Tactical(-HY, realtime) + Combined(0.7/0.3 EMA). Variable-specific winsorize (Option H). Interactive dashboard: lag slider, tactical/combine toggle, smoothing. Structural r=+0.491, MDA=64.7%, CWS=0.606.
+
+---
+
+### kospi-vlpi-v1.5.0 — VLPI Backend Engine
+
+| Item | Value |
+|------|-------|
+| Phase | Completed |
+| Match Rate | 99.1% (94.7% → 99.1%, 1 iteration) |
+| Iterations | 1 |
+| Started | 2026-03-05 |
+| Completed | 2026-03-05 |
+| Archived | 2026-03-05 |
+
+**Documents:**
+- [Plan](kospi-vlpi-v1.5.0/kospi-vlpi-v1.5.0.plan.md)
+- [Design](kospi-vlpi-v1.5.0/kospi-vlpi-v1.5.0.design.md)
+- [Analysis](kospi-vlpi-v1.5.0/kospi-vlpi-v1.5.0.analysis.md)
+- [Report](kospi-vlpi-v1.5.0/kospi-vlpi-v1.5.0.report.md)
+
+**Summary:** VLPI(Voluntary Liquidation Pressure Index) Backend Engine. 반대매매→자발적 투매 패러다임 전환. 6변수 Pre-VLPI(0~100) + Sigmoid Impact Function. 6단계 상태 분류, 담보비율 LOAN_RATE 공식, EWY 야간갭, KOFIA 3-tier stub. 18 exports.

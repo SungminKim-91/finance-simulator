@@ -1590,6 +1590,30 @@ def run_all_models() -> dict:
     cohort_registry = {}   # {entry_date: {entry_kospi}}
     cohort_snapshots = []  # [{date, kospi, usd_krw, trading_value, amounts: {entry_date: amount}}]
 
+    # v1.6.1: 시드 코호트 — 데이터 시작 시점의 기존 신용잔고를 초기 코호트로 생성
+    # 첫 유효 credit_balance를 시드로 생성. 루프에서 이중계산 방지를 위해
+    # 시드 행의 prev_credit을 last_known_credit에 반영 (delta=0 처리됨)
+    seed_idx = -1
+    for si, row in enumerate(ts):
+        sc = row.get("credit_balance_billion")
+        if sc and sc > 0:
+            seed_date = row.get("date", "seed")
+            seed_kospi = row.get("kospi", 0) or 0
+            seed_samsung = row.get("samsung", 0) or 0
+            seed_hynix = row.get("hynix", 0) or 0
+            builder_lifo.process_day(
+                date=seed_date, credit_balance=sc, prev_credit=0,
+                kospi=seed_kospi, samsung=seed_samsung, hynix=seed_hynix,
+            )
+            builder_fifo.process_day(
+                date=seed_date, credit_balance=sc, prev_credit=0,
+                kospi=seed_kospi, samsung=seed_samsung, hynix=seed_hynix,
+            )
+            last_known_credit = sc
+            seed_idx = si
+            print(f"  Seed cohort: {seed_date} KOSPI {seed_kospi} amount {sc:.1f}B")
+            break
+
     for i in range(1, len(ts)):
         prev = ts[i - 1]
         cur = ts[i]

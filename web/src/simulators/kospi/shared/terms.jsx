@@ -320,6 +320,58 @@ export const TERM = {
     desc: "과거 급변동일 선택 → 당시 코호트 복원 → 시뮬 vs 실제 비교",
   },
 
+  /* 6-stage status terms (v1.6.0) */
+  status_6_safe: {
+    label: "안전 (Safe)",
+    desc: "담보비율 ≥ 170%. 충분한 여유",
+  },
+  status_6_good: {
+    label: "양호 (Good)",
+    desc: "담보비율 155%~170%. 양호한 상태",
+  },
+  status_6_caution: {
+    label: "주의 (Caution)",
+    desc: "담보비율 140%~155%. 추가 하락 시 마진콜 가능",
+  },
+  status_6_marginCall: {
+    label: "마진콜 (Margin Call)",
+    desc: "담보비율 120%~140%. D+2 추가담보 요구",
+  },
+  status_6_forcedLiq: {
+    label: "강제청산 (Forced Liq)",
+    desc: "담보비율 100%~120%. 반대매매 실행 중",
+  },
+  status_6_debtExceed: {
+    label: "채무초과 (Debt Exceed)",
+    desc: "담보비율 < 100%. 원금 초과 손실",
+  },
+
+  /* VLPI terms (v1.6.0) */
+  pre_vlpi: {
+    label: "Pre-VLPI",
+    desc: "자발적 투매 압력 지수 (0~100). 6개 변수 가중합. 높을수록 투매 압력 큼",
+  },
+  vlpi_gauge: {
+    label: "VLPI 게이지",
+    desc: "Pre-VLPI 스코어를 시각적으로 표시. 정상(0~30)/주의(30~50)/경고(50~70)/위험(70~100)",
+  },
+  vlpi_component: {
+    label: "VLPI 구성요소",
+    desc: "Pre-VLPI를 구성하는 6개 변수의 가중 기여분",
+  },
+  vlpi_impact: {
+    label: "VLPI 시나리오",
+    desc: "낙관/기본/비관 시나리오별 VLPI 예측과 예상 매도압력",
+  },
+  risk_map: {
+    label: "위험 분포도 (Risk Map)",
+    desc: "각 코호트의 담보비율을 산점도로 표시. 기준선 아래일수록 위험",
+  },
+  caution_zone: {
+    label: "주의구간 비중 (V1)",
+    desc: "담보비율 140~170% 코호트 비중. VLPI의 핵심 선행 입력",
+  },
+
   /* Stock-weighted cohort terms (v1.3.0) */
   stock_weight: {
     label: "종목별 가중 (Stock Weight)",

@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-05T05:28:37.360389
+ * Generated: 2026-03-05T06:43:10.440726
  * Source: kospi/data/ (pipeline)
  * Exports: 18
  */
@@ -11309,6 +11309,17 @@ export const SHORT_SELLING = [
 export const COHORT_DATA = {
   "lifo": [
     {
+      "entry_date": "2025-01-02",
+      "entry_kospi": 2398.94,
+      "entry_stock_price": 0,
+      "amount": 15466.2,
+      "pnl_pct": 158.59,
+      "collateral_ratio": 4.702,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
       "entry_date": "2025-01-06",
       "entry_kospi": 2488.64,
       "entry_stock_price": 0,
@@ -12741,10 +12752,835 @@ export const COHORT_DATA = {
   ],
   "fifo": [
     {
+      "entry_date": "2025-01-02",
+      "entry_kospi": 2398.94,
+      "entry_stock_price": 0,
+      "amount": 8629.800000000014,
+      "pnl_pct": 158.59,
+      "collateral_ratio": 4.702,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-06",
+      "entry_kospi": 2488.64,
+      "entry_stock_price": 0,
+      "amount": 130.6999999999989,
+      "pnl_pct": 147.79,
+      "collateral_ratio": 4.505,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-07",
+      "entry_kospi": 2492.1,
+      "entry_stock_price": 0,
+      "amount": 20.200000000000728,
+      "pnl_pct": 147.38,
+      "collateral_ratio": 4.498,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-08",
+      "entry_kospi": 2521.05,
+      "entry_stock_price": 0,
+      "amount": 144.89999999999964,
+      "pnl_pct": 144.07,
+      "collateral_ratio": 4.438,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-09",
+      "entry_kospi": 2521.9,
+      "entry_stock_price": 0,
+      "amount": 146.29999999999927,
+      "pnl_pct": 143.97,
+      "collateral_ratio": 4.436,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-10",
+      "entry_kospi": 2515.78,
+      "entry_stock_price": 0,
+      "amount": 78.80000000000109,
+      "pnl_pct": 144.67,
+      "collateral_ratio": 4.449,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-13",
+      "entry_kospi": 2489.56,
+      "entry_stock_price": 0,
+      "amount": 81.29999999999927,
+      "pnl_pct": 147.68,
+      "collateral_ratio": 4.503,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-14",
+      "entry_kospi": 2497.4,
+      "entry_stock_price": 0,
+      "amount": 133.8000000000011,
+      "pnl_pct": 146.77,
+      "collateral_ratio": 4.487,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-15",
+      "entry_kospi": 2496.81,
+      "entry_stock_price": 0,
+      "amount": 107.0,
+      "pnl_pct": 146.84,
+      "collateral_ratio": 4.488,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-16",
+      "entry_kospi": 2527.49,
+      "entry_stock_price": 0,
+      "amount": 70.69999999999891,
+      "pnl_pct": 143.34,
+      "collateral_ratio": 4.424,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-17",
+      "entry_kospi": 2523.55,
+      "entry_stock_price": 0,
+      "amount": 15.699999999998909,
+      "pnl_pct": 143.79,
+      "collateral_ratio": 4.433,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-21",
+      "entry_kospi": 2518.03,
+      "entry_stock_price": 0,
+      "amount": 120.59999999999854,
+      "pnl_pct": 144.41,
+      "collateral_ratio": 4.444,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-22",
+      "entry_kospi": 2547.06,
+      "entry_stock_price": 0,
+      "amount": 99.10000000000218,
+      "pnl_pct": 141.16,
+      "collateral_ratio": 4.385,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-23",
+      "entry_kospi": 2515.49,
+      "entry_stock_price": 0,
+      "amount": 73.20000000000073,
+      "pnl_pct": 144.7,
+      "collateral_ratio": 4.449,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-01-31",
+      "entry_kospi": 2517.37,
+      "entry_stock_price": 0,
+      "amount": 153.79999999999927,
+      "pnl_pct": 144.49,
+      "collateral_ratio": 4.445,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-04",
+      "entry_kospi": 2481.69,
+      "entry_stock_price": 0,
+      "amount": 148.5,
+      "pnl_pct": 148.59,
+      "collateral_ratio": 4.52,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-07",
+      "entry_kospi": 2521.92,
+      "entry_stock_price": 0,
+      "amount": 47.099999999998545,
+      "pnl_pct": 143.97,
+      "collateral_ratio": 4.436,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-10",
+      "entry_kospi": 2521.27,
+      "entry_stock_price": 0,
+      "amount": 76.60000000000218,
+      "pnl_pct": 144.05,
+      "collateral_ratio": 4.437,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-11",
+      "entry_kospi": 2539.05,
+      "entry_stock_price": 0,
+      "amount": 155.6999999999971,
+      "pnl_pct": 142.05,
+      "collateral_ratio": 4.401,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-12",
+      "entry_kospi": 2548.39,
+      "entry_stock_price": 0,
+      "amount": 129.40000000000146,
+      "pnl_pct": 141.01,
+      "collateral_ratio": 4.382,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-13",
+      "entry_kospi": 2583.17,
+      "entry_stock_price": 0,
+      "amount": 85.29999999999927,
+      "pnl_pct": 137.21,
+      "collateral_ratio": 4.313,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-14",
+      "entry_kospi": 2591.05,
+      "entry_stock_price": 0,
+      "amount": 121.5,
+      "pnl_pct": 136.36,
+      "collateral_ratio": 4.298,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-17",
+      "entry_kospi": 2610.42,
+      "entry_stock_price": 0,
+      "amount": 29.200000000000728,
+      "pnl_pct": 134.3,
+      "collateral_ratio": 4.26,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-18",
+      "entry_kospi": 2626.81,
+      "entry_stock_price": 0,
+      "amount": 136.20000000000073,
+      "pnl_pct": 132.59,
+      "collateral_ratio": 4.229,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-19",
+      "entry_kospi": 2671.52,
+      "entry_stock_price": 0,
+      "amount": 101.39999999999782,
+      "pnl_pct": 128.0,
+      "collateral_ratio": 4.146,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-20",
+      "entry_kospi": 2654.06,
+      "entry_stock_price": 0,
+      "amount": 183.70000000000073,
+      "pnl_pct": 129.77,
+      "collateral_ratio": 4.178,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-21",
+      "entry_kospi": 2654.58,
+      "entry_stock_price": 0,
+      "amount": 17.900000000001455,
+      "pnl_pct": 129.72,
+      "collateral_ratio": 4.177,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-24",
+      "entry_kospi": 2645.27,
+      "entry_stock_price": 0,
+      "amount": 76.29999999999927,
+      "pnl_pct": 130.67,
+      "collateral_ratio": 4.194,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-25",
+      "entry_kospi": 2630.29,
+      "entry_stock_price": 0,
+      "amount": 54.79999999999927,
+      "pnl_pct": 132.22,
+      "collateral_ratio": 4.222,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-26",
+      "entry_kospi": 2641.09,
+      "entry_stock_price": 0,
+      "amount": 137.10000000000218,
+      "pnl_pct": 131.1,
+      "collateral_ratio": 4.202,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-27",
+      "entry_kospi": 2621.75,
+      "entry_stock_price": 0,
+      "amount": 111.39999999999782,
+      "pnl_pct": 133.11,
+      "collateral_ratio": 4.238,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-02-28",
+      "entry_kospi": 2532.78,
+      "entry_stock_price": 0,
+      "amount": 40.900000000001455,
+      "pnl_pct": 142.75,
+      "collateral_ratio": 4.414,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-03-04",
+      "entry_kospi": 2528.92,
+      "entry_stock_price": 0,
+      "amount": 70.39999999999782,
+      "pnl_pct": 143.18,
+      "collateral_ratio": 4.422,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-03-05",
+      "entry_kospi": 2558.13,
+      "entry_stock_price": 0,
+      "amount": 57.400000000001455,
+      "pnl_pct": 139.94,
+      "collateral_ratio": 4.362,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-03-07",
+      "entry_kospi": 2563.48,
+      "entry_stock_price": 0,
+      "amount": 11.5,
+      "pnl_pct": 139.35,
+      "collateral_ratio": 4.352,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-03-10",
+      "entry_kospi": 2570.39,
+      "entry_stock_price": 0,
+      "amount": 35.70000000000073,
+      "pnl_pct": 138.59,
+      "collateral_ratio": 4.338,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-03-12",
+      "entry_kospi": 2574.82,
+      "entry_stock_price": 0,
+      "amount": 25.900000000001455,
+      "pnl_pct": 138.11,
+      "collateral_ratio": 4.329,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-03-17",
+      "entry_kospi": 2610.69,
+      "entry_stock_price": 0,
+      "amount": 61.20000000000073,
+      "pnl_pct": 134.28,
+      "collateral_ratio": 4.26,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-03-18",
+      "entry_kospi": 2612.34,
+      "entry_stock_price": 0,
+      "amount": 35.89999999999782,
+      "pnl_pct": 134.1,
+      "collateral_ratio": 4.256,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-03-19",
+      "entry_kospi": 2628.62,
+      "entry_stock_price": 0,
+      "amount": 13.5,
+      "pnl_pct": 132.4,
+      "collateral_ratio": 4.225,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-03-20",
+      "entry_kospi": 2637.1,
+      "entry_stock_price": 0,
+      "amount": 67.80000000000291,
+      "pnl_pct": 131.52,
+      "collateral_ratio": 4.209,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-03-21",
+      "entry_kospi": 2643.13,
+      "entry_stock_price": 0,
+      "amount": 2.599999999998545,
+      "pnl_pct": 130.89,
+      "collateral_ratio": 4.198,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-04",
+      "entry_kospi": 2465.42,
+      "entry_stock_price": 0,
+      "amount": 64.89999999999782,
+      "pnl_pct": 150.51,
+      "collateral_ratio": 4.555,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-08",
+      "entry_kospi": 2334.23,
+      "entry_stock_price": 0,
+      "amount": 9.299999999999272,
+      "pnl_pct": 166.9,
+      "collateral_ratio": 4.853,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-15",
+      "entry_kospi": 2477.41,
+      "entry_stock_price": 0,
+      "amount": 268.6000000000022,
+      "pnl_pct": 149.1,
+      "collateral_ratio": 4.529,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-16",
+      "entry_kospi": 2447.43,
+      "entry_stock_price": 0,
+      "amount": 203.1999999999971,
+      "pnl_pct": 152.65,
+      "collateral_ratio": 4.594,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-17",
+      "entry_kospi": 2470.41,
+      "entry_stock_price": 0,
+      "amount": 117.10000000000218,
+      "pnl_pct": 149.92,
+      "collateral_ratio": 4.544,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-18",
+      "entry_kospi": 2483.42,
+      "entry_stock_price": 0,
+      "amount": 117.79999999999927,
+      "pnl_pct": 148.39,
+      "collateral_ratio": 4.516,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-21",
+      "entry_kospi": 2488.42,
+      "entry_stock_price": 0,
+      "amount": 55.099999999998545,
+      "pnl_pct": 147.81,
+      "collateral_ratio": 4.506,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-22",
+      "entry_kospi": 2486.64,
+      "entry_stock_price": 0,
+      "amount": 97.20000000000073,
+      "pnl_pct": 148.02,
+      "collateral_ratio": 4.509,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-23",
+      "entry_kospi": 2525.56,
+      "entry_stock_price": 0,
+      "amount": 97.5,
+      "pnl_pct": 143.56,
+      "collateral_ratio": 4.428,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-24",
+      "entry_kospi": 2522.33,
+      "entry_stock_price": 0,
+      "amount": 155.90000000000146,
+      "pnl_pct": 143.93,
+      "collateral_ratio": 4.435,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-28",
+      "entry_kospi": 2548.86,
+      "entry_stock_price": 0,
+      "amount": 120.29999999999927,
+      "pnl_pct": 140.96,
+      "collateral_ratio": 4.381,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-29",
+      "entry_kospi": 2565.42,
+      "entry_stock_price": 0,
+      "amount": 11.099999999998545,
+      "pnl_pct": 139.14,
+      "collateral_ratio": 4.348,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-04-30",
+      "entry_kospi": 2556.61,
+      "entry_stock_price": 0,
+      "amount": 33.20000000000073,
+      "pnl_pct": 140.1,
+      "collateral_ratio": 4.366,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-07",
+      "entry_kospi": 2573.8,
+      "entry_stock_price": 0,
+      "amount": 82.70000000000073,
+      "pnl_pct": 138.22,
+      "collateral_ratio": 4.331,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-09",
+      "entry_kospi": 2577.27,
+      "entry_stock_price": 0,
+      "amount": 14.0,
+      "pnl_pct": 137.85,
+      "collateral_ratio": 4.325,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-12",
+      "entry_kospi": 2607.33,
+      "entry_stock_price": 0,
+      "amount": 135.40000000000146,
+      "pnl_pct": 134.63,
+      "collateral_ratio": 4.266,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-13",
+      "entry_kospi": 2608.42,
+      "entry_stock_price": 0,
+      "amount": 124.09999999999854,
+      "pnl_pct": 134.52,
+      "collateral_ratio": 4.264,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-15",
+      "entry_kospi": 2621.36,
+      "entry_stock_price": 0,
+      "amount": 75.39999999999782,
+      "pnl_pct": 133.15,
+      "collateral_ratio": 4.239,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-19",
+      "entry_kospi": 2603.42,
+      "entry_stock_price": 0,
+      "amount": 139.5,
+      "pnl_pct": 135.04,
+      "collateral_ratio": 4.274,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-20",
+      "entry_kospi": 2601.8,
+      "entry_stock_price": 0,
+      "amount": 24.400000000001455,
+      "pnl_pct": 135.22,
+      "collateral_ratio": 4.277,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-21",
+      "entry_kospi": 2625.58,
+      "entry_stock_price": 0,
+      "amount": 26.69999999999709,
+      "pnl_pct": 132.71,
+      "collateral_ratio": 4.231,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-22",
+      "entry_kospi": 2593.67,
+      "entry_stock_price": 0,
+      "amount": 1.3000000000029104,
+      "pnl_pct": 136.08,
+      "collateral_ratio": 4.292,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-23",
+      "entry_kospi": 2592.09,
+      "entry_stock_price": 0,
+      "amount": 22.19999999999709,
+      "pnl_pct": 136.25,
+      "collateral_ratio": 4.295,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-26",
+      "entry_kospi": 2644.4,
+      "entry_stock_price": 0,
+      "amount": 148.3000000000029,
+      "pnl_pct": 130.76,
+      "collateral_ratio": 4.196,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-27",
+      "entry_kospi": 2637.22,
+      "entry_stock_price": 0,
+      "amount": 30.5,
+      "pnl_pct": 131.5,
+      "collateral_ratio": 4.209,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-05-29",
+      "entry_kospi": 2720.64,
+      "entry_stock_price": 0,
+      "amount": 175.40000000000146,
+      "pnl_pct": 123.14,
+      "collateral_ratio": 4.057,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-06-02",
+      "entry_kospi": 2698.97,
+      "entry_stock_price": 0,
+      "amount": 76.09999999999854,
+      "pnl_pct": 125.27,
+      "collateral_ratio": 4.096,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-06-04",
+      "entry_kospi": 2770.84,
+      "entry_stock_price": 0,
+      "amount": 164.70000000000073,
+      "pnl_pct": 118.35,
+      "collateral_ratio": 3.97,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-06-05",
+      "entry_kospi": 2812.05,
+      "entry_stock_price": 0,
+      "amount": 38.60000000000218,
+      "pnl_pct": 114.55,
+      "collateral_ratio": 3.901,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-06-11",
+      "entry_kospi": 2907.04,
+      "entry_stock_price": 0,
+      "amount": 201.1999999999971,
+      "pnl_pct": 106.19,
+      "collateral_ratio": 3.749,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-06-12",
+      "entry_kospi": 2920.03,
+      "entry_stock_price": 0,
+      "amount": 118.80000000000291,
+      "pnl_pct": 105.09,
+      "collateral_ratio": 3.729,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-06-13",
+      "entry_kospi": 2894.62,
+      "entry_stock_price": 0,
+      "amount": 135.5,
+      "pnl_pct": 107.26,
+      "collateral_ratio": 3.768,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
+      "entry_date": "2025-06-16",
+      "entry_kospi": 2946.66,
+      "entry_stock_price": 0,
+      "amount": 216.5,
+      "pnl_pct": 102.87,
+      "collateral_ratio": 3.689,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
+    },
+    {
       "entry_date": "2025-06-17",
       "entry_kospi": 2950.3,
       "entry_stock_price": 0,
-      "amount": 51.800000000010186,
+      "amount": 174.6999999999971,
       "pnl_pct": 102.57,
       "collateral_ratio": 3.683,
       "collateral_ratio_pct": 0,
@@ -14140,6 +14976,17 @@ export const COHORT_DATA = {
   ],
   "price_distribution_lifo": [
     {
+      "range": "2300-2400",
+      "bin": 2300,
+      "safe": 15466.2,
+      "good": 0,
+      "caution": 0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0,
+      "debt_exceed": 0
+    },
+    {
       "range": "2400-2500",
       "bin": 2400,
       "safe": 1207.5999999999985,
@@ -14549,9 +15396,75 @@ export const COHORT_DATA = {
   ],
   "price_distribution_fifo": [
     {
+      "range": "2300-2400",
+      "bin": 2300,
+      "safe": 8639.100000000013,
+      "good": 0,
+      "caution": 0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0,
+      "debt_exceed": 0
+    },
+    {
+      "range": "2400-2500",
+      "bin": 2400,
+      "safe": 1545.3999999999978,
+      "good": 0,
+      "caution": 0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0,
+      "debt_exceed": 0
+    },
+    {
+      "range": "2500-2600",
+      "bin": 2500,
+      "safe": 2298.7000000000007,
+      "good": 0,
+      "caution": 0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0,
+      "debt_exceed": 0
+    },
+    {
+      "range": "2600-2700",
+      "bin": 2600,
+      "safe": 1809.3999999999978,
+      "good": 0,
+      "caution": 0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0,
+      "debt_exceed": 0
+    },
+    {
+      "range": "2700-2800",
+      "bin": 2700,
+      "safe": 340.1000000000022,
+      "good": 0,
+      "caution": 0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0,
+      "debt_exceed": 0
+    },
+    {
+      "range": "2800-2900",
+      "bin": 2800,
+      "safe": 174.10000000000218,
+      "good": 0,
+      "caution": 0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0,
+      "debt_exceed": 0
+    },
+    {
       "range": "2900-3000",
       "bin": 2900,
-      "safe": 279.3000000000102,
+      "safe": 938.6999999999971,
       "good": 0,
       "caution": 0,
       "watch": 0,
@@ -16502,7 +17415,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-05T05:28:37.359987",
+  "last_updated": "2026-03-05T06:43:10.440315",
   "last_date": "2026-03-04",
   "data_source": "pipeline",
   "data_quality": {
@@ -16514,6 +17427,9 @@ export const META = {
 
 export const COHORT_HISTORY = {
   "registry": {
+    "2025-01-02": {
+      "entry_kospi": 2398.94
+    },
     "2025-01-06": {
       "entry_kospi": 2488.64
     },
@@ -17124,7 +18040,9 @@ export const COHORT_HISTORY = {
       "kospi": 2441.92,
       "usd_krw": 1471.7,
       "trading_value": 82.3,
-      "amounts": {}
+      "amounts": {
+        "2025-01-02": 15466.2
+      }
     },
     {
       "date": "2025-01-06",
@@ -17132,6 +18050,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1465.5,
       "trading_value": 81.42,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7
       }
     },
@@ -17141,6 +18060,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1459.4,
       "trading_value": 94.06,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2
       }
@@ -17151,6 +18071,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1451.9,
       "trading_value": 103.91,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9
@@ -17162,6 +18083,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1458.0,
       "trading_value": 115.25,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17174,6 +18096,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1455.2,
       "trading_value": 96.91,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17187,6 +18110,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1472.2,
       "trading_value": 90.49,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17201,6 +18125,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1458.9,
       "trading_value": 81.99,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17216,6 +18141,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1460.4,
       "trading_value": 91.76,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17232,6 +18158,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1437.2,
       "trading_value": 94.32,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17249,6 +18176,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1453.3,
       "trading_value": 100.12,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17267,6 +18195,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1457.4,
       "trading_value": 86.64,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17284,6 +18213,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1435.5,
       "trading_value": 93.24,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17302,6 +18232,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1425.8,
       "trading_value": 110.75,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17321,6 +18252,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1434.3,
       "trading_value": 99.08,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17341,6 +18273,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1433.9,
       "trading_value": 101.79,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17361,6 +18294,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1441.7,
       "trading_value": 137.59,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17382,6 +18316,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1456.8,
       "trading_value": 116.5,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17403,6 +18338,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1459.1,
       "trading_value": 110.01,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17425,6 +18361,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1450.2,
       "trading_value": 99.5,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17447,6 +18384,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1443.9,
       "trading_value": 118.63,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17468,6 +18406,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1442.2,
       "trading_value": 102.4,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17490,6 +18429,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1450.6,
       "trading_value": 105.83,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17513,6 +18453,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1453.2,
       "trading_value": 110.23,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17537,6 +18478,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1450.8,
       "trading_value": 136.69,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17562,6 +18504,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1452.1,
       "trading_value": 171.04,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17588,6 +18531,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1438.7,
       "trading_value": 139.18,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17615,6 +18559,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1432.6,
       "trading_value": 110.17,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17643,6 +18588,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1441.3,
       "trading_value": 126.18,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17672,6 +18618,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1440.1,
       "trading_value": 148.52,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17702,6 +18649,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1440.0,
       "trading_value": 145.51,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17733,6 +18681,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1431.7,
       "trading_value": 113.81,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17765,6 +18714,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1434.3,
       "trading_value": 108.02,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17798,6 +18748,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1428.7,
       "trading_value": 105.08,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17832,6 +18783,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1429.5,
       "trading_value": 112.19,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17867,6 +18819,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1434.4,
       "trading_value": 108.02,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17903,6 +18856,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1449.9,
       "trading_value": 156.37,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17940,6 +18894,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1457.9,
       "trading_value": 131.15,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -17978,6 +18933,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1452.8,
       "trading_value": 130.22,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18017,6 +18973,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1443.0,
       "trading_value": 113.2,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18054,6 +19011,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1446.5,
       "trading_value": 121.55,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18092,6 +19050,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1446.3,
       "trading_value": 98.81,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18131,6 +19090,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1457.0,
       "trading_value": 109.17,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18167,6 +19127,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1451.0,
       "trading_value": 122.85,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18204,6 +19165,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1448.8,
       "trading_value": 131.13,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18241,6 +19203,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1453.2,
       "trading_value": 99.42,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18277,6 +19240,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1449.1,
       "trading_value": 119.95,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18314,6 +19278,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1442.5,
       "trading_value": 120.35,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18352,6 +19317,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1448.9,
       "trading_value": 118.42,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18391,6 +19357,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1443.4,
       "trading_value": 119.89,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18431,6 +19398,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1465.8,
       "trading_value": 141.88,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18472,6 +19440,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1464.8,
       "trading_value": 69.24,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18509,6 +19478,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1466.3,
       "trading_value": 83.05,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18544,6 +19514,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1462.1,
       "trading_value": 76.55,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18579,6 +19550,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1465.7,
       "trading_value": 76.76,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18612,6 +19584,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1461.9,
       "trading_value": 71.5,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18643,6 +19616,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1469.4,
       "trading_value": 82.36,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18673,6 +19647,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1472.0,
       "trading_value": 69.39,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18702,6 +19677,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1470.0,
       "trading_value": 73.16,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18727,6 +19703,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1466.0,
       "trading_value": 82.67,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18751,6 +19728,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1450.7,
       "trading_value": 107.43,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18776,6 +19754,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1458.5,
       "trading_value": 105.06,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18800,6 +19779,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1469.9,
       "trading_value": 91.22,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18825,6 +19805,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1486.1,
       "trading_value": 95.6,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18848,6 +19829,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1443.9,
       "trading_value": 110.55,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18866,6 +19848,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1452.0,
       "trading_value": 76.87,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18883,6 +19866,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1419.1,
       "trading_value": 66.88,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18898,6 +19882,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1419.4,
       "trading_value": 65.11,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18914,6 +19899,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1427.0,
       "trading_value": 67.26,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18931,6 +19917,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1414.2,
       "trading_value": 66.06,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18949,6 +19936,7 @@ export const COHORT_HISTORY = {
       "usd_krw": null,
       "trading_value": 56.5,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18968,6 +19956,7 @@ export const COHORT_HISTORY = {
       "usd_krw": null,
       "trading_value": 52.4,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -18988,6 +19977,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1421.6,
       "trading_value": 61.83,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19009,6 +19999,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1429.2,
       "trading_value": 77.64,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19031,6 +20022,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1426.4,
       "trading_value": 72.72,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19054,6 +20046,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1430.1,
       "trading_value": 87.61,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19077,6 +20070,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1437.4,
       "trading_value": 78.03,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19101,6 +20095,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1435.9,
       "trading_value": 92.15,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19126,6 +20121,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1431.2,
       "trading_value": 84.36,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19152,6 +20148,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1435.1,
       "trading_value": 83.27,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19178,6 +20175,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1374.8,
       "trading_value": 89.35,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19205,6 +20203,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1397.3,
       "trading_value": 102.7,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19229,6 +20228,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1403.8,
       "trading_value": 80.35,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19254,6 +20254,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1395.2,
       "trading_value": 85.28,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19280,6 +20281,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1416.0,
       "trading_value": 87.46,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19307,6 +20309,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1416.0,
       "trading_value": 88.93,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19334,6 +20337,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1407.3,
       "trading_value": 72.54,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19362,6 +20366,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1397.0,
       "trading_value": 80.25,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19390,6 +20395,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1398.1,
       "trading_value": 67.52,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19419,6 +20425,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1388.6,
       "trading_value": 76.61,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19449,6 +20456,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1392.7,
       "trading_value": 74.41,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19480,6 +20488,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1373.9,
       "trading_value": 89.66,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19512,6 +20521,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1381.3,
       "trading_value": 86.6,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19545,6 +20555,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1364.7,
       "trading_value": 83.43,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19579,6 +20590,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1368.1,
       "trading_value": 79.09,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19614,6 +20626,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1374.8,
       "trading_value": 112.39,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19649,6 +20662,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1373.6,
       "trading_value": 108.96,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19685,6 +20699,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1370.4,
       "trading_value": 148.04,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19721,6 +20736,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1382.0,
       "trading_value": 80.63,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19758,6 +20774,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1377.7,
       "trading_value": 121.06,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19796,6 +20813,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1361.1,
       "trading_value": 132.93,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19835,6 +20853,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1359.2,
       "trading_value": 140.3,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19874,6 +20893,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1353.8,
       "trading_value": 142.9,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19912,6 +20932,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1363.9,
       "trading_value": 124.75,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19951,6 +20972,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1365.7,
       "trading_value": 173.45,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -19991,6 +21013,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1349.8,
       "trading_value": 174.63,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20032,6 +21055,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1365.1,
       "trading_value": 144.01,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20074,6 +21098,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1357.8,
       "trading_value": 179.16,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20117,6 +21142,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1380.5,
       "trading_value": 146.68,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20161,6 +21187,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1370.8,
       "trading_value": 137.87,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20206,6 +21233,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1374.9,
       "trading_value": 179.75,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20252,6 +21280,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1369.5,
       "trading_value": 178.8,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20299,6 +21328,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1361.9,
       "trading_value": 191.07,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20347,6 +21377,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1353.8,
       "trading_value": 196.63,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20396,6 +21427,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1357.0,
       "trading_value": 170.31,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20445,6 +21477,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1352.8,
       "trading_value": 139.7,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20495,6 +21528,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1363.6,
       "trading_value": 133.34,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20546,6 +21580,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1348.5,
       "trading_value": 151.85,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20598,6 +21633,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1355.6,
       "trading_value": 148.3,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20651,6 +21687,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1354.8,
       "trading_value": 148.83,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20702,6 +21739,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1357.1,
       "trading_value": 135.71,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20754,6 +21792,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1362.2,
       "trading_value": 102.05,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20806,6 +21845,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1374.6,
       "trading_value": 134.91,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20859,6 +21899,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1370.3,
       "trading_value": 126.55,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20913,6 +21954,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1373.0,
       "trading_value": 141.25,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -20968,6 +22010,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1372.6,
       "trading_value": 133.42,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21024,6 +22067,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1378.2,
       "trading_value": 115.66,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21081,6 +22125,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1382.0,
       "trading_value": 122.39,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21139,6 +22184,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1386.4,
       "trading_value": 113.29,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21198,6 +22244,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1384.9,
       "trading_value": 153.65,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21258,6 +22305,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1391.6,
       "trading_value": 119.39,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21319,6 +22367,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1390.6,
       "trading_value": 106.62,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21381,6 +22430,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1381.8,
       "trading_value": 116.05,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21442,6 +22492,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1379.8,
       "trading_value": 122.01,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21503,6 +22554,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1373.7,
       "trading_value": 129.93,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21565,6 +22617,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1372.0,
       "trading_value": 98.22,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21628,6 +22681,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1382.8,
       "trading_value": 138.73,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21690,6 +22744,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1388.3,
       "trading_value": 127.69,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21753,6 +22808,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1388.9,
       "trading_value": 129.69,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21817,6 +22873,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1392.5,
       "trading_value": 164.56,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21881,6 +22938,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1391.5,
       "trading_value": 152.81,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -21943,6 +23001,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1390.2,
       "trading_value": 97.25,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22006,6 +23065,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1383.6,
       "trading_value": 109.5,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22067,6 +23127,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1386.6,
       "trading_value": 111.28,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22127,6 +23188,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1384.4,
       "trading_value": 112.01,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22188,6 +23250,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1385.0,
       "trading_value": 114.01,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22250,6 +23313,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1387.8,
       "trading_value": 103.39,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22313,6 +23377,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1389.8,
       "trading_value": 101.66,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22377,6 +23442,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1383.1,
       "trading_value": 103.52,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22442,6 +23508,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1378.8,
       "trading_value": 100.02,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22508,6 +23575,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1388.0,
       "trading_value": 89.42,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22575,6 +23643,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1386.9,
       "trading_value": 86.24,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22643,6 +23712,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1391.3,
       "trading_value": 117.74,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22712,6 +23782,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1396.9,
       "trading_value": 108.93,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22776,6 +23847,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1399.6,
       "trading_value": 83.38,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22839,6 +23911,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1382.9,
       "trading_value": 80.92,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22903,6 +23976,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1389.1,
       "trading_value": 129.55,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -22966,6 +24040,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1393.9,
       "trading_value": 88.52,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23030,6 +24105,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1392.8,
       "trading_value": 98.76,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23095,6 +24171,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1384.4,
       "trading_value": 89.69,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23161,6 +24238,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1388.8,
       "trading_value": 80.03,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23228,6 +24306,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1392.9,
       "trading_value": 86.77,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23296,6 +24375,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1394.6,
       "trading_value": 88.12,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23363,6 +24443,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1389.6,
       "trading_value": 79.78,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23429,6 +24510,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1392.1,
       "trading_value": 109.42,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23496,6 +24578,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1385.5,
       "trading_value": 82.18,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23564,6 +24647,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1385.7,
       "trading_value": 106.29,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23633,6 +24717,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1387.2,
       "trading_value": 137.03,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23703,6 +24788,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1387.2,
       "trading_value": 149.47,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23774,6 +24860,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1389.5,
       "trading_value": 139.32,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23845,6 +24932,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1393.7,
       "trading_value": 127.93,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23917,6 +25005,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1385.0,
       "trading_value": 140.59,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -23990,6 +25079,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1377.6,
       "trading_value": 116.12,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24064,6 +25154,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1378.7,
       "trading_value": 124.09,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24139,6 +25230,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1386.8,
       "trading_value": 151.11,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24215,6 +25307,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1396.2,
       "trading_value": 119.96,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24292,6 +25385,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1389.4,
       "trading_value": 121.52,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24370,6 +25464,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1391.8,
       "trading_value": 118.07,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24449,6 +25544,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1403.7,
       "trading_value": 126.41,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24529,6 +25625,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1408.9,
       "trading_value": 126.06,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24610,6 +25707,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1408.7,
       "trading_value": 100.09,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24690,6 +25788,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1399.3,
       "trading_value": 111.57,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24771,6 +25870,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1403.2,
       "trading_value": 123.45,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24850,6 +25950,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1401.8,
       "trading_value": 194.56,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -24930,6 +26031,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1421.5,
       "trading_value": 196.01,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25008,6 +26110,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1429.0,
       "trading_value": 142.71,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25087,6 +26190,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1426.1,
       "trading_value": 189.26,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25167,6 +26271,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1429.4,
       "trading_value": 138.8,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25248,6 +26353,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1420.1,
       "trading_value": 176.65,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25329,6 +26435,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1415.7,
       "trading_value": 172.69,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25411,6 +26518,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1419.7,
       "trading_value": 141.91,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25494,6 +26602,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1419.7,
       "trading_value": 193.74,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25577,6 +26686,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1430.7,
       "trading_value": 154.51,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25661,6 +26771,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1430.4,
       "trading_value": 162.56,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25746,6 +26857,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1435.8,
       "trading_value": 178.01,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25832,6 +26944,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1437.0,
       "trading_value": 201.23,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -25919,6 +27032,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1431.0,
       "trading_value": 197.2,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26007,6 +27121,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1426.0,
       "trading_value": 220.33,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26096,6 +27211,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1424.0,
       "trading_value": 241.98,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26186,6 +27302,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1424.0,
       "trading_value": 229.5,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26277,6 +27394,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1427.2,
       "trading_value": 227.29,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26368,6 +27486,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1429.0,
       "trading_value": 207.86,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26460,6 +27579,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1439.8,
       "trading_value": 291.86,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26553,6 +27673,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1439.7,
       "trading_value": 214.84,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26647,6 +27768,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1447.9,
       "trading_value": 187.94,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26742,6 +27864,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1454.0,
       "trading_value": 166.86,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26837,6 +27960,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1456.1,
       "trading_value": 201.19,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -26932,6 +28056,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1459.8,
       "trading_value": 156.71,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -27028,6 +28153,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1468.0,
       "trading_value": 175.17,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -27125,6 +28251,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1468.7,
       "trading_value": 179.69,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -27223,6 +28350,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1446.5,
       "trading_value": 143.53,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -27322,6 +28450,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1461.7,
       "trading_value": 140.78,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -27422,6 +28551,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1456.6,
       "trading_value": 145.87,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -27523,6 +28653,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1466.1,
       "trading_value": 151.44,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -27625,6 +28756,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1473.2,
       "trading_value": 141.67,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -27725,6 +28857,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1467.7,
       "trading_value": 214.11,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -27825,6 +28958,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1474.9,
       "trading_value": 132.76,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -27925,6 +29059,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1464.9,
       "trading_value": 157.78,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -28024,6 +29159,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1470.6,
       "trading_value": 130.09,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -28123,6 +29259,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1461.4,
       "trading_value": 119.27,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -28223,6 +29360,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1465.6,
       "trading_value": 118.06,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -28324,6 +29462,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1470.2,
       "trading_value": 124.39,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -28426,6 +29565,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1467.4,
       "trading_value": 133.76,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -28529,6 +29669,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1465.0,
       "trading_value": 137.16,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -28633,6 +29774,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1472.4,
       "trading_value": 163.09,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -28738,6 +29880,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1471.8,
       "trading_value": 152.08,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -28844,6 +29987,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1468.5,
       "trading_value": 133.29,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -28950,6 +30094,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1467.9,
       "trading_value": 126.26,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -29057,6 +30202,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1469.0,
       "trading_value": 203.08,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -29164,6 +30310,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1470.8,
       "trading_value": 165.46,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -29270,6 +30417,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1472.9,
       "trading_value": 154.38,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -29377,6 +30525,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1467.5,
       "trading_value": 165.26,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -29484,6 +30633,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1471.7,
       "trading_value": 129.68,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -29592,6 +30742,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1474.0,
       "trading_value": 130.78,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -29700,6 +30851,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1474.4,
       "trading_value": 164.7,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -29806,6 +30958,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1473.7,
       "trading_value": 130.14,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -29912,6 +31065,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1476.8,
       "trading_value": 134.61,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -30018,6 +31172,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1478.7,
       "trading_value": 121.15,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -30125,6 +31280,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1446.5,
       "trading_value": 162.74,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -30232,6 +31388,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1441.3,
       "trading_value": 145.35,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -30340,6 +31497,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1434.7,
       "trading_value": 132.13,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -30448,6 +31606,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1443.6,
       "trading_value": 175.22,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -30557,6 +31716,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1440.5,
       "trading_value": 227.84,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -30667,6 +31827,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1445.6,
       "trading_value": 255.18,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -30778,6 +31939,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1445.0,
       "trading_value": 291.4,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -30890,6 +32052,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1446.1,
       "trading_value": 274.77,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -31003,6 +32166,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1450.1,
       "trading_value": 234.79,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -31117,6 +32281,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1455.2,
       "trading_value": 230.74,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -31232,6 +32397,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1464.9,
       "trading_value": 252.41,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -31348,6 +32514,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1473.0,
       "trading_value": 242.18,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -31465,6 +32632,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1462.9,
       "trading_value": 238.26,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -31583,6 +32751,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1468.8,
       "trading_value": 269.48,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -31702,6 +32871,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1471.6,
       "trading_value": 252.15,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -31822,6 +32992,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1471.5,
       "trading_value": 271.49,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -31941,6 +33112,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1477.8,
       "trading_value": 300.93,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -32061,6 +33233,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1464.8,
       "trading_value": 329.2,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -32180,6 +33353,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1463.3,
       "trading_value": 300.17,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -32300,6 +33474,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1444.8,
       "trading_value": 228.43,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -32421,6 +33596,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1441.0,
       "trading_value": 284.96,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -32542,6 +33718,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1432.5,
       "trading_value": 308.56,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -32664,6 +33841,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1429.3,
       "trading_value": 358.7,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -32787,6 +33965,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1428.8,
       "trading_value": 354.93,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -32911,6 +34090,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1448.8,
       "trading_value": 320.91,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -33036,6 +34216,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1452.5,
       "trading_value": 300.16,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -33162,6 +34343,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1446.7,
       "trading_value": 304.33,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -33289,6 +34471,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1460.1,
       "trading_value": 323.86,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -33416,6 +34599,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1470.7,
       "trading_value": 299.12,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -33544,6 +34728,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1462.4,
       "trading_value": 264.54,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -33673,6 +34858,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1458.5,
       "trading_value": 232.76,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -33802,6 +34988,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1455.3,
       "trading_value": 256.26,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -33931,6 +35118,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1444.2,
       "trading_value": 323.23,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -34061,6 +35249,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1440.9,
       "trading_value": 308.21,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -34192,6 +35381,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1440.2,
       "trading_value": 289.46,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -34324,6 +35514,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1447.8,
       "trading_value": 331.2,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -34457,6 +35648,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1443.4,
       "trading_value": 320.44,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -34591,6 +35783,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1442.2,
       "trading_value": 313.73,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -34726,6 +35919,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1440.0,
       "trading_value": 352.85,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -34862,6 +36056,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1426.9,
       "trading_value": 389.3,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -34999,6 +36194,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1432.3,
       "trading_value": 549.39,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -35137,6 +36333,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1452.3,
       "trading_value": 525.32,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
@@ -35275,6 +36472,7 @@ export const COHORT_HISTORY = {
       "usd_krw": 1466.7,
       "trading_value": null,
       "amounts": {
+        "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
         "2025-01-07": 20.2,
         "2025-01-08": 144.9,
