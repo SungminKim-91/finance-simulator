@@ -166,8 +166,8 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **폰트 증가**: 전체 1-2px 증가 (9→11, 10→12, 13→15)
 
 ### v1.2.0 — Backtest Simulator + Margin Reform
-- **담보비율 분포 개편**: 단일 130%/140% → 증권사/종목군별 실제 분포 (3개 분포 가중 곱)
-  - MARGIN_DISTRIBUTION: 40~60%, MAINTENANCE_DISTRIBUTION: A군140%~D군160%, FORCED_LIQ_DISTRIBUTION: 120%~140%
+- **담보비율 단일 기준 (v1.4.1)**: 상위 5개 증권사 일괄 — 보증금 45%, 담보유지 140%, 청산임계 손실 39%, D+2 미납 시 D+3 반대매매
+  - 분포 기반 제거 → 단일 고정값. 손실 39%↑ 코호트 자동 제거(반대매매 확정)
 - **백테스트 모드**: 281일 중 임의 거래일 선택 → 충격% 입력 → 시뮬 vs 실제 D+1~D+5 비교
 - **코호트 히스토리**: COHORT_HISTORY export (201코호트 × 281일 일별 스냅샷, ~745KB)
 - **급변동일**: BACKTEST_DATES export (40건, |일간변동| > 2%)

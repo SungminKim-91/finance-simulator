@@ -42,11 +42,30 @@ except ImportError:
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 
+# kospi/ 디렉토리를 sys.path에 추가 (config.constants, scripts.* 임포트 지원)
+import sys as _sys
+if str(PROJECT_ROOT) not in _sys.path:
+    _sys.path.insert(0, str(PROJECT_ROOT))
+
 try:
-    from config.constants import TOP_10_TICKERS, STOCK_GROUP_PARAMS
+    from config.constants import (
+        TOP_10_TICKERS, STOCK_GROUP_PARAMS,
+        BETA_LOOKBACK, BETA_DOWNSIDE_WEIGHT, BETA_UPSIDE_WEIGHT,
+        BETA_MIN_KOSPI_RETURN, BETA_CLIP_MIN, BETA_CLIP_MAX,
+        MARGIN_RATE, MAINTENANCE_RATIO_FIXED, FORCED_LIQ_LOSS_PCT,
+    )
 except ImportError:
     TOP_10_TICKERS = {}
     STOCK_GROUP_PARAMS = {}
+    BETA_LOOKBACK = 7
+    BETA_DOWNSIDE_WEIGHT = 0.6
+    BETA_UPSIDE_WEIGHT = 0.4
+    BETA_MIN_KOSPI_RETURN = 0.001
+    BETA_CLIP_MIN = 0.5
+    BETA_CLIP_MAX = 3.0
+    MARGIN_RATE = 0.45
+    MAINTENANCE_RATIO_FIXED = 1.40
+    FORCED_LIQ_LOSS_PCT = 39
 
 
 # ──────────────────────────────────────────────
@@ -62,40 +81,58 @@ class Cohort:
     entry_hynix: float
     initial_amount_billion: float
     remaining_amount_billion: float
+    entry_stock_price: float = 0.0  # v1.4.0: 종목별 builder에서 사용하는 진입 종가
 
     def pnl_pct(self, current_kospi: float) -> float:
         if self.entry_kospi == 0:
             return 0
         return (current_kospi - self.entry_kospi) / self.entry_kospi * 100
 
-    def collateral_ratio(self, current_kospi: float, margin_rate: float = 0.40) -> float:
+    def collateral_ratio(self, current_kospi: float, margin_rate: float = MARGIN_RATE) -> float:
         if self.entry_kospi == 0:
             return 999
         price_ratio = current_kospi / self.entry_kospi
         return price_ratio / (1 - margin_rate)
 
-    def status(self, current_kospi: float, margin_rate: float = 0.40) -> str:
-        """분포 기반 가중평균 상태 판정."""
+    @staticmethod
+    def classify_status(collateral_ratio: float, loss_pct: float) -> str:
+        """v1.4.1 단일 기준 상태 판정.
+
+        보증금 45%, 담보유지 140%, 청산임계 손실 39%.
+        - safe:       담보비율 >= 160%
+        - watch:      140% <= 담보비율 < 160%
+        - margin_call: 담보비율 < 140%, 손실 < 39%
+        - forced_liq:  손실 >= 39% (D+3 반대매매 확정)
+        """
+        if loss_pct >= FORCED_LIQ_LOSS_PCT:
+            return "forced_liq"
+        if collateral_ratio < MAINTENANCE_RATIO_FIXED:
+            return "margin_call"
+        if collateral_ratio < MAINTENANCE_RATIO_FIXED + 0.20:
+            return "watch"
+        return "safe"
+
+    def status(self, current_kospi: float, margin_rate: float = MARGIN_RATE) -> str:
+        """v1.4.1 단일 기준 상태 판정."""
         ratio = self.collateral_ratio(current_kospi, margin_rate)
-        # 분포 기반: 각 종목군별 threshold에서 가중 판정
-        forced_w = 0.0
-        margin_w = 0.0
-        watch_w = 0.0
-        safe_w = 0.0
-        for fl_ratio, fl_weight in FORCED_LIQ_DISTRIBUTION.items():
-            for mt_ratio, mt_weight in MAINTENANCE_DISTRIBUTION.items():
-                w = fl_weight * mt_weight
-                if ratio < fl_ratio:
-                    forced_w += w
-                elif ratio < mt_ratio:
-                    margin_w += w
-                elif ratio < mt_ratio + 0.20:
-                    watch_w += w
-                else:
-                    safe_w += w
-        # 가중평균으로 최다 상태 반환
-        scores = {"forced_liq": forced_w, "margin_call": margin_w, "watch": watch_w, "safe": safe_w}
-        return max(scores, key=scores.get)
+        loss = max(0, -self.pnl_pct(current_kospi))
+        return self.classify_status(ratio, loss)
+
+    def collateral_ratio_by_stock(self, current_stock_price: float, margin_rate: float = MARGIN_RATE) -> float:
+        """종목 종가 기반 담보비율 (v1.4.0)."""
+        if self.entry_stock_price <= 0:
+            return self.collateral_ratio(current_stock_price, margin_rate)
+        price_ratio = current_stock_price / self.entry_stock_price
+        return price_ratio / (1 - margin_rate)
+
+    def status_by_stock(self, current_stock_price: float, margin_rate: float = MARGIN_RATE) -> str:
+        """종목 종가 기반 상태 판정 (v1.4.1)."""
+        ratio = self.collateral_ratio_by_stock(current_stock_price, margin_rate)
+        if self.entry_stock_price <= 0:
+            loss = 0.0
+        else:
+            loss = max(0, (1 - current_stock_price / self.entry_stock_price) * 100)
+        return self.classify_status(ratio, loss)
 
 
 class CohortBuilder:
@@ -110,14 +147,15 @@ class CohortBuilder:
         self, date: str, credit_balance: float,
         prev_credit: float, kospi: float,
         samsung: float = 0, hynix: float = 0,
+        stock_price: float = 0,
     ) -> None:
         delta = credit_balance - prev_credit
         if delta > 0:
-            self._create_cohort(date, delta, kospi, samsung, hynix)
+            self._create_cohort(date, delta, kospi, samsung, hynix, stock_price)
         elif delta < 0:
             self._repay_cohorts(abs(delta))
 
-    def _create_cohort(self, date, amount, kospi, samsung, hynix):
+    def _create_cohort(self, date, amount, kospi, samsung, hynix, stock_price=0):
         c = Cohort(
             cohort_id=date,
             entry_date=date,
@@ -126,6 +164,7 @@ class CohortBuilder:
             entry_hynix=hynix,
             initial_amount_billion=amount,
             remaining_amount_billion=amount,
+            entry_stock_price=stock_price,
         )
         self.active_cohorts.append(c)
 
@@ -186,7 +225,7 @@ class CohortBuilder:
         self, current_kospi: float, current_fx: float,
         shocks: list[float] | None = None,
     ) -> list[dict]:
-        """충격별 margin_call/forced_liq 추정 (분포 기반)."""
+        """충격별 margin_call/forced_liq 추정 (v1.4.1 단일 기준)."""
         if shocks is None:
             shocks = [-3, -5, -10, -15, -20, -30]
         result = []
@@ -197,15 +236,12 @@ class CohortBuilder:
             for c in self.active_cohorts:
                 if c.entry_kospi == 0:
                     continue
-                for margin_rate, mr_w in MARGIN_DISTRIBUTION.items():
-                    ratio = (expected_kospi / c.entry_kospi) / (1 - margin_rate)
-                    for fl_ratio, fl_w in FORCED_LIQ_DISTRIBUTION.items():
-                        for mt_ratio, mt_w in MAINTENANCE_DISTRIBUTION.items():
-                            w = mr_w * fl_w * mt_w
-                            if ratio < fl_ratio:
-                                forced_liq += c.remaining_amount_billion * w
-                            elif ratio < mt_ratio:
-                                margin_call += c.remaining_amount_billion * w
+                ratio = (expected_kospi / c.entry_kospi) / (1 - MARGIN_RATE)
+                loss = max(0, (1 - expected_kospi / c.entry_kospi) * 100)
+                if loss >= FORCED_LIQ_LOSS_PCT:
+                    forced_liq += c.remaining_amount_billion
+                elif ratio < MAINTENANCE_RATIO_FIXED:
+                    margin_call += c.remaining_amount_billion
             result.append({
                 "shock_pct": shock,
                 "expected_kospi": round(expected_kospi),
@@ -213,6 +249,207 @@ class CohortBuilder:
                 "forced_liq_billion": round(forced_liq),
             })
         return result
+
+
+# ──────────────────────────────────────────────
+# Module A-2: Hybrid Beta + 정규화 (v1.4.0)
+# ──────────────────────────────────────────────
+
+def compute_hybrid_beta(
+    stock_returns: list[float],
+    kospi_returns: list[float],
+    lookback: int = BETA_LOOKBACK,
+    downside_w: float = BETA_DOWNSIDE_WEIGHT,
+    min_kospi_ret: float = BETA_MIN_KOSPI_RETURN,
+) -> float:
+    """Hybrid Beta: 하방 60% + 상방 40%.
+
+    Args:
+        stock_returns: 종목 일간 수익률 (최신→과거 순)
+        kospi_returns: KOSPI 일간 수익률 (최신→과거 순)
+
+    Returns:
+        beta clipped to [BETA_CLIP_MIN, BETA_CLIP_MAX]
+    """
+    n = min(lookback, len(stock_returns), len(kospi_returns))
+    if n < 2:
+        return 1.0  # fallback
+
+    sr = stock_returns[:n]
+    kr = kospi_returns[:n]
+
+    downside_ratios = []
+    upside_ratios = []
+    for s, k in zip(sr, kr):
+        if abs(k) < min_kospi_ret:
+            continue  # 노이즈 제외
+        ratio = s / k
+        if k < 0:
+            downside_ratios.append(ratio)
+        else:
+            upside_ratios.append(ratio)
+
+    # fallback: 하락일 ≤1개면 전체 단순평균
+    if len(downside_ratios) <= 1:
+        all_ratios = [s / k for s, k in zip(sr, kr) if abs(k) >= min_kospi_ret]
+        if not all_ratios:
+            return 1.0
+        beta = float(np.mean(all_ratios))
+    else:
+        d_mean = float(np.mean(downside_ratios))
+        u_mean = float(np.mean(upside_ratios)) if upside_ratios else d_mean
+        beta = downside_w * d_mean + (1 - downside_w) * u_mean
+
+    return float(np.clip(beta, BETA_CLIP_MIN, BETA_CLIP_MAX))
+
+
+def normalize_stock_shocks(
+    betas: dict[str, float],
+    weights: dict[str, float],
+    kospi_shock_pct: float,
+) -> dict[str, float]:
+    """종목별 beta를 정규화하여 가중합 = kospi_shock_pct 보장.
+
+    Returns: {ticker: adjusted_shock_pct, "_residual": residual_shock_pct}
+    """
+    if not betas or not weights or kospi_shock_pct == 0:
+        result = {t: kospi_shock_pct for t in betas}
+        result["_residual"] = kospi_shock_pct
+        return result
+
+    top10_weight_sum = sum(weights.values())
+    residual_weight = 1.0 - top10_weight_sum
+
+    # 1. raw shocks
+    raw_shocks = {t: kospi_shock_pct * betas.get(t, 1.0) for t in weights}
+
+    # 2. raw weighted sum for top10
+    raw_weighted_top10 = sum(raw_shocks[t] * weights[t] for t in weights)
+
+    # 3. edge case: all betas zero
+    if abs(raw_weighted_top10) < 1e-10:
+        result = {t: kospi_shock_pct for t in weights}
+        result["_residual"] = kospi_shock_pct
+        return result
+
+    # 4. normalizer: top10 portion should equal kospi_shock * top10_weight_sum
+    target_top10 = kospi_shock_pct * top10_weight_sum
+    normalizer = target_top10 / raw_weighted_top10
+
+    # 5. adjusted shocks
+    result = {}
+    for t in weights:
+        result[t] = round(raw_shocks[t] * normalizer, 4)
+
+    # 6. residual: fill the gap
+    top10_contrib = sum(result[t] * weights[t] for t in weights)
+    if residual_weight > 0.01:
+        result["_residual"] = round((kospi_shock_pct - top10_contrib) / residual_weight, 4)
+    else:
+        result["_residual"] = kospi_shock_pct
+
+    return result
+
+
+def compute_all_betas(
+    ts: list[dict],
+    ref_date_idx: int,
+    tickers: list[str],
+    lookback: int = BETA_LOOKBACK,
+) -> dict[str, float]:
+    """기준일 직전 lookback 거래일의 hybrid beta 산출.
+
+    Returns: {ticker: beta, ...}
+    """
+    if ref_date_idx < 2:
+        return {t: 1.0 for t in tickers}
+
+    start_idx = max(1, ref_date_idx - lookback)
+    kospi_returns = []
+    stock_returns_map: dict[str, list[float]] = {t: [] for t in tickers}
+
+    for i in range(start_idx, ref_date_idx + 1):
+        cur_kospi = ts[i].get("kospi") or 0
+        prev_kospi = ts[i - 1].get("kospi") or 0
+        if prev_kospi > 0 and cur_kospi > 0:
+            kr = (cur_kospi - prev_kospi) / prev_kospi
+        else:
+            kr = 0
+        kospi_returns.append(kr)
+
+        stock_prices_cur = ts[i].get("stock_prices") or {}
+        stock_prices_prev = ts[i - 1].get("stock_prices") or {}
+        # Fallback: timeseries top-level samsung/hynix fields
+        if not stock_prices_cur:
+            if ts[i].get("samsung"):
+                stock_prices_cur["005930"] = ts[i]["samsung"]
+            if ts[i].get("hynix"):
+                stock_prices_cur["000660"] = ts[i]["hynix"]
+        if not stock_prices_prev:
+            if ts[i - 1].get("samsung"):
+                stock_prices_prev["005930"] = ts[i - 1]["samsung"]
+            if ts[i - 1].get("hynix"):
+                stock_prices_prev["000660"] = ts[i - 1]["hynix"]
+        for t in tickers:
+            cp = stock_prices_cur.get(t, 0) or 0
+            pp = stock_prices_prev.get(t, 0) or 0
+            if pp > 0 and cp > 0:
+                stock_returns_map[t].append((cp - pp) / pp)
+            else:
+                stock_returns_map[t].append(kr)  # fallback to KOSPI return
+
+    result = {}
+    for t in tickers:
+        result[t] = compute_hybrid_beta(stock_returns_map[t], kospi_returns, lookback)
+
+    return result
+
+
+def compute_portfolio_beta(betas: dict[str, float], weights: dict[str, float]) -> float:
+    """Top 10 종목 가중 평균 beta + Residual(=1.0) 합산.
+
+    Returns: portfolio_beta (typically 1.0~1.5)
+    """
+    if not betas or not weights:
+        return 1.0
+    top10_sum = sum(betas.get(t, 1.0) * w for t, w in weights.items())
+    residual_w = max(0, 1.0 - sum(weights.values()))
+    return top10_sum + residual_w * 1.0  # residual beta = 1.0
+
+
+def adjust_cohort_with_beta(
+    cohort_dict: dict, current_kospi: float, portfolio_beta: float,
+) -> dict:
+    """Module A 코호트 출력에 portfolio_beta 적용 (v1.4.1).
+
+    KOSPI 하락률에 portfolio_beta를 곱해 실제 신용매수 포트폴리오 손실 반영.
+    v1.4.1: 단일 기준 (보증금 45%, 담보유지 140%, 청산임계 39%)
+    """
+    entry_kospi = cohort_dict.get("entry_kospi", 0)
+    if entry_kospi <= 0 or portfolio_beta <= 0:
+        return cohort_dict
+
+    price_ratio = current_kospi / entry_kospi
+    effective_ratio = 1.0 + (price_ratio - 1.0) * portfolio_beta
+
+    pnl_pct = round((effective_ratio - 1.0) * 100, 2)
+    collateral_ratio = round(effective_ratio / (1.0 - MARGIN_RATE), 3)
+    loss_pct = max(0, -pnl_pct)
+    status = Cohort.classify_status(collateral_ratio, loss_pct)
+
+    # v1.4.1: danger(forced_liq) → 전량 청산
+    original_amount = cohort_dict.get("remaining_amount_billion", 0)
+    is_liquidated = status == "forced_liq"
+    surviving_amount = 0.0 if is_liquidated else original_amount
+
+    return {
+        **cohort_dict,
+        "pnl_pct": pnl_pct,
+        "collateral_ratio": collateral_ratio,
+        "status": status,
+        "remaining_amount_billion": surviving_amount,
+        "liquidated_pct": 100.0 if is_liquidated else 0.0,
+    }
 
 
 # ──────────────────────────────────────────────
@@ -247,11 +484,12 @@ class StockCohortManager:
         """일별 처리: 종목별 코호트 갱신.
 
         Args:
-            ts_row: timeseries row (kospi, samsung, hynix, credit_balance_billion, ...)
+            ts_row: timeseries row (kospi, samsung, hynix, credit_balance_billion, stock_prices, ...)
             stock_credit: {ticker: credit_billion} or None (fallback to market-level)
         """
         total_credit = ts_row.get("credit_balance_billion") or 0
         kospi = ts_row.get("kospi") or 0
+        stock_prices = ts_row.get("stock_prices") or {}
 
         if not stock_credit or not total_credit:
             return
@@ -262,8 +500,8 @@ class StockCohortManager:
             credit_b = stock_credit.get(ticker, 0) or 0
             top10_sum += credit_b
 
-            # 종목 종가: timeseries에 있으면 사용, 없으면 stock_credit의 close
-            stock_close = ts_row.get(f"stock_{ticker}_close") or 0
+            # 종목 종가: stock_prices > legacy field > kospi fallback
+            stock_close = stock_prices.get(ticker, 0) or ts_row.get(f"stock_{ticker}_close") or 0
 
             # 이전 상태에서의 잔고 (builder의 현재 합계)
             prev_amount = sum(c.remaining_amount_billion for c in builder.active_cohorts)
@@ -276,6 +514,7 @@ class StockCohortManager:
                 kospi=stock_close if stock_close > 0 else kospi,
                 samsung=ts_row.get("samsung", 0) or 0,
                 hynix=ts_row.get("hynix", 0) or 0,
+                stock_price=stock_close if stock_close > 0 else 0,
             )
 
         # 잔여 = 전체 - Top10
@@ -296,28 +535,45 @@ class StockCohortManager:
         """KOSPI 시가총액 가중치 설정 (from fetch_stock_market_caps)."""
         self.stock_weights = weights
 
-    def get_stock_summary(self, current_kospi: float) -> list[dict]:
-        """종목별 신용잔고 요약 (프론트엔드용)."""
+    def get_stock_summary(
+        self, stock_prices: dict[str, float], current_kospi: float,
+        betas: dict[str, float] | None = None,
+    ) -> list[dict]:
+        """종목별 신용잔고 요약 (v1.4.0: 종목가 기반 status).
+
+        Args:
+            stock_prices: {ticker: current_close_price}
+            current_kospi: fallback용 (Residual 등)
+            betas: {ticker: hybrid_beta} or None
+        """
         result = []
         for ticker, builder in self.builders.items():
             info = self.tickers_config[ticker]
             total = sum(c.remaining_amount_billion for c in builder.active_cohorts)
             weight = self.stock_weights.get(ticker, 0)
+            stock_close = stock_prices.get(ticker, 0) or 0
 
-            # 상태 집계
+            # 상태 집계: 종목가 기반 (v1.4.0)
             status_counts = {"safe": 0, "watch": 0, "margin_call": 0, "forced_liq": 0}
             for c in builder.active_cohorts:
-                st = c.status(current_kospi)
+                if stock_close > 0 and c.entry_stock_price > 0:
+                    st = c.status_by_stock(stock_close)
+                else:
+                    st = c.status(current_kospi)  # fallback
                 status_counts[st] += c.remaining_amount_billion
 
-            result.append({
+            entry = {
                 "ticker": ticker,
                 "name": info["name"],
                 "group": info["group"],
                 "credit_billion": round(total, 2),
                 "kospi_weight_pct": round(weight * 100, 2),
+                "current_price": stock_close,
                 "status_breakdown": {k: round(v, 2) for k, v in status_counts.items()},
-            })
+            }
+            if betas and ticker in betas:
+                entry["beta"] = round(betas[ticker], 2)
+            result.append(entry)
 
         # Residual
         res_total = sum(c.remaining_amount_billion for c in self.residual.active_cohorts)
@@ -332,6 +588,7 @@ class StockCohortManager:
             "group": "mixed",
             "credit_billion": round(res_total, 2),
             "kospi_weight_pct": round((1 - sum(self.stock_weights.values())) * 100, 2),
+            "current_price": 0,
             "status_breakdown": {k: round(v, 2) for k, v in res_status.items()},
         })
 
@@ -339,80 +596,100 @@ class StockCohortManager:
 
     def get_weighted_trigger_map(
         self, current_kospi: float, current_fx: float,
+        stock_prices: dict[str, float] | None = None,
+        betas: dict[str, float] | None = None,
         shocks: list[float] | None = None,
     ) -> list[dict]:
-        """종목별 가중 트리거맵: 종목별 반대매매 × KOSPI 가중치 = 지수 영향."""
+        """종목별 가중 트리거맵 (v1.4.0: beta 정규화 → 종목별 차등 충격)."""
         if shocks is None:
             shocks = [-3, -5, -10, -15, -20, -30]
+        if stock_prices is None:
+            stock_prices = {}
+        if betas is None:
+            betas = {}
 
         result = []
         for shock in shocks:
+            # v1.4.0: beta 정규화로 종목별 차등 충격
+            if betas and self.stock_weights:
+                adj_shocks = normalize_stock_shocks(betas, self.stock_weights, shock)
+            else:
+                adj_shocks = {}
+
             total_margin = 0
             total_forced = 0
             weighted_impact = 0
 
             for ticker, builder in self.builders.items():
                 w = self.stock_weights.get(ticker, 0)
-                tm = builder.get_trigger_map(current_kospi, current_fx, [shock])
-                if tm:
-                    mc = tm[0]["margin_call_billion"]
-                    fl = tm[0]["forced_liq_billion"]
-                    total_margin += mc
-                    total_forced += fl
-                    weighted_impact += fl * w
+                stock_shock = adj_shocks.get(ticker, shock)
+                stock_close = stock_prices.get(ticker, 0) or 0
+
+                if stock_close > 0 and adj_shocks:
+                    # v1.4.0: 종목가 기반 판정
+                    expected_stock = stock_close * (1 + stock_shock / 100)
+                    mc, fl = self._calc_stock_trigger(builder, expected_stock)
+                else:
+                    # fallback: KOSPI 기반 (기존 로직)
+                    tm = builder.get_trigger_map(current_kospi, current_fx, [shock])
+                    mc = tm[0]["margin_call_billion"] if tm else 0
+                    fl = tm[0]["forced_liq_billion"] if tm else 0
+
+                total_margin += mc
+                total_forced += fl
+                weighted_impact += fl * w
 
             # Residual
             res_w = 1 - sum(self.stock_weights.values())
-            res_tm = self.residual.get_trigger_map(current_kospi, current_fx, [shock])
+            res_shock = adj_shocks.get("_residual", shock)
+            expected_res_kospi = current_kospi * (1 + res_shock / 100)
+            res_tm = self.residual.get_trigger_map(expected_res_kospi, current_fx, [0])
+            if not res_tm:
+                res_tm = self.residual.get_trigger_map(current_kospi, current_fx, [shock])
             if res_tm:
                 total_margin += res_tm[0]["margin_call_billion"]
                 total_forced += res_tm[0]["forced_liq_billion"]
                 weighted_impact += res_tm[0]["forced_liq_billion"] * max(0, res_w)
 
             expected_kospi = current_kospi * (1 + shock / 100)
-            result.append({
+            entry = {
                 "shock_pct": shock,
                 "expected_kospi": round(expected_kospi),
                 "margin_call_billion": round(total_margin),
                 "forced_liq_billion": round(total_forced),
                 "weighted_impact_billion": round(weighted_impact),
-            })
+            }
+            if adj_shocks:
+                entry["stock_shocks"] = {k: round(v, 2) for k, v in adj_shocks.items()}
+            result.append(entry)
 
         return result
+
+    @staticmethod
+    def _calc_stock_trigger(builder: CohortBuilder, expected_stock_price: float) -> tuple[float, float]:
+        """종목가 기반 마진콜/반대매매 산출 (v1.4.1 단일 기준)."""
+        mc_total = 0.0
+        fl_total = 0.0
+        for c in builder.active_cohorts:
+            if c.entry_stock_price <= 0:
+                continue
+            ratio = c.collateral_ratio_by_stock(expected_stock_price, MARGIN_RATE)
+            loss = max(0, (1 - expected_stock_price / c.entry_stock_price) * 100)
+            if loss >= FORCED_LIQ_LOSS_PCT:
+                fl_total += c.remaining_amount_billion
+            elif ratio < MAINTENANCE_RATIO_FIXED:
+                mc_total += c.remaining_amount_billion
+        return round(mc_total, 2), round(fl_total, 2)
 
 
 # ──────────────────────────────────────────────
 # Module B: 반대매매 시뮬레이터
 # ──────────────────────────────────────────────
 
-# 증거금률 분포 (증권사/종목별 상이)
-MARGIN_DISTRIBUTION = {
-    0.40: 0.30,  # 40% 증거금 (대형주 우량)
-    0.45: 0.30,  # 45% (일반)
-    0.50: 0.25,  # 50%
-    0.60: 0.15,  # 60% (고위험)
-}
-
-# 담보유지비율 분포 (증권사 × 종목군 가중평균)
-# 금투협: A군=140%, B군=145%, C군=150%, D군=160%
-MAINTENANCE_DISTRIBUTION = {
-    1.40: 0.45,  # A종목군 대형주
-    1.45: 0.25,  # B종목군 중형주
-    1.50: 0.20,  # C종목군 소형주
-    1.60: 0.10,  # D종목군 고위험/테마주
-}
-
-# 강제청산 비율 분포 (유지비율 미달 후 추가담보 미납 시)
-FORCED_LIQ_DISTRIBUTION = {
-    1.20: 0.45,  # A종목군: 140% 미달 → D+1 미납 → ~120%에서 청산
-    1.25: 0.25,  # B종목군: 145% 미달 → 125%에서 청산
-    1.30: 0.20,  # C종목군: 150% 미달 → 130%에서 청산
-    1.40: 0.10,  # D종목군: 160% 미달 → 140%에서 청산
-}
-
-# 호환용 단일값 (가중평균)
-MAINTENANCE_RATIO = sum(k * v for k, v in MAINTENANCE_DISTRIBUTION.items())  # ~1.435
-FORCED_LIQ_RATIO = sum(k * v for k, v in FORCED_LIQ_DISTRIBUTION.items())    # ~1.245
+# v1.4.1: 단일 고정값 (상위 5개 증권사 일괄)
+# 보증금 45%, 담보유지 140%, 청산임계 손실 39%, D+2 미납 시 D+3 반대매매
+# MARGIN_RATE, MAINTENANCE_RATIO_FIXED, FORCED_LIQ_LOSS_PCT → constants.py에서 import
+MAINTENANCE_RATIO = MAINTENANCE_RATIO_FIXED  # 호환용
 
 
 class ForcedLiqSimulator:
@@ -447,7 +724,7 @@ class ForcedLiqSimulator:
         fx = initial_fx
 
         for r in range(1, max_rounds + 1):
-            # Loop A: forced liquidation (분포 기반)
+            # Loop A: forced liquidation (v1.4.1 단일 기준)
             forced_liq = 0
             margin_call = 0
             impact_a = 0.0
@@ -457,15 +734,12 @@ class ForcedLiqSimulator:
                     amount = c.get("remaining_amount_billion", 0)
                     if entry == 0:
                         continue
-                    for margin_rate, mr_w in MARGIN_DISTRIBUTION.items():
-                        ratio = (price / entry) / (1 - margin_rate)
-                        for fl_ratio, fl_w in FORCED_LIQ_DISTRIBUTION.items():
-                            for mt_ratio, mt_w in MAINTENANCE_DISTRIBUTION.items():
-                                w = mr_w * fl_w * mt_w
-                                if ratio < fl_ratio:
-                                    forced_liq += amount * w
-                                elif ratio < mt_ratio:
-                                    margin_call += amount * w
+                    ratio = (price / entry) / (1 - MARGIN_RATE)
+                    loss = max(0, (1 - price / entry) * 100)
+                    if loss >= FORCED_LIQ_LOSS_PCT:
+                        forced_liq += amount
+                    elif ratio < MAINTENANCE_RATIO_FIXED:
+                        margin_call += amount
                 sell_pressure_a = forced_liq * (1 - absorption_rate)
                 impact_a = (
                     (sell_pressure_a / avg_daily_trading_value) * impact_coefficient
@@ -1294,18 +1568,47 @@ def run_all_models() -> dict:
     lifo_status = builder_lifo.get_status(kospi)
     fifo_status = builder_fifo.get_status(kospi)
 
+    # v1.4.0: Pre-compute betas + portfolio_beta for cohort adjustment
+    _portfolio_beta = 1.0
+    _betas = {}
+    _weights = {}
+    total_credit = latest.get("credit_balance_billion") or last_known_credit or 0
+    if TOP_10_TICKERS and total_credit > 0:
+        latest_sc = latest.get("stock_credit", {})
+        if latest_sc:
+            _weights = {t: latest_sc.get(t, 0) / total_credit for t in TOP_10_TICKERS if latest_sc.get(t, 0) > 0}
+        else:
+            try:
+                from scripts.naver_scraper import fetch_stock_market_caps
+                caps = fetch_stock_market_caps(TOP_10_TICKERS)
+                _weights = caps.get("_weights", {})
+            except Exception as e:
+                print(f"  [WARN] Stock market cap fetch failed: {e}")
+        tickers_list = list(TOP_10_TICKERS.keys())
+        _betas = compute_all_betas(ts, len(ts) - 1, tickers_list, BETA_LOOKBACK)
+        _portfolio_beta = compute_portfolio_beta(_betas, _weights)
+        print(f"  Portfolio Beta: {_portfolio_beta:.3f}")
+        print(f"  Betas: {', '.join(f'{t}={b:.2f}' for t, b in _betas.items())}")
+
+    # v1.4.0: Apply portfolio_beta to cohort output (PnL, status, collateral_ratio)
+    lifo_adjusted = [c for c in (adjust_cohort_with_beta(c, kospi, _portfolio_beta) for c in lifo_status["active"])
+                     if c.get("remaining_amount_billion", 0) > 0]
+    fifo_adjusted = [c for c in (adjust_cohort_with_beta(c, kospi, _portfolio_beta) for c in fifo_status["active"])
+                     if c.get("remaining_amount_billion", 0) > 0]
+
     cohort_result = {
-        "lifo": lifo_status["active"],
-        "fifo": fifo_status["active"],
+        "lifo": lifo_adjusted,
+        "fifo": fifo_adjusted,
         "price_distribution_lifo": builder_lifo.get_price_distribution(kospi),
         "price_distribution_fifo": builder_fifo.get_price_distribution(kospi),
-        "trigger_map": builder_lifo.get_trigger_map(kospi, current_fx),
+        "trigger_map": builder_lifo.get_trigger_map(kospi, current_fx),  # replaced later by A-2
         "current_kospi": kospi,
         "current_fx": current_fx,
         "total_active_billion": lifo_status["total_active_billion"],
+        "portfolio_beta": round(_portfolio_beta, 3),
     }
 
-    # Module B: Forced Liq (3 scenarios)
+    # Module B: Forced Liq (3 scenarios) — v1.4.0: beta-adjusted shock
     sim = ForcedLiqSimulator()
     avg_trading_val = np.mean([
         r.get("kospi_trading_value_billion", 10000) or 10000 for r in ts[-20:]
@@ -1317,7 +1620,7 @@ def run_all_models() -> dict:
             cohorts=[{"entry_kospi": c["entry_kospi"], "remaining_amount_billion": c["remaining_amount_billion"]}
                      for c in lifo_status["active"]],
             initial_price=kospi,
-            price_shock_pct=shock,
+            price_shock_pct=shock * _portfolio_beta,  # v1.4.0: effective shock
             max_rounds=5,
             initial_fx=current_fx,
             avg_daily_trading_value=avg_trading_val,
@@ -1355,45 +1658,48 @@ def run_all_models() -> dict:
     }
     print(f"  Cohort history: {len(cohort_registry)} cohorts, {len(cohort_snapshots)} days")
 
-    # Module A-2: 종목별 가중 코호트
+    # Module A-2: 종목별 가중 코호트 (v1.4.0: beta + 종목가 기반)
     stock_credit_result = {}
-    total_credit = latest.get("credit_balance_billion") or last_known_credit or 0
     if TOP_10_TICKERS and total_credit > 0:
         stock_mgr = StockCohortManager(TOP_10_TICKERS, mode="LIFO")
-
-        # Determine weights: from stock_credit if available, else fetch from yfinance
-        latest_sc = latest.get("stock_credit", {})
-        if latest_sc:
-            weights = {t: latest_sc.get(t, 0) / total_credit for t in TOP_10_TICKERS if latest_sc.get(t, 0) > 0}
-        else:
-            # Fallback: fetch market cap weights at compute time
-            try:
-                from scripts.naver_scraper import fetch_stock_market_caps
-                caps = fetch_stock_market_caps(TOP_10_TICKERS)
-                weights = caps.get("_weights", {})
-            except Exception as e:
-                print(f"  [WARN] Stock market cap fetch failed: {e}")
-                weights = {}
-        stock_mgr.set_weights(weights)
+        stock_mgr.set_weights(_weights)
 
         # Build synthetic stock_credit for each day from weights
         for i in range(1, len(ts)):
             cur = ts[i]
             sc = cur.get("stock_credit")
-            if not sc and weights:
-                # Synthesize from total credit * weights
+            if not sc and _weights:
                 day_credit = cur.get("credit_balance_billion") or 0
                 if day_credit > 0:
-                    sc = {t: round(day_credit * w, 2) for t, w in weights.items()}
+                    sc = {t: round(day_credit * w, 2) for t, w in _weights.items()}
             stock_mgr.process_day(cur.get("date", ""), cur, sc)
 
+        # 최신 종목 종가
+        latest_stock_prices = latest.get("stock_prices") or {}
+        # fallback: samsung/hynix from timeseries
+        if not latest_stock_prices:
+            if latest.get("samsung"):
+                latest_stock_prices["005930"] = latest["samsung"]
+            if latest.get("hynix"):
+                latest_stock_prices["000660"] = latest["hynix"]
+
         stock_credit_result = {
-            "stocks": stock_mgr.get_stock_summary(kospi),
-            "weighted_trigger_map": stock_mgr.get_weighted_trigger_map(kospi, current_fx),
+            "stocks": stock_mgr.get_stock_summary(latest_stock_prices, kospi, _betas),
+            "weighted_trigger_map": stock_mgr.get_weighted_trigger_map(
+                kospi, current_fx, latest_stock_prices, _betas,
+            ),
+            "betas": {
+                **{t: round(b, 2) for t, b in _betas.items()},
+                "_lookback": BETA_LOOKBACK,
+                "_method": f"hybrid_{int(BETA_DOWNSIDE_WEIGHT*100)}_{int(BETA_UPSIDE_WEIGHT*100)}",
+            },
             "stock_weighted": True,
         }
         n_stocks = len([s for s in stock_credit_result["stocks"] if s["ticker"] != "_residual"])
-        print(f"  Stock Cohorts: {n_stocks} stocks + residual")
+        print(f"  Stock Cohorts: {n_stocks} stocks + residual (beta-weighted)")
+
+        # v1.4.0: Module A trigger_map을 stock-weighted 버전으로 교체
+        cohort_result["trigger_map"] = stock_credit_result["weighted_trigger_map"]
 
     # Defense Walls (정적 — 수동 업데이트 필요)
     defense_walls = _compute_defense_walls(ts, latest)

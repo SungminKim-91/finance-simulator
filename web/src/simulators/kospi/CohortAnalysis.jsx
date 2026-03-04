@@ -16,7 +16,7 @@ import {
   ReferenceLine,
 } from "recharts";
 import { C } from "./colors";
-import { TERM, TermLabel, fmtBillion } from "./shared/terms";
+import { TERM, TermLabel, TermHint, fmtBillion } from "./shared/terms";
 import {
   COHORT_DATA, INVESTOR_FLOWS, MARKET_DATA, SHORT_SELLING,
   COHORT_HISTORY, BACKTEST_DATES, STOCK_CREDIT,
@@ -171,16 +171,67 @@ function CohortTooltip({ active, payload }) {
         </span>
         {" → "}<span style={{ color: statusColor }}>{STATUS_LABELS[d.status]}</span>
       </div>
+      {d.liquidated_pct > 0 && (
+        <div style={{ color: C.danger, marginTop: 2 }}>
+          청산추정: {d.liquidated_pct.toFixed(1)}% (잔여 {(100 - d.liquidated_pct).toFixed(1)}%)
+        </div>
+      )}
     </div>
   );
 }
 
+/* ── Utility: Compute approximate portfolio beta from MARKET_DATA for a given date index ── */
+function computeBacktestBeta(dateIdx, lookback = 7) {
+  const defaultBeta = COHORT_DATA.portfolio_beta || 1.0;
+  if (dateIdx < lookback || !MARKET_DATA?.length) return defaultBeta;
+
+  const weights = STOCK_CREDIT?.stocks?.reduce((acc, s) => {
+    if (s.ticker !== "_residual" && s.kospi_weight_pct > 0) acc[s.ticker] = s.kospi_weight_pct / 100;
+    return acc;
+  }, {}) || {};
+
+  // Compute hybrid beta for samsung (005930) and hynix (000660) from MARKET_DATA
+  const computeStockBeta = (getPrice) => {
+    let sumWXY = 0, sumWXX = 0;
+    for (let i = dateIdx - lookback + 1; i <= dateIdx; i++) {
+      const prev = MARKET_DATA[i - 1], curr = MARKET_DATA[i];
+      if (!prev || !curr) continue;
+      const kp = prev.kospi, kc = curr.kospi;
+      const sp = getPrice(prev), sc = getPrice(curr);
+      if (!kp || !kc || !sp || !sc || kp <= 0 || sp <= 0) continue;
+      const kr = kc / kp - 1, sr = sc / sp - 1;
+      const w = kr < 0 ? 0.6 : 0.4;
+      sumWXY += w * sr * kr;
+      sumWXX += w * kr * kr;
+    }
+    if (sumWXX < 1e-10) return 1.0;
+    return Math.max(0.5, Math.min(3.0, sumWXY / sumWXX));
+  };
+
+  const samBeta = computeStockBeta(r => r.samsung);
+  const hyBeta = computeStockBeta(r => r.hynix);
+  const samW = weights["005930"] || 0.5;
+  const hyW = weights["000660"] || 0.1;
+  const coveredW = samW + hyW;
+  const residualW = 1.0 - coveredW;
+  return +(samW * samBeta + hyW * hyBeta + residualW * 1.0).toFixed(3);
+}
+
+/* ── v1.4.1 Status Classification (단일 기준) ── */
+const MARGIN_RATE = 0.45;
+const MAINTENANCE_RATIO = 1.40;
+const FORCED_LIQ_LOSS_PCT = 39;
+
+function classifyStatus(collateralRatio, lossPct) {
+  if (lossPct >= FORCED_LIQ_LOSS_PCT) return "danger";   // 반대매매 확정
+  if (collateralRatio < MAINTENANCE_RATIO) return "marginCall"; // D+2 추가담보
+  if (collateralRatio < MAINTENANCE_RATIO + 0.20) return "watch";
+  return "safe";
+}
+
 /* ── Utility: Reconstruct cohorts from history snapshot ── */
-function reconstructCohorts(registry, snapshot, params) {
+function reconstructCohorts(registry, snapshot, params, portfolioBeta = 1.0) {
   if (!registry || !snapshot) return [];
-  const marginDist = params.margin_distribution || {};
-  const flDist = params.forced_liq_distribution || {};
-  const mtDist = params.maintenance_distribution || {};
 
   const cohorts = [];
   const amounts = snapshot.amounts || {};
@@ -191,28 +242,16 @@ function reconstructCohorts(registry, snapshot, params) {
     if (!reg || amount <= 0) continue;
     const entryKospi = reg.entry_kospi || 0;
 
-    // Compute status with distributions
-    let status = "safe";
-    if (entryKospi > 0) {
-      let forcedW = 0, marginW = 0, watchW = 0, safeW = 0;
-      for (const [mr, mrW] of Object.entries(marginDist)) {
-        const ratio = (currentKospi / entryKospi) / (1 - Number(mr));
-        for (const [fl, flW] of Object.entries(flDist)) {
-          for (const [mt, mtW] of Object.entries(mtDist)) {
-            const w = Number(mrW) * Number(flW) * Number(mtW);
-            if (ratio < Number(fl)) forcedW += w;
-            else if (ratio < Number(mt)) marginW += w;
-            else if (ratio < Number(mt) + 0.20) watchW += w;
-            else safeW += w;
-          }
-        }
-      }
-      const scores = { danger: forcedW, marginCall: marginW, watch: watchW, safe: safeW };
-      status = Object.entries(scores).reduce((a, b) => b[1] > a[1] ? b : a, ["safe", 0])[0];
-    }
+    const rawRatio = entryKospi > 0 ? currentKospi / entryKospi : 1.0;
+    const effectiveRatio = 1.0 + (rawRatio - 1.0) * portfolioBeta;
 
-    const pnlPct = entryKospi > 0 ? +((currentKospi - entryKospi) / entryKospi * 100).toFixed(2) : 0;
-    const collRatio = entryKospi > 0 ? (currentKospi / entryKospi) / (1 - 0.40) : 9.99;
+    const pnlPct = entryKospi > 0 ? +((effectiveRatio - 1.0) * 100).toFixed(2) : 0;
+    const collRatio = entryKospi > 0 ? effectiveRatio / (1 - MARGIN_RATE) : 9.99;
+    const lossPct = Math.max(0, -pnlPct);
+    const status = classifyStatus(collRatio, lossPct);
+
+    // v1.4.1: danger → 전량 청산 (반대매매 확정)
+    if (status === "danger") continue;
 
     cohorts.push({
       entry_date: entryDate,
@@ -221,6 +260,7 @@ function reconstructCohorts(registry, snapshot, params) {
       pnl_pct: pnlPct,
       collateral_ratio: +collRatio.toFixed(3),
       status,
+      liquidated_pct: 0,
     });
   }
   return cohorts;
@@ -237,17 +277,15 @@ function computeImpliedAbsorption({ forcedLiq, actualPriceChange, avgTradingValu
   return Math.max(0, Math.min(1, implied));
 }
 
-/* ── Forced Liquidation Simulation Engine (distribution-based) ── */
+/* ── Forced Liquidation Simulation Engine (distribution-based, v1.4.0 beta-aware) ── */
 function runSimulation({
   cohorts, initialPrice, initialFx, shockPct, maxRounds,
   absorptionRate, loopMode, avgTradingValue, impactCoef, params,
+  portfolioBeta = 1.0,
 }) {
   const rounds = [];
   let price = initialPrice * (1 + shockPct / 100);
   let fx = initialFx;
-  const marginDist = params.margin_distribution || {};
-  const flDist = params.forced_liq_distribution || {};
-  const mtDist = params.maintenance_distribution || {};
 
   for (let r = 1; r <= maxRounds; r++) {
     let forcedLiq = 0;
@@ -257,16 +295,12 @@ function runSimulation({
         const entry = c.entry_kospi || initialPrice;
         const amount = c.amount || 0;
         if (entry === 0) continue;
-        for (const [mr, mrW] of Object.entries(marginDist)) {
-          const ratio = (price / entry) / (1 - Number(mr));
-          for (const [fl, flW] of Object.entries(flDist)) {
-            for (const [mt, mtW] of Object.entries(mtDist)) {
-              const w = Number(mrW) * Number(flW) * Number(mtW);
-              if (ratio < Number(fl)) forcedLiq += amount * w;
-              else if (ratio < Number(mt)) marginCall += amount * w;
-            }
-          }
-        }
+        const rawRatio = price / entry;
+        const effectiveRatio = 1.0 + (rawRatio - 1.0) * portfolioBeta;
+        const collRatio = effectiveRatio / (1 - MARGIN_RATE);
+        const lossPct = Math.max(0, (1 - effectiveRatio) * 100);
+        if (lossPct >= FORCED_LIQ_LOSS_PCT) forcedLiq += amount;
+        else if (collRatio < MAINTENANCE_RATIO) marginCall += amount;
       }
     }
     const sellPressureA = forcedLiq * (1 - absorptionRate);
@@ -471,7 +505,7 @@ function BacktestComparison({ simResult, forward, baseKospi, absorptionRate, par
 }
 
 /* ── ReliabilityDashboard sub-component ── */
-function ReliabilityDashboard({ params, registry, snapshots, backtestDates, avgTradingValue, autoAbsorption }) {
+function ReliabilityDashboard({ params, registry, snapshots, backtestDates, avgTradingValue, autoAbsorption, portfolioBeta = 1.0 }) {
   const results = useMemo(() => {
     if (!backtestDates?.length || !snapshots?.length || !registry) return [];
     const impactCoef = params.impact_coefficient || 1.5;
@@ -491,7 +525,10 @@ function ReliabilityDashboard({ params, registry, snapshots, backtestDates, avgT
       }
 
       const prevKospi = prevSnap.kospi || 0;
-      const cohorts = reconstructCohorts(registry, prevSnap, params);
+      // v1.4.0: Compute beta for the event date
+      const evtDateIdx = MARKET_DATA.findIndex(r => r.date === evt.date);
+      const btBeta = evtDateIdx >= 0 ? computeBacktestBeta(evtDateIdx) : portfolioBeta;
+      const cohorts = reconstructCohorts(registry, prevSnap, params, btBeta);
       if (!cohorts.length || !prevKospi) {
         return { ...evt, simD1: null, actualD1: null, error: null, dirMatch: null };
       }
@@ -507,6 +544,7 @@ function ReliabilityDashboard({ params, registry, snapshots, backtestDates, avgT
         avgTradingValue: prevSnap.trading_value || avgTradingValue,
         impactCoef,
         params,
+        portfolioBeta: btBeta,
       });
 
       const simD1 = sim.rounds[0]?.price || null;
@@ -529,7 +567,7 @@ function ReliabilityDashboard({ params, registry, snapshots, backtestDates, avgT
         dirMatch,
       };
     }).filter(r => r.simD1 !== null && r.actualD1 !== null);
-  }, [backtestDates, snapshots, registry, params, avgTradingValue, autoAbsorption]);
+  }, [backtestDates, snapshots, registry, params, avgTradingValue, autoAbsorption, portfolioBeta]);
 
   if (!results.length) {
     return (
@@ -648,6 +686,8 @@ const STOCK_COLORS = [
 function StockCreditBreakdown() {
   const stocks = STOCK_CREDIT?.stocks || [];
   const isWeighted = STOCK_CREDIT?.stock_weighted || false;
+  const betas = STOCK_CREDIT?.betas || {};
+  const hasBetas = Object.keys(betas).some(k => !k.startsWith("_"));
 
   if (!stocks.length) return null;
 
@@ -656,16 +696,35 @@ function StockCreditBreakdown() {
   const residual = stocks.find(s => s.ticker === "_residual");
   const top10Total = top10Only.reduce((s, st) => s + (st.credit_billion || 0), 0);
 
+  const fmtPrice = (v) => v > 0 ? v.toLocaleString() : "-";
+  const fmtBeta = (v) => v > 0 ? v.toFixed(2) : "-";
+
+  // Status bar helper
+  const StatusBar = ({ breakdown }) => {
+    if (!breakdown) return null;
+    const t = (breakdown.safe || 0) + (breakdown.watch || 0) + (breakdown.margin_call || 0) + (breakdown.forced_liq || 0);
+    if (t <= 0) return <span style={{ color: C.dim }}>-</span>;
+    const safePct = ((breakdown.safe || 0) / t * 100).toFixed(0);
+    return (
+      <div style={{ display: "flex", height: 14, borderRadius: 3, overflow: "hidden", minWidth: 60 }}>
+        {breakdown.safe > 0 && <div style={{ width: `${(breakdown.safe / t) * 100}%`, background: C.safe }} />}
+        {breakdown.watch > 0 && <div style={{ width: `${(breakdown.watch / t) * 100}%`, background: C.watch }} />}
+        {breakdown.margin_call > 0 && <div style={{ width: `${(breakdown.margin_call / t) * 100}%`, background: C.marginCall }} />}
+        {breakdown.forced_liq > 0 && <div style={{ width: `${(breakdown.forced_liq / t) * 100}%`, background: C.danger }} />}
+      </div>
+    );
+  };
+
   return (
     <PanelBox>
-      <SectionTitle termKey="stock_credit">Stock Credit Breakdown</SectionTitle>
+      <SectionTitle termKey="stock_credit">종목별 신용잔고 (Stock Credit)</SectionTitle>
 
       {/* Summary cards */}
       <div style={{ display: "flex", gap: 8, marginBottom: 12, flexWrap: "wrap" }}>
         <SummaryCard label="Top 10 합계" value={(top10Total / 1000).toFixed(1)} unit="조원" color={C.kospi} />
         <SummaryCard label="기타" value={residual ? (residual.credit_billion / 1000).toFixed(1) : "0"} unit="조원" />
         <SummaryCard label="Top 10 비중" value={total > 0 ? ((top10Total / total) * 100).toFixed(1) : "0"} unit="%" color={C.samsung} />
-        <SummaryCard label="모델" value={isWeighted ? "가중" : "단일"} color={isWeighted ? C.safe : C.muted} />
+        <SummaryCard label="모델" value={hasBetas ? "Beta가중" : isWeighted ? "가중" : "단일"} color={hasBetas ? C.safe : C.muted} />
       </div>
 
       {/* Horizontal stacked bar */}
@@ -708,6 +767,9 @@ function StockCreditBreakdown() {
               <th style={{ padding: "6px 8px", textAlign: "right", color: C.muted, fontWeight: 600 }}>신용잔고</th>
               <th style={{ padding: "6px 8px", textAlign: "right", color: C.muted, fontWeight: 600 }}>비중</th>
               <th style={{ padding: "6px 8px", textAlign: "right", color: C.muted, fontWeight: 600 }}>KOSPI가중</th>
+              {hasBetas && <th style={{ padding: "6px 8px", textAlign: "right", color: C.muted, fontWeight: 600 }}>Beta<TermHint dataKey="hybrid_beta" /></th>}
+              <th style={{ padding: "6px 8px", textAlign: "right", color: C.muted, fontWeight: 600 }}>현재가</th>
+              <th style={{ padding: "6px 6px", textAlign: "center", color: C.muted, fontWeight: 600, minWidth: 70 }}>상태<TermHint dataKey="stock_price_status" /></th>
             </tr>
           </thead>
           <tbody>
@@ -727,6 +789,17 @@ function StockCreditBreakdown() {
                 <td style={{ padding: "5px 8px", textAlign: "right", color: C.kospi }}>
                   {st.kospi_weight_pct?.toFixed(1) || "0"}%
                 </td>
+                {hasBetas && (
+                  <td style={{ padding: "5px 8px", textAlign: "right", color: (st.beta || betas[st.ticker] || 0) > 1.5 ? C.danger : (st.beta || betas[st.ticker] || 0) > 1.0 ? C.watch : C.safe }}>
+                    {fmtBeta(st.beta || betas[st.ticker] || 0)}
+                  </td>
+                )}
+                <td style={{ padding: "5px 8px", textAlign: "right", color: C.text, fontSize: 10 }}>
+                  {fmtPrice(st.current_price || 0)}
+                </td>
+                <td style={{ padding: "5px 6px" }}>
+                  <StatusBar breakdown={st.status_breakdown} />
+                </td>
               </tr>
             ))}
             {residual && (
@@ -744,20 +817,203 @@ function StockCreditBreakdown() {
                 <td style={{ padding: "5px 8px", textAlign: "right", color: C.dim }}>
                   {residual.kospi_weight_pct?.toFixed(1) || "-"}%
                 </td>
+                {hasBetas && <td style={{ padding: "5px 8px", textAlign: "right", color: C.dim }}>-</td>}
+                <td style={{ padding: "5px 8px", textAlign: "right", color: C.dim }}>-</td>
+                <td style={{ padding: "5px 6px" }}>
+                  <StatusBar breakdown={residual.status_breakdown} />
+                </td>
               </tr>
             )}
           </tbody>
         </table>
       </div>
 
+      {/* Beta info */}
+      {hasBetas && (
+        <div style={{ marginTop: 8, fontSize: 10, color: C.dim, lineHeight: 1.5, fontFamily: FONT }}>
+          Beta: {betas._method || "hybrid"}, Lookback: {betas._lookback || 7}일.
+          {" "}Beta {">"} 1.0 = KOSPI보다 큰 하락, {"<"} 1.0 = 방어적.
+        </div>
+      )}
+
       {/* Methodology note */}
-      <div style={{ marginTop: 8, fontSize: 10, color: C.dim, lineHeight: 1.5, fontFamily: FONT }}>
-        * 시가총액 비중으로 시장 전체 신용잔고를 종목별 배분 (proxy). 개별 종목 신용잔고 공개 API 미제공.
+      <div style={{ marginTop: 4, fontSize: 10, color: C.dim, lineHeight: 1.5, fontFamily: FONT }}>
+        * 시가총액 비중으로 신용잔고 배분 (proxy). 상태 판정: 종목 종가 기반 (v1.4.0).
       </div>
     </PanelBox>
   );
 }
 
+
+/* ── Trigger Map Table with optional stock_shocks expand ── */
+function TriggerMapTable({ triggerMap }) {
+  const [expandedShock, setExpandedShock] = useState(null);
+  const weightedMap = STOCK_CREDIT?.weighted_trigger_map || [];
+  const tickers = STOCK_CREDIT?.tickers || {};
+
+  const shockColor = (pct) => {
+    const abs = Math.abs(pct);
+    if (abs <= 5) return C.watch;
+    if (abs <= 15) return C.marginCall;
+    return C.danger;
+  };
+
+  // Use weighted map if available, else COHORT_DATA trigger_map
+  const mapToShow = weightedMap.length > 0 ? weightedMap : triggerMap;
+  const hasStockShocks = mapToShow.some(r => r.stock_shocks);
+
+  const tickerName = (t) => {
+    if (t === "_residual") return "기타";
+    return tickers[t]?.name || t;
+  };
+
+  return (
+    <div style={{ overflowX: "auto" }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, fontFamily: FONT }}>
+        <thead>
+          <tr style={{ borderBottom: `1px solid ${C.border}` }}>
+            {[
+              "하락폭",
+              "예상 KOSPI",
+              "마진콜 (추가 입금 요구 D+2)",
+              "반대매매 (강제 청산)",
+              ...(hasStockShocks ? ["가중영향"] : []),
+            ].map((h) => (
+              <th key={h} style={{
+                padding: "8px 10px", textAlign: "right", color: C.muted, fontWeight: 600,
+                fontSize: 11,
+              }}>{h}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {mapToShow.map((row) => {
+            const isExpanded = expandedShock === row.shock_pct;
+            const shocks = row.stock_shocks || {};
+            const shockEntries = Object.entries(shocks)
+              .filter(([k]) => !k.startsWith("_"))
+              .sort((a, b) => a[1] - b[1]);
+            const residualShock = shocks._residual;
+            return (
+              <>{/* eslint-disable-next-line react/jsx-key */}
+                <tr
+                  key={row.shock_pct}
+                  style={{ borderBottom: `1px solid ${C.border}22`, cursor: hasStockShocks ? "pointer" : "default" }}
+                  onClick={() => hasStockShocks && setExpandedShock(isExpanded ? null : row.shock_pct)}
+                >
+                  <td style={{ padding: "8px 10px", textAlign: "right", color: shockColor(row.shock_pct), fontWeight: 700 }}>
+                    {hasStockShocks && <span style={{ fontSize: 9, marginRight: 4 }}>{isExpanded ? "\u25BC" : "\u25B6"}</span>}
+                    {row.shock_pct}%
+                  </td>
+                  <td style={{ padding: "8px 10px", textAlign: "right", color: C.text }}>
+                    {row.expected_kospi?.toLocaleString()}
+                  </td>
+                  <td style={{ padding: "8px 10px", textAlign: "right", color: C.marginCall }}>
+                    {fmtBillion(row.margin_call_billion)}
+                  </td>
+                  <td style={{ padding: "8px 10px", textAlign: "right", color: C.danger, fontWeight: 700 }}>
+                    {fmtBillion(row.forced_liq_billion)}
+                  </td>
+                  {hasStockShocks && (
+                    <td style={{ padding: "8px 10px", textAlign: "right", color: C.kospi }}>
+                      {fmtBillion(row.weighted_impact_billion || 0)}
+                    </td>
+                  )}
+                </tr>
+                {isExpanded && shockEntries.length > 0 && (
+                  <tr key={`${row.shock_pct}_detail`} style={{ background: `${C.bg}88` }}>
+                    <td colSpan={hasStockShocks ? 5 : 4} style={{ padding: "6px 24px", fontSize: 10, color: C.muted, lineHeight: 1.8 }}>
+                      <span style={{ color: C.dim, marginRight: 6 }}>{"\u2514"}</span>
+                      {shockEntries.map(([t, v], i) => (
+                        <span key={t}>
+                          <span style={{ color: C.text }}>{tickerName(t)}</span>
+                          <span style={{ color: shockColor(v), fontWeight: 600 }}> {v > 0 ? "+" : ""}{v.toFixed(1)}%</span>
+                          {i < shockEntries.length - 1 && <span style={{ color: C.dim }}>, </span>}
+                        </span>
+                      ))}
+                      {residualShock != null && (
+                        <span>
+                          <span style={{ color: C.dim }}>, </span>
+                          <span style={{ color: C.muted }}>기타</span>
+                          <span style={{ color: shockColor(residualShock), fontWeight: 600 }}> {residualShock > 0 ? "+" : ""}{residualShock.toFixed(1)}%</span>
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                )}
+              </>
+            );
+          })}
+        </tbody>
+      </table>
+      {hasStockShocks && (
+        <div style={{ fontSize: 10, color: C.dim, marginTop: 4, fontFamily: FONT }}>
+          * 종목별 충격: Hybrid Beta 정규화 적용. 가중합 = 입력 충격% 보장. 행 클릭 시 상세.
+        </div>
+      )}
+    </div>
+  );
+}
+
+
+/* ── MiniCohortChart: 백테스트 기준일 코호트 바 차트 (축소 버전) ── */
+function MiniCohortChart({ cohorts, currentKospi }) {
+  if (!cohorts?.length) return null;
+  const chartData = cohorts
+    .filter(c => c.amount > 0)
+    .sort((a, b) => b.entry_kospi - a.entry_kospi)
+    .slice(0, 12)
+    .map(c => ({
+      label: `${c.entry_kospi.toLocaleString()} (${c.entry_date.slice(5)})`,
+      amount: Math.round(c.amount),
+      status: c.status,
+      pnl_pct: c.pnl_pct,
+      entry_kospi: c.entry_kospi,
+      entry_date: c.entry_date,
+      collateral_ratio: c.collateral_ratio,
+      liquidated_pct: c.liquidated_pct || 0,
+    }));
+
+  if (!chartData.length) return null;
+  const kospiIdx = chartData.findIndex(c => c.entry_kospi <= currentKospi);
+
+  return (
+    <div style={{ marginTop: 10 }}>
+      <div style={{ fontSize: 11, color: C.muted, marginBottom: 4 }}>
+        기준일 KOSPI: <span style={{ color: C.kospi, fontWeight: 700 }}>{currentKospi?.toLocaleString()}</span>
+        {" "}— 위험 코호트 상위 {chartData.length}개
+      </div>
+      <ResponsiveContainer width="100%" height={Math.max(120, chartData.length * 24 + 30)}>
+        <BarChart data={chartData} layout="vertical" margin={{ top: 5, right: 120, left: 70, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke={C.border} horizontal={false} />
+          <XAxis type="number" {...axisProps} tickFormatter={(v) => v >= 1000 ? `${(v / 1000).toFixed(0)}K` : `${v}`} />
+          <YAxis type="category" dataKey="label" {...axisProps} width={65} tick={{ fill: C.muted, fontSize: 9 }} />
+          <Tooltip content={<CohortTooltip />} cursor={false} wrapperStyle={{ outline: "none" }} />
+          <Bar dataKey="amount" radius={[0, 3, 3, 0]} isAnimationActive={false}
+            label={({ x, y, width, height, index }) => {
+              const entry = chartData[index];
+              if (!entry || height < 6) return null;
+              const sc = STATUS_COLORS[entry.status] || C.muted;
+              return (
+                <text x={x + width + 4} y={y + height / 2} textAnchor="start" dominantBaseline="central"
+                  style={{ fontSize: 9, fontFamily: FONT, fill: C.muted }}>
+                  <tspan>{fmtBillion(entry.amount)}</tspan>
+                  <tspan dx={4} fill={sc}>{entry.pnl_pct > 0 ? "+" : ""}{entry.pnl_pct}%</tspan>
+                  <tspan dx={3} fill={sc} fontWeight={600}>{STATUS_LABELS[entry.status]}</tspan>
+                </text>
+              );
+            }}
+          >
+            {chartData.map((entry, i) => (
+              <Cell key={i} fill={STATUS_COLORS[entry.status] || C.muted}
+                opacity={kospiIdx < 0 || i < kospiIdx ? 0.9 : 0.5} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}
 
 /* ═══════════════════════════════════════════════════
    Main Component
@@ -765,21 +1021,44 @@ function StockCreditBreakdown() {
 
 export default function CohortAnalysis() {
   const { lifo, fifo, trigger_map, current_kospi, current_fx,
-    avg_daily_trading_value_billion, params } = COHORT_DATA;
+    avg_daily_trading_value_billion, params, portfolio_beta: portfolioBeta = 1.0 } = COHORT_DATA;
 
   /* ── Section 1: Cohort Distribution ── */
   const [cohortMode, setCohortMode] = useState("LIFO");
   const [guideOpen, setGuideOpen] = useState(true);
-  const activeCohorts = cohortMode === "LIFO" ? lifo : fifo;
+  const [cohortDate, setCohortDate] = useState(""); // "" = 오늘(현재)
+
+  /* Section 1 날짜 옵션 (최근 60일) */
+  const cohortDateOptions = useMemo(() => {
+    if (!COHORT_HISTORY?.snapshots?.length) return [];
+    const snaps = COHORT_HISTORY.snapshots;
+    return snaps.slice(-60).reverse().map(s => s.date);
+  }, []);
+
+  /* Section 1 코호트 — 날짜 선택 시 히스토리에서 복원 */
+  const { activeCohorts, cohortKospi } = useMemo(() => {
+    if (!cohortDate) {
+      return { activeCohorts: cohortMode === "LIFO" ? lifo : fifo, cohortKospi: current_kospi };
+    }
+    const snap = COHORT_HISTORY?.snapshots?.find(s => s.date === cohortDate);
+    if (!snap) return { activeCohorts: [], cohortKospi: current_kospi };
+    const dateIdx = MARKET_DATA.findIndex(r => r.date === cohortDate);
+    const btBeta = dateIdx >= 0 ? computeBacktestBeta(dateIdx) : portfolioBeta;
+    return {
+      activeCohorts: reconstructCohorts(COHORT_HISTORY.registry, snap, params, btBeta),
+      cohortKospi: snap.kospi || current_kospi,
+    };
+  }, [cohortDate, cohortMode, lifo, fifo, current_kospi, params, portfolioBeta]);
 
   const cohortSummary = useMemo(() => {
     const total = activeCohorts.reduce((s, c) => s + c.amount, 0);
     const safe = activeCohorts.filter(c => c.status === "safe").reduce((s, c) => s + c.amount, 0);
     const danger = activeCohorts.filter(c => c.status === "danger").reduce((s, c) => s + c.amount, 0);
+    const marginCall = activeCohorts.filter(c => c.status === "marginCall").reduce((s, c) => s + c.amount, 0);
     return {
       total,
       safePct: total > 0 ? ((safe / total) * 100).toFixed(1) : "0",
-      dangerPct: total > 0 ? ((danger / total) * 100).toFixed(1) : "0",
+      dangerPct: total > 0 ? (((danger + marginCall) / total) * 100).toFixed(1) : "0",
       count: activeCohorts.length,
     };
   }, [activeCohorts]);
@@ -803,10 +1082,10 @@ export default function CohortAnalysis() {
   /* ── Find index where current KOSPI falls ── */
   const currentKospiIdx = useMemo(() => {
     for (let i = 0; i < cohortChartData.length; i++) {
-      if (cohortChartData[i].entry_kospi <= current_kospi) return i;
+      if (cohortChartData[i].entry_kospi <= cohortKospi) return i;
     }
     return cohortChartData.length;
-  }, [cohortChartData, current_kospi]);
+  }, [cohortChartData, cohortKospi]);
 
   /* ── Cohort display: collapse safe cohorts at bottom ── */
   const MAX_VISIBLE = 20;
@@ -888,7 +1167,10 @@ export default function CohortAnalysis() {
   /* Backtest: 기준일의 위험 코호트 요약 */
   const backtestCohortSummary = useMemo(() => {
     if (!baseDateSnapshot) return null;
-    const cohorts = reconstructCohorts(COHORT_HISTORY.registry, baseDateSnapshot, params);
+    // v1.4.0: Compute beta for the selected base date
+    const dateIdx = MARKET_DATA.findIndex(r => r.date === selectedBaseDate);
+    const btBeta = dateIdx >= 0 ? computeBacktestBeta(dateIdx) : portfolioBeta;
+    const cohorts = reconstructCohorts(COHORT_HISTORY.registry, baseDateSnapshot, params, btBeta);
     const total = cohorts.reduce((s, c) => s + c.amount, 0);
     const byStatus = { danger: 0, marginCall: 0, watch: 0, safe: 0 };
     cohorts.forEach(c => { byStatus[c.status] = (byStatus[c.status] || 0) + c.amount; });
@@ -899,17 +1181,21 @@ export default function CohortAnalysis() {
         return (order[a.status] ?? 3) - (order[b.status] ?? 3) || b.amount - a.amount;
       })
       .slice(0, 8);
-    return { total, byStatus, riskCohorts, count: cohorts.length };
+    return { total, byStatus, riskCohorts, count: cohorts.length, allCohorts: cohorts };
   }, [baseDateSnapshot, params]);
 
   const handleRun = useCallback(() => {
-    let cohorts, initialPrice, initialFx;
+    let cohorts, initialPrice, initialFx, beta;
 
     if (simMode === "backtest" && baseDateSnapshot) {
-      cohorts = reconstructCohorts(COHORT_HISTORY.registry, baseDateSnapshot, params);
+      // v1.4.0: Compute beta from base date's prior 7 trading days
+      const dateIdx = MARKET_DATA.findIndex(r => r.date === selectedBaseDate);
+      beta = dateIdx >= 0 ? computeBacktestBeta(dateIdx) : portfolioBeta;
+      cohorts = reconstructCohorts(COHORT_HISTORY.registry, baseDateSnapshot, params, beta);
       initialPrice = baseDateSnapshot.kospi || current_kospi;
       initialFx = baseDateSnapshot.usd_krw || current_fx;
     } else {
+      beta = portfolioBeta;
       cohorts = activeCohorts;
       initialPrice = current_kospi;
       initialFx = current_fx;
@@ -926,10 +1212,11 @@ export default function CohortAnalysis() {
       avgTradingValue: avg_daily_trading_value_billion,
       impactCoef: params.impact_coefficient,
       params,
+      portfolioBeta: beta,
     });
     setSimResult(result);
-  }, [simMode, baseDateSnapshot, activeCohorts, current_kospi, current_fx, shock, maxRounds, absorptionRate,
-      avg_daily_trading_value_billion, params]);
+  }, [simMode, baseDateSnapshot, selectedBaseDate, activeCohorts, current_kospi, current_fx, shock, maxRounds, absorptionRate,
+      avg_daily_trading_value_billion, params, portfolioBeta]);
 
   /* ── Trigger Map Color ── */
   const shockColor = (pct) => {
@@ -945,12 +1232,31 @@ export default function CohortAnalysis() {
           Section 1: Cohort Distribution
           ══════════════════════════════════════════ */}
       <PanelBox>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10, flexWrap: "wrap", gap: 8 }}>
           <SectionTitle termKey="cohort">Cohort Distribution</SectionTitle>
-          <ToggleGroup
-            options={[{ id: "LIFO", label: "LIFO" }, { id: "FIFO", label: "FIFO" }]}
-            value={cohortMode} onChange={setCohortMode}
-          />
+          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            <select
+              value={cohortDate}
+              onChange={(e) => setCohortDate(e.target.value)}
+              style={{
+                background: C.bg, color: cohortDate ? C.samsung : C.text,
+                border: `1px solid ${cohortDate ? C.samsung : C.border}`,
+                borderRadius: 6, padding: "4px 10px", fontSize: 11, fontFamily: FONT,
+              }}
+            >
+              <option value="">오늘 ({current_kospi.toLocaleString()})</option>
+              {cohortDateOptions.map((d) => {
+                const snap = COHORT_HISTORY.snapshots.find(s => s.date === d);
+                return <option key={d} value={d}>{d} | {snap?.kospi?.toLocaleString()}</option>;
+              })}
+            </select>
+            {!cohortDate && (
+              <ToggleGroup
+                options={[{ id: "LIFO", label: "LIFO" }, { id: "FIFO", label: "FIFO" }]}
+                value={cohortMode} onChange={setCohortMode}
+              />
+            )}
+          </div>
         </div>
 
         {/* Cohort Guide Box */}
@@ -978,8 +1284,8 @@ export default function CohortAnalysis() {
                 <span><span style={{ color: C.danger }}>&#9632;</span> 위험</span>
               </div>
               <div style={{ marginTop: 6, fontSize: 11, color: C.dim, lineHeight: 1.6 }}>
-                개별주식 신용거래 기반 (ETF 제외). Top 10 종목 가중 모델 + 증권사/종목군별 실제 비율 분포 반영:<br/>
-                마진콜: A군 140% ~ D군 160% | 강제청산: A군 120% ~ D군 140% | 증거금률: 40~60%
+                개별주식 신용거래 기반 (ETF 제외). 상위 5개 증권사 일괄 기준:<br/>
+                보증금 45% | 담보유지 140% | 손실 39%↑ 반대매매 | D+2 미납 → D+3 강제청산
               </div>
             </div>
           )}
@@ -990,7 +1296,8 @@ export default function CohortAnalysis() {
           <SummaryCard label="Active Cohorts" value={cohortSummary.count} />
           <SummaryCard label="Total Balance" value={(cohortSummary.total / 1000).toFixed(1)} unit="조원" />
           <SummaryCard label="Safe Ratio" value={cohortSummary.safePct} unit="%" color={C.safe} />
-          <SummaryCard label="Danger Ratio" value={cohortSummary.dangerPct} unit="%" color={C.danger} />
+          <SummaryCard label="Risk Ratio" value={cohortSummary.dangerPct} unit="%" color={C.danger} />
+          <SummaryCard label="Portfolio Beta" value={portfolioBeta.toFixed(2)} color={portfolioBeta > 1.0 ? C.danger : C.safe} />
         </div>
 
         {/* Current KOSPI Reference */}
@@ -1002,7 +1309,7 @@ export default function CohortAnalysis() {
             display: "inline-block", width: 20, height: 2,
             background: C.kospi, borderRadius: 1,
           }} />
-          현재 KOSPI: <span style={{ color: C.kospi, fontWeight: 700 }}>{current_kospi.toLocaleString()}</span>
+          {cohortDate ? `${cohortDate} ` : "현재 "}KOSPI: <span style={{ color: C.kospi, fontWeight: 700 }}>{cohortKospi.toLocaleString()}</span>
           — 위 코호트는 손실, 아래 코호트는 이익
         </div>
 
@@ -1096,43 +1403,7 @@ export default function CohortAnalysis() {
           현재 KOSPI: <span style={{ color: C.kospi, fontWeight: 700 }}>{current_kospi.toLocaleString()}</span>
         </div>
 
-        <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, fontFamily: FONT }}>
-            <thead>
-              <tr style={{ borderBottom: `1px solid ${C.border}` }}>
-                {[
-                  "하락폭",
-                  "예상 KOSPI",
-                  "마진콜 (추가 입금 요구 D+2)",
-                  "반대매매 (강제 청산)",
-                ].map((h) => (
-                  <th key={h} style={{
-                    padding: "8px 10px", textAlign: "right", color: C.muted, fontWeight: 600,
-                    fontSize: 11,
-                  }}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {trigger_map.map((row) => (
-                <tr key={row.shock_pct} style={{ borderBottom: `1px solid ${C.border}22` }}>
-                  <td style={{ padding: "8px 10px", textAlign: "right", color: shockColor(row.shock_pct), fontWeight: 700 }}>
-                    {row.shock_pct}%
-                  </td>
-                  <td style={{ padding: "8px 10px", textAlign: "right", color: C.text }}>
-                    {row.expected_kospi.toLocaleString()}
-                  </td>
-                  <td style={{ padding: "8px 10px", textAlign: "right", color: C.marginCall }}>
-                    {fmtBillion(row.margin_call_billion)}
-                  </td>
-                  <td style={{ padding: "8px 10px", textAlign: "right", color: C.danger, fontWeight: 700 }}>
-                    {fmtBillion(row.forced_liq_billion)}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <TriggerMapTable triggerMap={trigger_map} />
       </PanelBox>
 
       {/* ══════════════════════════════════════════
@@ -1190,9 +1461,10 @@ export default function CohortAnalysis() {
                 </>
               )}
               <div style={{ marginTop: 8, padding: "8px 12px", background: `${C.panel}aa`, borderRadius: 6, borderLeft: `2px solid ${C.foreign}` }}>
-                <span style={{ color: C.foreign }}>모델 한계:</span> 신용잔고의 ~95%는 개별주식(삼전/하닉 등 대형주 집중)이며,
-                KOSPI 지수 수준의 근사치로 모델링합니다. 실제 반대매매는 종목별로 발생하며,
-                외국인 매도·KOSDAQ 전이(34%) 등은 미반영됩니다.
+                <span style={{ color: C.foreign }}>v1.4.0 Beta 가중 모델:</span> 종목별 Hybrid Beta(하방60%+상방40%)를 가중평균하여
+                포트폴리오 Beta({portfolioBeta.toFixed(2)})로 충격을 증폭합니다.
+                Beta {">"} 1.0이면 KOSPI 대비 더 큰 손실, {"<"} 1.0이면 방어적입니다.
+                백테스트 시 기준일 직전 7일로 Beta를 재계산합니다.
               </div>
             </div>
           )}
@@ -1259,19 +1531,10 @@ export default function CohortAnalysis() {
                         ) : null
                       )}
                     </div>
-                    {backtestCohortSummary.riskCohorts.length > 0 && (
-                      <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginTop: 4 }}>
-                        {backtestCohortSummary.riskCohorts.map((c) => (
-                          <span key={c.entry_date} style={{
-                            display: "inline-block", padding: "2px 8px", borderRadius: 4, fontSize: 10,
-                            background: `${STATUS_COLORS[c.status]}22`, color: STATUS_COLORS[c.status],
-                            border: `1px solid ${STATUS_COLORS[c.status]}44`,
-                          }}>
-                            {c.entry_date.slice(5)} | {fmtBillion(c.amount)} | {c.pnl_pct}%
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                    <MiniCohortChart
+                      cohorts={backtestCohortSummary.allCohorts}
+                      currentKospi={baseDateSnapshot?.kospi || current_kospi}
+                    />
                   </div>
                 )}
               </div>
@@ -1445,6 +1708,7 @@ export default function CohortAnalysis() {
         backtestDates={BACKTEST_DATES}
         avgTradingValue={avg_daily_trading_value_billion}
         autoAbsorption={autoAbsorption}
+        portfolioBeta={portfolioBeta}
       />
     </div>
   );

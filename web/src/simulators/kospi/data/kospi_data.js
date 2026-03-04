@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-05T00:23:31.187070
+ * Generated: 2026-03-05T03:48:41.005354
  * Source: kospi/data/ (pipeline)
  * Exports: 16
  */
@@ -11312,1040 +11312,1040 @@ export const COHORT_DATA = {
       "entry_date": "2025-01-06",
       "entry_kospi": 2488.64,
       "amount": 130.6999999999989,
-      "pnl_pct": 104.67,
-      "collateral_ratio": 3.411,
+      "pnl_pct": 147.79,
+      "collateral_ratio": 4.505,
       "status": "safe"
     },
     {
       "entry_date": "2025-01-07",
       "entry_kospi": 2492.1,
       "amount": 20.200000000000728,
-      "pnl_pct": 104.39,
-      "collateral_ratio": 3.406,
+      "pnl_pct": 147.38,
+      "collateral_ratio": 4.498,
       "status": "safe"
     },
     {
       "entry_date": "2025-01-08",
       "entry_kospi": 2521.05,
       "amount": 144.89999999999964,
-      "pnl_pct": 102.04,
-      "collateral_ratio": 3.367,
+      "pnl_pct": 144.07,
+      "collateral_ratio": 4.438,
       "status": "safe"
     },
     {
       "entry_date": "2025-01-09",
       "entry_kospi": 2521.9,
       "amount": 146.29999999999927,
-      "pnl_pct": 101.97,
-      "collateral_ratio": 3.366,
+      "pnl_pct": 143.97,
+      "collateral_ratio": 4.436,
       "status": "safe"
     },
     {
       "entry_date": "2025-01-10",
       "entry_kospi": 2515.78,
       "amount": 78.80000000000109,
-      "pnl_pct": 102.46,
-      "collateral_ratio": 3.374,
+      "pnl_pct": 144.67,
+      "collateral_ratio": 4.449,
       "status": "safe"
     },
     {
       "entry_date": "2025-01-13",
       "entry_kospi": 2489.56,
       "amount": 81.29999999999927,
-      "pnl_pct": 104.6,
-      "collateral_ratio": 3.41,
+      "pnl_pct": 147.68,
+      "collateral_ratio": 4.503,
       "status": "safe"
     },
     {
       "entry_date": "2025-01-14",
       "entry_kospi": 2497.4,
       "amount": 116.39999999999964,
-      "pnl_pct": 103.95,
-      "collateral_ratio": 3.399,
+      "pnl_pct": 146.77,
+      "collateral_ratio": 4.487,
       "status": "safe"
     },
     {
       "entry_date": "2025-04-15",
       "entry_kospi": 2477.41,
       "amount": 268.6000000000022,
-      "pnl_pct": 105.6,
-      "collateral_ratio": 3.427,
+      "pnl_pct": 149.1,
+      "collateral_ratio": 4.529,
       "status": "safe"
     },
     {
       "entry_date": "2025-04-16",
       "entry_kospi": 2447.43,
       "amount": 203.1999999999971,
-      "pnl_pct": 108.12,
-      "collateral_ratio": 3.469,
+      "pnl_pct": 152.65,
+      "collateral_ratio": 4.594,
       "status": "safe"
     },
     {
       "entry_date": "2025-04-17",
       "entry_kospi": 2470.41,
       "amount": 117.10000000000218,
-      "pnl_pct": 106.18,
-      "collateral_ratio": 3.436,
+      "pnl_pct": 149.92,
+      "collateral_ratio": 4.544,
       "status": "safe"
     },
     {
       "entry_date": "2025-04-18",
       "entry_kospi": 2483.42,
       "amount": 117.79999999999927,
-      "pnl_pct": 105.1,
-      "collateral_ratio": 3.418,
+      "pnl_pct": 148.39,
+      "collateral_ratio": 4.516,
       "status": "safe"
     },
     {
       "entry_date": "2025-04-21",
       "entry_kospi": 2488.42,
       "amount": 55.099999999998545,
-      "pnl_pct": 104.69,
-      "collateral_ratio": 3.411,
+      "pnl_pct": 147.81,
+      "collateral_ratio": 4.506,
       "status": "safe"
     },
     {
       "entry_date": "2025-04-22",
       "entry_kospi": 2486.64,
       "amount": 97.20000000000073,
-      "pnl_pct": 104.84,
-      "collateral_ratio": 3.414,
+      "pnl_pct": 148.02,
+      "collateral_ratio": 4.509,
       "status": "safe"
     },
     {
       "entry_date": "2025-04-23",
       "entry_kospi": 2525.56,
       "amount": 97.5,
-      "pnl_pct": 101.68,
-      "collateral_ratio": 3.361,
+      "pnl_pct": 143.56,
+      "collateral_ratio": 4.428,
       "status": "safe"
     },
     {
       "entry_date": "2025-04-24",
       "entry_kospi": 2522.33,
       "amount": 123.10000000000218,
-      "pnl_pct": 101.94,
-      "collateral_ratio": 3.366,
+      "pnl_pct": 143.93,
+      "collateral_ratio": 4.435,
       "status": "safe"
     },
     {
       "entry_date": "2025-04-28",
       "entry_kospi": 2548.86,
       "amount": 116.89999999999782,
-      "pnl_pct": 99.84,
-      "collateral_ratio": 3.331,
+      "pnl_pct": 140.96,
+      "collateral_ratio": 4.381,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-09",
       "entry_kospi": 2577.27,
       "amount": 14.0,
-      "pnl_pct": 97.63,
-      "collateral_ratio": 3.294,
+      "pnl_pct": 137.85,
+      "collateral_ratio": 4.325,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-12",
       "entry_kospi": 2607.33,
       "amount": 135.40000000000146,
-      "pnl_pct": 95.35,
-      "collateral_ratio": 3.256,
+      "pnl_pct": 134.63,
+      "collateral_ratio": 4.266,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-13",
       "entry_kospi": 2608.42,
       "amount": 66.0,
-      "pnl_pct": 95.27,
-      "collateral_ratio": 3.255,
+      "pnl_pct": 134.52,
+      "collateral_ratio": 4.264,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-15",
       "entry_kospi": 2621.36,
       "amount": 49.79999999999927,
-      "pnl_pct": 94.31,
-      "collateral_ratio": 3.238,
+      "pnl_pct": 133.15,
+      "collateral_ratio": 4.239,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-19",
       "entry_kospi": 2603.42,
       "amount": 139.5,
-      "pnl_pct": 95.65,
-      "collateral_ratio": 3.261,
+      "pnl_pct": 135.04,
+      "collateral_ratio": 4.274,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-20",
       "entry_kospi": 2601.8,
       "amount": 24.400000000001455,
-      "pnl_pct": 95.77,
-      "collateral_ratio": 3.263,
+      "pnl_pct": 135.22,
+      "collateral_ratio": 4.277,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-21",
       "entry_kospi": 2625.58,
       "amount": 26.69999999999709,
-      "pnl_pct": 94.0,
-      "collateral_ratio": 3.233,
+      "pnl_pct": 132.71,
+      "collateral_ratio": 4.231,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-22",
       "entry_kospi": 2593.67,
       "amount": 1.3000000000029104,
-      "pnl_pct": 96.38,
-      "collateral_ratio": 3.273,
+      "pnl_pct": 136.08,
+      "collateral_ratio": 4.292,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-23",
       "entry_kospi": 2592.09,
       "amount": 22.19999999999709,
-      "pnl_pct": 96.5,
-      "collateral_ratio": 3.275,
+      "pnl_pct": 136.25,
+      "collateral_ratio": 4.295,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-26",
       "entry_kospi": 2644.4,
       "amount": 148.3000000000029,
-      "pnl_pct": 92.62,
-      "collateral_ratio": 3.21,
+      "pnl_pct": 130.76,
+      "collateral_ratio": 4.196,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-27",
       "entry_kospi": 2637.22,
       "amount": 22.69999999999709,
-      "pnl_pct": 93.14,
-      "collateral_ratio": 3.219,
+      "pnl_pct": 131.5,
+      "collateral_ratio": 4.209,
       "status": "safe"
     },
     {
       "entry_date": "2025-05-29",
       "entry_kospi": 2720.64,
       "amount": 107.40000000000146,
-      "pnl_pct": 87.22,
-      "collateral_ratio": 3.12,
+      "pnl_pct": 123.14,
+      "collateral_ratio": 4.057,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-02",
       "entry_kospi": 2698.97,
       "amount": 76.09999999999854,
-      "pnl_pct": 88.72,
-      "collateral_ratio": 3.145,
+      "pnl_pct": 125.27,
+      "collateral_ratio": 4.096,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-04",
       "entry_kospi": 2770.84,
       "amount": 164.3000000000029,
-      "pnl_pct": 83.83,
-      "collateral_ratio": 3.064,
+      "pnl_pct": 118.35,
+      "collateral_ratio": 3.97,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-11",
       "entry_kospi": 2907.04,
       "amount": 201.1999999999971,
-      "pnl_pct": 75.21,
-      "collateral_ratio": 2.92,
+      "pnl_pct": 106.19,
+      "collateral_ratio": 3.749,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-12",
       "entry_kospi": 2920.03,
       "amount": 118.80000000000291,
-      "pnl_pct": 74.43,
-      "collateral_ratio": 2.907,
+      "pnl_pct": 105.09,
+      "collateral_ratio": 3.729,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-13",
       "entry_kospi": 2894.62,
       "amount": 135.5,
-      "pnl_pct": 75.97,
-      "collateral_ratio": 2.933,
+      "pnl_pct": 107.26,
+      "collateral_ratio": 3.768,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-16",
       "entry_kospi": 2946.66,
       "amount": 216.5,
-      "pnl_pct": 72.86,
-      "collateral_ratio": 2.881,
+      "pnl_pct": 102.87,
+      "collateral_ratio": 3.689,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-17",
       "entry_kospi": 2950.3,
       "amount": 174.6999999999971,
-      "pnl_pct": 72.64,
-      "collateral_ratio": 2.877,
+      "pnl_pct": 102.57,
+      "collateral_ratio": 3.683,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-18",
       "entry_kospi": 2972.19,
       "amount": 180.0,
-      "pnl_pct": 71.37,
-      "collateral_ratio": 2.856,
+      "pnl_pct": 100.77,
+      "collateral_ratio": 3.65,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-19",
       "entry_kospi": 2977.74,
       "amount": 47.5,
-      "pnl_pct": 71.05,
-      "collateral_ratio": 2.851,
+      "pnl_pct": 100.32,
+      "collateral_ratio": 3.642,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-20",
       "entry_kospi": 3021.84,
       "amount": 215.5,
-      "pnl_pct": 68.56,
-      "collateral_ratio": 2.809,
+      "pnl_pct": 96.8,
+      "collateral_ratio": 3.578,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-23",
       "entry_kospi": 3014.47,
       "amount": 274.40000000000146,
-      "pnl_pct": 68.97,
-      "collateral_ratio": 2.816,
+      "pnl_pct": 97.38,
+      "collateral_ratio": 3.589,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-24",
       "entry_kospi": 3103.64,
       "amount": 40.900000000001455,
-      "pnl_pct": 64.12,
-      "collateral_ratio": 2.735,
+      "pnl_pct": 90.52,
+      "collateral_ratio": 3.464,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-25",
       "entry_kospi": 3108.25,
       "amount": 399.0,
-      "pnl_pct": 63.87,
-      "collateral_ratio": 2.731,
+      "pnl_pct": 90.18,
+      "collateral_ratio": 3.458,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-27",
       "entry_kospi": 3055.94,
       "amount": 146.5,
-      "pnl_pct": 66.68,
-      "collateral_ratio": 2.778,
+      "pnl_pct": 94.14,
+      "collateral_ratio": 3.53,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-30",
       "entry_kospi": 3071.7,
       "amount": 107.0,
-      "pnl_pct": 65.82,
-      "collateral_ratio": 2.764,
+      "pnl_pct": 92.93,
+      "collateral_ratio": 3.508,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-04",
       "entry_kospi": 3054.28,
       "amount": 13.0,
-      "pnl_pct": 66.77,
-      "collateral_ratio": 2.779,
+      "pnl_pct": 94.27,
+      "collateral_ratio": 3.532,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-08",
       "entry_kospi": 3114.95,
       "amount": 25.69999999999709,
-      "pnl_pct": 63.52,
-      "collateral_ratio": 2.725,
+      "pnl_pct": 89.68,
+      "collateral_ratio": 3.449,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-09",
       "entry_kospi": 3133.74,
       "amount": 31.600000000002183,
-      "pnl_pct": 62.54,
-      "collateral_ratio": 2.709,
+      "pnl_pct": 88.3,
+      "collateral_ratio": 3.424,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-10",
       "entry_kospi": 3183.23,
       "amount": 154.5,
-      "pnl_pct": 60.01,
-      "collateral_ratio": 2.667,
+      "pnl_pct": 84.73,
+      "collateral_ratio": 3.359,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-11",
       "entry_kospi": 3175.77,
       "amount": 255.09999999999854,
-      "pnl_pct": 60.39,
-      "collateral_ratio": 2.673,
+      "pnl_pct": 85.26,
+      "collateral_ratio": 3.368,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-14",
       "entry_kospi": 3202.03,
       "amount": 68.5,
-      "pnl_pct": 59.07,
-      "collateral_ratio": 2.651,
+      "pnl_pct": 83.4,
+      "collateral_ratio": 3.335,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-15",
       "entry_kospi": 3215.28,
       "amount": 63.20000000000073,
-      "pnl_pct": 58.42,
-      "collateral_ratio": 2.64,
+      "pnl_pct": 82.48,
+      "collateral_ratio": 3.318,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-16",
       "entry_kospi": 3186.38,
       "amount": 67.79999999999927,
-      "pnl_pct": 59.85,
-      "collateral_ratio": 2.664,
+      "pnl_pct": 84.51,
+      "collateral_ratio": 3.355,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-17",
       "entry_kospi": 3192.29,
       "amount": 15.700000000000728,
-      "pnl_pct": 59.56,
-      "collateral_ratio": 2.659,
+      "pnl_pct": 84.09,
+      "collateral_ratio": 3.347,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-07",
       "entry_kospi": 3227.68,
       "amount": 72.90000000000146,
-      "pnl_pct": 57.81,
-      "collateral_ratio": 2.63,
+      "pnl_pct": 81.62,
+      "collateral_ratio": 3.302,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-08",
       "entry_kospi": 3210.01,
       "amount": 208.79999999999927,
-      "pnl_pct": 58.68,
-      "collateral_ratio": 2.645,
+      "pnl_pct": 82.85,
+      "collateral_ratio": 3.324,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-11",
       "entry_kospi": 3206.77,
       "amount": 73.70000000000073,
-      "pnl_pct": 58.84,
-      "collateral_ratio": 2.647,
+      "pnl_pct": 83.07,
+      "collateral_ratio": 3.329,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-27",
       "entry_kospi": 3187.16,
       "amount": 33.39999999999782,
-      "pnl_pct": 59.81,
-      "collateral_ratio": 2.664,
+      "pnl_pct": 84.45,
+      "collateral_ratio": 3.354,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-28",
       "entry_kospi": 3196.32,
       "amount": 182.5,
-      "pnl_pct": 59.36,
-      "collateral_ratio": 2.656,
+      "pnl_pct": 83.8,
+      "collateral_ratio": 3.342,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-29",
       "entry_kospi": 3186.01,
       "amount": 73.70000000000073,
-      "pnl_pct": 59.87,
-      "collateral_ratio": 2.665,
+      "pnl_pct": 84.53,
+      "collateral_ratio": 3.355,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-05",
       "entry_kospi": 3205.12,
       "amount": 69.0,
-      "pnl_pct": 58.92,
-      "collateral_ratio": 2.649,
+      "pnl_pct": 83.19,
+      "collateral_ratio": 3.331,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-08",
       "entry_kospi": 3219.59,
       "amount": 33.400000000001455,
-      "pnl_pct": 58.2,
-      "collateral_ratio": 2.637,
+      "pnl_pct": 82.18,
+      "collateral_ratio": 3.312,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-09",
       "entry_kospi": 3260.05,
       "amount": 96.69999999999709,
-      "pnl_pct": 56.24,
-      "collateral_ratio": 2.604,
+      "pnl_pct": 79.41,
+      "collateral_ratio": 3.262,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-10",
       "entry_kospi": 3314.53,
       "amount": 45.10000000000218,
-      "pnl_pct": 53.67,
-      "collateral_ratio": 2.561,
+      "pnl_pct": 75.78,
+      "collateral_ratio": 3.196,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-11",
       "entry_kospi": 3344.2,
       "amount": 12.399999999997817,
-      "pnl_pct": 52.31,
-      "collateral_ratio": 2.538,
+      "pnl_pct": 73.86,
+      "collateral_ratio": 3.161,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-15",
       "entry_kospi": 3407.31,
       "amount": 89.20000000000073,
-      "pnl_pct": 49.49,
-      "collateral_ratio": 2.491,
+      "pnl_pct": 69.87,
+      "collateral_ratio": 3.089,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-16",
       "entry_kospi": 3449.62,
       "amount": 26.100000000002183,
-      "pnl_pct": 47.66,
-      "collateral_ratio": 2.461,
+      "pnl_pct": 67.28,
+      "collateral_ratio": 3.042,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-17",
       "entry_kospi": 3413.4,
       "amount": 247.5,
-      "pnl_pct": 49.22,
-      "collateral_ratio": 2.487,
+      "pnl_pct": 69.5,
+      "collateral_ratio": 3.082,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-18",
       "entry_kospi": 3461.3,
       "amount": 99.39999999999782,
-      "pnl_pct": 47.16,
-      "collateral_ratio": 2.453,
+      "pnl_pct": 66.58,
+      "collateral_ratio": 3.029,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-19",
       "entry_kospi": 3445.24,
       "amount": 162.5,
-      "pnl_pct": 47.84,
-      "collateral_ratio": 2.464,
+      "pnl_pct": 67.55,
+      "collateral_ratio": 3.046,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-22",
       "entry_kospi": 3468.65,
       "amount": 121.5,
-      "pnl_pct": 46.85,
-      "collateral_ratio": 2.447,
+      "pnl_pct": 66.14,
+      "collateral_ratio": 3.021,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-23",
       "entry_kospi": 3486.19,
       "amount": 82.40000000000146,
-      "pnl_pct": 46.11,
-      "collateral_ratio": 2.435,
+      "pnl_pct": 65.1,
+      "collateral_ratio": 3.002,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-13",
       "entry_kospi": 3584.55,
       "amount": 24.899999999997817,
-      "pnl_pct": 42.1,
-      "collateral_ratio": 2.368,
+      "pnl_pct": 59.44,
+      "collateral_ratio": 2.899,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-14",
       "entry_kospi": 3561.81,
       "amount": 288.40000000000146,
-      "pnl_pct": 43.0,
-      "collateral_ratio": 2.383,
+      "pnl_pct": 60.72,
+      "collateral_ratio": 2.922,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-15",
       "entry_kospi": 3657.28,
       "amount": 206.0,
-      "pnl_pct": 39.27,
-      "collateral_ratio": 2.321,
+      "pnl_pct": 55.45,
+      "collateral_ratio": 2.826,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-17",
       "entry_kospi": 3748.89,
       "amount": 108.0,
-      "pnl_pct": 35.87,
-      "collateral_ratio": 2.264,
+      "pnl_pct": 50.64,
+      "collateral_ratio": 2.739,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-20",
       "entry_kospi": 3814.69,
       "amount": 34.0,
-      "pnl_pct": 33.52,
-      "collateral_ratio": 2.225,
+      "pnl_pct": 47.33,
+      "collateral_ratio": 2.679,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-22",
       "entry_kospi": 3883.68,
       "amount": 314.09999999999854,
-      "pnl_pct": 31.15,
-      "collateral_ratio": 2.186,
+      "pnl_pct": 43.98,
+      "collateral_ratio": 2.618,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-23",
       "entry_kospi": 3845.56,
       "amount": 173.60000000000218,
-      "pnl_pct": 32.45,
-      "collateral_ratio": 2.208,
+      "pnl_pct": 45.82,
+      "collateral_ratio": 2.651,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-24",
       "entry_kospi": 3941.59,
       "amount": 229.20000000000073,
-      "pnl_pct": 29.23,
-      "collateral_ratio": 2.154,
+      "pnl_pct": 41.26,
+      "collateral_ratio": 2.568,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-27",
       "entry_kospi": 4042.83,
       "amount": 134.6999999999971,
-      "pnl_pct": 25.99,
-      "collateral_ratio": 2.1,
+      "pnl_pct": 36.69,
+      "collateral_ratio": 2.485,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-28",
       "entry_kospi": 4010.41,
       "amount": 36.400000000001455,
-      "pnl_pct": 27.01,
-      "collateral_ratio": 2.117,
+      "pnl_pct": 38.13,
+      "collateral_ratio": 2.511,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-29",
       "entry_kospi": 4081.15,
       "amount": 267.2000000000007,
-      "pnl_pct": 24.81,
-      "collateral_ratio": 2.08,
+      "pnl_pct": 35.02,
+      "collateral_ratio": 2.455,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-30",
       "entry_kospi": 4086.89,
       "amount": 177.70000000000073,
-      "pnl_pct": 24.63,
-      "collateral_ratio": 2.077,
+      "pnl_pct": 34.78,
+      "collateral_ratio": 2.45,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-31",
       "entry_kospi": 4107.5,
       "amount": 180.5,
-      "pnl_pct": 24.01,
-      "collateral_ratio": 2.067,
+      "pnl_pct": 33.89,
+      "collateral_ratio": 2.434,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-04",
       "entry_kospi": 4121.74,
       "amount": 49.29999999999927,
-      "pnl_pct": 23.58,
-      "collateral_ratio": 2.06,
+      "pnl_pct": 33.29,
+      "collateral_ratio": 2.423,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-05",
       "entry_kospi": 4004.42,
       "amount": 305.2000000000007,
-      "pnl_pct": 27.2,
-      "collateral_ratio": 2.12,
+      "pnl_pct": 38.4,
+      "collateral_ratio": 2.516,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-06",
       "entry_kospi": 4026.45,
       "amount": 45.69999999999709,
-      "pnl_pct": 26.5,
-      "collateral_ratio": 2.108,
+      "pnl_pct": 37.42,
+      "collateral_ratio": 2.499,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-07",
       "entry_kospi": 3953.76,
       "amount": 117.5,
-      "pnl_pct": 28.83,
-      "collateral_ratio": 2.147,
+      "pnl_pct": 40.7,
+      "collateral_ratio": 2.558,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-12",
       "entry_kospi": 4150.39,
       "amount": 14.400000000001455,
-      "pnl_pct": 22.72,
-      "collateral_ratio": 2.045,
+      "pnl_pct": 32.08,
+      "collateral_ratio": 2.402,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-13",
       "entry_kospi": 4170.63,
       "amount": 232.5,
-      "pnl_pct": 22.13,
-      "collateral_ratio": 2.035,
+      "pnl_pct": 31.24,
+      "collateral_ratio": 2.386,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-14",
       "entry_kospi": 4011.57,
       "amount": 143.79999999999927,
-      "pnl_pct": 26.97,
-      "collateral_ratio": 2.116,
+      "pnl_pct": 38.08,
+      "collateral_ratio": 2.511,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-17",
       "entry_kospi": 4089.25,
       "amount": 71.10000000000218,
-      "pnl_pct": 24.56,
-      "collateral_ratio": 2.076,
+      "pnl_pct": 34.68,
+      "collateral_ratio": 2.449,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-28",
       "entry_kospi": 3926.59,
       "amount": 7.099999999998545,
-      "pnl_pct": 29.72,
-      "collateral_ratio": 2.162,
+      "pnl_pct": 41.96,
+      "collateral_ratio": 2.581,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-01",
       "entry_kospi": 3920.37,
       "amount": 136.20000000000073,
-      "pnl_pct": 29.92,
-      "collateral_ratio": 2.165,
+      "pnl_pct": 42.25,
+      "collateral_ratio": 2.586,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-02",
       "entry_kospi": 3994.93,
       "amount": 209.5,
-      "pnl_pct": 27.5,
-      "collateral_ratio": 2.125,
+      "pnl_pct": 38.83,
+      "collateral_ratio": 2.524,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-03",
       "entry_kospi": 4036.3,
       "amount": 24.200000000000728,
-      "pnl_pct": 26.19,
-      "collateral_ratio": 2.103,
+      "pnl_pct": 36.98,
+      "collateral_ratio": 2.491,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-04",
       "entry_kospi": 4028.51,
       "amount": 71.39999999999782,
-      "pnl_pct": 26.44,
-      "collateral_ratio": 2.107,
+      "pnl_pct": 37.33,
+      "collateral_ratio": 2.497,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-05",
       "entry_kospi": 4100.05,
       "amount": 182.90000000000146,
-      "pnl_pct": 24.23,
-      "collateral_ratio": 2.071,
+      "pnl_pct": 34.21,
+      "collateral_ratio": 2.44,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-08",
       "entry_kospi": 4154.85,
       "amount": 152.5,
-      "pnl_pct": 22.59,
-      "collateral_ratio": 2.043,
+      "pnl_pct": 31.9,
+      "collateral_ratio": 2.398,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-24",
       "entry_kospi": 4108.62,
       "amount": 10.099999999998545,
-      "pnl_pct": 23.97,
-      "collateral_ratio": 2.066,
+      "pnl_pct": 33.85,
+      "collateral_ratio": 2.434,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-29",
       "entry_kospi": 4220.56,
       "amount": 13.799999999999272,
-      "pnl_pct": 20.68,
-      "collateral_ratio": 2.011,
+      "pnl_pct": 29.2,
+      "collateral_ratio": 2.349,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-02",
       "entry_kospi": 4309.63,
       "amount": 159.8000000000029,
-      "pnl_pct": 18.19,
-      "collateral_ratio": 1.97,
+      "pnl_pct": 25.68,
+      "collateral_ratio": 2.285,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-05",
       "entry_kospi": 4457.52,
       "amount": 203.89999999999782,
-      "pnl_pct": 14.27,
-      "collateral_ratio": 1.904,
+      "pnl_pct": 20.15,
+      "collateral_ratio": 2.184,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-06",
       "entry_kospi": 4525.48,
       "amount": 69.0,
-      "pnl_pct": 12.55,
-      "collateral_ratio": 1.876,
+      "pnl_pct": 17.72,
+      "collateral_ratio": 2.14,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-07",
       "entry_kospi": 4551.06,
       "amount": 170.90000000000146,
-      "pnl_pct": 11.92,
-      "collateral_ratio": 1.865,
+      "pnl_pct": 16.83,
+      "collateral_ratio": 2.124,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-08",
       "entry_kospi": 4552.37,
       "amount": 317.2999999999993,
-      "pnl_pct": 11.89,
-      "collateral_ratio": 1.865,
+      "pnl_pct": 16.78,
+      "collateral_ratio": 2.123,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-09",
       "entry_kospi": 4586.32,
       "amount": 158.70000000000073,
-      "pnl_pct": 11.06,
-      "collateral_ratio": 1.851,
+      "pnl_pct": 15.61,
+      "collateral_ratio": 2.102,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-12",
       "entry_kospi": 4624.79,
       "amount": 176.70000000000073,
-      "pnl_pct": 10.14,
-      "collateral_ratio": 1.836,
+      "pnl_pct": 14.31,
+      "collateral_ratio": 2.078,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-13",
       "entry_kospi": 4692.64,
       "amount": 34.29999999999927,
-      "pnl_pct": 8.54,
-      "collateral_ratio": 1.809,
+      "pnl_pct": 12.06,
+      "collateral_ratio": 2.037,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-14",
       "entry_kospi": 4723.1,
       "amount": 36.29999999999927,
-      "pnl_pct": 7.84,
-      "collateral_ratio": 1.797,
+      "pnl_pct": 11.07,
+      "collateral_ratio": 2.02,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-15",
       "entry_kospi": 4797.55,
       "amount": 150.59999999999854,
-      "pnl_pct": 6.17,
-      "collateral_ratio": 1.769,
+      "pnl_pct": 8.71,
+      "collateral_ratio": 1.977,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-16",
       "entry_kospi": 4840.74,
       "amount": 163.3000000000029,
-      "pnl_pct": 5.22,
-      "collateral_ratio": 1.754,
+      "pnl_pct": 7.37,
+      "collateral_ratio": 1.952,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-23",
       "entry_kospi": 4990.07,
       "amount": 100.09999999999854,
-      "pnl_pct": 2.07,
-      "collateral_ratio": 1.701,
+      "pnl_pct": 2.93,
+      "collateral_ratio": 1.871,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-26",
       "entry_kospi": 4949.59,
       "amount": 219.70000000000073,
-      "pnl_pct": 2.91,
-      "collateral_ratio": 1.715,
+      "pnl_pct": 4.11,
+      "collateral_ratio": 1.893,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-28",
       "entry_kospi": 5170.81,
       "amount": 298.2999999999993,
-      "pnl_pct": -1.49,
-      "collateral_ratio": 1.642,
-      "status": "watch"
+      "pnl_pct": -2.11,
+      "collateral_ratio": 1.78,
+      "status": "safe"
     },
     {
       "entry_date": "2026-01-29",
       "entry_kospi": 5221.25,
       "amount": 475.59999999999854,
-      "pnl_pct": -2.45,
-      "collateral_ratio": 1.626,
-      "status": "watch"
+      "pnl_pct": -3.45,
+      "collateral_ratio": 1.755,
+      "status": "safe"
     },
     {
       "entry_date": "2026-01-30",
       "entry_kospi": 5224.36,
       "amount": 136.0,
-      "pnl_pct": -2.5,
-      "collateral_ratio": 1.625,
-      "status": "watch"
+      "pnl_pct": -3.54,
+      "collateral_ratio": 1.754,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-02",
       "entry_kospi": 4949.67,
       "amount": 161.60000000000218,
-      "pnl_pct": 2.91,
-      "collateral_ratio": 1.715,
+      "pnl_pct": 4.1,
+      "collateral_ratio": 1.893,
       "status": "safe"
     },
     {
       "entry_date": "2026-02-03",
       "entry_kospi": 5288.08,
       "amount": 54.0,
-      "pnl_pct": -3.68,
-      "collateral_ratio": 1.605,
-      "status": "watch"
+      "pnl_pct": -5.19,
+      "collateral_ratio": 1.724,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-04",
       "entry_kospi": 5371.1,
       "amount": 261.0,
-      "pnl_pct": -5.17,
-      "collateral_ratio": 1.581,
-      "status": "watch"
+      "pnl_pct": -7.3,
+      "collateral_ratio": 1.686,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-06",
       "entry_kospi": 5089.14,
       "amount": 299.5,
-      "pnl_pct": 0.09,
-      "collateral_ratio": 1.668,
+      "pnl_pct": 0.12,
+      "collateral_ratio": 1.82,
       "status": "safe"
     },
     {
       "entry_date": "2026-02-09",
       "entry_kospi": 5298.04,
       "amount": 224.0,
-      "pnl_pct": -3.86,
-      "collateral_ratio": 1.602,
-      "status": "watch"
+      "pnl_pct": -5.45,
+      "collateral_ratio": 1.719,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-12",
       "entry_kospi": 5522.27,
       "amount": 146.70000000000073,
-      "pnl_pct": -7.76,
-      "collateral_ratio": 1.537,
-      "status": "watch"
+      "pnl_pct": -10.96,
+      "collateral_ratio": 1.619,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-13",
       "entry_kospi": 5507.01,
       "amount": 11.399999999997817,
-      "pnl_pct": -7.51,
-      "collateral_ratio": 1.542,
-      "status": "watch"
+      "pnl_pct": -10.6,
+      "collateral_ratio": 1.625,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-19",
       "entry_kospi": 5677.25,
       "amount": 110.70000000000073,
-      "pnl_pct": -10.28,
-      "collateral_ratio": 1.495,
+      "pnl_pct": -14.52,
+      "collateral_ratio": 1.554,
       "status": "watch"
     },
     {
       "entry_date": "2026-02-20",
       "entry_kospi": 5808.53,
       "amount": 39.900000000001455,
-      "pnl_pct": -12.31,
-      "collateral_ratio": 1.462,
+      "pnl_pct": -17.38,
+      "collateral_ratio": 1.502,
       "status": "watch"
     },
     {
       "entry_date": "2026-02-23",
       "entry_kospi": 5846.09,
       "amount": 62.29999999999927,
-      "pnl_pct": -12.87,
-      "collateral_ratio": 1.452,
+      "pnl_pct": -18.17,
+      "collateral_ratio": 1.488,
       "status": "watch"
     },
     {
       "entry_date": "2026-02-24",
       "entry_kospi": 5969.64,
       "amount": 240.29999999999927,
-      "pnl_pct": -14.68,
-      "collateral_ratio": 1.422,
-      "status": "marginCall"
+      "pnl_pct": -20.72,
+      "collateral_ratio": 1.441,
+      "status": "watch"
     },
     {
       "entry_date": "2026-02-25",
       "entry_kospi": 6083.86,
       "amount": 160.09999999999854,
-      "pnl_pct": -16.28,
-      "collateral_ratio": 1.395,
-      "status": "marginCall"
+      "pnl_pct": -22.98,
+      "collateral_ratio": 1.4,
+      "status": "watch"
     },
     {
       "entry_date": "2026-02-26",
       "entry_kospi": 6307.27,
       "amount": 237.0,
-      "pnl_pct": -19.24,
-      "collateral_ratio": 1.346,
+      "pnl_pct": -27.17,
+      "collateral_ratio": 1.324,
       "status": "marginCall"
     },
     {
       "entry_date": "2026-02-27",
       "entry_kospi": 6244.13,
       "amount": 285.0,
-      "pnl_pct": -18.43,
-      "collateral_ratio": 1.36,
+      "pnl_pct": -26.02,
+      "collateral_ratio": 1.345,
       "status": "marginCall"
     }
   ],
@@ -12354,1016 +12354,1016 @@ export const COHORT_DATA = {
       "entry_date": "2025-06-17",
       "entry_kospi": 2950.3,
       "amount": 51.800000000010186,
-      "pnl_pct": 72.64,
-      "collateral_ratio": 2.877,
+      "pnl_pct": 102.57,
+      "collateral_ratio": 3.683,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-18",
       "entry_kospi": 2972.19,
       "amount": 180.0,
-      "pnl_pct": 71.37,
-      "collateral_ratio": 2.856,
+      "pnl_pct": 100.77,
+      "collateral_ratio": 3.65,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-19",
       "entry_kospi": 2977.74,
       "amount": 47.5,
-      "pnl_pct": 71.05,
-      "collateral_ratio": 2.851,
+      "pnl_pct": 100.32,
+      "collateral_ratio": 3.642,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-20",
       "entry_kospi": 3021.84,
       "amount": 215.5,
-      "pnl_pct": 68.56,
-      "collateral_ratio": 2.809,
+      "pnl_pct": 96.8,
+      "collateral_ratio": 3.578,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-23",
       "entry_kospi": 3014.47,
       "amount": 274.40000000000146,
-      "pnl_pct": 68.97,
-      "collateral_ratio": 2.816,
+      "pnl_pct": 97.38,
+      "collateral_ratio": 3.589,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-24",
       "entry_kospi": 3103.64,
       "amount": 40.900000000001455,
-      "pnl_pct": 64.12,
-      "collateral_ratio": 2.735,
+      "pnl_pct": 90.52,
+      "collateral_ratio": 3.464,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-25",
       "entry_kospi": 3108.25,
       "amount": 439.2999999999993,
-      "pnl_pct": 63.87,
-      "collateral_ratio": 2.731,
+      "pnl_pct": 90.18,
+      "collateral_ratio": 3.458,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-27",
       "entry_kospi": 3055.94,
       "amount": 146.5,
-      "pnl_pct": 66.68,
-      "collateral_ratio": 2.778,
+      "pnl_pct": 94.14,
+      "collateral_ratio": 3.53,
       "status": "safe"
     },
     {
       "entry_date": "2025-06-30",
       "entry_kospi": 3071.7,
       "amount": 108.79999999999927,
-      "pnl_pct": 65.82,
-      "collateral_ratio": 2.764,
+      "pnl_pct": 92.93,
+      "collateral_ratio": 3.508,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-01",
       "entry_kospi": 3089.65,
       "amount": 96.0,
-      "pnl_pct": 64.86,
-      "collateral_ratio": 2.748,
+      "pnl_pct": 91.57,
+      "collateral_ratio": 3.483,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-02",
       "entry_kospi": 3075.06,
       "amount": 2.0,
-      "pnl_pct": 65.64,
-      "collateral_ratio": 2.761,
+      "pnl_pct": 92.68,
+      "collateral_ratio": 3.503,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-04",
       "entry_kospi": 3054.28,
       "amount": 24.099999999998545,
-      "pnl_pct": 66.77,
-      "collateral_ratio": 2.779,
+      "pnl_pct": 94.27,
+      "collateral_ratio": 3.532,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-08",
       "entry_kospi": 3114.95,
       "amount": 25.69999999999709,
-      "pnl_pct": 63.52,
-      "collateral_ratio": 2.725,
+      "pnl_pct": 89.68,
+      "collateral_ratio": 3.449,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-09",
       "entry_kospi": 3133.74,
       "amount": 31.600000000002183,
-      "pnl_pct": 62.54,
-      "collateral_ratio": 2.709,
+      "pnl_pct": 88.3,
+      "collateral_ratio": 3.424,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-10",
       "entry_kospi": 3183.23,
       "amount": 154.5,
-      "pnl_pct": 60.01,
-      "collateral_ratio": 2.667,
+      "pnl_pct": 84.73,
+      "collateral_ratio": 3.359,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-11",
       "entry_kospi": 3175.77,
       "amount": 255.09999999999854,
-      "pnl_pct": 60.39,
-      "collateral_ratio": 2.673,
+      "pnl_pct": 85.26,
+      "collateral_ratio": 3.368,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-14",
       "entry_kospi": 3202.03,
       "amount": 68.5,
-      "pnl_pct": 59.07,
-      "collateral_ratio": 2.651,
+      "pnl_pct": 83.4,
+      "collateral_ratio": 3.335,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-15",
       "entry_kospi": 3215.28,
       "amount": 63.20000000000073,
-      "pnl_pct": 58.42,
-      "collateral_ratio": 2.64,
+      "pnl_pct": 82.48,
+      "collateral_ratio": 3.318,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-16",
       "entry_kospi": 3186.38,
       "amount": 67.79999999999927,
-      "pnl_pct": 59.85,
-      "collateral_ratio": 2.664,
+      "pnl_pct": 84.51,
+      "collateral_ratio": 3.355,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-17",
       "entry_kospi": 3192.29,
       "amount": 117.90000000000146,
-      "pnl_pct": 59.56,
-      "collateral_ratio": 2.659,
+      "pnl_pct": 84.09,
+      "collateral_ratio": 3.347,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-18",
       "entry_kospi": 3188.07,
       "amount": 154.59999999999854,
-      "pnl_pct": 59.77,
-      "collateral_ratio": 2.663,
+      "pnl_pct": 84.39,
+      "collateral_ratio": 3.352,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-21",
       "entry_kospi": 3210.81,
       "amount": 11.200000000000728,
-      "pnl_pct": 58.64,
-      "collateral_ratio": 2.644,
+      "pnl_pct": 82.79,
+      "collateral_ratio": 3.323,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-24",
       "entry_kospi": 3190.45,
       "amount": 101.20000000000073,
-      "pnl_pct": 59.65,
-      "collateral_ratio": 2.661,
+      "pnl_pct": 84.22,
+      "collateral_ratio": 3.349,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-25",
       "entry_kospi": 3196.05,
       "amount": 5.099999999998545,
-      "pnl_pct": 59.37,
-      "collateral_ratio": 2.656,
+      "pnl_pct": 83.82,
+      "collateral_ratio": 3.342,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-29",
       "entry_kospi": 3230.57,
       "amount": 9.100000000002183,
-      "pnl_pct": 57.67,
-      "collateral_ratio": 2.628,
+      "pnl_pct": 81.42,
+      "collateral_ratio": 3.299,
       "status": "safe"
     },
     {
       "entry_date": "2025-07-30",
       "entry_kospi": 3254.47,
       "amount": 70.09999999999854,
-      "pnl_pct": 56.51,
-      "collateral_ratio": 2.608,
+      "pnl_pct": 79.78,
+      "collateral_ratio": 3.269,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-04",
       "entry_kospi": 3147.75,
       "amount": 4.0,
-      "pnl_pct": 61.82,
-      "collateral_ratio": 2.697,
+      "pnl_pct": 87.28,
+      "collateral_ratio": 3.405,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-07",
       "entry_kospi": 3227.68,
       "amount": 72.90000000000146,
-      "pnl_pct": 57.81,
-      "collateral_ratio": 2.63,
+      "pnl_pct": 81.62,
+      "collateral_ratio": 3.302,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-08",
       "entry_kospi": 3210.01,
       "amount": 208.79999999999927,
-      "pnl_pct": 58.68,
-      "collateral_ratio": 2.645,
+      "pnl_pct": 82.85,
+      "collateral_ratio": 3.324,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-11",
       "entry_kospi": 3206.77,
       "amount": 248.20000000000073,
-      "pnl_pct": 58.84,
-      "collateral_ratio": 2.647,
+      "pnl_pct": 83.07,
+      "collateral_ratio": 3.329,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-12",
       "entry_kospi": 3189.91,
       "amount": 151.59999999999854,
-      "pnl_pct": 59.68,
-      "collateral_ratio": 2.661,
+      "pnl_pct": 84.26,
+      "collateral_ratio": 3.35,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-13",
       "entry_kospi": 3224.37,
       "amount": 12.099999999998545,
-      "pnl_pct": 57.97,
-      "collateral_ratio": 2.633,
+      "pnl_pct": 81.85,
+      "collateral_ratio": 3.306,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-14",
       "entry_kospi": 3225.66,
       "amount": 8.900000000001455,
-      "pnl_pct": 57.91,
-      "collateral_ratio": 2.632,
+      "pnl_pct": 81.76,
+      "collateral_ratio": 3.305,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-18",
       "entry_kospi": 3177.28,
       "amount": 31.799999999999272,
-      "pnl_pct": 60.31,
-      "collateral_ratio": 2.672,
+      "pnl_pct": 85.15,
+      "collateral_ratio": 3.366,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-19",
       "entry_kospi": 3151.56,
       "amount": 35.20000000000073,
-      "pnl_pct": 61.62,
-      "collateral_ratio": 2.694,
+      "pnl_pct": 87.0,
+      "collateral_ratio": 3.4,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-20",
       "entry_kospi": 3130.09,
       "amount": 17.0,
-      "pnl_pct": 62.73,
-      "collateral_ratio": 2.712,
+      "pnl_pct": 88.57,
+      "collateral_ratio": 3.428,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-25",
       "entry_kospi": 3209.86,
       "amount": 3.7000000000007276,
-      "pnl_pct": 58.68,
-      "collateral_ratio": 2.645,
+      "pnl_pct": 82.86,
+      "collateral_ratio": 3.325,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-27",
       "entry_kospi": 3187.16,
       "amount": 33.39999999999782,
-      "pnl_pct": 59.81,
-      "collateral_ratio": 2.664,
+      "pnl_pct": 84.45,
+      "collateral_ratio": 3.354,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-28",
       "entry_kospi": 3196.32,
       "amount": 182.5,
-      "pnl_pct": 59.36,
-      "collateral_ratio": 2.656,
+      "pnl_pct": 83.8,
+      "collateral_ratio": 3.342,
       "status": "safe"
     },
     {
       "entry_date": "2025-08-29",
       "entry_kospi": 3186.01,
       "amount": 84.10000000000218,
-      "pnl_pct": 59.87,
-      "collateral_ratio": 2.665,
+      "pnl_pct": 84.53,
+      "collateral_ratio": 3.355,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-01",
       "entry_kospi": 3142.93,
       "amount": 63.79999999999927,
-      "pnl_pct": 62.06,
-      "collateral_ratio": 2.701,
+      "pnl_pct": 87.63,
+      "collateral_ratio": 3.411,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-02",
       "entry_kospi": 3172.35,
       "amount": 37.099999999998545,
-      "pnl_pct": 60.56,
-      "collateral_ratio": 2.676,
+      "pnl_pct": 85.5,
+      "collateral_ratio": 3.373,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-05",
       "entry_kospi": 3205.12,
       "amount": 69.0,
-      "pnl_pct": 58.92,
-      "collateral_ratio": 2.649,
+      "pnl_pct": 83.19,
+      "collateral_ratio": 3.331,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-08",
       "entry_kospi": 3219.59,
       "amount": 33.400000000001455,
-      "pnl_pct": 58.2,
-      "collateral_ratio": 2.637,
+      "pnl_pct": 82.18,
+      "collateral_ratio": 3.312,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-09",
       "entry_kospi": 3260.05,
       "amount": 96.69999999999709,
-      "pnl_pct": 56.24,
-      "collateral_ratio": 2.604,
+      "pnl_pct": 79.41,
+      "collateral_ratio": 3.262,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-10",
       "entry_kospi": 3314.53,
       "amount": 45.10000000000218,
-      "pnl_pct": 53.67,
-      "collateral_ratio": 2.561,
+      "pnl_pct": 75.78,
+      "collateral_ratio": 3.196,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-11",
       "entry_kospi": 3344.2,
       "amount": 50.099999999998545,
-      "pnl_pct": 52.31,
-      "collateral_ratio": 2.538,
+      "pnl_pct": 73.86,
+      "collateral_ratio": 3.161,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-15",
       "entry_kospi": 3407.31,
       "amount": 89.20000000000073,
-      "pnl_pct": 49.49,
-      "collateral_ratio": 2.491,
+      "pnl_pct": 69.87,
+      "collateral_ratio": 3.089,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-16",
       "entry_kospi": 3449.62,
       "amount": 26.100000000002183,
-      "pnl_pct": 47.66,
-      "collateral_ratio": 2.461,
+      "pnl_pct": 67.28,
+      "collateral_ratio": 3.042,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-17",
       "entry_kospi": 3413.4,
       "amount": 247.5,
-      "pnl_pct": 49.22,
-      "collateral_ratio": 2.487,
+      "pnl_pct": 69.5,
+      "collateral_ratio": 3.082,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-18",
       "entry_kospi": 3461.3,
       "amount": 99.39999999999782,
-      "pnl_pct": 47.16,
-      "collateral_ratio": 2.453,
+      "pnl_pct": 66.58,
+      "collateral_ratio": 3.029,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-19",
       "entry_kospi": 3445.24,
       "amount": 162.5,
-      "pnl_pct": 47.84,
-      "collateral_ratio": 2.464,
+      "pnl_pct": 67.55,
+      "collateral_ratio": 3.046,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-22",
       "entry_kospi": 3468.65,
       "amount": 121.5,
-      "pnl_pct": 46.85,
-      "collateral_ratio": 2.447,
+      "pnl_pct": 66.14,
+      "collateral_ratio": 3.021,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-23",
       "entry_kospi": 3486.19,
       "amount": 120.60000000000218,
-      "pnl_pct": 46.11,
-      "collateral_ratio": 2.435,
+      "pnl_pct": 65.1,
+      "collateral_ratio": 3.002,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-24",
       "entry_kospi": 3472.14,
       "amount": 71.0,
-      "pnl_pct": 46.7,
-      "collateral_ratio": 2.445,
+      "pnl_pct": 65.93,
+      "collateral_ratio": 3.017,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-25",
       "entry_kospi": 3471.11,
       "amount": 154.59999999999854,
-      "pnl_pct": 46.74,
-      "collateral_ratio": 2.446,
+      "pnl_pct": 65.99,
+      "collateral_ratio": 3.018,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-26",
       "entry_kospi": 3386.05,
       "amount": 23.599999999998545,
-      "pnl_pct": 50.43,
-      "collateral_ratio": 2.507,
+      "pnl_pct": 71.2,
+      "collateral_ratio": 3.113,
       "status": "safe"
     },
     {
       "entry_date": "2025-09-30",
       "entry_kospi": 3424.6,
       "amount": 36.599999999998545,
-      "pnl_pct": 48.73,
-      "collateral_ratio": 2.479,
+      "pnl_pct": 68.81,
+      "collateral_ratio": 3.069,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-02",
       "entry_kospi": 3549.21,
       "amount": 1.7999999999992724,
-      "pnl_pct": 43.51,
-      "collateral_ratio": 2.392,
+      "pnl_pct": 61.43,
+      "collateral_ratio": 2.935,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-13",
       "entry_kospi": 3584.55,
       "amount": 24.899999999997817,
-      "pnl_pct": 42.1,
-      "collateral_ratio": 2.368,
+      "pnl_pct": 59.44,
+      "collateral_ratio": 2.899,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-14",
       "entry_kospi": 3561.81,
       "amount": 288.40000000000146,
-      "pnl_pct": 43.0,
-      "collateral_ratio": 2.383,
+      "pnl_pct": 60.72,
+      "collateral_ratio": 2.922,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-15",
       "entry_kospi": 3657.28,
       "amount": 266.0,
-      "pnl_pct": 39.27,
-      "collateral_ratio": 2.321,
+      "pnl_pct": 55.45,
+      "collateral_ratio": 2.826,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-17",
       "entry_kospi": 3748.89,
       "amount": 108.0,
-      "pnl_pct": 35.87,
-      "collateral_ratio": 2.264,
+      "pnl_pct": 50.64,
+      "collateral_ratio": 2.739,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-20",
       "entry_kospi": 3814.69,
       "amount": 172.59999999999854,
-      "pnl_pct": 33.52,
-      "collateral_ratio": 2.225,
+      "pnl_pct": 47.33,
+      "collateral_ratio": 2.679,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-22",
       "entry_kospi": 3883.68,
       "amount": 314.09999999999854,
-      "pnl_pct": 31.15,
-      "collateral_ratio": 2.186,
+      "pnl_pct": 43.98,
+      "collateral_ratio": 2.618,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-23",
       "entry_kospi": 3845.56,
       "amount": 173.60000000000218,
-      "pnl_pct": 32.45,
-      "collateral_ratio": 2.208,
+      "pnl_pct": 45.82,
+      "collateral_ratio": 2.651,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-24",
       "entry_kospi": 3941.59,
       "amount": 229.20000000000073,
-      "pnl_pct": 29.23,
-      "collateral_ratio": 2.154,
+      "pnl_pct": 41.26,
+      "collateral_ratio": 2.568,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-27",
       "entry_kospi": 4042.83,
       "amount": 134.6999999999971,
-      "pnl_pct": 25.99,
-      "collateral_ratio": 2.1,
+      "pnl_pct": 36.69,
+      "collateral_ratio": 2.485,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-28",
       "entry_kospi": 4010.41,
       "amount": 36.400000000001455,
-      "pnl_pct": 27.01,
-      "collateral_ratio": 2.117,
+      "pnl_pct": 38.13,
+      "collateral_ratio": 2.511,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-29",
       "entry_kospi": 4081.15,
       "amount": 267.2000000000007,
-      "pnl_pct": 24.81,
-      "collateral_ratio": 2.08,
+      "pnl_pct": 35.02,
+      "collateral_ratio": 2.455,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-30",
       "entry_kospi": 4086.89,
       "amount": 177.70000000000073,
-      "pnl_pct": 24.63,
-      "collateral_ratio": 2.077,
+      "pnl_pct": 34.78,
+      "collateral_ratio": 2.45,
       "status": "safe"
     },
     {
       "entry_date": "2025-10-31",
       "entry_kospi": 4107.5,
       "amount": 250.0,
-      "pnl_pct": 24.01,
-      "collateral_ratio": 2.067,
+      "pnl_pct": 33.89,
+      "collateral_ratio": 2.434,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-04",
       "entry_kospi": 4121.74,
       "amount": 49.29999999999927,
-      "pnl_pct": 23.58,
-      "collateral_ratio": 2.06,
+      "pnl_pct": 33.29,
+      "collateral_ratio": 2.423,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-05",
       "entry_kospi": 4004.42,
       "amount": 305.2000000000007,
-      "pnl_pct": 27.2,
-      "collateral_ratio": 2.12,
+      "pnl_pct": 38.4,
+      "collateral_ratio": 2.516,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-06",
       "entry_kospi": 4026.45,
       "amount": 45.69999999999709,
-      "pnl_pct": 26.5,
-      "collateral_ratio": 2.108,
+      "pnl_pct": 37.42,
+      "collateral_ratio": 2.499,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-07",
       "entry_kospi": 3953.76,
       "amount": 347.5,
-      "pnl_pct": 28.83,
-      "collateral_ratio": 2.147,
+      "pnl_pct": 40.7,
+      "collateral_ratio": 2.558,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-12",
       "entry_kospi": 4150.39,
       "amount": 14.400000000001455,
-      "pnl_pct": 22.72,
-      "collateral_ratio": 2.045,
+      "pnl_pct": 32.08,
+      "collateral_ratio": 2.402,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-13",
       "entry_kospi": 4170.63,
       "amount": 232.5,
-      "pnl_pct": 22.13,
-      "collateral_ratio": 2.035,
+      "pnl_pct": 31.24,
+      "collateral_ratio": 2.386,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-14",
       "entry_kospi": 4011.57,
       "amount": 143.79999999999927,
-      "pnl_pct": 26.97,
-      "collateral_ratio": 2.116,
+      "pnl_pct": 38.08,
+      "collateral_ratio": 2.511,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-17",
       "entry_kospi": 4089.25,
       "amount": 203.79999999999927,
-      "pnl_pct": 24.56,
-      "collateral_ratio": 2.076,
+      "pnl_pct": 34.68,
+      "collateral_ratio": 2.449,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-18",
       "entry_kospi": 3953.62,
       "amount": 199.0,
-      "pnl_pct": 28.83,
-      "collateral_ratio": 2.147,
+      "pnl_pct": 40.71,
+      "collateral_ratio": 2.558,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-19",
       "entry_kospi": 3929.51,
       "amount": 46.400000000001455,
-      "pnl_pct": 29.62,
-      "collateral_ratio": 2.16,
+      "pnl_pct": 41.82,
+      "collateral_ratio": 2.579,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-20",
       "entry_kospi": 4004.85,
       "amount": 7.700000000000728,
-      "pnl_pct": 27.18,
-      "collateral_ratio": 2.12,
+      "pnl_pct": 38.38,
+      "collateral_ratio": 2.516,
       "status": "safe"
     },
     {
       "entry_date": "2025-11-28",
       "entry_kospi": 3926.59,
       "amount": 7.099999999998545,
-      "pnl_pct": 29.72,
-      "collateral_ratio": 2.162,
+      "pnl_pct": 41.96,
+      "collateral_ratio": 2.581,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-01",
       "entry_kospi": 3920.37,
       "amount": 136.20000000000073,
-      "pnl_pct": 29.92,
-      "collateral_ratio": 2.165,
+      "pnl_pct": 42.25,
+      "collateral_ratio": 2.586,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-02",
       "entry_kospi": 3994.93,
       "amount": 209.5,
-      "pnl_pct": 27.5,
-      "collateral_ratio": 2.125,
+      "pnl_pct": 38.83,
+      "collateral_ratio": 2.524,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-03",
       "entry_kospi": 4036.3,
       "amount": 24.200000000000728,
-      "pnl_pct": 26.19,
-      "collateral_ratio": 2.103,
+      "pnl_pct": 36.98,
+      "collateral_ratio": 2.491,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-04",
       "entry_kospi": 4028.51,
       "amount": 71.39999999999782,
-      "pnl_pct": 26.44,
-      "collateral_ratio": 2.107,
+      "pnl_pct": 37.33,
+      "collateral_ratio": 2.497,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-05",
       "entry_kospi": 4100.05,
       "amount": 182.90000000000146,
-      "pnl_pct": 24.23,
-      "collateral_ratio": 2.071,
+      "pnl_pct": 34.21,
+      "collateral_ratio": 2.44,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-08",
       "entry_kospi": 4154.85,
       "amount": 277.3999999999978,
-      "pnl_pct": 22.59,
-      "collateral_ratio": 2.043,
+      "pnl_pct": 31.9,
+      "collateral_ratio": 2.398,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-10",
       "entry_kospi": 4135.0,
       "amount": 72.69999999999709,
-      "pnl_pct": 23.18,
-      "collateral_ratio": 2.053,
+      "pnl_pct": 32.73,
+      "collateral_ratio": 2.413,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-15",
       "entry_kospi": 4090.59,
       "amount": 78.90000000000146,
-      "pnl_pct": 24.52,
-      "collateral_ratio": 2.075,
+      "pnl_pct": 34.62,
+      "collateral_ratio": 2.448,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-17",
       "entry_kospi": 4056.41,
       "amount": 197.29999999999927,
-      "pnl_pct": 25.57,
-      "collateral_ratio": 2.093,
+      "pnl_pct": 36.1,
+      "collateral_ratio": 2.475,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-24",
       "entry_kospi": 4108.62,
       "amount": 36.70000000000073,
-      "pnl_pct": 23.97,
-      "collateral_ratio": 2.066,
+      "pnl_pct": 33.85,
+      "collateral_ratio": 2.434,
       "status": "safe"
     },
     {
       "entry_date": "2025-12-29",
       "entry_kospi": 4220.56,
       "amount": 45.70000000000073,
-      "pnl_pct": 20.68,
-      "collateral_ratio": 2.011,
+      "pnl_pct": 29.2,
+      "collateral_ratio": 2.349,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-02",
       "entry_kospi": 4309.63,
       "amount": 159.8000000000029,
-      "pnl_pct": 18.19,
-      "collateral_ratio": 1.97,
+      "pnl_pct": 25.68,
+      "collateral_ratio": 2.285,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-05",
       "entry_kospi": 4457.52,
       "amount": 203.89999999999782,
-      "pnl_pct": 14.27,
-      "collateral_ratio": 1.904,
+      "pnl_pct": 20.15,
+      "collateral_ratio": 2.184,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-06",
       "entry_kospi": 4525.48,
       "amount": 69.0,
-      "pnl_pct": 12.55,
-      "collateral_ratio": 1.876,
+      "pnl_pct": 17.72,
+      "collateral_ratio": 2.14,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-07",
       "entry_kospi": 4551.06,
       "amount": 170.90000000000146,
-      "pnl_pct": 11.92,
-      "collateral_ratio": 1.865,
+      "pnl_pct": 16.83,
+      "collateral_ratio": 2.124,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-08",
       "entry_kospi": 4552.37,
       "amount": 317.2999999999993,
-      "pnl_pct": 11.89,
-      "collateral_ratio": 1.865,
+      "pnl_pct": 16.78,
+      "collateral_ratio": 2.123,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-09",
       "entry_kospi": 4586.32,
       "amount": 158.70000000000073,
-      "pnl_pct": 11.06,
-      "collateral_ratio": 1.851,
+      "pnl_pct": 15.61,
+      "collateral_ratio": 2.102,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-12",
       "entry_kospi": 4624.79,
       "amount": 176.70000000000073,
-      "pnl_pct": 10.14,
-      "collateral_ratio": 1.836,
+      "pnl_pct": 14.31,
+      "collateral_ratio": 2.078,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-13",
       "entry_kospi": 4692.64,
       "amount": 34.29999999999927,
-      "pnl_pct": 8.54,
-      "collateral_ratio": 1.809,
+      "pnl_pct": 12.06,
+      "collateral_ratio": 2.037,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-14",
       "entry_kospi": 4723.1,
       "amount": 36.29999999999927,
-      "pnl_pct": 7.84,
-      "collateral_ratio": 1.797,
+      "pnl_pct": 11.07,
+      "collateral_ratio": 2.02,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-15",
       "entry_kospi": 4797.55,
       "amount": 150.59999999999854,
-      "pnl_pct": 6.17,
-      "collateral_ratio": 1.769,
+      "pnl_pct": 8.71,
+      "collateral_ratio": 1.977,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-16",
       "entry_kospi": 4840.74,
       "amount": 188.8000000000029,
-      "pnl_pct": 5.22,
-      "collateral_ratio": 1.754,
+      "pnl_pct": 7.37,
+      "collateral_ratio": 1.952,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-19",
       "entry_kospi": 4904.66,
       "amount": 60.89999999999782,
-      "pnl_pct": 3.85,
-      "collateral_ratio": 1.731,
+      "pnl_pct": 5.44,
+      "collateral_ratio": 1.917,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-21",
       "entry_kospi": 4909.93,
       "amount": 148.5,
-      "pnl_pct": 3.74,
-      "collateral_ratio": 1.729,
+      "pnl_pct": 5.28,
+      "collateral_ratio": 1.914,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-23",
       "entry_kospi": 4990.07,
       "amount": 100.09999999999854,
-      "pnl_pct": 2.07,
-      "collateral_ratio": 1.701,
+      "pnl_pct": 2.93,
+      "collateral_ratio": 1.871,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-26",
       "entry_kospi": 4949.59,
       "amount": 326.0,
-      "pnl_pct": 2.91,
-      "collateral_ratio": 1.715,
+      "pnl_pct": 4.11,
+      "collateral_ratio": 1.893,
       "status": "safe"
     },
     {
       "entry_date": "2026-01-28",
       "entry_kospi": 5170.81,
       "amount": 298.2999999999993,
-      "pnl_pct": -1.49,
-      "collateral_ratio": 1.642,
-      "status": "watch"
+      "pnl_pct": -2.11,
+      "collateral_ratio": 1.78,
+      "status": "safe"
     },
     {
       "entry_date": "2026-01-29",
       "entry_kospi": 5221.25,
       "amount": 475.59999999999854,
-      "pnl_pct": -2.45,
-      "collateral_ratio": 1.626,
-      "status": "watch"
+      "pnl_pct": -3.45,
+      "collateral_ratio": 1.755,
+      "status": "safe"
     },
     {
       "entry_date": "2026-01-30",
       "entry_kospi": 5224.36,
       "amount": 136.0,
-      "pnl_pct": -2.5,
-      "collateral_ratio": 1.625,
-      "status": "watch"
+      "pnl_pct": -3.54,
+      "collateral_ratio": 1.754,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-02",
       "entry_kospi": 4949.67,
       "amount": 161.60000000000218,
-      "pnl_pct": 2.91,
-      "collateral_ratio": 1.715,
+      "pnl_pct": 4.1,
+      "collateral_ratio": 1.893,
       "status": "safe"
     },
     {
       "entry_date": "2026-02-03",
       "entry_kospi": 5288.08,
       "amount": 54.0,
-      "pnl_pct": -3.68,
-      "collateral_ratio": 1.605,
-      "status": "watch"
+      "pnl_pct": -5.19,
+      "collateral_ratio": 1.724,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-04",
       "entry_kospi": 5371.1,
       "amount": 407.2000000000007,
-      "pnl_pct": -5.17,
-      "collateral_ratio": 1.581,
-      "status": "watch"
+      "pnl_pct": -7.3,
+      "collateral_ratio": 1.686,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-06",
       "entry_kospi": 5089.14,
       "amount": 299.5,
-      "pnl_pct": 0.09,
-      "collateral_ratio": 1.668,
+      "pnl_pct": 0.12,
+      "collateral_ratio": 1.82,
       "status": "safe"
     },
     {
       "entry_date": "2026-02-09",
       "entry_kospi": 5298.04,
       "amount": 510.2000000000007,
-      "pnl_pct": -3.86,
-      "collateral_ratio": 1.602,
-      "status": "watch"
+      "pnl_pct": -5.45,
+      "collateral_ratio": 1.719,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-12",
       "entry_kospi": 5522.27,
       "amount": 146.70000000000073,
-      "pnl_pct": -7.76,
-      "collateral_ratio": 1.537,
-      "status": "watch"
+      "pnl_pct": -10.96,
+      "collateral_ratio": 1.619,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-13",
       "entry_kospi": 5507.01,
       "amount": 11.399999999997817,
-      "pnl_pct": -7.51,
-      "collateral_ratio": 1.542,
-      "status": "watch"
+      "pnl_pct": -10.6,
+      "collateral_ratio": 1.625,
+      "status": "safe"
     },
     {
       "entry_date": "2026-02-19",
       "entry_kospi": 5677.25,
       "amount": 110.70000000000073,
-      "pnl_pct": -10.28,
-      "collateral_ratio": 1.495,
+      "pnl_pct": -14.52,
+      "collateral_ratio": 1.554,
       "status": "watch"
     },
     {
       "entry_date": "2026-02-20",
       "entry_kospi": 5808.53,
       "amount": 39.900000000001455,
-      "pnl_pct": -12.31,
-      "collateral_ratio": 1.462,
+      "pnl_pct": -17.38,
+      "collateral_ratio": 1.502,
       "status": "watch"
     },
     {
       "entry_date": "2026-02-23",
       "entry_kospi": 5846.09,
       "amount": 62.29999999999927,
-      "pnl_pct": -12.87,
-      "collateral_ratio": 1.452,
+      "pnl_pct": -18.17,
+      "collateral_ratio": 1.488,
       "status": "watch"
     },
     {
       "entry_date": "2026-02-24",
       "entry_kospi": 5969.64,
       "amount": 240.29999999999927,
-      "pnl_pct": -14.68,
-      "collateral_ratio": 1.422,
-      "status": "marginCall"
+      "pnl_pct": -20.72,
+      "collateral_ratio": 1.441,
+      "status": "watch"
     },
     {
       "entry_date": "2026-02-25",
       "entry_kospi": 6083.86,
       "amount": 160.09999999999854,
-      "pnl_pct": -16.28,
-      "collateral_ratio": 1.395,
-      "status": "marginCall"
+      "pnl_pct": -22.98,
+      "collateral_ratio": 1.4,
+      "status": "watch"
     },
     {
       "entry_date": "2026-02-26",
       "entry_kospi": 6307.27,
       "amount": 237.0,
-      "pnl_pct": -19.24,
-      "collateral_ratio": 1.346,
+      "pnl_pct": -27.17,
+      "collateral_ratio": 1.324,
       "status": "marginCall"
     },
     {
       "entry_date": "2026-02-27",
       "entry_kospi": 6244.13,
       "amount": 285.0,
-      "pnl_pct": -18.43,
-      "collateral_ratio": 1.36,
+      "pnl_pct": -26.02,
+      "collateral_ratio": 1.345,
       "status": "marginCall"
     }
   ],
@@ -13587,40 +13587,40 @@ export const COHORT_DATA = {
     {
       "range": "5100-5200",
       "bin": 5100,
-      "safe": 0,
-      "watch": 298.2999999999993,
+      "safe": 298.2999999999993,
+      "watch": 0,
       "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "5200-5300",
       "bin": 5200,
-      "safe": 0,
-      "watch": 889.5999999999985,
+      "safe": 889.5999999999985,
+      "watch": 0,
       "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "5300-5400",
       "bin": 5300,
-      "safe": 0,
-      "watch": 261.0,
+      "safe": 261.0,
+      "watch": 0,
       "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "5500-5600",
       "bin": 5500,
-      "safe": 0,
-      "watch": 158.09999999999854,
+      "safe": 158.09999999999854,
+      "watch": 0,
       "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "5600-5700",
       "bin": 5600,
-      "safe": 0,
-      "watch": 110.70000000000073,
+      "safe": 110.70000000000073,
+      "watch": 0,
       "margin_call": 0,
       "forced_liq": 0
     },
@@ -13636,32 +13636,32 @@ export const COHORT_DATA = {
       "range": "5900-6000",
       "bin": 5900,
       "safe": 0,
-      "watch": 0,
-      "margin_call": 240.29999999999927,
+      "watch": 240.29999999999927,
+      "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "6000-6100",
       "bin": 6000,
       "safe": 0,
-      "watch": 0,
-      "margin_call": 160.09999999999854,
+      "watch": 160.09999999999854,
+      "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "6200-6300",
       "bin": 6200,
       "safe": 0,
-      "watch": 0,
-      "margin_call": 285.0,
+      "watch": 285.0,
+      "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "6300-6400",
       "bin": 6300,
       "safe": 0,
-      "watch": 0,
-      "margin_call": 237.0,
+      "watch": 237.0,
+      "margin_call": 0,
       "forced_liq": 0
     }
   ],
@@ -13845,40 +13845,40 @@ export const COHORT_DATA = {
     {
       "range": "5100-5200",
       "bin": 5100,
-      "safe": 0,
-      "watch": 298.2999999999993,
+      "safe": 298.2999999999993,
+      "watch": 0,
       "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "5200-5300",
       "bin": 5200,
-      "safe": 0,
-      "watch": 1175.7999999999993,
+      "safe": 1175.7999999999993,
+      "watch": 0,
       "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "5300-5400",
       "bin": 5300,
-      "safe": 0,
-      "watch": 407.2000000000007,
+      "safe": 407.2000000000007,
+      "watch": 0,
       "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "5500-5600",
       "bin": 5500,
-      "safe": 0,
-      "watch": 158.09999999999854,
+      "safe": 158.09999999999854,
+      "watch": 0,
       "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "5600-5700",
       "bin": 5600,
-      "safe": 0,
-      "watch": 110.70000000000073,
+      "safe": 110.70000000000073,
+      "watch": 0,
       "margin_call": 0,
       "forced_liq": 0
     },
@@ -13894,32 +13894,32 @@ export const COHORT_DATA = {
       "range": "5900-6000",
       "bin": 5900,
       "safe": 0,
-      "watch": 0,
-      "margin_call": 240.29999999999927,
+      "watch": 240.29999999999927,
+      "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "6000-6100",
       "bin": 6000,
       "safe": 0,
-      "watch": 0,
-      "margin_call": 160.09999999999854,
+      "watch": 160.09999999999854,
+      "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "6200-6300",
       "bin": 6200,
       "safe": 0,
-      "watch": 0,
-      "margin_call": 285.0,
+      "watch": 285.0,
+      "margin_call": 0,
       "forced_liq": 0
     },
     {
       "range": "6300-6400",
       "bin": 6300,
       "safe": 0,
-      "watch": 0,
-      "margin_call": 237.0,
+      "watch": 237.0,
+      "margin_call": 0,
       "forced_liq": 0
     }
   ],
@@ -13927,62 +13927,132 @@ export const COHORT_DATA = {
     {
       "shock_pct": -3,
       "expected_kospi": 4941,
-      "margin_call_billion": 461,
-      "forced_liq_billion": 28
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
+      "stock_shocks": {
+        "005930": -2.49,
+        "000660": -4.67,
+        "005380": -2.12,
+        "000270": -2.12,
+        "035420": -2.12,
+        "006400": -2.12,
+        "373220": -2.12,
+        "068270": -2.12,
+        "105560": -2.12,
+        "005490": -2.12,
+        "_residual": -3
+      }
     },
     {
       "shock_pct": -5,
       "expected_kospi": 4839,
-      "margin_call_billion": 518,
-      "forced_liq_billion": 69
+      "margin_call_billion": 49,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
+      "stock_shocks": {
+        "005930": -4.15,
+        "000660": -7.78,
+        "005380": -3.54,
+        "000270": -3.54,
+        "035420": -3.54,
+        "006400": -3.54,
+        "373220": -3.54,
+        "068270": -3.54,
+        "105560": -3.54,
+        "005490": -3.54,
+        "_residual": -5
+      }
     },
     {
       "shock_pct": -10,
       "expected_kospi": 4584,
-      "margin_call_billion": 825,
-      "forced_liq_billion": 161
+      "margin_call_billion": 189,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
+      "stock_shocks": {
+        "005930": -8.3,
+        "000660": -15.57,
+        "005380": -7.08,
+        "000270": -7.08,
+        "035420": -7.08,
+        "006400": -7.08,
+        "373220": -7.08,
+        "068270": -7.08,
+        "105560": -7.08,
+        "005490": -7.08,
+        "_residual": -10
+      }
     },
     {
       "shock_pct": -15,
       "expected_kospi": 4330,
-      "margin_call_billion": 1197,
-      "forced_liq_billion": 425
+      "margin_call_billion": 232,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
+      "stock_shocks": {
+        "005930": -12.45,
+        "000660": -23.35,
+        "005380": -10.62,
+        "000270": -10.62,
+        "035420": -10.62,
+        "006400": -10.62,
+        "373220": -10.62,
+        "068270": -10.62,
+        "105560": -10.62,
+        "005490": -10.62,
+        "_residual": -15
+      }
     },
     {
       "shock_pct": -20,
       "expected_kospi": 4075,
-      "margin_call_billion": 1532,
-      "forced_liq_billion": 765
+      "margin_call_billion": 363,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
+      "stock_shocks": {
+        "005930": -16.6,
+        "000660": -31.14,
+        "005380": -14.16,
+        "000270": -14.16,
+        "035420": -14.16,
+        "006400": -14.16,
+        "373220": -14.16,
+        "068270": -14.16,
+        "105560": -14.16,
+        "005490": -14.16,
+        "_residual": -20
+      }
     },
     {
       "shock_pct": -30,
       "expected_kospi": 3565,
-      "margin_call_billion": 2062,
-      "forced_liq_billion": 2086
+      "margin_call_billion": 599,
+      "forced_liq_billion": 201,
+      "weighted_impact_billion": 7,
+      "stock_shocks": {
+        "005930": -24.9,
+        "000660": -46.7,
+        "005380": -21.25,
+        "000270": -21.25,
+        "035420": -21.25,
+        "006400": -21.25,
+        "373220": -21.25,
+        "068270": -21.25,
+        "105560": -21.25,
+        "005490": -21.25,
+        "_residual": -30
+      }
     }
   ],
   "current_kospi": 5093.54,
   "current_fx": 1466.7,
   "avg_daily_trading_value_billion": 318,
+  "portfolio_beta": 1.412,
   "params": {
-    "margin_distribution": {
-      "0.40": 0.3,
-      "0.45": 0.3,
-      "0.50": 0.25,
-      "0.60": 0.15
-    },
-    "maintenance_distribution": {
-      "1.40": 0.45,
-      "1.45": 0.25,
-      "1.50": 0.2,
-      "1.60": 0.1
-    },
-    "forced_liq_distribution": {
-      "1.20": 0.45,
-      "1.25": 0.25,
-      "1.30": 0.2,
-      "1.40": 0.1
-    },
+    "margin_rate": 0.45,
+    "maintenance_ratio": 1.4,
+    "forced_liq_loss_pct": 39,
     "impact_coefficient": 1.5,
     "stock_weighted": true
   }
@@ -15448,7 +15518,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-05T00:23:31.186451",
+  "last_updated": "2026-03-05T03:48:41.004611",
   "last_date": "2026-03-04",
   "data_source": "pipeline",
   "data_quality": {
@@ -36576,12 +36646,14 @@ export const STOCK_CREDIT = {
       "group": "A",
       "credit_billion": 16956.69,
       "kospi_weight_pct": 52.68,
+      "current_price": 172200,
       "status_breakdown": {
-        "safe": 15512.04,
-        "watch": 958.73,
-        "margin_call": 485.92,
+        "safe": 16416.93,
+        "watch": 539.76,
+        "margin_call": 0,
         "forced_liq": 0
-      }
+      },
+      "beta": 1.17
     },
     {
       "ticker": "000660",
@@ -36589,12 +36661,14 @@ export const STOCK_CREDIT = {
       "group": "A",
       "credit_billion": 8632.85,
       "kospi_weight_pct": 26.82,
+      "current_price": 849000,
       "status_breakdown": {
-        "safe": 7897.36,
-        "watch": 488.1,
-        "margin_call": 247.39,
+        "safe": 8358.05,
+        "watch": 274.8,
+        "margin_call": 0,
         "forced_liq": 0
-      }
+      },
+      "beta": 2.2
     },
     {
       "ticker": "005380",
@@ -36602,12 +36676,14 @@ export const STOCK_CREDIT = {
       "group": "A",
       "credit_billion": 1921.63,
       "kospi_weight_pct": 5.97,
+      "current_price": 0,
       "status_breakdown": {
-        "safe": 1757.92,
-        "watch": 108.64,
-        "margin_call": 55.07,
+        "safe": 1860.46,
+        "watch": 61.17,
+        "margin_call": 0,
         "forced_liq": 0
-      }
+      },
+      "beta": 1.0
     },
     {
       "ticker": "373220",
@@ -36615,12 +36691,14 @@ export const STOCK_CREDIT = {
       "group": "A",
       "credit_billion": 1197.4,
       "kospi_weight_pct": 3.72,
+      "current_price": 0,
       "status_breakdown": {
-        "safe": 1095.38,
-        "watch": 67.7,
-        "margin_call": 34.32,
+        "safe": 1159.28,
+        "watch": 38.12,
+        "margin_call": 0,
         "forced_liq": 0
-      }
+      },
+      "beta": 1.0
     },
     {
       "ticker": "000270",
@@ -36628,12 +36706,14 @@ export const STOCK_CREDIT = {
       "group": "A",
       "credit_billion": 891.61,
       "kospi_weight_pct": 2.77,
+      "current_price": 0,
       "status_breakdown": {
-        "safe": 815.66,
-        "watch": 50.4,
-        "margin_call": 25.55,
+        "safe": 863.23,
+        "watch": 28.38,
+        "margin_call": 0,
         "forced_liq": 0
-      }
+      },
+      "beta": 1.0
     },
     {
       "ticker": "105560",
@@ -36641,12 +36721,14 @@ export const STOCK_CREDIT = {
       "group": "A",
       "credit_billion": 727.45,
       "kospi_weight_pct": 2.26,
+      "current_price": 0,
       "status_breakdown": {
-        "safe": 665.47,
-        "watch": 41.13,
-        "margin_call": 20.85,
+        "safe": 704.3,
+        "watch": 23.15,
+        "margin_call": 0,
         "forced_liq": 0
-      }
+      },
+      "beta": 1.0
     },
     {
       "ticker": "068270",
@@ -36654,12 +36736,14 @@ export const STOCK_CREDIT = {
       "group": "A",
       "credit_billion": 637.32,
       "kospi_weight_pct": 1.98,
+      "current_price": 0,
       "status_breakdown": {
-        "safe": 583.03,
-        "watch": 36.03,
-        "margin_call": 18.26,
+        "safe": 617.04,
+        "watch": 20.28,
+        "margin_call": 0,
         "forced_liq": 0
-      }
+      },
+      "beta": 1.0
     },
     {
       "ticker": "035420",
@@ -36667,12 +36751,14 @@ export const STOCK_CREDIT = {
       "group": "A",
       "credit_billion": 457.07,
       "kospi_weight_pct": 1.42,
+      "current_price": 0,
       "status_breakdown": {
-        "safe": 418.13,
-        "watch": 25.84,
-        "margin_call": 13.1,
+        "safe": 442.52,
+        "watch": 14.55,
+        "margin_call": 0,
         "forced_liq": 0
-      }
+      },
+      "beta": 1.0
     },
     {
       "ticker": "006400",
@@ -36680,12 +36766,14 @@ export const STOCK_CREDIT = {
       "group": "A",
       "credit_billion": 405.57,
       "kospi_weight_pct": 1.26,
+      "current_price": 0,
       "status_breakdown": {
-        "safe": 371.02,
-        "watch": 22.93,
-        "margin_call": 11.62,
+        "safe": 392.66,
+        "watch": 12.91,
+        "margin_call": 0,
         "forced_liq": 0
-      }
+      },
+      "beta": 1.0
     },
     {
       "ticker": "005490",
@@ -36693,12 +36781,14 @@ export const STOCK_CREDIT = {
       "group": "A",
       "credit_billion": 357.29,
       "kospi_weight_pct": 1.11,
+      "current_price": 0,
       "status_breakdown": {
-        "safe": 326.84,
-        "watch": 20.21,
-        "margin_call": 10.24,
+        "safe": 345.91,
+        "watch": 11.38,
+        "margin_call": 0,
         "forced_liq": 0
-      }
+      },
+      "beta": 1.0
     },
     {
       "ticker": "_residual",
@@ -36706,10 +36796,11 @@ export const STOCK_CREDIT = {
       "group": "mixed",
       "credit_billion": 3.22,
       "kospi_weight_pct": 0.01,
+      "current_price": 0,
       "status_breakdown": {
-        "safe": 2.95,
-        "watch": 0.18,
-        "margin_call": 0.09,
+        "safe": 3.12,
+        "watch": 0.1,
+        "margin_call": 0,
         "forced_liq": 0
       }
     }
@@ -36718,139 +36809,216 @@ export const STOCK_CREDIT = {
     {
       "shock_pct": -3,
       "expected_kospi": 4941,
-      "margin_call_billion": 462,
-      "forced_liq_billion": 28,
-      "weighted_impact_billion": 10
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
+      "stock_shocks": {
+        "005930": -2.49,
+        "000660": -4.67,
+        "005380": -2.12,
+        "000270": -2.12,
+        "035420": -2.12,
+        "006400": -2.12,
+        "373220": -2.12,
+        "068270": -2.12,
+        "105560": -2.12,
+        "005490": -2.12,
+        "_residual": -3
+      }
     },
     {
       "shock_pct": -5,
       "expected_kospi": 4839,
-      "margin_call_billion": 518,
-      "forced_liq_billion": 70,
-      "weighted_impact_billion": 25
+      "margin_call_billion": 49,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
+      "stock_shocks": {
+        "005930": -4.15,
+        "000660": -7.78,
+        "005380": -3.54,
+        "000270": -3.54,
+        "035420": -3.54,
+        "006400": -3.54,
+        "373220": -3.54,
+        "068270": -3.54,
+        "105560": -3.54,
+        "005490": -3.54,
+        "_residual": -5
+      }
     },
     {
       "shock_pct": -10,
       "expected_kospi": 4584,
-      "margin_call_billion": 825,
-      "forced_liq_billion": 161,
-      "weighted_impact_billion": 57
+      "margin_call_billion": 189,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
+      "stock_shocks": {
+        "005930": -8.3,
+        "000660": -15.57,
+        "005380": -7.08,
+        "000270": -7.08,
+        "035420": -7.08,
+        "006400": -7.08,
+        "373220": -7.08,
+        "068270": -7.08,
+        "105560": -7.08,
+        "005490": -7.08,
+        "_residual": -10
+      }
     },
     {
       "shock_pct": -15,
       "expected_kospi": 4330,
-      "margin_call_billion": 1196,
-      "forced_liq_billion": 425,
-      "weighted_impact_billion": 152
+      "margin_call_billion": 232,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
+      "stock_shocks": {
+        "005930": -12.45,
+        "000660": -23.35,
+        "005380": -10.62,
+        "000270": -10.62,
+        "035420": -10.62,
+        "006400": -10.62,
+        "373220": -10.62,
+        "068270": -10.62,
+        "105560": -10.62,
+        "005490": -10.62,
+        "_residual": -15
+      }
     },
     {
       "shock_pct": -20,
       "expected_kospi": 4075,
-      "margin_call_billion": 1531,
-      "forced_liq_billion": 764,
-      "weighted_impact_billion": 273
+      "margin_call_billion": 363,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
+      "stock_shocks": {
+        "005930": -16.6,
+        "000660": -31.14,
+        "005380": -14.16,
+        "000270": -14.16,
+        "035420": -14.16,
+        "006400": -14.16,
+        "373220": -14.16,
+        "068270": -14.16,
+        "105560": -14.16,
+        "005490": -14.16,
+        "_residual": -20
+      }
     },
     {
       "shock_pct": -30,
       "expected_kospi": 3565,
-      "margin_call_billion": 2062,
-      "forced_liq_billion": 2087,
-      "weighted_impact_billion": 744
+      "margin_call_billion": 599,
+      "forced_liq_billion": 201,
+      "weighted_impact_billion": 7,
+      "stock_shocks": {
+        "005930": -24.9,
+        "000660": -46.7,
+        "005380": -21.25,
+        "000270": -21.25,
+        "035420": -21.25,
+        "006400": -21.25,
+        "373220": -21.25,
+        "068270": -21.25,
+        "105560": -21.25,
+        "005490": -21.25,
+        "_residual": -30
+      }
     }
   ],
+  "betas": {
+    "005930": 1.17,
+    "000660": 2.2,
+    "005380": 1.0,
+    "000270": 1.0,
+    "035420": 1.0,
+    "006400": 1.0,
+    "373220": 1.0,
+    "068270": 1.0,
+    "105560": 1.0,
+    "005490": 1.0,
+    "_lookback": 7,
+    "_method": "hybrid_60_40"
+  },
   "stock_weighted": true,
   "tickers": {
     "005930": {
       "name": "삼성전자",
       "group": "A",
-      "margin": 0.4,
+      "margin": 0.45,
       "maintenance": 1.4,
-      "forced_liq": 1.2
+      "forced_liq_loss_pct": 39
     },
     "000660": {
       "name": "SK하이닉스",
       "group": "A",
-      "margin": 0.4,
+      "margin": 0.45,
       "maintenance": 1.4,
-      "forced_liq": 1.2
+      "forced_liq_loss_pct": 39
     },
     "005380": {
       "name": "현대차",
       "group": "A",
-      "margin": 0.4,
+      "margin": 0.45,
       "maintenance": 1.4,
-      "forced_liq": 1.2
+      "forced_liq_loss_pct": 39
     },
     "000270": {
       "name": "기아",
       "group": "A",
-      "margin": 0.4,
+      "margin": 0.45,
       "maintenance": 1.4,
-      "forced_liq": 1.2
+      "forced_liq_loss_pct": 39
     },
     "035420": {
       "name": "NAVER",
       "group": "A",
-      "margin": 0.4,
+      "margin": 0.45,
       "maintenance": 1.4,
-      "forced_liq": 1.2
+      "forced_liq_loss_pct": 39
     },
     "006400": {
       "name": "삼성SDI",
       "group": "A",
-      "margin": 0.4,
+      "margin": 0.45,
       "maintenance": 1.4,
-      "forced_liq": 1.2
+      "forced_liq_loss_pct": 39
     },
     "373220": {
       "name": "LG에너지솔루션",
       "group": "A",
-      "margin": 0.4,
+      "margin": 0.45,
       "maintenance": 1.4,
-      "forced_liq": 1.2
+      "forced_liq_loss_pct": 39
     },
     "068270": {
       "name": "셀트리온",
       "group": "A",
-      "margin": 0.4,
+      "margin": 0.45,
       "maintenance": 1.4,
-      "forced_liq": 1.2
+      "forced_liq_loss_pct": 39
     },
     "105560": {
       "name": "KB금융",
       "group": "A",
-      "margin": 0.4,
+      "margin": 0.45,
       "maintenance": 1.4,
-      "forced_liq": 1.2
+      "forced_liq_loss_pct": 39
     },
     "005490": {
       "name": "POSCO홀딩스",
       "group": "A",
-      "margin": 0.4,
+      "margin": 0.45,
       "maintenance": 1.4,
-      "forced_liq": 1.2
+      "forced_liq_loss_pct": 39
     }
   },
   "stock_params": {
     "A": {
-      "margin": 0.4,
-      "maintenance": 1.4,
-      "forced_liq": 1.2
-    },
-    "B": {
       "margin": 0.45,
-      "maintenance": 1.45,
-      "forced_liq": 1.25
-    },
-    "C": {
-      "margin": 0.5,
-      "maintenance": 1.5,
-      "forced_liq": 1.3
-    },
-    "D": {
-      "margin": 0.6,
-      "maintenance": 1.6,
-      "forced_liq": 1.4
+      "maintenance": 1.4,
+      "forced_liq_loss_pct": 39
     }
   }
 };

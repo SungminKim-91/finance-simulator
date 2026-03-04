@@ -32,6 +32,10 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 WEB_DATA_DIR = PROJECT_ROOT.parent / "web" / "src" / "simulators" / "kospi" / "data"
 
+import sys as _sys
+if str(PROJECT_ROOT) not in _sys.path:
+    _sys.path.insert(0, str(PROJECT_ROOT))
+
 
 def load_json(path: Path):
     if path.exists():
@@ -183,10 +187,11 @@ def export_all() -> None:
         "current_kospi": cohorts.get("current_kospi", 0),
         "current_fx": cohorts.get("current_fx", 1400),
         "avg_daily_trading_value_billion": _avg_trading_value(ts),
+        "portfolio_beta": cohorts.get("portfolio_beta", 1.0),
         "params": {
-            "margin_distribution": {"0.40": 0.30, "0.45": 0.30, "0.50": 0.25, "0.60": 0.15},
-            "maintenance_distribution": {"1.40": 0.45, "1.45": 0.25, "1.50": 0.20, "1.60": 0.10},
-            "forced_liq_distribution": {"1.20": 0.45, "1.25": 0.25, "1.30": 0.20, "1.40": 0.10},
+            "margin_rate": 0.45,
+            "maintenance_ratio": 1.40,
+            "forced_liq_loss_pct": 39,
             "impact_coefficient": 1.5,
             "stock_weighted": stock_credit_raw.get("stock_weighted", False),
         },
@@ -254,6 +259,7 @@ def export_all() -> None:
     stock_credit = {
         "stocks": stock_credit_raw.get("stocks", []),
         "weighted_trigger_map": stock_credit_raw.get("weighted_trigger_map", []),
+        "betas": stock_credit_raw.get("betas", {}),
         "stock_weighted": stock_credit_raw.get("stock_weighted", False),
     }
 
@@ -330,14 +336,18 @@ def _remap_cohorts(cohorts: list[dict]) -> list[dict]:
     status_map = {"forced_liq": "danger", "margin_call": "marginCall", "watch": "watch", "safe": "safe"}
     result = []
     for c in cohorts:
-        result.append({
+        entry = {
             "entry_date": c.get("entry_date", ""),
             "entry_kospi": c.get("entry_kospi", 0),
             "amount": c.get("remaining_amount_billion", 0),
             "pnl_pct": c.get("pnl_pct", 0),
             "collateral_ratio": c.get("collateral_ratio", 0),
             "status": status_map.get(c.get("status", "safe"), "safe"),
-        })
+        }
+        liq_pct = c.get("liquidated_pct", 0)
+        if liq_pct > 0:
+            entry["liquidated_pct"] = liq_pct
+        result.append(entry)
     return result
 
 

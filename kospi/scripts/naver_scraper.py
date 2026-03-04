@@ -276,6 +276,63 @@ def fetch_naver_investor_flows(start: str, end: str) -> dict[str, dict]:
 # 종목별 시가총액 + 가격 (yfinance)
 # ──────────────────────────────────────────────
 
+def fetch_stock_daily_prices(tickers_config: dict, start: str, end: str) -> dict:
+    """Top N 종목 일간 종가 시계열 (yfinance batch).
+
+    Args:
+        tickers_config: {ticker: {name, group}} from constants.TOP_10_TICKERS
+        start: 시작일 (YYYY-MM-DD)
+        end: 종료일 (YYYY-MM-DD)
+
+    Returns: {
+        "005930": {"2026-03-03": 58200, "2026-03-04": 55000, ...},
+        ...
+    }
+    """
+    try:
+        import yfinance as yf
+        import pandas as pd
+    except ImportError:
+        print("  [WARN] yfinance/pandas not installed — stock daily prices unavailable")
+        return {}
+
+    yf_symbols = {t: f"{t}.KS" for t in tickers_config}
+    symbols_list = list(yf_symbols.values())
+
+    try:
+        end_dt = datetime.strptime(end, ISO_FMT) if "-" in end else datetime.strptime(end, "%Y%m%d")
+        from datetime import timedelta
+        end_plus = (end_dt + timedelta(days=1)).strftime(ISO_FMT)
+        start_str = start if "-" in start else f"{start[:4]}-{start[4:6]}-{start[6:]}"
+
+        df = yf.download(symbols_list, start=start_str, end=end_plus, progress=False)
+        if df.empty:
+            print("  [WARN] yfinance stock prices: empty result")
+            return {}
+    except Exception as e:
+        print(f"  [WARN] yfinance stock daily prices failed: {e}")
+        return {}
+
+    result = {}
+    for ticker, yf_sym in yf_symbols.items():
+        prices = {}
+        try:
+            close_col = df[("Close", yf_sym)] if ("Close", yf_sym) in df.columns else None
+            if close_col is not None:
+                for idx, val in close_col.items():
+                    if pd.notna(val) and float(val) > 0:
+                        date_str = idx.strftime(ISO_FMT)
+                        prices[date_str] = int(round(float(val)))
+        except Exception:
+            pass
+        result[ticker] = prices
+
+    n_ok = sum(1 for t in result if len(result[t]) > 0)
+    total_days = max((len(v) for v in result.values()), default=0)
+    print(f"  [Stock Prices] {n_ok}/{len(tickers_config)} 종목, {total_days}일 종가 수집")
+    return result
+
+
 def fetch_stock_market_caps(tickers_config: dict) -> dict:
     """Top N 종목의 시가총액·종가를 yfinance로 조회.
 

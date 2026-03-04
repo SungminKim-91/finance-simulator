@@ -62,27 +62,27 @@ export const TERM = {
   },
   collateral_ratio: {
     label: "담보비율 (Collateral Ratio)",
-    desc: "담보가치 ÷ 대출금. 유지비율 미달 시 마진콜 → 반대매매 순서로 진행",
+    desc: "담보가치 ÷ 대출금. 보증금 45%, 유지비율 140%. 미달 시 D+2 마진콜 → D+3 반대매매",
   },
   margin_call: {
     label: "마진콜 (Margin Call)",
-    desc: "담보유지비율 미달 시 증권사가 추가 담보 입금을 요구하는 경고 단계. 기한 내 미충족 시 반대매매(강제 청산)로 전환. 곧 반대매매될 수 있는 잠재적 위험 규모",
+    desc: "담보비율 140% 미달 시 D+2 추가담보 요구. 미납 시 D+3 반대매매(강제 청산)",
   },
   status_safe: {
     label: "안전 (Safe)",
-    desc: "대부분의 종목군에서 유지비율 충족. 충분한 여유",
+    desc: "담보비율 ≥ 160%. 충분한 여유",
   },
   status_watch: {
     label: "주의 (Watch)",
-    desc: "일부 종목군에서 유지비율 근접. 추가 하락 시 마진콜 가능",
+    desc: "담보비율 140%~160%. 추가 하락 시 마진콜 가능",
   },
   status_marginCall: {
     label: "마진콜 (Margin Call)",
-    desc: "유지비율 미달(A군 140%~D군 160%). 추가 담보 입금 요구 D+2",
+    desc: "담보비율 < 140%. D+2 추가담보 요구, 미납 시 D+3 반대매매",
   },
   status_danger: {
-    label: "위험 (Danger)",
-    desc: "강제청산 기준 미달(A군 120%~D군 140%). 반대매매 임박 또는 진행 중",
+    label: "반대매매 (Forced Liq)",
+    desc: "손실 ≥ 39%. 반대매매 확정 — 이미 청산되어 코호트에서 제거됨",
   },
   trigger_map: {
     label: "트리거 맵 (Trigger Map)",
@@ -109,7 +109,7 @@ export const TERM = {
   /* Simulator terms */
   forced_liq: {
     label: "반대매매 (Forced Liq)",
-    desc: "담보유지비율 미달 후 추가담보 미납 시 강제 매도. 종목군별 A군 120%, B군 125%, C군 130%, D군 140% 미만에서 발생",
+    desc: "담보비율 140% 미달 → D+2 추가담보 요구 → 미납 시 D+3 강제 매도. 손실 39% 이상 시 즉시 반대매매",
   },
   loop_a: {
     label: "반대매매 연쇄 (Forced Liq Loop)",
@@ -336,6 +336,18 @@ export const TERM = {
   weighted_impact: {
     label: "가중 영향 (Weighted Impact)",
     desc: "종목별 반대매매 × KOSPI 가중치로 산출한 지수 영향 금액. 단순 합산보다 정확한 지수 영향 추정",
+  },
+  hybrid_beta: {
+    label: "하이브리드 베타 (Hybrid Beta)",
+    desc: "하방 60% + 상방 40% 가중 베타. 최근 7거래일 기준. KOSPI 1% 하락 시 해당 종목이 몇 % 하락하는지 추정",
+  },
+  normalized_shock: {
+    label: "정규화 충격 (Normalized Shock)",
+    desc: "Beta × 정규화 계수로 산출한 종목별 차등 충격. 가중합 = 입력 충격% 보장",
+  },
+  stock_price_status: {
+    label: "종목가 기반 상태 (Stock Price Status)",
+    desc: "KOSPI 지수 대신 개별 종목 종가로 담보비율 산출 → 더 정확한 마진콜/반대매매 판정",
   },
 };
 
