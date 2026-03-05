@@ -696,6 +696,8 @@ def backfill_change_pct():
 
 
 from scripts.kofia_fetcher import backfill_credit as kofia_backfill
+from scripts.kofia_excel_parser import parse_kofia_excel
+from scripts.kofia_watcher import merge_to_timeseries as excel_merge_to_timeseries
 
 OVERRIDES_PATH = DATA_DIR / "manual_overrides.json"
 
@@ -831,6 +833,40 @@ def apply_overrides():
     print(f"[override] {len(overrides)}일, {applied}개 필드 적용 완료")
 
 
+def import_excel(path: str):
+    """엑셀 파일 파싱 → timeseries.json 머지 → export_web."""
+    from pathlib import Path as _P
+    excel_path = _P(path)
+    if not excel_path.exists():
+        print(f"[ERROR] 파일 없음: {excel_path}")
+        return
+
+    print(f"\n{'='*60}")
+    print(f"KOFIA 엑셀 Import: {excel_path.name}")
+    print(f"{'='*60}\n")
+
+    parsed = parse_kofia_excel(excel_path)
+    if not parsed:
+        print("[WARN] 매칭 데이터 없음")
+        return
+
+    updated = excel_merge_to_timeseries(parsed)
+    print(f"\n[MERGE] {updated}개 필드 업데이트 완료")
+
+    for date, fields in sorted(parsed.items()):
+        field_str = ", ".join(f"{k}={v}" for k, v in fields.items())
+        print(f"  {date}: {field_str}")
+
+    # export_web 자동 실행
+    try:
+        from scripts.export_web import export_all
+        print(f"\n[EXPORT] export_web 실행...")
+        export_all()
+    except Exception as e:
+        print(f"[WARN] export_web 실패: {e}")
+        print("  수동 실행: python -m scripts.export_web")
+
+
 def manual_input(date: str):
     """대화형 수동 입력 — 날짜의 주요 필드를 프롬프트로 입력받아 overrides에 저장."""
     FIELDS = [
@@ -917,9 +953,13 @@ def main():
                         help="Interactive manual input for DATE (YYYY-MM-DD)")
     parser.add_argument("--apply-overrides", action="store_true",
                         help="Apply manual_overrides.json to timeseries.json")
+    parser.add_argument("--import-excel", type=str, metavar="PATH",
+                        help="Import KOFIA FreeSIS Excel → timeseries merge + export_web")
     args = parser.parse_args()
 
-    if args.manual:
+    if args.import_excel:
+        import_excel(args.import_excel)
+    elif args.manual:
         manual_input(args.manual)
     elif args.apply_overrides:
         apply_overrides()

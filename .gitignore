@@ -41,5 +41,9 @@ node_modules/
 web/dist/
 web/.next/
 
+# KOFIA 엑셀 (수동 import + 아카이브)
+kospi/data/kofia_excel/
+kospi/data/kofia_excel_archive/
+
 # Claude internal
 .claude/
