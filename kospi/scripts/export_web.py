@@ -41,7 +41,7 @@ if str(PROJECT_ROOT) not in _sys.path:
 from config.constants import (
     MARGIN_RATE, LOAN_RATE, STATUS_THRESHOLDS, LEVERAGE,
     SAMSUNG_CREDIT_WEIGHT,
-    RSPI_WEIGHTS,
+    RSPI_WEIGHTS, V1_PROXIMITY_POWER,
     RSPI_SENSITIVITY, RSPI_SIGMOID_K, RSPI_SIGMOID_MID,
 )
 
@@ -304,9 +304,10 @@ def export_all() -> None:
         "scenario_matrix": rspi_raw.get("scenario_matrix", []),
     }
 
-    # === 18. RSPI_CONFIG (v2.2.0 — 5변수 + VA) ===
+    # === 18. RSPI_CONFIG (v2.3.0 — 5변수 + VA + proximity_power) ===
     rspi_config = {
         "weights": rspi_raw.get("weights", RSPI_WEIGHTS),
+        "proximity_power": V1_PROXIMITY_POWER,
         "status_thresholds": STATUS_THRESHOLDS,
         "variables": [
             {"key": "v1", "label": "코호트 proximity", "desc": "담보비율 마진콜(140%)까지 거리", "range": "0~1", "direction": "unidirectional"},

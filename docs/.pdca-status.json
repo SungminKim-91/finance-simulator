@@ -68,6 +68,14 @@
       "startedAt": "2026-03-07T00:00:00.000Z",
       "completedAt": "2026-03-07T01:00:00.000Z",
       "description": "V1 look-ahead bias 제거 — 날짜별 코호트 스냅샷 전환"
+    },
+    "kospi-rspi-v2.3.0": {
+      "phase": "completed",
+      "matchRate": null,
+      "iterationCount": 0,
+      "startedAt": "2026-03-07T02:00:00.000Z",
+      "completedAt": "2026-03-07T03:00:00.000Z",
+      "description": "V1 비선형 proximity (power=2.5) + 9단계 검증 프레임워크"
     }
   },
   "pipeline": {

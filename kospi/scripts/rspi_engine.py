@@ -27,7 +27,7 @@ if str(PROJECT_ROOT) not in _sys.path:
 from config.constants import (
     LOAN_RATE, STATUS_THRESHOLDS, SAMSUNG_CREDIT_WEIGHT,
     RSPI_WEIGHTS,
-    V1_MARGIN_CALL_RATIO, V1_SAFE_RANGE,
+    V1_MARGIN_CALL_RATIO, V1_SAFE_RANGE, V1_PROXIMITY_POWER,
     V2_LOOKBACK, V2_DIVISOR,
     OVERNIGHT_WEIGHTS,
     OVERNIGHT_EWY_DIVISOR, OVERNIGHT_KORU_DIVISOR,
@@ -72,15 +72,21 @@ def classify_status_6(collateral_ratio: float) -> str:
 # V1: 코호트 proximity (0~1, 단방향)
 # ──────────────────────────────────────────────
 
-def calc_cohort_proximity(current_price: float, cohorts: list[dict]) -> float:
-    """V1: 각 코호트의 마진콜(140%)까지 거리를 연속 함수로.
+def calc_cohort_proximity(current_price: float, cohorts: list[dict],
+                          power: float = V1_PROXIMITY_POWER) -> float:
+    """V1: 각 코호트의 마진콜(140%)까지 거리를 비선형 proximity로.
 
-    proximity = max(0, min(1, 1 - (ratio - 140) / 60))
-    V1 = 코호트별 proximity의 가중 평균
+    linear = max(0, min(1, 1 - (ratio - 140) / 60))
+    proximity = linear ** power  (비선형 변환, power=2.5)
+    V1 = 코호트별 proximity의 금액 가중 평균
 
-    ratio 200% -> proximity 0.00 (안전)
-    ratio 170% -> proximity 0.50
-    ratio 140% -> proximity 1.00 (마진콜)
+    power=2.5 효과:
+      ratio 200% -> linear 0.00 -> proximity 0.00  (안전)
+      ratio 185% -> linear 0.25 -> proximity 0.09  (여유)
+      ratio 170% -> linear 0.50 -> proximity 0.18  (양호)
+      ratio 155% -> linear 0.75 -> proximity 0.41  (주의)
+      ratio 145% -> linear 0.92 -> proximity 0.78  (위험!)
+      ratio 140% -> linear 1.00 -> proximity 1.00  (마진콜)
 
     Returns: 0 (전부 안전) ~ 1 (전부 마진콜 직전)
     """
@@ -92,7 +98,8 @@ def calc_cohort_proximity(current_price: float, cohorts: list[dict]) -> float:
         if entry_price <= 0:
             continue
         ratio = calc_collateral_ratio(current_price, entry_price)
-        proximity = max(0.0, min(1.0, 1.0 - (ratio - V1_MARGIN_CALL_RATIO) / V1_SAFE_RANGE))
+        linear = max(0.0, min(1.0, 1.0 - (ratio - V1_MARGIN_CALL_RATIO) / V1_SAFE_RANGE))
+        proximity = linear ** power
 
         w = cohort.get("remaining_amount_billion") or cohort.get("weight", 0)
         weighted_proximity += proximity * w
@@ -426,8 +433,9 @@ def estimate_price_impact(
 class RSPIEngine:
     """RSPI v2.2.0 전체 파이프라인."""
 
-    def __init__(self, weights=None):
+    def __init__(self, weights=None, proximity_power=V1_PROXIMITY_POWER):
         self.weights = weights or RSPI_WEIGHTS
+        self.proximity_power = proximity_power
         self.history: list[dict] = []
 
     def calculate_for_date(
@@ -446,8 +454,8 @@ class RSPIEngine:
         t1_price = current_price or ts[idx].get("samsung", 0) or 0
         kospi_price = ts[idx].get("kospi", 0) or 0
 
-        # V1: 코호트 proximity (KOSPI 지수 기반 — 코호트는 entry_kospi 기준)
-        v1 = calc_cohort_proximity(kospi_price, cohorts) if cohorts and kospi_price > 0 else 0.0
+        # V1: 코호트 proximity (KOSPI 지수 기반 — 코호트는 entry_kospi 기준, 비선형 power)
+        v1 = calc_cohort_proximity(kospi_price, cohorts, power=self.proximity_power) if cohorts and kospi_price > 0 else 0.0
 
         # V2: 외국인 수급 z-score
         foreign_flows = [

@@ -235,6 +235,25 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **수정**: `cohort_snapshots` (날짜별 캡처) → `date_to_cohorts` dict → RSPI 루프에서 해당 날짜 코호트만 전달
 - **효과**: 12/12 V1 0.1749→0.0243 (미래 고점 코호트 34개 제거), 3/4 V1 변화 없음 (최신 근처)
 
+### v2.3.0 — V1 비선형 Proximity + 9단계 검증 프레임워크
+- **V1 비선형 proximity**: `linear ** power` (power=2.5) — 마진콜 근처에서 proximity 급가속
+  - ratio 200%→0.00, 185%→0.09, 170%→0.18, 155%→0.41, 145%→0.78, 140%→1.00
+  - `V1_PROXIMITY_POWER = 2.5` in constants.py, RSPIEngine에 `proximity_power` 전달
+- **9단계 검증 프레임워크** (`rspi_validation.py`):
+  - Step 1: 변수별 분포 (V1~V5, VA)
+  - Step 2: RSPI 분포 + Q1 체크 (중립 70%+)
+  - Step 3: 변수별 예측력 (상관계수, quintile spread, hit rate)
+  - Step 4: 시그널 강도 (4 버킷 방향 일치율) + Q3 체크 (strong 65%+)
+  - Step 5: 음전환 후 전개 추적
+  - Step 6: 거래량 증폭기 A/B 비교
+  - Step 7: False alarm 상세 분석
+  - Step 8: 가중치 민감도 (±50% 변동)
+  - Step 9: V1 power 최적화 (1.0~3.0)
+- **검증 결과**: 부분유효
+  - Q1 FAIL (중립 25.7%), Q3 PASS (strong 83.3%), 음전환 분리 PASS
+  - V3(야간) 최강 변수, V4(개인수급) 무효, power=2.5 유지 확정
+  - False alarm 9건 (주범 V2 5건, V4 3건)
+
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
 - **Y축 줌 (Domain-only)**: Drag + Wheel 지원, domain만 변경 (SVG 찌그러짐 없음)
@@ -306,6 +325,7 @@ web/src/simulators/kospi/        # React 대시보드
 | kospi-rspi | v2.2.0 | 97.6% | 5변수 + Volume Amplifier 재설계 |
 | kospi-rspi | v2.2.1 | 100% | 데이터 정합성 + pending 상태 |
 | kospi-rspi | v2.2.2 | 100% | V1 look-ahead bias 제거 |
+| kospi-rspi | v2.3.0 | — | V1 비선형 proximity + 9단계 검증 |
 
 ## CLI (KOSPI)
 ```bash

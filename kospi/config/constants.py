@@ -120,6 +120,7 @@ RSPI_WEIGHTS = {
 # V1: 코호트 proximity
 V1_MARGIN_CALL_RATIO = 140   # 마진콜 기준 담보비율
 V1_SAFE_RANGE = 60           # proximity 감쇠 범위 (140~200%)
+V1_PROXIMITY_POWER = 2.5     # 비선형 proximity 지수 (v2.3.0)
 
 # V2: 외국인 수급 z-score
 V2_LOOKBACK = 20             # z-score 계산 기간 (거래일)
