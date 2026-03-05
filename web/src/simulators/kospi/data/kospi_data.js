@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-06T06:57:05.177651
+ * Generated: 2026-03-06T07:30:08.510418
  * Source: kospi/data/ (pipeline)
  * Exports: 18
  */
@@ -5549,6 +5549,13 @@ export const CREDIT_DATA = [
   },
   {
     "date": "2026-03-05",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-03-06",
     "credit_balance_billion": null,
     "deposit_billion": null,
     "forced_liq_billion": null,
@@ -11214,11 +11221,11 @@ export const GLOBAL_DATA = [
     "wti": 76.58,
     "vix": 21.37,
     "sp500": null,
-    "ewy_close": null,
-    "ewy_change_pct": null,
-    "koru_close": null,
-    "koru_change_pct": null,
-    "sp500_change_pct": null
+    "ewy_close": 125.74,
+    "ewy_change_pct": -6.42,
+    "koru_close": 343.05,
+    "koru_change_pct": -18.46,
+    "sp500_change_pct": -0.56
   }
 ];
 
@@ -12755,6 +12762,11 @@ export const SHORT_SELLING = [
   },
   {
     "date": "2026-03-05",
+    "market_total_billion": null,
+    "gov_ban": false
+  },
+  {
+    "date": "2026-03-06",
     "market_total_billion": null,
     "gov_ban": false
   }
@@ -18935,7 +18947,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-06T06:57:05.177178",
+  "last_updated": "2026-03-06T07:30:08.510101",
   "last_date": "2026-03-05",
   "data_source": "pipeline",
   "data_quality": {
@@ -40950,5805 +40962,6619 @@ export const RSPI_DATA = {
   "history": [
     {
       "date": "2025-02-05",
-      "rspi": 2.2,
-      "level": "neutral",
-      "raw": -0.0243,
+      "rspi": 9.9,
+      "level": "mild_rebound",
+      "raw": -0.0863,
       "volume_amp": 0.908,
+      "structural_amp": 1.258,
       "raw_variables": {
-        "v1": 0.0138,
-        "v2": -0.1362,
-        "v3": -0.2765,
-        "v4": 0.2,
-        "v5": 0.2858
+        "v1": 0.0737,
+        "v2": -0.0778,
+        "v3": -0.2328,
+        "v4": 0.0,
+        "v5": 0.2286,
+        "v1_velocity": 0.0737,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.31,
-        "v2": 2.47,
-        "v3": 6.28,
-        "v4": -3.63,
-        "v5": -2.59
+        "v1": 1.15,
+        "v2": 3.11,
+        "v3": 11.97,
+        "v4": 0,
+        "v5": -5.22
       },
       "impact": null
     },
     {
       "date": "2025-02-06",
-      "rspi": 4.1,
-      "level": "neutral",
-      "raw": -0.0408,
+      "rspi": 8.9,
+      "level": "mild_rebound",
+      "raw": -0.0794,
       "volume_amp": 1.013,
+      "structural_amp": 1.106,
       "raw_variables": {
-        "v1": 0.0082,
-        "v2": -0.4188,
-        "v3": -0.1106,
-        "v4": 0.2,
-        "v5": 0.2853
+        "v1": 0.0529,
+        "v2": -0.2393,
+        "v3": -0.0919,
+        "v4": 0.0,
+        "v5": 0.2283,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.21,
-        "v2": 8.49,
-        "v3": 2.8,
-        "v4": -4.05,
-        "v5": -2.89
+        "v1": 0.85,
+        "v2": 9.39,
+        "v3": 4.63,
+        "v4": 0,
+        "v5": -5.12
       },
       "impact": null
     },
     {
       "date": "2025-02-07",
-      "rspi": -5.4,
-      "level": "mild_sell",
-      "raw": 0.057,
+      "rspi": -20.4,
+      "level": "strong_sell",
+      "raw": 0.1871,
       "volume_amp": 0.952,
+      "structural_amp": 1.144,
       "raw_variables": {
-        "v1": 0.0111,
-        "v2": 0.1437,
-        "v3": 0.4789,
-        "v4": -0.4,
-        "v5": -0.1418
+        "v1": 0.0639,
+        "v2": 0.0821,
+        "v3": 0.4024,
+        "v4": 0.0,
+        "v5": -0.1135,
+        "v1_velocity": 0.011,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.26,
-        "v2": -2.74,
-        "v3": -11.4,
-        "v4": 7.62,
-        "v5": 1.35
+        "v1": -2.28,
+        "v2": -3.13,
+        "v3": -19.73,
+        "v4": 0,
+        "v5": 2.47
       },
       "impact": null
     },
     {
       "date": "2025-02-10",
-      "rspi": -10.3,
-      "level": "mild_sell",
-      "raw": 0.1038,
+      "rspi": 18.7,
+      "level": "mild_rebound",
+      "raw": -0.1672,
       "volume_amp": 0.99,
+      "structural_amp": 1.131,
       "raw_variables": {
-        "v1": 0.0114,
-        "v2": 0.1625,
-        "v3": -0.4342,
-        "v4": 1.0,
-        "v5": -0.23
+        "v1": 0.0648,
+        "v2": 0.0929,
+        "v3": -0.3621,
+        "v4": 0.0,
+        "v5": -0.184,
+        "v1_velocity": 0.001,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.28,
-        "v2": -3.22,
-        "v3": 10.75,
-        "v4": -19.8,
-        "v5": 2.28
+        "v1": 2.15,
+        "v2": -3.64,
+        "v3": 18.25,
+        "v4": 0,
+        "v5": 4.12
       },
       "impact": null
     },
     {
       "date": "2025-02-11",
-      "rspi": 5.9,
+      "rspi": 14.5,
       "level": "mild_rebound",
-      "raw": -0.0581,
+      "raw": -0.1289,
       "volume_amp": 1.019,
+      "structural_amp": 1.106,
       "raw_variables": {
-        "v1": 0.0085,
-        "v2": -0.271,
-        "v3": 0.0021,
-        "v4": 0.2,
-        "v5": -0.4654
+        "v1": 0.0531,
+        "v2": -0.1548,
+        "v3": -0.0006,
+        "v4": 0.0,
+        "v5": -0.3723,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.22,
-        "v2": 5.52,
-        "v3": -0.05,
-        "v4": -4.08,
-        "v5": 4.74
+        "v1": 1.39,
+        "v2": 6.11,
+        "v3": 0.03,
+        "v4": 0,
+        "v5": 8.4
       },
       "impact": null
     },
     {
       "date": "2025-02-12",
-      "rspi": 11.9,
-      "level": "mild_rebound",
-      "raw": -0.1061,
+      "rspi": 20.6,
+      "level": "strong_rebound",
+      "raw": -0.1672,
       "volume_amp": 1.126,
+      "structural_amp": 1.095,
       "raw_variables": {
-        "v1": 0.0074,
-        "v2": -0.561,
-        "v3": 0.0104,
-        "v4": 0.2,
-        "v5": -0.3832
+        "v1": 0.0476,
+        "v2": -0.3206,
+        "v3": 0.014,
+        "v4": 0.0,
+        "v5": -0.3066,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.21,
-        "v2": 12.64,
-        "v3": -0.29,
-        "v4": -4.5,
-        "v5": 4.32
+        "v1": 1.79,
+        "v2": 13.84,
+        "v3": -0.77,
+        "v4": 0,
+        "v5": 7.56
       },
       "impact": null
     },
     {
       "date": "2025-02-13",
-      "rspi": 15.3,
-      "level": "mild_rebound",
-      "raw": -0.1249,
+      "rspi": 32.3,
+      "level": "strong_rebound",
+      "raw": -0.2498,
       "volume_amp": 1.225,
+      "structural_amp": 1.055,
       "raw_variables": {
-        "v1": 0.0036,
-        "v2": -0.0373,
-        "v3": -0.5333,
-        "v4": 0.2,
-        "v5": -0.2507
+        "v1": 0.0274,
+        "v2": -0.0213,
+        "v3": -0.4494,
+        "v4": 0.0,
+        "v5": -0.2006,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.11,
-        "v2": 0.91,
-        "v3": 16.33,
-        "v4": -4.9,
-        "v5": 3.07
+        "v1": 1.67,
+        "v2": 0.96,
+        "v3": 26.13,
+        "v4": 0,
+        "v5": 5.18
       },
       "impact": null
     },
     {
       "date": "2025-02-14",
-      "rspi": -3.9,
+      "rspi": 3.3,
       "level": "neutral",
-      "raw": 0.0377,
+      "raw": -0.0305,
       "volume_amp": 1.035,
+      "structural_amp": 1.049,
       "raw_variables": {
-        "v1": 0.0034,
-        "v2": 0.2344,
-        "v3": -0.0578,
-        "v4": 0.2,
-        "v5": -0.3553
+        "v1": 0.0243,
+        "v2": 0.1339,
+        "v3": -0.0457,
+        "v4": 0.0,
+        "v5": -0.2842,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.09,
-        "v2": -4.85,
-        "v3": 1.5,
-        "v4": -4.14,
-        "v5": 3.68
+        "v1": 0.15,
+        "v2": -5.09,
+        "v3": 2.23,
+        "v4": 0,
+        "v5": 6.17
       },
       "impact": null
     },
     {
       "date": "2025-02-17",
-      "rspi": -3.6,
+      "rspi": 0.8,
       "level": "neutral",
-      "raw": 0.0424,
+      "raw": -0.0094,
       "volume_amp": 0.862,
-      "raw_variables": {
-        "v1": 0.0023,
-        "v2": 0.1236,
-        "v3": -0.0578,
-        "v4": 0.2,
-        "v5": -0.0848
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": -2.13,
-        "v3": 1.25,
-        "v4": -3.45,
-        "v5": 0.73
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-02-18",
-      "rspi": 9.7,
-      "level": "mild_rebound",
-      "raw": -0.1032,
-      "volume_amp": 0.942,
-      "raw_variables": {
-        "v1": 0.002,
-        "v2": -0.1605,
-        "v3": -0.2884,
-        "v4": 0.2,
-        "v5": -0.3948
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 3.03,
-        "v3": 6.8,
-        "v4": -3.77,
-        "v5": 3.72
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-02-19",
-      "rspi": 20.0,
-      "level": "mild_rebound",
-      "raw": -0.1908,
-      "volume_amp": 1.048,
-      "raw_variables": {
-        "v1": 0.0013,
-        "v2": -0.6377,
-        "v3": -0.2977,
-        "v4": 0.2,
-        "v5": -0.2916
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 13.36,
-        "v3": 7.8,
-        "v4": -4.19,
-        "v5": 3.06
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-02-20",
-      "rspi": 10.1,
-      "level": "mild_rebound",
-      "raw": -0.0953,
-      "volume_amp": 1.06,
-      "raw_variables": {
-        "v1": 0.0022,
-        "v2": 0.1912,
-        "v3": -0.0061,
-        "v4": -0.4,
-        "v5": -0.5253
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": -4.05,
-        "v3": 0.16,
-        "v4": 8.48,
-        "v5": 5.57
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-02-21",
-      "rspi": -25.5,
-      "level": "strong_sell",
-      "raw": 0.2799,
-      "volume_amp": 0.911,
-      "raw_variables": {
-        "v1": 0.0022,
-        "v2": 0.1166,
-        "v3": 0.4845,
-        "v4": 0.7,
-        "v5": -0.0507
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": -2.12,
-        "v3": -11.03,
-        "v4": -12.75,
-        "v5": 0.46
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-02-24",
-      "rspi": 5.2,
-      "level": "mild_rebound",
-      "raw": -0.0596,
-      "volume_amp": 0.875,
-      "raw_variables": {
-        "v1": 0.0027,
-        "v2": 0.0973,
-        "v3": 0.0875,
-        "v4": -0.4,
-        "v5": -0.2157
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": -1.7,
-        "v3": -1.92,
-        "v4": 7.0,
-        "v5": 1.89
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-02-25",
-      "rspi": 4.3,
-      "level": "neutral",
-      "raw": -0.0494,
-      "volume_amp": 0.879,
-      "raw_variables": {
-        "v1": 0.0034,
-        "v2": 0.2041,
-        "v3": 0.0176,
-        "v4": -0.4,
-        "v5": -0.1542
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": -3.59,
-        "v3": -0.39,
-        "v4": 7.04,
-        "v5": 1.36
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-02-26",
-      "rspi": -17.5,
-      "level": "mild_sell",
-      "raw": 0.1854,
-      "volume_amp": 0.946,
-      "raw_variables": {
-        "v1": 0.0033,
-        "v2": 0.2349,
-        "v3": -0.0959,
-        "v4": 1.0,
-        "v5": -0.3847
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": -4.44,
-        "v3": 2.27,
-        "v4": -18.92,
-        "v5": 3.64
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-02-27",
-      "rspi": -8.5,
-      "level": "mild_sell",
-      "raw": 0.0924,
-      "volume_amp": 0.917,
-      "raw_variables": {
-        "v1": 0.0045,
-        "v2": 0.0126,
-        "v3": 0.7991,
-        "v4": -0.4,
-        "v5": -0.3102
-      },
-      "variable_contributions": {
-        "v1": -0.1,
-        "v2": -0.23,
-        "v3": -18.31,
-        "v4": 7.33,
-        "v5": 2.84
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-02-28",
-      "rspi": -17.4,
-      "level": "mild_sell",
-      "raw": 0.1474,
-      "volume_amp": 1.178,
-      "raw_variables": {
-        "v1": 0.016,
-        "v2": 1.0,
-        "v3": 0.139,
-        "v4": -0.4,
-        "v5": -0.1132
-      },
-      "variable_contributions": {
-        "v1": -0.47,
-        "v2": -23.56,
-        "v3": -4.09,
-        "v4": 9.42,
-        "v5": 1.33
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-04",
-      "rspi": -14.7,
-      "level": "mild_sell",
-      "raw": 0.1407,
-      "volume_amp": 1.047,
-      "raw_variables": {
-        "v1": 0.017,
-        "v2": 0.0482,
-        "v3": 0.0251,
-        "v4": 0.7,
-        "v5": -0.1944
-      },
-      "variable_contributions": {
-        "v1": -0.45,
-        "v2": -1.01,
-        "v3": -0.66,
-        "v4": -14.65,
-        "v5": 2.03
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-05",
-      "rspi": 23.9,
-      "level": "strong_rebound",
-      "raw": -0.2351,
-      "volume_amp": 1.015,
-      "raw_variables": {
-        "v1": 0.0115,
-        "v2": 0.0722,
-        "v3": -0.6265,
-        "v4": -0.4,
-        "v5": -0.1579
-      },
-      "variable_contributions": {
-        "v1": -0.29,
-        "v2": -1.46,
-        "v3": 15.89,
-        "v4": 8.12,
-        "v5": 1.6
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-06",
-      "rspi": -28.5,
-      "level": "strong_sell",
-      "raw": 0.3119,
-      "volume_amp": 0.913,
-      "raw_variables": {
-        "v1": 0.0086,
-        "v2": -0.3803,
-        "v3": 0.5736,
-        "v4": 1.0,
-        "v5": 0.4242
-      },
-      "variable_contributions": {
-        "v1": -0.2,
-        "v2": 6.94,
-        "v3": -13.08,
-        "v4": -18.25,
-        "v5": -3.87
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-07",
-      "rspi": 9.5,
-      "level": "mild_rebound",
-      "raw": -0.1003,
-      "volume_amp": 0.949,
-      "raw_variables": {
-        "v1": 0.0104,
-        "v2": -0.3106,
-        "v3": -0.3103,
-        "v4": 0.2,
-        "v5": -0.0318
-      },
-      "variable_contributions": {
-        "v1": -0.25,
-        "v2": 5.89,
-        "v3": 7.36,
-        "v4": -3.8,
-        "v5": 0.3
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-10",
-      "rspi": -15.5,
-      "level": "mild_sell",
-      "raw": 0.1863,
-      "volume_amp": 0.833,
-      "raw_variables": {
-        "v1": 0.0095,
-        "v2": 0.3082,
-        "v3": 0.8486,
-        "v4": -0.4,
-        "v5": -0.0987
-      },
-      "variable_contributions": {
-        "v1": -0.2,
-        "v2": -5.13,
-        "v3": -17.67,
-        "v4": 6.66,
-        "v5": 0.82
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-11",
-      "rspi": -12.3,
-      "level": "mild_sell",
-      "raw": 0.1363,
-      "volume_amp": 0.904,
-      "raw_variables": {
-        "v1": 0.0148,
-        "v2": 1.0,
-        "v3": -0.0586,
-        "v4": -0.4,
-        "v5": 0.2722
-      },
-      "variable_contributions": {
-        "v1": -0.33,
-        "v2": -18.07,
-        "v3": 1.32,
-        "v4": 7.23,
-        "v5": -2.46
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-12",
-      "rspi": 5.2,
-      "level": "mild_rebound",
-      "raw": -0.0527,
-      "volume_amp": 0.985,
-      "raw_variables": {
-        "v1": 0.0087,
-        "v2": -0.6201,
-        "v3": -0.4946,
-        "v4": 1.0,
-        "v5": -0.0718
-      },
-      "variable_contributions": {
-        "v1": -0.21,
-        "v2": 12.22,
-        "v3": 12.18,
-        "v4": -19.71,
-        "v5": 0.71
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-13",
-      "rspi": -19.7,
-      "level": "mild_sell",
-      "raw": 0.1904,
-      "volume_amp": 1.034,
-      "raw_variables": {
-        "v1": 0.0088,
-        "v2": 0.2087,
-        "v3": 0.3981,
-        "v4": 0.2,
-        "v5": 0.0698
-      },
-      "variable_contributions": {
-        "v1": -0.23,
-        "v2": -4.31,
-        "v3": -10.29,
-        "v4": -4.14,
-        "v5": -0.72
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-14",
-      "rspi": 17.4,
-      "level": "mild_rebound",
-      "raw": -0.2029,
-      "volume_amp": 0.855,
-      "raw_variables": {
-        "v1": 0.0096,
-        "v2": 0.0003,
-        "v3": -0.5541,
-        "v4": -0.4,
-        "v5": 0.1317
-      },
-      "variable_contributions": {
-        "v1": -0.2,
-        "v2": -0.0,
-        "v3": 11.85,
-        "v4": 6.84,
-        "v5": -1.13
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-17",
-      "rspi": 14.9,
-      "level": "mild_rebound",
-      "raw": -0.1491,
-      "volume_amp": 0.996,
-      "raw_variables": {
-        "v1": 0.0051,
-        "v2": -0.8299,
-        "v3": -0.6694,
-        "v4": 1.0,
-        "v5": -0.1702
-      },
-      "variable_contributions": {
-        "v1": -0.13,
-        "v2": 16.54,
-        "v3": 16.67,
-        "v4": -19.93,
-        "v5": 1.7
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-18",
-      "rspi": -1.5,
-      "level": "neutral",
-      "raw": 0.015,
-      "volume_amp": 0.996,
-      "raw_variables": {
-        "v1": 0.0051,
-        "v2": -0.6043,
-        "v3": 0.4181,
-        "v4": 0.2,
-        "v5": -0.0995
-      },
-      "variable_contributions": {
-        "v1": -0.13,
-        "v2": 12.03,
-        "v3": -10.41,
-        "v4": -3.98,
-        "v5": 0.99
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-19",
-      "rspi": 10.4,
-      "level": "mild_rebound",
-      "raw": -0.1055,
-      "volume_amp": 0.986,
-      "raw_variables": {
-        "v1": 0.0042,
-        "v2": -0.4546,
-        "v3": -0.2078,
-        "v4": 0.2,
-        "v5": -0.0373
-      },
-      "variable_contributions": {
-        "v1": -0.1,
-        "v2": 8.97,
-        "v3": 5.12,
-        "v4": -3.95,
-        "v5": 0.37
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-20",
-      "rspi": 6.0,
-      "level": "mild_rebound",
-      "raw": -0.0601,
-      "volume_amp": 1.004,
-      "raw_variables": {
-        "v1": 0.004,
-        "v2": -0.661,
-        "v3": 0.1993,
-        "v4": 0.2,
-        "v5": -0.1874
-      },
-      "variable_contributions": {
-        "v1": -0.1,
-        "v2": 13.27,
-        "v3": -5.0,
-        "v4": -4.02,
-        "v5": 1.88
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-21",
-      "rspi": 14.9,
-      "level": "mild_rebound",
-      "raw": -0.1354,
-      "volume_amp": 1.097,
-      "raw_variables": {
-        "v1": 0.0037,
-        "v2": -0.8155,
-        "v3": -0.0502,
-        "v4": 0.2,
-        "v5": -0.0072
-      },
-      "variable_contributions": {
-        "v1": -0.1,
-        "v2": 17.89,
-        "v3": 1.38,
-        "v4": -4.39,
-        "v5": 0.08
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-24",
-      "rspi": 2.0,
-      "level": "neutral",
-      "raw": -0.032,
-      "volume_amp": 0.623,
-      "raw_variables": {
-        "v1": 0.0039,
-        "v2": -0.1054,
-        "v3": -0.3528,
-        "v4": 0.2,
-        "v5": 0.3636
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": 1.31,
-        "v3": 5.49,
-        "v4": -2.49,
-        "v5": -2.26
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-25",
-      "rspi": -7.2,
-      "level": "mild_sell",
-      "raw": 0.095,
-      "volume_amp": 0.761,
-      "raw_variables": {
-        "v1": 0.0042,
-        "v2": -0.0283,
-        "v3": 0.0287,
-        "v4": 0.2,
-        "v5": 0.5246
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": 0.43,
-        "v3": -0.55,
-        "v4": -3.05,
-        "v5": -3.99
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-26",
-      "rspi": -2.1,
-      "level": "neutral",
-      "raw": 0.0295,
-      "volume_amp": 0.712,
-      "raw_variables": {
-        "v1": 0.0029,
-        "v2": -0.3545,
-        "v3": 0.2255,
-        "v4": 0.2,
-        "v5": 0.0333
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 5.05,
-        "v3": -4.01,
-        "v4": -2.85,
-        "v5": -0.24
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-27",
-      "rspi": 2.7,
-      "level": "neutral",
-      "raw": -0.0368,
-      "volume_amp": 0.725,
-      "raw_variables": {
-        "v1": 0.0043,
-        "v2": -0.1211,
-        "v3": 0.1394,
-        "v4": -0.4,
-        "v5": 0.3152
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": 1.76,
-        "v3": -2.53,
-        "v4": 5.8,
-        "v5": -2.28
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-28",
-      "rspi": -17.6,
-      "level": "mild_sell",
-      "raw": 0.2562,
-      "volume_amp": 0.686,
-      "raw_variables": {
-        "v1": 0.0087,
-        "v2": 0.4524,
-        "v3": 0.8092,
-        "v4": -0.4,
-        "v5": 0.412
-      },
-      "variable_contributions": {
-        "v1": -0.15,
-        "v2": -6.2,
-        "v3": -13.87,
-        "v4": 5.48,
-        "v5": -2.82
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-03-31",
-      "rspi": -14.6,
-      "level": "mild_sell",
-      "raw": 0.1804,
-      "volume_amp": 0.812,
-      "raw_variables": {
-        "v1": 0.0258,
-        "v2": 1.0,
-        "v3": 0.1005,
-        "v4": -0.4,
-        "v5": 0.288
-      },
-      "variable_contributions": {
-        "v1": -0.52,
-        "v2": -16.24,
-        "v3": -2.04,
-        "v4": 6.5,
-        "v5": -2.34
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-01",
-      "rspi": -12.0,
-      "level": "mild_sell",
-      "raw": 0.1692,
-      "volume_amp": 0.71,
-      "raw_variables": {
-        "v1": 0.0133,
-        "v2": 0.2383,
-        "v3": -0.3295,
-        "v4": 0.7,
-        "v5": 0.6056
-      },
-      "variable_contributions": {
-        "v1": -0.24,
-        "v2": -3.38,
-        "v3": 5.85,
-        "v4": -9.93,
-        "v5": -4.3
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-02",
-      "rspi": -7.4,
-      "level": "mild_sell",
-      "raw": 0.0965,
-      "volume_amp": 0.768,
+      "structural_amp": 1.031,
       "raw_variables": {
         "v1": 0.0157,
-        "v2": 0.4752,
-        "v3": 0.0011,
-        "v4": -0.4,
-        "v5": 0.7729
+        "v2": 0.0706,
+        "v3": -0.0457,
+        "v4": 0.0,
+        "v5": -0.0678,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.3,
-        "v2": -7.3,
-        "v3": -0.02,
-        "v4": 6.14,
-        "v5": -5.93
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-03",
-      "rspi": -33.5,
-      "level": "strong_sell",
-      "raw": 0.3867,
-      "volume_amp": 0.867,
-      "raw_variables": {
-        "v1": 0.0203,
-        "v2": 0.8555,
-        "v3": 1.0,
-        "v4": -0.4,
-        "v5": 0.4049
-      },
-      "variable_contributions": {
-        "v1": -0.44,
-        "v2": -14.84,
-        "v3": -21.68,
-        "v4": 6.94,
-        "v5": -3.51
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-04",
-      "rspi": -37.4,
-      "level": "strong_sell",
-      "raw": 0.3526,
-      "volume_amp": 1.061,
-      "raw_variables": {
-        "v1": 0.0272,
-        "v2": 0.9754,
-        "v3": 1.0,
-        "v4": -0.4,
-        "v5": -0.1925
-      },
-      "variable_contributions": {
-        "v1": -0.72,
-        "v2": -20.7,
-        "v3": -26.53,
-        "v4": 8.49,
-        "v5": 2.04
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-07",
-      "rspi": -23.2,
-      "level": "strong_sell",
-      "raw": 0.2229,
-      "volume_amp": 1.043,
-      "raw_variables": {
-        "v1": 0.1051,
-        "v2": 0.9981,
-        "v3": 0.2059,
-        "v4": -0.4,
-        "v5": 0.255
-      },
-      "variable_contributions": {
-        "v1": -2.74,
-        "v2": -20.81,
-        "v3": -5.37,
-        "v4": 8.34,
-        "v5": -2.66
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-08",
-      "rspi": -18.7,
-      "level": "mild_sell",
-      "raw": 0.1974,
-      "volume_amp": 0.947,
-      "raw_variables": {
-        "v1": 0.1002,
-        "v2": 0.1924,
-        "v3": 0.8667,
-        "v4": -0.4,
-        "v5": -0.0276
-      },
-      "variable_contributions": {
-        "v1": -2.37,
-        "v2": -3.65,
-        "v3": -20.53,
-        "v4": 7.58,
-        "v5": 0.26
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-09",
-      "rspi": 16.9,
-      "level": "mild_rebound",
-      "raw": -0.1706,
-      "volume_amp": 0.991,
-      "raw_variables": {
-        "v1": 0.1339,
-        "v2": 0.3694,
-        "v3": -1.0,
-        "v4": -0.4,
-        "v5": 0.521
-      },
-      "variable_contributions": {
-        "v1": -3.32,
-        "v2": -7.32,
-        "v3": 24.78,
-        "v4": 7.93,
-        "v5": -5.16
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-10",
-      "rspi": -47.4,
-      "level": "extreme_sell",
-      "raw": 0.4482,
-      "volume_amp": 1.058,
-      "raw_variables": {
-        "v1": 0.0331,
-        "v2": -0.4081,
-        "v3": 0.9971,
-        "v4": 1.0,
-        "v5": 0.7233
-      },
-      "variable_contributions": {
-        "v1": -0.87,
-        "v2": 8.64,
-        "v3": -26.38,
-        "v4": -21.17,
-        "v5": -7.65
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-11",
-      "rspi": 21.1,
-      "level": "strong_rebound",
-      "raw": -0.2511,
-      "volume_amp": 0.841,
-      "raw_variables": {
-        "v1": 0.0378,
-        "v2": 0.188,
-        "v3": -1.0,
-        "v4": -0.4,
-        "v5": 0.319
-      },
-      "variable_contributions": {
-        "v1": -0.79,
-        "v2": -3.16,
-        "v3": 21.02,
-        "v4": 6.73,
-        "v5": -2.68
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-14",
-      "rspi": 5.3,
-      "level": "mild_rebound",
-      "raw": -0.0683,
-      "volume_amp": 0.77,
-      "raw_variables": {
-        "v1": 0.0281,
-        "v2": -0.1078,
-        "v3": -0.0628,
-        "v4": -0.4,
-        "v5": 0.4194
-      },
-      "variable_contributions": {
-        "v1": -0.54,
-        "v2": 1.66,
-        "v3": 1.21,
-        "v4": 6.16,
-        "v5": -3.23
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-15",
-      "rspi": -6.4,
-      "level": "mild_sell",
-      "raw": 0.0826,
-      "volume_amp": 0.773,
-      "raw_variables": {
-        "v1": 0.0214,
-        "v2": -0.2072,
-        "v3": 0.0068,
-        "v4": 1.0,
-        "v5": -0.8298
-      },
-      "variable_contributions": {
-        "v1": -0.41,
-        "v2": 3.2,
-        "v3": -0.13,
-        "v4": -15.46,
-        "v5": 6.41
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-16",
-      "rspi": 3.4,
-      "level": "neutral",
-      "raw": -0.0415,
-      "volume_amp": 0.818,
-      "raw_variables": {
-        "v1": 0.0321,
-        "v2": -0.016,
-        "v3": 0.3817,
-        "v4": -0.4,
-        "v5": -0.6175
-      },
-      "variable_contributions": {
-        "v1": -0.66,
-        "v2": 0.26,
-        "v3": -7.8,
-        "v4": 6.54,
-        "v5": 5.05
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-17",
-      "rspi": -9.8,
-      "level": "mild_sell",
-      "raw": 0.1187,
-      "volume_amp": 0.827,
-      "raw_variables": {
-        "v1": 0.024,
-        "v2": -0.1197,
-        "v3": -0.1127,
-        "v4": 1.0,
-        "v5": -0.3515
-      },
-      "variable_contributions": {
-        "v1": -0.5,
-        "v2": 1.98,
-        "v3": 2.33,
-        "v4": -16.55,
-        "v5": 2.91
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-18",
-      "rspi": 6.6,
-      "level": "mild_rebound",
-      "raw": -0.0883,
-      "volume_amp": 0.752,
-      "raw_variables": {
-        "v1": 0.0202,
-        "v2": -0.3504,
-        "v3": -0.1127,
-        "v4": 0.2,
-        "v5": -0.3511
-      },
-      "variable_contributions": {
-        "v1": -0.38,
-        "v2": 5.27,
-        "v3": 2.12,
-        "v4": -3.01,
-        "v5": 2.64
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-21",
-      "rspi": 7.3,
-      "level": "mild_rebound",
-      "raw": -0.1038,
-      "volume_amp": 0.706,
-      "raw_variables": {
-        "v1": 0.0188,
-        "v2": -0.228,
-        "v3": 0.1335,
-        "v4": -0.4,
-        "v5": -0.1631
-      },
-      "variable_contributions": {
-        "v1": -0.33,
-        "v2": 3.22,
-        "v3": -2.36,
-        "v4": 5.64,
-        "v5": 1.15
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-22",
-      "rspi": 22.4,
-      "level": "strong_rebound",
-      "raw": -0.2689,
-      "volume_amp": 0.835,
-      "raw_variables": {
-        "v1": 0.0195,
-        "v2": -0.271,
-        "v3": -0.4437,
-        "v4": -0.4,
-        "v5": -0.2868
-      },
-      "variable_contributions": {
-        "v1": -0.41,
-        "v2": 4.52,
-        "v3": 9.26,
-        "v4": 6.68,
-        "v5": 2.39
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-23",
-      "rspi": 0.7,
-      "level": "neutral",
-      "raw": -0.0066,
-      "volume_amp": 0.998,
-      "raw_variables": {
-        "v1": 0.0104,
-        "v2": -0.3418,
-        "v3": -0.4488,
-        "v4": 1.0,
-        "v5": -0.286
-      },
-      "variable_contributions": {
-        "v1": -0.26,
-        "v2": 6.83,
-        "v3": 11.2,
-        "v4": -19.97,
-        "v5": 2.86
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-24",
-      "rspi": 30.0,
-      "level": "strong_rebound",
-      "raw": -0.3152,
-      "volume_amp": 0.953,
-      "raw_variables": {
-        "v1": 0.0114,
-        "v2": -0.5016,
-        "v3": -0.3689,
-        "v4": -0.4,
-        "v5": -0.4547
-      },
-      "variable_contributions": {
-        "v1": -0.27,
-        "v2": 9.56,
-        "v3": 8.79,
-        "v4": 7.62,
-        "v5": 4.33
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-25",
-      "rspi": -3.5,
-      "level": "neutral",
-      "raw": 0.0328,
-      "volume_amp": 1.08,
-      "raw_variables": {
-        "v1": 0.0071,
-        "v2": -0.8717,
-        "v3": -0.0166,
-        "v4": 1.0,
-        "v5": 0.0948
-      },
-      "variable_contributions": {
-        "v1": -0.19,
-        "v2": 18.83,
-        "v3": 0.45,
-        "v4": -21.6,
-        "v5": -1.02
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-28",
-      "rspi": 5.1,
-      "level": "mild_rebound",
-      "raw": -0.0508,
-      "volume_amp": 0.998,
-      "raw_variables": {
-        "v1": 0.007,
-        "v2": -0.3169,
-        "v3": 0.0227,
-        "v4": 0.2,
-        "v5": -0.3484
-      },
-      "variable_contributions": {
-        "v1": -0.18,
-        "v2": 6.33,
-        "v3": -0.57,
-        "v4": -3.99,
-        "v5": 3.48
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-29",
-      "rspi": 19.6,
-      "level": "mild_rebound",
-      "raw": -0.1801,
-      "volume_amp": 1.087,
-      "raw_variables": {
-        "v1": 0.0049,
-        "v2": -0.8162,
-        "v3": -0.2194,
-        "v4": 0.2,
-        "v5": -0.0319
-      },
-      "variable_contributions": {
-        "v1": -0.13,
-        "v2": 17.75,
-        "v3": 5.97,
-        "v4": -4.35,
-        "v5": 0.35
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-04-30",
-      "rspi": 13.6,
-      "level": "mild_rebound",
-      "raw": -0.1342,
-      "volume_amp": 1.012,
-      "raw_variables": {
-        "v1": 0.0061,
-        "v2": -0.175,
-        "v3": -0.0448,
-        "v4": -0.4,
-        "v5": -0.0954
-      },
-      "variable_contributions": {
-        "v1": -0.15,
-        "v2": 3.54,
-        "v3": 1.13,
-        "v4": 8.1,
-        "v5": 0.97
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-02",
-      "rspi": 3.8,
-      "level": "neutral",
-      "raw": -0.039,
-      "volume_amp": 0.984,
-      "raw_variables": {
-        "v1": 0.0056,
-        "v2": -0.1374,
-        "v3": -0.8838,
-        "v4": 1.0,
-        "v5": 0.08
-      },
-      "variable_contributions": {
-        "v1": -0.14,
-        "v2": 2.71,
-        "v3": 21.75,
-        "v4": -19.69,
-        "v5": -0.79
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-07",
-      "rspi": 6.2,
-      "level": "mild_rebound",
-      "raw": -0.0603,
-      "volume_amp": 1.032,
-      "raw_variables": {
-        "v1": 0.0043,
-        "v2": -0.507,
-        "v3": 0.095,
-        "v4": 0.2,
-        "v5": -0.2376
-      },
-      "variable_contributions": {
-        "v1": -0.11,
-        "v2": 10.47,
-        "v3": -2.45,
-        "v4": -4.13,
-        "v5": 2.45
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-08",
-      "rspi": -2.3,
-      "level": "neutral",
-      "raw": 0.0209,
-      "volume_amp": 1.092,
-      "raw_variables": {
-        "v1": 0.0035,
-        "v2": -0.3238,
-        "v3": 0.0619,
-        "v4": 0.2,
-        "v5": 0.2931
-      },
-      "variable_contributions": {
-        "v1": -0.09,
-        "v2": 7.07,
-        "v3": -1.69,
-        "v4": -4.37,
-        "v5": -3.2
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-09",
-      "rspi": 13.5,
-      "level": "mild_rebound",
-      "raw": -0.1448,
-      "volume_amp": 0.934,
-      "raw_variables": {
-        "v1": 0.0037,
-        "v2": -0.2107,
-        "v3": -0.0784,
-        "v4": -0.4,
-        "v5": -0.0403
-      },
-      "variable_contributions": {
-        "v1": -0.09,
-        "v2": 3.94,
+        "v1": 0.03,
+        "v2": -2.2,
         "v3": 1.83,
-        "v4": 7.47,
-        "v5": 0.38
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-12",
-      "rspi": -2.4,
-      "level": "neutral",
-      "raw": 0.0246,
-      "volume_amp": 0.976,
-      "raw_variables": {
-        "v1": 0.002,
-        "v2": -0.061,
-        "v3": -0.499,
-        "v4": 1.0,
-        "v5": -0.3892
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 1.19,
-        "v3": 12.17,
-        "v4": -19.52,
-        "v5": 3.8
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-13",
-      "rspi": 8.7,
-      "level": "mild_rebound",
-      "raw": -0.0879,
-      "volume_amp": 0.987,
-      "raw_variables": {
-        "v1": 0.0023,
-        "v2": -0.3497,
-        "v3": -0.0924,
-        "v4": 0.2,
-        "v5": -0.354
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": 6.9,
-        "v3": 2.28,
-        "v4": -3.95,
-        "v5": 3.49
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-14",
-      "rspi": 14.0,
-      "level": "mild_rebound",
-      "raw": -0.1402,
-      "volume_amp": 1.0,
-      "raw_variables": {
-        "v1": 0.0011,
-        "v2": -0.7567,
-        "v3": -0.1824,
-        "v4": 0.2,
-        "v5": 0.1645
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 15.13,
-        "v3": 4.56,
-        "v4": -4.0,
-        "v5": -1.65
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-15",
-      "rspi": 18.9,
-      "level": "mild_rebound",
-      "raw": -0.2089,
-      "volume_amp": 0.904,
-      "raw_variables": {
-        "v1": 0.0018,
-        "v2": -0.3947,
-        "v3": -0.1158,
-        "v4": -0.4,
-        "v5": -0.2142
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 7.13,
-        "v3": 2.62,
-        "v4": 7.23,
-        "v5": 1.94
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-16",
-      "rspi": -15.3,
-      "level": "mild_sell",
-      "raw": 0.157,
-      "volume_amp": 0.977,
-      "raw_variables": {
-        "v1": 0.0016,
-        "v2": -0.2054,
-        "v3": -0.0382,
-        "v4": 1.0,
-        "v5": 0.0724
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 4.01,
-        "v3": 0.93,
-        "v4": -19.53,
-        "v5": -0.71
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-19",
-      "rspi": 5.6,
-      "level": "mild_rebound",
-      "raw": -0.0638,
-      "volume_amp": 0.884,
-      "raw_variables": {
-        "v1": 0.003,
-        "v2": 0.2993,
-        "v3": -0.0196,
-        "v4": -0.4,
-        "v5": -0.3953
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": -5.29,
-        "v3": 0.43,
-        "v4": 7.07,
-        "v5": 3.49
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-20",
-      "rspi": -24.0,
-      "level": "strong_sell",
-      "raw": 0.2449,
-      "volume_amp": 0.979,
-      "raw_variables": {
-        "v1": 0.0031,
-        "v2": 0.3363,
-        "v3": 0.1747,
-        "v4": 0.7,
-        "v5": -0.0686
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": -6.59,
-        "v3": -4.27,
-        "v4": -13.71,
-        "v5": 0.67
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-21",
-      "rspi": -14.3,
-      "level": "mild_sell",
-      "raw": 0.1504,
-      "volume_amp": 0.95,
-      "raw_variables": {
-        "v1": 0.0021,
-        "v2": -0.1918,
-        "v3": -0.0171,
-        "v4": 1.0,
-        "v5": -0.075
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 3.64,
-        "v3": 0.41,
-        "v4": -19.0,
-        "v5": 0.71
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-22",
-      "rspi": -7.5,
-      "level": "mild_sell",
-      "raw": 0.0702,
-      "volume_amp": 1.068,
-      "raw_variables": {
-        "v1": 0.0038,
-        "v2": 0.5789,
-        "v3": 0.1355,
-        "v4": -0.4,
-        "v5": -0.0036
-      },
-      "variable_contributions": {
-        "v1": -0.1,
-        "v2": -12.36,
-        "v3": -3.62,
-        "v4": 8.54,
-        "v5": 0.04
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-23",
-      "rspi": -18.3,
-      "level": "mild_sell",
-      "raw": 0.1771,
-      "volume_amp": 1.032,
-      "raw_variables": {
-        "v1": 0.004,
-        "v2": 0.3003,
-        "v3": -0.0708,
-        "v4": 0.7,
-        "v5": -0.0622
-      },
-      "variable_contributions": {
-        "v1": -0.1,
-        "v2": -6.2,
-        "v3": 1.83,
-        "v4": -14.44,
-        "v5": 0.64
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-26",
-      "rspi": -14.7,
-      "level": "mild_sell",
-      "raw": 0.1462,
-      "volume_amp": 1.002,
-      "raw_variables": {
-        "v1": 0.002,
-        "v2": 0.0246,
-        "v3": -0.0708,
-        "v4": 1.0,
-        "v5": -0.4152
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": -0.49,
-        "v3": 1.78,
-        "v4": -20.05,
-        "v5": 4.16
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-27",
-      "rspi": 15.0,
-      "level": "mild_rebound",
-      "raw": -0.1556,
-      "volume_amp": 0.961,
-      "raw_variables": {
-        "v1": 0.0023,
-        "v2": 0.3691,
-        "v3": -0.5662,
-        "v4": -0.4,
-        "v5": -0.0847
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": -7.09,
-        "v3": 13.6,
-        "v4": 7.69,
-        "v5": 0.81
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-28",
-      "rspi": -10.6,
-      "level": "mild_sell",
-      "raw": 0.0913,
-      "volume_amp": 1.158,
-      "raw_variables": {
-        "v1": 0.0014,
-        "v2": -0.4405,
-        "v3": -0.0926,
-        "v4": 1.0,
-        "v5": 0.0216
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 10.2,
-        "v3": 2.68,
-        "v4": -23.17,
-        "v5": -0.25
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-29",
-      "rspi": 19.7,
-      "level": "mild_rebound",
-      "raw": -0.1783,
-      "volume_amp": 1.106,
-      "raw_variables": {
-        "v1": 0.0011,
-        "v2": -0.3786,
-        "v3": -0.3771,
-        "v4": 0.2,
-        "v5": -0.4864
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 8.37,
-        "v3": 10.42,
-        "v4": -4.42,
-        "v5": 5.38
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-05-30",
-      "rspi": -28.9,
-      "level": "strong_sell",
-      "raw": 0.2337,
-      "volume_amp": 1.238,
-      "raw_variables": {
-        "v1": 0.0012,
-        "v2": 1.0,
-        "v3": 0.3788,
-        "v4": -0.4,
-        "v5": 0.1867
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -24.77,
-        "v3": -11.73,
-        "v4": 9.91,
-        "v5": -2.31
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-02",
-      "rspi": 1.0,
-      "level": "neutral",
-      "raw": -0.0118,
-      "volume_amp": 0.804,
-      "raw_variables": {
-        "v1": 0.0014,
-        "v2": -0.1295,
-        "v3": -0.4213,
-        "v4": 0.7,
-        "v5": -0.2098
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 2.08,
-        "v3": 8.47,
-        "v4": -11.25,
-        "v5": 1.69
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-04",
-      "rspi": 13.4,
-      "level": "mild_rebound",
-      "raw": -0.129,
-      "volume_amp": 1.042,
-      "raw_variables": {
-        "v1": 0.0009,
-        "v2": -1.0,
-        "v3": -0.3362,
-        "v4": 1.0,
-        "v5": -0.4521
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": 20.84,
-        "v3": 8.76,
-        "v4": -20.84,
-        "v5": 4.71
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-05",
-      "rspi": 23.7,
-      "level": "strong_rebound",
-      "raw": -0.2186,
-      "volume_amp": 1.084,
-      "raw_variables": {
-        "v1": 0.0006,
-        "v2": -1.0,
-        "v3": -0.1929,
-        "v4": 0.2,
-        "v5": -0.105
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": 21.68,
-        "v3": 5.23,
-        "v4": -4.34,
-        "v5": 1.14
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-09",
-      "rspi": 23.6,
-      "level": "strong_rebound",
-      "raw": -0.2176,
-      "volume_amp": 1.086,
-      "raw_variables": {
-        "v1": 0.0003,
-        "v2": -0.961,
-        "v3": -0.2847,
-        "v4": 0.2,
-        "v5": 0.0565
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": 20.87,
-        "v3": 7.73,
-        "v4": -4.34,
-        "v5": -0.61
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-10",
-      "rspi": 5.4,
-      "level": "mild_rebound",
-      "raw": -0.049,
-      "volume_amp": 1.105,
-      "raw_variables": {
-        "v1": 0.0002,
-        "v2": -0.4895,
-        "v3": 0.0157,
-        "v4": 0.2,
-        "v5": 0.0495
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": 10.82,
-        "v3": -0.43,
-        "v4": -4.42,
-        "v5": -0.55
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-11",
-      "rspi": 2.4,
-      "level": "neutral",
-      "raw": -0.0255,
-      "volume_amp": 0.957,
-      "raw_variables": {
-        "v1": 0.0007,
-        "v2": 0.0839,
-        "v3": -0.1108,
-        "v4": 0.2,
-        "v5": -0.5474
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": -1.61,
-        "v3": 2.65,
-        "v4": -3.83,
-        "v5": 5.24
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-12",
-      "rspi": 10.5,
-      "level": "mild_rebound",
-      "raw": -0.0917,
-      "volume_amp": 1.14,
-      "raw_variables": {
-        "v1": 0.0009,
-        "v2": -0.1943,
-        "v3": -0.2445,
-        "v4": 0.2,
-        "v5": -0.3197
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 4.43,
-        "v3": 6.97,
-        "v4": -4.56,
-        "v5": 3.64
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-13",
-      "rspi": -3.8,
-      "level": "neutral",
-      "raw": 0.0343,
-      "volume_amp": 1.104,
-      "raw_variables": {
-        "v1": 0.0015,
-        "v2": 0.1321,
-        "v3": 0.4948,
-        "v4": -0.4,
-        "v5": -0.3623
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -2.92,
-        "v3": -13.66,
-        "v4": 8.83,
-        "v5": 4.0
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-16",
-      "rspi": -4.8,
-      "level": "neutral",
-      "raw": 0.0495,
-      "volume_amp": 0.961,
-      "raw_variables": {
-        "v1": 0.0015,
-        "v2": 0.6109,
-        "v3": -0.6222,
-        "v4": 0.7,
-        "v5": -0.5747
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": -11.75,
-        "v3": 14.95,
-        "v4": -13.46,
-        "v5": 5.52
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-17",
-      "rspi": -8.0,
-      "level": "mild_sell",
-      "raw": 0.0736,
-      "volume_amp": 1.085,
-      "raw_variables": {
-        "v1": 0.0018,
-        "v2": 0.326,
-        "v3": 0.5353,
-        "v4": -0.4,
-        "v5": -0.4585
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": -7.08,
-        "v3": -14.52,
-        "v4": 8.68,
-        "v5": 4.98
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-18",
-      "rspi": -8.1,
-      "level": "mild_sell",
-      "raw": 0.088,
-      "volume_amp": 0.921,
-      "raw_variables": {
-        "v1": 0.0019,
-        "v2": -0.0943,
-        "v3": -0.1872,
-        "v4": 1.0,
-        "v5": -0.4681
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 1.74,
-        "v3": 4.31,
-        "v4": -18.43,
-        "v5": 4.31
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-19",
-      "rspi": 6.4,
-      "level": "mild_rebound",
-      "raw": -0.0703,
-      "volume_amp": 0.909,
-      "raw_variables": {
-        "v1": 0.002,
-        "v2": 0.3413,
-        "v3": -0.1872,
-        "v4": -0.4,
-        "v5": -0.1224
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -6.2,
-        "v3": 4.25,
-        "v4": 7.27,
-        "v5": 1.11
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-20",
-      "rspi": -5.1,
-      "level": "mild_sell",
-      "raw": 0.0463,
-      "volume_amp": 1.095,
-      "raw_variables": {
-        "v1": 0.0018,
-        "v2": -0.3882,
-        "v3": -0.0847,
-        "v4": 1.0,
-        "v5": -0.5539
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 8.5,
-        "v3": 2.32,
-        "v4": -21.91,
-        "v5": 6.07
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-23",
-      "rspi": 11.2,
-      "level": "mild_rebound",
-      "raw": -0.1056,
-      "volume_amp": 1.06,
-      "raw_variables": {
-        "v1": 0.0026,
-        "v2": 0.6643,
-        "v3": -0.3575,
-        "v4": -0.4,
-        "v5": -0.6975
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": -14.09,
-        "v3": 9.48,
-        "v4": 8.48,
-        "v5": 7.4
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-24",
-      "rspi": 11.4,
-      "level": "mild_rebound",
-      "raw": -0.1042,
-      "volume_amp": 1.098,
-      "raw_variables": {
-        "v1": 0.001,
-        "v2": -0.221,
-        "v3": -1.0,
-        "v4": 1.0,
-        "v5": -0.1025
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 4.85,
-        "v3": 27.45,
-        "v4": -21.96,
-        "v5": 1.13
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-25",
-      "rspi": 10.1,
-      "level": "mild_rebound",
-      "raw": -0.0935,
-      "volume_amp": 1.077,
-      "raw_variables": {
-        "v1": 0.002,
-        "v2": 0.3873,
-        "v3": 0.0341,
-        "v4": -0.4,
-        "v5": -1.0
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": -8.34,
-        "v3": -0.92,
-        "v4": 8.61,
-        "v5": 10.77
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-26",
-      "rspi": -9.5,
-      "level": "mild_sell",
-      "raw": 0.0999,
-      "volume_amp": 0.947,
-      "raw_variables": {
-        "v1": 0.0026,
-        "v2": 0.83,
-        "v3": 0.0134,
-        "v4": -0.4,
-        "v5": 0.0987
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": -15.72,
-        "v3": -0.32,
-        "v4": 7.58,
-        "v5": -0.93
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-27",
-      "rspi": -9.3,
-      "level": "mild_sell",
-      "raw": 0.1115,
-      "volume_amp": 0.836,
-      "raw_variables": {
-        "v1": 0.0036,
-        "v2": 0.9558,
-        "v3": 0.1415,
-        "v4": -0.4,
-        "v5": -0.3594
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": -15.98,
-        "v3": -2.96,
-        "v4": 6.69,
-        "v5": 3.01
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-06-30",
-      "rspi": 4.4,
-      "level": "neutral",
-      "raw": -0.0528,
-      "volume_amp": 0.841,
-      "raw_variables": {
-        "v1": 0.0033,
-        "v2": 0.6789,
-        "v3": -0.3317,
-        "v4": -0.4,
-        "v5": -0.265
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": -11.42,
-        "v3": 6.97,
-        "v4": 6.73,
-        "v5": 2.23
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-01",
-      "rspi": -17.7,
-      "level": "mild_sell",
-      "raw": 0.1823,
-      "volume_amp": 0.97,
-      "raw_variables": {
-        "v1": 0.003,
-        "v2": -0.0312,
-        "v3": 0.0443,
-        "v4": 1.0,
-        "v5": -0.2326
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": 0.6,
-        "v3": -1.07,
-        "v4": -19.39,
-        "v5": 2.26
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-02",
-      "rspi": 3.0,
-      "level": "neutral",
-      "raw": -0.0313,
-      "volume_amp": 0.966,
-      "raw_variables": {
-        "v1": 0.0035,
-        "v2": 0.4151,
-        "v3": -0.1389,
-        "v4": -0.4,
-        "v5": -0.0048
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": -8.02,
-        "v3": 3.36,
-        "v4": 7.73,
-        "v5": 0.05
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-03",
-      "rspi": -4.7,
-      "level": "neutral",
-      "raw": 0.0488,
-      "volume_amp": 0.963,
-      "raw_variables": {
-        "v1": 0.0021,
-        "v2": -0.531,
-        "v3": -0.2783,
-        "v4": 1.0,
-        "v5": 0.2406
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 10.22,
-        "v3": 6.7,
-        "v4": -19.25,
-        "v5": -2.32
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-04",
-      "rspi": 15.8,
-      "level": "mild_rebound",
-      "raw": -0.1764,
-      "volume_amp": 0.895,
-      "raw_variables": {
-        "v1": 0.0039,
-        "v2": -0.1099,
-        "v3": -0.2783,
-        "v4": -0.4,
-        "v5": -0.0584
-      },
-      "variable_contributions": {
-        "v1": -0.09,
-        "v2": 1.97,
-        "v3": 6.23,
-        "v4": 7.16,
-        "v5": 0.52
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-07",
-      "rspi": -9.7,
-      "level": "mild_sell",
-      "raw": 0.1384,
-      "volume_amp": 0.699,
-      "raw_variables": {
-        "v1": 0.0037,
-        "v2": 0.1178,
-        "v3": 0.765,
-        "v4": -0.4,
-        "v5": 0.0269
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": -1.65,
-        "v3": -13.36,
-        "v4": 5.59,
-        "v5": -0.19
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-08",
-      "rspi": -5.3,
-      "level": "mild_sell",
-      "raw": 0.0587,
-      "volume_amp": 0.902,
-      "raw_variables": {
-        "v1": 0.0022,
-        "v2": -0.3248,
-        "v3": -0.2825,
-        "v4": 1.0,
-        "v5": -0.0622
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 5.86,
-        "v3": 6.37,
-        "v4": -18.04,
-        "v5": 0.56
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-09",
-      "rspi": 1.3,
-      "level": "neutral",
-      "raw": -0.0147,
-      "volume_amp": 0.855,
-      "raw_variables": {
-        "v1": 0.0019,
-        "v2": 0.4521,
-        "v3": -0.0719,
-        "v4": -0.4,
-        "v5": -0.0764
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -7.73,
-        "v3": 1.54,
-        "v4": 6.84,
-        "v5": 0.65
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-10",
-      "rspi": 3.7,
-      "level": "neutral",
-      "raw": -0.039,
-      "volume_amp": 0.942,
-      "raw_variables": {
-        "v1": 0.0014,
-        "v2": -0.6199,
-        "v3": -0.3123,
-        "v4": 1.0,
-        "v5": -0.3731
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 11.68,
-        "v3": 7.36,
-        "v4": -18.84,
-        "v5": 3.51
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-11",
-      "rspi": 16.1,
-      "level": "mild_rebound",
-      "raw": -0.1773,
-      "volume_amp": 0.911,
-      "raw_variables": {
-        "v1": 0.0021,
-        "v2": -0.426,
-        "v3": 0.194,
-        "v4": -0.4,
-        "v5": -0.6114
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 7.76,
-        "v3": -4.42,
-        "v4": 7.29,
-        "v5": 5.57
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-14",
-      "rspi": -4.1,
-      "level": "neutral",
-      "raw": 0.0503,
-      "volume_amp": 0.814,
-      "raw_variables": {
-        "v1": 0.0017,
-        "v2": -0.4351,
-        "v3": -0.1877,
-        "v4": 1.0,
-        "v5": -0.1622
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 7.09,
-        "v3": 3.82,
-        "v4": -16.29,
-        "v5": 1.32
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-15",
-      "rspi": -0.1,
-      "level": "neutral",
-      "raw": 0.0008,
-      "volume_amp": 0.869,
-      "raw_variables": {
-        "v1": 0.0016,
-        "v2": -0.2272,
-        "v3": 0.0831,
-        "v4": 0.2,
-        "v5": -0.1492
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 3.95,
-        "v3": -1.81,
-        "v4": -3.48,
-        "v5": 1.3
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-16",
-      "rspi": 9.2,
-      "level": "mild_rebound",
-      "raw": -0.1117,
-      "volume_amp": 0.822,
-      "raw_variables": {
-        "v1": 0.0024,
-        "v2": -0.0555,
-        "v3": -0.0208,
-        "v4": -0.4,
-        "v5": -0.1595
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 0.91,
-        "v3": 0.43,
-        "v4": 6.57,
-        "v5": 1.31
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-17",
-      "rspi": -16.2,
-      "level": "mild_sell",
-      "raw": 0.1565,
-      "volume_amp": 1.037,
-      "raw_variables": {
-        "v1": 0.0025,
-        "v2": -0.0402,
-        "v3": -0.0337,
-        "v4": 1.0,
-        "v5": -0.2765
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": 0.83,
-        "v3": 0.87,
-        "v4": -20.75,
-        "v5": 2.87
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-18",
-      "rspi": -0.2,
-      "level": "neutral",
-      "raw": 0.0025,
-      "volume_amp": 0.871,
-      "raw_variables": {
-        "v1": 0.003,
-        "v2": -0.2386,
-        "v3": 0.1821,
-        "v4": 0.2,
-        "v5": -0.3606
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": 4.15,
-        "v3": -3.96,
-        "v4": -3.48,
-        "v5": 3.14
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-21",
-      "rspi": 20.6,
-      "level": "strong_rebound",
-      "raw": -0.2556,
-      "volume_amp": 0.807,
-      "raw_variables": {
-        "v1": 0.0024,
-        "v2": -0.9574,
-        "v3": -0.4085,
-        "v4": 0.2,
-        "v5": -0.0259
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 15.46,
-        "v3": 8.25,
-        "v4": -3.23,
-        "v5": 0.21
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-22",
-      "rspi": 0.2,
-      "level": "neutral",
-      "raw": -0.0024,
-      "volume_amp": 0.888,
-      "raw_variables": {
-        "v1": 0.0035,
-        "v2": 0.1874,
-        "v3": 0.1323,
-        "v4": -0.4,
-        "v5": 0.0611
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": -3.33,
-        "v3": -2.94,
-        "v4": 7.11,
-        "v5": -0.54
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-23",
-      "rspi": -3.1,
-      "level": "neutral",
-      "raw": 0.0332,
-      "volume_amp": 0.945,
-      "raw_variables": {
-        "v1": 0.003,
-        "v2": -0.4189,
-        "v3": -0.3421,
-        "v4": 1.0,
-        "v5": 0.0172
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": 7.91,
-        "v3": 8.08,
-        "v4": -18.89,
-        "v5": -0.16
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-24",
-      "rspi": 10.7,
-      "level": "mild_rebound",
-      "raw": -0.1066,
-      "volume_amp": 1.001,
-      "raw_variables": {
-        "v1": 0.0031,
-        "v2": -0.7091,
-        "v3": 0.0717,
-        "v4": 0.2,
-        "v5": -0.2346
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": 14.2,
-        "v3": -1.79,
-        "v4": -4.0,
-        "v5": 2.35
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-25",
-      "rspi": -1.0,
-      "level": "neutral",
-      "raw": 0.0121,
-      "volume_amp": 0.811,
-      "raw_variables": {
-        "v1": 0.0029,
-        "v2": -0.1213,
-        "v3": -0.0128,
-        "v4": 0.2,
-        "v5": -0.0118
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": 1.97,
-        "v3": 0.26,
-        "v4": -3.24,
-        "v5": 0.1
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-28",
-      "rspi": -1.3,
-      "level": "neutral",
-      "raw": 0.0118,
-      "volume_amp": 1.058,
-      "raw_variables": {
-        "v1": 0.0025,
-        "v2": -0.3695,
-        "v3": 0.1376,
-        "v4": 0.2,
-        "v5": 0.107
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": 7.82,
-        "v3": -3.64,
-        "v4": -4.23,
-        "v5": -1.13
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-29",
-      "rspi": 8.9,
-      "level": "mild_rebound",
-      "raw": -0.0889,
-      "volume_amp": 1.005,
-      "raw_variables": {
-        "v1": 0.002,
-        "v2": -0.5227,
-        "v3": -0.0911,
-        "v4": 0.2,
-        "v5": -0.021
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 10.51,
-        "v3": 2.29,
-        "v4": -4.02,
-        "v5": 0.21
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-30",
-      "rspi": 7.1,
-      "level": "mild_rebound",
-      "raw": -0.0697,
-      "volume_amp": 1.022,
-      "raw_variables": {
-        "v1": 0.0017,
-        "v2": -0.4429,
-        "v3": -0.0214,
-        "v4": 0.2,
-        "v5": -0.162
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 9.05,
-        "v3": 0.55,
-        "v4": -4.09,
-        "v5": 1.66
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-07-31",
-      "rspi": 1.6,
-      "level": "neutral",
-      "raw": -0.0136,
-      "volume_amp": 1.16,
-      "raw_variables": {
-        "v1": 0.0017,
-        "v2": -0.0936,
-        "v3": 0.2741,
-        "v4": -0.4,
-        "v5": 0.1613
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 2.17,
-        "v3": -7.95,
-        "v4": 9.28,
-        "v5": -1.87
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-01",
-      "rspi": -33.1,
-      "level": "strong_sell",
-      "raw": 0.3152,
-      "volume_amp": 1.049,
-      "raw_variables": {
-        "v1": 0.0055,
-        "v2": 1.0,
-        "v3": 0.7533,
-        "v4": -0.4,
-        "v5": 0.0552
-      },
-      "variable_contributions": {
-        "v1": -0.15,
-        "v2": -20.99,
-        "v3": -19.76,
-        "v4": 8.4,
-        "v5": -0.58
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-04",
-      "rspi": -7.0,
-      "level": "mild_sell",
-      "raw": 0.0909,
-      "volume_amp": 0.767,
-      "raw_variables": {
-        "v1": 0.0044,
-        "v2": 0.2435,
-        "v3": -0.632,
-        "v4": 1.0,
-        "v5": -0.0093
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": -3.73,
-        "v3": 12.11,
-        "v4": -15.33,
-        "v5": 0.07
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-05",
-      "rspi": -4.5,
-      "level": "neutral",
-      "raw": 0.0512,
-      "volume_amp": 0.872,
-      "raw_variables": {
-        "v1": 0.0025,
-        "v2": -0.0458,
-        "v3": -0.0446,
-        "v4": 0.2,
-        "v5": 0.309
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 0.8,
-        "v3": 0.97,
-        "v4": -3.49,
-        "v5": -2.69
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-06",
-      "rspi": 7.3,
-      "level": "mild_rebound",
-      "raw": -0.0809,
-      "volume_amp": 0.904,
-      "raw_variables": {
-        "v1": 0.0021,
-        "v2": 0.0207,
-        "v3": -0.1619,
-        "v4": -0.4,
-        "v5": 0.3487
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": -0.37,
-        "v3": 3.66,
-        "v4": 7.23,
-        "v5": -3.15
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-07",
-      "rspi": -24.4,
-      "level": "strong_sell",
-      "raw": 0.2633,
-      "volume_amp": 0.928,
-      "raw_variables": {
-        "v1": 0.0017,
-        "v2": 0.4387,
-        "v3": -0.031,
-        "v4": 1.0,
-        "v5": -0.1709
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -8.14,
-        "v3": 0.72,
-        "v4": -18.57,
-        "v5": 1.59
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-08",
-      "rspi": 3.2,
-      "level": "neutral",
-      "raw": -0.0343,
-      "volume_amp": 0.947,
-      "raw_variables": {
-        "v1": 0.0026,
-        "v2": 0.5939,
-        "v3": -0.0998,
-        "v4": -0.4,
-        "v5": -0.4877
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": -11.25,
-        "v3": 2.36,
-        "v4": 7.57,
-        "v5": 4.62
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-11",
-      "rspi": -16.3,
-      "level": "mild_sell",
-      "raw": 0.1852,
-      "volume_amp": 0.88,
-      "raw_variables": {
-        "v1": 0.0032,
-        "v2": 0.0305,
-        "v3": 0.1429,
-        "v4": 1.0,
-        "v5": -0.5742
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": -0.54,
-        "v3": -3.14,
-        "v4": -17.6,
-        "v5": 5.05
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-12",
-      "rspi": 11.4,
-      "level": "mild_rebound",
-      "raw": -0.1309,
-      "volume_amp": 0.874,
-      "raw_variables": {
-        "v1": 0.004,
-        "v2": 0.4131,
-        "v3": -0.3994,
-        "v4": -0.4,
-        "v5": -0.3467
-      },
-      "variable_contributions": {
-        "v1": -0.09,
-        "v2": -7.22,
-        "v3": 8.73,
-        "v4": 6.99,
-        "v5": 3.03
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-13",
-      "rspi": -3.6,
-      "level": "neutral",
-      "raw": 0.0403,
-      "volume_amp": 0.89,
-      "raw_variables": {
-        "v1": 0.003,
-        "v2": -0.5411,
-        "v3": -0.198,
-        "v4": 1.0,
-        "v5": -0.0275
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": 9.63,
-        "v3": 4.4,
-        "v4": -17.8,
-        "v5": 0.24
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-14",
-      "rspi": -14.6,
-      "level": "mild_sell",
-      "raw": 0.1653,
-      "volume_amp": 0.881,
-      "raw_variables": {
-        "v1": 0.0029,
-        "v2": 0.4534,
-        "v3": 0.1435,
-        "v4": 0.2,
-        "v5": -0.0202
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": -7.99,
-        "v3": -3.16,
-        "v4": -3.53,
-        "v5": 0.18
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-18",
-      "rspi": -10.7,
-      "level": "mild_sell",
-      "raw": 0.1321,
-      "volume_amp": 0.81,
-      "raw_variables": {
-        "v1": 0.0046,
-        "v2": 0.8939,
-        "v3": 0.1576,
-        "v4": -0.4,
-        "v5": -0.0722
-      },
-      "variable_contributions": {
-        "v1": -0.09,
-        "v2": -14.48,
-        "v3": -3.19,
-        "v4": 6.48,
-        "v5": 0.58
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-19",
-      "rspi": -31.0,
-      "level": "strong_sell",
-      "raw": 0.3927,
-      "volume_amp": 0.79,
-      "raw_variables": {
-        "v1": 0.0058,
-        "v2": 0.779,
-        "v3": 0.4137,
-        "v4": 0.7,
-        "v5": -0.0798
-      },
-      "variable_contributions": {
-        "v1": -0.12,
-        "v2": -12.31,
-        "v3": -8.17,
-        "v4": -11.06,
-        "v5": 0.63
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-20",
-      "rspi": -30.8,
-      "level": "strong_sell",
-      "raw": 0.3042,
-      "volume_amp": 1.014,
-      "raw_variables": {
-        "v1": 0.007,
-        "v2": 0.4623,
-        "v3": 0.0555,
-        "v4": 1.0,
-        "v5": -0.0385
-      },
-      "variable_contributions": {
-        "v1": -0.18,
-        "v2": -9.38,
-        "v3": -1.41,
-        "v4": -20.28,
-        "v5": 0.39
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-21",
-      "rspi": -12.4,
-      "level": "mild_sell",
-      "raw": 0.1285,
-      "volume_amp": 0.962,
-      "raw_variables": {
-        "v1": 0.006,
-        "v2": 0.1745,
-        "v3": 0.0862,
-        "v4": 0.2,
-        "v5": 0.3061
-      },
-      "variable_contributions": {
-        "v1": -0.14,
-        "v2": -3.36,
-        "v3": -2.07,
-        "v4": -3.85,
-        "v5": -2.94
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-22",
-      "rspi": 10.5,
-      "level": "mild_rebound",
-      "raw": -0.1346,
-      "volume_amp": 0.784,
-      "raw_variables": {
-        "v1": 0.0042,
-        "v2": -0.1278,
-        "v3": -0.7884,
-        "v4": 0.2,
-        "v5": 0.4706
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": 2.0,
-        "v3": 15.45,
-        "v4": -3.14,
-        "v5": -3.69
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-25",
-      "rspi": -7.1,
-      "level": "mild_sell",
-      "raw": 0.0923,
-      "volume_amp": 0.768,
-      "raw_variables": {
-        "v1": 0.0029,
-        "v2": -0.0544,
-        "v3": 0.2532,
-        "v4": 0.2,
-        "v5": -0.0085
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": 0.84,
-        "v3": -4.86,
-        "v4": -3.07,
-        "v5": 0.07
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-26",
-      "rspi": -14.9,
-      "level": "mild_sell",
-      "raw": 0.1343,
-      "volume_amp": 1.11,
-      "raw_variables": {
-        "v1": 0.0036,
-        "v2": 0.9321,
-        "v3": 0.0231,
-        "v4": -0.4,
-        "v5": 0.2124
-      },
-      "variable_contributions": {
-        "v1": -0.1,
-        "v2": -20.7,
-        "v3": -0.64,
-        "v4": 8.88,
-        "v5": -2.36
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-27",
-      "rspi": -14.8,
-      "level": "mild_sell",
-      "raw": 0.1742,
-      "volume_amp": 0.848,
-      "raw_variables": {
-        "v1": 0.0034,
-        "v2": 0.2613,
-        "v3": -0.045,
-        "v4": 0.7,
-        "v5": -0.077
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": -4.43,
-        "v3": 0.95,
-        "v4": -11.88,
-        "v5": 0.65
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-28",
-      "rspi": -6.3,
-      "level": "mild_sell",
-      "raw": 0.067,
-      "volume_amp": 0.938,
-      "raw_variables": {
-        "v1": 0.0036,
-        "v2": -0.031,
-        "v3": -0.3425,
-        "v4": 1.0,
-        "v5": -0.4201
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": 0.58,
-        "v3": 8.03,
-        "v4": -18.75,
-        "v5": 3.94
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-08-29",
-      "rspi": -8.7,
-      "level": "mild_sell",
-      "raw": 0.0978,
-      "volume_amp": 0.894,
-      "raw_variables": {
-        "v1": 0.0041,
-        "v2": 0.446,
-        "v3": 0.4272,
-        "v4": -0.4,
-        "v5": -0.192
-      },
-      "variable_contributions": {
-        "v1": -0.09,
-        "v2": -7.97,
-        "v3": -9.54,
-        "v4": 7.15,
-        "v5": 1.72
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-01",
-      "rspi": -7.0,
-      "level": "mild_sell",
-      "raw": 0.0831,
-      "volume_amp": 0.837,
-      "raw_variables": {
-        "v1": 0.006,
-        "v2": 0.3467,
-        "v3": 0.4272,
-        "v4": -0.4,
-        "v5": -0.1451
-      },
-      "variable_contributions": {
-        "v1": -0.13,
-        "v2": -5.8,
-        "v3": -8.94,
-        "v4": 6.7,
+        "v4": 0,
         "v5": 1.21
       },
       "impact": null
     },
     {
-      "date": "2025-09-02",
-      "rspi": -8.6,
-      "level": "mild_sell",
-      "raw": 0.0957,
-      "volume_amp": 0.899,
-      "raw_variables": {
-        "v1": 0.0048,
-        "v2": -0.7009,
-        "v3": 0.1723,
-        "v4": 1.0,
-        "v5": -0.0841
-      },
-      "variable_contributions": {
-        "v1": -0.11,
-        "v2": 12.61,
-        "v3": -3.87,
-        "v4": -17.99,
-        "v5": 0.76
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-03",
-      "rspi": 15.4,
+      "date": "2025-02-18",
+      "rspi": 19.4,
       "level": "mild_rebound",
-      "raw": -0.1675,
-      "volume_amp": 0.918,
+      "raw": -0.2015,
+      "volume_amp": 0.942,
+      "structural_amp": 1.022,
       "raw_variables": {
-        "v1": 0.0042,
-        "v2": -0.7239,
-        "v3": -0.3197,
-        "v4": 0.2,
-        "v5": 0.1616
+        "v1": 0.0112,
+        "v2": -0.0917,
+        "v3": -0.2362,
+        "v4": 0.0,
+        "v5": -0.3159,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.1,
-        "v2": 13.29,
-        "v3": 7.34,
-        "v4": -3.67,
-        "v5": -1.48
+        "v1": 0.42,
+        "v2": 3.09,
+        "v3": 10.24,
+        "v4": 0,
+        "v5": 6.09
       },
       "impact": null
     },
     {
-      "date": "2025-09-04",
-      "rspi": 5.1,
-      "level": "mild_rebound",
-      "raw": -0.0598,
-      "volume_amp": 0.858,
-      "raw_variables": {
-        "v1": 0.0036,
-        "v2": -0.3775,
-        "v3": -0.1371,
-        "v4": 0.2,
-        "v5": 0.0906
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": 6.48,
-        "v3": 2.94,
-        "v4": -3.43,
-        "v5": -0.78
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-05",
-      "rspi": -4.2,
-      "level": "neutral",
-      "raw": 0.0383,
-      "volume_amp": 1.087,
-      "raw_variables": {
-        "v1": 0.0036,
-        "v2": 0.137,
-        "v3": -0.0572,
-        "v4": 0.2,
-        "v5": -0.157
-      },
-      "variable_contributions": {
-        "v1": -0.1,
-        "v2": -2.98,
-        "v3": 1.55,
-        "v4": -4.35,
-        "v5": 1.71
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-08",
-      "rspi": 7.8,
-      "level": "mild_rebound",
-      "raw": -0.0873,
-      "volume_amp": 0.892,
-      "raw_variables": {
-        "v1": 0.0032,
-        "v2": -0.3934,
-        "v3": -0.1674,
-        "v4": 0.2,
-        "v5": -0.0758
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": 7.02,
-        "v3": 3.74,
-        "v4": -3.57,
-        "v5": 0.68
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-09",
-      "rspi": 24.3,
+      "date": "2025-02-19",
+      "rspi": 30.0,
       "level": "strong_rebound",
-      "raw": -0.2253,
-      "volume_amp": 1.077,
+      "raw": -0.2825,
+      "volume_amp": 1.048,
+      "structural_amp": 1.014,
       "raw_variables": {
-        "v1": 0.0023,
-        "v2": -0.9518,
-        "v3": -0.2146,
-        "v4": 0.2,
-        "v5": -0.219
+        "v1": 0.0069,
+        "v2": -0.3644,
+        "v3": -0.2408,
+        "v4": 0.0,
+        "v5": -0.2333,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.06,
-        "v2": 20.5,
-        "v3": 5.78,
-        "v4": -4.31,
-        "v5": 2.36
+        "v1": 0.41,
+        "v2": 13.55,
+        "v3": 11.51,
+        "v4": 0,
+        "v5": 4.96
       },
       "impact": null
     },
     {
-      "date": "2025-09-10",
-      "rspi": 34.8,
-      "level": "strong_rebound",
-      "raw": -0.2883,
-      "volume_amp": 1.206,
-      "raw_variables": {
-        "v1": 0.0013,
-        "v2": -1.0,
-        "v3": -0.474,
-        "v4": 0.2,
-        "v5": -0.1017
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 24.13,
-        "v3": 14.29,
-        "v4": -4.83,
-        "v5": 1.23
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-11",
-      "rspi": 14.8,
-      "level": "mild_rebound",
-      "raw": -0.1255,
-      "volume_amp": 1.177,
-      "raw_variables": {
-        "v1": 0.001,
-        "v2": -0.275,
-        "v3": -0.3977,
-        "v4": 0.2,
-        "v5": -0.1127
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 6.48,
-        "v3": 11.71,
-        "v4": -4.71,
-        "v5": 1.33
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-12",
-      "rspi": 19.3,
-      "level": "mild_rebound",
-      "raw": -0.177,
-      "volume_amp": 1.091,
-      "raw_variables": {
-        "v1": 0.0004,
-        "v2": -1.0,
-        "v3": -0.1021,
-        "v4": 0.2,
-        "v5": 0.0846
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": 21.81,
-        "v3": 2.78,
-        "v4": -4.36,
-        "v5": -0.92
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-15",
-      "rspi": 4.6,
+      "date": "2025-02-20",
+      "rspi": 4.9,
       "level": "neutral",
-      "raw": -0.0469,
-      "volume_amp": 0.977,
+      "raw": -0.0455,
+      "volume_amp": 1.06,
+      "structural_amp": 1.024,
       "raw_variables": {
-        "v1": 0.0005,
-        "v2": -0.0985,
-        "v3": -0.1893,
-        "v4": 0.2,
-        "v5": -0.2006
+        "v1": 0.0099,
+        "v2": 0.1093,
+        "v3": 0.0006,
+        "v4": 0.0,
+        "v5": -0.4202,
+        "v1_velocity": 0.0031,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.01,
-        "v2": 1.92,
-        "v3": 4.62,
-        "v4": -3.91,
-        "v5": 1.96
+        "v1": 0.1,
+        "v2": -4.15,
+        "v3": -0.03,
+        "v4": 0,
+        "v5": 9.13
       },
       "impact": null
     },
     {
-      "date": "2025-09-16",
-      "rspi": 21.5,
-      "level": "strong_rebound",
-      "raw": -0.2127,
-      "volume_amp": 1.009,
-      "raw_variables": {
-        "v1": 0.0003,
-        "v2": -1.0,
-        "v3": -0.1879,
-        "v4": 0.2,
-        "v5": -0.0585
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": 20.18,
-        "v3": 4.74,
-        "v4": -4.04,
-        "v5": 0.59
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-17",
-      "rspi": 2.4,
-      "level": "neutral",
-      "raw": -0.027,
-      "volume_amp": 0.893,
-      "raw_variables": {
-        "v1": 0.0011,
-        "v2": 0.262,
-        "v3": 0.2229,
-        "v4": -0.4,
-        "v5": -0.5537
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": -4.68,
-        "v3": -4.98,
-        "v4": 7.14,
-        "v5": 4.94
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-18",
-      "rspi": -10.8,
+      "date": "2025-02-21",
+      "rspi": -19.2,
       "level": "mild_sell",
-      "raw": 0.1112,
-      "volume_amp": 0.969,
+      "raw": 0.2069,
+      "volume_amp": 0.911,
+      "structural_amp": 1.02,
       "raw_variables": {
-        "v1": 0.0009,
-        "v2": 0.0119,
-        "v3": -0.2775,
-        "v4": 1.0,
-        "v5": -0.2199
+        "v1": 0.01,
+        "v2": 0.0666,
+        "v3": 0.426,
+        "v4": 0.0,
+        "v5": -0.0405,
+        "v1_velocity": 0.0001,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.02,
-        "v2": -0.23,
-        "v3": 6.72,
-        "v4": -19.37,
-        "v5": 2.13
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-22",
-      "rspi": -2.4,
-      "level": "neutral",
-      "raw": 0.0256,
-      "volume_amp": 0.94,
-      "raw_variables": {
-        "v1": 0.0014,
-        "v2": -0.2157,
-        "v3": -0.4199,
-        "v4": 1.0,
-        "v5": -0.2658
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 4.06,
-        "v3": 9.87,
-        "v4": -18.8,
-        "v5": 2.5
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-23",
-      "rspi": -3.6,
-      "level": "neutral",
-      "raw": 0.0374,
-      "volume_amp": 0.971,
-      "raw_variables": {
-        "v1": 0.0014,
-        "v2": 0.006,
-        "v3": 0.0882,
-        "v4": 0.2,
-        "v5": -0.2624
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": -0.12,
-        "v3": -2.14,
-        "v4": -3.88,
-        "v5": 2.55
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-24",
-      "rspi": -9.5,
-      "level": "mild_sell",
-      "raw": 0.1,
-      "volume_amp": 0.948,
-      "raw_variables": {
-        "v1": 0.0018,
-        "v2": 0.5112,
-        "v3": 0.3706,
-        "v4": -0.4,
-        "v5": -0.1537
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -9.69,
-        "v3": -8.78,
-        "v4": 7.58,
-        "v5": 1.46
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-25",
-      "rspi": -21.1,
-      "level": "strong_sell",
-      "raw": 0.2127,
-      "volume_amp": 0.994,
-      "raw_variables": {
-        "v1": 0.0021,
-        "v2": 0.1203,
-        "v3": 0.0857,
-        "v4": 1.0,
-        "v5": -0.3336
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": -2.39,
-        "v3": -2.13,
-        "v4": -19.89,
-        "v5": 3.32
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-26",
-      "rspi": -9.7,
-      "level": "mild_sell",
-      "raw": 0.0954,
-      "volume_amp": 1.021,
-      "raw_variables": {
-        "v1": 0.0041,
-        "v2": 0.7785,
-        "v3": 0.0949,
-        "v4": -0.4,
-        "v5": -0.0506
-      },
-      "variable_contributions": {
-        "v1": -0.11,
-        "v2": -15.9,
-        "v3": -2.42,
-        "v4": 8.17,
-        "v5": 0.52
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-29",
-      "rspi": -10.3,
-      "level": "mild_sell",
-      "raw": 0.1177,
-      "volume_amp": 0.879,
-      "raw_variables": {
-        "v1": 0.0027,
-        "v2": -0.0549,
-        "v3": -0.3572,
-        "v4": 1.0,
-        "v5": 0.1728
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": 0.96,
-        "v3": 7.85,
-        "v4": -17.57,
-        "v5": -1.52
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-09-30",
-      "rspi": -8.7,
-      "level": "mild_sell",
-      "raw": 0.0906,
-      "volume_amp": 0.955,
-      "raw_variables": {
-        "v1": 0.003,
-        "v2": 0.296,
-        "v3": -0.0059,
-        "v4": 0.2,
-        "v5": -0.0786
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": -5.65,
-        "v3": 0.14,
-        "v4": -3.82,
+        "v1": -0.38,
+        "v2": -2.17,
+        "v3": -17.81,
+        "v4": 0,
         "v5": 0.75
       },
       "impact": null
     },
     {
-      "date": "2025-10-01",
-      "rspi": 12.4,
-      "level": "mild_rebound",
-      "raw": -0.1215,
-      "volume_amp": 1.017,
+      "date": "2025-02-24",
+      "rspi": -1.9,
+      "level": "neutral",
+      "raw": 0.0208,
+      "volume_amp": 0.875,
+      "structural_amp": 1.026,
       "raw_variables": {
-        "v1": 0.002,
-        "v2": -0.391,
-        "v3": -0.4601,
-        "v4": 0.2,
-        "v5": 0.3122
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 7.96,
-        "v3": 11.7,
-        "v4": -4.07,
-        "v5": -3.18
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-02",
-      "rspi": 33.4,
-      "level": "strong_rebound",
-      "raw": -0.26,
-      "volume_amp": 1.285,
-      "raw_variables": {
-        "v1": 0.0009,
-        "v2": -1.0,
-        "v3": -0.3991,
-        "v4": 0.2,
-        "v5": -0.0039
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 25.69,
-        "v3": 12.82,
-        "v4": -5.14,
-        "v5": 0.05
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-10",
-      "rspi": -28.9,
-      "level": "strong_sell",
-      "raw": 0.2377,
-      "volume_amp": 1.217,
-      "raw_variables": {
-        "v1": 0.0003,
-        "v2": -0.2821,
-        "v3": 0.9303,
-        "v4": 0.2,
-        "v5": 0.215
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": 6.87,
-        "v3": -28.3,
-        "v4": -4.87,
-        "v5": -2.62
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-13",
-      "rspi": 13.6,
-      "level": "mild_rebound",
-      "raw": -0.1439,
-      "volume_amp": 0.947,
-      "raw_variables": {
-        "v1": 0.0005,
-        "v2": 0.7725,
-        "v3": -0.8523,
-        "v4": -0.4,
-        "v5": -0.054
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": -14.63,
-        "v3": 20.17,
-        "v4": 7.57,
-        "v5": 0.51
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-14",
-      "rspi": -14.2,
-      "level": "mild_sell",
-      "raw": 0.131,
-      "volume_amp": 1.081,
-      "raw_variables": {
-        "v1": 0.0013,
-        "v2": -0.0142,
-        "v3": 0.2239,
-        "v4": 0.7,
-        "v5": -0.6246
+        "v1": 0.0116,
+        "v2": 0.0556,
+        "v3": 0.0797,
+        "v4": 0.0,
+        "v5": -0.1725,
+        "v1_velocity": 0.0015,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
         "v1": -0.04,
-        "v2": 0.31,
-        "v3": -6.05,
-        "v4": -15.13,
-        "v5": 6.75
+        "v2": -1.75,
+        "v3": -3.22,
+        "v4": 0,
+        "v5": 3.1
       },
       "impact": null
     },
     {
-      "date": "2025-10-15",
-      "rspi": -2.1,
+      "date": "2025-02-25",
+      "rspi": -2.3,
       "level": "neutral",
-      "raw": 0.0253,
-      "volume_amp": 0.844,
+      "raw": 0.0255,
+      "volume_amp": 0.879,
+      "structural_amp": 1.034,
       "raw_variables": {
-        "v1": 0.001,
-        "v2": 0.1794,
-        "v3": -0.6159,
-        "v4": 1.0,
-        "v5": -0.569
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": -3.03,
-        "v3": 13.0,
-        "v4": -16.88,
-        "v5": 4.8
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-16",
-      "rspi": 3.9,
-      "level": "neutral",
-      "raw": -0.0375,
-      "volume_amp": 1.033,
-      "raw_variables": {
-        "v1": 0.0003,
-        "v2": -0.0948,
-        "v3": -0.2853,
-        "v4": 0.2,
-        "v5": 0.1269
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": 1.96,
-        "v3": 7.37,
-        "v4": -4.13,
-        "v5": -1.31
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-17",
-      "rspi": 3.5,
-      "level": "neutral",
-      "raw": -0.0333,
-      "volume_amp": 1.037,
-      "raw_variables": {
-        "v1": 0.0006,
-        "v2": -0.0021,
-        "v3": -0.2004,
-        "v4": 0.2,
-        "v5": -0.229
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": 0.04,
-        "v3": 5.2,
-        "v4": -4.15,
-        "v5": 2.37
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-20",
-      "rspi": 4.6,
-      "level": "neutral",
-      "raw": -0.0518,
-      "volume_amp": 0.896,
-      "raw_variables": {
-        "v1": 0.0006,
-        "v2": 0.3924,
-        "v3": -0.5362,
-        "v4": 0.2,
-        "v5": -0.3643
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": -7.03,
-        "v3": 12.01,
-        "v4": -3.58,
-        "v5": 3.26
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-21",
-      "rspi": -23.1,
-      "level": "strong_sell",
-      "raw": 0.2068,
-      "volume_amp": 1.117,
-      "raw_variables": {
-        "v1": 0.0003,
-        "v2": 0.2133,
-        "v3": 0.3801,
-        "v4": 0.2,
-        "v5": 0.2904
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": -4.76,
-        "v3": -10.61,
-        "v4": -4.47,
-        "v5": -3.24
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-22",
-      "rspi": -7.5,
-      "level": "mild_sell",
-      "raw": 0.0801,
-      "volume_amp": 0.94,
-      "raw_variables": {
-        "v1": 0.0008,
-        "v2": 0.6081,
-        "v3": -0.0621,
-        "v4": 0.2,
-        "v5": -0.662
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": -11.43,
-        "v3": 1.46,
-        "v4": -3.76,
-        "v5": 6.22
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-23",
-      "rspi": 8.4,
-      "level": "mild_rebound",
-      "raw": -0.0852,
-      "volume_amp": 0.989,
-      "raw_variables": {
-        "v1": 0.0014,
-        "v2": 0.3989,
-        "v3": -0.1968,
-        "v4": -0.4,
-        "v5": -0.3611
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -7.89,
-        "v3": 4.87,
-        "v4": 7.91,
-        "v5": 3.57
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-24",
-      "rspi": 0.9,
-      "level": "neutral",
-      "raw": -0.0089,
-      "volume_amp": 1.05,
-      "raw_variables": {
-        "v1": 0.0012,
-        "v2": -0.1671,
-        "v3": -0.5139,
-        "v4": 1.0,
-        "v5": -0.4733
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 3.51,
-        "v3": 13.49,
-        "v4": -21.0,
-        "v5": 4.97
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-27",
-      "rspi": 19.6,
-      "level": "mild_rebound",
-      "raw": -0.1805,
-      "volume_amp": 1.088,
-      "raw_variables": {
-        "v1": 0.0007,
-        "v2": -0.2076,
-        "v3": -0.6063,
-        "v4": 0.2,
-        "v5": -0.2756
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": 4.52,
-        "v3": 16.5,
-        "v4": -4.35,
-        "v5": 3.0
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-28",
-      "rspi": -10.4,
-      "level": "mild_sell",
-      "raw": 0.0973,
-      "volume_amp": 1.071,
-      "raw_variables": {
-        "v1": 0.0011,
-        "v2": 0.994,
-        "v3": -0.0575,
-        "v4": -0.4,
-        "v5": -0.0741
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": -21.29,
-        "v3": 1.54,
-        "v4": 8.57,
-        "v5": 0.79
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-29",
-      "rspi": -6.1,
-      "level": "mild_sell",
-      "raw": 0.0558,
-      "volume_amp": 1.1,
-      "raw_variables": {
-        "v1": 0.0011,
-        "v2": 0.1727,
-        "v3": -0.4987,
-        "v4": 1.0,
-        "v5": -0.5428
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": -3.8,
-        "v3": 13.71,
-        "v4": -22.0,
-        "v5": 5.97
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-30",
-      "rspi": -3.3,
-      "level": "neutral",
-      "raw": 0.0299,
-      "volume_amp": 1.11,
-      "raw_variables": {
-        "v1": 0.0014,
-        "v2": 0.1688,
-        "v3": 0.4462,
-        "v4": -0.4,
-        "v5": -0.3571
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -3.75,
-        "v3": -12.38,
-        "v4": 8.88,
-        "v5": 3.96
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-10-31",
-      "rspi": 5.6,
-      "level": "mild_rebound",
-      "raw": -0.0539,
-      "volume_amp": 1.037,
-      "raw_variables": {
-        "v1": 0.0017,
-        "v2": -0.548,
-        "v3": -0.3793,
-        "v4": 1.0,
-        "v5": -0.4989
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 11.37,
-        "v3": 9.83,
-        "v4": -20.74,
-        "v5": 5.17
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-03",
-      "rspi": 15.3,
-      "level": "mild_rebound",
-      "raw": -0.1508,
-      "volume_amp": 1.013,
-      "raw_variables": {
-        "v1": 0.0006,
-        "v2": 0.5281,
-        "v3": -0.7612,
-        "v4": -0.4,
-        "v5": 0.1373
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": -10.7,
-        "v3": 19.28,
-        "v4": 8.1,
-        "v5": -1.39
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-04",
-      "rspi": -34.0,
-      "level": "strong_sell",
-      "raw": 0.3606,
-      "volume_amp": 0.942,
-      "raw_variables": {
-        "v1": 0.0015,
-        "v2": 1.0,
-        "v3": 1.0,
-        "v4": -0.4,
-        "v5": -0.0977
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -18.83,
-        "v3": -23.54,
-        "v4": 7.53,
-        "v5": 0.92
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-05",
-      "rspi": 2.2,
-      "level": "neutral",
-      "raw": -0.0194,
-      "volume_amp": 1.142,
-      "raw_variables": {
-        "v1": 0.0038,
-        "v2": 0.8569,
-        "v3": -0.2054,
-        "v4": -0.4,
-        "v5": -0.6035
-      },
-      "variable_contributions": {
-        "v1": -0.11,
-        "v2": -19.57,
-        "v3": 5.86,
-        "v4": 9.14,
-        "v5": 6.89
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-06",
-      "rspi": -22.3,
-      "level": "strong_sell",
-      "raw": 0.2379,
-      "volume_amp": 0.938,
-      "raw_variables": {
-        "v1": 0.0034,
-        "v2": 0.7125,
-        "v3": 0.734,
-        "v4": -0.4,
-        "v5": -0.0893
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": -13.36,
-        "v3": -17.2,
-        "v4": 7.5,
-        "v5": 0.84
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-07",
-      "rspi": 7.7,
-      "level": "mild_rebound",
-      "raw": -0.0886,
-      "volume_amp": 0.867,
-      "raw_variables": {
-        "v1": 0.0059,
-        "v2": 0.0568,
-        "v3": 0.1852,
-        "v4": -0.4,
-        "v5": -0.6777
-      },
-      "variable_contributions": {
-        "v1": -0.13,
-        "v2": -0.99,
-        "v3": -4.02,
-        "v4": 6.94,
-        "v5": 5.88
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-10",
-      "rspi": 3.5,
-      "level": "neutral",
-      "raw": -0.0423,
-      "volume_amp": 0.821,
-      "raw_variables": {
-        "v1": 0.0027,
-        "v2": -0.0858,
-        "v3": -0.9814,
-        "v4": 1.0,
-        "v5": 0.1957
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": 1.41,
-        "v3": 20.14,
-        "v4": -16.42,
-        "v5": -1.61
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-11",
-      "rspi": -2.6,
-      "level": "neutral",
-      "raw": 0.0274,
-      "volume_amp": 0.96,
-      "raw_variables": {
-        "v1": 0.002,
-        "v2": -0.2228,
-        "v3": 0.0268,
-        "v4": 0.2,
-        "v5": 0.2478
-      },
-      "variable_contributions": {
-        "v1": -0.05,
-        "v2": 4.28,
-        "v3": -0.64,
-        "v4": -3.84,
-        "v5": -2.38
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-12",
-      "rspi": -0.9,
-      "level": "neutral",
-      "raw": 0.0102,
-      "volume_amp": 0.838,
-      "raw_variables": {
-        "v1": 0.0015,
-        "v2": 0.0323,
-        "v3": -0.1354,
-        "v4": 0.2,
-        "v5": -0.028
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": -0.54,
-        "v3": 2.84,
-        "v4": -3.35,
-        "v5": 0.23
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-13",
-      "rspi": 0.6,
-      "level": "neutral",
-      "raw": -0.0068,
-      "volume_amp": 0.918,
-      "raw_variables": {
-        "v1": 0.0017,
-        "v2": -0.7137,
-        "v3": 0.5627,
-        "v4": 0.2,
-        "v5": -0.4511
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 13.11,
-        "v3": -12.92,
-        "v4": -3.67,
-        "v5": 4.14
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-14",
-      "rspi": -7.0,
-      "level": "mild_sell",
-      "raw": 0.0743,
-      "volume_amp": 0.935,
-      "raw_variables": {
-        "v1": 0.0052,
-        "v2": 0.9145,
-        "v3": -0.009,
-        "v4": -0.4,
-        "v5": -0.2765
-      },
-      "variable_contributions": {
-        "v1": -0.12,
-        "v2": -17.11,
-        "v3": 0.21,
-        "v4": 7.48,
-        "v5": 2.59
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-17",
-      "rspi": -11.9,
-      "level": "mild_sell",
-      "raw": 0.1534,
-      "volume_amp": 0.773,
-      "raw_variables": {
-        "v1": 0.0036,
-        "v2": -0.4647,
-        "v3": 0.3377,
-        "v4": 1.0,
-        "v5": -0.3897
+        "v1": 0.0146,
+        "v2": 0.1167,
+        "v3": 0.0207,
+        "v4": 0.0,
+        "v5": -0.1234,
+        "v1_velocity": 0.003,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
         "v1": -0.07,
-        "v2": 7.18,
-        "v3": -6.53,
-        "v4": -15.46,
-        "v5": 3.01
+        "v2": -3.71,
+        "v3": -0.85,
+        "v4": 0,
+        "v5": 2.24
       },
       "impact": null
     },
     {
-      "date": "2025-11-18",
-      "rspi": 0.8,
+      "date": "2025-02-26",
+      "rspi": 4.8,
       "level": "neutral",
-      "raw": -0.01,
-      "volume_amp": 0.769,
+      "raw": -0.0498,
+      "volume_amp": 0.946,
+      "structural_amp": 1.027,
       "raw_variables": {
-        "v1": 0.0082,
-        "v2": 0.0346,
-        "v3": 0.395,
-        "v4": -0.4,
-        "v5": -0.3776
+        "v1": 0.0136,
+        "v2": 0.1342,
+        "v3": -0.0784,
+        "v4": 0.0,
+        "v5": -0.3078,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.16,
-        "v2": -0.53,
-        "v3": -7.59,
-        "v4": 6.15,
-        "v5": 2.9
+        "v1": 0.13,
+        "v2": -4.56,
+        "v3": 3.43,
+        "v4": 0,
+        "v5": 5.98
       },
       "impact": null
     },
     {
-      "date": "2025-11-19",
-      "rspi": 0.9,
-      "level": "neutral",
-      "raw": -0.0111,
-      "volume_amp": 0.796,
-      "raw_variables": {
-        "v1": 0.0093,
-        "v2": 0.265,
-        "v3": 0.0894,
-        "v4": -0.4,
-        "v5": -0.0874
-      },
-      "variable_contributions": {
-        "v1": -0.19,
-        "v2": -4.22,
-        "v3": -1.78,
-        "v4": 6.37,
-        "v5": 0.7
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-20",
-      "rspi": -20.0,
+      "date": "2025-02-27",
+      "rspi": -24.6,
       "level": "strong_sell",
-      "raw": 0.2428,
-      "volume_amp": 0.825,
+      "raw": 0.256,
+      "volume_amp": 0.917,
+      "structural_amp": 1.048,
       "raw_variables": {
-        "v1": 0.0063,
-        "v2": -0.5458,
-        "v3": 0.6074,
-        "v4": 1.0,
-        "v5": -0.0145
+        "v1": 0.0195,
+        "v2": 0.0072,
+        "v3": 0.6735,
+        "v4": 0.0,
+        "v5": -0.2482,
+        "v1_velocity": 0.0058,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.13,
-        "v2": 9.01,
-        "v3": -12.53,
-        "v4": -16.5,
-        "v5": 0.12
+        "v1": -0.91,
+        "v2": -0.24,
+        "v3": -29.11,
+        "v4": 0,
+        "v5": 4.77
       },
       "impact": null
     },
     {
-      "date": "2025-11-21",
-      "rspi": -4.8,
-      "level": "neutral",
-      "raw": 0.0614,
-      "volume_amp": 0.784,
+      "date": "2025-02-28",
+      "rspi": -49.3,
+      "level": "extreme_sell",
+      "raw": 0.3434,
+      "volume_amp": 1.178,
+      "structural_amp": 1.219,
       "raw_variables": {
-        "v1": 0.0131,
-        "v2": 0.9462,
-        "v3": -0.2625,
-        "v4": -0.4,
-        "v5": 0.1455
+        "v1": 0.0709,
+        "v2": 0.916,
+        "v3": 0.0909,
+        "v4": 0.0,
+        "v5": -0.0906,
+        "v1_velocity": 0.0515,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -5.74,
+        "v2": -46.04,
+        "v3": -5.87,
+        "v4": 0,
+        "v5": 2.6
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-04",
+      "rspi": 0.7,
+      "level": "neutral",
+      "raw": -0.0058,
+      "volume_amp": 1.047,
+      "structural_amp": 1.153,
+      "raw_variables": {
+        "v1": 0.0742,
+        "v2": 0.0275,
+        "v3": 0.0348,
+        "v4": 0.0,
+        "v5": -0.1555,
+        "v1_velocity": 0.0032,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 0.09,
+        "v2": -1.16,
+        "v3": -1.89,
+        "v4": 0,
+        "v5": 3.75
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-05",
+      "rspi": 27.6,
+      "level": "strong_rebound",
+      "raw": -0.2452,
+      "volume_amp": 1.015,
+      "structural_amp": 1.108,
+      "raw_variables": {
+        "v1": 0.0539,
+        "v2": 0.0412,
+        "v3": -0.5208,
+        "v4": 0.0,
+        "v5": -0.1263,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 2.68,
+        "v2": -1.62,
+        "v3": 26.34,
+        "v4": 0,
+        "v5": 2.84
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-06",
+      "rspi": -21.3,
+      "level": "strong_sell",
+      "raw": 0.215,
+      "volume_amp": 0.913,
+      "structural_amp": 1.083,
+      "raw_variables": {
+        "v1": 0.0417,
+        "v2": -0.2173,
+        "v3": 0.4959,
+        "v4": 0.0,
+        "v5": 0.3393,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -1.64,
+        "v2": 7.52,
+        "v3": -22.07,
+        "v4": 0,
+        "v5": -6.71
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-07",
+      "rspi": 19.3,
+      "level": "mild_rebound",
+      "raw": -0.1831,
+      "volume_amp": 0.949,
+      "structural_amp": 1.111,
+      "raw_variables": {
+        "v1": 0.0496,
+        "v2": -0.1775,
+        "v3": -0.2576,
+        "v4": 0.0,
+        "v5": -0.0254,
+        "v1_velocity": 0.0079,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 1.72,
+        "v2": 6.55,
+        "v3": 12.22,
+        "v4": 0,
+        "v5": 0.54
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-10",
+      "rspi": -34.3,
+      "level": "strong_sell",
+      "raw": 0.3776,
+      "volume_amp": 0.833,
+      "structural_amp": 1.091,
+      "raw_variables": {
+        "v1": 0.0455,
+        "v2": 0.1761,
+        "v3": 0.7371,
+        "v4": 0.0,
+        "v5": -0.0789,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -2.86,
+        "v2": -5.6,
+        "v3": -30.14,
+        "v4": 0,
+        "v5": 1.43
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-11",
+      "rspi": -30.9,
+      "level": "strong_sell",
+      "raw": 0.2932,
+      "volume_amp": 0.904,
+      "structural_amp": 1.165,
+      "raw_variables": {
+        "v1": 0.0668,
+        "v2": 0.7585,
+        "v3": -0.0353,
+        "v4": 0.0,
+        "v5": 0.2178,
+        "v1_velocity": 0.0213,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -3.54,
+        "v2": -27.96,
+        "v3": 1.67,
+        "v4": 0,
+        "v5": -4.59
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-12",
+      "rspi": 34.0,
+      "level": "strong_rebound",
+      "raw": -0.3177,
+      "volume_amp": 0.985,
+      "structural_amp": 1.085,
+      "raw_variables": {
+        "v1": 0.0423,
+        "v2": -0.3543,
+        "v3": -0.4049,
+        "v4": 0.0,
+        "v5": -0.0575,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 2.65,
+        "v2": 13.25,
+        "v3": 19.47,
+        "v4": 0,
+        "v5": 1.23
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-13",
+      "rspi": -23.5,
+      "level": "strong_sell",
+      "raw": 0.2092,
+      "volume_amp": 1.034,
+      "structural_amp": 1.086,
+      "raw_variables": {
+        "v1": 0.0428,
+        "v2": 0.1192,
+        "v3": 0.3474,
+        "v4": 0.0,
+        "v5": 0.0558,
+        "v1_velocity": 0.0005,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -1.85,
+        "v2": -4.69,
+        "v3": -17.56,
+        "v4": 0,
+        "v5": -1.25
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-14",
+      "rspi": 18.7,
+      "level": "mild_rebound",
+      "raw": -0.1989,
+      "volume_amp": 0.855,
+      "structural_amp": 1.1,
+      "raw_variables": {
+        "v1": 0.0468,
+        "v2": 0.0002,
+        "v3": -0.489,
+        "v4": 0.0,
+        "v5": 0.1054,
+        "v1_velocity": 0.004,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 1.59,
+        "v2": -0.01,
+        "v3": 20.69,
+        "v4": 0,
+        "v5": -1.98
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-17",
+      "rspi": 46.0,
+      "level": "extreme_rebound",
+      "raw": -0.4406,
+      "volume_amp": 0.996,
+      "structural_amp": 1.047,
+      "raw_variables": {
+        "v1": 0.0236,
+        "v2": -0.4742,
+        "v3": -0.5497,
+        "v4": 0.0,
+        "v5": -0.1361,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 2.07,
+        "v2": 17.32,
+        "v3": 25.81,
+        "v4": 0,
+        "v5": 2.84
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-18",
+      "rspi": -2.5,
+      "level": "neutral",
+      "raw": 0.0244,
+      "volume_amp": 0.996,
+      "structural_amp": 1.046,
+      "raw_variables": {
+        "v1": 0.0232,
+        "v2": -0.3453,
+        "v3": 0.3581,
+        "v4": 0.0,
+        "v5": -0.0796,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -0.11,
+        "v2": 12.59,
+        "v3": -16.79,
+        "v4": 0,
+        "v5": 1.66
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-19",
+      "rspi": 18.6,
+      "level": "mild_rebound",
+      "raw": -0.1821,
+      "volume_amp": 0.986,
+      "structural_amp": 1.035,
+      "raw_variables": {
+        "v1": 0.0173,
+        "v2": -0.2598,
+        "v3": -0.1894,
+        "v4": 0.0,
+        "v5": -0.0299,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 0.62,
+        "v2": 9.28,
+        "v3": 8.7,
+        "v4": 0,
+        "v5": 0.61
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-20",
+      "rspi": 9.1,
+      "level": "mild_rebound",
+      "raw": -0.0883,
+      "volume_amp": 1.004,
+      "structural_amp": 1.031,
+      "raw_variables": {
+        "v1": 0.0157,
+        "v2": -0.3777,
+        "v3": 0.1642,
+        "v4": 0.0,
+        "v5": -0.1499,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 0.28,
+        "v2": 13.69,
+        "v3": -7.65,
+        "v4": 0,
+        "v5": 3.1
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-21",
+      "rspi": 20.6,
+      "level": "strong_rebound",
+      "raw": -0.1828,
+      "volume_amp": 1.097,
+      "structural_amp": 1.03,
+      "raw_variables": {
+        "v1": 0.0149,
+        "v2": -0.466,
+        "v3": -0.0412,
+        "v4": 0.0,
+        "v5": -0.0057,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 0.6,
+        "v2": 18.42,
+        "v3": 2.1,
+        "v4": 0,
+        "v5": 0.13
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-24",
+      "rspi": 6.9,
+      "level": "mild_rebound",
+      "raw": -0.1078,
+      "volume_amp": 0.623,
+      "structural_amp": 1.033,
+      "raw_variables": {
+        "v1": 0.0159,
+        "v2": -0.0602,
+        "v3": -0.322,
+        "v4": 0.0,
+        "v5": 0.2909,
+        "v1_velocity": 0.0009,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 0.21,
+        "v2": 1.36,
+        "v3": 9.32,
+        "v4": 0,
+        "v5": -3.74
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-03-25",
+      "rspi": -6.9,
+      "level": "mild_sell",
+      "raw": 0.0873,
+      "volume_amp": 0.761,
+      "structural_amp": 1.045,
+      "raw_variables": {
+        "v1": 0.0197,
+        "v2": -0.0162,
+        "v3": 0.0201,
+        "v4": 0.0,
+        "v5": 0.4197,
+        "v1_velocity": 0.0038,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
         "v1": -0.26,
-        "v2": -14.84,
-        "v3": 5.15,
-        "v4": 6.27,
-        "v5": -1.14
+        "v2": 0.45,
+        "v3": -0.72,
+        "v4": 0,
+        "v5": -6.68
       },
       "impact": null
     },
     {
-      "date": "2025-11-24",
-      "rspi": -12.4,
-      "level": "mild_sell",
-      "raw": 0.115,
-      "volume_amp": 1.079,
-      "raw_variables": {
-        "v1": 0.0135,
-        "v2": 0.0525,
-        "v3": -0.4026,
-        "v4": 1.0,
-        "v5": 0.0175
-      },
-      "variable_contributions": {
-        "v1": -0.36,
-        "v2": -1.13,
-        "v3": 10.86,
-        "v4": -21.59,
-        "v5": -0.19
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-25",
-      "rspi": -0.7,
+      "date": "2025-03-26",
+      "rspi": -2.0,
       "level": "neutral",
-      "raw": 0.0087,
-      "volume_amp": 0.747,
+      "raw": 0.0278,
+      "volume_amp": 0.712,
+      "structural_amp": 1.025,
       "raw_variables": {
-        "v1": 0.0126,
-        "v2": -0.2687,
-        "v3": 0.0029,
-        "v4": 0.2,
-        "v5": 0.1859
-      },
-      "variable_contributions": {
-        "v1": -0.23,
-        "v2": 4.01,
-        "v3": -0.05,
-        "v4": -2.99,
-        "v5": -1.39
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-26",
-      "rspi": 12.1,
-      "level": "mild_rebound",
-      "raw": -0.1371,
-      "volume_amp": 0.883,
-      "raw_variables": {
-        "v1": 0.0073,
-        "v2": -0.4734,
-        "v3": -0.4549,
-        "v4": 0.2,
-        "v5": 0.2953
-      },
-      "variable_contributions": {
-        "v1": -0.16,
-        "v2": 8.37,
-        "v3": 10.05,
-        "v4": -3.53,
-        "v5": -2.61
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-27",
-      "rspi": 9.6,
-      "level": "mild_rebound",
-      "raw": -0.1252,
-      "volume_amp": 0.766,
-      "raw_variables": {
-        "v1": 0.0062,
-        "v2": -0.3077,
-        "v3": -0.4549,
-        "v4": 0.2,
-        "v5": 0.0847
-      },
-      "variable_contributions": {
-        "v1": -0.12,
-        "v2": 4.72,
-        "v3": 8.72,
-        "v4": -3.07,
-        "v5": -0.65
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-11-28",
-      "rspi": -3.6,
-      "level": "neutral",
-      "raw": 0.0501,
-      "volume_amp": 0.726,
-      "raw_variables": {
-        "v1": 0.0085,
-        "v2": 0.5933,
-        "v3": 0.0426,
-        "v4": -0.4,
-        "v5": -0.0135
-      },
-      "variable_contributions": {
-        "v1": -0.15,
-        "v2": -8.62,
-        "v3": -0.77,
-        "v4": 5.81,
-        "v5": 0.1
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-01",
-      "rspi": -4.7,
-      "level": "neutral",
-      "raw": 0.0636,
-      "volume_amp": 0.742,
-      "raw_variables": {
-        "v1": 0.009,
-        "v2": -0.3964,
-        "v3": 0.1064,
-        "v4": 0.7,
-        "v5": -0.2597
-      },
-      "variable_contributions": {
-        "v1": -0.17,
-        "v2": 5.88,
-        "v3": -1.97,
-        "v4": -10.39,
-        "v5": 1.93
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-02",
-      "rspi": 5.5,
-      "level": "mild_rebound",
-      "raw": -0.0688,
-      "volume_amp": 0.798,
-      "raw_variables": {
-        "v1": 0.0064,
-        "v2": -0.7518,
-        "v3": -0.3212,
-        "v4": 1.0,
-        "v5": -0.3974
-      },
-      "variable_contributions": {
-        "v1": -0.13,
-        "v2": 11.99,
-        "v3": 6.4,
-        "v4": -15.95,
-        "v5": 3.17
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-03",
-      "rspi": 7.3,
-      "level": "mild_rebound",
-      "raw": -0.0822,
-      "volume_amp": 0.885,
-      "raw_variables": {
-        "v1": 0.0051,
-        "v2": -0.3034,
-        "v3": -0.2327,
-        "v4": 0.2,
-        "v5": -0.0455
-      },
-      "variable_contributions": {
-        "v1": -0.11,
-        "v2": 5.37,
-        "v3": 5.15,
-        "v4": -3.54,
-        "v5": 0.4
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-04",
-      "rspi": 2.6,
-      "level": "neutral",
-      "raw": -0.0279,
-      "volume_amp": 0.922,
-      "raw_variables": {
-        "v1": 0.0054,
-        "v2": 0.1736,
-        "v3": 0.1179,
-        "v4": -0.4,
-        "v5": -0.1342
-      },
-      "variable_contributions": {
-        "v1": -0.12,
-        "v2": -3.2,
-        "v3": -2.72,
-        "v4": 7.37,
-        "v5": 1.24
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-05",
-      "rspi": 8.2,
-      "level": "mild_rebound",
-      "raw": -0.0775,
-      "volume_amp": 1.052,
-      "raw_variables": {
-        "v1": 0.0037,
-        "v2": -0.574,
-        "v3": -0.5174,
-        "v4": 1.0,
-        "v5": -0.343
-      },
-      "variable_contributions": {
-        "v1": -0.1,
-        "v2": 12.08,
-        "v3": 13.61,
-        "v4": -21.05,
-        "v5": 3.61
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-08",
-      "rspi": 7.8,
-      "level": "mild_rebound",
-      "raw": -0.0777,
-      "volume_amp": 1.005,
-      "raw_variables": {
-        "v1": 0.0029,
-        "v2": -0.2532,
-        "v3": -0.0645,
-        "v4": 0.2,
-        "v5": -0.5166
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": 5.09,
-        "v3": 1.62,
-        "v4": -4.02,
-        "v5": 5.19
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-09",
-      "rspi": -1.8,
-      "level": "neutral",
-      "raw": 0.0189,
-      "volume_amp": 0.927,
-      "raw_variables": {
-        "v1": 0.0032,
-        "v2": -0.0703,
-        "v3": -0.0473,
-        "v4": 0.2,
-        "v5": 0.04
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": 1.3,
-        "v3": 1.09,
-        "v4": -3.71,
-        "v5": -0.37
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-10",
-      "rspi": 9.1,
-      "level": "mild_rebound",
-      "raw": -0.102,
-      "volume_amp": 0.895,
-      "raw_variables": {
-        "v1": 0.0035,
-        "v2": -0.2615,
-        "v3": -0.3088,
-        "v4": 0.2,
-        "v5": -0.1341
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": 4.68,
-        "v3": 6.91,
-        "v4": -3.58,
-        "v5": 1.2
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-11",
-      "rspi": 10.7,
-      "level": "mild_rebound",
-      "raw": -0.0893,
-      "volume_amp": 1.192,
-      "raw_variables": {
-        "v1": 0.0041,
-        "v2": -0.2787,
-        "v3": 0.1708,
-        "v4": -0.4,
-        "v5": 0.0267
-      },
-      "variable_contributions": {
-        "v1": -0.12,
-        "v2": 6.65,
-        "v3": -5.09,
-        "v4": 9.54,
-        "v5": -0.32
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-12",
-      "rspi": -35.8,
-      "level": "strong_sell",
-      "raw": 0.3436,
-      "volume_amp": 1.042,
-      "raw_variables": {
-        "v1": 0.0026,
-        "v2": -0.0812,
-        "v3": 0.5877,
-        "v4": 1.0,
-        "v5": 0.1226
-      },
-      "variable_contributions": {
-        "v1": -0.07,
-        "v2": 1.69,
-        "v3": -15.31,
-        "v4": -20.85,
-        "v5": -1.28
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-15",
-      "rspi": 1.2,
-      "level": "neutral",
-      "raw": -0.0123,
-      "volume_amp": 0.99,
-      "raw_variables": {
-        "v1": 0.0047,
-        "v2": 0.3977,
-        "v3": 0.006,
-        "v4": -0.4,
-        "v5": -0.1456
-      },
-      "variable_contributions": {
-        "v1": -0.12,
-        "v2": -7.88,
-        "v3": -0.15,
-        "v4": 7.92,
-        "v5": 1.44
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-16",
-      "rspi": -9.1,
-      "level": "mild_sell",
-      "raw": 0.0899,
-      "volume_amp": 1.01,
-      "raw_variables": {
-        "v1": 0.008,
-        "v2": 0.4171,
-        "v3": 0.2815,
-        "v4": -0.4,
-        "v5": 0.1415
-      },
-      "variable_contributions": {
-        "v1": -0.2,
-        "v2": -8.43,
-        "v3": -7.11,
-        "v4": 8.08,
-        "v5": -1.43
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-17",
-      "rspi": -19.4,
-      "level": "mild_sell",
-      "raw": 0.2327,
-      "volume_amp": 0.833,
-      "raw_variables": {
-        "v1": 0.006,
-        "v2": -0.0673,
-        "v3": 0.3241,
-        "v4": 1.0,
-        "v5": -0.3641
-      },
-      "variable_contributions": {
-        "v1": -0.13,
-        "v2": 1.12,
-        "v3": -6.75,
-        "v4": -16.65,
-        "v5": 3.03
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-18",
-      "rspi": 11.9,
-      "level": "mild_rebound",
-      "raw": -0.1311,
-      "volume_amp": 0.905,
-      "raw_variables": {
-        "v1": 0.0082,
-        "v2": 0.0691,
-        "v3": -0.4038,
-        "v4": -0.4,
-        "v5": 0.3402
-      },
-      "variable_contributions": {
-        "v1": -0.19,
-        "v2": -1.25,
-        "v3": 9.14,
-        "v4": 7.24,
-        "v5": -3.08
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-19",
-      "rspi": -22.5,
-      "level": "strong_sell",
-      "raw": 0.2098,
-      "volume_amp": 1.072,
-      "raw_variables": {
-        "v1": 0.0068,
-        "v2": 0.4354,
-        "v3": -0.3708,
-        "v4": 1.0,
-        "v5": 0.1374
-      },
-      "variable_contributions": {
-        "v1": -0.18,
-        "v2": -9.34,
-        "v3": 9.94,
-        "v4": -21.45,
-        "v5": -1.47
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-22",
-      "rspi": 13.1,
-      "level": "mild_rebound",
-      "raw": -0.141,
-      "volume_amp": 0.926,
-      "raw_variables": {
-        "v1": 0.0039,
-        "v2": -0.7292,
-        "v3": -0.1626,
-        "v4": 0.2,
-        "v5": 0.0451
-      },
-      "variable_contributions": {
-        "v1": -0.09,
-        "v2": 13.51,
-        "v3": 3.77,
-        "v4": -3.71,
-        "v5": -0.42
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-23",
-      "rspi": 13.1,
-      "level": "mild_rebound",
-      "raw": -0.137,
-      "volume_amp": 0.953,
-      "raw_variables": {
-        "v1": 0.0036,
-        "v2": -0.581,
-        "v3": -0.254,
-        "v4": 0.2,
-        "v5": 0.0176
-      },
-      "variable_contributions": {
-        "v1": -0.09,
-        "v2": 11.07,
-        "v3": 6.05,
-        "v4": -3.81,
-        "v5": -0.17
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-24",
-      "rspi": 11.8,
-      "level": "mild_rebound",
-      "raw": -0.1334,
-      "volume_amp": 0.886,
-      "raw_variables": {
-        "v1": 0.0039,
-        "v2": -0.309,
-        "v3": -0.4232,
-        "v4": 0.2,
-        "v5": -0.068
-      },
-      "variable_contributions": {
-        "v1": -0.09,
-        "v2": 5.48,
-        "v3": 9.38,
-        "v4": -3.55,
-        "v5": 0.6
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-26",
-      "rspi": 19.2,
-      "level": "mild_rebound",
-      "raw": -0.1764,
-      "volume_amp": 1.091,
-      "raw_variables": {
-        "v1": 0.0033,
-        "v2": -0.9441,
-        "v3": -0.1334,
-        "v4": 0.2,
-        "v5": 0.0492
-      },
-      "variable_contributions": {
-        "v1": -0.09,
-        "v2": 20.6,
-        "v3": 3.64,
-        "v4": -4.36,
-        "v5": -0.54
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-29",
-      "rspi": 17.4,
-      "level": "mild_rebound",
-      "raw": -0.1737,
-      "volume_amp": 1.003,
-      "raw_variables": {
-        "v1": 0.0016,
-        "v2": -0.0707,
-        "v3": -0.286,
-        "v4": -0.4,
-        "v5": -0.0846
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 1.42,
-        "v3": 7.17,
-        "v4": 8.02,
-        "v5": 0.85
-      },
-      "impact": null
-    },
-    {
-      "date": "2025-12-30",
-      "rspi": -2.3,
-      "level": "neutral",
-      "raw": 0.0252,
-      "volume_amp": 0.931,
-      "raw_variables": {
-        "v1": 0.0017,
-        "v2": 0.4483,
-        "v3": 0.037,
-        "v4": -0.4,
-        "v5": 0.059
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -8.34,
-        "v3": -0.86,
-        "v4": 7.44,
-        "v5": -0.55
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-02",
-      "rspi": 15.7,
-      "level": "mild_rebound",
-      "raw": -0.1403,
-      "volume_amp": 1.122,
-      "raw_variables": {
-        "v1": 0.0009,
-        "v2": -0.3231,
-        "v3": -0.9852,
-        "v4": 1.0,
-        "v5": -0.2957
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 7.25,
-        "v3": 27.63,
-        "v4": -22.43,
-        "v5": 3.32
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-05",
-      "rspi": 41.3,
-      "level": "extreme_rebound",
-      "raw": -0.3393,
-      "volume_amp": 1.217,
-      "raw_variables": {
-        "v1": 0.0005,
-        "v2": -1.0,
-        "v3": -0.5677,
-        "v4": 0.2,
-        "v5": -0.375
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": 24.34,
-        "v3": 17.27,
-        "v4": -4.87,
-        "v5": 4.56
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-06",
-      "rspi": 16.2,
-      "level": "mild_rebound",
-      "raw": -0.1322,
-      "volume_amp": 1.224,
-      "raw_variables": {
-        "v1": 0.0004,
-        "v2": 0.5265,
-        "v3": -0.5801,
-        "v4": -0.4,
-        "v5": -0.126
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": -12.88,
-        "v3": 17.75,
-        "v4": 9.79,
-        "v5": 1.54
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-07",
-      "rspi": -11.0,
-      "level": "mild_sell",
-      "raw": 0.0904,
-      "volume_amp": 1.215,
-      "raw_variables": {
-        "v1": 0.0007,
-        "v2": -0.5741,
-        "v3": 0.1446,
-        "v4": 1.0,
-        "v5": -0.3112
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": 13.95,
-        "v3": -4.39,
-        "v4": -24.3,
-        "v5": 3.78
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-08",
-      "rspi": 8.3,
-      "level": "mild_rebound",
-      "raw": -0.0769,
-      "volume_amp": 1.083,
-      "raw_variables": {
-        "v1": 0.0012,
-        "v2": 0.2071,
-        "v3": 0.0753,
-        "v4": -0.4,
-        "v5": -0.5742
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": -4.49,
-        "v3": -2.04,
-        "v4": 8.66,
-        "v5": 6.22
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-09",
-      "rspi": -17.0,
-      "level": "mild_sell",
-      "raw": 0.1822,
-      "volume_amp": 0.935,
-      "raw_variables": {
-        "v1": 0.0013,
-        "v2": 0.9455,
-        "v3": -0.4754,
-        "v4": 0.7,
-        "v5": -0.284
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": -17.69,
-        "v3": 11.12,
-        "v4": -13.1,
-        "v5": 2.66
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-12",
-      "rspi": -19.5,
-      "level": "mild_sell",
-      "raw": 0.2119,
-      "volume_amp": 0.921,
-      "raw_variables": {
-        "v1": 0.0013,
-        "v2": 0.2605,
-        "v3": -0.0362,
-        "v4": 1.0,
-        "v5": -0.3144
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": -4.8,
-        "v3": 0.83,
-        "v4": -18.42,
-        "v5": 2.9
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-13",
-      "rspi": -14.2,
-      "level": "mild_sell",
-      "raw": 0.1438,
-      "volume_amp": 0.988,
-      "raw_variables": {
-        "v1": 0.0009,
-        "v2": 0.2051,
-        "v3": 0.2747,
-        "v4": 0.2,
-        "v5": -0.0606
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": -4.05,
-        "v3": -6.78,
-        "v4": -3.95,
-        "v5": 0.6
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-14",
-      "rspi": -4.0,
-      "level": "neutral",
-      "raw": 0.0405,
-      "volume_amp": 0.986,
-      "raw_variables": {
-        "v1": 0.0007,
-        "v2": 0.2434,
-        "v3": -0.1678,
-        "v4": 0.2,
-        "v5": -0.0641
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": -4.8,
-        "v3": 4.14,
-        "v4": -3.94,
-        "v5": 0.63
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-15",
-      "rspi": 7.7,
-      "level": "mild_rebound",
-      "raw": -0.0769,
-      "volume_amp": 0.996,
-      "raw_variables": {
-        "v1": 0.0006,
-        "v2": -0.1015,
-        "v3": -0.2809,
-        "v4": 0.2,
-        "v5": -0.2656
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": 2.02,
-        "v3": 6.99,
-        "v4": -3.98,
-        "v5": 2.64
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-16",
-      "rspi": 4.4,
-      "level": "neutral",
-      "raw": -0.0417,
-      "volume_amp": 1.064,
-      "raw_variables": {
-        "v1": 0.0008,
-        "v2": -0.1154,
-        "v3": -0.1028,
-        "v4": 0.2,
-        "v5": -0.3312
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": 2.46,
-        "v3": 2.73,
-        "v4": -4.26,
-        "v5": 3.52
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-19",
-      "rspi": 2.9,
-      "level": "neutral",
-      "raw": -0.0292,
-      "volume_amp": 1.004,
-      "raw_variables": {
-        "v1": 0.0006,
-        "v2": -0.1653,
-        "v3": -0.1028,
-        "v4": 0.2,
-        "v5": -0.1061
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": 3.32,
-        "v3": 2.58,
-        "v4": -4.01,
-        "v5": 1.07
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-20",
-      "rspi": -6.6,
-      "level": "mild_sell",
-      "raw": 0.0632,
-      "volume_amp": 1.046,
-      "raw_variables": {
-        "v1": 0.0005,
-        "v2": 0.0902,
-        "v3": 0.4508,
-        "v4": -0.4,
-        "v5": 0.1228
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": -1.89,
-        "v3": -11.79,
-        "v4": 8.37,
-        "v5": -1.28
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-21",
-      "rspi": 7.7,
-      "level": "mild_rebound",
-      "raw": -0.0712,
-      "volume_amp": 1.088,
-      "raw_variables": {
-        "v1": 0.0007,
-        "v2": -0.0574,
-        "v3": -0.9359,
-        "v4": 1.0,
-        "v5": -0.2589
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": 1.25,
-        "v3": 25.45,
-        "v4": -21.75,
-        "v5": 2.82
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-22",
-      "rspi": 2.2,
-      "level": "neutral",
-      "raw": -0.02,
-      "volume_amp": 1.105,
-      "raw_variables": {
-        "v1": 0.0003,
-        "v2": 0.3088,
-        "v3": -0.1214,
-        "v4": -0.4,
-        "v5": 0.285
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": -6.82,
-        "v3": 3.35,
-        "v4": 8.84,
-        "v5": -3.15
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-23",
-      "rspi": -11.5,
-      "level": "mild_sell",
-      "raw": 0.1126,
-      "volume_amp": 1.023,
-      "raw_variables": {
-        "v1": 0.0004,
-        "v2": 0.0548,
-        "v3": -0.324,
-        "v4": 1.0,
-        "v5": -0.1746
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": -1.12,
-        "v3": 8.29,
-        "v4": -20.46,
-        "v5": 1.79
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-26",
-      "rspi": 7.3,
-      "level": "mild_rebound",
-      "raw": -0.0876,
-      "volume_amp": 0.838,
-      "raw_variables": {
-        "v1": 0.0011,
-        "v2": 0.2173,
-        "v3": 0.0215,
-        "v4": -0.4,
-        "v5": -0.5667
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": -3.64,
-        "v3": -0.45,
-        "v4": 6.7,
-        "v5": 4.75
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-27",
-      "rspi": 9.9,
-      "level": "mild_rebound",
-      "raw": -0.1,
-      "volume_amp": 0.99,
-      "raw_variables": {
-        "v1": 0.0004,
-        "v2": -0.4555,
-        "v3": -0.909,
-        "v4": 1.0,
-        "v5": 0.1827
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": 9.02,
-        "v3": 22.51,
-        "v4": -19.81,
-        "v5": -1.81
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-28",
-      "rspi": 23.4,
-      "level": "strong_rebound",
-      "raw": -0.224,
-      "volume_amp": 1.044,
-      "raw_variables": {
-        "v1": 0.0007,
-        "v2": -0.1606,
-        "v3": -0.2425,
-        "v4": -0.4,
-        "v5": -0.5146
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": 3.35,
-        "v3": 6.33,
-        "v4": 8.35,
-        "v5": 5.37
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-29",
-      "rspi": -8.9,
-      "level": "mild_sell",
-      "raw": 0.0784,
-      "volume_amp": 1.138,
-      "raw_variables": {
-        "v1": 0.0013,
-        "v2": 0.9604,
-        "v3": 0.1888,
-        "v4": -0.4,
-        "v5": -0.8121
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -21.86,
-        "v3": -5.37,
-        "v4": 9.11,
-        "v5": 9.24
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-01-30",
-      "rspi": -20.8,
-      "level": "strong_sell",
-      "raw": 0.1886,
-      "volume_amp": 1.104,
-      "raw_variables": {
-        "v1": 0.0015,
-        "v2": 1.0,
-        "v3": 0.3642,
-        "v4": -0.4,
-        "v5": -0.2285
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": -22.09,
-        "v3": -10.06,
-        "v4": 8.84,
-        "v5": 2.52
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-02",
-      "rspi": -11.5,
-      "level": "mild_sell",
-      "raw": 0.1157,
-      "volume_amp": 0.99,
-      "raw_variables": {
-        "v1": 0.0053,
-        "v2": 1.0,
-        "v3": 0.0858,
-        "v4": -0.4,
-        "v5": -0.2703
-      },
-      "variable_contributions": {
-        "v1": -0.13,
-        "v2": -19.79,
-        "v3": -2.12,
-        "v4": 7.92,
-        "v5": 2.67
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-03",
-      "rspi": -3.9,
-      "level": "neutral",
-      "raw": 0.042,
-      "volume_amp": 0.935,
-      "raw_variables": {
-        "v1": 0.0011,
-        "v2": -0.4658,
-        "v3": -0.2246,
-        "v4": 1.0,
-        "v5": -0.0898
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": 8.71,
-        "v3": 5.25,
-        "v4": -18.69,
-        "v5": 0.84
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-04",
-      "rspi": -19.7,
-      "level": "mild_sell",
-      "raw": 0.2079,
-      "volume_amp": 0.946,
-      "raw_variables": {
-        "v1": 0.0013,
-        "v2": 0.3493,
-        "v3": 0.6613,
-        "v4": 0.2,
-        "v5": -0.6762
-      },
-      "variable_contributions": {
-        "v1": -0.03,
-        "v2": -6.61,
-        "v3": -15.65,
-        "v4": -3.79,
-        "v5": 6.4
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-05",
-      "rspi": -18.7,
-      "level": "mild_sell",
-      "raw": 0.186,
-      "volume_amp": 1.007,
-      "raw_variables": {
-        "v1": 0.0032,
-        "v2": 1.0,
-        "v3": 0.1651,
-        "v4": -0.4,
-        "v5": 0.2395
-      },
-      "variable_contributions": {
-        "v1": -0.08,
-        "v2": -20.14,
-        "v3": -4.15,
-        "v4": 8.05,
-        "v5": -2.41
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-06",
-      "rspi": 17.3,
-      "level": "mild_rebound",
-      "raw": -0.1778,
-      "volume_amp": 0.975,
-      "raw_variables": {
-        "v1": 0.0049,
-        "v2": 0.9057,
-        "v3": -0.9234,
-        "v4": -0.4,
-        "v5": -0.4931
-      },
-      "variable_contributions": {
-        "v1": -0.12,
-        "v2": -17.66,
-        "v3": 22.51,
-        "v4": 7.8,
-        "v5": 4.81
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-09",
-      "rspi": 1.6,
-      "level": "neutral",
-      "raw": -0.0173,
-      "volume_amp": 0.913,
-      "raw_variables": {
-        "v1": 0.0026,
-        "v2": -0.3417,
-        "v3": -0.2658,
-        "v4": 1.0,
-        "v5": -0.8317
-      },
-      "variable_contributions": {
-        "v1": -0.06,
-        "v2": 6.24,
-        "v3": 6.07,
-        "v4": -18.26,
-        "v5": 7.59
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-10",
-      "rspi": -5.6,
-      "level": "mild_sell",
-      "raw": 0.0661,
-      "volume_amp": 0.843,
-      "raw_variables": {
-        "v1": 0.0025,
-        "v2": -0.2387,
-        "v3": 0.2667,
-        "v4": 0.2,
-        "v5": 0.0659
+        "v1": 0.0123,
+        "v2": -0.2026,
+        "v3": 0.2076,
+        "v4": 0.0,
+        "v5": 0.0267,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
         "v1": -0.05,
-        "v2": 4.03,
-        "v3": -5.62,
-        "v4": -3.37,
-        "v5": -0.56
+        "v2": 5.17,
+        "v3": -6.81,
+        "v4": 0,
+        "v5": -0.39
       },
       "impact": null
     },
     {
-      "date": "2026-02-11",
-      "rspi": 12.1,
-      "level": "mild_rebound",
-      "raw": -0.1324,
-      "volume_amp": 0.911,
-      "raw_variables": {
-        "v1": 0.0015,
-        "v2": -0.4408,
-        "v3": -0.4958,
-        "v4": 0.2,
-        "v5": 0.3935
-      },
-      "variable_contributions": {
-        "v1": -0.04,
-        "v2": 8.03,
-        "v3": 11.29,
-        "v4": -3.64,
-        "v5": -3.58
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-12",
-      "rspi": 17.4,
-      "level": "mild_rebound",
-      "raw": -0.1628,
-      "volume_amp": 1.068,
-      "raw_variables": {
-        "v1": 0.0007,
-        "v2": -0.9852,
-        "v3": 0.0714,
-        "v4": 0.2,
-        "v5": -0.2374
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": 21.04,
-        "v3": -1.91,
-        "v4": -4.27,
-        "v5": 2.54
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-13",
-      "rspi": 17.6,
-      "level": "mild_rebound",
-      "raw": -0.1706,
-      "volume_amp": 1.029,
-      "raw_variables": {
-        "v1": 0.0008,
-        "v2": 0.1391,
-        "v3": -0.4672,
-        "v4": -0.4,
-        "v5": -0.0184
-      },
-      "variable_contributions": {
-        "v1": -0.02,
-        "v2": -2.86,
-        "v3": 12.02,
-        "v4": 8.23,
-        "v5": 0.19
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-19",
-      "rspi": -16.4,
+      "date": "2025-03-27",
+      "rspi": -6.1,
       "level": "mild_sell",
-      "raw": 0.1674,
-      "volume_amp": 0.979,
+      "raw": 0.0791,
+      "volume_amp": 0.725,
+      "structural_amp": 1.059,
       "raw_variables": {
-        "v1": 0.0004,
-        "v2": 0.1233,
-        "v3": -0.1579,
-        "v4": 1.0,
-        "v5": -0.1782
+        "v1": 0.0221,
+        "v2": -0.0692,
+        "v3": 0.1176,
+        "v4": 0.0,
+        "v5": 0.2521,
+        "v1_velocity": 0.0099,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.01,
-        "v2": -2.41,
-        "v3": 3.87,
-        "v4": -19.58,
-        "v5": 1.75
+        "v1": -0.25,
+        "v2": 1.86,
+        "v3": -4.06,
+        "v4": 0,
+        "v5": -3.87
       },
       "impact": null
     },
     {
-      "date": "2026-02-20",
-      "rspi": 22.0,
-      "level": "strong_rebound",
-      "raw": -0.2059,
-      "volume_amp": 1.067,
+      "date": "2025-03-28",
+      "rspi": -36.3,
+      "level": "strong_sell",
+      "raw": 0.4679,
+      "volume_amp": 0.686,
+      "structural_amp": 1.133,
       "raw_variables": {
-        "v1": 0.0002,
-        "v2": 0.0523,
-        "v3": -1.0,
-        "v4": 0.2,
-        "v5": -0.064
+        "v1": 0.0475,
+        "v2": 0.2585,
+        "v3": 0.6922,
+        "v4": 0.0,
+        "v5": 0.3296,
+        "v1_velocity": 0.0254,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.01,
-        "v2": -1.12,
-        "v3": 26.68,
-        "v4": -4.27,
-        "v5": 0.68
+        "v1": -3.05,
+        "v2": -7.03,
+        "v3": -24.2,
+        "v4": 0,
+        "v5": -5.12
       },
       "impact": null
     },
     {
-      "date": "2026-02-23",
-      "rspi": -5.2,
+      "date": "2025-03-31",
+      "rspi": -33.6,
+      "level": "strong_sell",
+      "raw": 0.3191,
+      "volume_amp": 0.812,
+      "structural_amp": 1.296,
+      "raw_variables": {
+        "v1": 0.1051,
+        "v2": 0.6879,
+        "v3": 0.0717,
+        "v4": 0.0,
+        "v5": 0.2304,
+        "v1_velocity": 0.0575,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -5.44,
+        "v2": -25.35,
+        "v3": -3.4,
+        "v4": 0,
+        "v5": -4.85
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-01",
+      "rspi": -1.8,
+      "level": "neutral",
+      "raw": 0.0228,
+      "volume_amp": 0.71,
+      "structural_amp": 1.139,
+      "raw_variables": {
+        "v1": 0.0693,
+        "v2": 0.1362,
+        "v3": -0.2706,
+        "v4": 0.0,
+        "v5": 0.4845,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -0.22,
+        "v2": -3.85,
+        "v3": 9.84,
+        "v4": 0,
+        "v5": -7.83
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-02",
+      "rspi": -19.4,
       "level": "mild_sell",
-      "raw": 0.0512,
-      "volume_amp": 1.013,
+      "raw": 0.2154,
+      "volume_amp": 0.768,
+      "structural_amp": 1.172,
       "raw_variables": {
-        "v1": 0.0003,
-        "v2": 0.1404,
-        "v3": 0.4522,
-        "v4": -0.4,
-        "v5": -0.0998
+        "v1": 0.0787,
+        "v2": 0.2715,
+        "v3": -0.0073,
+        "v4": 0.0,
+        "v5": 0.6183,
+        "v1_velocity": 0.0094,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.01,
-        "v2": -2.85,
-        "v3": -11.46,
-        "v4": 8.11,
-        "v5": 1.01
+        "v1": -2.6,
+        "v2": -8.55,
+        "v3": 0.3,
+        "v4": 0,
+        "v5": -11.13
       },
       "impact": null
     },
     {
-      "date": "2026-02-24",
-      "rspi": 6.3,
-      "level": "mild_rebound",
-      "raw": -0.0625,
-      "volume_amp": 1.003,
+      "date": "2025-04-03",
+      "rspi": -71.2,
+      "level": "extreme_sell",
+      "raw": 0.6795,
+      "volume_amp": 0.867,
+      "structural_amp": 1.209,
       "raw_variables": {
-        "v1": 0.0005,
-        "v2": -0.1312,
-        "v3": -0.7919,
-        "v4": 1.0,
-        "v5": -0.3843
+        "v1": 0.0934,
+        "v2": 0.4889,
+        "v3": 0.9858,
+        "v4": 0.0,
+        "v5": 0.3239,
+        "v1_velocity": 0.0147,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.01,
-        "v2": 2.63,
-        "v3": 19.85,
-        "v4": -20.05,
-        "v5": 3.85
+        "v1": -11.01,
+        "v2": -17.93,
+        "v3": -46.49,
+        "v4": 0,
+        "v5": -6.79
       },
       "impact": null
     },
     {
-      "date": "2026-02-25",
-      "rspi": 25.4,
-      "level": "strong_rebound",
-      "raw": -0.2378,
-      "volume_amp": 1.067,
+      "date": "2025-04-04",
+      "rspi": -81.7,
+      "level": "extreme_sell",
+      "raw": 0.6143,
+      "volume_amp": 1.061,
+      "structural_amp": 1.253,
       "raw_variables": {
-        "v1": 0.0005,
-        "v2": 0.1779,
-        "v3": -0.6725,
-        "v4": -0.4,
-        "v5": -0.2541
+        "v1": 0.1123,
+        "v2": 0.5574,
+        "v3": 1.0,
+        "v4": 0.0,
+        "v5": -0.154,
+        "v1_velocity": 0.0189,
+        "indiv_cum_z": 0.0
       },
       "variable_contributions": {
-        "v1": -0.01,
-        "v2": -3.8,
-        "v3": 17.94,
-        "v4": 8.54,
-        "v5": 2.71
-      },
-      "impact": null
-    },
-    {
-      "date": "2026-02-26",
-      "rspi": 6.2,
-      "level": "mild_rebound",
-      "raw": -0.0567,
-      "volume_amp": 1.094,
-      "raw_variables": {
-        "v1": 0.0005,
-        "v2": 0.3846,
-        "v3": -0.0654,
-        "v4": -0.4,
-        "v5": -0.3742
-      },
-      "variable_contributions": {
-        "v1": -0.01,
-        "v2": -8.42,
-        "v3": 1.79,
-        "v4": 8.76,
+        "v1": -14.64,
+        "v2": -25.93,
+        "v3": -59.83,
+        "v4": 0,
         "v5": 4.1
       },
       "impact": null
     },
     {
-      "date": "2026-02-27",
-      "rspi": -8.5,
-      "level": "mild_sell",
-      "raw": 0.0677,
-      "volume_amp": 1.256,
+      "date": "2025-04-07",
+      "rspi": -57.2,
+      "level": "extreme_sell",
+      "raw": 0.3168,
+      "volume_amp": 1.043,
+      "structural_amp": 1.731,
       "raw_variables": {
-        "v1": 0.0011,
-        "v2": 1.0,
-        "v3": -0.0318,
-        "v4": -0.4,
-        "v5": -0.4467
+        "v1": 0.2569,
+        "v2": 0.5703,
+        "v3": 0.1697,
+        "v4": 0.0,
+        "v5": 0.204,
+        "v1_velocity": 0.1447,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -16.97,
+        "v2": -36.03,
+        "v3": -13.78,
+        "v4": 0,
+        "v5": -7.36
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-08",
+      "rspi": -51.1,
+      "level": "extreme_sell",
+      "raw": 0.36,
+      "volume_amp": 0.947,
+      "structural_amp": 1.499,
+      "raw_variables": {
+        "v1": 0.2497,
+        "v2": 0.1099,
+        "v3": 0.7243,
+        "v4": 0.0,
+        "v5": -0.0221,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -17.03,
+        "v2": -5.47,
+        "v3": -46.3,
+        "v4": 0,
+        "v5": 0.63
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-09",
+      "rspi": 48.4,
+      "level": "extreme_rebound",
+      "raw": -0.2928,
+      "volume_amp": 0.991,
+      "structural_amp": 1.668,
+      "raw_variables": {
+        "v1": 0.2978,
+        "v2": 0.2111,
+        "v3": -1.0,
+        "v4": 0.0,
+        "v5": 0.4168,
+        "v1_velocity": 0.0481,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 17.29,
+        "v2": -12.22,
+        "v3": 74.4,
+        "v4": 0,
+        "v5": -13.78
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-10",
+      "rspi": -57.7,
+      "level": "extreme_sell",
+      "raw": 0.4347,
+      "volume_amp": 1.058,
+      "structural_amp": 1.255,
+      "raw_variables": {
+        "v1": 0.1276,
+        "v2": -0.2332,
+        "v3": 0.8902,
+        "v4": 0.0,
+        "v5": 0.5786,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -11.74,
+        "v2": 10.84,
+        "v3": -53.21,
+        "v4": 0,
+        "v5": -15.37
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-11",
+      "rspi": 35.8,
+      "level": "strong_rebound",
+      "raw": -0.3293,
+      "volume_amp": 0.841,
+      "structural_amp": 1.294,
+      "raw_variables": {
+        "v1": 0.1387,
+        "v2": 0.1074,
+        "v3": -0.9288,
+        "v4": 0.0,
+        "v5": 0.2552,
+        "v1_velocity": 0.0111,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 7.68,
+        "v2": -4.09,
+        "v3": 45.48,
+        "v4": 0,
+        "v5": -5.55
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-14",
+      "rspi": -1.7,
+      "level": "neutral",
+      "raw": 0.018,
+      "volume_amp": 0.77,
+      "structural_amp": 1.232,
+      "raw_variables": {
+        "v1": 0.1159,
+        "v2": -0.0616,
+        "v3": -0.0611,
+        "v4": 0.0,
+        "v5": 0.3355,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -0.32,
+        "v2": 2.05,
+        "v3": 2.61,
+        "v4": 0,
+        "v5": -6.37
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-15",
+      "rspi": 15.8,
+      "level": "mild_rebound",
+      "raw": -0.1706,
+      "volume_amp": 0.773,
+      "structural_amp": 1.196,
+      "raw_variables": {
+        "v1": 0.0979,
+        "v2": -0.1184,
+        "v3": 0.008,
+        "v4": 0.0,
+        "v5": -0.6638,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 2.58,
+        "v2": 3.83,
+        "v3": -0.33,
+        "v4": 0,
+        "v5": 12.27
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-16",
+      "rspi": -6.3,
+      "level": "mild_sell",
+      "raw": 0.0594,
+      "volume_amp": 0.818,
+      "structural_amp": 1.292,
+      "raw_variables": {
+        "v1": 0.1255,
+        "v2": -0.0091,
+        "v3": 0.3587,
+        "v4": 0.0,
+        "v5": -0.494,
+        "v1_velocity": 0.0276,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": -1.22,
+        "v2": 0.34,
+        "v3": -17.06,
+        "v4": 0,
+        "v5": 10.44
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-17",
+      "rspi": 12.3,
+      "level": "mild_rebound",
+      "raw": -0.1226,
+      "volume_amp": 0.827,
+      "structural_amp": 1.21,
+      "raw_variables": {
+        "v1": 0.1049,
+        "v2": -0.0684,
+        "v3": -0.0944,
+        "v4": 0.0,
+        "v5": -0.2812,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 2.13,
+        "v2": 2.4,
+        "v3": 4.25,
+        "v4": 0,
+        "v5": 5.63
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-18",
+      "rspi": 15.1,
+      "level": "mild_rebound",
+      "raw": -0.1687,
+      "volume_amp": 0.752,
+      "structural_amp": 1.188,
+      "raw_variables": {
+        "v1": 0.0941,
+        "v2": -0.2002,
+        "v3": -0.0944,
+        "v4": 0.0,
+        "v5": -0.2809,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 2.39,
+        "v2": 6.26,
+        "v3": 3.8,
+        "v4": 0,
+        "v5": 5.02
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-21",
+      "rspi": 0.8,
+      "level": "neutral",
+      "raw": -0.0101,
+      "volume_amp": 0.706,
+      "structural_amp": 1.18,
+      "raw_variables": {
+        "v1": 0.0901,
+        "v2": -0.1303,
+        "v3": 0.1369,
+        "v4": 0.0,
+        "v5": -0.1305,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 0.13,
+        "v2": 3.8,
+        "v3": -5.13,
+        "v4": 0,
+        "v5": 2.17
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-22",
+      "rspi": 28.3,
+      "level": "strong_rebound",
+      "raw": -0.286,
+      "volume_amp": 0.835,
+      "structural_amp": 1.187,
+      "raw_variables": {
+        "v1": 0.0921,
+        "v2": -0.1548,
+        "v3": -0.4133,
+        "v4": 0.0,
+        "v5": -0.2294,
+        "v1_velocity": 0.0019,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 4.4,
+        "v2": 5.37,
+        "v3": 18.42,
+        "v4": 0,
+        "v5": 4.55
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-23",
+      "rspi": 32.6,
+      "level": "strong_rebound",
+      "raw": -0.2908,
+      "volume_amp": 0.998,
+      "structural_amp": 1.124,
+      "raw_variables": {
+        "v1": 0.0618,
+        "v2": -0.1953,
+        "v3": -0.3926,
+        "v4": 0.0,
+        "v5": -0.2288,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 3.59,
+        "v2": 7.67,
+        "v3": 19.82,
+        "v4": 0,
+        "v5": 5.13
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-24",
+      "rspi": 35.5,
+      "level": "strong_rebound",
+      "raw": -0.328,
+      "volume_amp": 0.953,
+      "structural_amp": 1.135,
+      "raw_variables": {
+        "v1": 0.0651,
+        "v2": -0.2866,
+        "v3": -0.3443,
+        "v4": 0.0,
+        "v5": -0.3638,
+        "v1_velocity": 0.0033,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 4.07,
+        "v2": 10.85,
+        "v3": 16.76,
+        "v4": 0,
+        "v5": 7.87
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-25",
+      "rspi": 20.0,
+      "level": "strong_rebound",
+      "raw": -0.1691,
+      "volume_amp": 1.08,
+      "structural_amp": 1.096,
+      "raw_variables": {
+        "v1": 0.0479,
+        "v2": -0.4981,
+        "v3": -0.022,
+        "v4": 0.0,
+        "v5": 0.0759,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 1.75,
+        "v2": 20.63,
+        "v3": 1.17,
+        "v4": 0,
+        "v5": -1.8
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-28",
+      "rspi": 12.2,
+      "level": "mild_rebound",
+      "raw": -0.1116,
+      "volume_amp": 0.998,
+      "structural_amp": 1.094,
+      "raw_variables": {
+        "v1": 0.047,
+        "v2": -0.1811,
+        "v3": 0.0168,
+        "v4": 0.0,
+        "v5": -0.2787,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 1.05,
+        "v2": 6.92,
+        "v3": -0.83,
+        "v4": 0,
+        "v5": 6.09
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-29",
+      "rspi": 29.5,
+      "level": "strong_rebound",
+      "raw": -0.2529,
+      "volume_amp": 1.087,
+      "structural_amp": 1.073,
+      "raw_variables": {
+        "v1": 0.0365,
+        "v2": -0.4664,
+        "v3": -0.1878,
+        "v4": 0.0,
+        "v5": -0.0255,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0
+      },
+      "variable_contributions": {
+        "v1": 2.01,
+        "v2": 19.05,
+        "v3": 9.86,
+        "v4": 0,
+        "v5": 0.6
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-04-30",
+      "rspi": 7.5,
+      "level": "mild_rebound",
+      "raw": -0.0675,
+      "volume_amp": 1.012,
+      "structural_amp": 1.093,
+      "raw_variables": {
+        "v1": 0.0423,
+        "v2": -0.1,
+        "v3": -0.0382,
+        "v4": -1.0922,
+        "v5": -0.0763,
+        "v1_velocity": 0.0057,
+        "indiv_cum_z": -1.0922
+      },
+      "variable_contributions": {
+        "v1": 0.58,
+        "v2": 3.87,
+        "v3": 1.9,
+        "v4": 0,
+        "v5": 1.69
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-02",
+      "rspi": 36.8,
+      "level": "strong_rebound",
+      "raw": -0.3459,
+      "volume_amp": 0.984,
+      "structural_amp": 1.08,
+      "raw_variables": {
+        "v1": 0.0401,
+        "v2": -0.0785,
+        "v3": -0.736,
+        "v4": -1.0612,
+        "v5": 0.064,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.0612
+      },
+      "variable_contributions": {
+        "v1": 2.73,
+        "v2": 2.92,
+        "v3": 35.22,
+        "v4": 0,
+        "v5": -1.36
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-07",
+      "rspi": 11.9,
+      "level": "mild_rebound",
+      "raw": -0.1081,
+      "volume_amp": 1.032,
+      "structural_amp": 1.065,
+      "raw_variables": {
+        "v1": 0.0323,
+        "v2": -0.2897,
+        "v3": 0.0696,
+        "v4": -0.9273,
+        "v5": -0.1901,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.9273
+      },
+      "variable_contributions": {
+        "v1": 0.72,
+        "v2": 11.14,
+        "v3": -3.44,
+        "v4": 0,
+        "v5": 4.18
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-08",
+      "rspi": -0.0,
+      "level": "neutral",
+      "raw": 0.0003,
+      "volume_amp": 1.092,
+      "structural_amp": 1.057,
+      "raw_variables": {
+        "v1": 0.0283,
+        "v2": -0.185,
+        "v3": 0.0402,
+        "v4": -1.088,
+        "v5": 0.2345,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.088
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.47,
+        "v3": -2.09,
+        "v4": 0,
+        "v5": -5.41
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-09",
+      "rspi": 7.5,
+      "level": "mild_rebound",
+      "raw": -0.0758,
+      "volume_amp": 0.934,
+      "structural_amp": 1.061,
+      "raw_variables": {
+        "v1": 0.0296,
+        "v2": -0.1204,
+        "v3": -0.0605,
+        "v4": -0.9605,
+        "v5": -0.0322,
+        "v1_velocity": 0.0013,
+        "indiv_cum_z": -0.9605
+      },
+      "variable_contributions": {
+        "v1": 0.42,
+        "v2": 4.18,
+        "v3": 2.7,
+        "v4": 0,
+        "v5": 0.64
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-12",
+      "rspi": 29.0,
+      "level": "strong_rebound",
+      "raw": -0.2881,
+      "volume_amp": 0.976,
+      "structural_amp": 1.032,
+      "raw_variables": {
+        "v1": 0.016,
+        "v2": -0.0349,
+        "v3": -0.4748,
+        "v4": -0.8768,
+        "v5": -0.3113,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.8768
+      },
+      "variable_contributions": {
+        "v1": 0.9,
+        "v2": 1.23,
+        "v3": 21.51,
+        "v4": 0,
+        "v5": 6.27
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-13",
+      "rspi": 16.9,
+      "level": "mild_rebound",
+      "raw": -0.1659,
+      "volume_amp": 0.987,
+      "structural_amp": 1.034,
+      "raw_variables": {
+        "v1": 0.0166,
+        "v2": -0.1998,
+        "v3": -0.0873,
+        "v4": -0.8093,
+        "v5": -0.2832,
+        "v1_velocity": 0.0006,
+        "indiv_cum_z": -0.8093
+      },
+      "variable_contributions": {
+        "v1": 0.54,
+        "v2": 7.14,
+        "v3": 4.01,
+        "v4": 0,
+        "v5": 5.78
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-14",
+      "rspi": 19.5,
+      "level": "mild_rebound",
+      "raw": -0.1923,
+      "volume_amp": 1.0,
+      "structural_amp": 1.013,
+      "raw_variables": {
+        "v1": 0.0067,
+        "v2": -0.4324,
+        "v3": -0.1496,
+        "v4": -1.0261,
+        "v5": 0.1316,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.0261
+      },
+      "variable_contributions": {
+        "v1": 0.26,
+        "v2": 15.33,
+        "v3": 6.82,
+        "v4": 0,
+        "v5": -2.67
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-15",
+      "rspi": 14.9,
+      "level": "mild_rebound",
+      "raw": -0.1595,
+      "volume_amp": 0.904,
+      "structural_amp": 1.031,
+      "raw_variables": {
+        "v1": 0.0119,
+        "v2": -0.2256,
+        "v3": -0.1029,
+        "v4": -0.9212,
+        "v5": -0.1714,
+        "v1_velocity": 0.0052,
+        "indiv_cum_z": -0.9212
+      },
+      "variable_contributions": {
+        "v1": 0.34,
+        "v2": 7.36,
+        "v3": 4.32,
+        "v4": 0,
+        "v5": 3.19
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-16",
+      "rspi": 4.7,
+      "level": "neutral",
+      "raw": -0.0468,
+      "volume_amp": 0.977,
+      "structural_amp": 1.02,
+      "raw_variables": {
+        "v1": 0.0099,
+        "v2": -0.1174,
+        "v3": -0.0384,
+        "v4": -1.0449,
+        "v5": 0.0579,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.0449
+      },
+      "variable_contributions": {
+        "v1": 0.09,
+        "v2": 4.09,
+        "v3": 1.72,
+        "v4": 0,
+        "v5": -1.15
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-19",
+      "rspi": 1.1,
+      "level": "neutral",
+      "raw": -0.0113,
+      "volume_amp": 0.884,
+      "structural_amp": 1.055,
+      "raw_variables": {
+        "v1": 0.0199,
+        "v2": 0.1711,
+        "v3": -0.0177,
+        "v4": -0.7071,
+        "v5": -0.3162,
+        "v1_velocity": 0.01,
+        "indiv_cum_z": -0.7071
+      },
+      "variable_contributions": {
+        "v1": 0.04,
+        "v2": -5.58,
+        "v3": 0.74,
+        "v4": 0,
+        "v5": 5.89
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-20",
+      "rspi": -13.2,
+      "level": "mild_sell",
+      "raw": 0.1224,
+      "volume_amp": 0.979,
+      "structural_amp": 1.099,
+      "raw_variables": {
+        "v1": 0.0208,
+        "v2": 0.1922,
+        "v3": 0.147,
+        "v4": 0.1113,
+        "v5": -0.0549,
+        "v1_velocity": 0.0009,
+        "indiv_cum_z": 0.1113
+      },
+      "variable_contributions": {
+        "v1": -0.5,
+        "v2": -7.24,
+        "v3": -7.11,
+        "v4": 0,
+        "v5": 1.18
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-21",
+      "rspi": 4.5,
+      "level": "neutral",
+      "raw": -0.0467,
+      "volume_amp": 0.95,
+      "structural_amp": 1.024,
+      "raw_variables": {
+        "v1": 0.0118,
+        "v2": -0.1096,
+        "v3": 0.0081,
+        "v4": -0.3023,
+        "v5": -0.06,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.3023
+      },
+      "variable_contributions": {
+        "v1": 0.1,
+        "v2": 3.73,
+        "v3": -0.35,
+        "v4": 0,
+        "v5": 1.17
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-22",
+      "rspi": -20.0,
+      "level": "strong_sell",
+      "raw": 0.1632,
+      "volume_amp": 1.068,
+      "structural_amp": 1.15,
+      "raw_variables": {
+        "v1": 0.025,
+        "v2": 0.3308,
+        "v3": 0.1067,
+        "v4": 0.1611,
+        "v5": -0.0029,
+        "v1_velocity": 0.0132,
+        "indiv_cum_z": 0.1611
+      },
+      "variable_contributions": {
+        "v1": -0.87,
+        "v2": -14.22,
+        "v3": -5.9,
+        "v4": 0,
+        "v5": 0.07
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-23",
+      "rspi": -3.3,
+      "level": "neutral",
+      "raw": 0.029,
+      "volume_amp": 1.032,
+      "structural_amp": 1.113,
+      "raw_variables": {
+        "v1": 0.026,
+        "v2": 0.1716,
+        "v3": -0.0469,
+        "v4": 0.119,
+        "v5": -0.0498,
+        "v1_velocity": 0.001,
+        "indiv_cum_z": 0.119
+      },
+      "variable_contributions": {
+        "v1": -0.16,
+        "v2": -6.9,
+        "v3": 2.42,
+        "v4": 0,
+        "v5": 1.14
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-26",
+      "rspi": 8.4,
+      "level": "mild_rebound",
+      "raw": -0.0826,
+      "volume_amp": 1.002,
+      "structural_amp": 1.019,
+      "raw_variables": {
+        "v1": 0.0096,
+        "v2": 0.0141,
+        "v3": -0.0469,
+        "v4": -0.4563,
+        "v5": -0.3321,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.4563
+      },
+      "variable_contributions": {
+        "v1": 0.16,
+        "v2": -0.5,
+        "v3": 2.16,
+        "v4": 0,
+        "v5": 6.79
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-27",
+      "rspi": 16.1,
+      "level": "mild_rebound",
+      "raw": -0.1641,
+      "volume_amp": 0.961,
+      "structural_amp": 1.023,
+      "raw_variables": {
+        "v1": 0.0106,
+        "v2": 0.2109,
+        "v3": -0.4987,
+        "v4": -0.3973,
+        "v5": -0.0677,
+        "v1_velocity": 0.0011,
+        "indiv_cum_z": -0.3973
+      },
+      "variable_contributions": {
+        "v1": 0.34,
+        "v2": -7.26,
+        "v3": 22.06,
+        "v4": 0,
+        "v5": 1.33
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-28",
+      "rspi": 13.4,
+      "level": "mild_rebound",
+      "raw": -0.1141,
+      "volume_amp": 1.158,
+      "structural_amp": 1.015,
+      "raw_variables": {
+        "v1": 0.0073,
+        "v2": -0.2517,
+        "v3": -0.0655,
+        "v4": -1.399,
+        "v5": 0.0173,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.399
+      },
+      "variable_contributions": {
+        "v1": 0.19,
+        "v2": 10.35,
+        "v3": 3.47,
+        "v4": 0,
+        "v5": -0.41
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-29",
+      "rspi": 32.7,
+      "level": "strong_rebound",
+      "raw": -0.293,
+      "volume_amp": 1.106,
+      "structural_amp": 1.01,
+      "raw_variables": {
+        "v1": 0.0052,
+        "v2": -0.2163,
+        "v3": -0.31,
+        "v4": -3.0277,
+        "v5": -0.3891,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -3.0277
+      },
+      "variable_contributions": {
+        "v1": 0.34,
+        "v2": 8.46,
+        "v3": 15.59,
+        "v4": 0,
+        "v5": 8.7
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-05-30",
+      "rspi": -54.9,
+      "level": "extreme_sell",
+      "raw": 0.4369,
+      "volume_amp": 1.238,
+      "structural_amp": 1.014,
+      "raw_variables": {
+        "v1": 0.0062,
+        "v2": 0.7705,
+        "v3": 0.3051,
+        "v4": -2.501,
+        "v5": 0.1494,
+        "v1_velocity": 0.001,
+        "indiv_cum_z": -2.501
+      },
+      "variable_contributions": {
+        "v1": -0.67,
+        "v2": -33.86,
+        "v3": -17.24,
+        "v4": 0,
+        "v5": -3.75
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-02",
+      "rspi": 17.7,
+      "level": "mild_rebound",
+      "raw": -0.2171,
+      "volume_amp": 0.804,
+      "structural_amp": 1.014,
+      "raw_variables": {
+        "v1": 0.0068,
+        "v2": -0.074,
+        "v3": -0.3503,
+        "v4": -2.2899,
+        "v5": -0.1678,
+        "v1_velocity": 0.0006,
+        "indiv_cum_z": -2.2899
+      },
+      "variable_contributions": {
+        "v1": 0.24,
+        "v2": 2.11,
+        "v3": 12.85,
+        "v4": 0,
+        "v5": 2.74
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-04",
+      "rspi": 51.1,
+      "level": "extreme_rebound",
+      "raw": -0.486,
+      "volume_amp": 1.042,
+      "structural_amp": 1.009,
+      "raw_variables": {
+        "v1": 0.0043,
+        "v2": -0.8407,
+        "v3": -0.2654,
+        "v4": -2.4941,
+        "v5": -0.3617,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.4941
+      },
+      "variable_contributions": {
+        "v1": 0.43,
+        "v2": 30.92,
+        "v3": 12.55,
+        "v4": 0,
+        "v5": 7.6
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-05",
+      "rspi": 33.8,
+      "level": "strong_rebound",
+      "raw": -0.31,
+      "volume_amp": 1.084,
+      "structural_amp": 1.006,
+      "raw_variables": {
+        "v1": 0.0031,
+        "v2": -0.6476,
+        "v3": -0.1477,
+        "v4": -2.6802,
+        "v5": -0.084,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.6802
+      },
+      "variable_contributions": {
+        "v1": 0.21,
+        "v2": 24.72,
+        "v3": 7.25,
+        "v4": 0,
+        "v5": 1.83
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-09",
+      "rspi": 31.2,
+      "level": "strong_rebound",
+      "raw": -0.2869,
+      "volume_amp": 1.086,
+      "structural_amp": 1.003,
+      "raw_variables": {
+        "v1": 0.0017,
+        "v2": -0.5491,
+        "v3": -0.2305,
+        "v4": -2.6037,
+        "v5": 0.0452,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.6037
+      },
+      "variable_contributions": {
+        "v1": 0.11,
+        "v2": 20.94,
+        "v3": 11.3,
+        "v4": 0,
+        "v5": -0.98
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-10",
+      "rspi": 9.7,
+      "level": "mild_rebound",
+      "raw": -0.0875,
+      "volume_amp": 1.105,
+      "structural_amp": 1.003,
+      "raw_variables": {
+        "v1": 0.0013,
+        "v2": -0.2797,
+        "v3": 0.0056,
+        "v4": -2.757,
+        "v5": 0.0396,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.757
+      },
+      "variable_contributions": {
+        "v1": 0.02,
+        "v2": 10.84,
+        "v3": -0.28,
+        "v4": 0,
+        "v5": -0.88
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-11",
+      "rspi": 10.5,
+      "level": "mild_rebound",
+      "raw": -0.1088,
+      "volume_amp": 0.957,
+      "structural_amp": 1.007,
+      "raw_variables": {
+        "v1": 0.0026,
+        "v2": 0.0479,
+        "v3": -0.0844,
+        "v4": -2.4757,
+        "v5": -0.4379,
+        "v1_velocity": 0.0013,
+        "indiv_cum_z": -2.4757
+      },
+      "variable_contributions": {
+        "v1": 0.05,
+        "v2": -1.62,
+        "v3": 3.66,
+        "v4": 0,
+        "v5": 8.44
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-12",
+      "rspi": 20.9,
+      "level": "strong_rebound",
+      "raw": -0.1818,
+      "volume_amp": 1.14,
+      "structural_amp": 1.008,
+      "raw_variables": {
+        "v1": 0.0034,
+        "v2": -0.111,
+        "v3": -0.204,
+        "v4": -2.3291,
+        "v5": -0.2558,
+        "v1_velocity": 0.0008,
+        "indiv_cum_z": -2.3291
+      },
+      "variable_contributions": {
+        "v1": 0.14,
+        "v2": 4.46,
+        "v3": 10.55,
+        "v4": 0,
+        "v5": 5.88
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-13",
+      "rspi": -17.7,
+      "level": "mild_sell",
+      "raw": 0.1581,
+      "volume_amp": 1.104,
+      "structural_amp": 1.013,
+      "raw_variables": {
+        "v1": 0.0052,
+        "v2": 0.0755,
+        "v3": 0.4215,
+        "v4": -2.1041,
+        "v5": -0.2898,
+        "v1_velocity": 0.0018,
+        "indiv_cum_z": -2.1041
+      },
+      "variable_contributions": {
+        "v1": -0.18,
+        "v2": -2.96,
+        "v3": -21.21,
+        "v4": 0,
+        "v5": 6.48
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-16",
+      "rspi": 19.7,
+      "level": "mild_rebound",
+      "raw": -0.2031,
+      "volume_amp": 0.961,
+      "structural_amp": 1.011,
+      "raw_variables": {
+        "v1": 0.0055,
+        "v2": 0.3491,
+        "v3": -0.5184,
+        "v4": -1.6301,
+        "v5": -0.4598,
+        "v1_velocity": 0.0003,
+        "indiv_cum_z": -1.6301
+      },
+      "variable_contributions": {
+        "v1": 0.21,
+        "v2": -11.88,
+        "v3": 22.68,
+        "v4": 0,
+        "v5": 8.94
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-17",
+      "rspi": -21.2,
+      "level": "strong_sell",
+      "raw": 0.1927,
+      "volume_amp": 1.085,
+      "structural_amp": 1.016,
+      "raw_variables": {
+        "v1": 0.0068,
+        "v2": 0.1863,
+        "v3": 0.4463,
+        "v4": -1.3186,
+        "v5": -0.3668,
+        "v1_velocity": 0.0013,
+        "indiv_cum_z": -1.3186
+      },
+      "variable_contributions": {
+        "v1": -0.29,
+        "v2": -7.19,
+        "v3": -22.14,
+        "v4": 0,
+        "v5": 8.09
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-18",
+      "rspi": 15.0,
+      "level": "mild_rebound",
+      "raw": -0.1604,
+      "volume_amp": 0.921,
+      "structural_amp": 1.016,
+      "raw_variables": {
+        "v1": 0.0074,
+        "v2": -0.0539,
+        "v3": -0.1482,
+        "v4": -1.2092,
+        "v5": -0.3745,
+        "v1_velocity": 0.0006,
+        "indiv_cum_z": -1.2092
+      },
+      "variable_contributions": {
+        "v1": 0.22,
+        "v2": 1.76,
+        "v3": 6.24,
+        "v4": 0,
+        "v5": 7.01
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-19",
+      "rspi": 1.7,
+      "level": "neutral",
+      "raw": -0.018,
+      "volume_amp": 0.909,
+      "structural_amp": 1.015,
+      "raw_variables": {
+        "v1": 0.0075,
+        "v2": 0.195,
+        "v3": -0.1482,
+        "v4": -0.8563,
+        "v5": -0.0979,
+        "v1_velocity": 0.0001,
+        "indiv_cum_z": -0.8563
+      },
+      "variable_contributions": {
+        "v1": 0.02,
+        "v2": -6.3,
+        "v3": 6.15,
+        "v4": 0,
+        "v5": 1.81
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-20",
+      "rspi": 21.7,
+      "level": "strong_rebound",
+      "raw": -0.1952,
+      "volume_amp": 1.095,
+      "structural_amp": 1.015,
+      "raw_variables": {
+        "v1": 0.0073,
+        "v2": -0.2218,
+        "v3": -0.0643,
+        "v4": -0.8605,
+        "v5": -0.4431,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.8605
+      },
+      "variable_contributions": {
+        "v1": 0.31,
+        "v2": 8.63,
+        "v3": 3.21,
+        "v4": 0,
+        "v5": 9.85
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-23",
+      "rspi": 12.7,
+      "level": "mild_rebound",
+      "raw": -0.1166,
+      "volume_amp": 1.06,
+      "structural_amp": 1.024,
+      "raw_variables": {
+        "v1": 0.0099,
+        "v2": 0.3796,
+        "v3": -0.3064,
+        "v4": -0.3852,
+        "v5": -0.558,
+        "v1_velocity": 0.0026,
+        "indiv_cum_z": -0.3852
+      },
+      "variable_contributions": {
+        "v1": 0.24,
+        "v2": -14.42,
+        "v3": 14.97,
+        "v4": 0,
+        "v5": 12.11
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-24",
+      "rspi": 48.5,
+      "level": "extreme_rebound",
+      "raw": -0.437,
+      "volume_amp": 1.098,
+      "structural_amp": 1.011,
+      "raw_variables": {
+        "v1": 0.0054,
+        "v2": -0.1263,
+        "v3": -0.8364,
+        "v4": -0.5427,
+        "v5": -0.082,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.5427
+      },
+      "variable_contributions": {
+        "v1": 0.52,
+        "v2": 4.9,
+        "v3": 41.77,
+        "v4": 0,
+        "v5": 1.82
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-25",
+      "rspi": 9.5,
+      "level": "mild_rebound",
+      "raw": -0.0867,
+      "volume_amp": 1.077,
+      "structural_amp": 1.022,
+      "raw_variables": {
+        "v1": 0.0086,
+        "v2": 0.2213,
+        "v3": 0.0259,
+        "v4": -0.0705,
+        "v5": -0.8793,
+        "v1_velocity": 0.0033,
+        "indiv_cum_z": -0.0705
+      },
+      "variable_contributions": {
+        "v1": 0.16,
+        "v2": -8.52,
+        "v3": -1.28,
+        "v4": 0,
+        "v5": 19.35
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-26",
+      "rspi": -19.1,
+      "level": "mild_sell",
+      "raw": 0.1823,
+      "volume_amp": 0.947,
+      "structural_amp": 1.105,
+      "raw_variables": {
+        "v1": 0.0102,
+        "v2": 0.4743,
+        "v3": 0.001,
+        "v4": 0.164,
+        "v5": 0.0789,
+        "v1_velocity": 0.0016,
+        "indiv_cum_z": 0.164
+      },
+      "variable_contributions": {
+        "v1": -0.35,
+        "v2": -17.36,
+        "v3": -0.05,
+        "v4": 0,
+        "v5": -1.65
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-27",
+      "rspi": -16.7,
+      "level": "mild_sell",
+      "raw": 0.1816,
+      "volume_amp": 0.836,
+      "structural_amp": 1.102,
+      "raw_variables": {
+        "v1": 0.0129,
+        "v2": 0.5461,
+        "v3": 0.1066,
+        "v4": 0.1447,
+        "v5": -0.2875,
+        "v1_velocity": 0.0028,
+        "indiv_cum_z": 0.1447
+      },
+      "variable_contributions": {
+        "v1": -0.39,
+        "v2": -17.62,
+        "v3": -4.42,
+        "v4": 0,
+        "v5": 5.3
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-06-30",
+      "rspi": 2.6,
+      "level": "neutral",
+      "raw": -0.0301,
+      "volume_amp": 0.841,
+      "structural_amp": 1.025,
+      "raw_variables": {
+        "v1": 0.0126,
+        "v2": 0.388,
+        "v3": -0.2744,
+        "v4": -0.057,
+        "v5": -0.212,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.057
+      },
+      "variable_contributions": {
+        "v1": 0.06,
+        "v2": -11.71,
+        "v3": 10.65,
+        "v4": 0,
+        "v5": 3.66
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-01",
+      "rspi": 2.7,
+      "level": "neutral",
+      "raw": -0.0268,
+      "volume_amp": 0.97,
+      "structural_amp": 1.024,
+      "raw_variables": {
+        "v1": 0.0119,
+        "v2": -0.0178,
+        "v3": 0.0369,
+        "v4": -0.3014,
+        "v5": -0.1861,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.3014
+      },
+      "variable_contributions": {
+        "v1": 0.06,
+        "v2": 0.62,
+        "v3": -1.65,
+        "v4": 0,
+        "v5": 3.69
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-02",
+      "rspi": -2.7,
+      "level": "neutral",
+      "raw": 0.0273,
+      "volume_amp": 0.966,
+      "structural_amp": 1.028,
+      "raw_variables": {
+        "v1": 0.0131,
+        "v2": 0.2372,
+        "v3": -0.1221,
+        "v4": -0.3821,
+        "v5": -0.0039,
+        "v1_velocity": 0.0012,
+        "indiv_cum_z": -0.3821
+      },
+      "variable_contributions": {
+        "v1": -0.07,
+        "v2": -8.25,
+        "v3": 5.46,
+        "v4": 0,
+        "v5": 0.08
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-03",
+      "rspi": 17.1,
+      "level": "mild_rebound",
+      "raw": -0.1747,
+      "volume_amp": 0.963,
+      "structural_amp": 1.019,
+      "raw_variables": {
+        "v1": 0.0093,
+        "v2": -0.3034,
+        "v3": -0.2378,
+        "v4": -1.0651,
+        "v5": 0.1925,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.0651
+      },
+      "variable_contributions": {
+        "v1": 0.31,
+        "v2": 10.41,
+        "v3": 10.49,
+        "v4": 0,
+        "v5": -3.77
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-04",
+      "rspi": 12.8,
+      "level": "mild_rebound",
+      "raw": -0.1383,
+      "volume_amp": 0.895,
+      "structural_amp": 1.036,
+      "raw_variables": {
+        "v1": 0.0141,
+        "v2": -0.0628,
+        "v3": -0.2378,
+        "v4": -1.3174,
+        "v5": -0.0467,
+        "v1_velocity": 0.0049,
+        "indiv_cum_z": -1.3174
+      },
+      "variable_contributions": {
+        "v1": 0.35,
+        "v2": 2.04,
+        "v3": 9.92,
+        "v4": 0,
+        "v5": 0.87
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-07",
+      "rspi": -22.1,
+      "level": "strong_sell",
+      "raw": 0.3086,
+      "volume_amp": 0.699,
+      "structural_amp": 1.027,
+      "raw_variables": {
+        "v1": 0.0136,
+        "v2": 0.0673,
+        "v3": 0.6239,
+        "v4": -1.7747,
+        "v5": 0.0215,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.7747
+      },
+      "variable_contributions": {
+        "v1": -0.59,
+        "v2": -1.69,
+        "v3": -20.15,
+        "v4": 0,
+        "v5": -0.31
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-08",
+      "rspi": 16.1,
+      "level": "mild_rebound",
+      "raw": -0.1749,
+      "volume_amp": 0.902,
+      "structural_amp": 1.019,
+      "raw_variables": {
+        "v1": 0.0096,
+        "v2": -0.1856,
+        "v3": -0.2222,
+        "v4": -1.9814,
+        "v5": -0.0498,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.9814
+      },
+      "variable_contributions": {
+        "v1": 0.3,
+        "v2": 5.97,
+        "v3": 9.19,
+        "v4": 0,
+        "v5": 0.92
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-09",
+      "rspi": -4.0,
+      "level": "neutral",
+      "raw": 0.0458,
+      "volume_amp": 0.855,
+      "structural_amp": 1.017,
+      "raw_variables": {
+        "v1": 0.0086,
+        "v2": 0.2583,
+        "v3": -0.0719,
+        "v4": -2.0588,
+        "v5": -0.0611,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.0588
+      },
+      "variable_contributions": {
+        "v1": -0.07,
+        "v2": -7.87,
+        "v3": 2.82,
+        "v4": 0,
+        "v5": 1.06
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-10",
+      "rspi": 28.5,
+      "level": "strong_rebound",
+      "raw": -0.2984,
+      "volume_amp": 0.942,
+      "structural_amp": 1.013,
+      "raw_variables": {
+        "v1": 0.0067,
+        "v2": -0.3542,
+        "v3": -0.255,
+        "v4": -1.8398,
+        "v5": -0.2984,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.8398
+      },
+      "variable_contributions": {
+        "v1": 0.38,
+        "v2": 11.84,
+        "v3": 10.96,
+        "v4": 0,
+        "v5": 5.7
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-11",
+      "rspi": 10.2,
+      "level": "mild_rebound",
+      "raw": -0.1096,
+      "volume_amp": 0.911,
+      "structural_amp": 1.022,
+      "raw_variables": {
+        "v1": 0.0091,
+        "v2": -0.2434,
+        "v3": 0.1632,
+        "v4": -1.8699,
+        "v5": -0.4891,
+        "v1_velocity": 0.0024,
+        "indiv_cum_z": -1.8699
+      },
+      "variable_contributions": {
+        "v1": 0.18,
+        "v2": 7.93,
+        "v3": -6.83,
+        "v4": 0,
+        "v5": 9.1
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-14",
+      "rspi": 15.1,
+      "level": "mild_rebound",
+      "raw": -0.182,
+      "volume_amp": 0.814,
+      "structural_amp": 1.016,
+      "raw_variables": {
+        "v1": 0.0079,
+        "v2": -0.2486,
+        "v3": -0.1534,
+        "v4": -1.9641,
+        "v5": -0.1298,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.9641
+      },
+      "variable_contributions": {
+        "v1": 0.23,
+        "v2": 7.2,
+        "v3": 5.71,
+        "v4": 0,
+        "v5": 2.15
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-15",
+      "rspi": 3.1,
+      "level": "neutral",
+      "raw": -0.0351,
+      "volume_amp": 0.869,
+      "structural_amp": 1.015,
+      "raw_variables": {
+        "v1": 0.0075,
+        "v2": -0.1298,
+        "v3": 0.0761,
+        "v4": -1.9417,
+        "v5": -0.1193,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.9417
+      },
+      "variable_contributions": {
+        "v1": 0.05,
+        "v2": 4.01,
+        "v3": -3.02,
+        "v4": 0,
+        "v5": 2.11
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-16",
+      "rspi": 3.9,
+      "level": "neutral",
+      "raw": -0.0459,
+      "volume_amp": 0.822,
+      "structural_amp": 1.024,
+      "raw_variables": {
+        "v1": 0.0099,
+        "v2": -0.0317,
+        "v3": -0.0206,
+        "v4": -1.8725,
+        "v5": -0.1276,
+        "v1_velocity": 0.0024,
+        "indiv_cum_z": -1.8725
+      },
+      "variable_contributions": {
+        "v1": 0.08,
+        "v2": 0.93,
+        "v3": 0.78,
+        "v4": 0,
+        "v5": 2.15
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-17",
+      "rspi": 7.2,
+      "level": "mild_rebound",
+      "raw": -0.0677,
+      "volume_amp": 1.037,
+      "structural_amp": 1.021,
+      "raw_variables": {
+        "v1": 0.0104,
+        "v2": -0.023,
+        "v3": -0.0341,
+        "v4": -1.8743,
+        "v5": -0.2212,
+        "v1_velocity": 0.0004,
+        "indiv_cum_z": -1.8743
+      },
+      "variable_contributions": {
+        "v1": 0.15,
+        "v2": 0.85,
+        "v3": 1.63,
+        "v4": 0,
+        "v5": 4.69
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-18",
+      "rspi": 3.5,
+      "level": "neutral",
+      "raw": -0.0396,
+      "volume_amp": 0.871,
+      "structural_amp": 1.026,
+      "raw_variables": {
+        "v1": 0.0118,
+        "v2": -0.1363,
+        "v3": 0.1462,
+        "v4": -1.9,
+        "v5": -0.2885,
+        "v1_velocity": 0.0014,
+        "indiv_cum_z": -1.9
+      },
+      "variable_contributions": {
+        "v1": 0.08,
+        "v2": 4.26,
+        "v3": -5.87,
+        "v4": 0,
+        "v5": 5.15
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-21",
+      "rspi": 28.3,
+      "level": "strong_rebound",
+      "raw": -0.3435,
+      "volume_amp": 0.807,
+      "structural_amp": 1.02,
+      "raw_variables": {
+        "v1": 0.0101,
+        "v2": -0.5471,
+        "v3": -0.3285,
+        "v4": -2.1557,
+        "v5": -0.0208,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.1557
+      },
+      "variable_contributions": {
+        "v1": 0.56,
+        "v2": 15.77,
+        "v3": 12.18,
+        "v4": 0,
+        "v5": 0.34
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-22",
+      "rspi": -8.6,
+      "level": "mild_sell",
+      "raw": 0.0943,
+      "volume_amp": 0.888,
+      "structural_amp": 1.031,
+      "raw_variables": {
+        "v1": 0.0133,
+        "v2": 0.1071,
+        "v3": 0.1044,
+        "v4": -1.9998,
+        "v5": 0.0489,
+        "v1_velocity": 0.0031,
+        "indiv_cum_z": -1.9998
+      },
+      "variable_contributions": {
+        "v1": -0.22,
+        "v2": -3.43,
+        "v3": -4.3,
+        "v4": 0,
+        "v5": -0.9
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-23",
+      "rspi": 20.5,
+      "level": "strong_rebound",
+      "raw": -0.2118,
+      "volume_amp": 0.945,
+      "structural_amp": 1.024,
+      "raw_variables": {
+        "v1": 0.012,
+        "v2": -0.2394,
+        "v3": -0.2906,
+        "v4": -1.9713,
+        "v5": 0.0137,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.9713
+      },
+      "variable_contributions": {
+        "v1": 0.48,
+        "v2": 8.1,
+        "v3": 12.65,
+        "v4": 0,
+        "v5": -0.27
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-24",
+      "rspi": 15.8,
+      "level": "mild_rebound",
+      "raw": -0.154,
+      "volume_amp": 1.001,
+      "structural_amp": 1.025,
+      "raw_variables": {
+        "v1": 0.0122,
+        "v2": -0.4052,
+        "v3": 0.0563,
+        "v4": -2.1657,
+        "v5": -0.1877,
+        "v1_velocity": 0.0002,
+        "indiv_cum_z": -2.1657
+      },
+      "variable_contributions": {
+        "v1": 0.38,
+        "v2": 14.55,
+        "v3": -2.6,
+        "v4": 0,
+        "v5": 3.85
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-25",
+      "rspi": 2.8,
+      "level": "neutral",
+      "raw": -0.0333,
+      "volume_amp": 0.811,
+      "structural_amp": 1.024,
+      "raw_variables": {
+        "v1": 0.0118,
+        "v2": -0.0693,
+        "v3": -0.0158,
+        "v4": -2.0165,
+        "v5": -0.0094,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.0165
+      },
+      "variable_contributions": {
+        "v1": 0.06,
+        "v2": 2.01,
+        "v3": 0.59,
+        "v4": 0,
+        "v5": 0.16
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-28",
+      "rspi": 0.8,
+      "level": "neutral",
+      "raw": -0.0069,
+      "volume_amp": 1.058,
+      "structural_amp": 1.021,
+      "raw_variables": {
+        "v1": 0.0104,
+        "v2": -0.2111,
+        "v3": 0.1107,
+        "v4": -2.1662,
+        "v5": 0.0856,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.1662
+      },
+      "variable_contributions": {
+        "v1": 0.02,
+        "v2": 7.98,
+        "v3": -5.38,
+        "v4": 0,
+        "v5": -1.85
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-29",
+      "rspi": 14.2,
+      "level": "mild_rebound",
+      "raw": -0.1387,
+      "volume_amp": 1.005,
+      "structural_amp": 1.018,
+      "raw_variables": {
+        "v1": 0.0089,
+        "v2": -0.2987,
+        "v3": -0.0684,
+        "v4": -2.2358,
+        "v5": -0.0168,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.2358
+      },
+      "variable_contributions": {
+        "v1": 0.25,
+        "v2": 10.7,
+        "v3": 3.15,
+        "v4": 0,
+        "v5": 0.34
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-30",
+      "rspi": 12.6,
+      "level": "mild_rebound",
+      "raw": -0.1217,
+      "volume_amp": 1.022,
+      "structural_amp": 1.016,
+      "raw_variables": {
+        "v1": 0.0079,
+        "v2": -0.2531,
+        "v3": -0.0159,
+        "v4": -2.4253,
+        "v5": -0.1296,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.4253
+      },
+      "variable_contributions": {
+        "v1": 0.2,
+        "v2": 9.2,
+        "v3": 0.74,
+        "v4": 0,
+        "v5": 2.69
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-07-31",
+      "rspi": -12.9,
+      "level": "mild_sell",
+      "raw": 0.1097,
+      "volume_amp": 1.16,
+      "structural_amp": 1.016,
+      "raw_variables": {
+        "v1": 0.008,
+        "v2": -0.0535,
+        "v3": 0.2281,
+        "v4": -2.2332,
+        "v5": 0.129,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.2332
+      },
+      "variable_contributions": {
+        "v1": -0.2,
+        "v2": 2.21,
+        "v3": -12.1,
+        "v4": 0,
+        "v5": -3.04
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-01",
+      "rspi": -60.1,
+      "level": "extreme_sell",
+      "raw": 0.5437,
+      "volume_amp": 1.049,
+      "structural_amp": 1.053,
+      "raw_variables": {
+        "v1": 0.0185,
+        "v2": 0.708,
+        "v3": 0.6379,
+        "v4": -1.7272,
+        "v5": 0.0442,
+        "v1_velocity": 0.0105,
+        "indiv_cum_z": -1.7272
+      },
+      "variable_contributions": {
+        "v1": -2.11,
+        "v2": -27.38,
+        "v3": -31.71,
+        "v4": 0,
+        "v5": -0.98
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-04",
+      "rspi": 15.5,
+      "level": "mild_rebound",
+      "raw": -0.1954,
+      "volume_amp": 0.767,
+      "structural_amp": 1.031,
+      "raw_variables": {
+        "v1": 0.0157,
+        "v2": 0.1391,
+        "v3": -0.5392,
+        "v4": -1.7476,
+        "v5": -0.0074,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.7476
+      },
+      "variable_contributions": {
+        "v1": 0.47,
+        "v2": -3.85,
+        "v3": 19.18,
+        "v4": 0,
+        "v5": 0.12
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-05",
+      "rspi": -2.5,
+      "level": "neutral",
+      "raw": 0.0276,
+      "volume_amp": 0.872,
+      "structural_amp": 1.021,
+      "raw_variables": {
+        "v1": 0.0103,
+        "v2": -0.0262,
+        "v3": -0.0282,
+        "v4": -1.8156,
+        "v5": 0.2472,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.8156
+      },
+      "variable_contributions": {
+        "v1": -0.05,
+        "v2": 0.82,
+        "v3": 1.13,
+        "v4": 0,
+        "v5": -4.4
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-06",
+      "rspi": 0.6,
+      "level": "neutral",
+      "raw": -0.0061,
+      "volume_amp": 0.904,
+      "structural_amp": 1.018,
+      "raw_variables": {
+        "v1": 0.0092,
+        "v2": 0.0118,
+        "v3": -0.1467,
+        "v4": -1.6831,
+        "v5": 0.2789,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.6831
+      },
+      "variable_contributions": {
+        "v1": 0.01,
+        "v2": -0.38,
+        "v3": 6.08,
+        "v4": 0,
+        "v5": -5.14
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-07",
+      "rspi": -4.7,
+      "level": "neutral",
+      "raw": 0.0498,
+      "volume_amp": 0.928,
+      "structural_amp": 1.016,
+      "raw_variables": {
+        "v1": 0.0078,
+        "v2": 0.2507,
+        "v3": -0.0235,
+        "v4": -1.6599,
+        "v5": -0.1367,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.6599
+      },
+      "variable_contributions": {
+        "v1": -0.07,
+        "v2": -8.27,
+        "v3": 1.0,
+        "v4": 0,
+        "v5": 2.58
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-08",
+      "rspi": 0.3,
+      "level": "neutral",
+      "raw": -0.0026,
+      "volume_amp": 0.947,
+      "structural_amp": 1.025,
+      "raw_variables": {
+        "v1": 0.0105,
+        "v2": 0.3394,
+        "v3": -0.0963,
+        "v4": -1.3897,
+        "v5": -0.3902,
+        "v1_velocity": 0.0027,
+        "indiv_cum_z": -1.3897
+      },
+      "variable_contributions": {
+        "v1": 0.01,
+        "v2": -11.53,
+        "v3": 4.2,
+        "v4": 0,
+        "v5": 7.57
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-11",
+      "rspi": 2.9,
+      "level": "neutral",
+      "raw": -0.0325,
+      "volume_amp": 0.88,
+      "structural_amp": 1.028,
+      "raw_variables": {
+        "v1": 0.0125,
+        "v2": 0.0174,
+        "v3": 0.1184,
+        "v4": -1.4038,
+        "v5": -0.4593,
+        "v1_velocity": 0.002,
+        "indiv_cum_z": -1.4038
+      },
+      "variable_contributions": {
+        "v1": 0.07,
+        "v2": -0.55,
+        "v3": -4.82,
+        "v4": 0,
+        "v5": 8.31
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-12",
+      "rspi": 11.5,
+      "level": "mild_rebound",
+      "raw": -0.127,
+      "volume_amp": 0.874,
+      "structural_amp": 1.034,
+      "raw_variables": {
+        "v1": 0.0151,
+        "v2": 0.236,
+        "v3": -0.3425,
+        "v4": -1.3123,
+        "v5": -0.2774,
+        "v1_velocity": 0.0025,
+        "indiv_cum_z": -1.3123
+      },
+      "variable_contributions": {
+        "v1": 0.33,
+        "v2": -7.46,
+        "v3": 13.92,
+        "v4": 0,
+        "v5": 5.01
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-13",
+      "rspi": 17.0,
+      "level": "mild_rebound",
+      "raw": -0.187,
+      "volume_amp": 0.89,
+      "structural_amp": 1.024,
+      "raw_variables": {
+        "v1": 0.0121,
+        "v2": -0.3092,
+        "v3": -0.1652,
+        "v4": -1.4819,
+        "v5": -0.022,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.4819
+      },
+      "variable_contributions": {
+        "v1": 0.4,
+        "v2": 9.86,
+        "v3": 6.78,
+        "v4": 0,
+        "v5": 0.4
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-14",
+      "rspi": -12.5,
+      "level": "mild_sell",
+      "raw": 0.1386,
+      "volume_amp": 0.881,
+      "structural_amp": 1.024,
+      "raw_variables": {
+        "v1": 0.012,
+        "v2": 0.2591,
+        "v3": 0.1136,
+        "v4": -1.4706,
+        "v5": -0.0162,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.4706
+      },
+      "variable_contributions": {
+        "v1": -0.29,
+        "v2": -8.18,
+        "v3": -4.61,
+        "v4": 0,
+        "v5": 0.29
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-18",
+      "rspi": -18.9,
+      "level": "mild_sell",
+      "raw": 0.224,
+      "volume_amp": 0.81,
+      "structural_amp": 1.04,
+      "raw_variables": {
+        "v1": 0.0167,
+        "v2": 0.5108,
+        "v3": 0.126,
+        "v4": -1.312,
+        "v5": -0.0577,
+        "v1_velocity": 0.0047,
+        "indiv_cum_z": -1.312
+      },
+      "variable_contributions": {
+        "v1": -0.61,
+        "v2": -15.06,
+        "v3": -4.78,
+        "v4": 0,
+        "v5": 0.97
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-19",
+      "rspi": -24.4,
+      "level": "strong_sell",
+      "raw": 0.2964,
+      "volume_amp": 0.79,
+      "structural_amp": 1.044,
+      "raw_variables": {
+        "v1": 0.0197,
+        "v2": 0.4451,
+        "v3": 0.3408,
+        "v4": -1.408,
+        "v5": -0.0638,
+        "v1_velocity": 0.003,
+        "indiv_cum_z": -1.408
+      },
+      "variable_contributions": {
+        "v1": -0.92,
+        "v2": -12.85,
+        "v3": -12.65,
+        "v4": 0,
+        "v5": 1.05
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-20",
+      "rspi": -11.6,
+      "level": "mild_sell",
+      "raw": 0.1092,
+      "volume_amp": 1.014,
+      "structural_amp": 1.048,
+      "raw_variables": {
+        "v1": 0.0223,
+        "v2": 0.2642,
+        "v3": 0.0508,
+        "v4": -1.4871,
+        "v5": -0.0308,
+        "v1_velocity": 0.0026,
+        "indiv_cum_z": -1.4871
+      },
+      "variable_contributions": {
+        "v1": -0.49,
+        "v2": -9.83,
+        "v3": -2.43,
+        "v4": 0,
+        "v5": 0.65
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-21",
+      "rspi": -11.9,
+      "level": "mild_sell",
+      "raw": 0.1193,
+      "volume_amp": 0.962,
+      "structural_amp": 1.04,
+      "raw_variables": {
+        "v1": 0.0199,
+        "v2": 0.0997,
+        "v3": 0.0788,
+        "v4": -1.4133,
+        "v5": 0.2449,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.4133
+      },
+      "variable_contributions": {
+        "v1": -0.46,
+        "v2": -3.49,
+        "v3": -3.55,
+        "v4": 0,
+        "v5": -4.9
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-22",
+      "rspi": 20.1,
+      "level": "strong_rebound",
+      "raw": -0.2486,
+      "volume_amp": 0.784,
+      "structural_amp": 1.031,
+      "raw_variables": {
+        "v1": 0.0153,
+        "v2": -0.073,
+        "v3": -0.6629,
+        "v4": -1.4883,
+        "v5": 0.3765,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.4883
+      },
+      "variable_contributions": {
+        "v1": 0.6,
+        "v2": 2.07,
+        "v3": 24.1,
+        "v4": 0,
+        "v5": -6.08
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-25",
+      "rspi": -6.5,
+      "level": "mild_sell",
+      "raw": 0.0831,
+      "volume_amp": 0.768,
+      "structural_amp": 1.023,
+      "raw_variables": {
+        "v1": 0.0117,
+        "v2": -0.0311,
+        "v3": 0.2119,
+        "v4": -1.3497,
+        "v5": -0.0068,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.3497
+      },
+      "variable_contributions": {
+        "v1": -0.15,
+        "v2": 0.85,
+        "v3": -7.49,
+        "v4": 0,
+        "v5": 0.11
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-26",
+      "rspi": -25.9,
+      "level": "strong_sell",
+      "raw": 0.2263,
+      "volume_amp": 1.11,
+      "structural_amp": 1.03,
+      "raw_variables": {
+        "v1": 0.0136,
+        "v2": 0.5326,
+        "v3": 0.0132,
+        "v4": -0.9796,
+        "v5": 0.1699,
+        "v1_velocity": 0.0019,
+        "indiv_cum_z": -0.9796
+      },
+      "variable_contributions": {
+        "v1": -0.68,
+        "v2": -21.32,
+        "v3": -0.68,
+        "v4": 0,
+        "v5": -3.89
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-27",
+      "rspi": -1.9,
+      "level": "neutral",
+      "raw": 0.0216,
+      "volume_amp": 0.848,
+      "structural_amp": 1.026,
+      "raw_variables": {
+        "v1": 0.0132,
+        "v2": 0.1493,
+        "v3": -0.0407,
+        "v4": -1.0745,
+        "v5": -0.0616,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.0745
+      },
+      "variable_contributions": {
+        "v1": -0.05,
+        "v2": -4.55,
+        "v3": 1.59,
+        "v4": 0,
+        "v5": 1.07
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-28",
+      "rspi": 19.2,
+      "level": "mild_rebound",
+      "raw": -0.1993,
+      "volume_amp": 0.938,
+      "structural_amp": 1.028,
+      "raw_variables": {
+        "v1": 0.0137,
+        "v2": -0.0177,
+        "v3": -0.2797,
+        "v4": -1.1566,
+        "v5": -0.3361,
+        "v1_velocity": 0.0005,
+        "indiv_cum_z": -1.1566
+      },
+      "variable_contributions": {
+        "v1": 0.51,
+        "v2": 0.6,
+        "v3": 12.13,
+        "v4": 0,
+        "v5": 6.48
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-08-29",
+      "rspi": -20.0,
+      "level": "strong_sell",
+      "raw": 0.2172,
+      "volume_amp": 0.894,
+      "structural_amp": 1.033,
+      "raw_variables": {
+        "v1": 0.0152,
+        "v2": 0.2549,
+        "v3": 0.3527,
+        "v4": -0.8649,
+        "v5": -0.1536,
+        "v1_velocity": 0.0015,
+        "indiv_cum_z": -0.8649
+      },
+      "variable_contributions": {
+        "v1": -0.59,
+        "v2": -8.23,
+        "v3": -14.65,
+        "v4": 0,
+        "v5": 2.83
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-01",
+      "rspi": -18.0,
+      "level": "mild_sell",
+      "raw": 0.2048,
+      "volume_amp": 0.837,
+      "structural_amp": 1.048,
+      "raw_variables": {
+        "v1": 0.0201,
+        "v2": 0.1981,
+        "v3": 0.3527,
+        "v4": -0.5623,
+        "v5": -0.1161,
+        "v1_velocity": 0.0049,
+        "indiv_cum_z": -0.5623
+      },
+      "variable_contributions": {
+        "v1": -0.69,
+        "v2": -6.08,
+        "v3": -13.92,
+        "v4": 0,
+        "v5": 2.04
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-02",
+      "rspi": 7.8,
+      "level": "mild_rebound",
+      "raw": -0.0838,
+      "volume_amp": 0.899,
+      "structural_amp": 1.034,
+      "raw_variables": {
+        "v1": 0.0172,
+        "v2": -0.4005,
+        "v3": 0.1551,
+        "v4": -0.5814,
+        "v5": -0.0673,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.5814
+      },
+      "variable_contributions": {
+        "v1": 0.26,
+        "v2": 13.04,
+        "v3": -6.49,
+        "v4": 0,
+        "v5": 1.25
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-03",
+      "rspi": 22.6,
+      "level": "strong_rebound",
+      "raw": -0.2386,
+      "volume_amp": 0.918,
+      "structural_amp": 1.031,
+      "raw_variables": {
+        "v1": 0.0155,
+        "v2": -0.4136,
+        "v3": -0.2659,
+        "v4": -0.4863,
+        "v5": 0.1293,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.4863
+      },
+      "variable_contributions": {
+        "v1": 0.68,
+        "v2": 13.71,
+        "v3": 11.33,
+        "v4": 0,
+        "v5": -2.45
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-04",
+      "rspi": 10.5,
+      "level": "mild_rebound",
+      "raw": -0.119,
+      "volume_amp": 0.858,
+      "structural_amp": 1.027,
+      "raw_variables": {
+        "v1": 0.0137,
+        "v2": -0.2157,
+        "v3": -0.1289,
+        "v4": -0.4675,
+        "v5": 0.0725,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.4675
+      },
+      "variable_contributions": {
+        "v1": 0.28,
+        "v2": 6.66,
+        "v3": 5.11,
+        "v4": 0,
+        "v5": -1.28
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-05",
+      "rspi": 1.8,
+      "level": "neutral",
+      "raw": -0.0163,
+      "volume_amp": 1.087,
+      "structural_amp": 1.028,
+      "raw_variables": {
+        "v1": 0.0138,
+        "v2": 0.0783,
+        "v3": -0.0412,
+        "v4": -0.4405,
+        "v5": -0.1256,
+        "v1_velocity": 0.0001,
+        "indiv_cum_z": -0.4405
+      },
+      "variable_contributions": {
+        "v1": 0.05,
+        "v2": -3.06,
+        "v3": 2.07,
+        "v4": 0,
+        "v5": 2.81
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-08",
+      "rspi": 14.0,
+      "level": "mild_rebound",
+      "raw": -0.1528,
+      "volume_amp": 0.892,
+      "structural_amp": 1.026,
+      "raw_variables": {
+        "v1": 0.0128,
+        "v2": -0.2248,
+        "v3": -0.1378,
+        "v4": -0.6055,
+        "v5": -0.0606,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.6055
+      },
+      "variable_contributions": {
+        "v1": 0.35,
+        "v2": 7.2,
+        "v3": 5.68,
+        "v4": 0,
+        "v5": 1.11
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-09",
+      "rspi": 33.5,
+      "level": "strong_rebound",
+      "raw": -0.3048,
+      "volume_amp": 1.077,
+      "structural_amp": 1.021,
+      "raw_variables": {
+        "v1": 0.0103,
+        "v2": -0.5439,
+        "v3": -0.1764,
+        "v4": -0.8145,
+        "v5": -0.1752,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.8145
+      },
+      "variable_contributions": {
+        "v1": 0.67,
+        "v2": 20.92,
+        "v3": 8.72,
+        "v4": 0,
+        "v5": 3.85
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-10",
+      "rspi": 57.3,
+      "level": "extreme_rebound",
+      "raw": -0.4688,
+      "volume_amp": 1.206,
+      "structural_amp": 1.014,
+      "raw_variables": {
+        "v1": 0.007,
+        "v2": -0.7995,
+        "v3": -0.3839,
+        "v4": -1.2936,
+        "v5": -0.0813,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.2936
+      },
+      "variable_contributions": {
+        "v1": 0.79,
+        "v2": 34.22,
+        "v3": 21.13,
+        "v4": 0,
+        "v5": 1.99
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-11",
+      "rspi": 26.7,
+      "level": "strong_rebound",
+      "raw": -0.2243,
+      "volume_amp": 1.177,
+      "structural_amp": 1.011,
+      "raw_variables": {
+        "v1": 0.0057,
+        "v2": -0.1572,
+        "v3": -0.3361,
+        "v4": -1.4162,
+        "v5": -0.0902,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.4162
+      },
+      "variable_contributions": {
+        "v1": 0.3,
+        "v2": 6.55,
+        "v3": 18.01,
+        "v4": 0,
+        "v5": 2.15
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-12",
+      "rspi": 28.9,
+      "level": "strong_rebound",
+      "raw": -0.2633,
+      "volume_amp": 1.091,
+      "structural_amp": 1.006,
+      "raw_variables": {
+        "v1": 0.0031,
+        "v2": -0.6872,
+        "v3": -0.0807,
+        "v4": -1.848,
+        "v5": 0.0677,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.848
+      },
+      "variable_contributions": {
+        "v1": 0.18,
+        "v2": 26.4,
+        "v3": 3.98,
+        "v4": 0,
+        "v5": -1.49
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-15",
+      "rspi": 12.3,
+      "level": "mild_rebound",
+      "raw": -0.1252,
+      "volume_amp": 0.977,
+      "structural_amp": 1.007,
+      "raw_variables": {
+        "v1": 0.0033,
+        "v2": -0.0563,
+        "v3": -0.1632,
+        "v4": -1.7266,
+        "v5": -0.1605,
+        "v1_velocity": 0.0002,
+        "indiv_cum_z": -1.7266
+      },
+      "variable_contributions": {
+        "v1": 0.08,
+        "v2": 1.94,
+        "v3": 7.23,
+        "v4": 0,
+        "v5": 3.16
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-16",
+      "rspi": 32.7,
+      "level": "strong_rebound",
+      "raw": -0.3225,
+      "volume_amp": 1.009,
+      "structural_amp": 1.004,
+      "raw_variables": {
+        "v1": 0.0021,
+        "v2": -0.7045,
+        "v3": -0.148,
+        "v4": -2.27,
+        "v5": -0.0468,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.27
+      },
+      "variable_contributions": {
+        "v1": 0.14,
+        "v2": 24.98,
+        "v3": 6.75,
+        "v4": 0,
+        "v5": 0.95
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-17",
+      "rspi": -4.1,
+      "level": "neutral",
+      "raw": 0.0455,
+      "volume_amp": 0.893,
+      "structural_amp": 1.015,
+      "raw_variables": {
+        "v1": 0.0051,
+        "v2": 0.1497,
+        "v3": 0.1816,
+        "v4": -2.0647,
+        "v5": -0.443,
+        "v1_velocity": 0.003,
+        "indiv_cum_z": -2.0647
       },
       "variable_contributions": {
         "v1": -0.04,
-        "v2": -25.12,
-        "v3": 1.0,
-        "v4": 10.05,
-        "v5": 5.61
+        "v2": -4.75,
+        "v3": -7.4,
+        "v4": 0,
+        "v5": 8.03
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-18",
+      "rspi": 13.4,
+      "level": "mild_rebound",
+      "raw": -0.1373,
+      "volume_amp": 0.969,
+      "structural_amp": 1.008,
+      "raw_variables": {
+        "v1": 0.004,
+        "v2": 0.0068,
+        "v3": -0.2323,
+        "v4": -2.2875,
+        "v5": -0.176,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.2875
+      },
+      "variable_contributions": {
+        "v1": 0.11,
+        "v2": -0.23,
+        "v3": 10.2,
+        "v4": 0,
+        "v5": 3.44
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-22",
+      "rspi": 23.0,
+      "level": "strong_rebound",
+      "raw": -0.2414,
+      "volume_amp": 0.94,
+      "structural_amp": 1.014,
+      "raw_variables": {
+        "v1": 0.0056,
+        "v2": -0.1233,
+        "v3": -0.3462,
+        "v4": -2.4291,
+        "v5": -0.2126,
+        "v1_velocity": 0.0016,
+        "indiv_cum_z": -2.4291
+      },
+      "variable_contributions": {
+        "v1": 0.25,
+        "v2": 4.11,
+        "v3": 14.84,
+        "v4": 0,
+        "v5": 4.05
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-23",
+      "rspi": 0.3,
+      "level": "neutral",
+      "raw": -0.0035,
+      "volume_amp": 0.971,
+      "structural_amp": 1.012,
+      "raw_variables": {
+        "v1": 0.0057,
+        "v2": 0.0034,
+        "v3": 0.0828,
+        "v4": -2.4308,
+        "v5": -0.2099,
+        "v1_velocity": 0.0001,
+        "indiv_cum_z": -2.4308
+      },
+      "variable_contributions": {
+        "v1": 0.0,
+        "v2": -0.12,
+        "v3": -3.66,
+        "v4": 0,
+        "v5": 4.12
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-24",
+      "rspi": -20.6,
+      "level": "strong_sell",
+      "raw": 0.2141,
+      "volume_amp": 0.948,
+      "structural_amp": 1.015,
+      "raw_variables": {
+        "v1": 0.0068,
+        "v2": 0.2921,
+        "v3": 0.3031,
+        "v4": -2.2595,
+        "v5": -0.1229,
+        "v1_velocity": 0.0011,
+        "indiv_cum_z": -2.2595
+      },
+      "variable_contributions": {
+        "v1": -0.28,
+        "v2": -9.84,
+        "v3": -13.12,
+        "v4": 0,
+        "v5": 2.37
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-25",
+      "rspi": -0.6,
+      "level": "neutral",
+      "raw": 0.0061,
+      "volume_amp": 0.994,
+      "structural_amp": 1.018,
+      "raw_variables": {
+        "v1": 0.0079,
+        "v2": 0.0688,
+        "v3": 0.0787,
+        "v4": -2.3254,
+        "v5": -0.2669,
+        "v1_velocity": 0.0011,
+        "indiv_cum_z": -2.3254
+      },
+      "variable_contributions": {
+        "v1": -0.01,
+        "v2": -2.43,
+        "v3": -3.58,
+        "v4": 0,
+        "v5": 5.4
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-26",
+      "rspi": -18.9,
+      "level": "mild_sell",
+      "raw": 0.1783,
+      "volume_amp": 1.021,
+      "structural_amp": 1.035,
+      "raw_variables": {
+        "v1": 0.0135,
+        "v2": 0.4449,
+        "v3": 0.0682,
+        "v4": -1.9008,
+        "v5": -0.0405,
+        "v1_velocity": 0.0056,
+        "indiv_cum_z": -1.9008
+      },
+      "variable_contributions": {
+        "v1": -0.49,
+        "v2": -16.46,
+        "v3": -3.25,
+        "v4": 0,
+        "v5": 0.86
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-29",
+      "rspi": 10.2,
+      "level": "mild_rebound",
+      "raw": -0.1135,
+      "volume_amp": 0.879,
+      "structural_amp": 1.02,
+      "raw_variables": {
+        "v1": 0.0098,
+        "v2": -0.0314,
+        "v3": -0.2893,
+        "v4": -2.022,
+        "v5": 0.1382,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.022
+      },
+      "variable_contributions": {
+        "v1": 0.2,
+        "v2": 0.98,
+        "v3": 11.66,
+        "v4": 0,
+        "v5": -2.48
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-09-30",
+      "rspi": -4.1,
+      "level": "neutral",
+      "raw": 0.0422,
+      "volume_amp": 0.955,
+      "structural_amp": 1.022,
+      "raw_variables": {
+        "v1": 0.0104,
+        "v2": 0.1691,
+        "v3": -0.0097,
+        "v4": -2.0089,
+        "v5": -0.0629,
+        "v1_velocity": 0.0007,
+        "indiv_cum_z": -2.0089
+      },
+      "variable_contributions": {
+        "v1": -0.08,
+        "v2": -5.78,
+        "v3": 0.43,
+        "v4": 0,
+        "v5": 1.23
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-01",
+      "rspi": 20.3,
+      "level": "strong_rebound",
+      "raw": -0.1962,
+      "volume_amp": 1.017,
+      "structural_amp": 1.015,
+      "raw_variables": {
+        "v1": 0.0076,
+        "v2": -0.2235,
+        "v3": -0.3732,
+        "v4": -2.0938,
+        "v5": 0.2497,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.0938
+      },
+      "variable_contributions": {
+        "v1": 0.3,
+        "v2": 8.08,
+        "v3": 17.34,
+        "v4": 0,
+        "v5": -5.16
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-02",
+      "rspi": 59.0,
+      "level": "extreme_rebound",
+      "raw": -0.4555,
+      "volume_amp": 1.285,
+      "structural_amp": 1.008,
+      "raw_variables": {
+        "v1": 0.004,
+        "v2": -0.8873,
+        "v3": -0.3207,
+        "v4": -2.5639,
+        "v5": -0.0031,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.5639
+      },
+      "variable_contributions": {
+        "v1": 0.47,
+        "v2": 40.21,
+        "v3": 18.69,
+        "v4": 0,
+        "v5": 0.08
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-10",
+      "rspi": -41.5,
+      "level": "extreme_sell",
+      "raw": 0.3398,
+      "volume_amp": 1.217,
+      "structural_amp": 1.004,
+      "raw_variables": {
+        "v1": 0.0022,
+        "v2": -0.1612,
+        "v3": 0.804,
+        "v4": -2.4771,
+        "v5": 0.172,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.4771
+      },
+      "variable_contributions": {
+        "v1": -0.18,
+        "v2": 6.9,
+        "v3": -44.22,
+        "v4": 0,
+        "v5": -4.2
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-13",
+      "rspi": 16.7,
+      "level": "mild_rebound",
+      "raw": -0.1747,
+      "volume_amp": 0.947,
+      "structural_amp": 1.007,
+      "raw_variables": {
+        "v1": 0.0029,
+        "v2": 0.4414,
+        "v3": -0.7123,
+        "v4": -2.2635,
+        "v5": -0.0432,
+        "v1_velocity": 0.0007,
+        "indiv_cum_z": -2.2635
+      },
+      "variable_contributions": {
+        "v1": 0.1,
+        "v2": -14.73,
+        "v3": 30.55,
+        "v4": 0,
+        "v5": 0.82
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-14",
+      "rspi": 2.4,
+      "level": "neutral",
+      "raw": -0.0216,
+      "volume_amp": 1.081,
+      "structural_amp": 1.015,
+      "raw_variables": {
+        "v1": 0.0054,
+        "v2": -0.0081,
+        "v3": 0.1803,
+        "v4": -2.1606,
+        "v5": -0.4997,
+        "v1_velocity": 0.0025,
+        "indiv_cum_z": -2.1606
+      },
+      "variable_contributions": {
+        "v1": 0.03,
+        "v2": 0.31,
+        "v3": -8.9,
+        "v4": 0,
+        "v5": 10.96
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-15",
+      "rspi": 23.8,
+      "level": "strong_rebound",
+      "raw": -0.2797,
+      "volume_amp": 0.844,
+      "structural_amp": 1.009,
+      "raw_variables": {
+        "v1": 0.0046,
+        "v2": 0.1025,
+        "v3": -0.4989,
+        "v4": -2.2048,
+        "v5": -0.4552,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.2048
+      },
+      "variable_contributions": {
+        "v1": 0.22,
+        "v2": -3.06,
+        "v3": 19.13,
+        "v4": 0,
+        "v5": 7.76
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-16",
+      "rspi": 10.1,
+      "level": "mild_rebound",
+      "raw": -0.097,
+      "volume_amp": 1.033,
+      "structural_amp": 1.004,
+      "raw_variables": {
+        "v1": 0.0019,
+        "v2": -0.0542,
+        "v3": -0.2185,
+        "v4": -2.3977,
+        "v5": 0.1015,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.3977
+      },
+      "variable_contributions": {
+        "v1": 0.04,
+        "v2": 1.97,
+        "v3": 10.2,
+        "v4": 0,
+        "v5": -2.11
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-17",
+      "rspi": 11.9,
+      "level": "mild_rebound",
+      "raw": -0.1144,
+      "volume_amp": 1.037,
+      "structural_amp": 1.006,
+      "raw_variables": {
+        "v1": 0.0027,
+        "v2": -0.0012,
+        "v3": -0.172,
+        "v4": -2.3344,
+        "v5": -0.1832,
+        "v1_velocity": 0.0007,
+        "indiv_cum_z": -2.3344
+      },
+      "variable_contributions": {
+        "v1": 0.06,
+        "v2": 0.04,
+        "v3": 8.08,
+        "v4": 0,
+        "v5": 3.82
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-20",
+      "rspi": 16.5,
+      "level": "mild_rebound",
+      "raw": -0.1834,
+      "volume_amp": 0.896,
+      "structural_amp": 1.006,
+      "raw_variables": {
+        "v1": 0.0028,
+        "v2": 0.2242,
+        "v3": -0.4523,
+        "v4": -2.2877,
+        "v5": -0.2914,
+        "v1_velocity": 0.0001,
+        "indiv_cum_z": -2.2877
+      },
+      "variable_contributions": {
+        "v1": 0.09,
+        "v2": -7.07,
+        "v3": 18.35,
+        "v4": 0,
+        "v5": 5.25
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-21",
+      "rspi": -25.3,
+      "level": "strong_sell",
+      "raw": 0.2254,
+      "volume_amp": 1.117,
+      "structural_amp": 1.003,
+      "raw_variables": {
+        "v1": 0.0017,
+        "v2": 0.1219,
+        "v3": 0.3029,
+        "v4": -2.1194,
+        "v5": 0.2323,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.1194
+      },
+      "variable_contributions": {
+        "v1": -0.08,
+        "v2": -4.78,
+        "v3": -15.27,
+        "v4": 0,
+        "v5": -5.21
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-22",
+      "rspi": 0.3,
+      "level": "neutral",
+      "raw": -0.0036,
+      "volume_amp": 0.94,
+      "structural_amp": 1.009,
+      "raw_variables": {
+        "v1": 0.0031,
+        "v2": 0.3475,
+        "v3": -0.0428,
+        "v4": -2.1474,
+        "v5": -0.5296,
+        "v1_velocity": 0.0015,
+        "indiv_cum_z": -2.1474
+      },
+      "variable_contributions": {
+        "v1": 0.0,
+        "v2": -11.53,
+        "v3": 1.82,
+        "v4": 0,
+        "v5": 10.04
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-23",
+      "rspi": 5.5,
+      "level": "mild_rebound",
+      "raw": -0.0545,
+      "volume_amp": 0.989,
+      "structural_amp": 1.013,
+      "raw_variables": {
+        "v1": 0.0051,
+        "v2": 0.2279,
+        "v3": -0.1699,
+        "v4": -1.921,
+        "v5": -0.2889,
+        "v1_velocity": 0.0019,
+        "indiv_cum_z": -1.921
+      },
+      "variable_contributions": {
+        "v1": 0.05,
+        "v2": -7.99,
+        "v3": 7.66,
+        "v4": 0,
+        "v5": 5.79
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-24",
+      "rspi": 32.0,
+      "level": "strong_rebound",
+      "raw": -0.3018,
+      "volume_amp": 1.05,
+      "structural_amp": 1.009,
+      "raw_variables": {
+        "v1": 0.0045,
+        "v2": -0.0955,
+        "v3": -0.4281,
+        "v4": -2.0196,
+        "v5": -0.3787,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.0196
+      },
+      "variable_contributions": {
+        "v1": 0.29,
+        "v2": 3.54,
+        "v3": 20.41,
+        "v4": 0,
+        "v5": 8.02
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-27",
+      "rspi": 34.5,
+      "level": "strong_rebound",
+      "raw": -0.3153,
+      "volume_amp": 1.088,
+      "structural_amp": 1.007,
+      "raw_variables": {
+        "v1": 0.0034,
+        "v2": -0.1186,
+        "v3": -0.5103,
+        "v4": -2.0241,
+        "v5": -0.2205,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -2.0241
+      },
+      "variable_contributions": {
+        "v1": 0.23,
+        "v2": 4.55,
+        "v3": 25.17,
+        "v4": 0,
+        "v5": 4.83
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-28",
+      "rspi": -17.7,
+      "level": "mild_sell",
+      "raw": 0.1637,
+      "volume_amp": 1.071,
+      "structural_amp": 1.01,
+      "raw_variables": {
+        "v1": 0.0043,
+        "v2": 0.568,
+        "v3": -0.0516,
+        "v4": -1.6713,
+        "v5": -0.0592,
+        "v1_velocity": 0.0009,
+        "indiv_cum_z": -1.6713
+      },
+      "variable_contributions": {
+        "v1": -0.15,
+        "v2": -21.51,
+        "v3": 2.51,
+        "v4": 0,
+        "v5": 1.28
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-29",
+      "rspi": 25.7,
+      "level": "strong_rebound",
+      "raw": -0.2313,
+      "volume_amp": 1.1,
+      "structural_amp": 1.01,
+      "raw_variables": {
+        "v1": 0.0046,
+        "v2": 0.0987,
+        "v3": -0.3977,
+        "v4": -1.5911,
+        "v5": -0.4343,
+        "v1_velocity": 0.0003,
+        "indiv_cum_z": -1.5911
+      },
+      "variable_contributions": {
+        "v1": 0.24,
+        "v2": -3.83,
+        "v3": 19.87,
+        "v4": 0,
+        "v5": 9.64
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-30",
+      "rspi": -16.6,
+      "level": "mild_sell",
+      "raw": 0.1477,
+      "volume_amp": 1.11,
+      "structural_amp": 1.013,
+      "raw_variables": {
+        "v1": 0.0056,
+        "v2": 0.0965,
+        "v3": 0.3802,
+        "v4": -1.3346,
+        "v5": -0.2857,
+        "v1_velocity": 0.001,
+        "indiv_cum_z": -1.3346
+      },
+      "variable_contributions": {
+        "v1": -0.18,
+        "v2": -3.8,
+        "v3": -19.24,
+        "v4": 0,
+        "v5": 6.42
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-10-31",
+      "rspi": 34.5,
+      "level": "strong_rebound",
+      "raw": -0.328,
+      "volume_amp": 1.037,
+      "structural_amp": 1.015,
+      "raw_variables": {
+        "v1": 0.0066,
+        "v2": -0.3132,
+        "v3": -0.3079,
+        "v4": -1.3739,
+        "v5": -0.3991,
+        "v1_velocity": 0.001,
+        "indiv_cum_z": -1.3739
+      },
+      "variable_contributions": {
+        "v1": 0.45,
+        "v2": 11.53,
+        "v3": 14.58,
+        "v4": 0,
+        "v5": 8.4
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-03",
+      "rspi": 14.9,
+      "level": "mild_rebound",
+      "raw": -0.1465,
+      "volume_amp": 1.013,
+      "structural_amp": 1.006,
+      "raw_variables": {
+        "v1": 0.0031,
+        "v2": 0.3018,
+        "v3": -0.6091,
+        "v4": -1.483,
+        "v5": 0.1099,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -1.483
+      },
+      "variable_contributions": {
+        "v1": 0.09,
+        "v2": -10.76,
+        "v3": 27.94,
+        "v4": 0,
+        "v5": -2.24
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-04",
+      "rspi": -57.0,
+      "level": "extreme_sell",
+      "raw": 0.5957,
+      "volume_amp": 0.942,
+      "structural_amp": 1.017,
+      "raw_variables": {
+        "v1": 0.0061,
+        "v2": 0.605,
+        "v3": 0.8879,
+        "v4": -1.0987,
+        "v5": -0.0781,
+        "v1_velocity": 0.003,
+        "indiv_cum_z": -1.0987
+      },
+      "variable_contributions": {
+        "v1": -0.68,
+        "v2": -20.27,
+        "v3": -38.25,
+        "v4": 0,
+        "v5": 1.5
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-05",
+      "rspi": 0.2,
+      "level": "neutral",
+      "raw": -0.0018,
+      "volume_amp": 1.142,
+      "structural_amp": 1.034,
+      "raw_variables": {
+        "v1": 0.0122,
+        "v2": 0.4897,
+        "v3": -0.1703,
+        "v4": -0.7155,
+        "v5": -0.4828,
+        "v1_velocity": 0.0061,
+        "indiv_cum_z": -0.7155
+      },
+      "variable_contributions": {
+        "v1": 0.01,
+        "v2": -20.23,
+        "v3": 9.05,
+        "v4": 0,
+        "v5": 11.4
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-06",
+      "rspi": -38.6,
+      "level": "strong_sell",
+      "raw": 0.4022,
+      "volume_amp": 0.938,
+      "structural_amp": 1.023,
+      "raw_variables": {
+        "v1": 0.0114,
+        "v2": 0.4071,
+        "v3": 0.6088,
+        "v4": -0.6077,
+        "v5": -0.0714,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.6077
+      },
+      "variable_contributions": {
+        "v1": -0.86,
+        "v2": -13.67,
+        "v3": -26.27,
+        "v4": 0,
+        "v5": 1.37
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-07",
+      "rspi": 2.8,
+      "level": "neutral",
+      "raw": -0.031,
+      "volume_amp": 0.867,
+      "structural_amp": 1.043,
+      "raw_variables": {
+        "v1": 0.0171,
+        "v2": 0.0325,
+        "v3": 0.1468,
+        "v4": -0.4946,
+        "v5": -0.5422,
+        "v1_velocity": 0.0057,
+        "indiv_cum_z": -0.4946
+      },
+      "variable_contributions": {
+        "v1": 0.09,
+        "v2": -1.03,
+        "v3": -5.97,
+        "v4": 0,
+        "v5": 9.8
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-10",
+      "rspi": 29.6,
+      "level": "strong_rebound",
+      "raw": -0.3534,
+      "volume_amp": 0.821,
+      "structural_amp": 1.02,
+      "raw_variables": {
+        "v1": 0.0102,
+        "v2": -0.049,
+        "v3": -0.8168,
+        "v4": -0.6607,
+        "v5": 0.1566,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.6607
+      },
+      "variable_contributions": {
+        "v1": 0.59,
+        "v2": 1.44,
+        "v3": 30.79,
+        "v4": 0,
+        "v5": -2.62
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-11",
+      "rspi": -0.3,
+      "level": "neutral",
+      "raw": 0.0035,
+      "volume_amp": 0.96,
+      "structural_amp": 1.017,
+      "raw_variables": {
+        "v1": 0.0083,
+        "v2": -0.1273,
+        "v3": 0.0186,
+        "v4": -0.6753,
+        "v5": 0.1983,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.6753
+      },
+      "variable_contributions": {
+        "v1": -0.01,
+        "v2": 4.35,
+        "v3": -0.82,
+        "v4": 0,
+        "v5": -3.87
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-12",
+      "rspi": 4.0,
+      "level": "neutral",
+      "raw": -0.0473,
+      "volume_amp": 0.838,
+      "structural_amp": 1.013,
+      "raw_variables": {
+        "v1": 0.0066,
+        "v2": 0.0185,
+        "v3": -0.1096,
+        "v4": -0.7354,
+        "v5": -0.0224,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.7354
+      },
+      "variable_contributions": {
+        "v1": 0.05,
+        "v2": -0.55,
+        "v3": 4.19,
+        "v4": 0,
+        "v5": 0.38
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-13",
+      "rspi": -0.4,
+      "level": "neutral",
+      "raw": 0.0044,
+      "volume_amp": 0.918,
+      "structural_amp": 1.016,
+      "raw_variables": {
+        "v1": 0.0073,
+        "v2": -0.4078,
+        "v3": 0.4874,
+        "v4": -0.6776,
+        "v5": -0.3609,
+        "v1_velocity": 0.0007,
+        "indiv_cum_z": -0.6776
+      },
+      "variable_contributions": {
+        "v1": -0.01,
+        "v2": 13.31,
+        "v3": -20.46,
+        "v4": 0,
+        "v5": 6.73
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-14",
+      "rspi": -13.2,
+      "level": "mild_sell",
+      "raw": 0.1352,
+      "volume_amp": 0.935,
+      "structural_amp": 1.045,
+      "raw_variables": {
+        "v1": 0.016,
+        "v2": 0.5226,
+        "v3": -0.0077,
+        "v4": -0.2596,
+        "v5": -0.2212,
+        "v1_velocity": 0.0086,
+        "indiv_cum_z": -0.2596
+      },
+      "variable_contributions": {
+        "v1": -0.4,
+        "v2": -17.88,
+        "v3": 0.34,
+        "v4": 0,
+        "v5": 4.32
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-17",
+      "rspi": 1.9,
+      "level": "neutral",
+      "raw": -0.0241,
+      "volume_amp": 0.773,
+      "structural_amp": 1.026,
+      "raw_variables": {
+        "v1": 0.0128,
+        "v2": -0.2655,
+        "v3": 0.2916,
+        "v4": -0.3673,
+        "v5": -0.3118,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.3673
+      },
+      "variable_contributions": {
+        "v1": 0.05,
+        "v2": 7.37,
+        "v3": -10.41,
+        "v4": 0,
+        "v5": 4.94
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-18",
+      "rspi": -7.9,
+      "level": "mild_sell",
+      "raw": 0.0972,
+      "volume_amp": 0.769,
+      "structural_amp": 1.06,
+      "raw_variables": {
+        "v1": 0.0225,
+        "v2": 0.0198,
+        "v3": 0.335,
+        "v4": -0.22,
+        "v5": -0.3021,
+        "v1_velocity": 0.0097,
+        "indiv_cum_z": -0.22
+      },
+      "variable_contributions": {
+        "v1": -0.34,
+        "v2": -0.56,
+        "v3": -12.28,
+        "v4": 0,
+        "v5": 4.92
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-19",
+      "rspi": -5.7,
+      "level": "mild_sell",
+      "raw": 0.0686,
+      "volume_amp": 0.796,
+      "structural_amp": 1.052,
+      "raw_variables": {
+        "v1": 0.0246,
+        "v2": 0.1514,
+        "v3": 0.0657,
+        "v4": -0.1124,
+        "v5": -0.0699,
+        "v1_velocity": 0.0021,
+        "indiv_cum_z": -0.1124
+      },
+      "variable_contributions": {
+        "v1": -0.27,
+        "v2": -4.44,
+        "v3": -2.48,
+        "v4": 0,
+        "v5": 1.17
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-20",
+      "rspi": -10.5,
+      "level": "mild_sell",
+      "raw": 0.1225,
+      "volume_amp": 0.825,
+      "structural_amp": 1.038,
+      "raw_variables": {
+        "v1": 0.0191,
+        "v2": -0.3119,
+        "v3": 0.52,
+        "v4": -0.2557,
+        "v5": -0.0116,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.2557
+      },
+      "variable_contributions": {
+        "v1": -0.39,
+        "v2": 9.35,
+        "v3": -20.05,
+        "v4": 0,
+        "v5": 0.2
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-21",
+      "rspi": -9.5,
+      "level": "mild_sell",
+      "raw": 0.1081,
+      "volume_amp": 0.784,
+      "structural_amp": 1.126,
+      "raw_variables": {
+        "v1": 0.0306,
+        "v2": 0.5407,
+        "v3": -0.2321,
+        "v4": 0.0952,
+        "v5": 0.1164,
+        "v1_velocity": 0.0115,
+        "indiv_cum_z": 0.0952
+      },
+      "variable_contributions": {
+        "v1": -0.52,
+        "v2": -16.71,
+        "v3": 9.22,
+        "v4": 0,
+        "v5": -2.05
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-24",
+      "rspi": 17.5,
+      "level": "mild_rebound",
+      "raw": -0.1466,
+      "volume_amp": 1.079,
+      "structural_amp": 1.106,
+      "raw_variables": {
+        "v1": 0.0311,
+        "v2": 0.03,
+        "v3": -0.3554,
+        "v4": 0.0851,
+        "v5": 0.014,
+        "v1_velocity": 0.0006,
+        "indiv_cum_z": 0.0851
+      },
+      "variable_contributions": {
+        "v1": 0.99,
+        "v2": -1.25,
+        "v3": 19.09,
+        "v4": 0,
+        "v5": -0.33
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-25",
+      "rspi": 2.2,
+      "level": "neutral",
+      "raw": -0.028,
+      "volume_amp": 0.747,
+      "structural_amp": 1.059,
+      "raw_variables": {
+        "v1": 0.0294,
+        "v2": -0.1536,
+        "v3": -0.0089,
+        "v4": -0.0288,
+        "v5": 0.1487,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.0288
+      },
+      "variable_contributions": {
+        "v1": 0.12,
+        "v2": 4.25,
+        "v3": 0.32,
+        "v4": 0,
+        "v5": -2.35
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-26",
+      "rspi": 20.0,
+      "level": "strong_rebound",
+      "raw": -0.2177,
+      "volume_amp": 0.883,
+      "structural_amp": 1.04,
+      "raw_variables": {
+        "v1": 0.0202,
+        "v2": -0.2705,
+        "v3": -0.3784,
+        "v4": -0.27,
+        "v5": 0.2362,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.27
+      },
+      "variable_contributions": {
+        "v1": 0.78,
+        "v2": 8.7,
+        "v3": 15.65,
+        "v4": 0,
+        "v5": -4.34
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-27",
+      "rspi": 17.3,
+      "level": "mild_rebound",
+      "raw": -0.2183,
+      "volume_amp": 0.766,
+      "structural_amp": 1.036,
+      "raw_variables": {
+        "v1": 0.0181,
+        "v2": -0.1758,
+        "v3": -0.3784,
+        "v4": -0.2979,
+        "v5": 0.0678,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.2979
+      },
+      "variable_contributions": {
+        "v1": 0.6,
+        "v2": 4.89,
+        "v3": 13.52,
+        "v4": 0,
+        "v5": -1.08
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-11-28",
+      "rspi": -9.8,
+      "level": "mild_sell",
+      "raw": 0.1286,
+      "volume_amp": 0.726,
+      "structural_amp": 1.051,
+      "raw_variables": {
+        "v1": 0.0222,
+        "v2": 0.339,
+        "v3": 0.0269,
+        "v4": -0.1231,
+        "v5": -0.0108,
+        "v1_velocity": 0.0041,
+        "indiv_cum_z": -0.1231
+      },
+      "variable_contributions": {
+        "v1": -0.41,
+        "v2": -9.05,
+        "v3": -0.92,
+        "v4": 0,
+        "v5": 0.17
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-01",
+      "rspi": 6.0,
+      "level": "mild_rebound",
+      "raw": -0.0777,
+      "volume_amp": 0.742,
+      "structural_amp": 1.049,
+      "raw_variables": {
+        "v1": 0.0234,
+        "v2": -0.2265,
+        "v3": 0.0958,
+        "v4": -0.1612,
+        "v5": -0.2078,
+        "v1_velocity": 0.0012,
+        "indiv_cum_z": -0.1612
+      },
+      "variable_contributions": {
+        "v1": 0.27,
+        "v2": 6.17,
+        "v3": -3.35,
+        "v4": 0,
+        "v5": 3.23
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-02",
+      "rspi": 27.4,
+      "level": "strong_rebound",
+      "raw": -0.3304,
+      "volume_amp": 0.798,
+      "structural_amp": 1.039,
+      "raw_variables": {
+        "v1": 0.0193,
+        "v2": -0.4296,
+        "v3": -0.2588,
+        "v4": -0.3218,
+        "v5": -0.3179,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.3218
+      },
+      "variable_contributions": {
+        "v1": 1.02,
+        "v2": 12.45,
+        "v3": 9.65,
+        "v4": 0,
+        "v5": 5.27
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-03",
+      "rspi": 14.2,
+      "level": "mild_rebound",
+      "raw": -0.155,
+      "volume_amp": 0.885,
+      "structural_amp": 1.033,
+      "raw_variables": {
+        "v1": 0.0166,
+        "v2": -0.1734,
+        "v3": -0.1933,
+        "v4": -0.4183,
+        "v5": -0.0364,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.4183
+      },
+      "variable_contributions": {
+        "v1": 0.46,
+        "v2": 5.55,
+        "v3": 7.96,
+        "v4": 0,
+        "v5": 0.67
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-04",
+      "rspi": -5.2,
+      "level": "mild_sell",
+      "raw": 0.0548,
+      "volume_amp": 0.922,
+      "structural_amp": 1.036,
+      "raw_variables": {
+        "v1": 0.0175,
+        "v2": 0.0992,
+        "v3": 0.0923,
+        "v4": -0.3057,
+        "v5": -0.1074,
+        "v1_velocity": 0.0009,
+        "indiv_cum_z": -0.3057
+      },
+      "variable_contributions": {
+        "v1": -0.18,
+        "v2": -3.32,
+        "v3": -3.97,
+        "v4": 0,
+        "v5": 2.05
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-05",
+      "rspi": 38.5,
+      "level": "strong_rebound",
+      "raw": -0.356,
+      "volume_amp": 1.052,
+      "structural_amp": 1.028,
+      "raw_variables": {
+        "v1": 0.014,
+        "v2": -0.328,
+        "v3": -0.414,
+        "v4": -0.5767,
+        "v5": -0.2744,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.5767
+      },
+      "variable_contributions": {
+        "v1": 1.05,
+        "v2": 12.42,
+        "v3": 20.16,
+        "v4": 0,
+        "v5": 5.94
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-08",
+      "rspi": 15.9,
+      "level": "mild_rebound",
+      "raw": -0.1547,
+      "volume_amp": 1.005,
+      "structural_amp": 1.024,
+      "raw_variables": {
+        "v1": 0.0122,
+        "v2": -0.1447,
+        "v3": -0.0475,
+        "v4": -0.5692,
+        "v5": -0.4133,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.5692
+      },
+      "variable_contributions": {
+        "v1": 0.38,
+        "v2": 5.22,
+        "v3": 2.2,
+        "v4": 0,
+        "v5": 8.51
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-09",
+      "rspi": 2.3,
+      "level": "neutral",
+      "raw": -0.0239,
+      "volume_amp": 0.927,
+      "structural_amp": 1.027,
+      "raw_variables": {
+        "v1": 0.0128,
+        "v2": -0.0402,
+        "v3": -0.0361,
+        "v4": -0.4313,
+        "v5": 0.032,
+        "v1_velocity": 0.0006,
+        "indiv_cum_z": -0.4313
+      },
+      "variable_contributions": {
+        "v1": 0.06,
+        "v2": 1.34,
+        "v3": 1.55,
+        "v4": 0,
+        "v5": -0.61
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-10",
+      "rspi": 17.6,
+      "level": "mild_rebound",
+      "raw": -0.1911,
+      "volume_amp": 0.895,
+      "structural_amp": 1.029,
+      "raw_variables": {
+        "v1": 0.0138,
+        "v2": -0.1494,
+        "v3": -0.2608,
+        "v4": -0.1404,
+        "v5": -0.1073,
+        "v1_velocity": 0.001,
+        "indiv_cum_z": -0.1404
+      },
+      "variable_contributions": {
+        "v1": 0.47,
+        "v2": 4.82,
+        "v3": 10.81,
+        "v4": 0,
+        "v5": 1.98
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-11",
+      "rspi": -1.0,
+      "level": "neutral",
+      "raw": 0.0079,
+      "volume_amp": 1.192,
+      "structural_amp": 1.066,
+      "raw_variables": {
+        "v1": 0.0153,
+        "v2": -0.1593,
+        "v3": 0.1319,
+        "v4": 0.0658,
+        "v5": 0.0213,
+        "v1_velocity": 0.0016,
+        "indiv_cum_z": 0.0658
+      },
+      "variable_contributions": {
+        "v1": -0.03,
+        "v2": 7.09,
+        "v3": -7.55,
+        "v4": 0,
+        "v5": -0.54
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-12",
+      "rspi": -25.7,
+      "level": "strong_sell",
+      "raw": 0.2253,
+      "volume_amp": 1.042,
+      "structural_amp": 1.093,
+      "raw_variables": {
+        "v1": 0.0113,
+        "v2": -0.0464,
+        "v3": 0.4933,
+        "v4": 0.1415,
+        "v5": 0.0981,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.1415
+      },
+      "variable_contributions": {
+        "v1": -0.53,
+        "v2": 1.85,
+        "v3": -25.3,
+        "v4": 0,
+        "v5": -2.24
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-15",
+      "rspi": -7.2,
+      "level": "mild_sell",
+      "raw": 0.0595,
+      "volume_amp": 0.99,
+      "structural_amp": 1.217,
+      "raw_variables": {
+        "v1": 0.0168,
+        "v2": 0.2273,
+        "v3": 0.0072,
+        "v4": 0.3503,
+        "v5": -0.1165,
+        "v1_velocity": 0.0055,
+        "indiv_cum_z": 0.3503
+      },
+      "variable_contributions": {
+        "v1": -0.2,
+        "v2": -9.58,
+        "v3": -0.39,
+        "v4": 0,
+        "v5": 2.81
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-16",
+      "rspi": -30.4,
+      "level": "strong_sell",
+      "raw": 0.2101,
+      "volume_amp": 1.01,
+      "structural_amp": 1.433,
+      "raw_variables": {
+        "v1": 0.0233,
+        "v2": 0.2383,
+        "v3": 0.2312,
+        "v4": 0.7527,
+        "v5": 0.1132,
+        "v1_velocity": 0.0066,
+        "indiv_cum_z": 0.7527
+      },
+      "variable_contributions": {
+        "v1": -0.99,
+        "v2": -12.08,
+        "v3": -15.06,
+        "v4": 0,
+        "v5": -3.28
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-17",
+      "rspi": -6.4,
+      "level": "mild_sell",
+      "raw": 0.0557,
+      "volume_amp": 0.833,
+      "structural_amp": 1.375,
+      "raw_variables": {
+        "v1": 0.0199,
+        "v2": -0.0384,
+        "v3": 0.2832,
+        "v4": 0.6702,
+        "v5": -0.2912,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.6702
+      },
+      "variable_contributions": {
+        "v1": -0.18,
+        "v2": 1.54,
+        "v3": -14.59,
+        "v4": 0,
+        "v5": 6.67
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-18",
+      "rspi": 11.2,
+      "level": "mild_rebound",
+      "raw": -0.084,
+      "volume_amp": 0.905,
+      "structural_amp": 1.467,
+      "raw_variables": {
+        "v1": 0.0238,
+        "v2": 0.0395,
+        "v3": -0.3383,
+        "v4": 0.828,
+        "v5": 0.2721,
+        "v1_velocity": 0.0039,
+        "indiv_cum_z": 0.828
+      },
+      "variable_contributions": {
+        "v1": 0.36,
+        "v2": -1.84,
+        "v3": 20.22,
+        "v4": 0,
+        "v5": -7.23
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-19",
+      "rspi": 5.0,
+      "level": "neutral",
+      "raw": -0.033,
+      "volume_amp": 1.072,
+      "structural_amp": 1.409,
+      "raw_variables": {
+        "v1": 0.021,
+        "v2": 0.2488,
+        "v3": -0.3158,
+        "v4": 0.7333,
+        "v5": 0.1099,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.7333
+      },
+      "variable_contributions": {
+        "v1": 0.15,
+        "v2": -13.16,
+        "v3": 21.47,
+        "v4": 0,
+        "v5": -3.32
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-22",
+      "rspi": 23.9,
+      "level": "strong_rebound",
+      "raw": -0.2039,
+      "volume_amp": 0.926,
+      "structural_amp": 1.266,
+      "raw_variables": {
+        "v1": 0.0147,
+        "v2": -0.4167,
+        "v3": -0.1451,
+        "v4": 0.4733,
+        "v5": 0.0361,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.4733
+      },
+      "variable_contributions": {
+        "v1": 0.55,
+        "v2": 17.11,
+        "v3": 7.66,
+        "v4": 0,
+        "v5": -0.85
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-23",
+      "rspi": 23.8,
+      "level": "strong_rebound",
+      "raw": -0.2094,
+      "volume_amp": 0.953,
+      "structural_amp": 1.193,
+      "raw_variables": {
+        "v1": 0.0139,
+        "v2": -0.332,
+        "v3": -0.2135,
+        "v4": 0.3309,
+        "v5": 0.0141,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.3309
+      },
+      "variable_contributions": {
+        "v1": 0.55,
+        "v2": 13.21,
+        "v3": 10.92,
+        "v4": 0,
+        "v5": -0.32
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-24",
+      "rspi": 23.1,
+      "level": "strong_rebound",
+      "raw": -0.2272,
+      "volume_amp": 0.886,
+      "structural_amp": 1.147,
+      "raw_variables": {
+        "v1": 0.0146,
+        "v2": -0.1766,
+        "v3": -0.3433,
+        "v4": 0.2322,
+        "v5": -0.0544,
+        "v1_velocity": 0.0008,
+        "indiv_cum_z": 0.2322
+      },
+      "variable_contributions": {
+        "v1": 0.59,
+        "v2": 6.28,
+        "v3": 15.7,
+        "v4": 0,
+        "v5": 1.1
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-26",
+      "rspi": 25.6,
+      "level": "strong_rebound",
+      "raw": -0.2286,
+      "volume_amp": 1.091,
+      "structural_amp": 1.026,
+      "raw_variables": {
+        "v1": 0.0131,
+        "v2": -0.5395,
+        "v3": -0.1059,
+        "v4": -0.012,
+        "v5": 0.0394,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.012
+      },
+      "variable_contributions": {
+        "v1": 0.65,
+        "v2": 21.14,
+        "v3": 5.33,
+        "v4": 0,
+        "v5": -0.88
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-29",
+      "rspi": 13.0,
+      "level": "mild_rebound",
+      "raw": -0.1279,
+      "volume_amp": 1.003,
+      "structural_amp": 1.016,
+      "raw_variables": {
+        "v1": 0.0081,
+        "v2": -0.0404,
+        "v3": -0.2228,
+        "v4": -0.1533,
+        "v5": -0.0677,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.1533
+      },
+      "variable_contributions": {
+        "v1": 0.21,
+        "v2": 1.44,
+        "v3": 10.22,
+        "v4": 0,
+        "v5": 1.38
+      },
+      "impact": null
+    },
+    {
+      "date": "2025-12-30",
+      "rspi": -11.1,
+      "level": "mild_sell",
+      "raw": 0.114,
+      "volume_amp": 0.931,
+      "structural_amp": 1.05,
+      "raw_variables": {
+        "v1": 0.0083,
+        "v2": 0.2562,
+        "v3": 0.0331,
+        "v4": 0.0656,
+        "v5": 0.0472,
+        "v1_velocity": 0.0001,
+        "indiv_cum_z": 0.0656
+      },
+      "variable_contributions": {
+        "v1": -0.18,
+        "v2": -8.76,
+        "v3": -1.45,
+        "v4": 0,
+        "v5": -0.92
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-02",
+      "rspi": 53.0,
+      "level": "extreme_rebound",
+      "raw": -0.4651,
+      "volume_amp": 1.122,
+      "structural_amp": 1.015,
+      "raw_variables": {
+        "v1": 0.005,
+        "v2": -0.1847,
+        "v3": -0.7848,
+        "v4": 0.0106,
+        "v5": -0.2365,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.0106
+      },
+      "variable_contributions": {
+        "v1": 0.53,
+        "v2": 7.36,
+        "v3": 40.22,
+        "v4": 0,
+        "v5": 5.39
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-05",
+      "rspi": 60.9,
+      "level": "extreme_rebound",
+      "raw": -0.4977,
+      "volume_amp": 1.217,
+      "structural_amp": 1.005,
+      "raw_variables": {
+        "v1": 0.0024,
+        "v2": -0.6485,
+        "v3": -0.4682,
+        "v4": -0.0492,
+        "v5": -0.3,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.0492
+      },
+      "variable_contributions": {
+        "v1": 0.29,
+        "v2": 27.76,
+        "v3": 25.76,
+        "v4": 0,
+        "v5": 7.34
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-06",
+      "rspi": 19.5,
+      "level": "mild_rebound",
+      "raw": -0.1294,
+      "volume_amp": 1.224,
+      "structural_amp": 1.233,
+      "raw_variables": {
+        "v1": 0.0019,
+        "v2": 0.3008,
+        "v3": -0.4767,
+        "v4": 0.4579,
+        "v5": -0.1008,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.4579
+      },
+      "variable_contributions": {
+        "v1": 0.06,
+        "v2": -15.88,
+        "v3": 32.36,
+        "v4": 0,
+        "v5": 3.04
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-07",
+      "rspi": 16.5,
+      "level": "mild_rebound",
+      "raw": -0.109,
+      "volume_amp": 1.215,
+      "structural_amp": 1.249,
+      "raw_variables": {
+        "v1": 0.0026,
+        "v2": -0.328,
+        "v3": 0.1235,
+        "v4": 0.4852,
+        "v5": -0.249,
+        "v1_velocity": 0.0008,
+        "indiv_cum_z": 0.4852
+      },
+      "variable_contributions": {
+        "v1": 0.07,
+        "v2": 17.42,
+        "v3": -8.43,
+        "v4": 0,
+        "v5": 7.56
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-08",
+      "rspi": 3.2,
+      "level": "neutral",
+      "raw": -0.0238,
+      "volume_amp": 1.083,
+      "structural_amp": 1.26,
+      "raw_variables": {
+        "v1": 0.0045,
+        "v2": 0.1183,
+        "v3": 0.0593,
+        "v4": 0.4959,
+        "v5": -0.4594,
+        "v1_velocity": 0.0018,
+        "indiv_cum_z": 0.4959
+      },
+      "variable_contributions": {
+        "v1": 0.02,
+        "v2": -5.65,
+        "v3": -3.64,
+        "v4": 0,
+        "v5": 12.54
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-09",
+      "rspi": 3.8,
+      "level": "neutral",
+      "raw": -0.0324,
+      "volume_amp": 0.935,
+      "structural_amp": 1.266,
+      "raw_variables": {
+        "v1": 0.0048,
+        "v2": 0.5403,
+        "v3": -0.3912,
+        "v4": 0.5126,
+        "v5": -0.2272,
+        "v1_velocity": 0.0003,
+        "indiv_cum_z": 0.5126
+      },
+      "variable_contributions": {
+        "v1": 0.03,
+        "v2": -22.4,
+        "v3": 20.85,
+        "v4": 0,
+        "v5": 5.38
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-12",
+      "rspi": 1.7,
+      "level": "neutral",
+      "raw": -0.0138,
+      "volume_amp": 0.921,
+      "structural_amp": 1.327,
+      "raw_variables": {
+        "v1": 0.0051,
+        "v2": 0.1488,
+        "v3": -0.0347,
+        "v4": 0.6318,
+        "v5": -0.2515,
+        "v1_velocity": 0.0003,
+        "indiv_cum_z": 0.6318
+      },
+      "variable_contributions": {
+        "v1": 0.01,
+        "v2": -6.37,
+        "v3": 1.91,
+        "v4": 0,
+        "v5": 6.15
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-13",
+      "rspi": -17.9,
+      "level": "mild_sell",
+      "raw": 0.1325,
+      "volume_amp": 0.988,
+      "structural_amp": 1.37,
+      "raw_variables": {
+        "v1": 0.0039,
+        "v2": 0.1172,
+        "v3": 0.2248,
+        "v4": 0.7243,
+        "v5": -0.0485,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.7243
+      },
+      "variable_contributions": {
+        "v1": -0.1,
+        "v2": -5.55,
+        "v3": -13.68,
+        "v4": 0,
+        "v5": 1.31
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-14",
+      "rspi": 2.5,
+      "level": "neutral",
+      "raw": -0.0187,
+      "volume_amp": 0.986,
+      "structural_amp": 1.359,
+      "raw_variables": {
+        "v1": 0.0036,
+        "v2": 0.1391,
+        "v3": -0.1269,
+        "v4": 0.7039,
+        "v5": -0.0513,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.7039
+      },
+      "variable_contributions": {
+        "v1": 0.01,
+        "v2": -6.52,
+        "v3": 7.65,
+        "v4": 0,
+        "v5": 1.37
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-15",
+      "rspi": 20.9,
+      "level": "strong_rebound",
+      "raw": -0.1666,
+      "volume_amp": 0.996,
+      "structural_amp": 1.258,
+      "raw_variables": {
+        "v1": 0.0032,
+        "v2": -0.058,
+        "v3": -0.2306,
+        "v4": 0.5039,
+        "v5": -0.2125,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.5039
+      },
+      "variable_contributions": {
+        "v1": 0.11,
+        "v2": 2.54,
+        "v3": 13.0,
+        "v4": 0,
+        "v5": 5.32
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-16",
+      "rspi": 14.4,
+      "level": "mild_rebound",
+      "raw": -0.1124,
+      "volume_amp": 1.064,
+      "structural_amp": 1.204,
+      "raw_variables": {
+        "v1": 0.0035,
+        "v2": -0.066,
+        "v3": -0.0808,
+        "v4": 0.3927,
+        "v5": -0.265,
+        "v1_velocity": 0.0003,
+        "indiv_cum_z": 0.3927
+      },
+      "variable_contributions": {
+        "v1": 0.08,
+        "v2": 2.96,
+        "v3": 4.66,
+        "v4": 0,
+        "v5": 6.79
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-19",
+      "rspi": 10.0,
+      "level": "mild_rebound",
+      "raw": -0.0864,
+      "volume_amp": 1.004,
+      "structural_amp": 1.154,
+      "raw_variables": {
+        "v1": 0.0028,
+        "v2": -0.0944,
+        "v3": -0.0808,
+        "v4": 0.2967,
+        "v5": -0.0849,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.2967
+      },
+      "variable_contributions": {
+        "v1": 0.05,
+        "v2": 3.83,
+        "v3": 4.21,
+        "v4": 0,
+        "v5": 1.97
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-20",
+      "rspi": -26.0,
+      "level": "strong_sell",
+      "raw": 0.2211,
+      "volume_amp": 1.046,
+      "structural_amp": 1.125,
+      "raw_variables": {
+        "v1": 0.0027,
+        "v2": 0.0515,
+        "v3": 0.4076,
+        "v4": 0.2398,
+        "v5": 0.0982,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.2398
+      },
+      "variable_contributions": {
+        "v1": -0.12,
+        "v2": -2.12,
+        "v3": -21.59,
+        "v4": 0,
+        "v5": -2.31
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-21",
+      "rspi": 52.1,
+      "level": "extreme_rebound",
+      "raw": -0.3998,
+      "volume_amp": 1.088,
+      "structural_amp": 1.197,
+      "raw_variables": {
+        "v1": 0.0031,
+        "v2": -0.0328,
+        "v3": -0.771,
+        "v4": 0.381,
+        "v5": -0.2071,
+        "v1_velocity": 0.0005,
+        "indiv_cum_z": 0.381
+      },
+      "variable_contributions": {
+        "v1": 0.27,
+        "v2": 1.5,
+        "v3": 45.19,
+        "v4": 0,
+        "v5": 5.4
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-22",
+      "rspi": -8.0,
+      "level": "mild_sell",
+      "raw": 0.0578,
+      "volume_amp": 1.105,
+      "structural_amp": 1.261,
+      "raw_variables": {
+        "v1": 0.0016,
+        "v2": 0.1764,
+        "v3": -0.1101,
+        "v4": 0.5145,
+        "v5": 0.228,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.5145
+      },
+      "variable_contributions": {
+        "v1": -0.02,
+        "v2": -8.6,
+        "v3": 6.9,
+        "v4": 0,
+        "v5": -6.35
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-23",
+      "rspi": 14.9,
+      "level": "mild_rebound",
+      "raw": -0.1328,
+      "volume_amp": 1.023,
+      "structural_amp": 1.097,
+      "raw_variables": {
+        "v1": 0.0018,
+        "v2": 0.0313,
+        "v3": -0.2573,
+        "v4": 0.1873,
+        "v5": -0.1397,
+        "v1_velocity": 0.0002,
+        "indiv_cum_z": 0.1873
+      },
+      "variable_contributions": {
+        "v1": 0.05,
+        "v2": -1.23,
+        "v3": 13.0,
+        "v4": 0,
+        "v5": 3.14
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-26",
+      "rspi": 4.5,
+      "level": "neutral",
+      "raw": -0.0427,
+      "volume_amp": 0.838,
+      "structural_amp": 1.253,
+      "raw_variables": {
+        "v1": 0.0042,
+        "v2": 0.1242,
+        "v3": 0.0099,
+        "v4": 0.4816,
+        "v5": -0.4533,
+        "v1_velocity": 0.0024,
+        "indiv_cum_z": 0.4816
+      },
+      "variable_contributions": {
+        "v1": 0.03,
+        "v2": -4.56,
+        "v3": -0.47,
+        "v4": 0,
+        "v5": 9.51
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-27",
+      "rspi": 42.7,
+      "level": "extreme_rebound",
+      "raw": -0.3904,
+      "volume_amp": 0.99,
+      "structural_amp": 1.104,
+      "raw_variables": {
+        "v1": 0.0018,
+        "v2": -0.2603,
+        "v3": -0.7299,
+        "v4": 0.2016,
+        "v5": 0.1462,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.2016
+      },
+      "variable_contributions": {
+        "v1": 0.14,
+        "v2": 9.97,
+        "v3": 35.93,
+        "v4": 0,
+        "v5": -3.2
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-28",
+      "rspi": 25.4,
+      "level": "strong_rebound",
+      "raw": -0.2015,
+      "volume_amp": 1.044,
+      "structural_amp": 1.209,
+      "raw_variables": {
+        "v1": 0.0028,
+        "v2": -0.0918,
+        "v3": -0.1935,
+        "v4": 0.4031,
+        "v5": -0.4117,
+        "v1_velocity": 0.001,
+        "indiv_cum_z": 0.4031
+      },
+      "variable_contributions": {
+        "v1": 0.12,
+        "v2": 4.05,
+        "v3": 10.99,
+        "v4": 0,
+        "v5": 10.39
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-29",
+      "rspi": -19.3,
+      "level": "mild_sell",
+      "raw": 0.1323,
+      "volume_amp": 1.138,
+      "structural_amp": 1.285,
+      "raw_variables": {
+        "v1": 0.0048,
+        "v2": 0.5488,
+        "v3": 0.156,
+        "v4": 0.5436,
+        "v5": -0.6497,
+        "v1_velocity": 0.0021,
+        "indiv_cum_z": 0.5436
+      },
+      "variable_contributions": {
+        "v1": -0.15,
+        "v2": -28.08,
+        "v3": -10.26,
+        "v4": 0,
+        "v5": 19.0
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-01-30",
+      "rspi": -42.4,
+      "level": "extreme_sell",
+      "raw": 0.3061,
+      "volume_amp": 1.104,
+      "structural_amp": 1.254,
+      "raw_variables": {
+        "v1": 0.0055,
+        "v2": 0.595,
+        "v3": 0.2987,
+        "v4": 0.4842,
+        "v5": -0.1828,
+        "v1_velocity": 0.0007,
+        "indiv_cum_z": 0.4842
+      },
+      "variable_contributions": {
+        "v1": -0.37,
+        "v2": -28.84,
+        "v3": -18.62,
+        "v4": 0,
+        "v5": 5.06
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-02",
+      "rspi": -31.5,
+      "level": "strong_sell",
+      "raw": 0.2233,
+      "volume_amp": 0.99,
+      "structural_amp": 1.426,
+      "raw_variables": {
+        "v1": 0.0135,
+        "v2": 0.6839,
+        "v3": 0.0604,
+        "v4": 0.7741,
+        "v5": -0.2162,
+        "v1_velocity": 0.008,
+        "indiv_cum_z": 0.7741
+      },
+      "variable_contributions": {
+        "v1": -0.6,
+        "v2": -33.78,
+        "v3": -3.84,
+        "v4": 0,
+        "v5": 6.1
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-03",
+      "rspi": 19.1,
+      "level": "mild_rebound",
+      "raw": -0.1822,
+      "volume_amp": 0.935,
+      "structural_amp": 1.12,
+      "raw_variables": {
+        "v1": 0.0047,
+        "v2": -0.2662,
+        "v3": -0.1658,
+        "v4": 0.2219,
+        "v5": -0.0719,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.2219
+      },
+      "variable_contributions": {
+        "v1": 0.16,
+        "v2": 9.75,
+        "v3": 7.81,
+        "v4": 0,
+        "v5": 1.5
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-04",
+      "rspi": -19.3,
+      "level": "mild_sell",
+      "raw": 0.2019,
+      "volume_amp": 0.946,
+      "structural_amp": 1.012,
+      "raw_variables": {
+        "v1": 0.0054,
+        "v2": 0.1996,
+        "v3": 0.5338,
+        "v4": -0.0225,
+        "v5": -0.5409,
+        "v1_velocity": 0.0007,
+        "indiv_cum_z": -0.0225
+      },
+      "variable_contributions": {
+        "v1": -0.21,
+        "v2": -6.69,
+        "v3": -23.0,
+        "v4": 0,
+        "v5": 10.36
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-05",
+      "rspi": -69.8,
+      "level": "extreme_sell",
+      "raw": 0.4371,
+      "volume_amp": 1.007,
+      "structural_amp": 1.587,
+      "raw_variables": {
+        "v1": 0.0098,
+        "v2": 0.9293,
+        "v3": 0.1635,
+        "v4": 1.1216,
+        "v5": 0.1916,
+        "v1_velocity": 0.0044,
+        "indiv_cum_z": 1.1216
+      },
+      "variable_contributions": {
+        "v1": -0.86,
+        "v2": -51.96,
+        "v3": -11.76,
+        "v4": 0,
+        "v5": -6.12
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-06",
+      "rspi": 42.6,
+      "level": "extreme_rebound",
+      "raw": -0.2476,
+      "volume_amp": 0.975,
+      "structural_amp": 1.766,
+      "raw_variables": {
+        "v1": 0.0137,
+        "v2": 0.5175,
+        "v3": -0.7775,
+        "v4": 1.466,
+        "v5": -0.3945,
+        "v1_velocity": 0.0038,
+        "indiv_cum_z": 1.466
+      },
+      "variable_contributions": {
+        "v1": 0.66,
+        "v2": -31.19,
+        "v3": 60.25,
+        "v4": 0,
+        "v5": 13.58
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-09",
+      "rspi": 42.6,
+      "level": "extreme_rebound",
+      "raw": -0.3023,
+      "volume_amp": 0.913,
+      "structural_amp": 1.543,
+      "raw_variables": {
+        "v1": 0.0095,
+        "v2": -0.1953,
+        "v3": -0.2241,
+        "v4": 1.0489,
+        "v5": -0.6654,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 1.0489
+      },
+      "variable_contributions": {
+        "v1": 0.53,
+        "v2": 9.63,
+        "v3": 14.21,
+        "v4": 0,
+        "v5": 18.76
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-10",
+      "rspi": -7.6,
+      "level": "mild_sell",
+      "raw": 0.0605,
+      "volume_amp": 0.843,
+      "structural_amp": 1.494,
+      "raw_variables": {
+        "v1": 0.0092,
+        "v2": -0.1364,
+        "v3": 0.2172,
+        "v4": 0.9517,
+        "v5": 0.0527,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.9517
+      },
+      "variable_contributions": {
+        "v1": -0.09,
+        "v2": 6.02,
+        "v3": -12.31,
+        "v4": 0,
+        "v5": -1.33
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-11",
+      "rspi": 20.8,
+      "level": "strong_rebound",
+      "raw": -0.2016,
+      "volume_amp": 0.911,
+      "structural_amp": 1.131,
+      "raw_variables": {
+        "v1": 0.0065,
+        "v2": -0.2519,
+        "v3": -0.3921,
+        "v4": 0.2365,
+        "v5": 0.3148,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 0.2365
+      },
+      "variable_contributions": {
+        "v1": 0.24,
+        "v2": 9.08,
+        "v3": 18.18,
+        "v4": 0,
+        "v5": -6.49
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-12",
+      "rspi": 21.7,
+      "level": "strong_rebound",
+      "raw": -0.2015,
+      "volume_amp": 1.068,
+      "structural_amp": 1.007,
+      "raw_variables": {
+        "v1": 0.0036,
+        "v2": -0.563,
+        "v3": 0.0746,
+        "v4": -0.3348,
+        "v5": -0.1899,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.3348
+      },
+      "variable_contributions": {
+        "v1": 0.15,
+        "v2": 21.19,
+        "v3": -3.61,
+        "v4": 0,
+        "v5": 4.09
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-13",
+      "rspi": 14.8,
+      "level": "mild_rebound",
+      "raw": -0.1429,
+      "volume_amp": 1.029,
+      "structural_amp": 1.008,
+      "raw_variables": {
+        "v1": 0.0039,
+        "v2": 0.0795,
+        "v3": -0.3728,
+        "v4": -0.4096,
+        "v5": -0.0147,
+        "v1_velocity": 0.0004,
+        "indiv_cum_z": -0.4096
+      },
+      "variable_contributions": {
+        "v1": 0.12,
+        "v2": -2.89,
+        "v3": 17.41,
+        "v4": 0,
+        "v5": 0.3
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-19",
+      "rspi": 5.8,
+      "level": "mild_rebound",
+      "raw": -0.0587,
+      "volume_amp": 0.979,
+      "structural_amp": 1.004,
+      "raw_variables": {
+        "v1": 0.0019,
+        "v2": 0.0704,
+        "v3": -0.1218,
+        "v4": -0.5975,
+        "v5": -0.1426,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.5975
+      },
+      "variable_contributions": {
+        "v1": 0.02,
+        "v2": -2.42,
+        "v3": 5.39,
+        "v4": 0,
+        "v5": 2.8
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-20",
+      "rspi": 39.7,
+      "level": "strong_rebound",
+      "raw": -0.3716,
+      "volume_amp": 1.067,
+      "structural_amp": 1.002,
+      "raw_variables": {
+        "v1": 0.001,
+        "v2": 0.0299,
+        "v3": -0.8263,
+        "v4": -0.5384,
+        "v5": -0.0512,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.5384
+      },
+      "variable_contributions": {
+        "v1": 0.08,
+        "v2": -1.12,
+        "v3": 39.77,
+        "v4": 0,
+        "v5": 1.1
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-23",
+      "rspi": -18.7,
+      "level": "mild_sell",
+      "raw": 0.1836,
+      "volume_amp": 1.013,
+      "structural_amp": 1.003,
+      "raw_variables": {
+        "v1": 0.0012,
+        "v2": 0.0802,
+        "v3": 0.3812,
+        "v4": -0.7091,
+        "v5": -0.0799,
+        "v1_velocity": 0.0001,
+        "indiv_cum_z": -0.7091
+      },
+      "variable_contributions": {
+        "v1": -0.04,
+        "v2": -2.85,
+        "v3": -17.43,
+        "v4": 0,
+        "v5": 1.62
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-24",
+      "rspi": 38.1,
+      "level": "strong_rebound",
+      "raw": -0.3779,
+      "volume_amp": 1.003,
+      "structural_amp": 1.005,
+      "raw_variables": {
+        "v1": 0.0019,
+        "v2": -0.075,
+        "v3": -0.6449,
+        "v4": -0.9709,
+        "v5": -0.3074,
+        "v1_velocity": 0.0007,
+        "indiv_cum_z": -0.9709
+      },
+      "variable_contributions": {
+        "v1": 0.14,
+        "v2": 2.64,
+        "v3": 29.24,
+        "v4": 0,
+        "v5": 6.19
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-25",
+      "rspi": 27.3,
+      "level": "strong_rebound",
+      "raw": -0.2551,
+      "volume_amp": 1.067,
+      "structural_amp": 1.004,
+      "raw_variables": {
+        "v1": 0.0021,
+        "v2": 0.1017,
+        "v3": -0.5555,
+        "v4": -0.9292,
+        "v5": -0.2033,
+        "v1_velocity": 0.0002,
+        "indiv_cum_z": -0.9292
+      },
+      "variable_contributions": {
+        "v1": 0.11,
+        "v2": -3.81,
+        "v3": 26.79,
+        "v4": 0,
+        "v5": 4.36
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-26",
+      "rspi": 0.3,
+      "level": "neutral",
+      "raw": -0.0027,
+      "volume_amp": 1.094,
+      "structural_amp": 1.004,
+      "raw_variables": {
+        "v1": 0.0021,
+        "v2": 0.2198,
+        "v3": -0.0439,
+        "v4": -0.5692,
+        "v5": -0.2994,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": -0.5692
+      },
+      "variable_contributions": {
+        "v1": 0.0,
+        "v2": -8.45,
+        "v3": 2.17,
+        "v4": 0,
+        "v5": 6.58
+      },
+      "impact": null
+    },
+    {
+      "date": "2026-02-27",
+      "rspi": -30.1,
+      "level": "strong_sell",
+      "raw": 0.1952,
+      "volume_amp": 1.256,
+      "structural_amp": 1.228,
+      "raw_variables": {
+        "v1": 0.004,
+        "v2": 0.7856,
+        "v3": -0.0184,
+        "v4": 0.4333,
+        "v5": -0.3573,
+        "v1_velocity": 0.0019,
+        "indiv_cum_z": 0.4333
+      },
+      "variable_contributions": {
+        "v1": -0.2,
+        "v2": -42.4,
+        "v3": 1.27,
+        "v4": 0,
+        "v5": 11.02
       },
       "impact": null
     },
     {
       "date": "2026-03-03",
-      "rspi": -27.4,
-      "level": "strong_sell",
-      "raw": 0.2382,
+      "rspi": -82.8,
+      "level": "extreme_sell",
+      "raw": 0.4593,
       "volume_amp": 1.151,
+      "structural_amp": 1.567,
       "raw_variables": {
-        "v1": 0.006,
-        "v2": 0.8121,
+        "v1": 0.0141,
+        "v2": 0.464,
         "v3": 1.0,
-        "v4": -0.4,
-        "v5": -0.9569
+        "v4": 1.0477,
+        "v5": -0.7655,
+        "v1_velocity": 0.0101,
+        "indiv_cum_z": 1.0477
       },
       "variable_contributions": {
-        "v1": -0.17,
-        "v2": -18.69,
-        "v3": -28.77,
-        "v4": 9.21,
-        "v5": 11.01
+        "v1": -1.49,
+        "v2": -29.29,
+        "v3": -81.16,
+        "v4": 0,
+        "v5": 27.61
       },
       "impact": null
     },
     {
       "date": "2026-03-04",
-      "rspi": 8.8,
-      "level": "mild_rebound",
-      "raw": -0.0745,
+      "rspi": 60.7,
+      "level": "extreme_rebound",
+      "raw": -0.3052,
       "volume_amp": 1.179,
+      "structural_amp": 1.686,
       "raw_variables": {
-        "v1": 0.0332,
-        "v2": -0.3558,
-        "v3": -0.3665,
-        "v4": 0.7,
-        "v5": -0.5999
+        "v1": 0.0526,
+        "v2": -0.2033,
+        "v3": -0.3069,
+        "v4": 1.0466,
+        "v5": -0.4799,
+        "v1_velocity": 0.0385,
+        "indiv_cum_z": 1.0466
       },
       "variable_contributions": {
-        "v1": -0.98,
-        "v2": 8.39,
-        "v3": 10.8,
-        "v4": -16.51,
-        "v5": 7.07
+        "v1": 3.79,
+        "v2": 14.15,
+        "v3": 27.46,
+        "v4": 0,
+        "v5": 19.08
       },
       "impact": null
     },
     {
       "date": "2026-03-05",
-      "rspi": null,
-      "level": "pending",
-      "raw": null,
-      "volume_amp": null,
+      "rspi": -66.2,
+      "level": "extreme_sell",
+      "raw": 0.3995,
+      "volume_amp": 0.917,
+      "structural_amp": 1.809,
       "raw_variables": {
-        "v1": 0.0105,
-        "v2": -0.2526,
-        "v3": null,
-        "v4": null,
-        "v5": null
+        "v1": 0.0214,
+        "v2": -0.1444,
+        "v3": 1.0,
+        "v4": 1.5326,
+        "v5": 0.0,
+        "v1_velocity": 0.0,
+        "indiv_cum_z": 1.5326
       },
       "variable_contributions": {
-        "v1": null,
-        "v2": null,
-        "v3": null,
-        "v4": null,
-        "v5": null
+        "v1": -1.56,
+        "v2": 8.38,
+        "v3": -74.61,
+        "v4": 0,
+        "v5": -0.0
       },
-      "impact": null,
-      "pending": true
+      "impact": null
     }
   ],
   "latest": {
     "date": "2026-03-05",
-    "rspi": null,
-    "level": "pending",
-    "raw": null,
-    "volume_amp": null,
+    "rspi": -66.2,
+    "level": "extreme_sell",
+    "raw": 0.3995,
+    "volume_amp": 0.917,
+    "structural_amp": 1.809,
     "raw_variables": {
-      "v1": 0.0105,
-      "v2": -0.2526,
-      "v3": null,
-      "v4": null,
-      "v5": null
+      "v1": 0.0214,
+      "v2": -0.1444,
+      "v3": 1.0,
+      "v4": 1.5326,
+      "v5": 0.0,
+      "v1_velocity": 0.0,
+      "indiv_cum_z": 1.5326
     },
     "variable_contributions": {
-      "v1": null,
-      "v2": null,
-      "v3": null,
-      "v4": null,
-      "v5": null
+      "v1": -1.56,
+      "v2": 8.38,
+      "v3": -74.61,
+      "v4": 0,
+      "v5": -0.0
     },
-    "impact": null,
-    "pending": true
+    "impact": null
   },
-  "scenario_matrix": []
+  "scenario_matrix": [
+    {
+      "label": "낙관적",
+      "ewy_pct": 2.5,
+      "rspi": 49.6,
+      "level": "extreme_rebound",
+      "raw": -0.2992,
+      "volume_amp": 0.917
+    },
+    {
+      "label": "기본",
+      "ewy_pct": -1.0,
+      "rspi": -7.3,
+      "level": "mild_sell",
+      "raw": 0.0437,
+      "volume_amp": 0.917,
+      "sell_volume_억": 1439535.0,
+      "price_impact_pct": 0
+    },
+    {
+      "label": "비관적",
+      "ewy_pct": -4.0,
+      "rspi": -58.5,
+      "level": "extreme_sell",
+      "raw": 0.3525,
+      "volume_amp": 0.917,
+      "sell_volume_억": 30047179.0,
+      "price_impact_pct": 0
+    }
+  ]
 };
 
 export const RSPI_CONFIG = {
   "weights": {
-    "v1": 0.25,
-    "v2": 0.2,
-    "v3": 0.25,
-    "v4": 0.2,
-    "v5": 0.1
+    "ws2": 0.35,
+    "ws3": 0.45,
+    "ws5": 0.2
   },
-  "proximity_power": 2.5,
+  "proximity_power": 1.5,
   "status_thresholds": {
     "debt_exceed": 100,
     "forced_liq": 120,

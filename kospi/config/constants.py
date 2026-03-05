@@ -120,11 +120,11 @@ RSPI_WEIGHTS = {
 # V1: 코호트 proximity
 V1_MARGIN_CALL_RATIO = 140   # 마진콜 기준 담보비율
 V1_SAFE_RANGE = 60           # proximity 감쇠 범위 (140~200%)
-V1_PROXIMITY_POWER = 2.5     # 비선형 proximity 지수 (v2.3.0)
+V1_PROXIMITY_POWER = 1.5     # 비선형 proximity 지수 (v3.1 최적화)
 
 # V2: 외국인 수급 z-score
 V2_LOOKBACK = 20             # z-score 계산 기간 (거래일)
-V2_DIVISOR = 2.0             # z=±2 → V2=±1.0
+V2_DIVISOR = 3.5             # z=±3.5 → V2=±1.0 (v3.1 최적화: 감도 축소)
 
 # V3: 야간시장 4소스 가중치
 OVERNIGHT_WEIGHTS = {
@@ -133,26 +133,41 @@ OVERNIGHT_WEIGHTS = {
     "futures":   0.25,  # KOSPI200 야간선물 (SGX/KRX)
     "us_market": 0.20,  # S&P500
 }
-OVERNIGHT_EWY_DIVISOR = 5.0       # 5% 변동 = signal ±1.0
+OVERNIGHT_EWY_DIVISOR = 8.0       # 8% 변동 = signal ±1.0 (v3.1 최적화: 감도 축소)
 OVERNIGHT_KORU_DIVISOR = 15.0     # 15% 변동 = signal ±1.0 (3x 레버리지)
 OVERNIGHT_FUTURES_DIVISOR = 8.0   # 8% = 상한가 = signal ±1.0
 OVERNIGHT_US_DIVISOR = 3.0        # 3% 변동 = signal ±1.0
 OVERNIGHT_COHERENCE_BONUS = 1.3   # 전원 같은 방향 → 1.3x
 OVERNIGHT_COHERENCE_PENALTY = 0.7 # 방향 혼재 → 0.7x
 
-# V4: 개인 수급 패턴 임계값 (억원)
+# V4: 개인 수급 패턴 임계값 (억원) — v3.0 legacy, v3.1에서 제거
 V4_CAPITULATION_PREV = 300   # 전일 대량 매수 기준
 V4_CAPITULATION_CURR = 50    # 당일 급감 기준
 V4_LARGE_BUY = 300           # 대량 매수 유지 기준
 V4_DECLINE_RATIO = 0.3       # 매수 급감 비율
 
 # V5: 신용잔고 모멘텀
-V5_DIVISOR = 2.0             # ±2% 변화 → V5=±1.0
+V5_DIVISOR = 2.5             # ±2.5% 변화 → V5=±1.0 (v3.1 최적화)
 
 # VA: 거래량 증폭기
 VA_FLOOR = 0.3               # 최소 배율
 VA_CEILING = 2.0             # 최대 배율
 VA_LOG_SCALE = 0.5           # log2 스케일링 계수
+
+# ── v3.1 곱셈 모델 파라미터 ──
+
+# 시그널 가중치 (V2, V3, V5 — 합=1)
+RSPI_SIGNAL_WEIGHTS = {"ws2": 0.35, "ws3": 0.45, "ws5": 0.20}
+
+# 구조적 증폭기 파라미터
+STRUCTURAL_AMP_ALPHA = 2.0   # V1 level 계수
+STRUCTURAL_AMP_BETA = 1.5    # V1 velocity 계수 (v3.1 최적화: 3.0→1.5)
+STRUCTURAL_AMP_GAMMA = 0.5   # 개인누적 z-score 계수
+STRUCTURAL_AMP_MAX = 3.5     # 최대 증폭
+
+# 개인 누적 z-score 파라미터
+INDIV_CUM_SUM_WINDOW = 60    # 누적 기간 (거래일)
+INDIV_CUM_ZSCORE_LOOKBACK = 250  # z-score 계산 기간
 
 # RSPI Impact Function 파라미터 (RSPI 음수=매도일 때 적용)
 RSPI_SENSITIVITY = 0.15           # |RSPI|=100일 때 매도 비율

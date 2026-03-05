@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-RSPI Engine v2.2.0 -- Retail Selling Pressure Index (개인 매도 압력 지수).
+RSPI Engine v3.1 -- Retail Selling Pressure Index (개인 매도 압력 지수).
 
-5변수 + 거래량 증폭기 아키텍처:
-  RSPI = -1 * (w1*V1 + w2*V2 + w3*V3 + w4*V4 + w5*V5) * VolumeAmp * 100
+v3.1 곱셈 모델:
+  RSPI = -1 × base_signal × structural_amp × volume_amp × 100
+
+  시그널 (방향): base_signal = ws2*V2 + ws3*V3 + ws5*V5  (~-1~+1)
+  구조적 증폭기: structural_amp = 1 + α*V1 + β*V1_velocity + γ*indiv_cum_z  (1~3.5)
+  거래량 증폭기: volume_amp = 1 + 0.5*log2(vol/baseline)  (0.3~2.0)
 
 부호 규칙:
   변수 내부: 양수 = 매도 방향
@@ -39,7 +43,13 @@ from config.constants import (
     VA_FLOOR, VA_CEILING, VA_LOG_SCALE,
     RSPI_SENSITIVITY, RSPI_SIGMOID_K, RSPI_SIGMOID_MID,
     RSPI_LIQUIDITY_FACTOR, RSPI_LEVELS,
+    # v3.1
+    RSPI_SIGNAL_WEIGHTS,
+    STRUCTURAL_AMP_ALPHA, STRUCTURAL_AMP_BETA, STRUCTURAL_AMP_GAMMA,
+    STRUCTURAL_AMP_MAX,
+    INDIV_CUM_SUM_WINDOW, INDIV_CUM_ZSCORE_LOOKBACK,
 )
+import statistics as _stats
 
 
 # ──────────────────────────────────────────────
@@ -113,7 +123,8 @@ def calc_cohort_proximity(current_price: float, cohorts: list[dict],
 # ──────────────────────────────────────────────
 
 def calc_foreign_direction(foreign_flows: list[float], idx: int,
-                           lookback: int = V2_LOOKBACK) -> float:
+                           lookback: int = V2_LOOKBACK,
+                           divisor: float = V2_DIVISOR) -> float:
     """V2: 외국인 순매매의 z-score -> 양방향 시그널.
 
     z = (오늘 순매매 - N일 평균) / N일 표준편차
@@ -138,7 +149,7 @@ def calc_foreign_direction(foreign_flows: list[float], idx: int,
     std = max(variance ** 0.5, 1.0)  # 0 방지
 
     z = (foreign_flows[idx] - avg) / std
-    return max(-1.0, min(1.0, -z / V2_DIVISOR))
+    return max(-1.0, min(1.0, -z / divisor))
 
 
 # ──────────────────────────────────────────────
@@ -150,6 +161,7 @@ def calc_overnight_signal(
     koru_pct: float | None = None,
     futures_pct: float | None = None,
     us_market_pct: float | None = None,
+    divisors_override: dict | None = None,
 ) -> float:
     """V3: 4개 야간시장 소스의 가중평균 + 방향일치 보너스.
 
@@ -160,11 +172,12 @@ def calc_overnight_signal(
 
     Returns: -1 (강한 갭업=반등) ~ +1 (강한 갭다운=매도)
     """
+    do = divisors_override or {}
     divisors = {
-        "ewy": OVERNIGHT_EWY_DIVISOR,
-        "koru": OVERNIGHT_KORU_DIVISOR,
-        "futures": OVERNIGHT_FUTURES_DIVISOR,
-        "us_market": OVERNIGHT_US_DIVISOR,
+        "ewy": do.get("ewy", OVERNIGHT_EWY_DIVISOR),
+        "koru": do.get("koru", OVERNIGHT_KORU_DIVISOR),
+        "futures": do.get("futures", OVERNIGHT_FUTURES_DIVISOR),
+        "us_market": do.get("us_market", OVERNIGHT_US_DIVISOR),
     }
     values = {
         "ewy": ewy_pct,
@@ -252,7 +265,8 @@ def calc_individual_direction(individual_flows: list[float], idx: int) -> float:
 # V5: 신용잔고 모멘텀 (-1~+1, 양방향)
 # ──────────────────────────────────────────────
 
-def calc_credit_momentum(credit_data: list[float], idx: int) -> float:
+def calc_credit_momentum(credit_data: list[float], idx: int,
+                         divisor: float = V5_DIVISOR) -> float:
     """V5: 신용잔고 변화율 -> 양방향 연속 함수.
 
     V5 = clamp(-1, 1, -change_pct / divisor)
@@ -275,7 +289,81 @@ def calc_credit_momentum(credit_data: list[float], idx: int) -> float:
         return 0.0
 
     change_pct = (curr - prev) / prev * 100
-    return max(-1.0, min(1.0, -change_pct / V5_DIVISOR))
+    return max(-1.0, min(1.0, -change_pct / divisor))
+
+
+# ──────────────────────────────────────────────
+# v3.1: V1 velocity (proximity 변화 속도)
+# ──────────────────────────────────────────────
+
+def calc_v1_velocity(v1_today: float, v1_yesterday: float) -> float:
+    """V1 변화 속도. 양수만 — 마진콜에 접근 중일 때만 증폭."""
+    return max(0.0, v1_today - v1_yesterday)
+
+
+# ──────────────────────────────────────────────
+# v3.1: 개인 누적 z-score (V4 대체)
+# ──────────────────────────────────────────────
+
+def calc_individual_cumulative_zscore(
+    individual_flows: list[float], idx: int,
+    sum_window: int = INDIV_CUM_SUM_WINDOW,
+    zscore_lookback: int = INDIV_CUM_ZSCORE_LOOKBACK,
+) -> float:
+    """최근 sum_window일 개인 순매수 누적의 z-score.
+
+    z > 2: 역대급 매수 누적 → 투매 잠재력 극대
+    z ≈ 0: 평균 수준 → 증폭 없음
+    z < 0: 매도 누적 → 증폭 없음 (structural_amp에서 max(0, z) 처리)
+    """
+    if idx < sum_window:
+        return 0.0
+
+    recent_sum = sum(individual_flows[max(0, idx - sum_window + 1):idx + 1])
+
+    # rolling z-score
+    all_sums = []
+    start = max(sum_window, idx - zscore_lookback)
+    for i in range(start, idx + 1):
+        s = sum(individual_flows[max(0, i - sum_window + 1):i + 1])
+        all_sums.append(s)
+
+    if len(all_sums) < 20:
+        return 0.0
+
+    avg = sum(all_sums) / len(all_sums)
+    variance = sum((x - avg) ** 2 for x in all_sums) / (len(all_sums) - 1)
+    std = variance ** 0.5
+    if std < 1:
+        return 0.0
+
+    return (recent_sum - avg) / std
+
+
+# ──────────────────────────────────────────────
+# v3.1: 구조적 증폭기
+# ──────────────────────────────────────────────
+
+def calc_structural_amplifier(
+    v1: float, v1_prev: float, indiv_cum_z: float,
+    alpha: float = STRUCTURAL_AMP_ALPHA,
+    beta: float = STRUCTURAL_AMP_BETA,
+    gamma: float = STRUCTURAL_AMP_GAMMA,
+    max_amp: float = STRUCTURAL_AMP_MAX,
+) -> float:
+    """구조적 증폭기 = 1 + α*V1 + β*V1_velocity + γ*max(indiv_cum_z, 0).
+
+    V1 level: 현재 코호트 취약성
+    V1 velocity: 취약성 접근 속도 (양수만)
+    Individual cumulative: 역대급 매수 축적 = 투매 잠재력 (양수만)
+    """
+    level_amp = v1 * alpha
+    velocity = max(v1 - v1_prev, 0.0)
+    velocity_amp = velocity * beta
+    cumulative_amp = max(indiv_cum_z, 0.0) * gamma
+
+    total = 1.0 + level_amp + velocity_amp + cumulative_amp
+    return min(total, max_amp)
 
 
 # ──────────────────────────────────────────────
@@ -370,6 +458,69 @@ def calc_rspi(
 
 
 # ──────────────────────────────────────────────
+# v3.1 RSPI 곱셈 모델
+# ──────────────────────────────────────────────
+
+def calc_rspi_v31(
+    v2: float, v3: float, v5: float,
+    v1: float, v1_prev: float, indiv_cum_z: float,
+    volume_amp: float,
+    signal_weights: dict | None = None,
+    amp_params: dict | None = None,
+) -> dict:
+    """RSPI v3.1 = -1 × base_signal × structural_amp × volume_amp × 100.
+
+    Returns same structure as calc_rspi for compatibility.
+    """
+    sw = signal_weights or RSPI_SIGNAL_WEIGHTS
+    ap = amp_params or {}
+
+    base_signal = (
+        sw.get("ws2", 0.35) * v2 +
+        sw.get("ws3", 0.45) * v3 +
+        sw.get("ws5", 0.20) * v5
+    )
+
+    structural_amp = calc_structural_amplifier(
+        v1, v1_prev, indiv_cum_z,
+        alpha=ap.get("alpha", STRUCTURAL_AMP_ALPHA),
+        beta=ap.get("beta", STRUCTURAL_AMP_BETA),
+        gamma=ap.get("gamma", STRUCTURAL_AMP_GAMMA),
+        max_amp=ap.get("max_amp", STRUCTURAL_AMP_MAX),
+    )
+
+    rspi = -1.0 * base_signal * structural_amp * volume_amp * 100.0
+    rspi = max(-100.0, min(100.0, rspi))
+
+    level = classify_level(rspi)
+
+    # 변수별 기여 (프론트엔드 호환: v1~v5 키 유지)
+    v1_velocity = calc_v1_velocity(v1, v1_prev)
+    contributions = {
+        "v1": round(-base_signal * (v1 * ap.get("alpha", STRUCTURAL_AMP_ALPHA)) * volume_amp * 100, 2),
+        "v2": round(-sw.get("ws2", 0.35) * v2 * structural_amp * volume_amp * 100, 2),
+        "v3": round(-sw.get("ws3", 0.45) * v3 * structural_amp * volume_amp * 100, 2),
+        "v4": 0,  # v3.1: V4 제거, 개인누적은 증폭기에 편입
+        "v5": round(-sw.get("ws5", 0.20) * v5 * structural_amp * volume_amp * 100, 2),
+    }
+
+    return {
+        "rspi": round(rspi, 1),
+        "level": level,
+        "raw": round(base_signal, 4),
+        "volume_amp": round(volume_amp, 3),
+        "structural_amp": round(structural_amp, 3),
+        "raw_variables": {
+            "v1": round(v1, 4), "v2": round(v2, 4), "v3": round(v3, 4),
+            "v4": round(indiv_cum_z, 4), "v5": round(v5, 4),
+            "v1_velocity": round(v1_velocity, 4),
+            "indiv_cum_z": round(indiv_cum_z, 4),
+        },
+        "variable_contributions": contributions,
+    }
+
+
+# ──────────────────────────────────────────────
 # Impact Function (RSPI 음수=매도일 때만)
 # ──────────────────────────────────────────────
 
@@ -431,12 +582,31 @@ def estimate_price_impact(
 # ──────────────────────────────────────────────
 
 class RSPIEngine:
-    """RSPI v2.2.0 전체 파이프라인."""
+    """RSPI v3.1 전체 파이프라인 (곱셈 모델)."""
 
-    def __init__(self, weights=None, proximity_power=V1_PROXIMITY_POWER):
-        self.weights = weights or RSPI_WEIGHTS
+    def __init__(self, weights=None, proximity_power=V1_PROXIMITY_POWER,
+                 signal_weights=None, amp_params=None,
+                 sensitivity_params=None):
+        self.weights = weights or RSPI_WEIGHTS  # legacy 호환
         self.proximity_power = proximity_power
+        self.signal_weights = signal_weights or RSPI_SIGNAL_WEIGHTS
+        self.amp_params = amp_params or {
+            "alpha": STRUCTURAL_AMP_ALPHA,
+            "beta": STRUCTURAL_AMP_BETA,
+            "gamma": STRUCTURAL_AMP_GAMMA,
+            "max_amp": STRUCTURAL_AMP_MAX,
+        }
+        sp = sensitivity_params or {}
+        self.v2_divisor = sp.get("v2_divisor", V2_DIVISOR)
+        self.v3_divisors = {
+            "ewy": sp.get("v3_ewy_divisor", OVERNIGHT_EWY_DIVISOR),
+            "koru": sp.get("v3_koru_divisor", OVERNIGHT_KORU_DIVISOR),
+            "futures": sp.get("v3_futures_divisor", OVERNIGHT_FUTURES_DIVISOR),
+            "us_market": sp.get("v3_us_divisor", OVERNIGHT_US_DIVISOR),
+        }
+        self.v5_divisor = sp.get("v5_divisor", V5_DIVISOR)
         self.history: list[dict] = []
+        self._prev_v1: float = 0.0  # V1 velocity용 전일 V1
 
     def calculate_for_date(
         self,
@@ -448,28 +618,27 @@ class RSPIEngine:
         adv_shares_k: float | None = None,
         samsung_credit_bn: float | None = None,
     ) -> dict:
-        """특정 날짜의 RSPI 계산."""
+        """특정 날짜의 RSPI 계산 (v3.1 곱셈 모델)."""
         idx = next((i for i, r in enumerate(ts) if r["date"] == date), len(ts) - 1)
 
         t1_price = current_price or ts[idx].get("samsung", 0) or 0
         kospi_price = ts[idx].get("kospi", 0) or 0
 
-        # V1: 코호트 proximity (KOSPI 지수 기반 — 코호트는 entry_kospi 기준, 비선형 power)
+        # V1: 코호트 proximity (비선형 power)
         v1 = calc_cohort_proximity(kospi_price, cohorts, power=self.proximity_power) if cohorts and kospi_price > 0 else 0.0
 
         # V2: 외국인 수급 z-score
         foreign_flows = [
-            (r.get("foreign_billion") or 0) * 10000  # 십억원 -> 억원
+            (r.get("foreign_billion") or 0) * 10000
             for r in ts
         ]
-        v2 = calc_foreign_direction(foreign_flows, idx)
+        v2 = calc_foreign_direction(foreign_flows, idx, divisor=self.v2_divisor)
 
         # V3: 야간시장 시그널
         on = overnight_data or {}
         has_overnight = any(on.get(k) is not None for k in
                            ["ewy_pct", "koru_pct", "kospi_futures_pct", "us_market_pct"])
 
-        # 최신일에 야간 데이터 미확보 → RSPI 계산 불가 (pending)
         is_latest = (idx == len(ts) - 1)
         if is_latest and not has_overnight:
             pending_result = {
@@ -477,8 +646,9 @@ class RSPIEngine:
                 "level": "pending",
                 "raw": None,
                 "volume_amp": None,
+                "structural_amp": None,
                 "raw_variables": {"v1": round(v1, 4), "v2": round(v2, 4),
-                                  "v3": None, "v4": None, "v5": None},
+                                  "v3": None, "v4": 0, "v5": None},
                 "variable_contributions": {"v1": None, "v2": None,
                                            "v3": None, "v4": None, "v5": None},
                 "impact": None,
@@ -486,6 +656,7 @@ class RSPIEngine:
             }
             entry = {"date": date, **pending_result}
             self.history.append(entry)
+            self._prev_v1 = v1
             return pending_result
 
         v3 = calc_overnight_signal(
@@ -493,18 +664,22 @@ class RSPIEngine:
             koru_pct=on.get("koru_pct"),
             futures_pct=on.get("kospi_futures_pct"),
             us_market_pct=on.get("us_market_pct"),
+            divisors_override=self.v3_divisors,
         )
-
-        # V4: 개인 수급 방향
-        individual_flows = [
-            (r.get("individual_billion") or 0) * 10000  # 십억원 -> 억원
-            for r in ts
-        ]
-        v4 = calc_individual_direction(individual_flows, idx)
 
         # V5: 신용잔고 모멘텀
         credit_data = [r.get("credit_balance_billion") for r in ts]
-        v5 = calc_credit_momentum(credit_data, idx)
+        v5 = calc_credit_momentum(credit_data, idx, divisor=self.v5_divisor)
+
+        # 개인 누적 z-score (V4 대체)
+        individual_flows = [
+            (r.get("individual_billion") or 0) * 10000
+            for r in ts
+        ]
+        indiv_cum_z = calc_individual_cumulative_zscore(
+            individual_flows, idx,
+            sum_window=self.amp_params.get("sum_window", INDIV_CUM_SUM_WINDOW),
+        )
 
         # VA: 거래량 증폭기
         trading_values = [r.get("kospi_trading_value_billion") or r.get("trading_value_billion") or 0
@@ -516,8 +691,16 @@ class RSPIEngine:
         recent_5d = trading_values[max(0, idx - 4):idx + 1]
         volume_amp = calc_volume_amplifier(vol_today, adv_20, recent_5d)
 
-        # RSPI 종합
-        rspi_result = calc_rspi(v1, v2, v3, v4, v5, volume_amp, self.weights)
+        # RSPI v3.1 곱셈 모델
+        rspi_result = calc_rspi_v31(
+            v2, v3, v5,
+            v1, self._prev_v1, indiv_cum_z, volume_amp,
+            signal_weights=self.signal_weights,
+            amp_params=self.amp_params,
+        )
+
+        # V1 velocity 업데이트
+        self._prev_v1 = v1
 
         # Impact (RSPI < 0 = 매도 압력일 때만)
         impact = None
@@ -538,7 +721,6 @@ class RSPIEngine:
 
         rspi_result["impact"] = impact
 
-        # 히스토리 저장
         entry = {"date": date, **rspi_result}
         self.history.append(entry)
 
@@ -563,9 +745,15 @@ class RSPIEngine:
             v3 = calc_overnight_signal(
                 ewy_pct=p["ewy"], koru_pct=p["koru"], us_market_pct=p["us"]
             )
-            rspi_result = calc_rspi(v1, v2, v3, v4, v5, volume_amp, self.weights)
+            # v3.1: 시나리오는 간이 계산 (v1_prev=v1, indiv_cum_z=v4 placeholder)
+            rspi_result = calc_rspi_v31(
+                v2, v3, v5,
+                v1, v1, max(v4, 0),  # v4 slot → indiv_cum_z 근사
+                volume_amp,
+                signal_weights=self.signal_weights,
+                amp_params=self.amp_params,
+            )
 
-            # Impact
             impact_data = {}
             if rspi_result["rspi"] < 0 and samsung_credit_bn > 0:
                 position_bn = samsung_credit_bn / LOAN_RATE
@@ -594,6 +782,6 @@ class RSPIEngine:
         """model_output["rspi"]에 저장할 데이터."""
         return {
             "history": self.history,
-            "weights": self.weights,
+            "weights": self.signal_weights,
             "latest": self.history[-1] if self.history else None,
         }
