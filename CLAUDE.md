@@ -230,6 +230,11 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **코호트 경로 통합**: "오늘" / 기준일 선택 모두 reconstructCohorts() 단일 경로
 - **V3 lookback 제한**: 최신일은 당일만 확인 (stale overnight 데이터 사용 방지)
 
+### v2.2.2 — V1 Look-Ahead Bias 제거
+- **핵심**: 최신일 기준 133개 고정 코호트를 262일 전체에 적용 → 미래 코호트가 과거 V1에 반영 (심각한 look-ahead bias)
+- **수정**: `cohort_snapshots` (날짜별 캡처) → `date_to_cohorts` dict → RSPI 루프에서 해당 날짜 코호트만 전달
+- **효과**: 12/12 V1 0.1749→0.0243 (미래 고점 코호트 34개 제거), 3/4 V1 변화 없음 (최신 근처)
+
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
 - **Y축 줌 (Domain-only)**: Drag + Wheel 지원, domain만 변경 (SVG 찌그러짐 없음)
@@ -300,6 +305,7 @@ web/src/simulators/kospi/        # React 대시보드
 | kofia-auto-download | v2.1.2 | 100% | Playwright 자동 다운로드 + crontab |
 | kospi-rspi | v2.2.0 | 97.6% | 5변수 + Volume Amplifier 재설계 |
 | kospi-rspi | v2.2.1 | 100% | 데이터 정합성 + pending 상태 |
+| kospi-rspi | v2.2.2 | 100% | V1 look-ahead bias 제거 |
 
 ## CLI (KOSPI)
 ```bash

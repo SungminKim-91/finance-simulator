@@ -60,6 +60,14 @@
       "startedAt": "2026-03-06T21:00:00.000Z",
       "completedAt": "2026-03-06T23:00:00.000Z",
       "description": "KOFIA 단위 버그, RSPI pending 상태, V1 proximity 수정, 코호트 경로 통합"
+    },
+    "kospi-rspi-v2.2.2": {
+      "phase": "completed",
+      "matchRate": 100,
+      "iterationCount": 0,
+      "startedAt": "2026-03-07T00:00:00.000Z",
+      "completedAt": "2026-03-07T01:00:00.000Z",
+      "description": "V1 look-ahead bias 제거 — 날짜별 코호트 스냅샷 전환"
     }
   },
   "pipeline": {
@@ -90,6 +98,12 @@
       "feature": "kospi-rspi-v2.2.1",
       "phase": "completed",
       "action": "6-bug minor fix (KOFIA unit, pending, V1, cohort path)"
+    },
+    {
+      "timestamp": "2026-03-07T01:00:00.000Z",
+      "feature": "kospi-rspi-v2.2.2",
+      "phase": "completed",
+      "action": "V1 look-ahead bias fix — per-date cohort snapshots"
     }
   ]
 }

@@ -1805,17 +1805,18 @@ def run_all_models() -> dict:
         # 삼성전자 추정 신용잔고 (조원) = 유가증권 신용 × SAMSUNG_CREDIT_WEIGHT
         samsung_credit_bn = (total_credit * SAMSUNG_CREDIT_WEIGHT) if total_credit > 0 else 0
 
-        # 코호트를 RSPI 입력 형식으로 변환
-        rspi_cohorts = []
-        total_amount = sum(c.get("remaining_amount_billion", 0) for c in lifo_adjusted)
-        if total_amount > 0:
-            for c in lifo_adjusted:
-                entry_price = c.get("entry_stock_price", 0) or c.get("entry_kospi", 0)
-                if entry_price > 0:
-                    rspi_cohorts.append({
-                        "entry_price": entry_price,
-                        "weight": c.get("remaining_amount_billion", 0) / total_amount,
+        # v2.2.2: 날짜별 코호트 매핑 (look-ahead bias 제거)
+        # cohort_snapshots는 빌드 루프에서 날짜별로 캡처된 active cohorts
+        date_to_cohorts = {}
+        for snap in cohort_snapshots:
+            cohorts_for_date = []
+            for entry_date, amount in snap["amounts"].items():
+                if entry_date in cohort_registry and amount > 0:
+                    cohorts_for_date.append({
+                        "entry_kospi": cohort_registry[entry_date]["entry_kospi"],
+                        "remaining_amount_billion": amount,
                     })
+            date_to_cohorts[snap["date"]] = cohorts_for_date
 
         # 전체 timeseries 순회하여 일별 RSPI 계산 (최소 20일 데이터 필요)
         start_idx = max(20, 0)
@@ -1824,6 +1825,9 @@ def run_all_models() -> dict:
             sam_price = rec.get("samsung", 0) or 0
             if sam_price <= 0:
                 continue
+
+            # 해당 날짜 기준 코호트 (그 시점까지 존재하는 코호트만)
+            date_cohorts = date_to_cohorts.get(rec["date"], [])
 
             # 해당 날짜 기준 야간 데이터
             # 최신일(마지막): 당일만 확인 (미수집 시 0 처리)
@@ -1853,7 +1857,7 @@ def run_all_models() -> dict:
             rspi_engine.calculate_for_date(
                 date=rec["date"],
                 ts=ts,
-                cohorts=rspi_cohorts,
+                cohorts=date_cohorts,
                 overnight_data=on_data,
                 samsung_credit_bn=day_credit_bn,
                 current_price=int(sam_price),

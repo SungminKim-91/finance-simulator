@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-06T06:17:17.247693
+ * Generated: 2026-03-06T06:43:59.330038
  * Source: kospi/data/ (pipeline)
  * Exports: 18
  */
@@ -18935,7 +18935,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-06T06:17:17.247264",
+  "last_updated": "2026-03-06T06:43:59.329523",
   "last_date": "2026-03-05",
   "data_source": "pipeline",
   "data_quality": {
@@ -40950,19 +40950,19 @@ export const RSPI_DATA = {
   "history": [
     {
       "date": "2025-02-05",
-      "rspi": -9.7,
-      "level": "mild_sell",
-      "raw": 0.1066,
+      "rspi": -1.4,
+      "level": "neutral",
+      "raw": 0.0157,
       "volume_amp": 0.908,
       "raw_variables": {
-        "v1": 0.5375,
+        "v1": 0.174,
         "v2": -0.1362,
         "v3": -0.2765,
         "v4": 0.2,
         "v5": 0.2858
       },
       "variable_contributions": {
-        "v1": -12.2,
+        "v1": -3.95,
         "v2": 2.47,
         "v3": 6.28,
         "v4": -3.63,
@@ -40972,19 +40972,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-06",
-      "rspi": -8.7,
-      "level": "mild_sell",
-      "raw": 0.086,
+      "rspi": 0.8,
+      "level": "neutral",
+      "raw": -0.0082,
       "volume_amp": 1.013,
       "raw_variables": {
-        "v1": 0.5154,
+        "v1": 0.1388,
         "v2": -0.4188,
         "v3": -0.1106,
         "v4": 0.2,
         "v5": 0.2853
       },
       "variable_contributions": {
-        "v1": -13.06,
+        "v1": -3.52,
         "v2": 8.49,
         "v3": 2.8,
         "v4": -4.05,
@@ -40994,19 +40994,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-07",
-      "rspi": -17.7,
+      "rspi": -8.9,
       "level": "mild_sell",
-      "raw": 0.1861,
+      "raw": 0.0937,
       "volume_amp": 0.952,
       "raw_variables": {
-        "v1": 0.5273,
+        "v1": 0.1578,
         "v2": 0.1437,
         "v3": 0.4789,
         "v4": -0.4,
         "v5": -0.1418
       },
       "variable_contributions": {
-        "v1": -12.55,
+        "v1": -3.76,
         "v2": -2.74,
         "v3": -11.4,
         "v4": 7.62,
@@ -41016,19 +41016,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-10",
-      "rspi": -23.1,
-      "level": "strong_sell",
-      "raw": 0.2329,
+      "rspi": -13.9,
+      "level": "mild_sell",
+      "raw": 0.1408,
       "volume_amp": 0.99,
       "raw_variables": {
-        "v1": 0.5278,
+        "v1": 0.1593,
         "v2": 0.1625,
         "v3": -0.4342,
         "v4": 1.0,
         "v5": -0.23
       },
       "variable_contributions": {
-        "v1": -13.07,
+        "v1": -3.94,
         "v2": -3.22,
         "v3": 10.75,
         "v4": -19.8,
@@ -41038,19 +41038,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-11",
-      "rspi": -6.9,
-      "level": "mild_sell",
-      "raw": 0.0682,
+      "rspi": 2.6,
+      "level": "neutral",
+      "raw": -0.0256,
       "volume_amp": 1.019,
       "raw_variables": {
-        "v1": 0.5135,
+        "v1": 0.1385,
         "v2": -0.271,
         "v3": 0.0021,
         "v4": 0.2,
         "v5": -0.4654
       },
       "variable_contributions": {
-        "v1": -13.09,
+        "v1": -3.53,
         "v2": 5.52,
         "v3": -0.05,
         "v4": -4.08,
@@ -41060,19 +41060,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-12",
-      "rspi": -2.1,
-      "level": "neutral",
-      "raw": 0.0186,
+      "rspi": 8.5,
+      "level": "mild_rebound",
+      "raw": -0.0759,
       "volume_amp": 1.126,
       "raw_variables": {
-        "v1": 0.506,
+        "v1": 0.1281,
         "v2": -0.561,
         "v3": 0.0104,
         "v4": 0.2,
         "v5": -0.3832
       },
       "variable_contributions": {
-        "v1": -14.25,
+        "v1": -3.61,
         "v2": 12.64,
         "v3": -0.29,
         "v4": -4.5,
@@ -41082,19 +41082,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-13",
-      "rspi": 0.8,
-      "level": "neutral",
-      "raw": -0.0064,
+      "rspi": 12.8,
+      "level": "mild_rebound",
+      "raw": -0.1045,
       "volume_amp": 1.225,
       "raw_variables": {
-        "v1": 0.4779,
+        "v1": 0.0854,
         "v2": -0.0373,
         "v3": -0.5333,
         "v4": 0.2,
         "v5": -0.2507
       },
       "variable_contributions": {
-        "v1": -14.63,
+        "v1": -2.62,
         "v2": 0.91,
         "v3": 16.33,
         "v4": -4.9,
@@ -41104,19 +41104,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-14",
-      "rspi": -16.0,
+      "rspi": -5.8,
       "level": "mild_sell",
-      "raw": 0.1548,
+      "raw": 0.0562,
       "volume_amp": 1.035,
       "raw_variables": {
-        "v1": 0.4716,
+        "v1": 0.0771,
         "v2": 0.2344,
         "v3": -0.0578,
         "v4": 0.2,
         "v5": -0.3553
       },
       "variable_contributions": {
-        "v1": -12.2,
+        "v1": -2.0,
         "v2": -4.85,
         "v3": 1.5,
         "v4": -4.14,
@@ -41126,19 +41126,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-17",
-      "rspi": -13.4,
-      "level": "mild_sell",
-      "raw": 0.1558,
+      "rspi": -4.7,
+      "level": "neutral",
+      "raw": 0.0551,
       "volume_amp": 0.862,
       "raw_variables": {
-        "v1": 0.4559,
+        "v1": 0.0532,
         "v2": 0.1236,
         "v3": -0.0578,
         "v4": 0.2,
         "v5": -0.0848
       },
       "variable_contributions": {
-        "v1": -9.82,
+        "v1": -1.15,
         "v2": -2.13,
         "v3": 1.25,
         "v4": -3.45,
@@ -41148,19 +41148,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-18",
-      "rspi": -0.7,
-      "level": "neutral",
-      "raw": 0.007,
+      "rspi": 9.0,
+      "level": "mild_rebound",
+      "raw": -0.095,
       "volume_amp": 0.942,
       "raw_variables": {
-        "v1": 0.4427,
+        "v1": 0.0347,
         "v2": -0.1605,
         "v3": -0.2884,
         "v4": 0.2,
         "v5": -0.3948
       },
       "variable_contributions": {
-        "v1": -10.43,
+        "v1": -0.82,
         "v2": 3.03,
         "v3": 6.8,
         "v4": -3.77,
@@ -41170,19 +41170,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-19",
-      "rspi": 8.9,
+      "rspi": 19.6,
       "level": "mild_rebound",
-      "raw": -0.0848,
+      "raw": -0.1869,
       "volume_amp": 1.048,
       "raw_variables": {
-        "v1": 0.4254,
+        "v1": 0.017,
         "v2": -0.6377,
         "v3": -0.2977,
         "v4": 0.2,
         "v5": -0.2916
       },
       "variable_contributions": {
-        "v1": -11.14,
+        "v1": -0.44,
         "v2": 13.36,
         "v3": 7.8,
         "v4": -4.19,
@@ -41192,19 +41192,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-20",
-      "rspi": -1.2,
-      "level": "neutral",
-      "raw": 0.0115,
+      "rspi": 9.6,
+      "level": "mild_rebound",
+      "raw": -0.0902,
       "volume_amp": 1.06,
       "raw_variables": {
-        "v1": 0.4294,
+        "v1": 0.0223,
         "v2": 0.1912,
         "v3": -0.0061,
         "v4": -0.4,
         "v5": -0.5253
       },
       "variable_contributions": {
-        "v1": -11.38,
+        "v1": -0.59,
         "v2": -4.05,
         "v3": 0.16,
         "v4": 8.48,
@@ -41214,19 +41214,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-21",
-      "rspi": -35.2,
+      "rspi": -26.0,
       "level": "strong_sell",
-      "raw": 0.3867,
+      "raw": 0.285,
       "volume_amp": 0.911,
       "raw_variables": {
-        "v1": 0.4293,
+        "v1": 0.0225,
         "v2": 0.1166,
         "v3": 0.4845,
         "v4": 0.7,
         "v5": -0.0507
       },
       "variable_contributions": {
-        "v1": -9.77,
+        "v1": -0.51,
         "v2": -2.12,
         "v3": -11.03,
         "v4": -12.75,
@@ -41236,19 +41236,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-24",
-      "rspi": -4.2,
+      "rspi": 4.7,
       "level": "neutral",
-      "raw": 0.0476,
+      "raw": -0.0539,
       "volume_amp": 0.875,
       "raw_variables": {
-        "v1": 0.4314,
+        "v1": 0.0251,
         "v2": 0.0973,
         "v3": 0.0875,
         "v4": -0.4,
         "v5": -0.2157
       },
       "variable_contributions": {
-        "v1": -9.44,
+        "v1": -0.55,
         "v2": -1.7,
         "v3": -1.92,
         "v4": 7.0,
@@ -41258,19 +41258,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-25",
-      "rspi": -5.3,
-      "level": "mild_sell",
-      "raw": 0.0598,
+      "rspi": 3.6,
+      "level": "neutral",
+      "raw": -0.0408,
       "volume_amp": 0.879,
       "raw_variables": {
-        "v1": 0.4399,
+        "v1": 0.0376,
         "v2": 0.2041,
         "v3": 0.0176,
         "v4": -0.4,
         "v5": -0.1542
       },
       "variable_contributions": {
-        "v1": -9.67,
+        "v1": -0.83,
         "v2": -3.59,
         "v3": -0.39,
         "v4": 7.04,
@@ -41280,19 +41280,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-26",
-      "rspi": -27.7,
-      "level": "strong_sell",
-      "raw": 0.2926,
+      "rspi": -18.1,
+      "level": "mild_sell",
+      "raw": 0.1917,
       "volume_amp": 0.946,
       "raw_variables": {
-        "v1": 0.4324,
+        "v1": 0.0287,
         "v2": 0.2349,
         "v3": -0.0959,
         "v4": 1.0,
         "v5": -0.3847
       },
       "variable_contributions": {
-        "v1": -10.22,
+        "v1": -0.68,
         "v2": -4.44,
         "v3": 2.27,
         "v4": -18.92,
@@ -41302,19 +41302,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-27",
-      "rspi": -18.6,
+      "rspi": -9.6,
       "level": "mild_sell",
-      "raw": 0.203,
+      "raw": 0.1043,
       "volume_amp": 0.917,
       "raw_variables": {
-        "v1": 0.4468,
+        "v1": 0.052,
         "v2": 0.0126,
         "v3": 0.7991,
         "v4": -0.4,
         "v5": -0.3102
       },
       "variable_contributions": {
-        "v1": -10.24,
+        "v1": -1.19,
         "v2": -0.23,
         "v3": -18.31,
         "v4": 7.33,
@@ -41324,19 +41324,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-28",
-      "rspi": -32.2,
+      "rspi": -21.7,
       "level": "strong_sell",
-      "raw": 0.2731,
+      "raw": 0.1843,
       "volume_amp": 1.178,
       "raw_variables": {
-        "v1": 0.5186,
+        "v1": 0.1637,
         "v2": 1.0,
         "v3": 0.139,
         "v4": -0.4,
         "v5": -0.1132
       },
       "variable_contributions": {
-        "v1": -15.27,
+        "v1": -4.82,
         "v2": -23.56,
         "v3": -4.09,
         "v4": 9.42,
@@ -41346,19 +41346,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-04",
-      "rspi": -27.9,
-      "level": "strong_sell",
-      "raw": 0.2669,
+      "rspi": -18.7,
+      "level": "mild_sell",
+      "raw": 0.1787,
       "volume_amp": 1.047,
       "raw_variables": {
-        "v1": 0.5217,
+        "v1": 0.169,
         "v2": 0.0482,
         "v3": 0.0251,
         "v4": 0.7,
         "v5": -0.1944
       },
       "variable_contributions": {
-        "v1": -13.65,
+        "v1": -4.42,
         "v2": -1.01,
         "v3": -0.66,
         "v4": -14.65,
@@ -41368,19 +41368,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-05",
-      "rspi": 11.5,
-      "level": "mild_rebound",
-      "raw": -0.1134,
+      "rspi": 20.8,
+      "level": "strong_rebound",
+      "raw": -0.2047,
       "volume_amp": 1.015,
       "raw_variables": {
-        "v1": 0.4981,
+        "v1": 0.133,
         "v2": 0.0722,
         "v3": -0.6265,
         "v4": -0.4,
         "v5": -0.1579
       },
       "variable_contributions": {
-        "v1": -12.64,
+        "v1": -3.37,
         "v2": -1.46,
         "v3": 15.89,
         "v4": 8.12,
@@ -41390,19 +41390,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-06",
-      "rspi": -39.3,
+      "rspi": -30.8,
       "level": "strong_sell",
-      "raw": 0.4306,
+      "raw": 0.337,
       "volume_amp": 0.913,
       "raw_variables": {
-        "v1": 0.4836,
+        "v1": 0.1092,
         "v2": -0.3803,
         "v3": 0.5736,
         "v4": 1.0,
         "v5": 0.4242
       },
       "variable_contributions": {
-        "v1": -11.03,
+        "v1": -2.49,
         "v2": 6.94,
         "v3": -13.08,
         "v4": -18.25,
@@ -41412,19 +41412,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-07",
-      "rspi": -2.0,
-      "level": "neutral",
-      "raw": 0.0206,
+      "rspi": 6.8,
+      "level": "mild_rebound",
+      "raw": -0.0716,
       "volume_amp": 0.949,
       "raw_variables": {
-        "v1": 0.4938,
+        "v1": 0.1252,
         "v2": -0.3106,
         "v3": -0.3103,
         "v4": 0.2,
         "v5": -0.0318
       },
       "variable_contributions": {
-        "v1": -11.71,
+        "v1": -2.97,
         "v2": 5.89,
         "v3": 7.36,
         "v4": -3.8,
@@ -41434,19 +41434,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-10",
-      "rspi": -25.5,
-      "level": "strong_sell",
-      "raw": 0.306,
+      "rspi": -17.8,
+      "level": "mild_sell",
+      "raw": 0.2132,
       "volume_amp": 0.833,
       "raw_variables": {
-        "v1": 0.4882,
+        "v1": 0.1169,
         "v2": 0.3082,
         "v3": 0.8486,
         "v4": -0.4,
         "v5": -0.0987
       },
       "variable_contributions": {
-        "v1": -10.16,
+        "v1": -2.43,
         "v2": -5.13,
         "v3": -17.67,
         "v4": 6.66,
@@ -41456,19 +41456,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-11",
-      "rspi": -23.6,
-      "level": "strong_sell",
-      "raw": 0.2612,
+      "rspi": -15.5,
+      "level": "mild_sell",
+      "raw": 0.1718,
       "volume_amp": 0.904,
       "raw_variables": {
-        "v1": 0.5147,
+        "v1": 0.1568,
         "v2": 1.0,
         "v3": -0.0586,
         "v4": -0.4,
         "v5": 0.2722
       },
       "variable_contributions": {
-        "v1": -11.63,
+        "v1": -3.54,
         "v2": -18.07,
         "v3": 1.32,
         "v4": 7.23,
@@ -41478,19 +41478,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-12",
-      "rspi": -6.5,
-      "level": "mild_sell",
-      "raw": 0.0663,
+      "rspi": 2.7,
+      "level": "neutral",
+      "raw": -0.0272,
       "volume_amp": 0.985,
       "raw_variables": {
-        "v1": 0.4847,
+        "v1": 0.1105,
         "v2": -0.6201,
         "v3": -0.4946,
         "v4": 1.0,
         "v5": -0.0718
       },
       "variable_contributions": {
-        "v1": -11.94,
+        "v1": -2.72,
         "v2": 12.22,
         "v3": 12.18,
         "v4": -19.71,
@@ -41500,19 +41500,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-13",
-      "rspi": -32.0,
+      "rspi": -22.3,
       "level": "strong_sell",
-      "raw": 0.3096,
+      "raw": 0.2162,
       "volume_amp": 1.034,
       "raw_variables": {
-        "v1": 0.4856,
+        "v1": 0.1117,
         "v2": 0.2087,
         "v3": 0.3981,
         "v4": 0.2,
         "v5": 0.0698
       },
       "variable_contributions": {
-        "v1": -12.55,
+        "v1": -2.89,
         "v2": -4.31,
         "v3": -10.29,
         "v4": -4.14,
@@ -41522,19 +41522,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-14",
-      "rspi": 7.0,
+      "rspi": 15.0,
       "level": "mild_rebound",
-      "raw": -0.0824,
+      "raw": -0.1753,
       "volume_amp": 0.855,
       "raw_variables": {
-        "v1": 0.4915,
+        "v1": 0.1202,
         "v2": 0.0003,
         "v3": -0.5541,
         "v4": -0.4,
         "v5": 0.1317
       },
       "variable_contributions": {
-        "v1": -10.51,
+        "v1": -2.57,
         "v2": -0.0,
         "v3": 11.85,
         "v4": 6.84,
@@ -41544,19 +41544,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-17",
-      "rspi": 3.6,
-      "level": "neutral",
-      "raw": -0.0364,
+      "rspi": 13.3,
+      "level": "mild_rebound",
+      "raw": -0.134,
       "volume_amp": 0.996,
       "raw_variables": {
-        "v1": 0.4557,
+        "v1": 0.0655,
         "v2": -0.8299,
         "v3": -0.6694,
         "v4": 1.0,
         "v5": -0.1702
       },
       "variable_contributions": {
-        "v1": -11.35,
+        "v1": -1.63,
         "v2": 16.54,
         "v3": 16.67,
         "v4": -19.93,
@@ -41566,19 +41566,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-18",
-      "rspi": -12.7,
-      "level": "mild_sell",
-      "raw": 0.1273,
+      "rspi": -3.0,
+      "level": "neutral",
+      "raw": 0.0297,
       "volume_amp": 0.996,
       "raw_variables": {
-        "v1": 0.4544,
+        "v1": 0.0639,
         "v2": -0.6043,
         "v3": 0.4181,
         "v4": 0.2,
         "v5": -0.0995
       },
       "variable_contributions": {
-        "v1": -11.31,
+        "v1": -1.59,
         "v2": 12.03,
         "v3": -10.41,
         "v4": -3.98,
@@ -41588,19 +41588,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-19",
-      "rspi": -0.4,
-      "level": "neutral",
-      "raw": 0.0037,
+      "rspi": 9.4,
+      "level": "mild_rebound",
+      "raw": -0.0957,
       "volume_amp": 0.986,
       "raw_variables": {
-        "v1": 0.4412,
+        "v1": 0.0437,
         "v2": -0.4546,
         "v3": -0.2078,
         "v4": 0.2,
         "v5": -0.0373
       },
       "variable_contributions": {
-        "v1": -10.88,
+        "v1": -1.08,
         "v2": 8.97,
         "v3": 5.12,
         "v4": -3.95,
@@ -41610,19 +41610,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-20",
-      "rspi": -4.8,
-      "level": "neutral",
-      "raw": 0.0475,
+      "rspi": 5.3,
+      "level": "mild_rebound",
+      "raw": -0.0526,
       "volume_amp": 1.004,
       "raw_variables": {
-        "v1": 0.4343,
+        "v1": 0.0341,
         "v2": -0.661,
         "v3": 0.1993,
         "v4": 0.2,
         "v5": -0.1874
       },
       "variable_contributions": {
-        "v1": -10.9,
+        "v1": -0.86,
         "v2": 13.27,
         "v3": -5.0,
         "v4": -4.02,
@@ -41632,19 +41632,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-21",
-      "rspi": 3.1,
-      "level": "neutral",
-      "raw": -0.0284,
+      "rspi": 14.1,
+      "level": "mild_rebound",
+      "raw": -0.1286,
       "volume_amp": 1.097,
       "raw_variables": {
-        "v1": 0.4319,
+        "v1": 0.0312,
         "v2": -0.8155,
         "v3": -0.0502,
         "v4": 0.2,
         "v5": -0.0072
       },
       "variable_contributions": {
-        "v1": -11.84,
+        "v1": -0.86,
         "v2": 17.89,
         "v3": 1.38,
         "v4": -4.39,
@@ -41654,19 +41654,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-24",
-      "rspi": -4.8,
+      "rspi": 1.5,
       "level": "neutral",
-      "raw": 0.0767,
+      "raw": -0.0233,
       "volume_amp": 0.623,
       "raw_variables": {
-        "v1": 0.4384,
+        "v1": 0.0386,
         "v2": -0.1054,
         "v3": -0.3528,
         "v4": 0.2,
         "v5": 0.3636
       },
       "variable_contributions": {
-        "v1": -6.82,
+        "v1": -0.6,
         "v2": 1.31,
         "v3": 5.49,
         "v4": -2.49,
@@ -41676,19 +41676,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-25",
-      "rspi": -15.8,
+      "rspi": -8.2,
       "level": "mild_sell",
-      "raw": 0.2069,
+      "raw": 0.108,
       "volume_amp": 0.761,
       "raw_variables": {
-        "v1": 0.4516,
+        "v1": 0.0561,
         "v2": -0.0283,
         "v3": 0.0287,
         "v4": 0.2,
         "v5": 0.5246
       },
       "variable_contributions": {
-        "v1": -8.6,
+        "v1": -1.07,
         "v2": 0.43,
         "v3": -0.55,
         "v4": -3.05,
@@ -41698,19 +41698,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-26",
-      "rspi": -9.7,
-      "level": "mild_sell",
-      "raw": 0.1367,
+      "rspi": -2.5,
+      "level": "neutral",
+      "raw": 0.0354,
       "volume_amp": 0.712,
       "raw_variables": {
-        "v1": 0.4317,
+        "v1": 0.0263,
         "v2": -0.3545,
         "v3": 0.2255,
         "v4": 0.2,
         "v5": 0.0333
       },
       "variable_contributions": {
-        "v1": -7.68,
+        "v1": -0.47,
         "v2": 5.05,
         "v3": -4.01,
         "v4": -2.85,
@@ -41720,19 +41720,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-27",
-      "rspi": -5.6,
-      "level": "mild_sell",
-      "raw": 0.0768,
+      "rspi": 1.6,
+      "level": "neutral",
+      "raw": -0.0216,
       "volume_amp": 0.725,
       "raw_variables": {
-        "v1": 0.4586,
+        "v1": 0.0651,
         "v2": -0.1211,
         "v3": 0.1394,
         "v4": -0.4,
         "v5": 0.3152
       },
       "variable_contributions": {
-        "v1": -8.31,
+        "v1": -1.18,
         "v2": 1.76,
         "v3": -2.53,
         "v4": 5.8,
@@ -41742,19 +41742,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-28",
-      "rspi": -25.9,
-      "level": "strong_sell",
-      "raw": 0.3785,
+      "rspi": -19.5,
+      "level": "mild_sell",
+      "raw": 0.2851,
       "volume_amp": 0.686,
       "raw_variables": {
-        "v1": 0.4983,
+        "v1": 0.1244,
         "v2": 0.4524,
         "v3": 0.8092,
         "v4": -0.4,
         "v5": 0.412
       },
       "variable_contributions": {
-        "v1": -8.54,
+        "v1": -2.13,
         "v2": -6.2,
         "v3": -13.87,
         "v4": 5.48,
@@ -41764,19 +41764,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-31",
-      "rspi": -25.5,
-      "level": "strong_sell",
-      "raw": 0.3139,
+      "rspi": -18.6,
+      "level": "mild_sell",
+      "raw": 0.2287,
       "volume_amp": 0.812,
       "raw_variables": {
-        "v1": 0.5601,
+        "v1": 0.2192,
         "v2": 1.0,
         "v3": 0.1005,
         "v4": -0.4,
         "v5": 0.288
       },
       "variable_contributions": {
-        "v1": -11.37,
+        "v1": -4.45,
         "v2": -16.24,
         "v3": -2.04,
         "v4": 6.5,
@@ -41786,19 +41786,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-01",
-      "rspi": -21.1,
-      "level": "strong_sell",
-      "raw": 0.2978,
+      "rspi": -14.7,
+      "level": "mild_sell",
+      "raw": 0.2072,
       "volume_amp": 0.71,
       "raw_variables": {
-        "v1": 0.5277,
+        "v1": 0.1652,
         "v2": 0.2383,
         "v3": -0.3295,
         "v4": 0.7,
         "v5": 0.6056
       },
       "variable_contributions": {
-        "v1": -9.36,
+        "v1": -2.93,
         "v2": -3.38,
         "v3": 5.85,
         "v4": -9.93,
@@ -41808,19 +41808,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-02",
-      "rspi": -17.5,
+      "rspi": -10.6,
       "level": "mild_sell",
-      "raw": 0.2277,
+      "raw": 0.1379,
       "volume_amp": 0.768,
       "raw_variables": {
-        "v1": 0.5402,
+        "v1": 0.1814,
         "v2": 0.4752,
         "v3": 0.0011,
         "v4": -0.4,
         "v5": 0.7729
       },
       "variable_contributions": {
-        "v1": -10.37,
+        "v1": -3.48,
         "v2": -7.3,
         "v3": -0.02,
         "v4": 6.14,
@@ -41830,19 +41830,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-03",
-      "rspi": -45.1,
-      "level": "extreme_sell",
-      "raw": 0.5205,
+      "rspi": -37.5,
+      "level": "strong_sell",
+      "raw": 0.4326,
       "volume_amp": 0.867,
       "raw_variables": {
-        "v1": 0.5556,
+        "v1": 0.2041,
         "v2": 0.8555,
         "v3": 1.0,
         "v4": -0.4,
         "v5": 0.4049
       },
       "variable_contributions": {
-        "v1": -12.04,
+        "v1": -4.42,
         "v2": -14.84,
         "v3": -21.68,
         "v4": 6.94,
@@ -41852,19 +41852,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-04",
-      "rspi": -51.9,
+      "rspi": -42.8,
       "level": "extreme_sell",
-      "raw": 0.489,
+      "raw": 0.4036,
       "volume_amp": 1.061,
       "raw_variables": {
-        "v1": 0.5726,
+        "v1": 0.2311,
         "v2": 0.9754,
         "v3": 1.0,
         "v4": -0.4,
         "v5": -0.1925
       },
       "variable_contributions": {
-        "v1": -15.19,
+        "v1": -6.13,
         "v2": -20.7,
         "v3": -26.53,
         "v4": 8.49,
@@ -41874,19 +41874,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-07",
-      "rspi": -38.1,
+      "rspi": -31.0,
       "level": "strong_sell",
-      "raw": 0.3657,
+      "raw": 0.2974,
       "volume_amp": 1.043,
       "raw_variables": {
-        "v1": 0.6764,
+        "v1": 0.4033,
         "v2": 0.9981,
         "v3": 0.2059,
         "v4": -0.4,
         "v5": 0.255
       },
       "variable_contributions": {
-        "v1": -17.63,
+        "v1": -10.51,
         "v2": -20.81,
         "v3": -5.37,
         "v4": 8.34,
@@ -41896,19 +41896,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-08",
-      "rspi": -32.2,
+      "rspi": -25.7,
       "level": "strong_sell",
-      "raw": 0.3404,
+      "raw": 0.2713,
       "volume_amp": 0.947,
       "raw_variables": {
-        "v1": 0.672,
+        "v1": 0.3957,
         "v2": 0.1924,
         "v3": 0.8667,
         "v4": -0.4,
         "v5": -0.0276
       },
       "variable_contributions": {
-        "v1": -15.92,
+        "v1": -9.37,
         "v2": -3.65,
         "v3": -20.53,
         "v4": 7.58,
@@ -41918,19 +41918,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-09",
-      "rspi": 2.8,
-      "level": "neutral",
-      "raw": -0.0286,
+      "rspi": 9.2,
+      "level": "mild_rebound",
+      "raw": -0.0927,
       "volume_amp": 0.991,
       "raw_variables": {
-        "v1": 0.7016,
+        "v1": 0.4453,
         "v2": 0.3694,
         "v3": -1.0,
         "v4": -0.4,
         "v5": 0.521
       },
       "variable_contributions": {
-        "v1": -17.39,
+        "v1": -11.04,
         "v2": -7.32,
         "v3": 24.78,
         "v4": 7.93,
@@ -41940,19 +41940,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-10",
-      "rspi": -62.1,
+      "rspi": -53.2,
       "level": "extreme_sell",
-      "raw": 0.5871,
+      "raw": 0.5031,
       "volume_amp": 1.058,
       "raw_variables": {
-        "v1": 0.5884,
+        "v1": 0.2526,
         "v2": -0.4081,
         "v3": 0.9971,
         "v4": 1.0,
         "v5": 0.7233
       },
       "variable_contributions": {
-        "v1": -15.57,
+        "v1": -6.68,
         "v2": 8.64,
         "v3": -26.38,
         "v4": -21.17,
@@ -41962,19 +41962,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-11",
-      "rspi": 9.3,
+      "rspi": 16.3,
       "level": "mild_rebound",
-      "raw": -0.111,
+      "raw": -0.1937,
       "volume_amp": 0.841,
       "raw_variables": {
-        "v1": 0.5978,
+        "v1": 0.2672,
         "v2": 0.188,
         "v3": -1.0,
         "v4": -0.4,
         "v5": 0.319
       },
       "variable_contributions": {
-        "v1": -12.57,
+        "v1": -5.62,
         "v2": -3.16,
         "v3": 21.02,
         "v4": 6.73,
@@ -41984,19 +41984,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-14",
-      "rspi": -5.4,
-      "level": "mild_sell",
-      "raw": 0.0697,
+      "rspi": 1.2,
+      "level": "neutral",
+      "raw": -0.0161,
       "volume_amp": 0.77,
       "raw_variables": {
-        "v1": 0.58,
+        "v1": 0.237,
         "v2": -0.1078,
         "v3": -0.0628,
         "v4": -0.4,
         "v5": 0.4194
       },
       "variable_contributions": {
-        "v1": -11.17,
+        "v1": -4.56,
         "v2": 1.66,
         "v3": 1.21,
         "v4": 6.16,
@@ -42006,19 +42006,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-15",
-      "rspi": -16.9,
+      "rspi": -10.1,
       "level": "mild_sell",
-      "raw": 0.218,
+      "raw": 0.1301,
       "volume_amp": 0.773,
       "raw_variables": {
-        "v1": 0.5631,
+        "v1": 0.2114,
         "v2": -0.2072,
         "v3": 0.0068,
         "v4": 1.0,
         "v5": -0.8298
       },
       "variable_contributions": {
-        "v1": -10.88,
+        "v1": -4.09,
         "v2": 3.2,
         "v3": -0.13,
         "v4": -15.46,
@@ -42028,19 +42028,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-16",
-      "rspi": -7.9,
-      "level": "mild_sell",
-      "raw": 0.0971,
+      "rspi": -1.1,
+      "level": "neutral",
+      "raw": 0.0129,
       "volume_amp": 0.818,
       "raw_variables": {
-        "v1": 0.5866,
+        "v1": 0.2498,
         "v2": -0.016,
         "v3": 0.3817,
         "v4": -0.4,
         "v5": -0.6175
       },
       "variable_contributions": {
-        "v1": -11.99,
+        "v1": -5.11,
         "v2": 0.26,
         "v3": -7.8,
         "v4": 6.54,
@@ -42050,19 +42050,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-17",
-      "rspi": -21.1,
-      "level": "strong_sell",
-      "raw": 0.2549,
+      "rspi": -13.9,
+      "level": "mild_sell",
+      "raw": 0.1681,
       "volume_amp": 0.827,
       "raw_variables": {
-        "v1": 0.5686,
+        "v1": 0.2214,
         "v2": -0.1197,
         "v3": -0.1127,
         "v4": 1.0,
         "v5": -0.3515
       },
       "variable_contributions": {
-        "v1": -11.76,
+        "v1": -4.58,
         "v2": 1.98,
         "v3": 2.33,
         "v4": -16.55,
@@ -42072,19 +42072,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-18",
-      "rspi": -3.5,
+      "rspi": 3.2,
       "level": "neutral",
-      "raw": 0.0462,
+      "raw": -0.0419,
       "volume_amp": 0.752,
       "raw_variables": {
-        "v1": 0.5582,
+        "v1": 0.2057,
         "v2": -0.3504,
         "v3": -0.1127,
         "v4": 0.2,
         "v5": -0.3511
       },
       "variable_contributions": {
-        "v1": -10.5,
+        "v1": -3.87,
         "v2": 5.27,
         "v3": 2.12,
         "v4": -3.01,
@@ -42094,19 +42094,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-21",
-      "rspi": -2.1,
+      "rspi": 4.1,
       "level": "neutral",
-      "raw": 0.03,
+      "raw": -0.0586,
       "volume_amp": 0.706,
       "raw_variables": {
-        "v1": 0.5542,
+        "v1": 0.1998,
         "v2": -0.228,
         "v3": 0.1335,
         "v4": -0.4,
         "v5": -0.1631
       },
       "variable_contributions": {
-        "v1": -9.78,
+        "v1": -3.52,
         "v2": 3.22,
         "v3": -2.36,
         "v4": 5.64,
@@ -42116,19 +42116,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-22",
-      "rspi": 11.3,
+      "rspi": 18.6,
       "level": "mild_rebound",
-      "raw": -0.1349,
+      "raw": -0.2231,
       "volume_amp": 0.835,
       "raw_variables": {
-        "v1": 0.5557,
+        "v1": 0.2026,
         "v2": -0.271,
         "v3": -0.4437,
         "v4": -0.4,
         "v5": -0.2868
       },
       "variable_contributions": {
-        "v1": -11.59,
+        "v1": -4.23,
         "v2": 4.52,
         "v3": 9.26,
         "v4": 6.68,
@@ -42138,19 +42138,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-23",
-      "rspi": -12.2,
-      "level": "mild_sell",
-      "raw": 0.1219,
+      "rspi": -2.9,
+      "level": "neutral",
+      "raw": 0.0295,
       "volume_amp": 0.998,
       "raw_variables": {
-        "v1": 0.5244,
+        "v1": 0.1544,
         "v2": -0.3418,
         "v3": -0.4488,
         "v4": 1.0,
         "v5": -0.286
       },
       "variable_contributions": {
-        "v1": -13.09,
+        "v1": -3.86,
         "v2": 6.83,
         "v3": 11.2,
         "v4": -19.97,
@@ -42160,19 +42160,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-24",
-      "rspi": 17.8,
-      "level": "mild_rebound",
-      "raw": -0.1863,
+      "rspi": 26.5,
+      "level": "strong_rebound",
+      "raw": -0.2781,
       "volume_amp": 0.953,
       "raw_variables": {
-        "v1": 0.527,
+        "v1": 0.1598,
         "v2": -0.5016,
         "v3": -0.3689,
         "v4": -0.4,
         "v5": -0.4547
       },
       "variable_contributions": {
-        "v1": -12.56,
+        "v1": -3.81,
         "v2": 9.56,
         "v3": 8.79,
         "v4": 7.62,
@@ -42182,19 +42182,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-25",
-      "rspi": -17.1,
+      "rspi": -6.8,
       "level": "mild_sell",
-      "raw": 0.1579,
+      "raw": 0.0634,
       "volume_amp": 1.08,
       "raw_variables": {
-        "v1": 0.5077,
+        "v1": 0.1294,
         "v2": -0.8717,
         "v3": -0.0166,
         "v4": 1.0,
         "v5": 0.0948
       },
       "variable_contributions": {
-        "v1": -13.71,
+        "v1": -3.49,
         "v2": 18.83,
         "v3": 0.45,
         "v4": -21.6,
@@ -42204,19 +42204,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-28",
-      "rspi": -7.4,
-      "level": "mild_sell",
-      "raw": 0.0738,
+      "rspi": 2.1,
+      "level": "neutral",
+      "raw": -0.0207,
       "volume_amp": 0.998,
       "raw_variables": {
-        "v1": 0.5056,
+        "v1": 0.1274,
         "v2": -0.3169,
         "v3": 0.0227,
         "v4": 0.2,
         "v5": -0.3484
       },
       "variable_contributions": {
-        "v1": -12.62,
+        "v1": -3.18,
         "v2": 6.33,
         "v3": -0.57,
         "v4": -3.99,
@@ -42226,19 +42226,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-29",
-      "rspi": 6.3,
+      "rspi": 16.8,
       "level": "mild_rebound",
-      "raw": -0.0582,
+      "raw": -0.1546,
       "volume_amp": 1.087,
       "raw_variables": {
-        "v1": 0.4923,
+        "v1": 0.1067,
         "v2": -0.8162,
         "v3": -0.2194,
         "v4": 0.2,
         "v5": -0.0319
       },
       "variable_contributions": {
-        "v1": -13.38,
+        "v1": -2.9,
         "v2": 17.75,
         "v3": 5.97,
         "v4": -4.35,
@@ -42248,19 +42248,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-30",
-      "rspi": 1.1,
-      "level": "neutral",
-      "raw": -0.0109,
+      "rspi": 10.7,
+      "level": "mild_rebound",
+      "raw": -0.1062,
       "volume_amp": 1.012,
       "raw_variables": {
-        "v1": 0.4994,
+        "v1": 0.1181,
         "v2": -0.175,
         "v3": -0.0448,
         "v4": -0.4,
         "v5": -0.0954
       },
       "variable_contributions": {
-        "v1": -12.63,
+        "v1": -2.99,
         "v2": 3.54,
         "v3": 1.13,
         "v4": 8.1,
@@ -42270,19 +42270,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-02",
-      "rspi": -8.2,
-      "level": "mild_sell",
-      "raw": 0.0838,
+      "rspi": 1.2,
+      "level": "neutral",
+      "raw": -0.012,
       "volume_amp": 0.984,
       "raw_variables": {
-        "v1": 0.4968,
+        "v1": 0.1138,
         "v2": -0.1374,
         "v3": -0.8838,
         "v4": 1.0,
         "v5": 0.08
       },
       "variable_contributions": {
-        "v1": -12.23,
+        "v1": -2.8,
         "v2": 2.71,
         "v3": 21.75,
         "v4": -19.69,
@@ -42292,19 +42292,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-07",
-      "rspi": -6.2,
-      "level": "mild_sell",
-      "raw": 0.06,
+      "rspi": 3.8,
+      "level": "neutral",
+      "raw": -0.0371,
       "volume_amp": 1.032,
       "raw_variables": {
-        "v1": 0.4855,
+        "v1": 0.0972,
         "v2": -0.507,
         "v3": 0.095,
         "v4": 0.2,
         "v5": -0.2376
       },
       "variable_contributions": {
-        "v1": -12.53,
+        "v1": -2.51,
         "v2": 10.47,
         "v3": -2.45,
         "v4": -4.13,
@@ -42314,19 +42314,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-08",
-      "rspi": -15.3,
-      "level": "mild_sell",
-      "raw": 0.1403,
+      "rspi": -4.6,
+      "level": "neutral",
+      "raw": 0.0422,
       "volume_amp": 1.092,
       "raw_variables": {
-        "v1": 0.4809,
+        "v1": 0.0888,
         "v2": -0.3238,
         "v3": 0.0619,
         "v4": 0.2,
         "v5": 0.2931
       },
       "variable_contributions": {
-        "v1": -13.13,
+        "v1": -2.43,
         "v2": 7.07,
         "v3": -1.69,
         "v4": -4.37,
@@ -42336,19 +42336,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-09",
-      "rspi": 2.3,
-      "level": "neutral",
-      "raw": -0.0251,
+      "rspi": 11.5,
+      "level": "mild_rebound",
+      "raw": -0.1228,
       "volume_amp": 0.934,
       "raw_variables": {
-        "v1": 0.4827,
+        "v1": 0.0918,
         "v2": -0.2107,
         "v3": -0.0784,
         "v4": -0.4,
         "v5": -0.0403
       },
       "variable_contributions": {
-        "v1": -11.28,
+        "v1": -2.14,
         "v2": 3.94,
         "v3": 1.83,
         "v4": 7.47,
@@ -42358,19 +42358,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-12",
-      "rspi": -13.5,
-      "level": "mild_sell",
-      "raw": 0.1387,
+      "rspi": -3.7,
+      "level": "neutral",
+      "raw": 0.0381,
       "volume_amp": 0.976,
       "raw_variables": {
-        "v1": 0.4584,
+        "v1": 0.0559,
         "v2": -0.061,
         "v3": -0.499,
         "v4": 1.0,
         "v5": -0.3892
       },
       "variable_contributions": {
-        "v1": -11.18,
+        "v1": -1.36,
         "v2": 1.19,
         "v3": 12.17,
         "v4": -19.52,
@@ -42380,19 +42380,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-13",
-      "rspi": -2.6,
-      "level": "neutral",
-      "raw": 0.026,
+      "rspi": 7.3,
+      "level": "mild_rebound",
+      "raw": -0.0744,
       "volume_amp": 0.987,
       "raw_variables": {
-        "v1": 0.4576,
+        "v1": 0.0563,
         "v2": -0.3497,
         "v3": -0.0924,
         "v4": 0.2,
         "v5": -0.354
       },
       "variable_contributions": {
-        "v1": -11.29,
+        "v1": -1.39,
         "v2": 6.9,
         "v3": 2.28,
         "v4": -3.95,
@@ -42402,19 +42402,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-14",
-      "rspi": 3.2,
-      "level": "neutral",
-      "raw": -0.0324,
+      "rspi": 13.6,
+      "level": "mild_rebound",
+      "raw": -0.1362,
       "volume_amp": 1.0,
       "raw_variables": {
-        "v1": 0.4325,
+        "v1": 0.017,
         "v2": -0.7567,
         "v3": -0.1824,
         "v4": 0.2,
         "v5": 0.1645
       },
       "variable_contributions": {
-        "v1": -10.81,
+        "v1": -0.42,
         "v2": 15.13,
         "v3": 4.56,
         "v4": -4.0,
@@ -42424,19 +42424,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-15",
-      "rspi": 8.8,
+      "rspi": 18.0,
       "level": "mild_rebound",
-      "raw": -0.0975,
+      "raw": -0.1992,
       "volume_amp": 0.904,
       "raw_variables": {
-        "v1": 0.4471,
+        "v1": 0.0403,
         "v2": -0.3947,
         "v3": -0.1158,
         "v4": -0.4,
         "v5": -0.2142
       },
       "variable_contributions": {
-        "v1": -10.1,
+        "v1": -0.91,
         "v2": 7.13,
         "v3": 2.62,
         "v4": 7.23,
@@ -42446,19 +42446,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-16",
-      "rspi": -26.1,
-      "level": "strong_sell",
-      "raw": 0.2673,
+      "rspi": -16.1,
+      "level": "mild_sell",
+      "raw": 0.1649,
       "volume_amp": 0.977,
       "raw_variables": {
-        "v1": 0.4427,
+        "v1": 0.033,
         "v2": -0.2054,
         "v3": -0.0382,
         "v4": 1.0,
         "v5": 0.0724
       },
       "variable_contributions": {
-        "v1": -10.81,
+        "v1": -0.81,
         "v2": 4.01,
         "v3": 0.93,
         "v4": -19.53,
@@ -42468,19 +42468,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-19",
-      "rspi": -4.5,
+      "rspi": 4.3,
       "level": "neutral",
-      "raw": 0.0508,
+      "raw": -0.0485,
       "volume_amp": 0.884,
       "raw_variables": {
-        "v1": 0.4616,
+        "v1": 0.0644,
         "v2": 0.2993,
         "v3": -0.0196,
         "v4": -0.4,
         "v5": -0.3953
       },
       "variable_contributions": {
-        "v1": -10.2,
+        "v1": -1.42,
         "v2": -5.29,
         "v3": 0.43,
         "v4": 7.07,
@@ -42490,19 +42490,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-20",
-      "rspi": -35.2,
+      "rspi": -25.5,
       "level": "strong_sell",
-      "raw": 0.3598,
+      "raw": 0.2608,
       "volume_amp": 0.979,
       "raw_variables": {
-        "v1": 0.4629,
+        "v1": 0.0667,
         "v2": 0.3363,
         "v3": 0.1747,
         "v4": 0.7,
         "v5": -0.0686
       },
       "variable_contributions": {
-        "v1": -11.33,
+        "v1": -1.63,
         "v2": -6.59,
         "v3": -4.27,
         "v4": -13.71,
@@ -42512,19 +42512,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-21",
-      "rspi": -24.8,
-      "level": "strong_sell",
-      "raw": 0.2608,
+      "rspi": -15.1,
+      "level": "mild_sell",
+      "raw": 0.1592,
       "volume_amp": 0.95,
       "raw_variables": {
-        "v1": 0.4437,
+        "v1": 0.0373,
         "v2": -0.1918,
         "v3": -0.0171,
         "v4": 1.0,
         "v5": -0.075
       },
       "variable_contributions": {
-        "v1": -10.54,
+        "v1": -0.89,
         "v2": 3.64,
         "v3": 0.41,
         "v4": -19.0,
@@ -42534,19 +42534,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-22",
-      "rspi": -19.9,
+      "rspi": -9.5,
       "level": "mild_sell",
-      "raw": 0.1867,
+      "raw": 0.0886,
       "volume_amp": 1.068,
       "raw_variables": {
-        "v1": 0.4695,
+        "v1": 0.0774,
         "v2": 0.5789,
         "v3": 0.1355,
         "v4": -0.4,
         "v5": -0.0036
       },
       "variable_contributions": {
-        "v1": -12.53,
+        "v1": -2.06,
         "v2": -12.36,
         "v3": -3.62,
         "v4": 8.54,
@@ -42556,19 +42556,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-23",
-      "rspi": -30.3,
+      "rspi": -20.2,
       "level": "strong_sell",
-      "raw": 0.2938,
+      "raw": 0.196,
       "volume_amp": 1.032,
       "raw_variables": {
-        "v1": 0.4707,
+        "v1": 0.0796,
         "v2": 0.3003,
         "v3": -0.0708,
         "v4": 0.7,
         "v5": -0.0622
       },
       "variable_contributions": {
-        "v1": -12.14,
+        "v1": -2.05,
         "v2": -6.2,
         "v3": 1.83,
         "v4": -14.44,
@@ -42578,19 +42578,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-26",
-      "rspi": -25.4,
-      "level": "strong_sell",
-      "raw": 0.2536,
+      "rspi": -15.2,
+      "level": "mild_sell",
+      "raw": 0.1513,
       "volume_amp": 1.002,
       "raw_variables": {
-        "v1": 0.4316,
+        "v1": 0.0224,
         "v2": 0.0246,
         "v3": -0.0708,
         "v4": 1.0,
         "v5": -0.4152
       },
       "variable_contributions": {
-        "v1": -10.82,
+        "v1": -0.56,
         "v2": -0.49,
         "v3": 1.78,
         "v4": -20.05,
@@ -42600,19 +42600,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-27",
-      "rspi": 4.6,
-      "level": "neutral",
-      "raw": -0.0476,
+      "rspi": 14.4,
+      "level": "mild_rebound",
+      "raw": -0.1497,
       "volume_amp": 0.961,
       "raw_variables": {
-        "v1": 0.4342,
+        "v1": 0.0258,
         "v2": 0.3691,
         "v3": -0.5662,
         "v4": -0.4,
         "v5": -0.0847
       },
       "variable_contributions": {
-        "v1": -10.43,
+        "v1": -0.62,
         "v2": -7.09,
         "v3": 13.6,
         "v4": 7.69,
@@ -42622,19 +42622,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-28",
-      "rspi": -22.9,
-      "level": "strong_sell",
-      "raw": 0.1973,
+      "rspi": -11.1,
+      "level": "mild_sell",
+      "raw": 0.0955,
       "volume_amp": 1.158,
       "raw_variables": {
-        "v1": 0.4257,
+        "v1": 0.0183,
         "v2": -0.4405,
         "v3": -0.0926,
         "v4": 1.0,
         "v5": 0.0216
       },
       "variable_contributions": {
-        "v1": -12.33,
+        "v1": -0.53,
         "v2": 10.2,
         "v3": 2.68,
         "v4": -23.17,
@@ -42644,19 +42644,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-29",
-      "rspi": 8.3,
+      "rspi": 19.4,
       "level": "mild_rebound",
-      "raw": -0.0752,
+      "raw": -0.1754,
       "volume_amp": 1.106,
       "raw_variables": {
-        "v1": 0.4138,
+        "v1": 0.0129,
         "v2": -0.3786,
         "v3": -0.3771,
         "v4": 0.2,
         "v5": -0.4864
       },
       "variable_contributions": {
-        "v1": -11.44,
+        "v1": -0.36,
         "v2": 8.37,
         "v3": 10.42,
         "v4": -4.42,
@@ -42666,19 +42666,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-30",
-      "rspi": -41.9,
-      "level": "extreme_sell",
-      "raw": 0.3382,
+      "rspi": -29.4,
+      "level": "strong_sell",
+      "raw": 0.2373,
       "volume_amp": 1.238,
       "raw_variables": {
-        "v1": 0.4191,
+        "v1": 0.0156,
         "v2": 1.0,
         "v3": 0.3788,
         "v4": -0.4,
         "v5": 0.1867
       },
       "variable_contributions": {
-        "v1": -12.98,
+        "v1": -0.48,
         "v2": -24.77,
         "v3": -11.73,
         "v4": 9.91,
@@ -42688,19 +42688,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-02",
-      "rspi": -7.4,
-      "level": "mild_sell",
-      "raw": 0.0925,
+      "rspi": 0.6,
+      "level": "neutral",
+      "raw": -0.008,
       "volume_amp": 0.804,
       "raw_variables": {
-        "v1": 0.4188,
+        "v1": 0.0165,
         "v2": -0.1295,
         "v3": -0.4213,
         "v4": 0.7,
         "v5": -0.2098
       },
       "variable_contributions": {
-        "v1": -8.42,
+        "v1": -0.33,
         "v2": 2.08,
         "v3": 8.47,
         "v4": -11.25,
@@ -42710,19 +42710,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-04",
-      "rspi": 3.0,
-      "level": "neutral",
-      "raw": -0.0284,
+      "rspi": 13.2,
+      "level": "mild_rebound",
+      "raw": -0.1268,
       "volume_amp": 1.042,
       "raw_variables": {
-        "v1": 0.4033,
+        "v1": 0.0099,
         "v2": -1.0,
         "v3": -0.3362,
         "v4": 1.0,
         "v5": -0.4521
       },
       "variable_contributions": {
-        "v1": -10.51,
+        "v1": -0.26,
         "v2": 20.84,
         "v3": 8.76,
         "v4": -20.84,
@@ -42732,19 +42732,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-05",
-      "rspi": 13.0,
-      "level": "mild_rebound",
-      "raw": -0.1198,
+      "rspi": 23.5,
+      "level": "strong_rebound",
+      "raw": -0.2168,
       "volume_amp": 1.084,
       "raw_variables": {
-        "v1": 0.3957,
+        "v1": 0.0075,
         "v2": -1.0,
         "v3": -0.1929,
         "v4": 0.2,
         "v5": -0.105
       },
       "variable_contributions": {
-        "v1": -10.72,
+        "v1": -0.2,
         "v2": 21.68,
         "v3": 5.23,
         "v4": -4.34,
@@ -42754,19 +42754,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-09",
-      "rspi": 13.1,
-      "level": "mild_rebound",
-      "raw": -0.1208,
+      "rspi": 23.5,
+      "level": "strong_rebound",
+      "raw": -0.2166,
       "volume_amp": 1.086,
       "raw_variables": {
-        "v1": 0.3877,
+        "v1": 0.0045,
         "v2": -0.961,
         "v3": -0.2847,
         "v4": 0.2,
         "v5": 0.0565
       },
       "variable_contributions": {
-        "v1": -10.52,
+        "v1": -0.12,
         "v2": 20.87,
         "v3": 7.73,
         "v4": -4.34,
@@ -42776,19 +42776,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-10",
-      "rspi": -5.2,
-      "level": "mild_sell",
-      "raw": 0.0472,
+      "rspi": 5.3,
+      "level": "mild_rebound",
+      "raw": -0.0482,
       "volume_amp": 1.105,
       "raw_variables": {
-        "v1": 0.3849,
+        "v1": 0.0034,
         "v2": -0.4895,
         "v3": 0.0157,
         "v4": 0.2,
         "v5": 0.0495
       },
       "variable_contributions": {
-        "v1": -10.63,
+        "v1": -0.09,
         "v2": 10.82,
         "v3": -0.43,
         "v4": -4.42,
@@ -42798,19 +42798,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-11",
-      "rspi": -6.6,
-      "level": "mild_sell",
-      "raw": 0.0691,
+      "rspi": 2.3,
+      "level": "neutral",
+      "raw": -0.0243,
       "volume_amp": 0.957,
       "raw_variables": {
-        "v1": 0.3789,
+        "v1": 0.0055,
         "v2": 0.0839,
         "v3": -0.1108,
         "v4": 0.2,
         "v5": -0.5474
       },
       "variable_contributions": {
-        "v1": -9.07,
+        "v1": -0.13,
         "v2": -1.61,
         "v3": 2.65,
         "v4": -3.83,
@@ -42820,19 +42820,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-12",
-      "rspi": -0.3,
-      "level": "neutral",
-      "raw": 0.0022,
+      "rspi": 10.3,
+      "level": "mild_rebound",
+      "raw": -0.0902,
       "volume_amp": 1.14,
       "raw_variables": {
-        "v1": 0.3768,
+        "v1": 0.007,
         "v2": -0.1943,
         "v3": -0.2445,
         "v4": 0.2,
         "v5": -0.3197
       },
       "variable_contributions": {
-        "v1": -10.74,
+        "v1": -0.2,
         "v2": 4.43,
         "v3": 6.97,
         "v4": -4.56,
@@ -42842,19 +42842,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-13",
-      "rspi": -14.3,
-      "level": "mild_sell",
-      "raw": 0.1292,
+      "rspi": -4.0,
+      "level": "neutral",
+      "raw": 0.0364,
       "volume_amp": 1.104,
       "raw_variables": {
-        "v1": 0.381,
+        "v1": 0.0102,
         "v2": 0.1321,
         "v3": 0.4948,
         "v4": -0.4,
         "v5": -0.3623
       },
       "variable_contributions": {
-        "v1": -10.52,
+        "v1": -0.28,
         "v2": -2.92,
         "v3": -13.66,
         "v4": 8.83,
@@ -42864,19 +42864,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-16",
-      "rspi": -13.7,
-      "level": "mild_sell",
-      "raw": 0.1423,
+      "rspi": -5.0,
+      "level": "neutral",
+      "raw": 0.0519,
       "volume_amp": 0.961,
       "raw_variables": {
-        "v1": 0.3724,
+        "v1": 0.011,
         "v2": 0.6109,
         "v3": -0.6222,
         "v4": 0.7,
         "v5": -0.5747
       },
       "variable_contributions": {
-        "v1": -8.95,
+        "v1": -0.27,
         "v2": -11.75,
         "v3": 14.95,
         "v4": -13.46,
@@ -42886,19 +42886,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-17",
-      "rspi": -18.0,
+      "rspi": -8.3,
       "level": "mild_sell",
-      "raw": 0.1661,
+      "raw": 0.0765,
       "volume_amp": 1.085,
       "raw_variables": {
-        "v1": 0.3718,
+        "v1": 0.0135,
         "v2": 0.326,
         "v3": 0.5353,
         "v4": -0.4,
         "v5": -0.4585
       },
       "variable_contributions": {
-        "v1": -10.09,
+        "v1": -0.37,
         "v2": -7.08,
         "v3": -14.52,
         "v4": 8.68,
@@ -42908,19 +42908,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-18",
-      "rspi": -16.5,
+      "rspi": -8.4,
       "level": "mild_sell",
-      "raw": 0.1796,
+      "raw": 0.0912,
       "volume_amp": 0.921,
       "raw_variables": {
-        "v1": 0.3682,
+        "v1": 0.0148,
         "v2": -0.0943,
         "v3": -0.1872,
         "v4": 1.0,
         "v5": -0.4681
       },
       "variable_contributions": {
-        "v1": -8.48,
+        "v1": -0.34,
         "v2": 1.74,
         "v3": 4.31,
         "v4": -18.43,
@@ -42930,19 +42930,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-19",
-      "rspi": -1.9,
-      "level": "neutral",
-      "raw": 0.021,
+      "rspi": 6.1,
+      "level": "mild_rebound",
+      "raw": -0.067,
       "volume_amp": 0.909,
       "raw_variables": {
-        "v1": 0.3673,
+        "v1": 0.0151,
         "v2": 0.3413,
         "v3": -0.1872,
         "v4": -0.4,
         "v5": -0.1224
       },
       "variable_contributions": {
-        "v1": -8.34,
+        "v1": -0.34,
         "v2": -6.2,
         "v3": 4.25,
         "v4": 7.27,
@@ -42952,19 +42952,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-20",
-      "rspi": -14.9,
+      "rspi": -5.4,
       "level": "mild_sell",
-      "raw": 0.1358,
+      "raw": 0.0496,
       "volume_amp": 1.095,
       "raw_variables": {
-        "v1": 0.3598,
+        "v1": 0.0153,
         "v2": -0.3882,
         "v3": -0.0847,
         "v4": 1.0,
         "v5": -0.5539
       },
       "variable_contributions": {
-        "v1": -9.85,
+        "v1": -0.42,
         "v2": 8.5,
         "v3": 2.32,
         "v4": -21.91,
@@ -42974,19 +42974,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-23",
-      "rspi": 1.7,
-      "level": "neutral",
-      "raw": -0.016,
+      "rspi": 10.7,
+      "level": "mild_rebound",
+      "raw": -0.1013,
       "volume_amp": 1.06,
       "raw_variables": {
-        "v1": 0.3611,
+        "v1": 0.0198,
         "v2": 0.6643,
         "v3": -0.3575,
         "v4": -0.4,
         "v5": -0.6975
       },
       "variable_contributions": {
-        "v1": -9.57,
+        "v1": -0.52,
         "v2": -14.09,
         "v3": 9.48,
         "v4": 8.48,
@@ -42996,19 +42996,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-24",
-      "rspi": 2.0,
-      "level": "neutral",
-      "raw": -0.0182,
+      "rspi": 11.1,
+      "level": "mild_rebound",
+      "raw": -0.1012,
       "volume_amp": 1.098,
       "raw_variables": {
-        "v1": 0.3451,
+        "v1": 0.0129,
         "v2": -0.221,
         "v3": -1.0,
         "v4": 1.0,
         "v5": -0.1025
       },
       "variable_contributions": {
-        "v1": -9.47,
+        "v1": -0.35,
         "v2": 4.85,
         "v3": 27.45,
         "v4": -21.96,
@@ -43018,19 +43018,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-25",
-      "rspi": 0.9,
-      "level": "neutral",
-      "raw": -0.008,
+      "rspi": 9.6,
+      "level": "mild_rebound",
+      "raw": -0.0893,
       "volume_amp": 1.077,
       "raw_variables": {
-        "v1": 0.3442,
+        "v1": 0.0188,
         "v2": 0.3873,
         "v3": 0.0341,
         "v4": -0.4,
         "v5": -1.0
       },
       "variable_contributions": {
-        "v1": -9.26,
+        "v1": -0.51,
         "v2": -8.34,
         "v3": -0.92,
         "v4": 8.61,
@@ -43040,19 +43040,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-26",
-      "rspi": -17.7,
+      "rspi": -9.9,
       "level": "mild_sell",
-      "raw": 0.1866,
+      "raw": 0.1045,
       "volume_amp": 0.947,
       "raw_variables": {
-        "v1": 0.3496,
+        "v1": 0.0211,
         "v2": 0.83,
         "v3": 0.0134,
         "v4": -0.4,
         "v5": 0.0987
       },
       "variable_contributions": {
-        "v1": -8.28,
+        "v1": -0.5,
         "v2": -15.72,
         "v3": -0.32,
         "v4": 7.58,
@@ -43062,19 +43062,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-27",
-      "rspi": -16.6,
+      "rspi": -9.8,
       "level": "mild_sell",
-      "raw": 0.199,
+      "raw": 0.1169,
       "volume_amp": 0.836,
       "raw_variables": {
-        "v1": 0.3538,
+        "v1": 0.0254,
         "v2": 0.9558,
         "v3": 0.1415,
         "v4": -0.4,
         "v5": -0.3594
       },
       "variable_contributions": {
-        "v1": -7.4,
+        "v1": -0.53,
         "v2": -15.98,
         "v3": -2.96,
         "v4": 6.69,
@@ -43084,19 +43084,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-30",
-      "rspi": -2.9,
+      "rspi": 4.0,
       "level": "neutral",
-      "raw": 0.0341,
+      "raw": -0.0473,
       "volume_amp": 0.841,
       "raw_variables": {
-        "v1": 0.351,
+        "v1": 0.0252,
         "v2": 0.6789,
         "v3": -0.3317,
         "v4": -0.4,
         "v5": -0.265
       },
       "variable_contributions": {
-        "v1": -7.38,
+        "v1": -0.53,
         "v2": -11.42,
         "v3": 6.97,
         "v4": 6.73,
@@ -43106,19 +43106,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-01",
-      "rspi": -26.0,
-      "level": "strong_sell",
-      "raw": 0.2685,
+      "rspi": -18.2,
+      "level": "mild_sell",
+      "raw": 0.1877,
       "volume_amp": 0.97,
       "raw_variables": {
-        "v1": 0.3478,
+        "v1": 0.0245,
         "v2": -0.0312,
         "v3": 0.0443,
         "v4": 1.0,
         "v5": -0.2326
       },
       "variable_contributions": {
-        "v1": -8.43,
+        "v1": -0.59,
         "v2": 0.6,
         "v3": -1.07,
         "v4": -19.39,
@@ -43128,19 +43128,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-02",
-      "rspi": -5.4,
-      "level": "mild_sell",
-      "raw": 0.0554,
+      "rspi": 2.5,
+      "level": "neutral",
+      "raw": -0.0256,
       "volume_amp": 0.966,
       "raw_variables": {
-        "v1": 0.3505,
+        "v1": 0.0262,
         "v2": 0.4151,
         "v3": -0.1389,
         "v4": -0.4,
         "v5": -0.0048
       },
       "variable_contributions": {
-        "v1": -8.47,
+        "v1": -0.63,
         "v2": -8.02,
         "v3": 3.36,
         "v4": 7.73,
@@ -43150,19 +43150,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-03",
-      "rspi": -12.9,
+      "rspi": -5.1,
       "level": "mild_sell",
-      "raw": 0.1339,
+      "raw": 0.0534,
       "volume_amp": 0.963,
       "raw_variables": {
-        "v1": 0.3426,
+        "v1": 0.0203,
         "v2": -0.531,
         "v3": -0.2783,
         "v4": 1.0,
         "v5": 0.2406
       },
       "variable_contributions": {
-        "v1": -8.24,
+        "v1": -0.49,
         "v2": 10.22,
         "v3": 6.7,
         "v4": -19.25,
@@ -43172,19 +43172,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-04",
-      "rspi": 8.0,
+      "rspi": 15.3,
       "level": "mild_rebound",
-      "raw": -0.0889,
+      "raw": -0.1705,
       "volume_amp": 0.895,
       "raw_variables": {
-        "v1": 0.3541,
+        "v1": 0.0274,
         "v2": -0.1099,
         "v3": -0.2783,
         "v4": -0.4,
         "v5": -0.0584
       },
       "variable_contributions": {
-        "v1": -7.93,
+        "v1": -0.61,
         "v2": 1.97,
         "v3": 6.23,
         "v4": 7.16,
@@ -43194,19 +43194,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-07",
-      "rspi": -15.8,
+      "rspi": -10.1,
       "level": "mild_sell",
-      "raw": 0.2258,
+      "raw": 0.1442,
       "volume_amp": 0.699,
       "raw_variables": {
-        "v1": 0.3532,
+        "v1": 0.0267,
         "v2": 0.1178,
         "v3": 0.765,
         "v4": -0.4,
         "v5": 0.0269
       },
       "variable_contributions": {
-        "v1": -6.17,
+        "v1": -0.47,
         "v2": -1.65,
         "v3": -13.36,
         "v4": 5.59,
@@ -43216,19 +43216,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-08",
-      "rspi": -13.0,
+      "rspi": -5.7,
       "level": "mild_sell",
-      "raw": 0.1439,
+      "raw": 0.0634,
       "volume_amp": 0.902,
       "raw_variables": {
-        "v1": 0.3429,
+        "v1": 0.0209,
         "v2": -0.3248,
         "v3": -0.2825,
         "v4": 1.0,
         "v5": -0.0622
       },
       "variable_contributions": {
-        "v1": -7.73,
+        "v1": -0.47,
         "v2": 5.86,
         "v3": 6.37,
         "v4": -18.04,
@@ -43238,19 +43238,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-09",
-      "rspi": -6.0,
-      "level": "mild_sell",
-      "raw": 0.0696,
+      "rspi": 0.9,
+      "level": "neutral",
+      "raw": -0.0104,
       "volume_amp": 0.855,
       "raw_variables": {
-        "v1": 0.3392,
+        "v1": 0.0192,
         "v2": 0.4521,
         "v3": -0.0719,
         "v4": -0.4,
         "v5": -0.0764
       },
       "variable_contributions": {
-        "v1": -7.25,
+        "v1": -0.41,
         "v2": -7.73,
         "v3": 1.54,
         "v4": 6.84,
@@ -43260,19 +43260,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-10",
-      "rspi": -4.0,
+      "rspi": 3.3,
       "level": "neutral",
-      "raw": 0.0428,
+      "raw": -0.0354,
       "volume_amp": 0.942,
       "raw_variables": {
-        "v1": 0.3287,
+        "v1": 0.0158,
         "v2": -0.6199,
         "v3": -0.3123,
         "v4": 1.0,
         "v5": -0.3731
       },
       "variable_contributions": {
-        "v1": -7.74,
+        "v1": -0.37,
         "v2": 11.68,
         "v3": 7.36,
         "v4": -18.84,
@@ -43282,19 +43282,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-11",
-      "rspi": 8.7,
+      "rspi": 15.7,
       "level": "mild_rebound",
-      "raw": -0.0953,
+      "raw": -0.1728,
       "volume_amp": 0.911,
       "raw_variables": {
-        "v1": 0.3304,
+        "v1": 0.0201,
         "v2": -0.426,
         "v3": 0.194,
         "v4": -0.4,
         "v5": -0.6114
       },
       "variable_contributions": {
-        "v1": -7.52,
+        "v1": -0.46,
         "v2": 7.76,
         "v3": -4.42,
         "v4": 7.29,
@@ -43304,19 +43304,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-14",
-      "rspi": -10.7,
-      "level": "mild_sell",
-      "raw": 0.131,
+      "rspi": -4.4,
+      "level": "neutral",
+      "raw": 0.0543,
       "volume_amp": 0.814,
       "raw_variables": {
-        "v1": 0.3247,
+        "v1": 0.0178,
         "v2": -0.4351,
         "v3": -0.1877,
         "v4": 1.0,
         "v5": -0.1622
       },
       "variable_contributions": {
-        "v1": -6.61,
+        "v1": -0.36,
         "v2": 7.09,
         "v3": 3.82,
         "v4": -16.29,
@@ -43326,19 +43326,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-15",
-      "rspi": -7.0,
-      "level": "mild_sell",
-      "raw": 0.0809,
+      "rspi": -0.4,
+      "level": "neutral",
+      "raw": 0.0047,
       "volume_amp": 0.869,
       "raw_variables": {
-        "v1": 0.3219,
+        "v1": 0.0171,
         "v2": -0.2272,
         "v3": 0.0831,
         "v4": 0.2,
         "v5": -0.1492
       },
       "variable_contributions": {
-        "v1": -6.99,
+        "v1": -0.37,
         "v2": 3.95,
         "v3": -1.81,
         "v4": -3.48,
@@ -43348,19 +43348,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-16",
-      "rspi": 2.5,
-      "level": "neutral",
-      "raw": -0.0302,
+      "rspi": 8.8,
+      "level": "mild_rebound",
+      "raw": -0.1069,
       "volume_amp": 0.822,
       "raw_variables": {
-        "v1": 0.3281,
+        "v1": 0.0215,
         "v2": -0.0555,
         "v3": -0.0208,
         "v4": -0.4,
         "v5": -0.1595
       },
       "variable_contributions": {
-        "v1": -6.74,
+        "v1": -0.44,
         "v2": 0.91,
         "v3": 0.43,
         "v4": 6.57,
@@ -43370,19 +43370,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-17",
-      "rspi": -24.6,
-      "level": "strong_sell",
-      "raw": 0.2376,
+      "rspi": -16.7,
+      "level": "mild_sell",
+      "raw": 0.1614,
       "volume_amp": 1.037,
       "raw_variables": {
-        "v1": 0.3268,
+        "v1": 0.0223,
         "v2": -0.0402,
         "v3": -0.0337,
         "v4": 1.0,
         "v5": -0.2765
       },
       "variable_contributions": {
-        "v1": -8.48,
+        "v1": -0.58,
         "v2": 0.83,
         "v3": 0.87,
         "v4": -20.75,
@@ -43392,19 +43392,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-18",
-      "rspi": -7.3,
-      "level": "mild_sell",
-      "raw": 0.0837,
+      "rspi": -0.7,
+      "level": "neutral",
+      "raw": 0.008,
       "volume_amp": 0.871,
       "raw_variables": {
-        "v1": 0.3277,
+        "v1": 0.0249,
         "v2": -0.2386,
         "v3": 0.1821,
         "v4": 0.2,
         "v5": -0.3606
       },
       "variable_contributions": {
-        "v1": -7.13,
+        "v1": -0.54,
         "v2": 4.15,
         "v3": -3.96,
         "v4": -3.48,
@@ -43414,19 +43414,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-21",
-      "rspi": 14.2,
-      "level": "mild_rebound",
-      "raw": -0.1755,
+      "rspi": 20.2,
+      "level": "strong_rebound",
+      "raw": -0.2507,
       "volume_amp": 0.807,
       "raw_variables": {
-        "v1": 0.3229,
+        "v1": 0.022,
         "v2": -0.9574,
         "v3": -0.4085,
         "v4": 0.2,
         "v5": -0.0259
       },
       "variable_contributions": {
-        "v1": -6.52,
+        "v1": -0.44,
         "v2": 15.46,
         "v3": 8.25,
         "v4": -3.23,
@@ -43436,19 +43436,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-22",
-      "rspi": -7.1,
-      "level": "mild_sell",
-      "raw": 0.0796,
+      "rspi": -0.3,
+      "level": "neutral",
+      "raw": 0.0035,
       "volume_amp": 0.888,
       "raw_variables": {
-        "v1": 0.3316,
+        "v1": 0.0273,
         "v2": 0.1874,
         "v3": 0.1323,
         "v4": -0.4,
         "v5": 0.0611
       },
       "variable_contributions": {
-        "v1": -7.36,
+        "v1": -0.61,
         "v2": -3.33,
         "v3": -2.94,
         "v4": 7.11,
@@ -43458,19 +43458,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-23",
-      "rspi": -10.8,
-      "level": "mild_sell",
-      "raw": 0.1146,
+      "rspi": -3.7,
+      "level": "neutral",
+      "raw": 0.0387,
       "volume_amp": 0.945,
       "raw_variables": {
-        "v1": 0.3286,
+        "v1": 0.0252,
         "v2": -0.4189,
         "v3": -0.3421,
         "v4": 1.0,
         "v5": 0.0172
       },
       "variable_contributions": {
-        "v1": -7.76,
+        "v1": -0.6,
         "v2": 7.91,
         "v3": 8.08,
         "v4": -18.89,
@@ -43480,19 +43480,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-24",
-      "rspi": 2.6,
-      "level": "neutral",
-      "raw": -0.0256,
+      "rspi": 10.1,
+      "level": "mild_rebound",
+      "raw": -0.101,
       "volume_amp": 1.001,
       "raw_variables": {
-        "v1": 0.3272,
+        "v1": 0.0256,
         "v2": -0.7091,
         "v3": 0.0717,
         "v4": 0.2,
         "v5": -0.2346
       },
       "variable_contributions": {
-        "v1": -8.19,
+        "v1": -0.64,
         "v2": 14.2,
         "v3": -1.79,
         "v4": -4.0,
@@ -43502,19 +43502,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-25",
-      "rspi": -7.5,
-      "level": "mild_sell",
-      "raw": 0.0928,
+      "rspi": -1.4,
+      "level": "neutral",
+      "raw": 0.0176,
       "volume_amp": 0.811,
       "raw_variables": {
-        "v1": 0.326,
+        "v1": 0.0248,
         "v2": -0.1213,
         "v3": -0.0128,
         "v4": 0.2,
         "v5": -0.0118
       },
       "variable_contributions": {
-        "v1": -6.61,
+        "v1": -0.5,
         "v2": 1.97,
         "v3": 0.26,
         "v4": -3.24,
@@ -43524,19 +43524,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-28",
-      "rspi": -9.7,
-      "level": "mild_sell",
-      "raw": 0.092,
+      "rspi": -1.8,
+      "level": "neutral",
+      "raw": 0.0168,
       "volume_amp": 1.058,
       "raw_variables": {
-        "v1": 0.3231,
+        "v1": 0.0224,
         "v2": -0.3695,
         "v3": 0.1376,
         "v4": 0.2,
         "v5": 0.107
       },
       "variable_contributions": {
-        "v1": -8.55,
+        "v1": -0.59,
         "v2": 7.82,
         "v3": -3.64,
         "v4": -4.23,
@@ -43546,19 +43546,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-29",
-      "rspi": 1.0,
-      "level": "neutral",
-      "raw": -0.0098,
+      "rspi": 8.5,
+      "level": "mild_rebound",
+      "raw": -0.0844,
       "volume_amp": 1.005,
       "raw_variables": {
-        "v1": 0.3186,
+        "v1": 0.0199,
         "v2": -0.5227,
         "v3": -0.0911,
         "v4": 0.2,
         "v5": -0.021
       },
       "variable_contributions": {
-        "v1": -8.01,
+        "v1": -0.5,
         "v2": 10.51,
         "v3": 2.29,
         "v4": -4.02,
@@ -43568,19 +43568,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-30",
-      "rspi": -0.8,
-      "level": "neutral",
-      "raw": 0.0083,
+      "rspi": 6.7,
+      "level": "mild_rebound",
+      "raw": -0.0656,
       "volume_amp": 1.022,
       "raw_variables": {
-        "v1": 0.3137,
+        "v1": 0.018,
         "v2": -0.4429,
         "v3": -0.0214,
         "v4": 0.2,
         "v5": -0.162
       },
       "variable_contributions": {
-        "v1": -8.01,
+        "v1": -0.46,
         "v2": 9.05,
         "v3": 0.55,
         "v4": -4.09,
@@ -43590,19 +43590,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-31",
-      "rspi": -7.5,
-      "level": "mild_sell",
-      "raw": 0.0648,
+      "rspi": 1.1,
+      "level": "neutral",
+      "raw": -0.0096,
       "volume_amp": 1.16,
       "raw_variables": {
-        "v1": 0.3155,
+        "v1": 0.018,
         "v2": -0.0936,
         "v3": 0.2741,
         "v4": -0.4,
         "v5": 0.1613
       },
       "variable_contributions": {
-        "v1": -9.15,
+        "v1": -0.52,
         "v2": 2.17,
         "v3": -7.95,
         "v4": 9.28,
@@ -43612,19 +43612,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-01",
-      "rspi": -41.9,
-      "level": "extreme_sell",
-      "raw": 0.3994,
+      "rspi": -33.9,
+      "level": "strong_sell",
+      "raw": 0.3227,
       "volume_amp": 1.049,
       "raw_variables": {
-        "v1": 0.342,
+        "v1": 0.0354,
         "v2": 1.0,
         "v3": 0.7533,
         "v4": -0.4,
         "v5": 0.0552
       },
       "variable_contributions": {
-        "v1": -8.97,
+        "v1": -0.93,
         "v2": -20.99,
         "v3": -19.76,
         "v4": 8.4,
@@ -43634,19 +43634,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-04",
-      "rspi": -13.3,
+      "rspi": -7.5,
       "level": "mild_sell",
-      "raw": 0.1739,
+      "raw": 0.0976,
       "volume_amp": 0.767,
       "raw_variables": {
-        "v1": 0.3364,
+        "v1": 0.0312,
         "v2": 0.2435,
         "v3": -0.632,
         "v4": 1.0,
         "v5": -0.0093
       },
       "variable_contributions": {
-        "v1": -6.45,
+        "v1": -0.6,
         "v2": -3.73,
         "v3": 12.11,
         "v4": -15.33,
@@ -43656,19 +43656,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-05",
-      "rspi": -11.5,
-      "level": "mild_sell",
-      "raw": 0.132,
+      "rspi": -4.9,
+      "level": "neutral",
+      "raw": 0.0561,
       "volume_amp": 0.872,
       "raw_variables": {
-        "v1": 0.3256,
+        "v1": 0.0222,
         "v2": -0.0458,
         "v3": -0.0446,
         "v4": 0.2,
         "v5": 0.309
       },
       "variable_contributions": {
-        "v1": -7.1,
+        "v1": -0.48,
         "v2": 0.8,
         "v3": 0.97,
         "v4": -3.49,
@@ -43678,19 +43678,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-06",
-      "rspi": 0.0,
-      "level": "neutral",
-      "raw": -0.0001,
+      "rspi": 6.9,
+      "level": "mild_rebound",
+      "raw": -0.0764,
       "volume_amp": 0.904,
       "raw_variables": {
-        "v1": 0.3255,
+        "v1": 0.0202,
         "v2": 0.0207,
         "v3": -0.1619,
         "v4": -0.4,
         "v5": 0.3487
       },
       "variable_contributions": {
-        "v1": -7.36,
+        "v1": -0.46,
         "v2": -0.37,
         "v3": 3.66,
         "v4": 7.23,
@@ -43700,19 +43700,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-07",
-      "rspi": -31.8,
+      "rspi": -24.8,
       "level": "strong_sell",
-      "raw": 0.3427,
+      "raw": 0.2673,
       "volume_amp": 0.928,
       "raw_variables": {
-        "v1": 0.3193,
+        "v1": 0.0177,
         "v2": 0.4387,
         "v3": -0.031,
         "v4": 1.0,
         "v5": -0.1709
       },
       "variable_contributions": {
-        "v1": -7.41,
+        "v1": -0.41,
         "v2": -8.14,
         "v3": 0.72,
         "v4": -18.57,
@@ -43722,19 +43722,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-08",
-      "rspi": -4.3,
+      "rspi": 2.8,
       "level": "neutral",
-      "raw": 0.0458,
+      "raw": -0.0293,
       "volume_amp": 0.947,
       "raw_variables": {
-        "v1": 0.323,
+        "v1": 0.0225,
         "v2": 0.5939,
         "v3": -0.0998,
         "v4": -0.4,
         "v5": -0.4877
       },
       "variable_contributions": {
-        "v1": -7.65,
+        "v1": -0.53,
         "v2": -11.25,
         "v3": 2.36,
         "v4": 7.57,
@@ -43744,19 +43744,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-11",
-      "rspi": -23.3,
-      "level": "strong_sell",
-      "raw": 0.2654,
+      "rspi": -16.8,
+      "level": "mild_sell",
+      "raw": 0.191,
       "volume_amp": 0.88,
       "raw_variables": {
-        "v1": 0.3237,
+        "v1": 0.0261,
         "v2": 0.0305,
         "v3": 0.1429,
         "v4": 1.0,
         "v5": -0.5742
       },
       "variable_contributions": {
-        "v1": -7.12,
+        "v1": -0.58,
         "v2": -0.54,
         "v3": -3.14,
         "v4": -17.6,
@@ -43766,19 +43766,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-12",
-      "rspi": 4.4,
-      "level": "neutral",
-      "raw": -0.0501,
+      "rspi": 10.9,
+      "level": "mild_rebound",
+      "raw": -0.1243,
       "volume_amp": 0.874,
       "raw_variables": {
-        "v1": 0.3273,
+        "v1": 0.0305,
         "v2": 0.4131,
         "v3": -0.3994,
         "v4": -0.4,
         "v5": -0.3467
       },
       "variable_contributions": {
-        "v1": -7.15,
+        "v1": -0.67,
         "v2": -7.22,
         "v3": 8.73,
         "v4": 6.99,
@@ -43788,19 +43788,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-13",
-      "rspi": -10.6,
-      "level": "mild_sell",
-      "raw": 0.1195,
+      "rspi": -4.1,
+      "level": "neutral",
+      "raw": 0.0459,
       "volume_amp": 0.89,
       "raw_variables": {
-        "v1": 0.32,
+        "v1": 0.0256,
         "v2": -0.5411,
         "v3": -0.198,
         "v4": 1.0,
         "v5": -0.0275
       },
       "variable_contributions": {
-        "v1": -7.12,
+        "v1": -0.57,
         "v2": 9.63,
         "v3": 4.4,
         "v4": -17.8,
@@ -43810,19 +43810,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-14",
-      "rspi": -21.5,
-      "level": "strong_sell",
-      "raw": 0.2444,
+      "rspi": -15.1,
+      "level": "mild_sell",
+      "raw": 0.1709,
       "volume_amp": 0.881,
       "raw_variables": {
-        "v1": 0.3197,
+        "v1": 0.0255,
         "v2": 0.4534,
         "v3": 0.1435,
         "v4": 0.2,
         "v5": -0.0202
       },
       "variable_contributions": {
-        "v1": -7.04,
+        "v1": -0.56,
         "v2": -7.99,
         "v3": -3.16,
         "v4": -3.53,
@@ -43832,19 +43832,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-18",
-      "rspi": -17.3,
+      "rspi": -11.3,
       "level": "mild_sell",
-      "raw": 0.2135,
+      "raw": 0.1393,
       "volume_amp": 0.81,
       "raw_variables": {
-        "v1": 0.33,
+        "v1": 0.0332,
         "v2": 0.8939,
         "v3": 0.1576,
         "v4": -0.4,
         "v5": -0.0722
       },
       "variable_contributions": {
-        "v1": -6.68,
+        "v1": -0.67,
         "v2": -14.48,
         "v3": -3.19,
         "v4": 6.48,
@@ -43854,19 +43854,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-19",
-      "rspi": -37.5,
+      "rspi": -31.7,
       "level": "strong_sell",
-      "raw": 0.4751,
+      "raw": 0.4007,
       "volume_amp": 0.79,
       "raw_variables": {
-        "v1": 0.3356,
+        "v1": 0.0379,
         "v2": 0.779,
         "v3": 0.4137,
         "v4": 0.7,
         "v5": -0.0798
       },
       "variable_contributions": {
-        "v1": -6.63,
+        "v1": -0.75,
         "v2": -12.31,
         "v3": -8.17,
         "v4": -11.06,
@@ -43876,19 +43876,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-20",
-      "rspi": -39.3,
+      "rspi": -31.7,
       "level": "strong_sell",
-      "raw": 0.3875,
+      "raw": 0.3129,
       "volume_amp": 1.014,
       "raw_variables": {
-        "v1": 0.3399,
+        "v1": 0.0416,
         "v2": 0.4623,
         "v3": 0.0555,
         "v4": 1.0,
         "v5": -0.0385
       },
       "variable_contributions": {
-        "v1": -8.62,
+        "v1": -1.06,
         "v2": -9.38,
         "v3": -1.41,
         "v4": -20.28,
@@ -43898,19 +43898,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-21",
-      "rspi": -20.3,
-      "level": "strong_sell",
-      "raw": 0.2114,
+      "rspi": -13.1,
+      "level": "mild_sell",
+      "raw": 0.1365,
       "volume_amp": 0.962,
       "raw_variables": {
-        "v1": 0.3376,
+        "v1": 0.0379,
         "v2": 0.1745,
         "v3": 0.0862,
         "v4": 0.2,
         "v5": 0.3061
       },
       "variable_contributions": {
-        "v1": -8.12,
+        "v1": -0.91,
         "v2": -3.36,
         "v3": -2.07,
         "v4": -3.85,
@@ -43920,19 +43920,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-22",
-      "rspi": 4.1,
-      "level": "neutral",
-      "raw": -0.0526,
+      "rspi": 10.0,
+      "level": "mild_rebound",
+      "raw": -0.1279,
       "volume_amp": 0.784,
       "raw_variables": {
-        "v1": 0.3319,
+        "v1": 0.0307,
         "v2": -0.1278,
         "v3": -0.7884,
         "v4": 0.2,
         "v5": 0.4706
       },
       "variable_contributions": {
-        "v1": -6.5,
+        "v1": -0.6,
         "v2": 2.0,
         "v3": 15.45,
         "v4": -3.14,
@@ -43942,19 +43942,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-25",
-      "rspi": -13.2,
+      "rspi": -7.5,
       "level": "mild_sell",
-      "raw": 0.1723,
+      "raw": 0.0978,
       "volume_amp": 0.768,
       "raw_variables": {
-        "v1": 0.3231,
+        "v1": 0.0247,
         "v2": -0.0544,
         "v3": 0.2532,
         "v4": 0.2,
         "v5": -0.0085
       },
       "variable_contributions": {
-        "v1": -6.2,
+        "v1": -0.47,
         "v2": 0.84,
         "v3": -4.86,
         "v4": -3.07,
@@ -43964,19 +43964,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-26",
-      "rspi": -24.0,
-      "level": "strong_sell",
-      "raw": 0.2158,
+      "rspi": -15.6,
+      "level": "mild_sell",
+      "raw": 0.1404,
       "volume_amp": 1.11,
       "raw_variables": {
-        "v1": 0.3296,
+        "v1": 0.0278,
         "v2": 0.9321,
         "v3": 0.0231,
         "v4": -0.4,
         "v5": 0.2124
       },
       "variable_contributions": {
-        "v1": -9.15,
+        "v1": -0.77,
         "v2": -20.7,
         "v3": -0.64,
         "v4": 8.88,
@@ -43986,19 +43986,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-27",
-      "rspi": -21.7,
-      "level": "strong_sell",
-      "raw": 0.2553,
+      "rspi": -15.3,
+      "level": "mild_sell",
+      "raw": 0.1801,
       "volume_amp": 0.848,
       "raw_variables": {
-        "v1": 0.3279,
+        "v1": 0.0271,
         "v2": 0.2613,
         "v3": -0.045,
         "v4": 0.7,
         "v5": -0.077
       },
       "variable_contributions": {
-        "v1": -6.95,
+        "v1": -0.57,
         "v2": -4.43,
         "v3": 0.95,
         "v4": -11.88,
@@ -44008,19 +44008,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-28",
-      "rspi": -13.8,
+      "rspi": -6.9,
       "level": "mild_sell",
-      "raw": 0.1476,
+      "raw": 0.0732,
       "volume_amp": 0.938,
       "raw_variables": {
-        "v1": 0.3259,
+        "v1": 0.0281,
         "v2": -0.031,
         "v3": -0.3425,
         "v4": 1.0,
         "v5": -0.4201
       },
       "variable_contributions": {
-        "v1": -7.64,
+        "v1": -0.66,
         "v2": 0.58,
         "v3": 8.03,
         "v4": -18.75,
@@ -44030,19 +44030,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-29",
-      "rspi": -16.0,
+      "rspi": -9.3,
       "level": "mild_sell",
-      "raw": 0.1788,
+      "raw": 0.1045,
       "volume_amp": 0.894,
       "raw_variables": {
-        "v1": 0.3281,
+        "v1": 0.0307,
         "v2": 0.446,
         "v3": 0.4272,
         "v4": -0.4,
         "v5": -0.192
       },
       "variable_contributions": {
-        "v1": -7.33,
+        "v1": -0.69,
         "v2": -7.97,
         "v3": -9.54,
         "v4": 7.15,
@@ -44052,19 +44052,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-01",
-      "rspi": -13.9,
+      "rspi": -7.6,
       "level": "mild_sell",
-      "raw": 0.1659,
+      "raw": 0.0912,
       "volume_amp": 0.837,
       "raw_variables": {
-        "v1": 0.3374,
+        "v1": 0.0384,
         "v2": 0.3467,
         "v3": 0.4272,
         "v4": -0.4,
         "v5": -0.1451
       },
       "variable_contributions": {
-        "v1": -7.06,
+        "v1": -0.8,
         "v2": -5.8,
         "v3": -8.94,
         "v4": 6.7,
@@ -44074,19 +44074,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-02",
-      "rspi": -15.9,
+      "rspi": -9.3,
       "level": "mild_sell",
-      "raw": 0.1773,
+      "raw": 0.103,
       "volume_amp": 0.899,
       "raw_variables": {
-        "v1": 0.3311,
+        "v1": 0.034,
         "v2": -0.7009,
         "v3": 0.1723,
         "v4": 1.0,
         "v5": -0.0841
       },
       "variable_contributions": {
-        "v1": -7.44,
+        "v1": -0.77,
         "v2": 12.61,
         "v3": -3.87,
         "v4": -17.99,
@@ -44096,19 +44096,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-03",
-      "rspi": 7.9,
+      "rspi": 14.8,
       "level": "mild_rebound",
-      "raw": -0.0864,
+      "raw": -0.1607,
       "volume_amp": 0.918,
       "raw_variables": {
-        "v1": 0.3285,
+        "v1": 0.0312,
         "v2": -0.7239,
         "v3": -0.3197,
         "v4": 0.2,
         "v5": 0.1616
       },
       "variable_contributions": {
-        "v1": -7.54,
+        "v1": -0.72,
         "v2": 13.29,
         "v3": 7.34,
         "v4": -3.67,
@@ -44118,19 +44118,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-04",
-      "rspi": -1.8,
+      "rspi": 4.6,
       "level": "neutral",
-      "raw": 0.0205,
+      "raw": -0.0537,
       "volume_amp": 0.858,
       "raw_variables": {
-        "v1": 0.325,
+        "v1": 0.0283,
         "v2": -0.3775,
         "v3": -0.1371,
         "v4": 0.2,
         "v5": 0.0906
       },
       "variable_contributions": {
-        "v1": -6.97,
+        "v1": -0.61,
         "v2": 6.48,
         "v3": 2.94,
         "v4": -3.43,
@@ -44140,19 +44140,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-05",
-      "rspi": -12.9,
-      "level": "mild_sell",
-      "raw": 0.1184,
+      "rspi": -4.8,
+      "level": "neutral",
+      "raw": 0.0445,
       "volume_amp": 1.087,
       "raw_variables": {
-        "v1": 0.3241,
+        "v1": 0.0285,
         "v2": 0.137,
         "v3": -0.0572,
         "v4": 0.2,
         "v5": -0.157
       },
       "variable_contributions": {
-        "v1": -8.81,
+        "v1": -0.77,
         "v2": -2.98,
         "v3": 1.55,
         "v4": -4.35,
@@ -44162,19 +44162,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-08",
-      "rspi": 0.7,
-      "level": "neutral",
-      "raw": -0.0079,
+      "rspi": 7.3,
+      "level": "mild_rebound",
+      "raw": -0.0814,
       "volume_amp": 0.892,
       "raw_variables": {
-        "v1": 0.321,
+        "v1": 0.0268,
         "v2": -0.3934,
         "v3": -0.1674,
         "v4": 0.2,
         "v5": -0.0758
       },
       "variable_contributions": {
-        "v1": -7.16,
+        "v1": -0.6,
         "v2": 7.02,
         "v3": 3.74,
         "v4": -3.57,
@@ -44184,19 +44184,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-09",
-      "rspi": 15.9,
-      "level": "mild_rebound",
-      "raw": -0.1478,
+      "rspi": 23.7,
+      "level": "strong_rebound",
+      "raw": -0.2203,
       "volume_amp": 1.077,
       "raw_variables": {
-        "v1": 0.3126,
+        "v1": 0.0226,
         "v2": -0.9518,
         "v3": -0.2146,
         "v4": 0.2,
         "v5": -0.219
       },
       "variable_contributions": {
-        "v1": -8.41,
+        "v1": -0.61,
         "v2": 20.5,
         "v3": 5.78,
         "v4": -4.31,
@@ -44206,19 +44206,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-10",
-      "rspi": 25.7,
+      "rspi": 34.3,
       "level": "strong_rebound",
-      "raw": -0.2132,
+      "raw": -0.2845,
       "volume_amp": 1.206,
       "raw_variables": {
-        "v1": 0.3019,
+        "v1": 0.0166,
         "v2": -1.0,
         "v3": -0.474,
         "v4": 0.2,
         "v5": -0.1017
       },
       "variable_contributions": {
-        "v1": -9.1,
+        "v1": -0.5,
         "v2": 24.13,
         "v3": 14.29,
         "v4": -4.83,
@@ -44228,19 +44228,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-11",
-      "rspi": 6.1,
+      "rspi": 14.4,
       "level": "mild_rebound",
-      "raw": -0.0516,
+      "raw": -0.1222,
       "volume_amp": 1.177,
       "raw_variables": {
-        "v1": 0.2964,
+        "v1": 0.0142,
         "v2": -0.275,
         "v3": -0.3977,
         "v4": 0.2,
         "v5": -0.1127
       },
       "variable_contributions": {
-        "v1": -8.73,
+        "v1": -0.42,
         "v2": 6.48,
         "v3": 11.71,
         "v4": -4.71,
@@ -44250,19 +44250,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-12",
-      "rspi": 11.5,
+      "rspi": 19.1,
       "level": "mild_rebound",
-      "raw": -0.1052,
+      "raw": -0.1748,
       "volume_amp": 1.091,
       "raw_variables": {
-        "v1": 0.2872,
+        "v1": 0.009,
         "v2": -1.0,
         "v3": -0.1021,
         "v4": 0.2,
         "v5": 0.0846
       },
       "variable_contributions": {
-        "v1": -7.83,
+        "v1": -0.24,
         "v2": 21.81,
         "v3": 2.78,
         "v4": -4.36,
@@ -44272,19 +44272,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-15",
-      "rspi": -2.4,
+      "rspi": 4.4,
       "level": "neutral",
-      "raw": 0.0242,
+      "raw": -0.0448,
       "volume_amp": 0.977,
       "raw_variables": {
-        "v1": 0.2852,
+        "v1": 0.0091,
         "v2": -0.0985,
         "v3": -0.1893,
         "v4": 0.2,
         "v5": -0.2006
       },
       "variable_contributions": {
-        "v1": -6.97,
+        "v1": -0.22,
         "v2": 1.92,
         "v3": 4.62,
         "v4": -3.91,
@@ -44294,19 +44294,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-16",
-      "rspi": 14.5,
-      "level": "mild_rebound",
-      "raw": -0.1433,
+      "rspi": 21.3,
+      "level": "strong_rebound",
+      "raw": -0.2113,
       "volume_amp": 1.009,
       "raw_variables": {
-        "v1": 0.2781,
+        "v1": 0.0063,
         "v2": -1.0,
         "v3": -0.1879,
         "v4": 0.2,
         "v5": -0.0585
       },
       "variable_contributions": {
-        "v1": -7.01,
+        "v1": -0.16,
         "v2": 20.18,
         "v3": 4.74,
         "v4": -4.04,
@@ -44316,19 +44316,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-17",
-      "rspi": -3.9,
+      "rspi": 2.2,
       "level": "neutral",
-      "raw": 0.0438,
+      "raw": -0.0242,
       "volume_amp": 0.893,
       "raw_variables": {
-        "v1": 0.2841,
+        "v1": 0.0122,
         "v2": 0.262,
         "v3": 0.2229,
         "v4": -0.4,
         "v5": -0.5537
       },
       "variable_contributions": {
-        "v1": -6.34,
+        "v1": -0.27,
         "v2": -4.68,
         "v3": -4.98,
         "v4": 7.14,
@@ -44338,19 +44338,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-18",
-      "rspi": -17.4,
+      "rspi": -11.0,
       "level": "mild_sell",
-      "raw": 0.1801,
+      "raw": 0.1134,
       "volume_amp": 0.969,
       "raw_variables": {
-        "v1": 0.2762,
+        "v1": 0.0096,
         "v2": 0.0119,
         "v3": -0.2775,
         "v4": 1.0,
         "v5": -0.2199
       },
       "variable_contributions": {
-        "v1": -6.69,
+        "v1": -0.23,
         "v2": -0.23,
         "v3": 6.72,
         "v4": -19.37,
@@ -44360,19 +44360,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-22",
-      "rspi": -8.8,
-      "level": "mild_sell",
-      "raw": 0.0941,
+      "rspi": -2.7,
+      "level": "neutral",
+      "raw": 0.0284,
       "volume_amp": 0.94,
       "raw_variables": {
-        "v1": 0.275,
+        "v1": 0.0125,
         "v2": -0.2157,
         "v3": -0.4199,
         "v4": 1.0,
         "v5": -0.2658
       },
       "variable_contributions": {
-        "v1": -6.46,
+        "v1": -0.29,
         "v2": 4.06,
         "v3": 9.87,
         "v4": -18.8,
@@ -44382,19 +44382,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-23",
-      "rspi": -10.2,
-      "level": "mild_sell",
-      "raw": 0.105,
+      "rspi": -3.9,
+      "level": "neutral",
+      "raw": 0.0401,
       "volume_amp": 0.971,
       "raw_variables": {
-        "v1": 0.2721,
+        "v1": 0.0124,
         "v2": 0.006,
         "v3": 0.0882,
         "v4": 0.2,
         "v5": -0.2624
       },
       "variable_contributions": {
-        "v1": -6.6,
+        "v1": -0.3,
         "v2": -0.12,
         "v3": -2.14,
         "v4": -3.88,
@@ -44404,19 +44404,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-24",
-      "rspi": -15.9,
+      "rspi": -9.8,
       "level": "mild_sell",
-      "raw": 0.1681,
+      "raw": 0.1032,
       "volume_amp": 0.948,
       "raw_variables": {
-        "v1": 0.2744,
+        "v1": 0.0146,
         "v2": 0.5112,
         "v3": 0.3706,
         "v4": -0.4,
         "v5": -0.1537
       },
       "variable_contributions": {
-        "v1": -6.5,
+        "v1": -0.35,
         "v2": -9.69,
         "v3": -8.78,
         "v4": 7.58,
@@ -44426,19 +44426,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-25",
-      "rspi": -27.9,
+      "rspi": -21.5,
       "level": "strong_sell",
-      "raw": 0.2808,
+      "raw": 0.2163,
       "volume_amp": 0.994,
       "raw_variables": {
-        "v1": 0.2746,
+        "v1": 0.0166,
         "v2": 0.1203,
         "v3": 0.0857,
         "v4": 1.0,
         "v5": -0.3336
       },
       "variable_contributions": {
-        "v1": -6.83,
+        "v1": -0.41,
         "v2": -2.39,
         "v3": -2.13,
         "v4": -19.89,
@@ -44448,19 +44448,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-26",
-      "rspi": -17.0,
+      "rspi": -10.3,
       "level": "mild_sell",
-      "raw": 0.1666,
+      "raw": 0.101,
       "volume_amp": 1.021,
       "raw_variables": {
-        "v1": 0.2889,
+        "v1": 0.0264,
         "v2": 0.7785,
         "v3": 0.0949,
         "v4": -0.4,
         "v5": -0.0506
       },
       "variable_contributions": {
-        "v1": -7.38,
+        "v1": -0.67,
         "v2": -15.9,
         "v3": -2.42,
         "v4": 8.17,
@@ -44470,19 +44470,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-29",
-      "rspi": -16.5,
+      "rspi": -10.7,
       "level": "mild_sell",
-      "raw": 0.1873,
+      "raw": 0.122,
       "volume_amp": 0.879,
       "raw_variables": {
-        "v1": 0.2812,
+        "v1": 0.02,
         "v2": -0.0549,
         "v3": -0.3572,
         "v4": 1.0,
         "v5": 0.1728
       },
       "variable_contributions": {
-        "v1": -6.18,
+        "v1": -0.44,
         "v2": 0.96,
         "v3": 7.85,
         "v4": -17.57,
@@ -44492,19 +44492,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-30",
-      "rspi": -15.3,
+      "rspi": -9.1,
       "level": "mild_sell",
-      "raw": 0.1604,
+      "raw": 0.0951,
       "volume_amp": 0.955,
       "raw_variables": {
-        "v1": 0.2822,
+        "v1": 0.0211,
         "v2": 0.296,
         "v3": -0.0059,
         "v4": 0.2,
         "v5": -0.0786
       },
       "variable_contributions": {
-        "v1": -6.74,
+        "v1": -0.5,
         "v2": -5.65,
         "v3": 0.14,
         "v4": -3.82,
@@ -44514,19 +44514,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-01",
-      "rspi": 5.4,
+      "rspi": 12.0,
       "level": "mild_rebound",
-      "raw": -0.0528,
+      "raw": -0.118,
       "volume_amp": 1.017,
       "raw_variables": {
-        "v1": 0.2771,
+        "v1": 0.0161,
         "v2": -0.391,
         "v3": -0.4601,
         "v4": 0.2,
         "v5": 0.3122
       },
       "variable_contributions": {
-        "v1": -7.05,
+        "v1": -0.41,
         "v2": 7.96,
         "v3": 11.7,
         "v4": -4.07,
@@ -44536,19 +44536,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-02",
-      "rspi": 25.0,
+      "rspi": 33.1,
       "level": "strong_rebound",
-      "raw": -0.1946,
+      "raw": -0.258,
       "volume_amp": 1.285,
       "raw_variables": {
-        "v1": 0.2625,
+        "v1": 0.0089,
         "v2": -1.0,
         "v3": -0.3991,
         "v4": 0.2,
         "v5": -0.0039
       },
       "variable_contributions": {
-        "v1": -8.43,
+        "v1": -0.28,
         "v2": 25.69,
         "v3": 12.82,
         "v4": -5.14,
@@ -44558,19 +44558,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-10",
-      "rspi": -36.6,
+      "rspi": -29.1,
       "level": "strong_sell",
-      "raw": 0.3011,
+      "raw": 0.2391,
       "volume_amp": 1.217,
       "raw_variables": {
-        "v1": 0.2538,
+        "v1": 0.0056,
         "v2": -0.2821,
         "v3": 0.9303,
         "v4": 0.2,
         "v5": 0.215
       },
       "variable_contributions": {
-        "v1": -7.72,
+        "v1": -0.17,
         "v2": 6.87,
         "v3": -28.3,
         "v4": -4.87,
@@ -44580,19 +44580,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-13",
-      "rspi": 7.5,
+      "rspi": 13.5,
       "level": "mild_rebound",
-      "raw": -0.0796,
+      "raw": -0.1423,
       "volume_amp": 0.947,
       "raw_variables": {
-        "v1": 0.2575,
+        "v1": 0.0068,
         "v2": 0.7725,
         "v3": -0.8523,
         "v4": -0.4,
         "v5": -0.054
       },
       "variable_contributions": {
-        "v1": -6.09,
+        "v1": -0.16,
         "v2": -14.63,
         "v3": 20.17,
         "v4": 7.57,
@@ -44602,19 +44602,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-14",
-      "rspi": -21.2,
-      "level": "strong_sell",
-      "raw": 0.1959,
+      "rspi": -14.4,
+      "level": "mild_sell",
+      "raw": 0.1335,
       "volume_amp": 1.081,
       "raw_variables": {
-        "v1": 0.2607,
+        "v1": 0.0114,
         "v2": -0.0142,
         "v3": 0.2239,
         "v4": 0.7,
         "v5": -0.6246
       },
       "variable_contributions": {
-        "v1": -7.04,
+        "v1": -0.31,
         "v2": 0.31,
         "v3": -6.05,
         "v4": -15.13,
@@ -44624,19 +44624,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-15",
-      "rspi": -7.3,
-      "level": "mild_sell",
-      "raw": 0.0868,
+      "rspi": -2.3,
+      "level": "neutral",
+      "raw": 0.0276,
       "volume_amp": 0.844,
       "raw_variables": {
-        "v1": 0.2472,
+        "v1": 0.0103,
         "v2": 0.1794,
         "v3": -0.6159,
         "v4": 1.0,
         "v5": -0.569
       },
       "variable_contributions": {
-        "v1": -5.22,
+        "v1": -0.22,
         "v2": -3.03,
         "v3": 13.0,
         "v4": -16.88,
@@ -44646,19 +44646,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-16",
-      "rspi": -2.2,
+      "rspi": 3.8,
       "level": "neutral",
-      "raw": 0.021,
+      "raw": -0.0363,
       "volume_amp": 1.033,
       "raw_variables": {
-        "v1": 0.2342,
+        "v1": 0.0051,
         "v2": -0.0948,
         "v3": -0.2853,
         "v4": 0.2,
         "v5": 0.1269
       },
       "variable_contributions": {
-        "v1": -6.05,
+        "v1": -0.13,
         "v2": 1.96,
         "v3": 7.37,
         "v4": -4.13,
@@ -44668,19 +44668,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-17",
-      "rspi": -2.6,
+      "rspi": 3.3,
       "level": "neutral",
-      "raw": 0.0251,
+      "raw": -0.0318,
       "volume_amp": 1.037,
       "raw_variables": {
-        "v1": 0.2341,
+        "v1": 0.0064,
         "v2": -0.0021,
         "v3": -0.2004,
         "v4": 0.2,
         "v5": -0.229
       },
       "variable_contributions": {
-        "v1": -6.07,
+        "v1": -0.17,
         "v2": 0.04,
         "v3": 5.2,
         "v4": -4.15,
@@ -44690,19 +44690,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-20",
-      "rspi": -0.4,
+      "rspi": 4.5,
       "level": "neutral",
-      "raw": 0.0043,
+      "raw": -0.0505,
       "volume_amp": 0.896,
       "raw_variables": {
-        "v1": 0.2252,
+        "v1": 0.0061,
         "v2": 0.3924,
         "v3": -0.5362,
         "v4": 0.2,
         "v5": -0.3643
       },
       "variable_contributions": {
-        "v1": -5.05,
+        "v1": -0.14,
         "v2": -7.03,
         "v3": 12.01,
         "v4": -3.58,
@@ -44712,19 +44712,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-21",
-      "rspi": -29.3,
+      "rspi": -23.2,
       "level": "strong_sell",
-      "raw": 0.2627,
+      "raw": 0.2077,
       "volume_amp": 1.117,
       "raw_variables": {
-        "v1": 0.2239,
+        "v1": 0.0041,
         "v2": 0.2133,
         "v3": 0.3801,
         "v4": 0.2,
         "v5": 0.2904
       },
       "variable_contributions": {
-        "v1": -6.25,
+        "v1": -0.11,
         "v2": -4.76,
         "v3": -10.61,
         "v4": -4.47,
@@ -44734,19 +44734,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-22",
-      "rspi": -12.6,
+      "rspi": -7.7,
       "level": "mild_sell",
-      "raw": 0.1339,
+      "raw": 0.0815,
       "volume_amp": 0.94,
       "raw_variables": {
-        "v1": 0.216,
+        "v1": 0.0066,
         "v2": 0.6081,
         "v3": -0.0621,
         "v4": 0.2,
         "v5": -0.662
       },
       "variable_contributions": {
-        "v1": -5.08,
+        "v1": -0.15,
         "v2": -11.43,
         "v3": 1.46,
         "v4": -3.76,
@@ -44756,19 +44756,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-23",
-      "rspi": 3.0,
-      "level": "neutral",
-      "raw": -0.0303,
+      "rspi": 8.2,
+      "level": "mild_rebound",
+      "raw": -0.0831,
       "volume_amp": 0.989,
       "raw_variables": {
-        "v1": 0.2211,
+        "v1": 0.01,
         "v2": 0.3989,
         "v3": -0.1968,
         "v4": -0.4,
         "v5": -0.3611
       },
       "variable_contributions": {
-        "v1": -5.47,
+        "v1": -0.25,
         "v2": -7.89,
         "v3": 4.87,
         "v4": 7.91,
@@ -44778,19 +44778,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-24",
-      "rspi": -4.5,
+      "rspi": 0.7,
       "level": "neutral",
-      "raw": 0.0428,
+      "raw": -0.0069,
       "volume_amp": 1.05,
       "raw_variables": {
-        "v1": 0.2082,
+        "v1": 0.0093,
         "v2": -0.1671,
         "v3": -0.5139,
         "v4": 1.0,
         "v5": -0.4733
       },
       "variable_contributions": {
-        "v1": -5.46,
+        "v1": -0.24,
         "v2": 3.51,
         "v3": 13.49,
         "v4": -21.0,
@@ -44800,19 +44800,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-27",
-      "rspi": 14.4,
+      "rspi": 19.5,
       "level": "mild_rebound",
-      "raw": -0.1322,
+      "raw": -0.1788,
       "volume_amp": 1.088,
       "raw_variables": {
-        "v1": 0.1938,
+        "v1": 0.0075,
         "v2": -0.2076,
         "v3": -0.6063,
         "v4": 0.2,
         "v5": -0.2756
       },
       "variable_contributions": {
-        "v1": -5.27,
+        "v1": -0.21,
         "v2": 4.52,
         "v3": 16.5,
         "v4": -4.35,
@@ -44822,19 +44822,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-28",
-      "rspi": -15.7,
+      "rspi": -10.6,
       "level": "mild_sell",
-      "raw": 0.1467,
+      "raw": 0.0993,
       "volume_amp": 1.071,
       "raw_variables": {
-        "v1": 0.1986,
+        "v1": 0.0091,
         "v2": 0.994,
         "v3": -0.0575,
         "v4": -0.4,
         "v5": -0.0741
       },
       "variable_contributions": {
-        "v1": -5.32,
+        "v1": -0.24,
         "v2": -21.29,
         "v3": 1.54,
         "v4": 8.57,
@@ -44844,19 +44844,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-29",
-      "rspi": -11.3,
+      "rspi": -6.4,
       "level": "mild_sell",
-      "raw": 0.1026,
+      "raw": 0.058,
       "volume_amp": 1.1,
       "raw_variables": {
-        "v1": 0.1881,
+        "v1": 0.0099,
         "v2": 0.1727,
         "v3": -0.4987,
         "v4": 1.0,
         "v5": -0.5428
       },
       "variable_contributions": {
-        "v1": -5.17,
+        "v1": -0.27,
         "v2": -3.8,
         "v3": 13.71,
         "v4": -22.0,
@@ -44866,19 +44866,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-30",
-      "rspi": -8.5,
-      "level": "mild_sell",
-      "raw": 0.0764,
+      "rspi": -3.6,
+      "level": "neutral",
+      "raw": 0.0325,
       "volume_amp": 1.11,
       "raw_variables": {
-        "v1": 0.1872,
+        "v1": 0.0117,
         "v2": 0.1688,
         "v3": 0.4462,
         "v4": -0.4,
         "v5": -0.3571
       },
       "variable_contributions": {
-        "v1": -5.2,
+        "v1": -0.33,
         "v2": -3.75,
         "v3": -12.38,
         "v4": 8.88,
@@ -44888,19 +44888,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-31",
-      "rspi": 0.9,
-      "level": "neutral",
-      "raw": -0.0083,
+      "rspi": 5.3,
+      "level": "mild_rebound",
+      "raw": -0.0509,
       "volume_amp": 1.037,
       "raw_variables": {
-        "v1": 0.1841,
+        "v1": 0.0137,
         "v2": -0.548,
         "v3": -0.3793,
         "v4": 1.0,
         "v5": -0.4989
       },
       "variable_contributions": {
-        "v1": -4.77,
+        "v1": -0.35,
         "v2": 11.37,
         "v3": 9.83,
         "v4": -20.74,
@@ -44910,19 +44910,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-03",
-      "rspi": 11.1,
+      "rspi": 15.1,
       "level": "mild_rebound",
-      "raw": -0.1093,
+      "raw": -0.1491,
       "volume_amp": 1.013,
       "raw_variables": {
-        "v1": 0.1665,
+        "v1": 0.0075,
         "v2": 0.5281,
         "v3": -0.7612,
         "v4": -0.4,
         "v5": 0.1373
       },
       "variable_contributions": {
-        "v1": -4.22,
+        "v1": -0.19,
         "v2": -10.7,
         "v3": 19.28,
         "v4": 8.1,
@@ -44932,19 +44932,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-04",
-      "rspi": -38.2,
+      "rspi": -34.2,
       "level": "strong_sell",
-      "raw": 0.4057,
+      "raw": 0.3634,
       "volume_amp": 0.942,
       "raw_variables": {
-        "v1": 0.1819,
+        "v1": 0.0127,
         "v2": 1.0,
         "v3": 1.0,
         "v4": -0.4,
         "v5": -0.0977
       },
       "variable_contributions": {
-        "v1": -4.28,
+        "v1": -0.3,
         "v2": -18.83,
         "v3": -23.54,
         "v4": 7.53,
@@ -44954,19 +44954,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-05",
-      "rspi": -3.4,
+      "rspi": 1.7,
       "level": "neutral",
-      "raw": 0.0295,
+      "raw": -0.0147,
       "volume_amp": 1.142,
       "raw_variables": {
-        "v1": 0.1994,
+        "v1": 0.0223,
         "v2": 0.8569,
         "v3": -0.2054,
         "v4": -0.4,
         "v5": -0.6035
       },
       "variable_contributions": {
-        "v1": -5.69,
+        "v1": -0.64,
         "v2": -19.57,
         "v3": 5.86,
         "v4": 9.14,
@@ -44976,19 +44976,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-06",
-      "rspi": -26.8,
+      "rspi": -22.7,
       "level": "strong_sell",
-      "raw": 0.2861,
+      "raw": 0.2424,
       "volume_amp": 0.938,
       "raw_variables": {
-        "v1": 0.1962,
+        "v1": 0.0214,
         "v2": 0.7125,
         "v3": 0.734,
         "v4": -0.4,
         "v5": -0.0893
       },
       "variable_contributions": {
-        "v1": -4.6,
+        "v1": -0.5,
         "v2": -13.36,
         "v3": -17.2,
         "v4": 7.5,
@@ -44998,19 +44998,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-07",
-      "rspi": 3.3,
-      "level": "neutral",
-      "raw": -0.0385,
+      "rspi": 7.2,
+      "level": "mild_rebound",
+      "raw": -0.0826,
       "volume_amp": 0.867,
       "raw_variables": {
-        "v1": 0.2065,
+        "v1": 0.03,
         "v2": 0.0568,
         "v3": 0.1852,
         "v4": -0.4,
         "v5": -0.6777
       },
       "variable_contributions": {
-        "v1": -4.48,
+        "v1": -0.65,
         "v2": -0.99,
         "v3": -4.02,
         "v4": 6.94,
@@ -45020,19 +45020,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-10",
-      "rspi": -0.4,
+      "rspi": 3.1,
       "level": "neutral",
-      "raw": 0.0044,
+      "raw": -0.0379,
       "volume_amp": 0.821,
       "raw_variables": {
-        "v1": 0.1893,
+        "v1": 0.0203,
         "v2": -0.0858,
         "v3": -0.9814,
         "v4": 1.0,
         "v5": 0.1957
       },
       "variable_contributions": {
-        "v1": -3.89,
+        "v1": -0.42,
         "v2": 1.41,
         "v3": 20.14,
         "v4": -16.42,
@@ -45042,19 +45042,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-11",
-      "rspi": -7.0,
-      "level": "mild_sell",
-      "raw": 0.073,
+      "rspi": -3.0,
+      "level": "neutral",
+      "raw": 0.0312,
       "volume_amp": 0.96,
       "raw_variables": {
-        "v1": 0.1843,
+        "v1": 0.0172,
         "v2": -0.2228,
         "v3": 0.0268,
         "v4": 0.2,
         "v5": 0.2478
       },
       "variable_contributions": {
-        "v1": -4.42,
+        "v1": -0.41,
         "v2": 4.28,
         "v3": -0.64,
         "v4": -3.84,
@@ -45064,19 +45064,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-12",
-      "rspi": -4.5,
+      "rspi": -1.1,
       "level": "neutral",
-      "raw": 0.0542,
+      "raw": 0.0135,
       "volume_amp": 0.838,
       "raw_variables": {
-        "v1": 0.1775,
+        "v1": 0.0147,
         "v2": 0.0323,
         "v3": -0.1354,
         "v4": 0.2,
         "v5": -0.028
       },
       "variable_contributions": {
-        "v1": -3.72,
+        "v1": -0.31,
         "v2": -0.54,
         "v3": 2.84,
         "v4": -3.35,
@@ -45086,19 +45086,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-13",
-      "rspi": -3.3,
+      "rspi": 0.3,
       "level": "neutral",
-      "raw": 0.0364,
+      "raw": -0.0032,
       "volume_amp": 0.918,
       "raw_variables": {
-        "v1": 0.1744,
+        "v1": 0.016,
         "v2": -0.7137,
         "v3": 0.5627,
         "v4": 0.2,
         "v5": -0.4511
       },
       "variable_contributions": {
-        "v1": -4.0,
+        "v1": -0.37,
         "v2": 13.11,
         "v3": -12.92,
         "v4": -3.67,
@@ -45108,19 +45108,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-14",
-      "rspi": -11.5,
+      "rspi": -7.5,
       "level": "mild_sell",
-      "raw": 0.1226,
+      "raw": 0.0802,
       "volume_amp": 0.935,
       "raw_variables": {
-        "v1": 0.1984,
+        "v1": 0.0287,
         "v2": 0.9145,
         "v3": -0.009,
         "v4": -0.4,
         "v5": -0.2765
       },
       "variable_contributions": {
-        "v1": -4.64,
+        "v1": -0.67,
         "v2": -17.11,
         "v3": 0.21,
         "v4": 7.48,
@@ -45130,19 +45130,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-17",
-      "rspi": -15.4,
+      "rspi": -12.3,
       "level": "mild_sell",
-      "raw": 0.1992,
+      "raw": 0.1587,
       "volume_amp": 0.773,
       "raw_variables": {
-        "v1": 0.1869,
+        "v1": 0.025,
         "v2": -0.4647,
         "v3": 0.3377,
         "v4": 1.0,
         "v5": -0.3897
       },
       "variable_contributions": {
-        "v1": -3.61,
+        "v1": -0.48,
         "v2": 7.18,
         "v3": -6.53,
         "v4": -15.46,
@@ -45152,19 +45152,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-18",
-      "rspi": -3.0,
+      "rspi": 0.2,
       "level": "neutral",
-      "raw": 0.0396,
+      "raw": -0.0025,
       "volume_amp": 0.769,
       "raw_variables": {
-        "v1": 0.2065,
+        "v1": 0.0382,
         "v2": 0.0346,
         "v3": 0.395,
         "v4": -0.4,
         "v5": -0.3776
       },
       "variable_contributions": {
-        "v1": -3.97,
+        "v1": -0.73,
         "v2": -0.53,
         "v3": -7.59,
         "v4": 6.15,
@@ -45174,19 +45174,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-19",
-      "rspi": -3.1,
+      "rspi": 0.3,
       "level": "neutral",
-      "raw": 0.0391,
+      "raw": -0.0032,
       "volume_amp": 0.796,
       "raw_variables": {
-        "v1": 0.2099,
+        "v1": 0.0409,
         "v2": 0.265,
         "v3": 0.0894,
         "v4": -0.4,
         "v5": -0.0874
       },
       "variable_contributions": {
-        "v1": -4.18,
+        "v1": -0.81,
         "v2": -4.22,
         "v3": -1.78,
         "v4": 6.37,
@@ -45196,19 +45196,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-20",
-      "rspi": -24.0,
+      "rspi": -20.6,
       "level": "strong_sell",
-      "raw": 0.2911,
+      "raw": 0.2497,
       "volume_amp": 0.825,
       "raw_variables": {
-        "v1": 0.1994,
+        "v1": 0.034,
         "v2": -0.5458,
         "v3": 0.6074,
         "v4": 1.0,
         "v5": -0.0145
       },
       "variable_contributions": {
-        "v1": -4.11,
+        "v1": -0.7,
         "v2": 9.01,
         "v3": -12.53,
         "v4": -16.5,
@@ -45218,19 +45218,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-21",
-      "rspi": -8.9,
+      "rspi": -5.5,
       "level": "mild_sell",
-      "raw": 0.1132,
+      "raw": 0.0701,
       "volume_amp": 0.784,
       "raw_variables": {
-        "v1": 0.22,
+        "v1": 0.0477,
         "v2": 0.9462,
         "v3": -0.2625,
         "v4": -0.4,
         "v5": 0.1455
       },
       "variable_contributions": {
-        "v1": -4.31,
+        "v1": -0.94,
         "v2": -14.84,
         "v3": 5.15,
         "v4": 6.27,
@@ -45240,19 +45240,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-24",
-      "rspi": -18.0,
+      "rspi": -13.4,
       "level": "mild_sell",
-      "raw": 0.1668,
+      "raw": 0.1237,
       "volume_amp": 1.079,
       "raw_variables": {
-        "v1": 0.221,
+        "v1": 0.0484,
         "v2": 0.0525,
         "v3": -0.4026,
         "v4": 1.0,
         "v5": 0.0175
       },
       "variable_contributions": {
-        "v1": -5.96,
+        "v1": -1.3,
         "v2": -1.13,
         "v3": 10.86,
         "v4": -21.59,
@@ -45262,19 +45262,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-25",
-      "rspi": -4.5,
+      "rspi": -1.3,
       "level": "neutral",
-      "raw": 0.0604,
+      "raw": 0.0171,
       "volume_amp": 0.747,
       "raw_variables": {
-        "v1": 0.2194,
+        "v1": 0.0459,
         "v2": -0.2687,
         "v3": 0.0029,
         "v4": 0.2,
         "v5": 0.1859
       },
       "variable_contributions": {
-        "v1": -4.1,
+        "v1": -0.86,
         "v2": 4.01,
         "v3": -0.05,
         "v4": -2.99,
@@ -45284,19 +45284,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-26",
-      "rspi": 7.7,
+      "rspi": 11.5,
       "level": "mild_rebound",
-      "raw": -0.0875,
+      "raw": -0.1303,
       "volume_amp": 0.883,
       "raw_variables": {
-        "v1": 0.2055,
+        "v1": 0.0344,
         "v2": -0.4734,
         "v3": -0.4549,
         "v4": 0.2,
         "v5": 0.2953
       },
       "variable_contributions": {
-        "v1": -4.54,
+        "v1": -0.76,
         "v2": 8.37,
         "v3": 10.05,
         "v4": -3.53,
@@ -45306,19 +45306,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-27",
-      "rspi": 5.8,
+      "rspi": 9.1,
       "level": "mild_rebound",
-      "raw": -0.0763,
+      "raw": -0.1189,
       "volume_amp": 0.766,
       "raw_variables": {
-        "v1": 0.2019,
+        "v1": 0.0316,
         "v2": -0.3077,
         "v3": -0.4549,
         "v4": 0.2,
         "v5": 0.0847
       },
       "variable_contributions": {
-        "v1": -3.87,
+        "v1": -0.61,
         "v2": 4.72,
         "v3": 8.72,
         "v4": -3.07,
@@ -45328,19 +45328,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-28",
-      "rspi": -7.3,
-      "level": "mild_sell",
-      "raw": 0.1005,
+      "rspi": -4.1,
+      "level": "neutral",
+      "raw": 0.0571,
       "volume_amp": 0.726,
       "raw_variables": {
-        "v1": 0.2103,
+        "v1": 0.0367,
         "v2": 0.5933,
         "v3": 0.0426,
         "v4": -0.4,
         "v5": -0.0135
       },
       "variable_contributions": {
-        "v1": -3.82,
+        "v1": -0.67,
         "v2": -8.62,
         "v3": -0.77,
         "v4": 5.81,
@@ -45350,19 +45350,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-01",
-      "rspi": -8.5,
+      "rspi": -5.3,
       "level": "mild_sell",
-      "raw": 0.1141,
+      "raw": 0.071,
       "volume_amp": 0.742,
       "raw_variables": {
-        "v1": 0.2111,
+        "v1": 0.0386,
         "v2": -0.3964,
         "v3": 0.1064,
         "v4": 0.7,
         "v5": -0.2597
       },
       "variable_contributions": {
-        "v1": -3.92,
+        "v1": -0.72,
         "v2": 5.88,
         "v3": -1.97,
         "v4": -10.39,
@@ -45372,19 +45372,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-02",
-      "rspi": 1.6,
+      "rspi": 4.9,
       "level": "neutral",
-      "raw": -0.0202,
+      "raw": -0.0618,
       "volume_amp": 0.798,
       "raw_variables": {
-        "v1": 0.2008,
+        "v1": 0.0343,
         "v2": -0.7518,
         "v3": -0.3212,
         "v4": 1.0,
         "v5": -0.3974
       },
       "variable_contributions": {
-        "v1": -4.0,
+        "v1": -0.68,
         "v2": 11.99,
         "v3": 6.4,
         "v4": -15.95,
@@ -45394,19 +45394,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-03",
-      "rspi": 3.1,
-      "level": "neutral",
-      "raw": -0.0347,
+      "rspi": 6.7,
+      "level": "mild_rebound",
+      "raw": -0.0757,
       "volume_amp": 0.885,
       "raw_variables": {
-        "v1": 0.1948,
+        "v1": 0.0308,
         "v2": -0.3034,
         "v3": -0.2327,
         "v4": 0.2,
         "v5": -0.0455
       },
       "variable_contributions": {
-        "v1": -4.31,
+        "v1": -0.68,
         "v2": 5.37,
         "v3": 5.15,
         "v4": -3.54,
@@ -45416,19 +45416,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-04",
-      "rspi": -1.8,
+      "rspi": 2.0,
       "level": "neutral",
-      "raw": 0.0198,
+      "raw": -0.0212,
       "volume_amp": 0.922,
       "raw_variables": {
-        "v1": 0.1959,
+        "v1": 0.0322,
         "v2": 0.1736,
         "v3": 0.1179,
         "v4": -0.4,
         "v5": -0.1342
       },
       "variable_contributions": {
-        "v1": -4.51,
+        "v1": -0.74,
         "v2": -3.2,
         "v3": -2.72,
         "v4": 7.37,
@@ -45438,19 +45438,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-05",
-      "rspi": 3.4,
-      "level": "neutral",
-      "raw": -0.0321,
+      "rspi": 7.5,
+      "level": "mild_rebound",
+      "raw": -0.0715,
       "volume_amp": 1.052,
       "raw_variables": {
-        "v1": 0.1852,
+        "v1": 0.0278,
         "v2": -0.574,
         "v3": -0.5174,
         "v4": 1.0,
         "v5": -0.343
       },
       "variable_contributions": {
-        "v1": -4.87,
+        "v1": -0.73,
         "v2": 12.08,
         "v3": 13.61,
         "v4": -21.05,
@@ -45460,19 +45460,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-08",
-      "rspi": 3.4,
-      "level": "neutral",
-      "raw": -0.0342,
+      "rspi": 7.2,
+      "level": "mild_rebound",
+      "raw": -0.072,
       "volume_amp": 1.005,
       "raw_variables": {
-        "v1": 0.1768,
+        "v1": 0.0257,
         "v2": -0.2532,
         "v3": -0.0645,
         "v4": 0.2,
         "v5": -0.5166
       },
       "variable_contributions": {
-        "v1": -4.44,
+        "v1": -0.65,
         "v2": 5.09,
         "v3": 1.62,
         "v4": -4.02,
@@ -45482,19 +45482,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-09",
-      "rspi": -5.8,
-      "level": "mild_sell",
-      "raw": 0.0628,
+      "rspi": -2.3,
+      "level": "neutral",
+      "raw": 0.0248,
       "volume_amp": 0.927,
       "raw_variables": {
-        "v1": 0.1786,
+        "v1": 0.0266,
         "v2": -0.0703,
         "v3": -0.0473,
         "v4": 0.2,
         "v5": 0.04
       },
       "variable_contributions": {
-        "v1": -4.14,
+        "v1": -0.62,
         "v2": 1.3,
         "v3": 1.09,
         "v4": -3.71,
@@ -45504,19 +45504,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-10",
-      "rspi": 5.2,
+      "rspi": 8.6,
       "level": "mild_rebound",
-      "raw": -0.0579,
+      "raw": -0.0959,
       "volume_amp": 0.895,
       "raw_variables": {
-        "v1": 0.1799,
+        "v1": 0.0281,
         "v2": -0.2615,
         "v3": -0.3088,
         "v4": 0.2,
         "v5": -0.1341
       },
       "variable_contributions": {
-        "v1": -4.03,
+        "v1": -0.63,
         "v2": 4.68,
         "v3": 6.91,
         "v4": -3.58,
@@ -45526,19 +45526,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-11",
-      "rspi": 5.3,
+      "rspi": 9.9,
       "level": "mild_rebound",
-      "raw": -0.0445,
+      "raw": -0.0828,
       "volume_amp": 1.192,
       "raw_variables": {
-        "v1": 0.1836,
+        "v1": 0.0304,
         "v2": -0.2787,
         "v3": 0.1708,
         "v4": -0.4,
         "v5": 0.0267
       },
       "variable_contributions": {
-        "v1": -5.47,
+        "v1": -0.91,
         "v2": 6.65,
         "v3": -5.09,
         "v4": 9.54,
@@ -45548,19 +45548,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-12",
-      "rspi": -40.3,
-      "level": "extreme_sell",
-      "raw": 0.3867,
+      "rspi": -36.4,
+      "level": "strong_sell",
+      "raw": 0.349,
       "volume_amp": 1.042,
       "raw_variables": {
-        "v1": 0.1749,
+        "v1": 0.0243,
         "v2": -0.0812,
         "v3": 0.5877,
         "v4": 1.0,
         "v5": 0.1226
       },
       "variable_contributions": {
-        "v1": -4.56,
+        "v1": -0.63,
         "v2": 1.69,
         "v3": -15.31,
         "v4": -20.85,
@@ -45570,19 +45570,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-15",
-      "rspi": -3.3,
+      "rspi": 0.5,
       "level": "neutral",
-      "raw": 0.0331,
+      "raw": -0.0054,
       "volume_amp": 0.99,
       "raw_variables": {
-        "v1": 0.1867,
+        "v1": 0.0324,
         "v2": 0.3977,
         "v3": 0.006,
         "v4": -0.4,
         "v5": -0.1456
       },
       "variable_contributions": {
-        "v1": -4.62,
+        "v1": -0.8,
         "v2": -7.88,
         "v3": -0.15,
         "v4": 7.92,
@@ -45592,19 +45592,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-16",
-      "rspi": -13.9,
+      "rspi": -9.9,
       "level": "mild_sell",
-      "raw": 0.138,
+      "raw": 0.0981,
       "volume_amp": 1.01,
       "raw_variables": {
-        "v1": 0.2002,
+        "v1": 0.0407,
         "v2": 0.4171,
         "v3": 0.2815,
         "v4": -0.4,
         "v5": 0.1415
       },
       "variable_contributions": {
-        "v1": -5.06,
+        "v1": -1.03,
         "v2": -8.43,
         "v3": -7.11,
         "v4": 8.08,
@@ -45614,19 +45614,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-17",
-      "rspi": -23.2,
+      "rspi": -20.0,
       "level": "strong_sell",
-      "raw": 0.2791,
+      "raw": 0.2404,
       "volume_amp": 0.833,
       "raw_variables": {
-        "v1": 0.1918,
+        "v1": 0.0369,
         "v2": -0.0673,
         "v3": 0.3241,
         "v4": 1.0,
         "v5": -0.3641
       },
       "variable_contributions": {
-        "v1": -3.99,
+        "v1": -0.77,
         "v2": 1.12,
         "v3": -6.75,
         "v4": -16.65,
@@ -45636,19 +45636,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-18",
-      "rspi": 7.5,
+      "rspi": 11.1,
       "level": "mild_rebound",
-      "raw": -0.0829,
+      "raw": -0.1228,
       "volume_amp": 0.905,
       "raw_variables": {
-        "v1": 0.2008,
+        "v1": 0.0414,
         "v2": 0.0691,
         "v3": -0.4038,
         "v4": -0.4,
         "v5": 0.3402
       },
       "variable_contributions": {
-        "v1": -4.55,
+        "v1": -0.94,
         "v2": -1.25,
         "v3": 9.14,
         "v4": 7.24,
@@ -45658,19 +45658,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-19",
-      "rspi": -27.6,
+      "rspi": -23.3,
       "level": "strong_sell",
-      "raw": 0.2574,
+      "raw": 0.2175,
       "volume_amp": 1.072,
       "raw_variables": {
-        "v1": 0.1971,
+        "v1": 0.0377,
         "v2": 0.4354,
         "v3": -0.3708,
         "v4": 1.0,
         "v5": 0.1374
       },
       "variable_contributions": {
-        "v1": -5.29,
+        "v1": -1.01,
         "v2": -9.34,
         "v3": 9.94,
         "v4": -21.45,
@@ -45680,19 +45680,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-22",
-      "rspi": 8.9,
+      "rspi": 12.5,
       "level": "mild_rebound",
-      "raw": -0.0959,
+      "raw": -0.1347,
       "volume_amp": 0.926,
       "raw_variables": {
-        "v1": 0.1843,
+        "v1": 0.0291,
         "v2": -0.7292,
         "v3": -0.1626,
         "v4": 0.2,
         "v5": 0.0451
       },
       "variable_contributions": {
-        "v1": -4.27,
+        "v1": -0.67,
         "v2": 13.51,
         "v3": 3.77,
         "v4": -3.71,
@@ -45702,19 +45702,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-23",
-      "rspi": 8.8,
+      "rspi": 12.5,
       "level": "mild_rebound",
-      "raw": -0.0923,
+      "raw": -0.131,
       "volume_amp": 0.953,
       "raw_variables": {
-        "v1": 0.1826,
+        "v1": 0.0279,
         "v2": -0.581,
         "v3": -0.254,
         "v4": 0.2,
         "v5": 0.0176
       },
       "variable_contributions": {
-        "v1": -4.35,
+        "v1": -0.67,
         "v2": 11.07,
         "v3": 6.05,
         "v4": -3.81,
@@ -45724,19 +45724,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-24",
-      "rspi": 7.8,
+      "rspi": 11.3,
       "level": "mild_rebound",
-      "raw": -0.0884,
+      "raw": -0.1271,
       "volume_amp": 0.886,
       "raw_variables": {
-        "v1": 0.1839,
+        "v1": 0.0291,
         "v2": -0.309,
         "v3": -0.4232,
         "v4": 0.2,
         "v5": -0.068
       },
       "variable_contributions": {
-        "v1": -4.07,
+        "v1": -0.65,
         "v2": 5.48,
         "v3": 9.38,
         "v4": -3.55,
@@ -45746,19 +45746,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-26",
-      "rspi": 14.4,
+      "rspi": 18.6,
       "level": "mild_rebound",
-      "raw": -0.1321,
+      "raw": -0.1705,
       "volume_amp": 1.091,
       "raw_variables": {
-        "v1": 0.1807,
+        "v1": 0.0269,
         "v2": -0.9441,
         "v3": -0.1334,
         "v4": 0.2,
         "v5": 0.0492
       },
       "variable_contributions": {
-        "v1": -4.93,
+        "v1": -0.73,
         "v2": 20.6,
         "v3": 3.64,
         "v4": -4.36,
@@ -45768,19 +45768,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-29",
-      "rspi": 13.3,
+      "rspi": 17.0,
       "level": "mild_rebound",
-      "raw": -0.1324,
+      "raw": -0.1694,
       "volume_amp": 1.003,
       "raw_variables": {
-        "v1": 0.1667,
+        "v1": 0.0189,
         "v2": -0.0707,
         "v3": -0.286,
         "v4": -0.4,
         "v5": -0.0846
       },
       "variable_contributions": {
-        "v1": -4.18,
+        "v1": -0.48,
         "v2": 1.42,
         "v3": 7.17,
         "v4": 8.02,
@@ -45790,19 +45790,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-30",
-      "rspi": -6.2,
-      "level": "mild_sell",
-      "raw": 0.0667,
+      "rspi": -2.8,
+      "level": "neutral",
+      "raw": 0.0296,
       "volume_amp": 0.931,
       "raw_variables": {
-        "v1": 0.1677,
+        "v1": 0.0192,
         "v2": 0.4483,
         "v3": 0.037,
         "v4": -0.4,
         "v5": 0.059
       },
       "variable_contributions": {
-        "v1": -3.9,
+        "v1": -0.45,
         "v2": -8.34,
         "v3": -0.86,
         "v4": 7.44,
@@ -45812,19 +45812,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-02",
-      "rspi": 11.5,
+      "rspi": 15.4,
       "level": "mild_rebound",
-      "raw": -0.1022,
+      "raw": -0.1373,
       "volume_amp": 1.122,
       "raw_variables": {
-        "v1": 0.1534,
+        "v1": 0.0129,
         "v2": -0.3231,
         "v3": -0.9852,
         "v4": 1.0,
         "v5": -0.2957
       },
       "variable_contributions": {
-        "v1": -4.3,
+        "v1": -0.36,
         "v2": 7.25,
         "v3": 27.63,
         "v4": -22.43,
@@ -45834,19 +45834,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-05",
-      "rspi": 37.2,
-      "level": "strong_rebound",
-      "raw": -0.3059,
+      "rspi": 41.1,
+      "level": "extreme_rebound",
+      "raw": -0.3379,
       "volume_amp": 1.217,
       "raw_variables": {
-        "v1": 0.1342,
+        "v1": 0.006,
         "v2": -1.0,
         "v3": -0.5677,
         "v4": 0.2,
         "v5": -0.375
       },
       "variable_contributions": {
-        "v1": -4.08,
+        "v1": -0.18,
         "v2": 24.34,
         "v3": 17.27,
         "v4": -4.87,
@@ -45856,19 +45856,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-06",
-      "rspi": 12.3,
+      "rspi": 16.1,
       "level": "mild_rebound",
-      "raw": -0.1008,
+      "raw": -0.1313,
       "volume_amp": 1.224,
       "raw_variables": {
-        "v1": 0.1262,
+        "v1": 0.0042,
         "v2": 0.5265,
         "v3": -0.5801,
         "v4": -0.4,
         "v5": -0.126
       },
       "variable_contributions": {
-        "v1": -3.86,
+        "v1": -0.13,
         "v2": -12.88,
         "v3": 17.75,
         "v4": 9.79,
@@ -45878,19 +45878,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-07",
-      "rspi": -14.7,
+      "rspi": -11.1,
       "level": "mild_sell",
-      "raw": 0.1211,
+      "raw": 0.0916,
       "volume_amp": 1.215,
       "raw_variables": {
-        "v1": 0.1235,
+        "v1": 0.0055,
         "v2": -0.5741,
         "v3": 0.1446,
         "v4": 1.0,
         "v5": -0.3112
       },
       "variable_contributions": {
-        "v1": -3.75,
+        "v1": -0.17,
         "v2": 13.95,
         "v3": -4.39,
         "v4": -24.3,
@@ -45900,19 +45900,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-08",
-      "rspi": 5.0,
+      "rspi": 8.1,
       "level": "mild_rebound",
-      "raw": -0.0463,
+      "raw": -0.075,
       "volume_amp": 1.083,
       "raw_variables": {
-        "v1": 0.1234,
+        "v1": 0.0088,
         "v2": 0.2071,
         "v3": 0.0753,
         "v4": -0.4,
         "v5": -0.5742
       },
       "variable_contributions": {
-        "v1": -3.34,
+        "v1": -0.24,
         "v2": -4.49,
         "v3": -2.04,
         "v4": 8.66,
@@ -45922,19 +45922,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-09",
-      "rspi": -19.8,
+      "rspi": -17.2,
       "level": "mild_sell",
-      "raw": 0.2118,
+      "raw": 0.1842,
       "volume_amp": 0.935,
       "raw_variables": {
-        "v1": 0.1199,
+        "v1": 0.0094,
         "v2": 0.9455,
         "v3": -0.4754,
         "v4": 0.7,
         "v5": -0.284
       },
       "variable_contributions": {
-        "v1": -2.8,
+        "v1": -0.22,
         "v2": -17.69,
         "v3": 11.12,
         "v4": -13.1,
@@ -45944,19 +45944,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-12",
-      "rspi": -22.2,
-      "level": "strong_sell",
-      "raw": 0.2406,
+      "rspi": -19.7,
+      "level": "mild_sell",
+      "raw": 0.2142,
       "volume_amp": 0.921,
       "raw_variables": {
-        "v1": 0.1162,
+        "v1": 0.0103,
         "v2": 0.2605,
         "v3": -0.0362,
         "v4": 1.0,
         "v5": -0.3144
       },
       "variable_contributions": {
-        "v1": -2.68,
+        "v1": -0.24,
         "v2": -4.8,
         "v3": 0.83,
         "v4": -18.42,
@@ -45966,19 +45966,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-13",
-      "rspi": -16.9,
+      "rspi": -14.4,
       "level": "mild_sell",
-      "raw": 0.171,
+      "raw": 0.1458,
       "volume_amp": 0.988,
       "raw_variables": {
-        "v1": 0.1095,
+        "v1": 0.0086,
         "v2": 0.2051,
         "v3": 0.2747,
         "v4": 0.2,
         "v5": -0.0606
       },
       "variable_contributions": {
-        "v1": -2.7,
+        "v1": -0.21,
         "v2": -4.05,
         "v3": -6.78,
         "v4": -3.95,
@@ -45988,19 +45988,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-14",
-      "rspi": -6.6,
-      "level": "mild_sell",
-      "raw": 0.0669,
+      "rspi": -4.2,
+      "level": "neutral",
+      "raw": 0.0423,
       "volume_amp": 0.986,
       "raw_variables": {
-        "v1": 0.1064,
+        "v1": 0.008,
         "v2": 0.2434,
         "v3": -0.1678,
         "v4": 0.2,
         "v5": -0.0641
       },
       "variable_contributions": {
-        "v1": -2.62,
+        "v1": -0.2,
         "v2": -4.8,
         "v3": 4.14,
         "v4": -3.94,
@@ -46010,19 +46010,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-15",
-      "rspi": 5.2,
+      "rspi": 7.5,
       "level": "mild_rebound",
-      "raw": -0.0523,
+      "raw": -0.0752,
       "volume_amp": 0.996,
       "raw_variables": {
-        "v1": 0.0991,
+        "v1": 0.0075,
         "v2": -0.1015,
         "v3": -0.2809,
         "v4": 0.2,
         "v5": -0.2656
       },
       "variable_contributions": {
-        "v1": -2.47,
+        "v1": -0.19,
         "v2": 2.02,
         "v3": 6.99,
         "v4": -3.98,
@@ -46032,19 +46032,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-16",
-      "rspi": 1.9,
+      "rspi": 4.2,
       "level": "neutral",
-      "raw": -0.0182,
+      "raw": -0.0399,
       "volume_amp": 1.064,
       "raw_variables": {
-        "v1": 0.0947,
+        "v1": 0.0081,
         "v2": -0.1154,
         "v3": -0.1028,
         "v4": 0.2,
         "v5": -0.3312
       },
       "variable_contributions": {
-        "v1": -2.52,
+        "v1": -0.22,
         "v2": 2.46,
         "v3": 2.73,
         "v4": -4.26,
@@ -46054,19 +46054,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-19",
-      "rspi": 0.7,
+      "rspi": 2.8,
       "level": "neutral",
-      "raw": -0.0074,
+      "raw": -0.0277,
       "volume_amp": 1.004,
       "raw_variables": {
-        "v1": 0.0881,
+        "v1": 0.0066,
         "v2": -0.1653,
         "v3": -0.1028,
         "v4": 0.2,
         "v5": -0.1061
       },
       "variable_contributions": {
-        "v1": -2.21,
+        "v1": -0.16,
         "v2": 3.32,
         "v3": 2.58,
         "v4": -4.01,
@@ -46076,19 +46076,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-20",
-      "rspi": -8.9,
+      "rspi": -6.8,
       "level": "mild_sell",
-      "raw": 0.0855,
+      "raw": 0.0647,
       "volume_amp": 1.046,
       "raw_variables": {
-        "v1": 0.09,
+        "v1": 0.0065,
         "v2": 0.0902,
         "v3": 0.4508,
         "v4": -0.4,
         "v5": 0.1228
       },
       "variable_contributions": {
-        "v1": -2.35,
+        "v1": -0.17,
         "v2": -1.89,
         "v3": -11.79,
         "v4": 8.37,
@@ -46098,19 +46098,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-21",
-      "rspi": 5.4,
+      "rspi": 7.6,
       "level": "mild_rebound",
-      "raw": -0.0495,
+      "raw": -0.0696,
       "volume_amp": 1.088,
       "raw_variables": {
-        "v1": 0.0875,
+        "v1": 0.0072,
         "v2": -0.0574,
         "v3": -0.9359,
         "v4": 1.0,
         "v5": -0.2589
       },
       "variable_contributions": {
-        "v1": -2.38,
+        "v1": -0.2,
         "v2": 1.25,
         "v3": 25.45,
         "v4": -21.75,
@@ -46120,19 +46120,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-22",
-      "rspi": -0.1,
+      "rspi": 2.1,
       "level": "neutral",
-      "raw": 0.0007,
+      "raw": -0.019,
       "volume_amp": 1.105,
       "raw_variables": {
-        "v1": 0.0832,
+        "v1": 0.0043,
         "v2": 0.3088,
         "v3": -0.1214,
         "v4": -0.4,
         "v5": 0.285
       },
       "variable_contributions": {
-        "v1": -2.3,
+        "v1": -0.12,
         "v2": -6.82,
         "v3": 3.35,
         "v4": 8.84,
@@ -46142,19 +46142,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-23",
-      "rspi": -13.5,
+      "rspi": -11.6,
       "level": "mild_sell",
-      "raw": 0.1324,
+      "raw": 0.1136,
       "volume_amp": 1.023,
       "raw_variables": {
-        "v1": 0.0794,
+        "v1": 0.0043,
         "v2": 0.0548,
         "v3": -0.324,
         "v4": 1.0,
         "v5": -0.1746
       },
       "variable_contributions": {
-        "v1": -2.03,
+        "v1": -0.11,
         "v2": -1.12,
         "v3": 8.29,
         "v4": -20.46,
@@ -46164,19 +46164,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-26",
-      "rspi": 5.6,
+      "rspi": 7.2,
       "level": "mild_rebound",
-      "raw": -0.067,
+      "raw": -0.0856,
       "volume_amp": 0.838,
       "raw_variables": {
-        "v1": 0.0835,
+        "v1": 0.0089,
         "v2": 0.2173,
         "v3": 0.0215,
         "v4": -0.4,
         "v5": -0.5667
       },
       "variable_contributions": {
-        "v1": -1.75,
+        "v1": -0.19,
         "v2": -3.64,
         "v3": -0.45,
         "v4": 6.7,
@@ -46186,19 +46186,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-27",
-      "rspi": 8.2,
+      "rspi": 9.8,
       "level": "mild_rebound",
-      "raw": -0.0824,
+      "raw": -0.099,
       "volume_amp": 0.99,
       "raw_variables": {
-        "v1": 0.0709,
+        "v1": 0.0042,
         "v2": -0.4555,
         "v3": -0.909,
         "v4": 1.0,
         "v5": 0.1827
       },
       "variable_contributions": {
-        "v1": -1.76,
+        "v1": -0.1,
         "v2": 9.02,
         "v3": 22.51,
         "v4": -19.81,
@@ -46208,19 +46208,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-28",
-      "rspi": 21.7,
+      "rspi": 23.3,
       "level": "strong_rebound",
-      "raw": -0.2083,
+      "raw": -0.2227,
       "volume_amp": 1.044,
       "raw_variables": {
-        "v1": 0.0637,
+        "v1": 0.0059,
         "v2": -0.1606,
         "v3": -0.2425,
         "v4": -0.4,
         "v5": -0.5146
       },
       "variable_contributions": {
-        "v1": -1.66,
+        "v1": -0.15,
         "v2": 3.35,
         "v3": 6.33,
         "v4": 8.35,
@@ -46230,19 +46230,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-29",
-      "rspi": -10.6,
+      "rspi": -9.2,
       "level": "mild_sell",
-      "raw": 0.093,
+      "raw": 0.0805,
       "volume_amp": 1.138,
       "raw_variables": {
-        "v1": 0.0596,
+        "v1": 0.0097,
         "v2": 0.9604,
         "v3": 0.1888,
         "v4": -0.4,
         "v5": -0.8121
       },
       "variable_contributions": {
-        "v1": -1.7,
+        "v1": -0.28,
         "v2": -21.86,
         "v3": -5.37,
         "v4": 9.11,
@@ -46252,19 +46252,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-30",
-      "rspi": -22.4,
+      "rspi": -21.1,
       "level": "strong_sell",
-      "raw": 0.203,
+      "raw": 0.1909,
       "volume_amp": 1.104,
       "raw_variables": {
-        "v1": 0.0593,
+        "v1": 0.0109,
         "v2": 1.0,
         "v3": 0.3642,
         "v4": -0.4,
         "v5": -0.2285
       },
       "variable_contributions": {
-        "v1": -1.64,
+        "v1": -0.3,
         "v2": -22.09,
         "v3": -10.06,
         "v4": 8.84,
@@ -46274,19 +46274,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-02",
-      "rspi": -13.4,
+      "rspi": -11.9,
       "level": "mild_sell",
-      "raw": 0.1353,
+      "raw": 0.1201,
       "volume_amp": 0.99,
       "raw_variables": {
-        "v1": 0.0835,
+        "v1": 0.0228,
         "v2": 1.0,
         "v3": 0.0858,
         "v4": -0.4,
         "v5": -0.2703
       },
       "variable_contributions": {
-        "v1": -2.07,
+        "v1": -0.56,
         "v2": -19.79,
         "v3": -2.12,
         "v4": 7.92,
@@ -46296,19 +46296,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-03",
-      "rspi": -5.2,
-      "level": "mild_sell",
-      "raw": 0.0552,
+      "rspi": -4.1,
+      "level": "neutral",
+      "raw": 0.0442,
       "volume_amp": 0.935,
       "raw_variables": {
-        "v1": 0.0542,
+        "v1": 0.01,
         "v2": -0.4658,
         "v3": -0.2246,
         "v4": 1.0,
         "v5": -0.0898
       },
       "variable_contributions": {
-        "v1": -1.27,
+        "v1": -0.23,
         "v2": 8.71,
         "v3": 5.25,
         "v4": -18.69,
@@ -46318,19 +46318,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-04",
-      "rspi": -20.8,
-      "level": "strong_sell",
-      "raw": 0.2195,
+      "rspi": -19.9,
+      "level": "mild_sell",
+      "raw": 0.2104,
       "volume_amp": 0.946,
       "raw_variables": {
-        "v1": 0.0478,
+        "v1": 0.0114,
         "v2": 0.3493,
         "v3": 0.6613,
         "v4": 0.2,
         "v5": -0.6762
       },
       "variable_contributions": {
-        "v1": -1.13,
+        "v1": -0.27,
         "v2": -6.61,
         "v3": -15.65,
         "v4": -3.79,
@@ -46340,19 +46340,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-05",
-      "rspi": -20.3,
-      "level": "strong_sell",
-      "raw": 0.2013,
+      "rspi": -19.1,
+      "level": "mild_sell",
+      "raw": 0.1897,
       "volume_amp": 1.007,
       "raw_variables": {
-        "v1": 0.0643,
+        "v1": 0.0178,
         "v2": 1.0,
         "v3": 0.1651,
         "v4": -0.4,
         "v5": 0.2395
       },
       "variable_contributions": {
-        "v1": -1.62,
+        "v1": -0.45,
         "v2": -20.14,
         "v3": -4.15,
         "v4": 8.05,
@@ -46362,19 +46362,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-06",
-      "rspi": 15.7,
+      "rspi": 16.9,
       "level": "mild_rebound",
-      "raw": -0.1614,
+      "raw": -0.1731,
       "volume_amp": 0.975,
       "raw_variables": {
-        "v1": 0.0705,
+        "v1": 0.0236,
         "v2": 0.9057,
         "v3": -0.9234,
         "v4": -0.4,
         "v5": -0.4931
       },
       "variable_contributions": {
-        "v1": -1.72,
+        "v1": -0.58,
         "v2": -17.66,
         "v3": 22.51,
         "v4": 7.8,
@@ -46384,19 +46384,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-09",
-      "rspi": 0.4,
+      "rspi": 1.2,
       "level": "neutral",
-      "raw": -0.0046,
+      "raw": -0.0133,
       "volume_amp": 0.913,
       "raw_variables": {
-        "v1": 0.0534,
+        "v1": 0.0189,
         "v2": -0.3417,
         "v3": -0.2658,
         "v4": 1.0,
         "v5": -0.8317
       },
       "variable_contributions": {
-        "v1": -1.22,
+        "v1": -0.43,
         "v2": 6.24,
         "v3": 6.07,
         "v4": -18.26,
@@ -46406,19 +46406,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-10",
-      "rspi": -6.6,
+      "rspi": -5.9,
       "level": "mild_sell",
-      "raw": 0.0788,
+      "raw": 0.0701,
       "volume_amp": 0.843,
       "raw_variables": {
-        "v1": 0.0531,
+        "v1": 0.0183,
         "v2": -0.2387,
         "v3": 0.2667,
         "v4": 0.2,
         "v5": 0.0659
       },
       "variable_contributions": {
-        "v1": -1.12,
+        "v1": -0.39,
         "v2": 4.03,
         "v3": -5.62,
         "v4": -3.37,
@@ -46428,19 +46428,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-11",
-      "rspi": 11.0,
+      "rspi": 11.8,
       "level": "mild_rebound",
-      "raw": -0.1205,
+      "raw": -0.1293,
       "volume_amp": 0.911,
       "raw_variables": {
-        "v1": 0.049,
+        "v1": 0.0138,
         "v2": -0.4408,
         "v3": -0.4958,
         "v4": 0.2,
         "v5": 0.3935
       },
       "variable_contributions": {
-        "v1": -1.12,
+        "v1": -0.31,
         "v2": 8.03,
         "v3": 11.29,
         "v4": -3.64,
@@ -46450,19 +46450,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-12",
-      "rspi": 16.4,
+      "rspi": 17.2,
       "level": "mild_rebound",
-      "raw": -0.1537,
+      "raw": -0.1608,
       "volume_amp": 1.068,
       "raw_variables": {
-        "v1": 0.0369,
+        "v1": 0.0087,
         "v2": -0.9852,
         "v3": 0.0714,
         "v4": 0.2,
         "v5": -0.2374
       },
       "variable_contributions": {
-        "v1": -0.98,
+        "v1": -0.23,
         "v2": 21.04,
         "v3": -1.91,
         "v4": -4.27,
@@ -46472,19 +46472,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-13",
-      "rspi": 16.6,
+      "rspi": 17.3,
       "level": "mild_rebound",
-      "raw": -0.1613,
+      "raw": -0.1685,
       "volume_amp": 1.029,
       "raw_variables": {
-        "v1": 0.0379,
+        "v1": 0.0094,
         "v2": 0.1391,
         "v3": -0.4672,
         "v4": -0.4,
         "v5": -0.0184
       },
       "variable_contributions": {
-        "v1": -0.98,
+        "v1": -0.24,
         "v2": -2.86,
         "v3": 12.02,
         "v4": 8.23,
@@ -46494,19 +46494,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-19",
-      "rspi": -17.1,
+      "rspi": -16.5,
       "level": "mild_sell",
-      "raw": 0.1742,
+      "raw": 0.1686,
       "volume_amp": 0.979,
       "raw_variables": {
-        "v1": 0.0275,
+        "v1": 0.0048,
         "v2": 0.1233,
         "v3": -0.1579,
         "v4": 1.0,
         "v5": -0.1782
       },
       "variable_contributions": {
-        "v1": -0.67,
+        "v1": -0.12,
         "v2": -2.41,
         "v3": 3.87,
         "v4": -19.58,
@@ -46516,19 +46516,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-20",
-      "rspi": 21.4,
+      "rspi": 21.9,
       "level": "strong_rebound",
-      "raw": -0.2005,
+      "raw": -0.2053,
       "volume_amp": 1.067,
       "raw_variables": {
-        "v1": 0.0216,
+        "v1": 0.0025,
         "v2": 0.0523,
         "v3": -1.0,
         "v4": 0.2,
         "v5": -0.064
       },
       "variable_contributions": {
-        "v1": -0.58,
+        "v1": -0.07,
         "v2": -1.12,
         "v3": 26.68,
         "v4": -4.27,
@@ -46538,19 +46538,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-23",
-      "rspi": -5.7,
+      "rspi": -5.2,
       "level": "mild_sell",
-      "raw": 0.0562,
+      "raw": 0.0518,
       "volume_amp": 1.013,
       "raw_variables": {
-        "v1": 0.0203,
+        "v1": 0.0026,
         "v2": 0.1404,
         "v3": 0.4522,
         "v4": -0.4,
         "v5": -0.0998
       },
       "variable_contributions": {
-        "v1": -0.51,
+        "v1": -0.07,
         "v2": -2.85,
         "v3": -11.46,
         "v4": 8.11,
@@ -46560,19 +46560,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-24",
-      "rspi": 5.9,
+      "rspi": 6.2,
       "level": "mild_rebound",
-      "raw": -0.0585,
+      "raw": -0.0617,
       "volume_amp": 1.003,
       "raw_variables": {
-        "v1": 0.0164,
+        "v1": 0.0039,
         "v2": -0.1312,
         "v3": -0.7919,
         "v4": 1.0,
         "v5": -0.3843
       },
       "variable_contributions": {
-        "v1": -0.41,
+        "v1": -0.1,
         "v2": 2.63,
         "v3": 19.85,
         "v4": -20.05,
@@ -46582,19 +46582,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-25",
-      "rspi": 25.0,
+      "rspi": 25.3,
       "level": "strong_rebound",
-      "raw": -0.2347,
+      "raw": -0.2369,
       "volume_amp": 1.067,
       "raw_variables": {
-        "v1": 0.013,
+        "v1": 0.0042,
         "v2": 0.1779,
         "v3": -0.6725,
         "v4": -0.4,
         "v5": -0.2541
       },
       "variable_contributions": {
-        "v1": -0.35,
+        "v1": -0.11,
         "v2": -3.8,
         "v3": 17.94,
         "v4": 8.54,
@@ -46604,19 +46604,19 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-26",
-      "rspi": 6.0,
+      "rspi": 6.1,
       "level": "mild_rebound",
-      "raw": -0.0551,
+      "raw": -0.0557,
       "volume_amp": 1.094,
       "raw_variables": {
-        "v1": 0.0072,
+        "v1": 0.0044,
         "v2": 0.3846,
         "v3": -0.0654,
         "v4": -0.4,
         "v5": -0.3742
       },
       "variable_contributions": {
-        "v1": -0.2,
+        "v1": -0.12,
         "v2": -8.42,
         "v3": 1.79,
         "v4": 8.76,
@@ -46628,17 +46628,17 @@ export const RSPI_DATA = {
       "date": "2026-02-27",
       "rspi": -8.7,
       "level": "mild_sell",
-      "raw": 0.0696,
+      "raw": 0.0693,
       "volume_amp": 1.256,
       "raw_variables": {
-        "v1": 0.0087,
+        "v1": 0.0078,
         "v2": 1.0,
         "v3": -0.0318,
         "v4": -0.4,
         "v5": -0.4467
       },
       "variable_contributions": {
-        "v1": -0.27,
+        "v1": -0.24,
         "v2": -25.12,
         "v3": 1.0,
         "v4": 10.05,
@@ -46650,17 +46650,17 @@ export const RSPI_DATA = {
       "date": "2026-03-03",
       "rspi": -27.9,
       "level": "strong_sell",
-      "raw": 0.2423,
+      "raw": 0.2424,
       "volume_amp": 1.151,
       "raw_variables": {
-        "v1": 0.0223,
+        "v1": 0.0225,
         "v2": 0.8121,
         "v3": 1.0,
         "v4": -0.4,
         "v5": -0.9569
       },
       "variable_contributions": {
-        "v1": -0.64,
+        "v1": -0.65,
         "v2": -18.69,
         "v3": -28.77,
         "v4": 9.21,
