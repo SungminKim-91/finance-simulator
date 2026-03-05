@@ -88,7 +88,7 @@ HISTORICAL_PERIODS = {
     "korea_2021": ("2020-06-01", "2022-12-31"),
 }
 
-# ── v1.5.0 VLPI 상수 ──
+# ── v1.5.0 공통 상수 ──
 LOAN_RATE = 1 - MARGIN_RATE          # 0.55 (융자비율)
 LEVERAGE = 1 / MARGIN_RATE            # 2.22 (실질 레버리지)
 DAILY_LIMIT = 0.30                    # KOSPI 가격제한폭 ±30%
@@ -103,40 +103,72 @@ STATUS_THRESHOLDS = {
     # >= 170% → 안전
 }
 
-# VLPI 기본 가중치
-VLPI_DEFAULT_WEIGHTS = {
-    "w1": 0.25,  # 주의구간 코호트 비중
-    "w2": 0.10,  # 신용잔고 모멘텀
-    "w3": 0.20,  # 정책 쇼크
-    "w4": 0.20,  # 야간 갭 시그널
-    "w5": 0.15,  # 연속 하락 심각도
-    "w6": 0.10,  # 전일 개인 수급 방향
-}
-
-# VLPI 정책 쇼크 유형
-POLICY_SHOCK_MAP = {
-    "credit_suspension_major":   1.0,
-    "credit_suspension_minor":   0.5,
-    "credit_tightening":         0.3,
-    "short_selling_ban":         0.2,
-    "regulator_warning":         0.4,
-    "circuit_breaker_triggered": 0.8,
-}
-
 # Samsung 신용잔고 추정 비중
 SAMSUNG_CREDIT_WEIGHT = 0.50
 
-# EWY → KOSPI 갭 파라미터
-EWY_GAP_WEIGHTS = {"ewy": 0.6, "futures": 0.3, "fx": 0.1}
-EWY_GAP_DIVISOR = 5.0  # 5% 하락 = signal 1.0
+# ── v2.0.0 RSPI 상수 (VLPI 대체) ──
 
-# Impact Function 파라미터
-VLPI_SENSITIVITY = 0.15          # VLPI 100일 때 매도 비율
-VLPI_SIGMOID_K = 0.08            # sigmoid 기울기
-VLPI_SIGMOID_MID = 50            # sigmoid 중점
-VLPI_POLICY_MULTIPLIER = 1.5     # 정책 쇼크 시 배율
-VLPI_LIQUIDITY_NORMAL = 0.5      # 정상 시장 유동성
-VLPI_LIQUIDITY_CRISIS = 0.4      # 위기 시장 유동성
+# RSPI Cascade Force (CF) 가중치 — 가속력 4변수
+RSPI_CF_WEIGHTS = {
+    "cf1": 0.30,  # V1: 주의구간 코호트 비중
+    "cf2": 0.25,  # V2: 연속 하락 심각도
+    "cf3": 0.25,  # V3: 개인 수급 방향
+    "cf4": 0.20,  # V4: 신용잔고 가속 모멘텀
+}
+
+# RSPI Damping Force (DF) 가중치 — 감쇠력 4변수
+RSPI_DF_WEIGHTS = {
+    "df1": 0.30,  # D1: 야간시장 반등 강도
+    "df2": 0.20,  # D2: 신용잔고 유입률
+    "df3": 0.25,  # D3: 외국인 매도 소진도
+    "df4": 0.25,  # D4: 안전 코호트 버퍼
+}
+
+# D1: 야간시장 감쇠 4소스 가중치
+OVERNIGHT_WEIGHTS = {
+    "ewy":       0.30,  # iShares MSCI South Korea ETF (1x)
+    "koru":      0.25,  # Direxion Daily South Korea Bull 3X
+    "futures":   0.25,  # KOSPI200 야간선물 (SGX/KRX)
+    "us_market": 0.20,  # S&P500
+}
+OVERNIGHT_EWY_DIVISOR = 5.0       # 5% 반등 = signal 1.0
+OVERNIGHT_KORU_DIVISOR = 15.0     # 15% 반등 = signal 1.0 (3x 레버리지)
+OVERNIGHT_FUTURES_DIVISOR = 8.0   # 8% = 상한가 = signal 1.0
+OVERNIGHT_US_DIVISOR = 3.0        # 3% 반등 = signal 1.0
+
+# RSPI Impact Function 파라미터
+RSPI_SENSITIVITY = 0.15           # RSPI=100일 때 매도 비율
+RSPI_SIGMOID_K = 0.08             # sigmoid 기울기
+RSPI_SIGMOID_MID = 50             # sigmoid 중점
+RSPI_LIQUIDITY_FACTOR = 0.5       # 유동성 계수 (단일값, 정책 분기 제거)
+
+# RSPI 5단계 판정 기준
+RSPI_LEVELS = {
+    "critical":  40,   # +40~+100: 캐스케이드 위험
+    "high":      20,   # +20~+40: 하락 우세
+    "medium":     0,   # 0~+20: 약한 하락
+    "low":      -20,   # -20~0: 균형~약한 반등
+    # -100~-20: 반등 압력 → "none"
+}
+
+# ── (deprecated) VLPI 호환 상수 — vlpi_engine.py 참조용 ──
+VLPI_DEFAULT_WEIGHTS = {
+    "w1": 0.25, "w2": 0.10, "w3": 0.20,
+    "w4": 0.20, "w5": 0.15, "w6": 0.10,
+}
+POLICY_SHOCK_MAP = {
+    "credit_suspension_major": 1.0, "credit_suspension_minor": 0.5,
+    "credit_tightening": 0.3, "short_selling_ban": 0.2,
+    "regulator_warning": 0.4, "circuit_breaker_triggered": 0.8,
+}
+EWY_GAP_WEIGHTS = {"ewy": 0.6, "futures": 0.3, "fx": 0.1}
+EWY_GAP_DIVISOR = 5.0
+VLPI_SENSITIVITY = 0.15
+VLPI_SIGMOID_K = 0.08
+VLPI_SIGMOID_MID = 50
+VLPI_POLICY_MULTIPLIER = 1.5
+VLPI_LIQUIDITY_NORMAL = 0.5
+VLPI_LIQUIDITY_CRISIS = 0.4
 
 # KOFIA API (공공데이터포털)
 KOFIA_API_BASE = "https://apis.data.go.kr/1160100/service/GetFinaStatInfoSvc"

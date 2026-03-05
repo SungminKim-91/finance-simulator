@@ -15,7 +15,7 @@ export const C = {
   safe6: "#4caf50", good6: "#8bc34a", caution6: "#ffc107",
   marginCall6: "#ff9800", forcedLiq6: "#ff5252", debtExceed6: "#ff1744",
 
-  /* VLPI variable colors (v1.6.0) */
-  vlpiV1: "#5c6bc0", vlpiV2: "#26a69a", vlpiV3: "#ff7043",
-  vlpiV4: "#ab47bc", vlpiV5: "#ef5350", vlpiV6: "#42a5f5",
+  /* RSPI variable colors (v2.0.0) — CF(가속력) 4 + DF(감쇠력) 4 */
+  rspiCF1: "#5c6bc0", rspiCF2: "#ef5350", rspiCF3: "#f59e0b", rspiCF4: "#26a69a",
+  rspiDF1: "#4caf50", rspiDF2: "#42a5f5", rspiDF3: "#ab47bc", rspiDF4: "#8bc34a",
 };

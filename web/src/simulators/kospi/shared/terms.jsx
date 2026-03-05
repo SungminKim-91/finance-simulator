@@ -346,22 +346,26 @@ export const TERM = {
     desc: "담보비율 < 100%. 원금 초과 손실",
   },
 
-  /* VLPI terms (v1.6.0) */
-  pre_vlpi: {
-    label: "Pre-VLPI",
-    desc: "자발적 투매 압력 지수 (0~100). 6개 변수 가중합. 높을수록 투매 압력 큼",
+  /* RSPI terms (v2.0.0) */
+  rspi: {
+    label: "RSPI",
+    desc: "개인 매도 압력 지수 (-100~+100). CF(가속력)-DF(감쇠력). 양수=매도압력, 음수=반등압력",
   },
-  vlpi_gauge: {
-    label: "VLPI 게이지",
-    desc: "Pre-VLPI 스코어를 시각적으로 표시. 정상(0~30)/주의(30~50)/경고(50~70)/위험(70~100)",
+  rspi_gauge: {
+    label: "RSPI 게이지",
+    desc: "RSPI 스코어를 시각적으로 표시. 반등압력(-100~-20)/균형(-20~0)/약한하락(0~20)/하락우세(20~40)/캐스케이드(40~100)",
   },
-  vlpi_component: {
-    label: "VLPI 구성요소",
-    desc: "Pre-VLPI를 구성하는 6개 변수의 가중 기여분",
+  rspi_cf: {
+    label: "가속력 (CF)",
+    desc: "매도 가속 4변수: V1주의구간+V2연속하락+V3개인수급+V4신용가속 (0~100)",
   },
-  vlpi_impact: {
-    label: "VLPI 시나리오",
-    desc: "낙관/기본/비관 시나리오별 VLPI 예측과 예상 매도압력",
+  rspi_df: {
+    label: "감쇠력 (DF)",
+    desc: "매도 감쇠 4변수: D1야간반등+D2신용유입+D3외국인소진+D4안전버퍼 (0~100)",
+  },
+  rspi_scenario: {
+    label: "RSPI 시나리오",
+    desc: "D1(야간시장) 시나리오별 RSPI 예측과 예상 매도압력",
   },
   risk_map: {
     label: "위험 분포도 (Risk Map)",
@@ -369,7 +373,7 @@ export const TERM = {
   },
   caution_zone: {
     label: "주의구간 비중 (V1)",
-    desc: "담보비율 140~170% 코호트 비중. VLPI의 핵심 선행 입력",
+    desc: "담보비율 140~170% 코호트 비중. RSPI 가속력의 핵심 선행 입력",
   },
 
   /* Stock-weighted cohort terms (v1.3.0) */

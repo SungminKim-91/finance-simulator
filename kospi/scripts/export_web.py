@@ -40,8 +40,9 @@ if str(PROJECT_ROOT) not in _sys.path:
 
 from config.constants import (
     MARGIN_RATE, LOAN_RATE, STATUS_THRESHOLDS, LEVERAGE,
-    VLPI_DEFAULT_WEIGHTS, VLPI_SENSITIVITY, VLPI_SIGMOID_K, VLPI_SIGMOID_MID,
     SAMSUNG_CREDIT_WEIGHT,
+    RSPI_CF_WEIGHTS, RSPI_DF_WEIGHTS,
+    RSPI_SENSITIVITY, RSPI_SIGMOID_K, RSPI_SIGMOID_MID,
 )
 
 
@@ -288,36 +289,41 @@ def export_all() -> None:
     except ImportError:
         pass
 
-    # === 17. VLPI_DATA ===
-    vlpi_raw = model_output.get("vlpi", {})
-    vlpi_data = {
-        "history": vlpi_raw.get("history", []),
-        "latest": vlpi_raw.get("latest"),
-        "scenario_matrix": vlpi_raw.get("scenario_matrix", []),
+    # === 17. RSPI_DATA (v2.0.0, VLPI 대체) ===
+    rspi_raw = model_output.get("rspi", {})
+    rspi_data = {
+        "history": rspi_raw.get("history", []),
+        "latest": rspi_raw.get("latest"),
+        "scenario_matrix": rspi_raw.get("scenario_matrix", []),
     }
 
-    # === 18. VLPI_CONFIG ===
-    vlpi_config = {
-        "weights": vlpi_raw.get("weights", VLPI_DEFAULT_WEIGHTS),
+    # === 18. RSPI_CONFIG ===
+    rspi_config = {
+        "weights": rspi_raw.get("weights", {"cf": RSPI_CF_WEIGHTS, "df": RSPI_DF_WEIGHTS}),
         "status_thresholds": STATUS_THRESHOLDS,
-        "variables": [
-            {"key": "v1", "label": "주의구간 비중", "desc": "담보비율 140~170% 코호트 비중", "range": "0~1", "weight_key": "w1"},
-            {"key": "v2", "label": "신용잔고 모멘텀", "desc": "최근 3일 신용잔고 변화 방향", "range": "-0.3~0.7", "weight_key": "w2"},
-            {"key": "v3", "label": "정책 쇼크", "desc": "증권사 신용제한, 서킷브레이커 등", "range": "0~1", "weight_key": "w3"},
-            {"key": "v4", "label": "야간 갭", "desc": "EWY/선물 기반 갭다운 예상", "range": "-1~1", "weight_key": "w4"},
-            {"key": "v5", "label": "연속 하락", "desc": "연속 하락일수 + 누적 하락률", "range": "0~1", "weight_key": "w5"},
-            {"key": "v6", "label": "개인 수급", "desc": "전일 개인 순매수 패턴", "range": "0~1", "weight_key": "w6"},
+        "cf_variables": [
+            {"key": "v1", "label": "주의구간 비중", "desc": "담보비율 140~170% 코호트 비중", "range": "0~1"},
+            {"key": "v2", "label": "연속 하락", "desc": "연속 하락일수 + 누적 하락률", "range": "0~1"},
+            {"key": "v3", "label": "개인 수급", "desc": "전일 개인 순매수 패턴", "range": "0~1"},
+            {"key": "v4", "label": "신용 가속", "desc": "신용잔고 감소 가속 모멘텀", "range": "0~0.7"},
+        ],
+        "df_variables": [
+            {"key": "d1", "label": "야간 반등", "desc": "EWY/KORU/야간선물/US 반등 + coherence", "range": "0~1"},
+            {"key": "d2", "label": "신용 유입", "desc": "하락일 신용증가 = 저가매수 (D+1 시차)", "range": "0~1"},
+            {"key": "d3", "label": "외국인 소진", "desc": "외국인 매도 규모 감소/전환", "range": "0~1"},
+            {"key": "d4", "label": "안전 버퍼", "desc": "안전구간 코호트 비중 (방화벽)", "range": "0~1"},
         ],
         "levels": [
-            {"min": 0,  "max": 30, "label": "정상", "color": "#4caf50"},
-            {"min": 30, "max": 50, "label": "주의", "color": "#ffc107"},
-            {"min": 50, "max": 70, "label": "경고", "color": "#ff9800"},
-            {"min": 70, "max": 100, "label": "위험", "color": "#f44336"},
+            {"min": -100, "max": -20, "label": "반등 압력", "color": "#4caf50"},
+            {"min": -20,  "max": 0,   "label": "균형",      "color": "#8bc34a"},
+            {"min": 0,    "max": 20,  "label": "약한 하락",  "color": "#ffc107"},
+            {"min": 20,   "max": 40,  "label": "하락 우세",  "color": "#ff9800"},
+            {"min": 40,   "max": 100, "label": "캐스케이드", "color": "#f44336"},
         ],
         "impact_params": {
-            "sensitivity": VLPI_SENSITIVITY,
-            "sigmoid_k": VLPI_SIGMOID_K,
-            "sigmoid_mid": VLPI_SIGMOID_MID,
+            "sensitivity": RSPI_SENSITIVITY,
+            "sigmoid_k": RSPI_SIGMOID_K,
+            "sigmoid_mid": RSPI_SIGMOID_MID,
             "samsung_credit_weight": SAMSUNG_CREDIT_WEIGHT,
         },
     }
@@ -350,8 +356,8 @@ def export_all() -> None:
         f.write(to_js_export("COHORT_HISTORY", cohort_history))
         f.write(to_js_export("BACKTEST_DATES", backtest_dates))
         f.write(to_js_export("STOCK_CREDIT", stock_credit))
-        f.write(to_js_export("VLPI_DATA", vlpi_data))
-        f.write(to_js_export("VLPI_CONFIG", vlpi_config))
+        f.write(to_js_export("RSPI_DATA", rspi_data))
+        f.write(to_js_export("RSPI_CONFIG", rspi_config))
 
     print(f"Exported to {output_path}")
     print(f"  Market:    {len(market_data)} days")
@@ -369,9 +375,9 @@ def export_all() -> None:
     print(f"  Backtest:  {len(backtest_dates)} events")
     sc_stocks = stock_credit.get("stocks", [])
     print(f"  StockCred: {len(sc_stocks)} stocks, weighted={stock_credit.get('stock_weighted', False)}")
-    vlpi_latest = vlpi_data.get("latest")
-    vlpi_score = vlpi_latest.get("pre_vlpi", "N/A") if vlpi_latest else "N/A"
-    print(f"  VLPI:      score={vlpi_score}, history={len(vlpi_data.get('history', []))}, scenarios={len(vlpi_data.get('scenario_matrix', []))}")
+    rspi_latest = rspi_data.get("latest")
+    rspi_score = rspi_latest.get("rspi", "N/A") if rspi_latest else "N/A"
+    print(f"  RSPI:      score={rspi_score}, history={len(rspi_data.get('history', []))}, scenarios={len(rspi_data.get('scenario_matrix', []))}")
 
 
 def _remap_cohorts(cohorts: list[dict]) -> list[dict]:

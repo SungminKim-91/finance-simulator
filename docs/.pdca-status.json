@@ -2,14 +2,14 @@
   "version": "2.0",
   "lastUpdated": "2026-03-05T12:00:00.000Z",
   "activeFeatures": [
-    "kospi-vlpi-v1.6.0",
+    "kospi-rspi-v2.0.0",
     "kospi-crisis-phase2",
     "kospi",
     "data",
     "scripts",
     "config"
   ],
-  "primaryFeature": "kospi-vlpi-v1.6.0",
+  "primaryFeature": "kospi-rspi-v2.0.0",
   "features": {
     "kospi-vlpi-v1.5.0": {
       "phase": "archived",
@@ -20,22 +20,20 @@
       "archivedTo": "docs/archive/2026-03/kospi-vlpi-v1.5.0/"
     },
     "kospi-vlpi-v1.6.0": {
-      "phase": "completed",
-      "phaseNumber": 5,
+      "phase": "archived",
       "matchRate": 98.6,
       "iterationCount": 0,
-      "requirements": [],
-      "documents": {
-        "plan": "docs/01-plan/features/kospi-vlpi-v1.6.0.plan.md",
-        "design": "docs/02-design/features/kospi-vlpi-v1.6.0.design.md",
-        "analysis": "docs/03-analysis/kospi-vlpi-v1.6.1.analysis.md",
-        "report": "docs/04-report/features/kospi-vlpi-v1.6.0.report.md"
-      },
-      "timestamps": {
-        "started": "2026-03-05T15:00:00.000Z",
-        "lastUpdated": "2026-03-05T20:00:00.000Z"
-      },
-      "lastFile": "docs/04-report/features/kospi-vlpi-v1.6.0.report.md"
+      "startedAt": "2026-03-05T15:00:00.000Z",
+      "archivedAt": "2026-03-05T21:00:00.000Z",
+      "archivedTo": "docs/archive/2026-03/kospi-vlpi-v1.6.0/"
+    },
+    "kospi-rspi-v2.0.0": {
+      "phase": "archived",
+      "matchRate": 98.7,
+      "iterationCount": 0,
+      "startedAt": "2026-03-05T23:00:00.000Z",
+      "archivedAt": "2026-03-06T02:10:00.000Z",
+      "archivedTo": "docs/archive/2026-03/kospi-rspi-v2.0.0/"
     },
     "kospi-crisis-phase2": {
       "phase": "check",

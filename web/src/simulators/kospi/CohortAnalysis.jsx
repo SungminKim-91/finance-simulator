@@ -19,7 +19,7 @@ import { C } from "./colors";
 import { TERM, TermLabel, TermHint, fmtBillion } from "./shared/terms";
 import {
   COHORT_DATA, /* INVESTOR_FLOWS, */ MARKET_DATA, /* SHORT_SELLING, */
-  COHORT_HISTORY, STOCK_CREDIT, VLPI_DATA, VLPI_CONFIG,
+  COHORT_HISTORY, STOCK_CREDIT, RSPI_DATA, RSPI_CONFIG,
 } from "./data/kospi_data";
 
 const FONT = "'JetBrains Mono', monospace";
@@ -46,14 +46,14 @@ function normalizeStatus6(s) {
   return MAP[s] || s;
 }
 
-/* ── VLPI variable key mapping ── */
-const VLPI_VAR_KEY_MAP = {
-  v1: "caution_zone", v2: "credit_momentum", v3: "policy_shock",
-  v4: "overnight_gap", v5: "cumulative_decline", v6: "individual_flow",
+/* ── RSPI variable colors (v2.0.0) ── */
+const CF_COMPONENT_COLORS = {
+  caution_zone: C.rspiCF1, cumulative_decline: C.rspiCF2,
+  individual_flow: C.rspiCF3, credit_accel: C.rspiCF4,
 };
-const VLPI_VAR_COLORS = {
-  caution_zone: C.vlpiV1, credit_momentum: C.vlpiV2, policy_shock: C.vlpiV3,
-  overnight_gap: C.vlpiV4, cumulative_decline: C.vlpiV5, individual_flow: C.vlpiV6,
+const DF_COMPONENT_COLORS = {
+  overnight_recovery: C.rspiDF1, credit_inflow: C.rspiDF2,
+  foreign_exhaustion: C.rspiDF3, safe_buffer: C.rspiDF4,
 };
 
 /* ── Sub-components ── */
@@ -530,8 +530,8 @@ function StockCreditBreakdown({ selectedDate }) {
 }
 
 
-/* ── VLPI Gauge (SVG semicircle, v1.6.0) ── */
-function VLPIGauge({ score, level, levels }) {
+/* ── RSPI Gauge (SVG semicircle, v2.0.0 — bidirectional -100~+100) ── */
+function RSPIGauge({ score, cascadeRisk, levels }) {
   const w = 240, h = 140, cx = 120, cy = 120, r = 90, thickness = 22;
   const ri = r - thickness;
 
@@ -544,24 +544,34 @@ function VLPIGauge({ score, level, levels }) {
     return `M${x1},${y1} A${radius},${radius} 0 ${large} 0 ${x2},${y2}`;
   };
 
-  // Build segment paths (180° = left, 0° = right)
-  const segments = levels.map(lv => {
-    const startDeg = 180 - (lv.min / 100) * 180;
-    const endDeg = 180 - (lv.max / 100) * 180;
-    return { ...lv, startDeg: Math.min(startDeg, endDeg), endDeg: Math.max(startDeg, endDeg) };
+  // Map -100~+100 to 180°~0° (left=반등, right=캐스케이드)
+  const valToDeg = (v) => 180 - ((v + 100) / 200) * 180;
+
+  const segments = (levels || []).map(lv => {
+    const s = valToDeg(lv.min);
+    const e = valToDeg(lv.max);
+    return { ...lv, startDeg: Math.min(s, e), endDeg: Math.max(s, e) };
   });
 
-  // Needle angle
-  const clampedScore = Math.max(0, Math.min(100, score));
-  const needleAngle = (Math.PI / 180) * (180 - (clampedScore / 100) * 180);
+  // Needle
+  const clamped = Math.max(-100, Math.min(100, score));
+  const needleAngle = (Math.PI / 180) * valToDeg(clamped);
   const needleLen = r - 8;
   const nx = cx + needleLen * Math.cos(needleAngle);
   const ny = cy - needleLen * Math.sin(needleAngle);
 
-  const levelLabel = levels.find(lv => score >= lv.min && score < lv.max)?.label
-    || levels[levels.length - 1]?.label || "";
-  const levelColor = levels.find(lv => score >= lv.min && score < lv.max)?.color
-    || levels[levels.length - 1]?.color || C.muted;
+  const levelObj = (levels || []).find(lv => score >= lv.min && score < lv.max)
+    || (levels || []).at(-1) || {};
+  const levelLabel = levelObj.label || "";
+  const levelColor = levelObj.color || C.muted;
+
+  // Zero marker angle
+  const zeroDeg = valToDeg(0);
+  const zeroRad = (Math.PI / 180) * zeroDeg;
+  const z1x = cx + (r - thickness - 4) * Math.cos(zeroRad);
+  const z1y = cy - (r - thickness - 4) * Math.sin(zeroRad);
+  const z2x = cx + (r + 4) * Math.cos(zeroRad);
+  const z2y = cy - (r + 4) * Math.sin(zeroRad);
 
   return (
     <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} style={{ display: "block" }}>
@@ -569,84 +579,91 @@ function VLPIGauge({ score, level, levels }) {
         <path key={i} d={arc(seg.startDeg, seg.endDeg, r)}
           fill="none" stroke={seg.color} strokeWidth={thickness} strokeLinecap="butt" opacity={0.7} />
       ))}
-      {/* Inner track */}
       <path d={arc(0, 180, ri)} fill="none" stroke={C.border} strokeWidth={2} />
+      {/* Zero marker */}
+      <line x1={z1x} y1={z1y} x2={z2x} y2={z2y} stroke={C.dim} strokeWidth={1.5} strokeDasharray="3,2" />
       {/* Needle */}
       <line x1={cx} y1={cy} x2={nx} y2={ny} stroke={C.text} strokeWidth={2.5} strokeLinecap="round" />
       <circle cx={cx} cy={cy} r={5} fill={C.text} />
       {/* Score text */}
       <text x={cx} y={cy - 24} textAnchor="middle" fill={C.text}
-        style={{ fontSize: 32, fontWeight: 700, fontFamily: FONT }}>{score.toFixed(1)}</text>
+        style={{ fontSize: 30, fontWeight: 700, fontFamily: FONT }}>
+        {score > 0 ? "+" : ""}{score.toFixed(1)}
+      </text>
       <text x={cx} y={cy - 2} textAnchor="middle" fill={levelColor}
-        style={{ fontSize: 14, fontWeight: 600, fontFamily: FONT }}>{levelLabel}</text>
-      {/* Min/Max labels */}
+        style={{ fontSize: 13, fontWeight: 600, fontFamily: FONT }}>{levelLabel}</text>
       <text x={cx - r - 4} y={cy + 14} textAnchor="end" fill={C.dim}
-        style={{ fontSize: 10, fontFamily: FONT }}>0</text>
+        style={{ fontSize: 10, fontFamily: FONT }}>-100</text>
       <text x={cx + r + 4} y={cy + 14} textAnchor="start" fill={C.dim}
-        style={{ fontSize: 10, fontFamily: FONT }}>100</text>
+        style={{ fontSize: 10, fontFamily: FONT }}>+100</text>
     </svg>
   );
 }
 
-/* ── VLPI Component Breakdown (v1.6.0) ── */
-function ComponentBreakdown({ components, variables, weights }) {
+/* ── RSPI Dual Breakdown (v2.0.0 — CF + DF side by side) ── */
+
+const RSPI_KEY_MAP = {
+  v1: "caution_zone", v2: "cumulative_decline", v3: "individual_flow", v4: "credit_accel",
+  d1: "overnight_recovery", d2: "credit_inflow", d3: "foreign_exhaustion", d4: "safe_buffer",
+};
+
+function BreakdownPanel({ title, termKey, components, variables, colorMap }) {
   if (!components || !variables) return null;
   const data = variables.map(v => {
-    const varKey = VLPI_VAR_KEY_MAP[v.key];
+    const compKey = RSPI_KEY_MAP[v.key];
     return {
       name: v.label,
-      value: components[varKey] || 0,
-      raw: VLPI_DATA?.latest?.raw_variables?.[v.key] ?? "-",
-      weight: weights[v.weight_key] || 0,
-      color: VLPI_VAR_COLORS[varKey] || C.muted,
-      desc: v.desc,
+      value: components[compKey] || 0,
+      color: colorMap[compKey] || C.muted,
     };
   });
   const maxVal = Math.max(...data.map(d => d.value), 1);
-
   return (
     <div>
       <div style={{ fontSize: 12, color: C.muted, marginBottom: 8, fontWeight: 600 }}>
-        구성요소 기여분 <TermLabel dataKey="vlpi_component" color={C.dim} />
+        {title} <TermLabel dataKey={termKey} color={C.dim} />
       </div>
       {data.map((d, i) => (
-        <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-          <div style={{ width: 80, fontSize: 11, color: C.muted, textAlign: "right", flexShrink: 0 }}>
-            {d.name}
+        <div key={i} style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 5 }}>
+          <div style={{ width: 70, fontSize: 11, color: C.muted, textAlign: "right", flexShrink: 0 }}>{d.name}</div>
+          <div style={{ flex: 1, height: 14, background: C.bg, borderRadius: 3, overflow: "hidden" }}>
+            <div style={{ width: `${maxVal > 0 ? (d.value / maxVal) * 100 : 0}%`, height: "100%", background: d.color, borderRadius: 3, transition: "width 0.3s" }} />
           </div>
-          <div style={{ flex: 1, height: 16, background: C.bg, borderRadius: 3, overflow: "hidden", position: "relative" }}>
-            <div style={{
-              width: `${maxVal > 0 ? (d.value / maxVal) * 100 : 0}%`,
-              height: "100%", background: d.color, borderRadius: 3,
-              transition: "width 0.3s",
-            }} />
-          </div>
-          <div style={{ width: 40, fontSize: 11, color: d.value > 0 ? C.text : C.dim, fontWeight: 600, textAlign: "right", fontFamily: FONT }}>
-            {d.value.toFixed(1)}
-          </div>
+          <div style={{ width: 36, fontSize: 11, color: d.value > 0 ? C.text : C.dim, fontWeight: 600, textAlign: "right", fontFamily: FONT }}>{d.value.toFixed(1)}</div>
         </div>
       ))}
-      <div style={{ fontSize: 10, color: C.dim, marginTop: 4 }}>
-        합계: {data.reduce((s, d) => s + d.value, 0).toFixed(1)} | 가중치: {variables.map(v => `${v.label.slice(0, 2)}=${((weights[v.weight_key] || 0) * 100).toFixed(0)}%`).join(", ")}
+    </div>
+  );
+}
+
+function DualBreakdown({ cfComponents, dfComponents, cfVariables, dfVariables, cascadeForce, dampingForce }) {
+  return (
+    <div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+        <BreakdownPanel title="가속력 (CF)" termKey="rspi_cf" components={cfComponents} variables={cfVariables} colorMap={CF_COMPONENT_COLORS} />
+        <BreakdownPanel title="감쇠력 (DF)" termKey="rspi_df" components={dfComponents} variables={dfVariables} colorMap={DF_COMPONENT_COLORS} />
+      </div>
+      <div style={{ fontSize: 11, color: C.dim, marginTop: 8, fontFamily: FONT, textAlign: "center" }}>
+        CF = <span style={{ color: C.marginCall6, fontWeight: 600 }}>{cascadeForce?.toFixed(1) || "—"}</span>
+        {" "}&minus;{" "}
+        DF = <span style={{ color: C.safe6, fontWeight: 600 }}>{dampingForce?.toFixed(1) || "—"}</span>
       </div>
     </div>
   );
 }
 
-/* ── VLPI Impact Table (v1.6.0) ── */
-function ImpactTable({ scenarios, currentVlpi }) {
+/* ── RSPI Impact Table (v2.0.0) ── */
+function ImpactTable({ scenarios, currentRspi }) {
   if (!scenarios?.length) return null;
-  // Find closest scenario to current VLPI
   let closestIdx = 0;
   let minDiff = Infinity;
   scenarios.forEach((s, i) => {
-    const diff = Math.abs(s.pre_vlpi - currentVlpi);
+    const diff = Math.abs(s.rspi - currentRspi);
     if (diff < minDiff) { minDiff = diff; closestIdx = i; }
   });
 
   const fmtSellVol = (v) => {
     if (!v || v <= 0) return "-";
-    // sell_volume_억 is in 억원
     if (v >= 10000) return `${(v / 10000).toFixed(0)}조원`;
     return `${v.toLocaleString()}억원`;
   };
@@ -654,13 +671,13 @@ function ImpactTable({ scenarios, currentVlpi }) {
   return (
     <div style={{ marginTop: 16 }}>
       <div style={{ fontSize: 12, color: C.muted, marginBottom: 8, fontWeight: 600 }}>
-        시나리오 매트릭스 <TermLabel dataKey="vlpi_impact" color={C.dim} />
+        시나리오 매트릭스 <TermLabel dataKey="rspi_scenario" color={C.dim} />
       </div>
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, fontFamily: FONT }}>
           <thead>
             <tr style={{ borderBottom: `1px solid ${C.border}` }}>
-              {["시나리오", "EWY 변동", "정책쇼크", "Pre-VLPI", "매도추정", "매도비율"].map(h => (
+              {["시나리오", "EWY", "CF", "DF", "RSPI", "매도추정"].map(h => (
                 <th key={h} style={{ padding: "6px 10px", textAlign: "right", color: C.muted, fontWeight: 600 }}>{h}</th>
               ))}
             </tr>
@@ -668,6 +685,7 @@ function ImpactTable({ scenarios, currentVlpi }) {
           <tbody>
             {scenarios.map((s, i) => {
               const isHighlight = i === closestIdx;
+              const rspiColor = s.rspi > 20 ? C.danger : s.rspi > 0 ? C.yellow : C.safe;
               return (
                 <tr key={s.label} style={{
                   borderBottom: `1px solid ${C.border}22`,
@@ -677,20 +695,20 @@ function ImpactTable({ scenarios, currentVlpi }) {
                     {isHighlight && <span style={{ color: C.kospi, marginRight: 4 }}>{"\u25B6"}</span>}
                     {s.label}
                   </td>
-                  <td style={{ padding: "6px 10px", textAlign: "right", color: s.ewy_change_pct >= 0 ? C.safe : C.danger }}>
-                    {s.ewy_change_pct > 0 ? "+" : ""}{s.ewy_change_pct}%
-                  </td>
-                  <td style={{ padding: "6px 10px", textAlign: "right", color: s.policy_shock ? C.danger : C.dim }}>
-                    {s.policy_shock ? "Yes" : "No"}
-                  </td>
-                  <td style={{ padding: "6px 10px", textAlign: "right", color: C.text, fontWeight: 600 }}>
-                    {s.pre_vlpi}
+                  <td style={{ padding: "6px 10px", textAlign: "right", color: s.ewy_pct >= 0 ? C.safe : C.danger }}>
+                    {s.ewy_pct > 0 ? "+" : ""}{s.ewy_pct}%
                   </td>
                   <td style={{ padding: "6px 10px", textAlign: "right", color: C.marginCall6 }}>
-                    {fmtSellVol(s.sell_volume_억)}
+                    {s.cascade_force?.toFixed(1)}
                   </td>
-                  <td style={{ padding: "6px 10px", textAlign: "right", color: C.muted }}>
-                    {s.sell_ratio_pct?.toFixed(1) || "-"}%
+                  <td style={{ padding: "6px 10px", textAlign: "right", color: C.safe6 }}>
+                    {s.damping_force?.toFixed(1)}
+                  </td>
+                  <td style={{ padding: "6px 10px", textAlign: "right", color: rspiColor, fontWeight: 600 }}>
+                    {s.rspi > 0 ? "+" : ""}{s.rspi?.toFixed(1)}
+                  </td>
+                  <td style={{ padding: "6px 10px", textAlign: "right", color: C.marginCall6 }}>
+                    {fmtSellVol(s["sell_volume_억"])}
                   </td>
                 </tr>
               );
@@ -1029,13 +1047,13 @@ export default function CohortAnalysis() {
       avg_daily_trading_value_billion, params, portfolioBeta]);
   */
 
-  /* ── VLPI data for selected date ── */
-  const vlpiForDate = useMemo(() => {
-    if (!cohortDate) return VLPI_DATA?.latest || null;
-    const h = VLPI_DATA?.history?.find(e => e.date === cohortDate);
+  /* ── RSPI data for selected date (v2.0.0) ── */
+  const rspiForDate = useMemo(() => {
+    if (!cohortDate) return RSPI_DATA?.latest || null;
+    const h = RSPI_DATA?.history?.find(e => e.date === cohortDate);
     return h || null;
   }, [cohortDate]);
-  const vlpiIsExact = !cohortDate || (vlpiForDate?.date === cohortDate);
+  const rspiIsExact = !cohortDate || (rspiForDate?.date === cohortDate);
 
   return (
     <div>
@@ -1233,10 +1251,10 @@ export default function CohortAnalysis() {
       <StockCreditBreakdown selectedDate={cohortDate} />
 
       {/* ══════════════════════════════════════════
-          Section 2: VLPI 대시보드 (v1.6.0)
+          Section 2: RSPI 대시보드 (v2.0.0)
           ══════════════════════════════════════════ */}
       <PanelBox>
-        <SectionTitle termKey="pre_vlpi">VLPI 대시보드 (Voluntary Liquidation Pressure Index)</SectionTitle>
+        <SectionTitle termKey="rspi">RSPI 대시보드 (Retail Selling Pressure Index)</SectionTitle>
 
         {/* Date badge */}
         <div style={{
@@ -1251,9 +1269,9 @@ export default function CohortAnalysis() {
           }}>
             {cohortDate ? `기준일: ${cohortDate}` : "오늘 (최신)"}
           </span>
-          {vlpiIsExact && vlpiForDate && (
+          {rspiIsExact && rspiForDate && (
             <span style={{ color: C.muted }}>
-              VLPI {vlpiForDate.pre_vlpi?.toFixed(1)} | {vlpiForDate.level}
+              RSPI {rspiForDate.rspi > 0 ? "+" : ""}{rspiForDate.rspi?.toFixed(1)} | {rspiForDate.cascade_risk}
             </span>
           )}
         </div>
@@ -1264,61 +1282,64 @@ export default function CohortAnalysis() {
           borderRadius: 8, padding: "12px 16px", marginBottom: 12,
           fontSize: 12, color: C.muted, lineHeight: 1.7, fontFamily: FONT,
         }}>
-          <div style={{ fontWeight: 700, color: C.text, marginBottom: 4 }}>VLPI란?</div>
-          자발적 투매 압력 지수 (0~100). 6개 변수의 가중합으로 산출합니다.
-          반대매매(강제청산) 이전의 <strong>자발적 투매</strong> 압력을 측정하여, 시장 하방 압력을 선행 감지합니다.
+          <div style={{ fontWeight: 700, color: C.text, marginBottom: 4 }}>RSPI란?</div>
+          개인 매도 압력 지수 (<span style={{ color: C.safe }}>-100</span>~<span style={{ color: C.danger }}>+100</span>).
+          가속력(CF)과 감쇠력(DF)의 차이로 산출합니다.
+          <strong> 양수</strong>는 매도 압력, <strong>음수</strong>는 반등 압력을 의미합니다.
           <div style={{ marginTop: 6 }}>
             KOSPI: <span style={{ color: C.kospi, fontWeight: 700 }}>{cohortKospi.toLocaleString()}</span>
           </div>
         </div>
 
-        {vlpiIsExact ? (
+        {rspiIsExact ? (
           <>
-            {/* A + B: Gauge + Breakdown (2-column) — 해당일 VLPI 데이터 있음 */}
-            {vlpiForDate && VLPI_CONFIG && (
+            {/* A: Gauge + B: Dual Breakdown */}
+            {rspiForDate && RSPI_CONFIG && (
               <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 20, alignItems: "start", marginBottom: 12 }}>
-                <VLPIGauge
-                  score={vlpiForDate.pre_vlpi}
-                  level={vlpiForDate.level}
-                  levels={VLPI_CONFIG.levels}
+                <RSPIGauge
+                  score={rspiForDate.rspi}
+                  cascadeRisk={rspiForDate.cascade_risk}
+                  levels={RSPI_CONFIG.levels}
                 />
-                <ComponentBreakdown
-                  components={vlpiForDate.components}
-                  variables={VLPI_CONFIG.variables}
-                  weights={VLPI_CONFIG.weights}
+                <DualBreakdown
+                  cfComponents={rspiForDate.cf_components}
+                  dfComponents={rspiForDate.df_components}
+                  cfVariables={RSPI_CONFIG.cf_variables}
+                  dfVariables={RSPI_CONFIG.df_variables}
+                  cascadeForce={rspiForDate.cascade_force}
+                  dampingForce={rspiForDate.damping_force}
                 />
               </div>
             )}
 
             {/* C: Impact Table */}
-            {VLPI_DATA?.scenario_matrix && (
+            {RSPI_DATA?.scenario_matrix && (
               <ImpactTable
-                scenarios={VLPI_DATA.scenario_matrix}
-                currentVlpi={vlpiForDate?.pre_vlpi || 0}
+                scenarios={RSPI_DATA.scenario_matrix}
+                currentRspi={rspiForDate?.rspi || 0}
               />
             )}
           </>
         ) : (
-          /* 과거 날짜에 VLPI 히스토리 없음 */
           <div style={{
             padding: "20px 16px", marginBottom: 12, textAlign: "center",
             background: `${C.bg}cc`, border: `1px dashed ${C.border}`,
             borderRadius: 8, fontFamily: FONT,
           }}>
             <div style={{ fontSize: 13, color: C.muted, fontWeight: 600, marginBottom: 6 }}>
-              {cohortDate} 의 VLPI 데이터가 없습니다
+              {cohortDate} 의 RSPI 데이터가 없습니다
             </div>
             <div style={{ fontSize: 11, color: C.dim, lineHeight: 1.6 }}>
-              VLPI는 당일 시장 데이터(변동성, 모멘텀, 수급 등)가 필요하며, 현재 히스토리에 포함되지 않은 날짜입니다.
+              RSPI는 당일 시장 데이터(야간시장, 수급, 신용잔고 등)가 필요하며, 현재 히스토리에 포함되지 않은 날짜입니다.
               <br/>아래 코호트 리스크맵은 해당일 코호트 기준으로 표시됩니다.
             </div>
           </div>
         )}
 
-        {/* D: Cohort Risk Map — 항상 표시 (activeCohorts 기반, 날짜에 반응) */}
+        {/* D: Cohort Risk Map */}
         <CohortRiskMap
           cohorts={activeCohorts}
-          thresholds={VLPI_CONFIG?.status_thresholds}
+          thresholds={RSPI_CONFIG?.status_thresholds}
         />
       </PanelBox>
 

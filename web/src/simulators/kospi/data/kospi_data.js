@@ -39238,95 +39238,89 @@ export const STOCK_CREDIT = {
   }
 };
 
-export const VLPI_DATA = {
+export const RSPI_DATA = {
   "history": [
     {
       "date": "2026-03-04",
-      "pre_vlpi": 39.0,
-      "level": "caution",
-      "components": {
+      "rspi": 0.0,
+      "cascade_force": 0.0,
+      "damping_force": 0.0,
+      "cascade_risk": "low",
+      "cf_components": {
         "caution_zone": 0.0,
-        "credit_momentum": 3.0,
-        "policy_shock": 20.0,
-        "overnight_gap": 10.0,
         "cumulative_decline": 0.0,
-        "individual_flow": 6.0
+        "individual_flow": 0.0,
+        "credit_accel": 0.0
+      },
+      "df_components": {
+        "overnight_recovery": 0.0,
+        "credit_inflow": 0.0,
+        "foreign_exhaustion": 0.0,
+        "safe_buffer": 0.0
       },
       "raw_variables": {
-        "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "v5": 0.0,
-        "v6": 0.6
+        "v1": 0.0, "v2": 0.0, "v3": 0.0, "v4": 0.0,
+        "d1": 0.0, "d2": 0.0, "d3": 0.0, "d4": 0.0
       },
       "impact": null
     }
   ],
   "latest": {
     "date": "2026-03-04",
-    "pre_vlpi": 39.0,
-    "level": "caution",
-    "components": {
+    "rspi": 0.0,
+    "cascade_force": 0.0,
+    "damping_force": 0.0,
+    "cascade_risk": "low",
+    "cf_components": {
       "caution_zone": 0.0,
-      "credit_momentum": 3.0,
-      "policy_shock": 20.0,
-      "overnight_gap": 10.0,
       "cumulative_decline": 0.0,
-      "individual_flow": 6.0
+      "individual_flow": 0.0,
+      "credit_accel": 0.0
+    },
+    "df_components": {
+      "overnight_recovery": 0.0,
+      "credit_inflow": 0.0,
+      "foreign_exhaustion": 0.0,
+      "safe_buffer": 0.0
     },
     "raw_variables": {
-      "v1": 0.0,
-      "v2": 0.0,
-      "v3": 1.0,
-      "v4": 0.0,
-      "v5": 0.0,
-      "v6": 0.6
+      "v1": 0.0, "v2": 0.0, "v3": 0.0, "v4": 0.0,
+      "d1": 0.0, "d2": 0.0, "d3": 0.0, "d4": 0.0
     },
     "impact": null
   },
   "scenario_matrix": [
     {
       "label": "낙관적",
-      "ewy_change_pct": 2.5,
-      "policy_shock": false,
-      "pre_vlpi": 34.0,
-      "sell_volume_억": 9548902.0,
-      "sell_ratio_pct": 3.26,
-      "price_impact_pct": 0,
-      "absorption_ratio": 0
+      "ewy_pct": 2.5,
+      "rspi": -10.0,
+      "cascade_force": 20.0,
+      "damping_force": 30.0,
+      "cascade_risk": "low"
     },
     {
       "label": "기본",
-      "ewy_change_pct": -1.0,
-      "policy_shock": false,
-      "pre_vlpi": 41.0,
-      "sell_volume_억": 14370216.0,
-      "sell_ratio_pct": 4.91,
-      "price_impact_pct": 0,
-      "absorption_ratio": 0
+      "ewy_pct": -1.0,
+      "rspi": 5.0,
+      "cascade_force": 25.0,
+      "damping_force": 20.0,
+      "cascade_risk": "medium"
     },
     {
       "label": "비관적",
-      "ewy_change_pct": -4.0,
-      "policy_shock": true,
-      "pre_vlpi": 47.0,
-      "sell_volume_억": 28988143.0,
-      "sell_ratio_pct": 9.91,
-      "price_impact_pct": 0,
-      "absorption_ratio": 0
+      "ewy_pct": -4.0,
+      "rspi": 30.0,
+      "cascade_force": 40.0,
+      "damping_force": 10.0,
+      "cascade_risk": "high"
     }
   ]
 };
 
-export const VLPI_CONFIG = {
+export const RSPI_CONFIG = {
   "weights": {
-    "w1": 0.25,
-    "w2": 0.1,
-    "w3": 0.2,
-    "w4": 0.2,
-    "w5": 0.15,
-    "w6": 0.1
+    "cf": {"cf1": 0.30, "cf2": 0.25, "cf3": 0.25, "cf4": 0.20},
+    "df": {"df1": 0.30, "df2": 0.20, "df3": 0.25, "df4": 0.25}
   },
   "status_thresholds": {
     "debt_exceed": 100,
@@ -39335,81 +39329,29 @@ export const VLPI_CONFIG = {
     "caution": 155,
     "good": 170
   },
-  "variables": [
-    {
-      "key": "v1",
-      "label": "주의구간 비중",
-      "desc": "담보비율 140~170% 코호트 비중",
-      "range": "0~1",
-      "weight_key": "w1"
-    },
-    {
-      "key": "v2",
-      "label": "신용잔고 모멘텀",
-      "desc": "최근 3일 신용잔고 변화 방향",
-      "range": "-0.3~0.7",
-      "weight_key": "w2"
-    },
-    {
-      "key": "v3",
-      "label": "정책 쇼크",
-      "desc": "증권사 신용제한, 서킷브레이커 등",
-      "range": "0~1",
-      "weight_key": "w3"
-    },
-    {
-      "key": "v4",
-      "label": "야간 갭",
-      "desc": "EWY/선물 기반 갭다운 예상",
-      "range": "-1~1",
-      "weight_key": "w4"
-    },
-    {
-      "key": "v5",
-      "label": "연속 하락",
-      "desc": "연속 하락일수 + 누적 하락률",
-      "range": "0~1",
-      "weight_key": "w5"
-    },
-    {
-      "key": "v6",
-      "label": "개인 수급",
-      "desc": "전일 개인 순매수 패턴",
-      "range": "0~1",
-      "weight_key": "w6"
-    }
+  "cf_variables": [
+    {"key": "v1", "label": "주의구간 비중", "desc": "담보비율 140~170% 코호트 비중", "range": "0~1"},
+    {"key": "v2", "label": "연속 하락", "desc": "연속 하락일수 + 누적 하락률", "range": "0~1"},
+    {"key": "v3", "label": "개인 수급", "desc": "전일 개인 순매수 패턴", "range": "0~1"},
+    {"key": "v4", "label": "신용 가속", "desc": "신용잔고 감소 가속 모멘텀", "range": "0~0.7"}
+  ],
+  "df_variables": [
+    {"key": "d1", "label": "야간 반등", "desc": "EWY/KORU/야간선물/US 반등 + coherence", "range": "0~1"},
+    {"key": "d2", "label": "신용 유입", "desc": "하락일 신용증가 = 저가매수 (D+1 시차)", "range": "0~1"},
+    {"key": "d3", "label": "외국인 소진", "desc": "외국인 매도 규모 감소/전환", "range": "0~1"},
+    {"key": "d4", "label": "안전 버퍼", "desc": "안전구간 코호트 비중 (방화벽)", "range": "0~1"}
   ],
   "levels": [
-    {
-      "min": 0,
-      "max": 30,
-      "label": "정상",
-      "color": "#4caf50"
-    },
-    {
-      "min": 30,
-      "max": 50,
-      "label": "주의",
-      "color": "#ffc107"
-    },
-    {
-      "min": 50,
-      "max": 70,
-      "label": "경고",
-      "color": "#ff9800"
-    },
-    {
-      "min": 70,
-      "max": 100,
-      "label": "위험",
-      "color": "#f44336"
-    }
+    {"min": -100, "max": -20, "label": "반등 압력", "color": "#4caf50"},
+    {"min": -20, "max": 0, "label": "균형", "color": "#8bc34a"},
+    {"min": 0, "max": 20, "label": "약한 하락", "color": "#ffc107"},
+    {"min": 20, "max": 40, "label": "하락 우세", "color": "#ff9800"},
+    {"min": 40, "max": 100, "label": "캐스케이드", "color": "#f44336"}
   ],
   "impact_params": {
     "sensitivity": 0.15,
     "sigmoid_k": 0.08,
-    "sigmoid_mid": 50,
-    "samsung_credit_weight": 0.5
+    "sigmoid_mid": 50
   }
 };
 

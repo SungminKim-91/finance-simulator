@@ -61,6 +61,7 @@ YF_SYMBOLS = {
     "vix": "^VIX",
     "sp500": "SPY",
     "ewy": "EWY",
+    "koru": "KORU",
 }
 
 
@@ -95,6 +96,8 @@ def extract_date_data(yf_data: pd.DataFrame, date: str) -> dict:
         "samsung_volume": None, "hynix_volume": None,
         "usd_krw": None, "wti": None, "vix": None, "sp500": None,
         "ewy_close": None, "ewy_change_pct": None,
+        "koru_close": None, "koru_change_pct": None,
+        "sp500_change_pct": None,
     }
 
     if yf_data.empty:
@@ -122,6 +125,8 @@ def extract_date_data(yf_data: pd.DataFrame, date: str) -> dict:
                         result[key] = round(float(val), 1)
                     elif key == "ewy":
                         result["ewy_close"] = round(float(val), 2)
+                    elif key == "koru":
+                        result["koru_close"] = round(float(val), 2)
                     else:
                         result[key] = round(float(val), 2)
             except (KeyError, TypeError):
@@ -139,6 +144,36 @@ def extract_date_data(yf_data: pd.DataFrame, date: str) -> dict:
                         if pd.notna(prev_ewy) and float(prev_ewy) > 0:
                             result["ewy_change_pct"] = round(
                                 (result["ewy_close"] / float(prev_ewy) - 1) * 100, 2
+                            )
+                        break
+            except (KeyError, TypeError):
+                pass
+
+        # KORU 변동률 계산 (전일 대비)
+        if result["koru_close"] is not None:
+            try:
+                for offset in range(1, 6):
+                    check_dt = dt - pd.Timedelta(days=offset)
+                    if check_dt in yf_data.index:
+                        prev_koru = yf_data.loc[check_dt][("Close", YF_SYMBOLS["koru"])]
+                        if pd.notna(prev_koru) and float(prev_koru) > 0:
+                            result["koru_change_pct"] = round(
+                                (result["koru_close"] / float(prev_koru) - 1) * 100, 2
+                            )
+                        break
+            except (KeyError, TypeError):
+                pass
+
+        # SP500 변동률 계산 (전일 대비)
+        if result["sp500"] is not None:
+            try:
+                for offset in range(1, 6):
+                    check_dt = dt - pd.Timedelta(days=offset)
+                    if check_dt in yf_data.index:
+                        prev_sp = yf_data.loc[check_dt][("Close", YF_SYMBOLS["sp500"])]
+                        if pd.notna(prev_sp) and float(prev_sp) > 0:
+                            result["sp500_change_pct"] = round(
+                                (result["sp500"] / float(prev_sp) - 1) * 100, 2
                             )
                         break
             except (KeyError, TypeError):
@@ -316,6 +351,9 @@ def build_snapshot(
             "sp500": data["sp500"],
             "ewy_close": data.get("ewy_close"),
             "ewy_change_pct": data.get("ewy_change_pct"),
+            "koru_close": data.get("koru_close"),
+            "koru_change_pct": data.get("koru_change_pct"),
+            "sp500_change_pct": data.get("sp500_change_pct"),
         },
         "stock_credit": _build_stock_credit(credit_b, stock_caps),
         "stock_prices": _build_stock_prices(date, stock_daily_prices),
@@ -417,6 +455,9 @@ def append_timeseries(date: str, snapshot: dict) -> None:
         "sp500": global_d.get("sp500"),
         "ewy_close": global_d.get("ewy_close"),
         "ewy_change_pct": global_d.get("ewy_change_pct"),
+        "koru_close": global_d.get("koru_close"),
+        "koru_change_pct": global_d.get("koru_change_pct"),
+        "sp500_change_pct": global_d.get("sp500_change_pct"),
     }
 
     # 종목별 신용잔고 (stock_credit)

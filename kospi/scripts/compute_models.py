@@ -1796,14 +1796,13 @@ def run_all_models() -> dict:
     # Loop Status (정적 — 수동 업데이트 필요)
     loop_status = _compute_loop_status(ts, latest)
 
-    # ── v1.5.0: VLPI 계산 ──
-    vlpi_result_data = {}
+    # ── v2.0.0: RSPI 계산 (VLPI 대체) ──
+    rspi_result_data = {}
     try:
-        from scripts.vlpi_engine import VLPIEngine
-        vlpi_engine = VLPIEngine()
+        from scripts.rspi_engine import RSPIEngine
+        rspi_engine = RSPIEngine()
 
         samsung_price = latest.get("samsung", 0) or 0
-        ewy_pct = latest.get("ewy_change_pct")
 
         # 삼성전자 추정 신용잔고 (조원) = 유가증권 신용 × SAMSUNG_CREDIT_WEIGHT
         samsung_credit_bn = (total_credit * SAMSUNG_CREDIT_WEIGHT) if total_credit > 0 else 0
@@ -1812,39 +1811,50 @@ def run_all_models() -> dict:
         samsung_volumes = [r.get("samsung_volume", 0) or 0 for r in ts[-20:]]
         samsung_adv = sum(samsung_volumes) / len(samsung_volumes) / 1000 if samsung_volumes else 30000
 
-        # 코호트를 VLPI 입력 형식으로 변환
-        vlpi_cohorts = []
+        # 코호트를 RSPI 입력 형식으로 변환
+        rspi_cohorts = []
         total_amount = sum(c.get("remaining_amount_billion", 0) for c in lifo_adjusted)
         if total_amount > 0:
             for c in lifo_adjusted:
                 entry_price = c.get("entry_stock_price", 0) or c.get("entry_kospi", 0)
                 if entry_price > 0:
-                    vlpi_cohorts.append({
+                    rspi_cohorts.append({
                         "entry_price": entry_price,
                         "weight": c.get("remaining_amount_billion", 0) / total_amount,
                     })
 
-        # 정책 이벤트 로드 (samsung_cohorts.json seed)
-        policy_events = _load_policy_events()
+        # 야간시장 데이터 (D1: 4소스)
+        overnight_data = {
+            "ewy_pct": latest.get("ewy_change_pct"),
+            "koru_pct": latest.get("koru_change_pct"),
+            "kospi_futures_pct": latest.get("kospi_futures_pct"),
+            "us_market_pct": latest.get("sp500_change_pct"),
+        }
+
+        # 외국인 수급 (D3용, 억원)
+        foreign_flows = [
+            {"foreign": (r.get("foreign_billion") or 0) * 10000}
+            for r in ts[-10:]
+        ]
 
         if samsung_price > 0:
-            vlpi_result = vlpi_engine.calculate_for_date(
+            rspi_result = rspi_engine.calculate_for_date(
                 date=latest.get("date", ""),
                 ts=ts,
-                cohorts=vlpi_cohorts,
-                events=policy_events,
-                ewy_change_pct=ewy_pct,
+                cohorts=rspi_cohorts,
+                overnight_data=overnight_data,
+                foreign_flows=foreign_flows,
                 samsung_credit_bn=samsung_credit_bn,
                 current_price=int(samsung_price),
                 adv_shares_k=samsung_adv,
             )
 
             # 시나리오 매트릭스
-            if vlpi_result.raw_variables and samsung_credit_bn > 0:
-                rv = vlpi_result.raw_variables
-                scenario_matrix = vlpi_engine.calculate_scenario_matrix(
-                    v1=rv["v1"], v2=rv["v2"], v3_base=rv["v3"],
-                    v5=rv["v5"], v6=rv["v6"],
+            rv = rspi_result.get("raw_variables", {})
+            if rv and samsung_credit_bn > 0:
+                scenario_matrix = rspi_engine.calculate_scenario_matrix(
+                    v1=rv["v1"], v2=rv["v2"], v3=rv["v3"], v4=rv["v4"],
+                    d2=rv["d2"], d3=rv["d3"], d4=rv["d4"],
                     samsung_credit_bn=samsung_credit_bn,
                     current_price=int(samsung_price),
                     adv_shares_k=samsung_adv,
@@ -1852,13 +1862,13 @@ def run_all_models() -> dict:
             else:
                 scenario_matrix = []
 
-            vlpi_result_data = vlpi_engine.get_output()
-            vlpi_result_data["scenario_matrix"] = scenario_matrix
-            print(f"  VLPI: {vlpi_result.pre_vlpi} ({vlpi_result.level})")
+            rspi_result_data = rspi_engine.get_output()
+            rspi_result_data["scenario_matrix"] = scenario_matrix
+            print(f"  RSPI: {rspi_result['rspi']} ({rspi_result['cascade_risk']})")
         else:
-            print("  VLPI: Skipped (no samsung price)")
+            print("  RSPI: Skipped (no samsung price)")
     except Exception as e:
-        print(f"  VLPI: Error ({e})")
+        print(f"  RSPI: Error ({e})")
 
     # Assemble
     output = {
@@ -1873,7 +1883,7 @@ def run_all_models() -> dict:
         "cohort_history": cohort_history,
         "backtest_dates": backtest_dates,
         "stock_credit": stock_credit_result,
-        "vlpi": vlpi_result_data,
+        "rspi": rspi_result_data,
     }
 
     # Save
