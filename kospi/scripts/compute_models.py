@@ -1796,20 +1796,14 @@ def run_all_models() -> dict:
     # Loop Status (정적 — 수동 업데이트 필요)
     loop_status = _compute_loop_status(ts, latest)
 
-    # ── v2.0.0: RSPI 계산 (VLPI 대체) ──
+    # ── v2.0.0: RSPI 계산 (VLPI 대체) — 전체 히스토리 ──
     rspi_result_data = {}
     try:
         from scripts.rspi_engine import RSPIEngine
         rspi_engine = RSPIEngine()
 
-        samsung_price = latest.get("samsung", 0) or 0
-
         # 삼성전자 추정 신용잔고 (조원) = 유가증권 신용 × SAMSUNG_CREDIT_WEIGHT
         samsung_credit_bn = (total_credit * SAMSUNG_CREDIT_WEIGHT) if total_credit > 0 else 0
-
-        # 평균 일거래량 (천주) — 최근 20일
-        samsung_volumes = [r.get("samsung_volume", 0) or 0 for r in ts[-20:]]
-        samsung_adv = sum(samsung_volumes) / len(samsung_volumes) / 1000 if samsung_volumes else 30000
 
         # 코호트를 RSPI 입력 형식으로 변환
         rspi_cohorts = []
@@ -1823,59 +1817,72 @@ def run_all_models() -> dict:
                         "weight": c.get("remaining_amount_billion", 0) / total_amount,
                     })
 
-        # 야간시장 데이터 (D1: 4소스) — 최신 유효 레코드에서 가져옴
-        # 당일(latest) change_pct가 None이면 D-1~D-3 역추적
-        overnight_src = latest
-        for lookback in range(0, min(4, len(ts))):
-            candidate = ts[-(1 + lookback)]
-            if candidate.get("ewy_change_pct") is not None:
-                overnight_src = candidate
-                break
-        overnight_data = {
-            "ewy_pct": overnight_src.get("ewy_change_pct"),
-            "koru_pct": overnight_src.get("koru_change_pct"),
-            "kospi_futures_pct": overnight_src.get("kospi_futures_pct"),
-            "us_market_pct": overnight_src.get("sp500_change_pct"),
-        }
+        # 전체 timeseries 순회하여 일별 RSPI 계산 (최소 20일 데이터 필요)
+        start_idx = max(20, 0)
+        for idx in range(start_idx, len(ts)):
+            rec = ts[idx]
+            sam_price = rec.get("samsung", 0) or 0
+            if sam_price <= 0:
+                continue
 
-        # 외국인 수급 (D3용, 억원)
-        foreign_flows = [
-            {"foreign": (r.get("foreign_billion") or 0) * 10000}
-            for r in ts[-10:]
-        ]
+            # 해당 날짜 기준 야간 데이터 (D-1~D-3 역추적)
+            on_data = {}
+            for lb in range(0, min(4, idx + 1)):
+                cand = ts[idx - lb]
+                if cand.get("ewy_change_pct") is not None:
+                    on_data = {
+                        "ewy_pct": cand.get("ewy_change_pct"),
+                        "koru_pct": cand.get("koru_change_pct"),
+                        "kospi_futures_pct": cand.get("kospi_futures_pct"),
+                        "us_market_pct": cand.get("sp500_change_pct"),
+                    }
+                    break
 
-        if samsung_price > 0:
-            rspi_result = rspi_engine.calculate_for_date(
-                date=latest.get("date", ""),
+            # 해당 날짜 기준 ADV (최근 20일)
+            vols = [ts[j].get("samsung_volume", 0) or 0 for j in range(max(0, idx - 19), idx + 1)]
+            adv = sum(vols) / len(vols) / 1000 if vols else 30000
+
+            # 해당 날짜 기준 credit
+            rec_credit = rec.get("credit_balance_billion")
+            day_credit_bn = (rec_credit * SAMSUNG_CREDIT_WEIGHT) if rec_credit else samsung_credit_bn
+
+            rspi_engine.calculate_for_date(
+                date=rec["date"],
                 ts=ts,
                 cohorts=rspi_cohorts,
-                overnight_data=overnight_data,
-                foreign_flows=foreign_flows,
+                overnight_data=on_data,
+                samsung_credit_bn=day_credit_bn,
+                current_price=int(sam_price),
+                adv_shares_k=adv,
+            )
+
+        # 최종 결과: latest + scenario_matrix
+        rspi_result_data = rspi_engine.get_output()
+        latest_rspi = rspi_result_data.get("latest", {})
+
+        samsung_price = latest.get("samsung", 0) or 0
+        samsung_volumes = [r.get("samsung_volume", 0) or 0 for r in ts[-20:]]
+        samsung_adv = sum(samsung_volumes) / len(samsung_volumes) / 1000 if samsung_volumes else 30000
+
+        rv = latest_rspi.get("raw_variables", {})
+        if rv and samsung_credit_bn > 0 and samsung_price > 0:
+            scenario_matrix = rspi_engine.calculate_scenario_matrix(
+                v1=rv["v1"], v2=rv["v2"], v3=rv["v3"], v4=rv["v4"],
+                d2=rv["d2"], d3=rv["d3"], d4=rv["d4"],
                 samsung_credit_bn=samsung_credit_bn,
                 current_price=int(samsung_price),
                 adv_shares_k=samsung_adv,
             )
-
-            # 시나리오 매트릭스
-            rv = rspi_result.get("raw_variables", {})
-            if rv and samsung_credit_bn > 0:
-                scenario_matrix = rspi_engine.calculate_scenario_matrix(
-                    v1=rv["v1"], v2=rv["v2"], v3=rv["v3"], v4=rv["v4"],
-                    d2=rv["d2"], d3=rv["d3"], d4=rv["d4"],
-                    samsung_credit_bn=samsung_credit_bn,
-                    current_price=int(samsung_price),
-                    adv_shares_k=samsung_adv,
-                )
-            else:
-                scenario_matrix = []
-
-            rspi_result_data = rspi_engine.get_output()
-            rspi_result_data["scenario_matrix"] = scenario_matrix
-            print(f"  RSPI: {rspi_result['rspi']} ({rspi_result['cascade_risk']})")
         else:
-            print("  RSPI: Skipped (no samsung price)")
+            scenario_matrix = []
+
+        rspi_result_data["scenario_matrix"] = scenario_matrix
+        n_hist = len(rspi_result_data.get("history", []))
+        print(f"  RSPI: {latest_rspi.get('rspi')} ({latest_rspi.get('cascade_risk')}), history={n_hist} days")
     except Exception as e:
+        import traceback
         print(f"  RSPI: Error ({e})")
+        traceback.print_exc()
 
     # Assemble
     output = {
