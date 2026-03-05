@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-05T20:25:07.752024
+ * Generated: 2026-03-05T20:38:42.178654
  * Source: kospi/data/ (pipeline)
  * Exports: 18
  */
@@ -17454,7 +17454,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-05T20:25:07.751610",
+  "last_updated": "2026-03-05T20:38:42.178350",
   "last_date": "2026-03-05",
   "data_source": "pipeline",
   "data_quality": {
@@ -39458,9 +39458,9 @@ export const RSPI_DATA = {
   "history": [
     {
       "date": "2025-02-05",
-      "rspi": -32.9,
+      "rspi": -41.2,
       "cascade_force": 13.6,
-      "damping_force": 46.5,
+      "damping_force": 54.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39469,7 +39469,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.3,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -39479,7 +39479,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.2765,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -39488,9 +39488,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-06",
-      "rspi": -32.9,
+      "rspi": -36.2,
       "cascade_force": 13.6,
-      "damping_force": 46.5,
+      "damping_force": 49.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39499,7 +39499,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 3.3,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -39509,7 +39509,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.1106,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -39548,9 +39548,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-10",
-      "rspi": -6.0,
+      "rspi": -19.0,
       "cascade_force": 25.0,
-      "damping_force": 31.0,
+      "damping_force": 44.0,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39559,7 +39559,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 13.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -39569,7 +39569,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4342,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -39578,9 +39578,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-11",
-      "rspi": -48.5,
+      "rspi": -48.7,
       "cascade_force": 5.0,
-      "damping_force": 53.5,
+      "damping_force": 53.7,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39589,7 +39589,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -39599,7 +39599,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0073,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -39608,9 +39608,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-12",
-      "rspi": -43.5,
+      "rspi": -43.8,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 48.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39619,7 +39619,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -39629,7 +39629,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0095,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -39638,9 +39638,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-13",
-      "rspi": -26.0,
+      "rspi": -42.0,
       "cascade_force": 5.0,
-      "damping_force": 31.0,
+      "damping_force": 47.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39649,7 +39649,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 16.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -39659,7 +39659,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.5333,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -39668,9 +39668,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-14",
-      "rspi": -26.0,
+      "rspi": -28.5,
       "cascade_force": 5.0,
-      "damping_force": 31.0,
+      "damping_force": 33.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39679,7 +39679,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 2.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -39689,7 +39689,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0835,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -39698,9 +39698,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-17",
-      "rspi": -33.5,
+      "rspi": -36.0,
       "cascade_force": 5.0,
-      "damping_force": 38.5,
+      "damping_force": 41.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39709,7 +39709,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 2.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 7.5,
         "safe_buffer": 25.0
@@ -39719,7 +39719,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0835,
         "d2": 0.3,
         "d3": 0.3,
         "d4": 1.0
@@ -39728,9 +39728,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-18",
-      "rspi": -48.5,
+      "rspi": -57.2,
       "cascade_force": 5.0,
-      "damping_force": 53.5,
+      "damping_force": 62.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39739,7 +39739,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -39749,7 +39749,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2884,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -39758,9 +39758,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-19",
-      "rspi": -43.5,
+      "rspi": -52.4,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 57.4,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39769,7 +39769,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -39779,7 +39779,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2977,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -39788,9 +39788,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-20",
-      "rspi": -16.0,
+      "rspi": -17.4,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 32.4,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39799,7 +39799,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -39809,7 +39809,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.046,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -39878,9 +39878,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-25",
-      "rspi": -16.0,
+      "rspi": -16.6,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.6,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39889,7 +39889,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -39899,7 +39899,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0193,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -39908,9 +39908,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-26",
-      "rspi": -6.0,
+      "rspi": -8.9,
       "cascade_force": 25.0,
-      "damping_force": 31.0,
+      "damping_force": 33.9,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39919,7 +39919,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 2.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -39929,7 +39929,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0959,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -39968,9 +39968,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-02-28",
-      "rspi": -16.0,
+      "rspi": -18.9,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 33.9,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -39979,7 +39979,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 2.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -39989,7 +39989,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0971,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -39998,9 +39998,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-04",
-      "rspi": -28.5,
+      "rspi": -30.6,
       "cascade_force": 15.0,
-      "damping_force": 43.5,
+      "damping_force": 45.6,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40009,7 +40009,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 2.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -40019,7 +40019,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.069,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -40028,10 +40028,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-05",
-      "rspi": -16.0,
+      "rspi": -34.8,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 49.8,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -40039,7 +40039,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 18.8,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -40049,7 +40049,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.6265,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -40088,9 +40088,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-07",
-      "rspi": -34.9,
+      "rspi": -44.2,
       "cascade_force": 13.6,
-      "damping_force": 48.5,
+      "damping_force": 57.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40099,7 +40099,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 9.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -40109,7 +40109,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.3103,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -40148,9 +40148,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-11",
-      "rspi": -5.4,
+      "rspi": -10.2,
       "cascade_force": 23.6,
-      "damping_force": 29.0,
+      "damping_force": 33.7,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40159,7 +40159,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.7,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -40169,7 +40169,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.1575,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -40178,10 +40178,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-12",
-      "rspi": -19.9,
+      "rspi": -34.8,
       "cascade_force": 33.6,
-      "damping_force": 53.5,
-      "cascade_risk": "low",
+      "damping_force": 68.3,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -40189,7 +40189,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 14.8,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -40199,7 +40199,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.4946,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -40238,10 +40238,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-14",
-      "rspi": -12.9,
+      "rspi": -29.6,
       "cascade_force": 23.6,
-      "damping_force": 36.5,
-      "cascade_risk": "low",
+      "damping_force": 53.1,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -40249,7 +40249,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 16.6,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 7.5,
         "safe_buffer": 25.0
@@ -40259,7 +40259,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.5541,
         "d2": 0.2,
         "d3": 0.3,
         "d4": 1.0
@@ -40268,10 +40268,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-17",
-      "rspi": -19.9,
+      "rspi": -40.0,
       "cascade_force": 33.6,
-      "damping_force": 53.5,
-      "cascade_risk": "low",
+      "damping_force": 73.6,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -40279,7 +40279,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 20.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -40289,7 +40289,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.6694,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -40328,9 +40328,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-19",
-      "rspi": -43.5,
+      "rspi": -49.7,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 54.7,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40339,7 +40339,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 6.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -40349,7 +40349,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2078,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -40388,9 +40388,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-21",
-      "rspi": -43.5,
+      "rspi": -45.0,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 50.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40399,7 +40399,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -40409,7 +40409,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0502,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -40418,9 +40418,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-24",
-      "rspi": -32.9,
+      "rspi": -43.5,
       "cascade_force": 13.6,
-      "damping_force": 46.5,
+      "damping_force": 57.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40429,7 +40429,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 10.6,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -40439,7 +40439,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.3528,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -40448,9 +40448,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-25",
-      "rspi": -4.0,
+      "rspi": -4.4,
       "cascade_force": 25.0,
-      "damping_force": 29.0,
+      "damping_force": 29.4,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40459,7 +40459,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.4,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -40469,7 +40469,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 0.0149,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -40568,9 +40568,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-03-31",
-      "rspi": 6.0,
+      "rspi": 4.7,
       "cascade_force": 35.0,
-      "damping_force": 29.0,
+      "damping_force": 30.3,
       "cascade_risk": "medium",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40579,7 +40579,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.3,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -40589,7 +40589,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 0.0423,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -40598,9 +40598,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-01",
-      "rspi": -6.5,
+      "rspi": -16.4,
       "cascade_force": 35.0,
-      "damping_force": 41.5,
+      "damping_force": 51.4,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40609,7 +40609,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 9.9,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -40619,7 +40619,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 0.3295,
         "d2": 0.2,
         "d3": 0.5,
         "d4": 1.0
@@ -40628,9 +40628,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-02",
-      "rspi": 6.0,
+      "rspi": 4.8,
       "cascade_force": 35.0,
-      "damping_force": 29.0,
+      "damping_force": 30.2,
       "cascade_risk": "medium",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40639,7 +40639,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.2,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -40649,7 +40649,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 0.0386,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -40778,10 +40778,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-09",
-      "rspi": 6.0,
+      "rspi": -24.0,
       "cascade_force": 35.0,
-      "damping_force": 29.0,
-      "cascade_risk": "medium",
+      "damping_force": 59.0,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -40789,7 +40789,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 30.0,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -40799,7 +40799,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 1.0,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -40838,10 +40838,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-11",
-      "rspi": 6.0,
+      "rspi": -24.0,
       "cascade_force": 35.0,
-      "damping_force": 29.0,
-      "cascade_risk": "medium",
+      "damping_force": 59.0,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -40849,7 +40849,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 30.0,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -40859,7 +40859,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 1.0,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -40868,9 +40868,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-14",
-      "rspi": -6.5,
+      "rspi": -9.3,
       "cascade_force": 35.0,
-      "damping_force": 41.5,
+      "damping_force": 44.3,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40879,7 +40879,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 2.8,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -40889,7 +40889,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 0.0935,
         "d2": 0.2,
         "d3": 0.5,
         "d4": 1.0
@@ -40898,9 +40898,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-15",
-      "rspi": -18.5,
+      "rspi": -18.9,
       "cascade_force": 25.0,
-      "damping_force": 43.5,
+      "damping_force": 43.9,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40909,7 +40909,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -40919,7 +40919,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0144,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -40958,9 +40958,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-17",
-      "rspi": -13.5,
+      "rspi": -16.9,
       "cascade_force": 25.0,
-      "damping_force": 38.5,
+      "damping_force": 41.9,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40969,7 +40969,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 3.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 7.5,
         "safe_buffer": 25.0
@@ -40979,7 +40979,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1127,
         "d2": 0.3,
         "d3": 0.3,
         "d4": 1.0
@@ -40988,9 +40988,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-18",
-      "rspi": -38.5,
+      "rspi": -41.9,
       "cascade_force": 5.0,
-      "damping_force": 43.5,
+      "damping_force": 46.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -40999,7 +40999,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 3.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -41009,7 +41009,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1127,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -41018,9 +41018,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-21",
-      "rspi": -16.0,
+      "rspi": -16.7,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.7,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41029,7 +41029,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -41039,7 +41039,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0217,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -41048,9 +41048,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-22",
-      "rspi": -21.0,
+      "rspi": -34.3,
       "cascade_force": 15.0,
-      "damping_force": 36.0,
+      "damping_force": 49.3,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41059,7 +41059,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 13.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 5.0,
         "safe_buffer": 25.0
@@ -41069,7 +41069,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4437,
         "d2": 0.3,
         "d3": 0.2,
         "d4": 1.0
@@ -41078,10 +41078,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-23",
-      "rspi": -11.0,
+      "rspi": -24.5,
       "cascade_force": 25.0,
-      "damping_force": 36.0,
-      "cascade_risk": "low",
+      "damping_force": 49.5,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -41089,7 +41089,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 13.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 5.0,
         "safe_buffer": 25.0
@@ -41099,7 +41099,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4488,
         "d2": 0.3,
         "d3": 0.2,
         "d4": 1.0
@@ -41108,9 +41108,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-24",
-      "rspi": -28.5,
+      "rspi": -39.6,
       "cascade_force": 15.0,
-      "damping_force": 43.5,
+      "damping_force": 54.6,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41119,7 +41119,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 11.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -41129,7 +41129,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3689,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -41138,9 +41138,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-25",
-      "rspi": -26.5,
+      "rspi": -27.9,
       "cascade_force": 25.0,
-      "damping_force": 51.5,
+      "damping_force": 52.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41149,7 +41149,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.4,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -41159,7 +41159,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0454,
         "d2": 0.2,
         "d3": 0.9,
         "d4": 1.0
@@ -41168,9 +41168,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-28",
-      "rspi": -26.0,
+      "rspi": -26.1,
       "cascade_force": 5.0,
-      "damping_force": 31.0,
+      "damping_force": 31.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41179,7 +41179,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -41189,7 +41189,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0025,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -41198,9 +41198,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-29",
-      "rspi": -48.5,
+      "rspi": -55.1,
       "cascade_force": 5.0,
-      "damping_force": 53.5,
+      "damping_force": 60.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41209,7 +41209,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 6.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -41219,7 +41219,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2194,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -41228,9 +41228,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-04-30",
-      "rspi": -16.0,
+      "rspi": -17.3,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 32.3,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41239,7 +41239,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -41249,7 +41249,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0448,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -41258,10 +41258,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-02",
-      "rspi": -4.0,
+      "rspi": -30.5,
       "cascade_force": 25.0,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
+      "damping_force": 55.5,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -41269,7 +41269,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 26.5,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -41279,7 +41279,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.8838,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -41288,9 +41288,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-07",
-      "rspi": -48.5,
+      "rspi": -49.3,
       "cascade_force": 5.0,
-      "damping_force": 53.5,
+      "damping_force": 54.3,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41299,7 +41299,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.8,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -41309,7 +41309,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0261,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -41318,9 +41318,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-08",
-      "rspi": -32.9,
+      "rspi": -34.2,
       "cascade_force": 13.6,
-      "damping_force": 46.5,
+      "damping_force": 47.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41329,7 +41329,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.3,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41339,7 +41339,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.0436,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -41348,9 +41348,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-09",
-      "rspi": -24.9,
+      "rspi": -28.6,
       "cascade_force": 23.6,
-      "damping_force": 48.5,
+      "damping_force": 52.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41359,7 +41359,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 3.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41369,7 +41369,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.1227,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -41378,10 +41378,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-12",
-      "rspi": -6.0,
+      "rspi": -21.0,
       "cascade_force": 25.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 46.0,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -41389,7 +41389,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 15.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -41399,7 +41399,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.499,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -41408,9 +41408,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-13",
-      "rspi": -48.5,
+      "rspi": -51.3,
       "cascade_force": 5.0,
-      "damping_force": 53.5,
+      "damping_force": 56.3,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41419,7 +41419,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 2.8,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -41429,7 +41429,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0924,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -41438,9 +41438,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-14",
-      "rspi": -41.5,
+      "rspi": -47.0,
       "cascade_force": 5.0,
-      "damping_force": 46.5,
+      "damping_force": 52.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41449,7 +41449,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 5.5,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41459,7 +41459,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1824,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -41468,9 +41468,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-15",
-      "rspi": -33.5,
+      "rspi": -37.0,
       "cascade_force": 15.0,
-      "damping_force": 48.5,
+      "damping_force": 52.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41479,7 +41479,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 3.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41489,7 +41489,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1158,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -41498,9 +41498,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-16",
-      "rspi": -12.9,
+      "rspi": -14.1,
       "cascade_force": 33.6,
-      "damping_force": 46.5,
+      "damping_force": 47.7,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41509,7 +41509,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.2,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41519,7 +41519,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.0398,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -41528,9 +41528,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-19",
-      "rspi": -16.0,
+      "rspi": -16.6,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.6,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41539,7 +41539,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -41549,7 +41549,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0196,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -41588,9 +41588,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-21",
-      "rspi": -28.5,
+      "rspi": -33.7,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 58.7,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41599,7 +41599,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 5.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -41609,7 +41609,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1747,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -41618,9 +41618,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-22",
-      "rspi": -16.0,
+      "rspi": -16.1,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.1,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41629,7 +41629,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -41639,7 +41639,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0031,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -41648,9 +41648,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-23",
-      "rspi": -28.5,
+      "rspi": -33.3,
       "cascade_force": 15.0,
-      "damping_force": 43.5,
+      "damping_force": 48.3,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41659,7 +41659,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.8,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -41669,7 +41669,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1616,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -41678,9 +41678,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-26",
-      "rspi": -28.5,
+      "rspi": -33.3,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 58.3,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41689,7 +41689,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.8,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -41699,7 +41699,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1616,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -41708,10 +41708,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-27",
-      "rspi": -16.0,
+      "rspi": -33.0,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 48.0,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -41719,7 +41719,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 17.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -41729,7 +41729,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.5662,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -41738,9 +41738,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-28",
-      "rspi": -26.5,
+      "rspi": -32.0,
       "cascade_force": 25.0,
-      "damping_force": 51.5,
+      "damping_force": 57.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41749,7 +41749,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 5.5,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -41759,7 +41759,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.183,
         "d2": 0.2,
         "d3": 0.9,
         "d4": 1.0
@@ -41768,9 +41768,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-05-29",
-      "rspi": -43.5,
+      "rspi": -54.8,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 59.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41779,7 +41779,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 11.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41789,7 +41789,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3771,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -41828,9 +41828,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-02",
-      "rspi": -38.5,
+      "rspi": -51.1,
       "cascade_force": 15.0,
-      "damping_force": 53.5,
+      "damping_force": 66.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41839,7 +41839,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 12.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -41849,7 +41849,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4213,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -41858,9 +41858,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-04",
-      "rspi": -23.5,
+      "rspi": -38.0,
       "cascade_force": 25.0,
-      "damping_force": 48.5,
+      "damping_force": 63.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41869,7 +41869,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 14.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41879,7 +41879,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.482,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -41888,9 +41888,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-05",
-      "rspi": -43.5,
+      "rspi": -53.1,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 58.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41899,7 +41899,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 9.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41909,7 +41909,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3191,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -41918,9 +41918,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-09",
-      "rspi": -41.5,
+      "rspi": -50.0,
       "cascade_force": 5.0,
-      "damping_force": 46.5,
+      "damping_force": 55.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41929,7 +41929,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.5,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41939,7 +41939,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2847,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -41948,9 +41948,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-10",
-      "rspi": -32.9,
+      "rspi": -34.0,
       "cascade_force": 13.6,
-      "damping_force": 46.5,
+      "damping_force": 47.6,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41959,7 +41959,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.1,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41969,7 +41969,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.0355,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -41978,9 +41978,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-11",
-      "rspi": -43.5,
+      "rspi": -49.0,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 54.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -41989,7 +41989,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 5.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -41999,7 +41999,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1832,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -42008,9 +42008,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-12",
-      "rspi": -43.5,
+      "rspi": -50.8,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 55.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42019,7 +42019,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 7.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -42029,7 +42029,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2445,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -42068,10 +42068,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-16",
-      "rspi": -16.0,
+      "rspi": -34.7,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 49.7,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -42079,7 +42079,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 18.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -42089,7 +42089,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.6222,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -42128,9 +42128,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-18",
-      "rspi": -28.5,
+      "rspi": -36.6,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 61.6,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42139,7 +42139,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -42149,7 +42149,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2684,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -42158,10 +42158,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-19",
-      "rspi": -16.0,
+      "rspi": -24.1,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 39.1,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -42169,7 +42169,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -42179,7 +42179,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2684,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -42188,9 +42188,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-20",
-      "rspi": -28.5,
+      "rspi": -32.7,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 57.7,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42199,7 +42199,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -42209,7 +42209,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1414,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -42218,10 +42218,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-23",
-      "rspi": -16.0,
+      "rspi": -26.7,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 41.7,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -42229,7 +42229,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 10.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -42239,7 +42239,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3575,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -42248,9 +42248,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-24",
-      "rspi": -28.5,
+      "rspi": -58.5,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 83.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42259,7 +42259,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 30.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -42269,7 +42269,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 1.0,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -42278,9 +42278,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-25",
-      "rspi": -16.0,
+      "rspi": -16.1,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.1,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42289,7 +42289,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -42299,7 +42299,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0037,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -42308,9 +42308,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-26",
-      "rspi": -14.0,
+      "rspi": -15.5,
       "cascade_force": 15.0,
-      "damping_force": 29.0,
+      "damping_force": 30.5,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42319,7 +42319,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.5,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -42329,7 +42329,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0492,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -42338,9 +42338,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-27",
-      "rspi": -16.0,
+      "rspi": -16.9,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.9,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42349,7 +42349,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -42359,7 +42359,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0311,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -42368,9 +42368,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-06-30",
-      "rspi": -23.5,
+      "rspi": -33.5,
       "cascade_force": 15.0,
-      "damping_force": 38.5,
+      "damping_force": 48.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42379,7 +42379,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 10.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 7.5,
         "safe_buffer": 25.0
@@ -42389,7 +42389,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3317,
         "d2": 0.3,
         "d3": 0.3,
         "d4": 1.0
@@ -42428,10 +42428,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-02",
-      "rspi": -16.0,
+      "rspi": -20.2,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 35.2,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -42439,7 +42439,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -42449,7 +42449,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1389,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -42458,10 +42458,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-03",
-      "rspi": -17.9,
+      "rspi": -26.3,
       "cascade_force": 33.6,
-      "damping_force": 51.5,
-      "cascade_risk": "low",
+      "damping_force": 59.8,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -42469,7 +42469,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.3,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -42479,7 +42479,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.2783,
         "d2": 0.2,
         "d3": 0.9,
         "d4": 1.0
@@ -42488,9 +42488,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-04",
-      "rspi": -24.9,
+      "rspi": -33.3,
       "cascade_force": 23.6,
-      "damping_force": 48.5,
+      "damping_force": 56.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42499,7 +42499,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -42509,7 +42509,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.2783,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -42548,9 +42548,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-08",
-      "rspi": -28.5,
+      "rspi": -40.8,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 65.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42559,7 +42559,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 12.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -42569,7 +42569,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4089,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -42578,9 +42578,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-09",
-      "rspi": -16.0,
+      "rspi": -17.7,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 32.7,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42589,7 +42589,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -42599,7 +42599,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0553,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -42608,9 +42608,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-10",
-      "rspi": -28.5,
+      "rspi": -37.9,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 62.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42619,7 +42619,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 9.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -42629,7 +42629,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3123,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -42668,9 +42668,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-14",
-      "rspi": -23.5,
+      "rspi": -29.1,
       "cascade_force": 25.0,
-      "damping_force": 48.5,
+      "damping_force": 54.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42679,7 +42679,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 5.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -42689,7 +42689,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1877,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -42728,9 +42728,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-16",
-      "rspi": -33.5,
+      "rspi": -34.4,
       "cascade_force": 15.0,
-      "damping_force": 48.5,
+      "damping_force": 49.4,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42739,7 +42739,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -42749,7 +42749,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.031,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -42758,9 +42758,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-17",
-      "rspi": -23.5,
+      "rspi": -24.7,
       "cascade_force": 25.0,
-      "damping_force": 48.5,
+      "damping_force": 49.7,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42769,7 +42769,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -42779,7 +42779,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0386,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -42818,9 +42818,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-21",
-      "rspi": -43.5,
+      "rspi": -55.8,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 60.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42829,7 +42829,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 12.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -42839,7 +42839,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4085,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -42869,7 +42869,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0012,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -42878,10 +42878,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-23",
-      "rspi": -17.9,
+      "rspi": -28.2,
       "cascade_force": 33.6,
-      "damping_force": 51.5,
-      "cascade_risk": "low",
+      "damping_force": 61.8,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -42889,7 +42889,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 10.3,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -42899,7 +42899,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.3421,
         "d2": 0.2,
         "d3": 0.9,
         "d4": 1.0
@@ -42908,9 +42908,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-24",
-      "rspi": -43.5,
+      "rspi": -43.6,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 48.6,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42919,7 +42919,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -42929,7 +42929,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0019,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -42938,9 +42938,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-25",
-      "rspi": -43.5,
+      "rspi": -44.3,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 49.3,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -42949,7 +42949,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.8,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -42959,7 +42959,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0268,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -42998,9 +42998,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-29",
-      "rspi": -34.9,
+      "rspi": -39.6,
       "cascade_force": 13.6,
-      "damping_force": 48.5,
+      "damping_force": 53.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43009,7 +43009,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -43019,7 +43019,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.1542,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -43028,9 +43028,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-07-30",
-      "rspi": -43.5,
+      "rspi": -44.8,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 49.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43039,7 +43039,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -43049,7 +43049,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0421,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -43118,10 +43118,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-04",
-      "rspi": -19.9,
+      "rspi": -38.9,
       "cascade_force": 33.6,
-      "damping_force": 53.5,
-      "cascade_risk": "low",
+      "damping_force": 72.5,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -43129,7 +43129,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 19.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -43139,7 +43139,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.632,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -43148,9 +43148,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-05",
-      "rspi": -32.9,
+      "rspi": -36.2,
       "cascade_force": 13.6,
-      "damping_force": 46.5,
+      "damping_force": 49.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43159,7 +43159,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 3.3,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -43169,7 +43169,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.1091,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -43178,9 +43178,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-06",
-      "rspi": -11.5,
+      "rspi": -16.4,
       "cascade_force": 35.0,
-      "damping_force": 46.5,
+      "damping_force": 51.4,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43189,7 +43189,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.9,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -43199,7 +43199,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 0.1619,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -43208,9 +43208,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-07",
-      "rspi": 2.6,
+      "rspi": 1.0,
       "cascade_force": 33.6,
-      "damping_force": 31.0,
+      "damping_force": 32.6,
       "cascade_risk": "medium",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43219,7 +43219,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -43229,7 +43229,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.0524,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -43238,9 +43238,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-08",
-      "rspi": -16.0,
+      "rspi": -19.0,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 34.0,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43249,7 +43249,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 3.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -43259,7 +43259,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0998,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -43298,10 +43298,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-12",
-      "rspi": -16.0,
+      "rspi": -28.0,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 43.0,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -43309,7 +43309,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 12.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -43319,7 +43319,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3994,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -43328,9 +43328,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-13",
-      "rspi": -28.5,
+      "rspi": -34.4,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 59.4,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43339,7 +43339,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 5.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -43349,7 +43349,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.198,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -43379,7 +43379,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0006,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -43508,9 +43508,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-22",
-      "rspi": -26.5,
+      "rspi": -50.2,
       "cascade_force": 25.0,
-      "damping_force": 51.5,
+      "damping_force": 75.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43519,7 +43519,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 23.7,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -43529,7 +43529,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 0.7884,
         "d2": 0.2,
         "d3": 0.9,
         "d4": 1.0
@@ -43568,9 +43568,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-26",
-      "rspi": 6.0,
+      "rspi": 5.2,
       "cascade_force": 35.0,
-      "damping_force": 29.0,
+      "damping_force": 29.8,
       "cascade_risk": "medium",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43579,7 +43579,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.8,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -43589,7 +43589,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 0.0261,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -43598,10 +43598,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-27",
-      "rspi": -19.9,
+      "rspi": -21.3,
       "cascade_force": 23.6,
-      "damping_force": 43.5,
-      "cascade_risk": "low",
+      "damping_force": 44.8,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -43609,7 +43609,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -43619,7 +43619,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.045,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -43628,10 +43628,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-08-28",
-      "rspi": -18.5,
+      "rspi": -28.8,
       "cascade_force": 25.0,
-      "damping_force": 43.5,
-      "cascade_risk": "low",
+      "damping_force": 53.8,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -43639,7 +43639,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 10.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -43649,7 +43649,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3425,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -43748,9 +43748,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-03",
-      "rspi": -41.5,
+      "rspi": -51.1,
       "cascade_force": 5.0,
-      "damping_force": 46.5,
+      "damping_force": 56.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43759,7 +43759,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 9.6,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -43769,7 +43769,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3197,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -43778,9 +43778,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-04",
-      "rspi": -32.9,
+      "rspi": -37.0,
       "cascade_force": 13.6,
-      "damping_force": 46.5,
+      "damping_force": 50.6,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43789,7 +43789,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.1,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -43799,7 +43799,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.1371,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -43808,10 +43808,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-05",
-      "rspi": -17.4,
+      "rspi": -20.7,
       "cascade_force": 13.6,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 34.3,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -43819,7 +43819,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 3.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -43829,7 +43829,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.1084,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -43838,9 +43838,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-08",
-      "rspi": -48.5,
+      "rspi": -53.5,
       "cascade_force": 5.0,
-      "damping_force": 53.5,
+      "damping_force": 58.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43849,7 +43849,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 5.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -43859,7 +43859,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1674,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -43868,9 +43868,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-09",
-      "rspi": -43.5,
+      "rspi": -49.9,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 54.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43879,7 +43879,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 6.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -43889,7 +43889,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2146,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -43898,9 +43898,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-10",
-      "rspi": -43.5,
+      "rspi": -57.7,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 62.7,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43909,7 +43909,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 14.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -43919,7 +43919,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.474,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -43928,9 +43928,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-11",
-      "rspi": -43.5,
+      "rspi": -55.4,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 60.4,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43939,7 +43939,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 11.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -43949,7 +43949,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3977,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -43958,9 +43958,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-12",
-      "rspi": -41.5,
+      "rspi": -46.0,
       "cascade_force": 5.0,
-      "damping_force": 46.5,
+      "damping_force": 51.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43969,7 +43969,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.5,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -43979,7 +43979,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1485,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -43988,9 +43988,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-15",
-      "rspi": -43.5,
+      "rspi": -49.2,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 54.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -43999,7 +43999,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 5.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -44009,7 +44009,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1893,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -44018,9 +44018,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-16",
-      "rspi": -43.5,
+      "rspi": -51.9,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 56.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44029,7 +44029,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -44039,7 +44039,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2809,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -44078,9 +44078,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-18",
-      "rspi": -28.5,
+      "rspi": -36.8,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 61.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44089,7 +44089,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -44099,7 +44099,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2775,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -44108,9 +44108,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-22",
-      "rspi": -28.5,
+      "rspi": -41.1,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 66.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44119,7 +44119,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 12.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -44129,7 +44129,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4199,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -44228,9 +44228,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-26",
-      "rspi": -16.0,
+      "rspi": -17.1,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 32.1,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44239,7 +44239,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -44249,7 +44249,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0361,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -44258,9 +44258,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-29",
-      "rspi": -26.5,
+      "rspi": -37.2,
       "cascade_force": 25.0,
-      "damping_force": 51.5,
+      "damping_force": 62.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44269,7 +44269,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 10.7,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -44279,7 +44279,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3572,
         "d2": 0.2,
         "d3": 0.9,
         "d4": 1.0
@@ -44288,9 +44288,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-09-30",
-      "rspi": -34.9,
+      "rspi": -35.6,
       "cascade_force": 13.6,
-      "damping_force": 48.5,
+      "damping_force": 49.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44299,7 +44299,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -44309,7 +44309,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.023,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -44318,9 +44318,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-01",
-      "rspi": -32.9,
+      "rspi": -46.7,
       "cascade_force": 13.6,
-      "damping_force": 46.5,
+      "damping_force": 60.3,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44329,7 +44329,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 13.8,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -44339,7 +44339,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.4601,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -44348,9 +44348,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-02",
-      "rspi": -34.9,
+      "rspi": -46.9,
       "cascade_force": 13.6,
-      "damping_force": 48.5,
+      "damping_force": 60.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44359,7 +44359,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 12.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -44369,7 +44369,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.3991,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -44408,10 +44408,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-13",
-      "rspi": -7.4,
+      "rspi": -33.0,
       "cascade_force": 23.6,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 56.6,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -44419,7 +44419,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 25.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -44429,7 +44429,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.8523,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -44468,9 +44468,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-15",
-      "rspi": -43.5,
+      "rspi": -62.0,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 67.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44479,7 +44479,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 18.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -44489,7 +44489,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.6159,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -44498,9 +44498,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-16",
-      "rspi": -41.5,
+      "rspi": -55.5,
       "cascade_force": 5.0,
-      "damping_force": 46.5,
+      "damping_force": 60.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44509,7 +44509,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 14.0,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -44519,7 +44519,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.468,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -44528,9 +44528,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-17",
-      "rspi": -43.5,
+      "rspi": -49.5,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 54.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44539,7 +44539,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 6.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -44549,7 +44549,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2004,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -44558,9 +44558,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-20",
-      "rspi": -26.0,
+      "rspi": -42.1,
       "cascade_force": 5.0,
-      "damping_force": 31.0,
+      "damping_force": 47.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44569,7 +44569,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 16.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -44579,7 +44579,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.5362,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -44618,9 +44618,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-22",
-      "rspi": -26.0,
+      "rspi": -30.0,
       "cascade_force": 5.0,
-      "damping_force": 31.0,
+      "damping_force": 35.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44629,7 +44629,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -44639,7 +44639,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1349,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -44648,9 +44648,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-23",
-      "rspi": -23.5,
+      "rspi": -29.4,
       "cascade_force": 15.0,
-      "damping_force": 38.5,
+      "damping_force": 44.4,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44659,7 +44659,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 5.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 7.5,
         "safe_buffer": 25.0
@@ -44669,7 +44669,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1968,
         "d2": 0.3,
         "d3": 0.3,
         "d4": 1.0
@@ -44678,9 +44678,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-24",
-      "rspi": -28.5,
+      "rspi": -43.9,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 68.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44689,7 +44689,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 15.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -44699,7 +44699,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.5139,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -44708,9 +44708,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-27",
-      "rspi": -43.5,
+      "rspi": -61.7,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 66.7,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44719,7 +44719,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 18.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -44729,7 +44729,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.6063,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -44738,9 +44738,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-28",
-      "rspi": -16.0,
+      "rspi": -17.7,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 32.7,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44749,7 +44749,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -44759,7 +44759,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0575,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -44768,10 +44768,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-29",
-      "rspi": -18.5,
+      "rspi": -33.5,
       "cascade_force": 25.0,
-      "damping_force": 43.5,
-      "cascade_risk": "low",
+      "damping_force": 58.5,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -44779,7 +44779,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 15.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -44789,7 +44789,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4987,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -44828,9 +44828,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-10-31",
-      "rspi": -28.5,
+      "rspi": -39.9,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 64.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44839,7 +44839,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 11.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -44849,7 +44849,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3793,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -44858,10 +44858,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-03",
-      "rspi": -14.0,
+      "rspi": -36.8,
       "cascade_force": 15.0,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
+      "damping_force": 51.8,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -44869,7 +44869,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 22.8,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -44879,7 +44879,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.7612,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -44918,9 +44918,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-05",
-      "rspi": -21.0,
+      "rspi": -27.2,
       "cascade_force": 15.0,
-      "damping_force": 36.0,
+      "damping_force": 42.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44929,7 +44929,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 6.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 5.0,
         "safe_buffer": 25.0
@@ -44939,7 +44939,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2054,
         "d2": 0.3,
         "d3": 0.2,
         "d4": 1.0
@@ -44978,9 +44978,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-07",
-      "rspi": -28.5,
+      "rspi": -28.7,
       "cascade_force": 15.0,
-      "damping_force": 43.5,
+      "damping_force": 43.7,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -44989,7 +44989,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -44999,7 +44999,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0062,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -45008,10 +45008,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-10",
-      "rspi": -16.5,
+      "rspi": -45.9,
       "cascade_force": 25.0,
-      "damping_force": 41.5,
-      "cascade_risk": "low",
+      "damping_force": 70.9,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -45019,7 +45019,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 29.4,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -45029,7 +45029,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.9814,
         "d2": 0.2,
         "d3": 0.5,
         "d4": 1.0
@@ -45038,9 +45038,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-11",
-      "rspi": -46.5,
+      "rspi": -46.9,
       "cascade_force": 5.0,
-      "damping_force": 51.5,
+      "damping_force": 51.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45049,7 +45049,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.4,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -45059,7 +45059,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0143,
         "d2": 0.2,
         "d3": 0.9,
         "d4": 1.0
@@ -45068,10 +45068,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-12",
-      "rspi": -17.4,
+      "rspi": -21.5,
       "cascade_force": 13.6,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 35.1,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -45079,7 +45079,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -45089,7 +45089,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.1354,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -45128,9 +45128,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-14",
-      "rspi": -16.0,
+      "rspi": -16.4,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.4,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45139,7 +45139,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -45149,7 +45149,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0137,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -45218,9 +45218,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-19",
-      "rspi": -16.0,
+      "rspi": -16.7,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.7,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45229,7 +45229,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -45239,7 +45239,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0243,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -45278,9 +45278,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-21",
-      "rspi": -5.4,
+      "rspi": -13.3,
       "cascade_force": 23.6,
-      "damping_force": 29.0,
+      "damping_force": 36.9,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45289,7 +45289,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 7.9,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -45299,7 +45299,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.2625,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -45308,10 +45308,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-24",
-      "rspi": -7.9,
+      "rspi": -20.0,
       "cascade_force": 33.6,
-      "damping_force": 41.5,
-      "cascade_risk": "low",
+      "damping_force": 53.6,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -45319,7 +45319,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 12.1,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -45329,7 +45329,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.4026,
         "d2": 0.2,
         "d3": 0.5,
         "d4": 1.0
@@ -45338,9 +45338,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-25",
-      "rspi": -37.9,
+      "rspi": -39.7,
       "cascade_force": 13.6,
-      "damping_force": 51.5,
+      "damping_force": 53.3,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45349,7 +45349,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.8,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -45359,7 +45359,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.0585,
         "d2": 0.2,
         "d3": 0.9,
         "d4": 1.0
@@ -45368,9 +45368,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-26",
-      "rspi": -32.9,
+      "rspi": -46.6,
       "cascade_force": 13.6,
-      "damping_force": 46.5,
+      "damping_force": 60.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45379,7 +45379,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 13.6,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -45389,7 +45389,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.4549,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -45398,9 +45398,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-27",
-      "rspi": -21.5,
+      "rspi": -35.1,
       "cascade_force": 25.0,
-      "damping_force": 46.5,
+      "damping_force": 60.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45409,7 +45409,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 13.6,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -45419,7 +45419,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 0.4549,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -45428,9 +45428,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-11-28",
-      "rspi": -7.4,
+      "rspi": -8.5,
       "cascade_force": 23.6,
-      "damping_force": 31.0,
+      "damping_force": 32.0,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45439,7 +45439,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -45449,7 +45449,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.0342,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -45488,9 +45488,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-02",
-      "rspi": -23.5,
+      "rspi": -33.1,
       "cascade_force": 25.0,
-      "damping_force": 48.5,
+      "damping_force": 58.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45499,7 +45499,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 9.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -45509,7 +45509,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3212,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -45518,9 +45518,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-03",
-      "rspi": -43.5,
+      "rspi": -50.5,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 55.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45529,7 +45529,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 7.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -45539,7 +45539,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2327,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -45548,9 +45548,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-04",
-      "rspi": -16.0,
+      "rspi": -16.1,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.1,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45559,7 +45559,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -45569,7 +45569,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.005,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -45578,9 +45578,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-05",
-      "rspi": -28.5,
+      "rspi": -44.0,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 69.0,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45589,7 +45589,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 15.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -45599,7 +45599,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.5174,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -45608,9 +45608,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-08",
-      "rspi": -43.5,
+      "rspi": -47.1,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 52.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45619,7 +45619,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 3.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -45629,7 +45629,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1188,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -45638,9 +45638,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-09",
-      "rspi": -24.0,
+      "rspi": -26.3,
       "cascade_force": 5.0,
-      "damping_force": 29.0,
+      "damping_force": 31.3,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45649,7 +45649,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 2.3,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -45659,7 +45659,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0755,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -45668,9 +45668,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-10",
-      "rspi": -48.5,
+      "rspi": -57.8,
       "cascade_force": 5.0,
-      "damping_force": 53.5,
+      "damping_force": 62.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45679,7 +45679,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 9.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -45689,7 +45689,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3088,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -45698,9 +45698,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-11",
-      "rspi": -31.5,
+      "rspi": -31.9,
       "cascade_force": 15.0,
-      "damping_force": 46.5,
+      "damping_force": 46.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45709,7 +45709,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.4,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -45719,7 +45719,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0143,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -45758,9 +45758,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-15",
-      "rspi": -7.4,
+      "rspi": -7.5,
       "cascade_force": 23.6,
-      "damping_force": 31.0,
+      "damping_force": 31.1,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45769,7 +45769,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -45779,7 +45779,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.0034,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -45848,9 +45848,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-18",
-      "rspi": -5.4,
+      "rspi": -17.5,
       "cascade_force": 23.6,
-      "damping_force": 29.0,
+      "damping_force": 41.1,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45859,7 +45859,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 12.1,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -45869,7 +45869,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.4038,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -45878,10 +45878,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-19",
-      "rspi": 4.6,
+      "rspi": -6.6,
       "cascade_force": 33.6,
-      "damping_force": 29.0,
-      "cascade_risk": "medium",
+      "damping_force": 40.1,
+      "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -45889,7 +45889,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 11.1,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -45899,7 +45899,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.3708,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -45908,9 +45908,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-22",
-      "rspi": -26.5,
+      "rspi": -31.4,
       "cascade_force": 25.0,
-      "damping_force": 51.5,
+      "damping_force": 56.4,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45919,7 +45919,7 @@ export const RSPI_DATA = {
         "credit_accel": 20.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.9,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -45929,7 +45929,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.7,
-        "d1": 0.0,
+        "d1": 0.1626,
         "d2": 0.2,
         "d3": 0.9,
         "d4": 1.0
@@ -45938,9 +45938,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-23",
-      "rspi": -32.9,
+      "rspi": -40.6,
       "cascade_force": 13.6,
-      "damping_force": 46.5,
+      "damping_force": 54.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45949,7 +45949,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 7.6,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -45959,7 +45959,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.254,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -45968,9 +45968,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-24",
-      "rspi": -43.5,
+      "rspi": -56.2,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 61.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -45979,7 +45979,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 12.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -45989,7 +45989,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4232,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -45998,9 +45998,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-26",
-      "rspi": -41.5,
+      "rspi": -47.2,
       "cascade_force": 5.0,
-      "damping_force": 46.5,
+      "damping_force": 52.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46009,7 +46009,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 5.7,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -46019,7 +46019,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1915,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -46028,9 +46028,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2025-12-29",
-      "rspi": -33.5,
+      "rspi": -46.7,
       "cascade_force": 15.0,
-      "damping_force": 48.5,
+      "damping_force": 61.7,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46039,7 +46039,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 13.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -46049,7 +46049,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4406,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -46088,9 +46088,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-02",
-      "rspi": -28.5,
+      "rspi": -58.1,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 83.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46099,7 +46099,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 29.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -46109,7 +46109,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.9852,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -46118,9 +46118,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-05",
-      "rspi": -43.5,
+      "rspi": -60.5,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 65.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46129,7 +46129,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 17.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -46139,7 +46139,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.5677,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -46148,10 +46148,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-06",
-      "rspi": -16.0,
+      "rspi": -33.4,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 48.4,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -46159,7 +46159,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 17.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -46169,7 +46169,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.5801,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -46238,10 +46238,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-09",
-      "rspi": -16.0,
+      "rspi": -30.3,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 45.3,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -46249,7 +46249,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 14.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -46259,7 +46259,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.4754,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -46268,9 +46268,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-12",
-      "rspi": -18.5,
+      "rspi": -19.6,
       "cascade_force": 25.0,
-      "damping_force": 43.5,
+      "damping_force": 44.6,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46279,7 +46279,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -46289,7 +46289,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0362,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -46328,9 +46328,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-14",
-      "rspi": -26.0,
+      "rspi": -34.5,
       "cascade_force": 5.0,
-      "damping_force": 31.0,
+      "damping_force": 39.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46339,7 +46339,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -46349,7 +46349,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2833,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -46358,9 +46358,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-15",
-      "rspi": -48.5,
+      "rspi": -56.9,
       "cascade_force": 5.0,
-      "damping_force": 53.5,
+      "damping_force": 61.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46369,7 +46369,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -46379,7 +46379,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2809,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -46388,9 +46388,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-16",
-      "rspi": -43.5,
+      "rspi": -48.1,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 53.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46399,7 +46399,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -46409,7 +46409,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.154,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -46418,9 +46418,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-19",
-      "rspi": -43.5,
+      "rspi": -48.1,
       "cascade_force": 5.0,
-      "damping_force": 48.5,
+      "damping_force": 53.1,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46429,7 +46429,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -46439,7 +46439,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.154,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -46478,9 +46478,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-21",
-      "rspi": -23.5,
+      "rspi": -51.6,
       "cascade_force": 25.0,
-      "damping_force": 48.5,
+      "damping_force": 76.6,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46489,7 +46489,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 28.1,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -46499,7 +46499,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.9359,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -46508,9 +46508,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-22",
-      "rspi": -5.4,
+      "rspi": -9.1,
       "cascade_force": 23.6,
-      "damping_force": 29.0,
+      "damping_force": 32.6,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46519,7 +46519,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 3.6,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -46529,7 +46529,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.1214,
         "d2": 0.2,
         "d3": 0.0,
         "d4": 1.0
@@ -46538,9 +46538,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-23",
-      "rspi": -28.5,
+      "rspi": -38.2,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 63.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46549,7 +46549,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 9.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -46559,7 +46559,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.324,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -46568,9 +46568,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-26",
-      "rspi": -16.0,
+      "rspi": -16.9,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.9,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46579,7 +46579,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -46589,7 +46589,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0311,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -46598,9 +46598,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-27",
-      "rspi": -26.5,
+      "rspi": -53.8,
       "cascade_force": 25.0,
-      "damping_force": 51.5,
+      "damping_force": 78.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46609,7 +46609,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 27.3,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -46619,7 +46619,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.909,
         "d2": 0.2,
         "d3": 0.9,
         "d4": 1.0
@@ -46628,9 +46628,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-01-28",
-      "rspi": -33.5,
+      "rspi": -43.9,
       "cascade_force": 15.0,
-      "damping_force": 48.5,
+      "damping_force": 58.9,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46639,7 +46639,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 10.4,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -46649,7 +46649,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3473,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -46718,9 +46718,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-02",
-      "rspi": -16.0,
+      "rspi": -16.9,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 31.9,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46729,7 +46729,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 0.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -46739,7 +46739,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0311,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -46748,9 +46748,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-03",
-      "rspi": -28.5,
+      "rspi": -40.4,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 65.4,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46759,7 +46759,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 11.9,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -46769,7 +46769,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.3964,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -46838,9 +46838,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-06",
-      "rspi": -23.5,
+      "rspi": -51.2,
       "cascade_force": 15.0,
-      "damping_force": 38.5,
+      "damping_force": 66.2,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46849,7 +46849,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 27.7,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 7.5,
         "safe_buffer": 25.0
@@ -46859,7 +46859,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.9234,
         "d2": 0.3,
         "d3": 0.3,
         "d4": 1.0
@@ -46868,9 +46868,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-09",
-      "rspi": -28.5,
+      "rspi": -36.5,
       "cascade_force": 25.0,
-      "damping_force": 53.5,
+      "damping_force": 61.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46879,7 +46879,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 8.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 22.5,
         "safe_buffer": 25.0
@@ -46889,7 +46889,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2658,
         "d2": 0.3,
         "d3": 0.9,
         "d4": 1.0
@@ -46928,9 +46928,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-11",
-      "rspi": -41.5,
+      "rspi": -62.8,
       "cascade_force": 5.0,
-      "damping_force": 46.5,
+      "damping_force": 67.8,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46939,7 +46939,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 21.3,
         "credit_inflow": 4.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -46949,7 +46949,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.7101,
         "d2": 0.2,
         "d3": 0.7,
         "d4": 1.0
@@ -46958,9 +46958,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-12",
-      "rspi": -34.9,
+      "rspi": -36.0,
       "cascade_force": 13.6,
-      "damping_force": 48.5,
+      "damping_force": 49.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -46969,7 +46969,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 1.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 17.5,
         "safe_buffer": 25.0
@@ -46979,7 +46979,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.0349,
         "d2": 0.3,
         "d3": 0.7,
         "d4": 1.0
@@ -46988,10 +46988,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-13",
-      "rspi": -7.4,
+      "rspi": -21.4,
       "cascade_force": 23.6,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 45.0,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -46999,7 +46999,7 @@ export const RSPI_DATA = {
         "credit_accel": 8.6
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 14.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -47009,7 +47009,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.3,
-        "d1": 0.0,
+        "d1": 0.4672,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -47018,9 +47018,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-19",
-      "rspi": -6.0,
+      "rspi": -13.5,
       "cascade_force": 25.0,
-      "damping_force": 31.0,
+      "damping_force": 38.5,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -47029,7 +47029,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 7.5,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -47039,7 +47039,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.2487,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -47048,9 +47048,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-20",
-      "rspi": -33.5,
+      "rspi": -63.5,
       "cascade_force": 5.0,
-      "damping_force": 38.5,
+      "damping_force": 68.5,
       "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
@@ -47059,7 +47059,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 30.0,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 7.5,
         "safe_buffer": 25.0
@@ -47069,7 +47069,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.2,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 1.0,
         "d2": 0.3,
         "d3": 0.3,
         "d4": 1.0
@@ -47108,10 +47108,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-24",
-      "rspi": -18.5,
+      "rspi": -42.3,
       "cascade_force": 25.0,
-      "damping_force": 43.5,
-      "cascade_risk": "low",
+      "damping_force": 67.3,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -47119,7 +47119,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 23.8,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 12.5,
         "safe_buffer": 25.0
@@ -47129,7 +47129,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 1.0,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.7919,
         "d2": 0.3,
         "d3": 0.5,
         "d4": 1.0
@@ -47138,10 +47138,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-25",
-      "rspi": -16.0,
+      "rspi": -36.2,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 51.2,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -47149,7 +47149,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 20.2,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -47159,7 +47159,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.6725,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -47168,10 +47168,10 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-26",
-      "rspi": -16.0,
+      "rspi": -20.3,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
+      "damping_force": 35.3,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
@@ -47179,7 +47179,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 4.3,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -47189,7 +47189,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.1432,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0
@@ -47198,9 +47198,9 @@ export const RSPI_DATA = {
     },
     {
       "date": "2026-02-27",
-      "rspi": -16.0,
+      "rspi": -18.6,
       "cascade_force": 15.0,
-      "damping_force": 31.0,
+      "damping_force": 33.6,
       "cascade_risk": "low",
       "cf_components": {
         "caution_zone": 0.0,
@@ -47209,7 +47209,7 @@ export const RSPI_DATA = {
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
+        "overnight_recovery": 2.6,
         "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
         "safe_buffer": 25.0
@@ -47219,7 +47219,7 @@ export const RSPI_DATA = {
         "v2": 0.0,
         "v3": 0.6,
         "v4": 0.0,
-        "d1": 0.0,
+        "d1": 0.0881,
         "d2": 0.3,
         "d3": 0.0,
         "d4": 1.0

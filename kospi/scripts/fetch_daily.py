@@ -613,14 +613,84 @@ def run_single(date: str):
     print(f"[{date}] 완료.")
 
 
+def backfill_change_pct():
+    """기존 timeseries.json에서 change_pct가 None인 레코드만 yfinance로 패치.
+
+    ECOS/Naver/KRX API 호출 없이 yfinance 1회 배치 다운로드만 수행.
+    기존 데이터(kospi, credit 등)는 그대로 보존.
+    """
+    ts_path = DATA_DIR / "timeseries.json"
+    if not ts_path.exists():
+        print("[ERROR] timeseries.json 없음")
+        return
+
+    with open(ts_path, "r", encoding="utf-8") as f:
+        ts = json.load(f)
+
+    if not ts:
+        print("[ERROR] timeseries.json 비어있음")
+        return
+
+    # change_pct가 없는 레코드 찾기
+    missing = [r for r in ts if r.get("ewy_change_pct") is None]
+    print(f"\n총 {len(ts)}일 중 change_pct 누락: {len(missing)}일")
+
+    if not missing:
+        print("패치할 데이터 없음 — 모든 레코드에 change_pct 존재")
+        return
+
+    # yfinance 1회 배치 다운로드 (전체 기간)
+    start_date = ts[0]["date"]
+    end_date = ts[-1]["date"]
+    print(f"yfinance 배치 다운로드: {start_date} ~ {end_date}")
+    yf_data = fetch_yfinance_batch(start_date, end_date)
+
+    if yf_data.empty:
+        print("[ERROR] yfinance 다운로드 실패")
+        return
+
+    print(f"  yfinance: {len(yf_data)}일 다운로드 완료")
+
+    # 누락 레코드 패치
+    patched = 0
+    for rec in ts:
+        if rec.get("ewy_change_pct") is not None:
+            continue
+
+        date = rec["date"]
+        extracted = extract_date_data(yf_data, date)
+
+        if extracted.get("ewy_change_pct") is not None:
+            rec["ewy_close"] = extracted["ewy_close"]
+            rec["ewy_change_pct"] = extracted["ewy_change_pct"]
+            patched += 1
+
+        if extracted.get("koru_change_pct") is not None:
+            rec["koru_close"] = extracted["koru_close"]
+            rec["koru_change_pct"] = extracted["koru_change_pct"]
+
+        if extracted.get("sp500_change_pct") is not None:
+            rec["sp500_change_pct"] = extracted["sp500_change_pct"]
+
+    # 저장
+    with open(ts_path, "w", encoding="utf-8") as f:
+        json.dump(ts, f, ensure_ascii=False, indent=2, default=str)
+
+    print(f"\n완료: {patched}/{len(missing)}일 패치 (yfinance only, API 호출 없음)")
+
+
 def main():
     parser = argparse.ArgumentParser(description="KOSPI daily data fetcher")
     parser.add_argument("--date", type=str, help="Specific date (YYYY-MM-DD)")
     parser.add_argument("--range", nargs=2, metavar=("START", "END"),
                         help="Date range (YYYY-MM-DD YYYY-MM-DD)")
+    parser.add_argument("--backfill", action="store_true",
+                        help="Backfill change_pct only (yfinance, no ECOS/Naver/KRX)")
     args = parser.parse_args()
 
-    if args.range:
+    if args.backfill:
+        backfill_change_pct()
+    elif args.range:
         run_range(args.range[0], args.range[1])
     elif args.date:
         run_single(args.date)
