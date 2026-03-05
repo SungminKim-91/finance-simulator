@@ -71,17 +71,20 @@ def _fmt(date_str: str) -> str:
 
 
 def fetch_yfinance_batch(start: str, end: str) -> pd.DataFrame:
-    """yfinance로 모든 심볼 일괄 다운로드."""
+    """yfinance로 모든 심볼 일괄 다운로드.
+    change_pct 계산을 위해 시작일 7일 전부터 다운로드."""
     if yf is None:
         print("  [WARN] yfinance not installed")
         return pd.DataFrame()
 
     symbols = list(YF_SYMBOLS.values())
+    start_dt = datetime.strptime(start, ISO_FMT) - timedelta(days=7)
+    start_ext = start_dt.strftime(ISO_FMT)
     end_dt = datetime.strptime(end, ISO_FMT) + timedelta(days=1)
     end_plus = end_dt.strftime(ISO_FMT)
 
     try:
-        df = yf.download(symbols, start=start, end=end_plus, progress=False)
+        df = yf.download(symbols, start=start_ext, end=end_plus, progress=False)
         return df
     except Exception as e:
         print(f"  [WARN] yfinance batch download failed: {e}")
@@ -135,8 +138,6 @@ def extract_date_data(yf_data: pd.DataFrame, date: str) -> dict:
         # EWY 변동률 계산 (전일 대비)
         if result["ewy_close"] is not None:
             try:
-                prev_dt = dt - pd.Timedelta(days=1)
-                # 전 거래일 찾기 (최대 5일 역추적)
                 for offset in range(1, 6):
                     check_dt = dt - pd.Timedelta(days=offset)
                     if check_dt in yf_data.index:
@@ -145,7 +146,7 @@ def extract_date_data(yf_data: pd.DataFrame, date: str) -> dict:
                             result["ewy_change_pct"] = round(
                                 (result["ewy_close"] / float(prev_ewy) - 1) * 100, 2
                             )
-                        break
+                            break
             except (KeyError, TypeError):
                 pass
 
@@ -160,7 +161,7 @@ def extract_date_data(yf_data: pd.DataFrame, date: str) -> dict:
                             result["koru_change_pct"] = round(
                                 (result["koru_close"] / float(prev_koru) - 1) * 100, 2
                             )
-                        break
+                            break
             except (KeyError, TypeError):
                 pass
 
@@ -175,7 +176,7 @@ def extract_date_data(yf_data: pd.DataFrame, date: str) -> dict:
                             result["sp500_change_pct"] = round(
                                 (result["sp500"] / float(prev_sp) - 1) * 100, 2
                             )
-                        break
+                            break
             except (KeyError, TypeError):
                 pass
 

@@ -1823,12 +1823,19 @@ def run_all_models() -> dict:
                         "weight": c.get("remaining_amount_billion", 0) / total_amount,
                     })
 
-        # 야간시장 데이터 (D1: 4소스)
+        # 야간시장 데이터 (D1: 4소스) — 최신 유효 레코드에서 가져옴
+        # 당일(latest) change_pct가 None이면 D-1~D-3 역추적
+        overnight_src = latest
+        for lookback in range(0, min(4, len(ts))):
+            candidate = ts[-(1 + lookback)]
+            if candidate.get("ewy_change_pct") is not None:
+                overnight_src = candidate
+                break
         overnight_data = {
-            "ewy_pct": latest.get("ewy_change_pct"),
-            "koru_pct": latest.get("koru_change_pct"),
-            "kospi_futures_pct": latest.get("kospi_futures_pct"),
-            "us_market_pct": latest.get("sp500_change_pct"),
+            "ewy_pct": overnight_src.get("ewy_change_pct"),
+            "koru_pct": overnight_src.get("koru_change_pct"),
+            "kospi_futures_pct": overnight_src.get("kospi_futures_pct"),
+            "us_market_pct": overnight_src.get("sp500_change_pct"),
         }
 
         # 외국인 수급 (D3용, 억원)

@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-05T06:43:10.440726
+ * Generated: 2026-03-05T20:20:51.566633
  * Source: kospi/data/ (pipeline)
  * Exports: 18
  */
@@ -3387,7 +3387,19 @@ export const MARKET_DATA = [
     "kospi_change_pct": -12.06,
     "samsung_change_pct": -11.74,
     "hynix_change_pct": -9.58,
-    "volume": 1637606,
+    "volume": 162218000,
+    "trading_value_billion": 626.36
+  },
+  {
+    "date": "2026-03-05",
+    "kospi": 5583.9,
+    "kosdaq": null,
+    "samsung": 191600,
+    "hynix": 941000,
+    "kospi_change_pct": 9.63,
+    "samsung_change_pct": 11.27,
+    "hynix_change_pct": 10.84,
+    "volume": 1660710,
     "trading_value_billion": null
   }
 ];
@@ -5530,6 +5542,13 @@ export const CREDIT_DATA = [
   },
   {
     "date": "2026-03-04",
+    "credit_balance_billion": null,
+    "deposit_billion": null,
+    "forced_liq_billion": null,
+    "estimated": false
+  },
+  {
+    "date": "2026-03-05",
     "credit_balance_billion": null,
     "deposit_billion": null,
     "forced_liq_billion": null,
@@ -7793,6 +7812,14 @@ export const INVESTOR_FLOWS = [
     "retail_billion": -503.4,
     "foreign_billion": 230.3,
     "institution_billion": -597.8
+  },
+  {
+    "date": "2026-03-05",
+    "individual_billion": 1822.8,
+    "financial_invest_billion": -1223.4,
+    "retail_billion": 599.4,
+    "foreign_billion": -144.6,
+    "institution_billion": -1718.6
   }
 ];
 
@@ -9766,9 +9793,16 @@ export const GLOBAL_DATA = [
   },
   {
     "date": "2026-03-04",
-    "usd_krw": 1466.7,
-    "wti": 74.57,
-    "vix": 23.17,
+    "usd_krw": 1483.1,
+    "wti": 74.66,
+    "vix": 21.15,
+    "sp500": 685.1
+  },
+  {
+    "date": "2026-03-05",
+    "usd_krw": 1469.5,
+    "wti": 76.58,
+    "vix": 21.37,
     "sp500": null
   }
 ];
@@ -11303,6 +11337,11 @@ export const SHORT_SELLING = [
     "date": "2026-03-04",
     "market_total_billion": null,
     "gov_ban": false
+  },
+  {
+    "date": "2026-03-05",
+    "market_total_billion": null,
+    "gov_ban": false
   }
 ];
 
@@ -11313,8 +11352,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2398.94,
       "entry_stock_price": 0,
       "amount": 15466.2,
-      "pnl_pct": 158.59,
-      "collateral_ratio": 4.702,
+      "pnl_pct": 180.86,
+      "collateral_ratio": 5.107,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11324,8 +11363,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2488.64,
       "entry_stock_price": 0,
       "amount": 130.6999999999989,
-      "pnl_pct": 147.79,
-      "collateral_ratio": 4.505,
+      "pnl_pct": 169.43,
+      "collateral_ratio": 4.899,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11335,8 +11374,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2492.1,
       "entry_stock_price": 0,
       "amount": 20.200000000000728,
-      "pnl_pct": 147.38,
-      "collateral_ratio": 4.498,
+      "pnl_pct": 169.01,
+      "collateral_ratio": 4.891,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11346,8 +11385,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2521.05,
       "entry_stock_price": 0,
       "amount": 144.89999999999964,
-      "pnl_pct": 144.07,
-      "collateral_ratio": 4.438,
+      "pnl_pct": 165.5,
+      "collateral_ratio": 4.827,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11357,8 +11396,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2521.9,
       "entry_stock_price": 0,
       "amount": 146.29999999999927,
-      "pnl_pct": 143.97,
-      "collateral_ratio": 4.436,
+      "pnl_pct": 165.4,
+      "collateral_ratio": 4.825,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11368,8 +11407,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2515.78,
       "entry_stock_price": 0,
       "amount": 78.80000000000109,
-      "pnl_pct": 144.67,
-      "collateral_ratio": 4.449,
+      "pnl_pct": 166.13,
+      "collateral_ratio": 4.839,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11379,8 +11418,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2489.56,
       "entry_stock_price": 0,
       "amount": 81.29999999999927,
-      "pnl_pct": 147.68,
-      "collateral_ratio": 4.503,
+      "pnl_pct": 169.32,
+      "collateral_ratio": 4.897,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11390,8 +11429,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2497.4,
       "entry_stock_price": 0,
       "amount": 116.39999999999964,
-      "pnl_pct": 146.77,
-      "collateral_ratio": 4.487,
+      "pnl_pct": 168.36,
+      "collateral_ratio": 4.879,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11401,8 +11440,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2477.41,
       "entry_stock_price": 0,
       "amount": 268.6000000000022,
-      "pnl_pct": 149.1,
-      "collateral_ratio": 4.529,
+      "pnl_pct": 170.82,
+      "collateral_ratio": 4.924,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11412,8 +11451,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2447.43,
       "entry_stock_price": 0,
       "amount": 203.1999999999971,
-      "pnl_pct": 152.65,
-      "collateral_ratio": 4.594,
+      "pnl_pct": 174.58,
+      "collateral_ratio": 4.992,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11423,8 +11462,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2470.41,
       "entry_stock_price": 0,
       "amount": 117.10000000000218,
-      "pnl_pct": 149.92,
-      "collateral_ratio": 4.544,
+      "pnl_pct": 171.69,
+      "collateral_ratio": 4.94,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11434,8 +11473,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2483.42,
       "entry_stock_price": 0,
       "amount": 117.79999999999927,
-      "pnl_pct": 148.39,
-      "collateral_ratio": 4.516,
+      "pnl_pct": 170.07,
+      "collateral_ratio": 4.91,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11445,8 +11484,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2488.42,
       "entry_stock_price": 0,
       "amount": 55.099999999998545,
-      "pnl_pct": 147.81,
-      "collateral_ratio": 4.506,
+      "pnl_pct": 169.46,
+      "collateral_ratio": 4.899,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11456,8 +11495,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2486.64,
       "entry_stock_price": 0,
       "amount": 97.20000000000073,
-      "pnl_pct": 148.02,
-      "collateral_ratio": 4.509,
+      "pnl_pct": 169.68,
+      "collateral_ratio": 4.903,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11467,8 +11506,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2525.56,
       "entry_stock_price": 0,
       "amount": 97.5,
-      "pnl_pct": 143.56,
-      "collateral_ratio": 4.428,
+      "pnl_pct": 164.96,
+      "collateral_ratio": 4.818,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11478,8 +11517,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2522.33,
       "entry_stock_price": 0,
       "amount": 123.10000000000218,
-      "pnl_pct": 143.93,
-      "collateral_ratio": 4.435,
+      "pnl_pct": 165.35,
+      "collateral_ratio": 4.825,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11489,8 +11528,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2548.86,
       "entry_stock_price": 0,
       "amount": 116.89999999999782,
-      "pnl_pct": 140.96,
-      "collateral_ratio": 4.381,
+      "pnl_pct": 162.21,
+      "collateral_ratio": 4.767,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11500,8 +11539,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2577.27,
       "entry_stock_price": 0,
       "amount": 14.0,
-      "pnl_pct": 137.85,
-      "collateral_ratio": 4.325,
+      "pnl_pct": 158.92,
+      "collateral_ratio": 4.708,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11511,8 +11550,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2607.33,
       "entry_stock_price": 0,
       "amount": 135.40000000000146,
-      "pnl_pct": 134.63,
-      "collateral_ratio": 4.266,
+      "pnl_pct": 155.52,
+      "collateral_ratio": 4.646,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11522,8 +11561,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2608.42,
       "entry_stock_price": 0,
       "amount": 66.0,
-      "pnl_pct": 134.52,
-      "collateral_ratio": 4.264,
+      "pnl_pct": 155.4,
+      "collateral_ratio": 4.644,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11533,8 +11572,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2621.36,
       "entry_stock_price": 0,
       "amount": 49.79999999999927,
-      "pnl_pct": 133.15,
-      "collateral_ratio": 4.239,
+      "pnl_pct": 153.96,
+      "collateral_ratio": 4.617,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11544,8 +11583,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2603.42,
       "entry_stock_price": 0,
       "amount": 139.5,
-      "pnl_pct": 135.04,
-      "collateral_ratio": 4.274,
+      "pnl_pct": 155.96,
+      "collateral_ratio": 4.654,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11555,8 +11594,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2601.8,
       "entry_stock_price": 0,
       "amount": 24.400000000001455,
-      "pnl_pct": 135.22,
-      "collateral_ratio": 4.277,
+      "pnl_pct": 156.14,
+      "collateral_ratio": 4.657,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11566,8 +11605,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2625.58,
       "entry_stock_price": 0,
       "amount": 26.69999999999709,
-      "pnl_pct": 132.71,
-      "collateral_ratio": 4.231,
+      "pnl_pct": 153.49,
+      "collateral_ratio": 4.609,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11577,8 +11616,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2593.67,
       "entry_stock_price": 0,
       "amount": 1.3000000000029104,
-      "pnl_pct": 136.08,
-      "collateral_ratio": 4.292,
+      "pnl_pct": 157.05,
+      "collateral_ratio": 4.674,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11588,8 +11627,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2592.09,
       "entry_stock_price": 0,
       "amount": 22.19999999999709,
-      "pnl_pct": 136.25,
-      "collateral_ratio": 4.295,
+      "pnl_pct": 157.23,
+      "collateral_ratio": 4.677,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11599,8 +11638,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2644.4,
       "entry_stock_price": 0,
       "amount": 148.3000000000029,
-      "pnl_pct": 130.76,
-      "collateral_ratio": 4.196,
+      "pnl_pct": 151.43,
+      "collateral_ratio": 4.571,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11610,8 +11649,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2637.22,
       "entry_stock_price": 0,
       "amount": 22.69999999999709,
-      "pnl_pct": 131.5,
-      "collateral_ratio": 4.209,
+      "pnl_pct": 152.21,
+      "collateral_ratio": 4.586,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11621,8 +11660,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2720.64,
       "entry_stock_price": 0,
       "amount": 107.40000000000146,
-      "pnl_pct": 123.14,
-      "collateral_ratio": 4.057,
+      "pnl_pct": 143.37,
+      "collateral_ratio": 4.425,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11632,8 +11671,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2698.97,
       "entry_stock_price": 0,
       "amount": 76.09999999999854,
-      "pnl_pct": 125.27,
-      "collateral_ratio": 4.096,
+      "pnl_pct": 145.61,
+      "collateral_ratio": 4.466,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11643,8 +11682,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2770.84,
       "entry_stock_price": 0,
       "amount": 164.3000000000029,
-      "pnl_pct": 118.35,
-      "collateral_ratio": 3.97,
+      "pnl_pct": 138.3,
+      "collateral_ratio": 4.333,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11654,8 +11693,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2907.04,
       "entry_stock_price": 0,
       "amount": 201.1999999999971,
-      "pnl_pct": 106.19,
-      "collateral_ratio": 3.749,
+      "pnl_pct": 125.44,
+      "collateral_ratio": 4.099,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11665,8 +11704,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2920.03,
       "entry_stock_price": 0,
       "amount": 118.80000000000291,
-      "pnl_pct": 105.09,
-      "collateral_ratio": 3.729,
+      "pnl_pct": 124.28,
+      "collateral_ratio": 4.078,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11676,8 +11715,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2894.62,
       "entry_stock_price": 0,
       "amount": 135.5,
-      "pnl_pct": 107.26,
-      "collateral_ratio": 3.768,
+      "pnl_pct": 126.56,
+      "collateral_ratio": 4.119,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11687,8 +11726,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2946.66,
       "entry_stock_price": 0,
       "amount": 216.5,
-      "pnl_pct": 102.87,
-      "collateral_ratio": 3.689,
+      "pnl_pct": 121.92,
+      "collateral_ratio": 4.035,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11698,8 +11737,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2950.3,
       "entry_stock_price": 0,
       "amount": 174.6999999999971,
-      "pnl_pct": 102.57,
-      "collateral_ratio": 3.683,
+      "pnl_pct": 121.6,
+      "collateral_ratio": 4.029,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11709,8 +11748,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2972.19,
       "entry_stock_price": 0,
       "amount": 180.0,
-      "pnl_pct": 100.77,
-      "collateral_ratio": 3.65,
+      "pnl_pct": 119.7,
+      "collateral_ratio": 3.995,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11720,8 +11759,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2977.74,
       "entry_stock_price": 0,
       "amount": 47.5,
-      "pnl_pct": 100.32,
-      "collateral_ratio": 3.642,
+      "pnl_pct": 119.23,
+      "collateral_ratio": 3.986,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11731,8 +11770,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3021.84,
       "entry_stock_price": 0,
       "amount": 215.5,
-      "pnl_pct": 96.8,
-      "collateral_ratio": 3.578,
+      "pnl_pct": 115.5,
+      "collateral_ratio": 3.918,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11742,8 +11781,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3014.47,
       "entry_stock_price": 0,
       "amount": 274.40000000000146,
-      "pnl_pct": 97.38,
-      "collateral_ratio": 3.589,
+      "pnl_pct": 116.11,
+      "collateral_ratio": 3.929,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11753,8 +11792,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3103.64,
       "entry_stock_price": 0,
       "amount": 40.900000000001455,
-      "pnl_pct": 90.52,
-      "collateral_ratio": 3.464,
+      "pnl_pct": 108.86,
+      "collateral_ratio": 3.798,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11764,8 +11803,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3108.25,
       "entry_stock_price": 0,
       "amount": 399.0,
-      "pnl_pct": 90.18,
-      "collateral_ratio": 3.458,
+      "pnl_pct": 108.5,
+      "collateral_ratio": 3.791,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11775,8 +11814,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3055.94,
       "entry_stock_price": 0,
       "amount": 146.5,
-      "pnl_pct": 94.14,
-      "collateral_ratio": 3.53,
+      "pnl_pct": 112.69,
+      "collateral_ratio": 3.867,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11786,8 +11825,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3071.7,
       "entry_stock_price": 0,
       "amount": 107.0,
-      "pnl_pct": 92.93,
-      "collateral_ratio": 3.508,
+      "pnl_pct": 111.41,
+      "collateral_ratio": 3.844,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11797,8 +11836,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3054.28,
       "entry_stock_price": 0,
       "amount": 13.0,
-      "pnl_pct": 94.27,
-      "collateral_ratio": 3.532,
+      "pnl_pct": 112.83,
+      "collateral_ratio": 3.87,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11808,8 +11847,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3114.95,
       "entry_stock_price": 0,
       "amount": 25.69999999999709,
-      "pnl_pct": 89.68,
-      "collateral_ratio": 3.449,
+      "pnl_pct": 107.97,
+      "collateral_ratio": 3.781,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11819,8 +11858,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3133.74,
       "entry_stock_price": 0,
       "amount": 31.600000000002183,
-      "pnl_pct": 88.3,
-      "collateral_ratio": 3.424,
+      "pnl_pct": 106.51,
+      "collateral_ratio": 3.755,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11830,8 +11869,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3183.23,
       "entry_stock_price": 0,
       "amount": 154.5,
-      "pnl_pct": 84.73,
-      "collateral_ratio": 3.359,
+      "pnl_pct": 102.74,
+      "collateral_ratio": 3.686,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11841,8 +11880,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3175.77,
       "entry_stock_price": 0,
       "amount": 255.09999999999854,
-      "pnl_pct": 85.26,
-      "collateral_ratio": 3.368,
+      "pnl_pct": 103.3,
+      "collateral_ratio": 3.696,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11852,8 +11891,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3202.03,
       "entry_stock_price": 0,
       "amount": 68.5,
-      "pnl_pct": 83.4,
-      "collateral_ratio": 3.335,
+      "pnl_pct": 101.33,
+      "collateral_ratio": 3.661,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11863,8 +11902,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3215.28,
       "entry_stock_price": 0,
       "amount": 63.20000000000073,
-      "pnl_pct": 82.48,
-      "collateral_ratio": 3.318,
+      "pnl_pct": 100.35,
+      "collateral_ratio": 3.643,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11874,8 +11913,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3186.38,
       "entry_stock_price": 0,
       "amount": 67.79999999999927,
-      "pnl_pct": 84.51,
-      "collateral_ratio": 3.355,
+      "pnl_pct": 102.5,
+      "collateral_ratio": 3.682,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11885,8 +11924,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3192.29,
       "entry_stock_price": 0,
       "amount": 15.700000000000728,
-      "pnl_pct": 84.09,
-      "collateral_ratio": 3.347,
+      "pnl_pct": 102.06,
+      "collateral_ratio": 3.674,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11896,8 +11935,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3227.68,
       "entry_stock_price": 0,
       "amount": 72.90000000000146,
-      "pnl_pct": 81.62,
-      "collateral_ratio": 3.302,
+      "pnl_pct": 99.45,
+      "collateral_ratio": 3.626,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11907,8 +11946,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3210.01,
       "entry_stock_price": 0,
       "amount": 208.79999999999927,
-      "pnl_pct": 82.85,
-      "collateral_ratio": 3.324,
+      "pnl_pct": 100.74,
+      "collateral_ratio": 3.65,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11918,8 +11957,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3206.77,
       "entry_stock_price": 0,
       "amount": 73.70000000000073,
-      "pnl_pct": 83.07,
-      "collateral_ratio": 3.329,
+      "pnl_pct": 100.98,
+      "collateral_ratio": 3.654,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11929,8 +11968,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3187.16,
       "entry_stock_price": 0,
       "amount": 33.39999999999782,
-      "pnl_pct": 84.45,
-      "collateral_ratio": 3.354,
+      "pnl_pct": 102.44,
+      "collateral_ratio": 3.681,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11940,8 +11979,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3196.32,
       "entry_stock_price": 0,
       "amount": 182.5,
-      "pnl_pct": 83.8,
-      "collateral_ratio": 3.342,
+      "pnl_pct": 101.76,
+      "collateral_ratio": 3.668,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11951,8 +11990,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3186.01,
       "entry_stock_price": 0,
       "amount": 73.70000000000073,
-      "pnl_pct": 84.53,
-      "collateral_ratio": 3.355,
+      "pnl_pct": 102.53,
+      "collateral_ratio": 3.682,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11962,8 +12001,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3205.12,
       "entry_stock_price": 0,
       "amount": 69.0,
-      "pnl_pct": 83.19,
-      "collateral_ratio": 3.331,
+      "pnl_pct": 101.1,
+      "collateral_ratio": 3.656,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11973,8 +12012,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3219.59,
       "entry_stock_price": 0,
       "amount": 33.400000000001455,
-      "pnl_pct": 82.18,
-      "collateral_ratio": 3.312,
+      "pnl_pct": 100.04,
+      "collateral_ratio": 3.637,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11984,8 +12023,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3260.05,
       "entry_stock_price": 0,
       "amount": 96.69999999999709,
-      "pnl_pct": 79.41,
-      "collateral_ratio": 3.262,
+      "pnl_pct": 97.11,
+      "collateral_ratio": 3.584,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -11995,8 +12034,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3314.53,
       "entry_stock_price": 0,
       "amount": 45.10000000000218,
-      "pnl_pct": 75.78,
-      "collateral_ratio": 3.196,
+      "pnl_pct": 93.27,
+      "collateral_ratio": 3.514,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12006,8 +12045,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3344.2,
       "entry_stock_price": 0,
       "amount": 12.399999999997817,
-      "pnl_pct": 73.86,
-      "collateral_ratio": 3.161,
+      "pnl_pct": 91.23,
+      "collateral_ratio": 3.477,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12017,8 +12056,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3407.31,
       "entry_stock_price": 0,
       "amount": 89.20000000000073,
-      "pnl_pct": 69.87,
-      "collateral_ratio": 3.089,
+      "pnl_pct": 87.02,
+      "collateral_ratio": 3.4,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12028,8 +12067,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3449.62,
       "entry_stock_price": 0,
       "amount": 26.100000000002183,
-      "pnl_pct": 67.28,
-      "collateral_ratio": 3.042,
+      "pnl_pct": 84.28,
+      "collateral_ratio": 3.351,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12039,8 +12078,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3413.4,
       "entry_stock_price": 0,
       "amount": 247.5,
-      "pnl_pct": 69.5,
-      "collateral_ratio": 3.082,
+      "pnl_pct": 86.62,
+      "collateral_ratio": 3.393,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12050,8 +12089,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3461.3,
       "entry_stock_price": 0,
       "amount": 99.39999999999782,
-      "pnl_pct": 66.58,
-      "collateral_ratio": 3.029,
+      "pnl_pct": 83.54,
+      "collateral_ratio": 3.337,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12061,8 +12100,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3445.24,
       "entry_stock_price": 0,
       "amount": 162.5,
-      "pnl_pct": 67.55,
-      "collateral_ratio": 3.046,
+      "pnl_pct": 84.56,
+      "collateral_ratio": 3.356,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12072,8 +12111,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3468.65,
       "entry_stock_price": 0,
       "amount": 121.5,
-      "pnl_pct": 66.14,
-      "collateral_ratio": 3.021,
+      "pnl_pct": 83.07,
+      "collateral_ratio": 3.329,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12083,8 +12122,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3486.19,
       "entry_stock_price": 0,
       "amount": 82.40000000000146,
-      "pnl_pct": 65.1,
-      "collateral_ratio": 3.002,
+      "pnl_pct": 81.97,
+      "collateral_ratio": 3.309,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12094,8 +12133,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3584.55,
       "entry_stock_price": 0,
       "amount": 24.899999999997817,
-      "pnl_pct": 59.44,
-      "collateral_ratio": 2.899,
+      "pnl_pct": 75.98,
+      "collateral_ratio": 3.2,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12105,8 +12144,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3561.81,
       "entry_stock_price": 0,
       "amount": 288.40000000000146,
-      "pnl_pct": 60.72,
-      "collateral_ratio": 2.922,
+      "pnl_pct": 77.34,
+      "collateral_ratio": 3.224,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12116,8 +12155,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3657.28,
       "entry_stock_price": 0,
       "amount": 206.0,
-      "pnl_pct": 55.45,
-      "collateral_ratio": 2.826,
+      "pnl_pct": 71.76,
+      "collateral_ratio": 3.123,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12127,8 +12166,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3748.89,
       "entry_stock_price": 0,
       "amount": 108.0,
-      "pnl_pct": 50.64,
-      "collateral_ratio": 2.739,
+      "pnl_pct": 66.68,
+      "collateral_ratio": 3.031,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12138,8 +12177,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3814.69,
       "entry_stock_price": 0,
       "amount": 34.0,
-      "pnl_pct": 47.33,
-      "collateral_ratio": 2.679,
+      "pnl_pct": 63.18,
+      "collateral_ratio": 2.967,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12149,8 +12188,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3883.68,
       "entry_stock_price": 0,
       "amount": 314.09999999999854,
-      "pnl_pct": 43.98,
-      "collateral_ratio": 2.618,
+      "pnl_pct": 59.64,
+      "collateral_ratio": 2.903,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12160,8 +12199,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3845.56,
       "entry_stock_price": 0,
       "amount": 173.60000000000218,
-      "pnl_pct": 45.82,
-      "collateral_ratio": 2.651,
+      "pnl_pct": 61.58,
+      "collateral_ratio": 2.938,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12171,8 +12210,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3941.59,
       "entry_stock_price": 0,
       "amount": 229.20000000000073,
-      "pnl_pct": 41.26,
-      "collateral_ratio": 2.568,
+      "pnl_pct": 56.76,
+      "collateral_ratio": 2.85,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12182,8 +12221,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4042.83,
       "entry_stock_price": 0,
       "amount": 134.6999999999971,
-      "pnl_pct": 36.69,
-      "collateral_ratio": 2.485,
+      "pnl_pct": 51.93,
+      "collateral_ratio": 2.762,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12193,8 +12232,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4010.41,
       "entry_stock_price": 0,
       "amount": 36.400000000001455,
-      "pnl_pct": 38.13,
-      "collateral_ratio": 2.511,
+      "pnl_pct": 53.45,
+      "collateral_ratio": 2.79,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12204,8 +12243,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4081.15,
       "entry_stock_price": 0,
       "amount": 267.2000000000007,
-      "pnl_pct": 35.02,
-      "collateral_ratio": 2.455,
+      "pnl_pct": 50.16,
+      "collateral_ratio": 2.73,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12215,8 +12254,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4086.89,
       "entry_stock_price": 0,
       "amount": 177.70000000000073,
-      "pnl_pct": 34.78,
-      "collateral_ratio": 2.45,
+      "pnl_pct": 49.9,
+      "collateral_ratio": 2.725,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12226,8 +12265,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4107.5,
       "entry_stock_price": 0,
       "amount": 180.5,
-      "pnl_pct": 33.89,
-      "collateral_ratio": 2.434,
+      "pnl_pct": 48.97,
+      "collateral_ratio": 2.708,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12237,8 +12276,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4121.74,
       "entry_stock_price": 0,
       "amount": 49.29999999999927,
-      "pnl_pct": 33.29,
-      "collateral_ratio": 2.423,
+      "pnl_pct": 48.33,
+      "collateral_ratio": 2.697,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12248,8 +12287,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4004.42,
       "entry_stock_price": 0,
       "amount": 305.2000000000007,
-      "pnl_pct": 38.4,
-      "collateral_ratio": 2.516,
+      "pnl_pct": 53.73,
+      "collateral_ratio": 2.795,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12259,8 +12298,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4026.45,
       "entry_stock_price": 0,
       "amount": 45.69999999999709,
-      "pnl_pct": 37.42,
-      "collateral_ratio": 2.499,
+      "pnl_pct": 52.69,
+      "collateral_ratio": 2.776,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12270,8 +12309,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3953.76,
       "entry_stock_price": 0,
       "amount": 117.5,
-      "pnl_pct": 40.7,
-      "collateral_ratio": 2.558,
+      "pnl_pct": 56.17,
+      "collateral_ratio": 2.839,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12281,8 +12320,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4150.39,
       "entry_stock_price": 0,
       "amount": 14.400000000001455,
-      "pnl_pct": 32.08,
-      "collateral_ratio": 2.402,
+      "pnl_pct": 47.05,
+      "collateral_ratio": 2.674,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12292,8 +12331,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4170.63,
       "entry_stock_price": 0,
       "amount": 232.5,
-      "pnl_pct": 31.24,
-      "collateral_ratio": 2.386,
+      "pnl_pct": 46.16,
+      "collateral_ratio": 2.657,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12303,8 +12342,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4011.57,
       "entry_stock_price": 0,
       "amount": 143.79999999999927,
-      "pnl_pct": 38.08,
-      "collateral_ratio": 2.511,
+      "pnl_pct": 53.39,
+      "collateral_ratio": 2.789,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12314,8 +12353,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4089.25,
       "entry_stock_price": 0,
       "amount": 71.10000000000218,
-      "pnl_pct": 34.68,
-      "collateral_ratio": 2.449,
+      "pnl_pct": 49.79,
+      "collateral_ratio": 2.723,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12325,8 +12364,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3926.59,
       "entry_stock_price": 0,
       "amount": 7.099999999998545,
-      "pnl_pct": 41.96,
-      "collateral_ratio": 2.581,
+      "pnl_pct": 57.5,
+      "collateral_ratio": 2.864,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12336,8 +12375,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3920.37,
       "entry_stock_price": 0,
       "amount": 136.20000000000073,
-      "pnl_pct": 42.25,
-      "collateral_ratio": 2.586,
+      "pnl_pct": 57.8,
+      "collateral_ratio": 2.869,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12347,8 +12386,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3994.93,
       "entry_stock_price": 0,
       "amount": 209.5,
-      "pnl_pct": 38.83,
-      "collateral_ratio": 2.524,
+      "pnl_pct": 54.18,
+      "collateral_ratio": 2.803,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12358,8 +12397,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4036.3,
       "entry_stock_price": 0,
       "amount": 24.200000000000728,
-      "pnl_pct": 36.98,
-      "collateral_ratio": 2.491,
+      "pnl_pct": 52.23,
+      "collateral_ratio": 2.768,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12369,8 +12408,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4028.51,
       "entry_stock_price": 0,
       "amount": 71.39999999999782,
-      "pnl_pct": 37.33,
-      "collateral_ratio": 2.497,
+      "pnl_pct": 52.6,
+      "collateral_ratio": 2.774,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12380,8 +12419,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4100.05,
       "entry_stock_price": 0,
       "amount": 182.90000000000146,
-      "pnl_pct": 34.21,
-      "collateral_ratio": 2.44,
+      "pnl_pct": 49.3,
+      "collateral_ratio": 2.715,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12391,8 +12430,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4154.85,
       "entry_stock_price": 0,
       "amount": 152.5,
-      "pnl_pct": 31.9,
-      "collateral_ratio": 2.398,
+      "pnl_pct": 46.85,
+      "collateral_ratio": 2.67,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12402,8 +12441,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4108.62,
       "entry_stock_price": 0,
       "amount": 10.099999999998545,
-      "pnl_pct": 33.85,
-      "collateral_ratio": 2.434,
+      "pnl_pct": 48.91,
+      "collateral_ratio": 2.708,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12413,8 +12452,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4220.56,
       "entry_stock_price": 0,
       "amount": 13.799999999999272,
-      "pnl_pct": 29.2,
-      "collateral_ratio": 2.349,
+      "pnl_pct": 44.0,
+      "collateral_ratio": 2.618,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12424,8 +12463,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4309.63,
       "entry_stock_price": 0,
       "amount": 159.8000000000029,
-      "pnl_pct": 25.68,
-      "collateral_ratio": 2.285,
+      "pnl_pct": 40.28,
+      "collateral_ratio": 2.551,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12435,8 +12474,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4457.52,
       "entry_stock_price": 0,
       "amount": 203.89999999999782,
-      "pnl_pct": 20.15,
-      "collateral_ratio": 2.184,
+      "pnl_pct": 34.42,
+      "collateral_ratio": 2.444,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12446,8 +12485,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4525.48,
       "entry_stock_price": 0,
       "amount": 69.0,
-      "pnl_pct": 17.72,
-      "collateral_ratio": 2.14,
+      "pnl_pct": 31.86,
+      "collateral_ratio": 2.397,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12457,8 +12496,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4551.06,
       "entry_stock_price": 0,
       "amount": 170.90000000000146,
-      "pnl_pct": 16.83,
-      "collateral_ratio": 2.124,
+      "pnl_pct": 30.92,
+      "collateral_ratio": 2.38,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12468,8 +12507,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4552.37,
       "entry_stock_price": 0,
       "amount": 317.2999999999993,
-      "pnl_pct": 16.78,
-      "collateral_ratio": 2.123,
+      "pnl_pct": 30.87,
+      "collateral_ratio": 2.379,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12479,8 +12518,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4586.32,
       "entry_stock_price": 0,
       "amount": 158.70000000000073,
-      "pnl_pct": 15.61,
-      "collateral_ratio": 2.102,
+      "pnl_pct": 29.63,
+      "collateral_ratio": 2.357,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12490,8 +12529,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4624.79,
       "entry_stock_price": 0,
       "amount": 176.70000000000073,
-      "pnl_pct": 14.31,
-      "collateral_ratio": 2.078,
+      "pnl_pct": 28.25,
+      "collateral_ratio": 2.332,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12501,8 +12540,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4692.64,
       "entry_stock_price": 0,
       "amount": 34.29999999999927,
-      "pnl_pct": 12.06,
-      "collateral_ratio": 2.037,
+      "pnl_pct": 25.87,
+      "collateral_ratio": 2.289,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12512,8 +12551,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4723.1,
       "entry_stock_price": 0,
       "amount": 36.29999999999927,
-      "pnl_pct": 11.07,
-      "collateral_ratio": 2.02,
+      "pnl_pct": 24.83,
+      "collateral_ratio": 2.27,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12523,8 +12562,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4797.55,
       "entry_stock_price": 0,
       "amount": 150.59999999999854,
-      "pnl_pct": 8.71,
-      "collateral_ratio": 1.977,
+      "pnl_pct": 22.33,
+      "collateral_ratio": 2.224,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12534,8 +12573,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4840.74,
       "entry_stock_price": 0,
       "amount": 163.3000000000029,
-      "pnl_pct": 7.37,
-      "collateral_ratio": 1.952,
+      "pnl_pct": 20.91,
+      "collateral_ratio": 2.198,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12545,8 +12584,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4990.07,
       "entry_stock_price": 0,
       "amount": 100.09999999999854,
-      "pnl_pct": 2.93,
-      "collateral_ratio": 1.871,
+      "pnl_pct": 16.21,
+      "collateral_ratio": 2.113,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12556,8 +12595,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4949.59,
       "entry_stock_price": 0,
       "amount": 219.70000000000073,
-      "pnl_pct": 4.11,
-      "collateral_ratio": 1.893,
+      "pnl_pct": 17.46,
+      "collateral_ratio": 2.136,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12567,8 +12606,8 @@ export const COHORT_DATA = {
       "entry_kospi": 5170.81,
       "entry_stock_price": 0,
       "amount": 298.2999999999993,
-      "pnl_pct": -2.11,
-      "collateral_ratio": 1.78,
+      "pnl_pct": 10.88,
+      "collateral_ratio": 2.016,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12578,8 +12617,8 @@ export const COHORT_DATA = {
       "entry_kospi": 5221.25,
       "entry_stock_price": 0,
       "amount": 475.59999999999854,
-      "pnl_pct": -3.45,
-      "collateral_ratio": 1.755,
+      "pnl_pct": 9.46,
+      "collateral_ratio": 1.99,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12589,8 +12628,8 @@ export const COHORT_DATA = {
       "entry_kospi": 5224.36,
       "entry_stock_price": 0,
       "amount": 136.0,
-      "pnl_pct": -3.54,
-      "collateral_ratio": 1.754,
+      "pnl_pct": 9.38,
+      "collateral_ratio": 1.989,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12600,8 +12639,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4949.67,
       "entry_stock_price": 0,
       "amount": 161.60000000000218,
-      "pnl_pct": 4.1,
-      "collateral_ratio": 1.893,
+      "pnl_pct": 17.46,
+      "collateral_ratio": 2.136,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12611,8 +12650,8 @@ export const COHORT_DATA = {
       "entry_kospi": 5288.08,
       "entry_stock_price": 0,
       "amount": 54.0,
-      "pnl_pct": -5.19,
-      "collateral_ratio": 1.724,
+      "pnl_pct": 7.62,
+      "collateral_ratio": 1.957,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12622,19 +12661,19 @@ export const COHORT_DATA = {
       "entry_kospi": 5371.1,
       "entry_stock_price": 0,
       "amount": 261.0,
-      "pnl_pct": -7.3,
-      "collateral_ratio": 1.686,
+      "pnl_pct": 5.4,
+      "collateral_ratio": 1.916,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "good"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-06",
       "entry_kospi": 5089.14,
       "entry_stock_price": 0,
       "amount": 299.5,
-      "pnl_pct": 0.12,
-      "collateral_ratio": 1.82,
+      "pnl_pct": 13.24,
+      "collateral_ratio": 2.059,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12644,8 +12683,8 @@ export const COHORT_DATA = {
       "entry_kospi": 5298.04,
       "entry_stock_price": 0,
       "amount": 224.0,
-      "pnl_pct": -5.45,
-      "collateral_ratio": 1.719,
+      "pnl_pct": 7.35,
+      "collateral_ratio": 1.952,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12655,99 +12694,99 @@ export const COHORT_DATA = {
       "entry_kospi": 5522.27,
       "entry_stock_price": 0,
       "amount": 146.70000000000073,
-      "pnl_pct": -10.96,
-      "collateral_ratio": 1.619,
+      "pnl_pct": 1.52,
+      "collateral_ratio": 1.846,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "good"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-13",
       "entry_kospi": 5507.01,
       "entry_stock_price": 0,
       "amount": 11.399999999997817,
-      "pnl_pct": -10.6,
-      "collateral_ratio": 1.625,
+      "pnl_pct": 1.9,
+      "collateral_ratio": 1.853,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "good"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-19",
       "entry_kospi": 5677.25,
       "entry_stock_price": 0,
       "amount": 110.70000000000073,
-      "pnl_pct": -14.52,
-      "collateral_ratio": 1.554,
+      "pnl_pct": -2.24,
+      "collateral_ratio": 1.777,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "good"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-20",
       "entry_kospi": 5808.53,
       "entry_stock_price": 0,
       "amount": 39.900000000001455,
-      "pnl_pct": -17.38,
-      "collateral_ratio": 1.502,
+      "pnl_pct": -5.27,
+      "collateral_ratio": 1.722,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "caution"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-23",
       "entry_kospi": 5846.09,
       "entry_stock_price": 0,
       "amount": 62.29999999999927,
-      "pnl_pct": -18.17,
-      "collateral_ratio": 1.488,
+      "pnl_pct": -6.11,
+      "collateral_ratio": 1.707,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "caution"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-24",
       "entry_kospi": 5969.64,
       "entry_stock_price": 0,
       "amount": 240.29999999999927,
-      "pnl_pct": -20.72,
-      "collateral_ratio": 1.441,
+      "pnl_pct": -8.8,
+      "collateral_ratio": 1.658,
       "collateral_ratio_pct": 0,
       "status": "watch",
-      "status_6": "caution"
+      "status_6": "good"
     },
     {
       "entry_date": "2026-02-25",
       "entry_kospi": 6083.86,
       "entry_stock_price": 0,
       "amount": 160.09999999999854,
-      "pnl_pct": -22.98,
-      "collateral_ratio": 1.4,
+      "pnl_pct": -11.19,
+      "collateral_ratio": 1.615,
       "collateral_ratio_pct": 0,
       "status": "watch",
-      "status_6": "caution"
+      "status_6": "good"
     },
     {
       "entry_date": "2026-02-26",
       "entry_kospi": 6307.27,
       "entry_stock_price": 0,
       "amount": 237.0,
-      "pnl_pct": -27.17,
-      "collateral_ratio": 1.324,
+      "pnl_pct": -15.62,
+      "collateral_ratio": 1.534,
       "collateral_ratio_pct": 0,
-      "status": "marginCall",
-      "status_6": "marginCall"
+      "status": "watch",
+      "status_6": "caution"
     },
     {
       "entry_date": "2026-02-27",
       "entry_kospi": 6244.13,
       "entry_stock_price": 0,
       "amount": 285.0,
-      "pnl_pct": -26.02,
-      "collateral_ratio": 1.345,
+      "pnl_pct": -14.4,
+      "collateral_ratio": 1.556,
       "collateral_ratio_pct": 0,
-      "status": "marginCall",
-      "status_6": "marginCall"
+      "status": "watch",
+      "status_6": "good"
     }
   ],
   "fifo": [
@@ -12756,8 +12795,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2398.94,
       "entry_stock_price": 0,
       "amount": 8629.800000000014,
-      "pnl_pct": 158.59,
-      "collateral_ratio": 4.702,
+      "pnl_pct": 180.86,
+      "collateral_ratio": 5.107,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12767,8 +12806,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2488.64,
       "entry_stock_price": 0,
       "amount": 130.6999999999989,
-      "pnl_pct": 147.79,
-      "collateral_ratio": 4.505,
+      "pnl_pct": 169.43,
+      "collateral_ratio": 4.899,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12778,8 +12817,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2492.1,
       "entry_stock_price": 0,
       "amount": 20.200000000000728,
-      "pnl_pct": 147.38,
-      "collateral_ratio": 4.498,
+      "pnl_pct": 169.01,
+      "collateral_ratio": 4.891,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12789,8 +12828,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2521.05,
       "entry_stock_price": 0,
       "amount": 144.89999999999964,
-      "pnl_pct": 144.07,
-      "collateral_ratio": 4.438,
+      "pnl_pct": 165.5,
+      "collateral_ratio": 4.827,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12800,8 +12839,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2521.9,
       "entry_stock_price": 0,
       "amount": 146.29999999999927,
-      "pnl_pct": 143.97,
-      "collateral_ratio": 4.436,
+      "pnl_pct": 165.4,
+      "collateral_ratio": 4.825,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12811,8 +12850,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2515.78,
       "entry_stock_price": 0,
       "amount": 78.80000000000109,
-      "pnl_pct": 144.67,
-      "collateral_ratio": 4.449,
+      "pnl_pct": 166.13,
+      "collateral_ratio": 4.839,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12822,8 +12861,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2489.56,
       "entry_stock_price": 0,
       "amount": 81.29999999999927,
-      "pnl_pct": 147.68,
-      "collateral_ratio": 4.503,
+      "pnl_pct": 169.32,
+      "collateral_ratio": 4.897,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12833,8 +12872,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2497.4,
       "entry_stock_price": 0,
       "amount": 133.8000000000011,
-      "pnl_pct": 146.77,
-      "collateral_ratio": 4.487,
+      "pnl_pct": 168.36,
+      "collateral_ratio": 4.879,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12844,8 +12883,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2496.81,
       "entry_stock_price": 0,
       "amount": 107.0,
-      "pnl_pct": 146.84,
-      "collateral_ratio": 4.488,
+      "pnl_pct": 168.43,
+      "collateral_ratio": 4.881,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12855,8 +12894,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2527.49,
       "entry_stock_price": 0,
       "amount": 70.69999999999891,
-      "pnl_pct": 143.34,
-      "collateral_ratio": 4.424,
+      "pnl_pct": 164.73,
+      "collateral_ratio": 4.813,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12866,8 +12905,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2523.55,
       "entry_stock_price": 0,
       "amount": 15.699999999998909,
-      "pnl_pct": 143.79,
-      "collateral_ratio": 4.433,
+      "pnl_pct": 165.2,
+      "collateral_ratio": 4.822,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12877,8 +12916,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2518.03,
       "entry_stock_price": 0,
       "amount": 120.59999999999854,
-      "pnl_pct": 144.41,
-      "collateral_ratio": 4.444,
+      "pnl_pct": 165.86,
+      "collateral_ratio": 4.834,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12888,8 +12927,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2547.06,
       "entry_stock_price": 0,
       "amount": 99.10000000000218,
-      "pnl_pct": 141.16,
-      "collateral_ratio": 4.385,
+      "pnl_pct": 162.42,
+      "collateral_ratio": 4.771,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12899,8 +12938,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2515.49,
       "entry_stock_price": 0,
       "amount": 73.20000000000073,
-      "pnl_pct": 144.7,
-      "collateral_ratio": 4.449,
+      "pnl_pct": 166.17,
+      "collateral_ratio": 4.839,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12910,8 +12949,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2517.37,
       "entry_stock_price": 0,
       "amount": 153.79999999999927,
-      "pnl_pct": 144.49,
-      "collateral_ratio": 4.445,
+      "pnl_pct": 165.94,
+      "collateral_ratio": 4.835,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12921,8 +12960,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2481.69,
       "entry_stock_price": 0,
       "amount": 148.5,
-      "pnl_pct": 148.59,
-      "collateral_ratio": 4.52,
+      "pnl_pct": 170.29,
+      "collateral_ratio": 4.914,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12932,8 +12971,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2521.92,
       "entry_stock_price": 0,
       "amount": 47.099999999998545,
-      "pnl_pct": 143.97,
-      "collateral_ratio": 4.436,
+      "pnl_pct": 165.4,
+      "collateral_ratio": 4.825,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12943,8 +12982,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2521.27,
       "entry_stock_price": 0,
       "amount": 76.60000000000218,
-      "pnl_pct": 144.05,
-      "collateral_ratio": 4.437,
+      "pnl_pct": 165.48,
+      "collateral_ratio": 4.827,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12954,8 +12993,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2539.05,
       "entry_stock_price": 0,
       "amount": 155.6999999999971,
-      "pnl_pct": 142.05,
-      "collateral_ratio": 4.401,
+      "pnl_pct": 163.36,
+      "collateral_ratio": 4.788,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12965,8 +13004,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2548.39,
       "entry_stock_price": 0,
       "amount": 129.40000000000146,
-      "pnl_pct": 141.01,
-      "collateral_ratio": 4.382,
+      "pnl_pct": 162.27,
+      "collateral_ratio": 4.768,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12976,8 +13015,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2583.17,
       "entry_stock_price": 0,
       "amount": 85.29999999999927,
-      "pnl_pct": 137.21,
-      "collateral_ratio": 4.313,
+      "pnl_pct": 158.25,
+      "collateral_ratio": 4.695,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12987,8 +13026,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2591.05,
       "entry_stock_price": 0,
       "amount": 121.5,
-      "pnl_pct": 136.36,
-      "collateral_ratio": 4.298,
+      "pnl_pct": 157.35,
+      "collateral_ratio": 4.679,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -12998,8 +13037,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2610.42,
       "entry_stock_price": 0,
       "amount": 29.200000000000728,
-      "pnl_pct": 134.3,
-      "collateral_ratio": 4.26,
+      "pnl_pct": 155.17,
+      "collateral_ratio": 4.639,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13009,8 +13048,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2626.81,
       "entry_stock_price": 0,
       "amount": 136.20000000000073,
-      "pnl_pct": 132.59,
-      "collateral_ratio": 4.229,
+      "pnl_pct": 153.35,
+      "collateral_ratio": 4.606,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13020,8 +13059,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2671.52,
       "entry_stock_price": 0,
       "amount": 101.39999999999782,
-      "pnl_pct": 128.0,
-      "collateral_ratio": 4.146,
+      "pnl_pct": 148.51,
+      "collateral_ratio": 4.518,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13031,8 +13070,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2654.06,
       "entry_stock_price": 0,
       "amount": 183.70000000000073,
-      "pnl_pct": 129.77,
-      "collateral_ratio": 4.178,
+      "pnl_pct": 150.38,
+      "collateral_ratio": 4.552,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13042,8 +13081,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2654.58,
       "entry_stock_price": 0,
       "amount": 17.900000000001455,
-      "pnl_pct": 129.72,
-      "collateral_ratio": 4.177,
+      "pnl_pct": 150.32,
+      "collateral_ratio": 4.551,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13053,8 +13092,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2645.27,
       "entry_stock_price": 0,
       "amount": 76.29999999999927,
-      "pnl_pct": 130.67,
-      "collateral_ratio": 4.194,
+      "pnl_pct": 151.33,
+      "collateral_ratio": 4.57,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13064,8 +13103,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2630.29,
       "entry_stock_price": 0,
       "amount": 54.79999999999927,
-      "pnl_pct": 132.22,
-      "collateral_ratio": 4.222,
+      "pnl_pct": 152.97,
+      "collateral_ratio": 4.599,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13075,8 +13114,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2641.09,
       "entry_stock_price": 0,
       "amount": 137.10000000000218,
-      "pnl_pct": 131.1,
-      "collateral_ratio": 4.202,
+      "pnl_pct": 151.79,
+      "collateral_ratio": 4.578,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13086,8 +13125,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2621.75,
       "entry_stock_price": 0,
       "amount": 111.39999999999782,
-      "pnl_pct": 133.11,
-      "collateral_ratio": 4.238,
+      "pnl_pct": 153.91,
+      "collateral_ratio": 4.617,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13097,8 +13136,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2532.78,
       "entry_stock_price": 0,
       "amount": 40.900000000001455,
-      "pnl_pct": 142.75,
-      "collateral_ratio": 4.414,
+      "pnl_pct": 164.1,
+      "collateral_ratio": 4.802,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13108,8 +13147,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2528.92,
       "entry_stock_price": 0,
       "amount": 70.39999999999782,
-      "pnl_pct": 143.18,
-      "collateral_ratio": 4.422,
+      "pnl_pct": 164.56,
+      "collateral_ratio": 4.81,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13119,8 +13158,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2558.13,
       "entry_stock_price": 0,
       "amount": 57.400000000001455,
-      "pnl_pct": 139.94,
-      "collateral_ratio": 4.362,
+      "pnl_pct": 161.13,
+      "collateral_ratio": 4.748,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13130,8 +13169,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2563.48,
       "entry_stock_price": 0,
       "amount": 11.5,
-      "pnl_pct": 139.35,
-      "collateral_ratio": 4.352,
+      "pnl_pct": 160.51,
+      "collateral_ratio": 4.737,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13141,8 +13180,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2570.39,
       "entry_stock_price": 0,
       "amount": 35.70000000000073,
-      "pnl_pct": 138.59,
-      "collateral_ratio": 4.338,
+      "pnl_pct": 159.71,
+      "collateral_ratio": 4.722,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13152,8 +13191,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2574.82,
       "entry_stock_price": 0,
       "amount": 25.900000000001455,
-      "pnl_pct": 138.11,
-      "collateral_ratio": 4.329,
+      "pnl_pct": 159.2,
+      "collateral_ratio": 4.713,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13163,8 +13202,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2610.69,
       "entry_stock_price": 0,
       "amount": 61.20000000000073,
-      "pnl_pct": 134.28,
-      "collateral_ratio": 4.26,
+      "pnl_pct": 155.14,
+      "collateral_ratio": 4.639,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13174,8 +13213,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2612.34,
       "entry_stock_price": 0,
       "amount": 35.89999999999782,
-      "pnl_pct": 134.1,
-      "collateral_ratio": 4.256,
+      "pnl_pct": 154.96,
+      "collateral_ratio": 4.636,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13185,8 +13224,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2628.62,
       "entry_stock_price": 0,
       "amount": 13.5,
-      "pnl_pct": 132.4,
-      "collateral_ratio": 4.225,
+      "pnl_pct": 153.15,
+      "collateral_ratio": 4.603,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13196,8 +13235,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2637.1,
       "entry_stock_price": 0,
       "amount": 67.80000000000291,
-      "pnl_pct": 131.52,
-      "collateral_ratio": 4.209,
+      "pnl_pct": 152.22,
+      "collateral_ratio": 4.586,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13207,8 +13246,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2643.13,
       "entry_stock_price": 0,
       "amount": 2.599999999998545,
-      "pnl_pct": 130.89,
-      "collateral_ratio": 4.198,
+      "pnl_pct": 151.57,
+      "collateral_ratio": 4.574,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13218,8 +13257,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2465.42,
       "entry_stock_price": 0,
       "amount": 64.89999999999782,
-      "pnl_pct": 150.51,
-      "collateral_ratio": 4.555,
+      "pnl_pct": 172.31,
+      "collateral_ratio": 4.951,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13229,8 +13268,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2334.23,
       "entry_stock_price": 0,
       "amount": 9.299999999999272,
-      "pnl_pct": 166.9,
-      "collateral_ratio": 4.853,
+      "pnl_pct": 189.65,
+      "collateral_ratio": 5.266,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13240,8 +13279,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2477.41,
       "entry_stock_price": 0,
       "amount": 268.6000000000022,
-      "pnl_pct": 149.1,
-      "collateral_ratio": 4.529,
+      "pnl_pct": 170.82,
+      "collateral_ratio": 4.924,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13251,8 +13290,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2447.43,
       "entry_stock_price": 0,
       "amount": 203.1999999999971,
-      "pnl_pct": 152.65,
-      "collateral_ratio": 4.594,
+      "pnl_pct": 174.58,
+      "collateral_ratio": 4.992,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13262,8 +13301,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2470.41,
       "entry_stock_price": 0,
       "amount": 117.10000000000218,
-      "pnl_pct": 149.92,
-      "collateral_ratio": 4.544,
+      "pnl_pct": 171.69,
+      "collateral_ratio": 4.94,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13273,8 +13312,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2483.42,
       "entry_stock_price": 0,
       "amount": 117.79999999999927,
-      "pnl_pct": 148.39,
-      "collateral_ratio": 4.516,
+      "pnl_pct": 170.07,
+      "collateral_ratio": 4.91,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13284,8 +13323,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2488.42,
       "entry_stock_price": 0,
       "amount": 55.099999999998545,
-      "pnl_pct": 147.81,
-      "collateral_ratio": 4.506,
+      "pnl_pct": 169.46,
+      "collateral_ratio": 4.899,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13295,8 +13334,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2486.64,
       "entry_stock_price": 0,
       "amount": 97.20000000000073,
-      "pnl_pct": 148.02,
-      "collateral_ratio": 4.509,
+      "pnl_pct": 169.68,
+      "collateral_ratio": 4.903,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13306,8 +13345,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2525.56,
       "entry_stock_price": 0,
       "amount": 97.5,
-      "pnl_pct": 143.56,
-      "collateral_ratio": 4.428,
+      "pnl_pct": 164.96,
+      "collateral_ratio": 4.818,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13317,8 +13356,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2522.33,
       "entry_stock_price": 0,
       "amount": 155.90000000000146,
-      "pnl_pct": 143.93,
-      "collateral_ratio": 4.435,
+      "pnl_pct": 165.35,
+      "collateral_ratio": 4.825,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13328,8 +13367,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2548.86,
       "entry_stock_price": 0,
       "amount": 120.29999999999927,
-      "pnl_pct": 140.96,
-      "collateral_ratio": 4.381,
+      "pnl_pct": 162.21,
+      "collateral_ratio": 4.767,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13339,8 +13378,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2565.42,
       "entry_stock_price": 0,
       "amount": 11.099999999998545,
-      "pnl_pct": 139.14,
-      "collateral_ratio": 4.348,
+      "pnl_pct": 160.28,
+      "collateral_ratio": 4.732,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13350,8 +13389,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2556.61,
       "entry_stock_price": 0,
       "amount": 33.20000000000073,
-      "pnl_pct": 140.1,
-      "collateral_ratio": 4.366,
+      "pnl_pct": 161.31,
+      "collateral_ratio": 4.751,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13361,8 +13400,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2573.8,
       "entry_stock_price": 0,
       "amount": 82.70000000000073,
-      "pnl_pct": 138.22,
-      "collateral_ratio": 4.331,
+      "pnl_pct": 159.32,
+      "collateral_ratio": 4.715,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13372,8 +13411,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2577.27,
       "entry_stock_price": 0,
       "amount": 14.0,
-      "pnl_pct": 137.85,
-      "collateral_ratio": 4.325,
+      "pnl_pct": 158.92,
+      "collateral_ratio": 4.708,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13383,8 +13422,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2607.33,
       "entry_stock_price": 0,
       "amount": 135.40000000000146,
-      "pnl_pct": 134.63,
-      "collateral_ratio": 4.266,
+      "pnl_pct": 155.52,
+      "collateral_ratio": 4.646,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13394,8 +13433,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2608.42,
       "entry_stock_price": 0,
       "amount": 124.09999999999854,
-      "pnl_pct": 134.52,
-      "collateral_ratio": 4.264,
+      "pnl_pct": 155.4,
+      "collateral_ratio": 4.644,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13405,8 +13444,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2621.36,
       "entry_stock_price": 0,
       "amount": 75.39999999999782,
-      "pnl_pct": 133.15,
-      "collateral_ratio": 4.239,
+      "pnl_pct": 153.96,
+      "collateral_ratio": 4.617,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13416,8 +13455,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2603.42,
       "entry_stock_price": 0,
       "amount": 139.5,
-      "pnl_pct": 135.04,
-      "collateral_ratio": 4.274,
+      "pnl_pct": 155.96,
+      "collateral_ratio": 4.654,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13427,8 +13466,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2601.8,
       "entry_stock_price": 0,
       "amount": 24.400000000001455,
-      "pnl_pct": 135.22,
-      "collateral_ratio": 4.277,
+      "pnl_pct": 156.14,
+      "collateral_ratio": 4.657,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13438,8 +13477,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2625.58,
       "entry_stock_price": 0,
       "amount": 26.69999999999709,
-      "pnl_pct": 132.71,
-      "collateral_ratio": 4.231,
+      "pnl_pct": 153.49,
+      "collateral_ratio": 4.609,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13449,8 +13488,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2593.67,
       "entry_stock_price": 0,
       "amount": 1.3000000000029104,
-      "pnl_pct": 136.08,
-      "collateral_ratio": 4.292,
+      "pnl_pct": 157.05,
+      "collateral_ratio": 4.674,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13460,8 +13499,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2592.09,
       "entry_stock_price": 0,
       "amount": 22.19999999999709,
-      "pnl_pct": 136.25,
-      "collateral_ratio": 4.295,
+      "pnl_pct": 157.23,
+      "collateral_ratio": 4.677,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13471,8 +13510,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2644.4,
       "entry_stock_price": 0,
       "amount": 148.3000000000029,
-      "pnl_pct": 130.76,
-      "collateral_ratio": 4.196,
+      "pnl_pct": 151.43,
+      "collateral_ratio": 4.571,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13482,8 +13521,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2637.22,
       "entry_stock_price": 0,
       "amount": 30.5,
-      "pnl_pct": 131.5,
-      "collateral_ratio": 4.209,
+      "pnl_pct": 152.21,
+      "collateral_ratio": 4.586,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13493,8 +13532,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2720.64,
       "entry_stock_price": 0,
       "amount": 175.40000000000146,
-      "pnl_pct": 123.14,
-      "collateral_ratio": 4.057,
+      "pnl_pct": 143.37,
+      "collateral_ratio": 4.425,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13504,8 +13543,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2698.97,
       "entry_stock_price": 0,
       "amount": 76.09999999999854,
-      "pnl_pct": 125.27,
-      "collateral_ratio": 4.096,
+      "pnl_pct": 145.61,
+      "collateral_ratio": 4.466,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13515,8 +13554,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2770.84,
       "entry_stock_price": 0,
       "amount": 164.70000000000073,
-      "pnl_pct": 118.35,
-      "collateral_ratio": 3.97,
+      "pnl_pct": 138.3,
+      "collateral_ratio": 4.333,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13526,8 +13565,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2812.05,
       "entry_stock_price": 0,
       "amount": 38.60000000000218,
-      "pnl_pct": 114.55,
-      "collateral_ratio": 3.901,
+      "pnl_pct": 134.28,
+      "collateral_ratio": 4.26,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13537,8 +13576,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2907.04,
       "entry_stock_price": 0,
       "amount": 201.1999999999971,
-      "pnl_pct": 106.19,
-      "collateral_ratio": 3.749,
+      "pnl_pct": 125.44,
+      "collateral_ratio": 4.099,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13548,8 +13587,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2920.03,
       "entry_stock_price": 0,
       "amount": 118.80000000000291,
-      "pnl_pct": 105.09,
-      "collateral_ratio": 3.729,
+      "pnl_pct": 124.28,
+      "collateral_ratio": 4.078,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13559,8 +13598,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2894.62,
       "entry_stock_price": 0,
       "amount": 135.5,
-      "pnl_pct": 107.26,
-      "collateral_ratio": 3.768,
+      "pnl_pct": 126.56,
+      "collateral_ratio": 4.119,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13570,8 +13609,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2946.66,
       "entry_stock_price": 0,
       "amount": 216.5,
-      "pnl_pct": 102.87,
-      "collateral_ratio": 3.689,
+      "pnl_pct": 121.92,
+      "collateral_ratio": 4.035,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13581,8 +13620,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2950.3,
       "entry_stock_price": 0,
       "amount": 174.6999999999971,
-      "pnl_pct": 102.57,
-      "collateral_ratio": 3.683,
+      "pnl_pct": 121.6,
+      "collateral_ratio": 4.029,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13592,8 +13631,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2972.19,
       "entry_stock_price": 0,
       "amount": 180.0,
-      "pnl_pct": 100.77,
-      "collateral_ratio": 3.65,
+      "pnl_pct": 119.7,
+      "collateral_ratio": 3.995,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13603,8 +13642,8 @@ export const COHORT_DATA = {
       "entry_kospi": 2977.74,
       "entry_stock_price": 0,
       "amount": 47.5,
-      "pnl_pct": 100.32,
-      "collateral_ratio": 3.642,
+      "pnl_pct": 119.23,
+      "collateral_ratio": 3.986,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13614,8 +13653,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3021.84,
       "entry_stock_price": 0,
       "amount": 215.5,
-      "pnl_pct": 96.8,
-      "collateral_ratio": 3.578,
+      "pnl_pct": 115.5,
+      "collateral_ratio": 3.918,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13625,8 +13664,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3014.47,
       "entry_stock_price": 0,
       "amount": 274.40000000000146,
-      "pnl_pct": 97.38,
-      "collateral_ratio": 3.589,
+      "pnl_pct": 116.11,
+      "collateral_ratio": 3.929,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13636,8 +13675,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3103.64,
       "entry_stock_price": 0,
       "amount": 40.900000000001455,
-      "pnl_pct": 90.52,
-      "collateral_ratio": 3.464,
+      "pnl_pct": 108.86,
+      "collateral_ratio": 3.798,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13647,8 +13686,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3108.25,
       "entry_stock_price": 0,
       "amount": 439.2999999999993,
-      "pnl_pct": 90.18,
-      "collateral_ratio": 3.458,
+      "pnl_pct": 108.5,
+      "collateral_ratio": 3.791,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13658,8 +13697,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3055.94,
       "entry_stock_price": 0,
       "amount": 146.5,
-      "pnl_pct": 94.14,
-      "collateral_ratio": 3.53,
+      "pnl_pct": 112.69,
+      "collateral_ratio": 3.867,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13669,8 +13708,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3071.7,
       "entry_stock_price": 0,
       "amount": 108.79999999999927,
-      "pnl_pct": 92.93,
-      "collateral_ratio": 3.508,
+      "pnl_pct": 111.41,
+      "collateral_ratio": 3.844,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13680,8 +13719,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3089.65,
       "entry_stock_price": 0,
       "amount": 96.0,
-      "pnl_pct": 91.57,
-      "collateral_ratio": 3.483,
+      "pnl_pct": 109.97,
+      "collateral_ratio": 3.818,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13691,8 +13730,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3075.06,
       "entry_stock_price": 0,
       "amount": 2.0,
-      "pnl_pct": 92.68,
-      "collateral_ratio": 3.503,
+      "pnl_pct": 111.14,
+      "collateral_ratio": 3.839,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13702,8 +13741,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3054.28,
       "entry_stock_price": 0,
       "amount": 24.099999999998545,
-      "pnl_pct": 94.27,
-      "collateral_ratio": 3.532,
+      "pnl_pct": 112.83,
+      "collateral_ratio": 3.87,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13713,8 +13752,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3114.95,
       "entry_stock_price": 0,
       "amount": 25.69999999999709,
-      "pnl_pct": 89.68,
-      "collateral_ratio": 3.449,
+      "pnl_pct": 107.97,
+      "collateral_ratio": 3.781,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13724,8 +13763,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3133.74,
       "entry_stock_price": 0,
       "amount": 31.600000000002183,
-      "pnl_pct": 88.3,
-      "collateral_ratio": 3.424,
+      "pnl_pct": 106.51,
+      "collateral_ratio": 3.755,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13735,8 +13774,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3183.23,
       "entry_stock_price": 0,
       "amount": 154.5,
-      "pnl_pct": 84.73,
-      "collateral_ratio": 3.359,
+      "pnl_pct": 102.74,
+      "collateral_ratio": 3.686,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13746,8 +13785,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3175.77,
       "entry_stock_price": 0,
       "amount": 255.09999999999854,
-      "pnl_pct": 85.26,
-      "collateral_ratio": 3.368,
+      "pnl_pct": 103.3,
+      "collateral_ratio": 3.696,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13757,8 +13796,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3202.03,
       "entry_stock_price": 0,
       "amount": 68.5,
-      "pnl_pct": 83.4,
-      "collateral_ratio": 3.335,
+      "pnl_pct": 101.33,
+      "collateral_ratio": 3.661,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13768,8 +13807,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3215.28,
       "entry_stock_price": 0,
       "amount": 63.20000000000073,
-      "pnl_pct": 82.48,
-      "collateral_ratio": 3.318,
+      "pnl_pct": 100.35,
+      "collateral_ratio": 3.643,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13779,8 +13818,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3186.38,
       "entry_stock_price": 0,
       "amount": 67.79999999999927,
-      "pnl_pct": 84.51,
-      "collateral_ratio": 3.355,
+      "pnl_pct": 102.5,
+      "collateral_ratio": 3.682,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13790,8 +13829,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3192.29,
       "entry_stock_price": 0,
       "amount": 117.90000000000146,
-      "pnl_pct": 84.09,
-      "collateral_ratio": 3.347,
+      "pnl_pct": 102.06,
+      "collateral_ratio": 3.674,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13801,8 +13840,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3188.07,
       "entry_stock_price": 0,
       "amount": 154.59999999999854,
-      "pnl_pct": 84.39,
-      "collateral_ratio": 3.352,
+      "pnl_pct": 102.37,
+      "collateral_ratio": 3.68,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13812,8 +13851,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3210.81,
       "entry_stock_price": 0,
       "amount": 11.200000000000728,
-      "pnl_pct": 82.79,
-      "collateral_ratio": 3.323,
+      "pnl_pct": 100.68,
+      "collateral_ratio": 3.649,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13823,8 +13862,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3190.45,
       "entry_stock_price": 0,
       "amount": 101.20000000000073,
-      "pnl_pct": 84.22,
-      "collateral_ratio": 3.349,
+      "pnl_pct": 102.2,
+      "collateral_ratio": 3.676,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13834,8 +13873,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3196.05,
       "entry_stock_price": 0,
       "amount": 5.099999999998545,
-      "pnl_pct": 83.82,
-      "collateral_ratio": 3.342,
+      "pnl_pct": 101.78,
+      "collateral_ratio": 3.669,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13845,8 +13884,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3230.57,
       "entry_stock_price": 0,
       "amount": 9.100000000002183,
-      "pnl_pct": 81.42,
-      "collateral_ratio": 3.299,
+      "pnl_pct": 99.23,
+      "collateral_ratio": 3.622,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13856,8 +13895,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3254.47,
       "entry_stock_price": 0,
       "amount": 70.09999999999854,
-      "pnl_pct": 79.78,
-      "collateral_ratio": 3.269,
+      "pnl_pct": 97.51,
+      "collateral_ratio": 3.591,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13867,8 +13906,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3147.75,
       "entry_stock_price": 0,
       "amount": 4.0,
-      "pnl_pct": 87.28,
-      "collateral_ratio": 3.405,
+      "pnl_pct": 105.43,
+      "collateral_ratio": 3.735,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13878,8 +13917,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3227.68,
       "entry_stock_price": 0,
       "amount": 72.90000000000146,
-      "pnl_pct": 81.62,
-      "collateral_ratio": 3.302,
+      "pnl_pct": 99.45,
+      "collateral_ratio": 3.626,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13889,8 +13928,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3210.01,
       "entry_stock_price": 0,
       "amount": 208.79999999999927,
-      "pnl_pct": 82.85,
-      "collateral_ratio": 3.324,
+      "pnl_pct": 100.74,
+      "collateral_ratio": 3.65,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13900,8 +13939,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3206.77,
       "entry_stock_price": 0,
       "amount": 248.20000000000073,
-      "pnl_pct": 83.07,
-      "collateral_ratio": 3.329,
+      "pnl_pct": 100.98,
+      "collateral_ratio": 3.654,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13911,8 +13950,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3189.91,
       "entry_stock_price": 0,
       "amount": 151.59999999999854,
-      "pnl_pct": 84.26,
-      "collateral_ratio": 3.35,
+      "pnl_pct": 102.24,
+      "collateral_ratio": 3.677,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13922,8 +13961,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3224.37,
       "entry_stock_price": 0,
       "amount": 12.099999999998545,
-      "pnl_pct": 81.85,
-      "collateral_ratio": 3.306,
+      "pnl_pct": 99.69,
+      "collateral_ratio": 3.631,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13933,8 +13972,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3225.66,
       "entry_stock_price": 0,
       "amount": 8.900000000001455,
-      "pnl_pct": 81.76,
-      "collateral_ratio": 3.305,
+      "pnl_pct": 99.59,
+      "collateral_ratio": 3.629,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13944,8 +13983,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3177.28,
       "entry_stock_price": 0,
       "amount": 31.799999999999272,
-      "pnl_pct": 85.15,
-      "collateral_ratio": 3.366,
+      "pnl_pct": 103.18,
+      "collateral_ratio": 3.694,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13955,8 +13994,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3151.56,
       "entry_stock_price": 0,
       "amount": 35.20000000000073,
-      "pnl_pct": 87.0,
-      "collateral_ratio": 3.4,
+      "pnl_pct": 105.14,
+      "collateral_ratio": 3.73,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13966,8 +14005,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3130.09,
       "entry_stock_price": 0,
       "amount": 17.0,
-      "pnl_pct": 88.57,
-      "collateral_ratio": 3.428,
+      "pnl_pct": 106.79,
+      "collateral_ratio": 3.76,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13977,8 +14016,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3209.86,
       "entry_stock_price": 0,
       "amount": 3.7000000000007276,
-      "pnl_pct": 82.86,
-      "collateral_ratio": 3.325,
+      "pnl_pct": 100.75,
+      "collateral_ratio": 3.65,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13988,8 +14027,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3187.16,
       "entry_stock_price": 0,
       "amount": 33.39999999999782,
-      "pnl_pct": 84.45,
-      "collateral_ratio": 3.354,
+      "pnl_pct": 102.44,
+      "collateral_ratio": 3.681,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -13999,8 +14038,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3196.32,
       "entry_stock_price": 0,
       "amount": 182.5,
-      "pnl_pct": 83.8,
-      "collateral_ratio": 3.342,
+      "pnl_pct": 101.76,
+      "collateral_ratio": 3.668,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14010,8 +14049,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3186.01,
       "entry_stock_price": 0,
       "amount": 84.10000000000218,
-      "pnl_pct": 84.53,
-      "collateral_ratio": 3.355,
+      "pnl_pct": 102.53,
+      "collateral_ratio": 3.682,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14021,8 +14060,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3142.93,
       "entry_stock_price": 0,
       "amount": 63.79999999999927,
-      "pnl_pct": 87.63,
-      "collateral_ratio": 3.411,
+      "pnl_pct": 105.8,
+      "collateral_ratio": 3.742,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14032,8 +14071,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3172.35,
       "entry_stock_price": 0,
       "amount": 37.099999999998545,
-      "pnl_pct": 85.5,
-      "collateral_ratio": 3.373,
+      "pnl_pct": 103.56,
+      "collateral_ratio": 3.701,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14043,8 +14082,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3205.12,
       "entry_stock_price": 0,
       "amount": 69.0,
-      "pnl_pct": 83.19,
-      "collateral_ratio": 3.331,
+      "pnl_pct": 101.1,
+      "collateral_ratio": 3.656,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14054,8 +14093,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3219.59,
       "entry_stock_price": 0,
       "amount": 33.400000000001455,
-      "pnl_pct": 82.18,
-      "collateral_ratio": 3.312,
+      "pnl_pct": 100.04,
+      "collateral_ratio": 3.637,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14065,8 +14104,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3260.05,
       "entry_stock_price": 0,
       "amount": 96.69999999999709,
-      "pnl_pct": 79.41,
-      "collateral_ratio": 3.262,
+      "pnl_pct": 97.11,
+      "collateral_ratio": 3.584,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14076,8 +14115,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3314.53,
       "entry_stock_price": 0,
       "amount": 45.10000000000218,
-      "pnl_pct": 75.78,
-      "collateral_ratio": 3.196,
+      "pnl_pct": 93.27,
+      "collateral_ratio": 3.514,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14087,8 +14126,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3344.2,
       "entry_stock_price": 0,
       "amount": 50.099999999998545,
-      "pnl_pct": 73.86,
-      "collateral_ratio": 3.161,
+      "pnl_pct": 91.23,
+      "collateral_ratio": 3.477,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14098,8 +14137,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3407.31,
       "entry_stock_price": 0,
       "amount": 89.20000000000073,
-      "pnl_pct": 69.87,
-      "collateral_ratio": 3.089,
+      "pnl_pct": 87.02,
+      "collateral_ratio": 3.4,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14109,8 +14148,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3449.62,
       "entry_stock_price": 0,
       "amount": 26.100000000002183,
-      "pnl_pct": 67.28,
-      "collateral_ratio": 3.042,
+      "pnl_pct": 84.28,
+      "collateral_ratio": 3.351,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14120,8 +14159,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3413.4,
       "entry_stock_price": 0,
       "amount": 247.5,
-      "pnl_pct": 69.5,
-      "collateral_ratio": 3.082,
+      "pnl_pct": 86.62,
+      "collateral_ratio": 3.393,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14131,8 +14170,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3461.3,
       "entry_stock_price": 0,
       "amount": 99.39999999999782,
-      "pnl_pct": 66.58,
-      "collateral_ratio": 3.029,
+      "pnl_pct": 83.54,
+      "collateral_ratio": 3.337,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14142,8 +14181,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3445.24,
       "entry_stock_price": 0,
       "amount": 162.5,
-      "pnl_pct": 67.55,
-      "collateral_ratio": 3.046,
+      "pnl_pct": 84.56,
+      "collateral_ratio": 3.356,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14153,8 +14192,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3468.65,
       "entry_stock_price": 0,
       "amount": 121.5,
-      "pnl_pct": 66.14,
-      "collateral_ratio": 3.021,
+      "pnl_pct": 83.07,
+      "collateral_ratio": 3.329,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14164,8 +14203,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3486.19,
       "entry_stock_price": 0,
       "amount": 120.60000000000218,
-      "pnl_pct": 65.1,
-      "collateral_ratio": 3.002,
+      "pnl_pct": 81.97,
+      "collateral_ratio": 3.309,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14175,8 +14214,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3472.14,
       "entry_stock_price": 0,
       "amount": 71.0,
-      "pnl_pct": 65.93,
-      "collateral_ratio": 3.017,
+      "pnl_pct": 82.85,
+      "collateral_ratio": 3.325,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14186,8 +14225,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3471.11,
       "entry_stock_price": 0,
       "amount": 154.59999999999854,
-      "pnl_pct": 65.99,
-      "collateral_ratio": 3.018,
+      "pnl_pct": 82.92,
+      "collateral_ratio": 3.326,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14197,8 +14236,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3386.05,
       "entry_stock_price": 0,
       "amount": 23.599999999998545,
-      "pnl_pct": 71.2,
-      "collateral_ratio": 3.113,
+      "pnl_pct": 88.42,
+      "collateral_ratio": 3.426,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14208,8 +14247,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3424.6,
       "entry_stock_price": 0,
       "amount": 36.599999999998545,
-      "pnl_pct": 68.81,
-      "collateral_ratio": 3.069,
+      "pnl_pct": 85.89,
+      "collateral_ratio": 3.38,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14219,8 +14258,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3549.21,
       "entry_stock_price": 0,
       "amount": 1.7999999999992724,
-      "pnl_pct": 61.43,
-      "collateral_ratio": 2.935,
+      "pnl_pct": 78.1,
+      "collateral_ratio": 3.238,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14230,8 +14269,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3584.55,
       "entry_stock_price": 0,
       "amount": 24.899999999997817,
-      "pnl_pct": 59.44,
-      "collateral_ratio": 2.899,
+      "pnl_pct": 75.98,
+      "collateral_ratio": 3.2,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14241,8 +14280,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3561.81,
       "entry_stock_price": 0,
       "amount": 288.40000000000146,
-      "pnl_pct": 60.72,
-      "collateral_ratio": 2.922,
+      "pnl_pct": 77.34,
+      "collateral_ratio": 3.224,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14252,8 +14291,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3657.28,
       "entry_stock_price": 0,
       "amount": 266.0,
-      "pnl_pct": 55.45,
-      "collateral_ratio": 2.826,
+      "pnl_pct": 71.76,
+      "collateral_ratio": 3.123,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14263,8 +14302,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3748.89,
       "entry_stock_price": 0,
       "amount": 108.0,
-      "pnl_pct": 50.64,
-      "collateral_ratio": 2.739,
+      "pnl_pct": 66.68,
+      "collateral_ratio": 3.031,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14274,8 +14313,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3814.69,
       "entry_stock_price": 0,
       "amount": 172.59999999999854,
-      "pnl_pct": 47.33,
-      "collateral_ratio": 2.679,
+      "pnl_pct": 63.18,
+      "collateral_ratio": 2.967,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14285,8 +14324,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3883.68,
       "entry_stock_price": 0,
       "amount": 314.09999999999854,
-      "pnl_pct": 43.98,
-      "collateral_ratio": 2.618,
+      "pnl_pct": 59.64,
+      "collateral_ratio": 2.903,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14296,8 +14335,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3845.56,
       "entry_stock_price": 0,
       "amount": 173.60000000000218,
-      "pnl_pct": 45.82,
-      "collateral_ratio": 2.651,
+      "pnl_pct": 61.58,
+      "collateral_ratio": 2.938,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14307,8 +14346,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3941.59,
       "entry_stock_price": 0,
       "amount": 229.20000000000073,
-      "pnl_pct": 41.26,
-      "collateral_ratio": 2.568,
+      "pnl_pct": 56.76,
+      "collateral_ratio": 2.85,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14318,8 +14357,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4042.83,
       "entry_stock_price": 0,
       "amount": 134.6999999999971,
-      "pnl_pct": 36.69,
-      "collateral_ratio": 2.485,
+      "pnl_pct": 51.93,
+      "collateral_ratio": 2.762,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14329,8 +14368,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4010.41,
       "entry_stock_price": 0,
       "amount": 36.400000000001455,
-      "pnl_pct": 38.13,
-      "collateral_ratio": 2.511,
+      "pnl_pct": 53.45,
+      "collateral_ratio": 2.79,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14340,8 +14379,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4081.15,
       "entry_stock_price": 0,
       "amount": 267.2000000000007,
-      "pnl_pct": 35.02,
-      "collateral_ratio": 2.455,
+      "pnl_pct": 50.16,
+      "collateral_ratio": 2.73,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14351,8 +14390,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4086.89,
       "entry_stock_price": 0,
       "amount": 177.70000000000073,
-      "pnl_pct": 34.78,
-      "collateral_ratio": 2.45,
+      "pnl_pct": 49.9,
+      "collateral_ratio": 2.725,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14362,8 +14401,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4107.5,
       "entry_stock_price": 0,
       "amount": 250.0,
-      "pnl_pct": 33.89,
-      "collateral_ratio": 2.434,
+      "pnl_pct": 48.97,
+      "collateral_ratio": 2.708,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14373,8 +14412,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4121.74,
       "entry_stock_price": 0,
       "amount": 49.29999999999927,
-      "pnl_pct": 33.29,
-      "collateral_ratio": 2.423,
+      "pnl_pct": 48.33,
+      "collateral_ratio": 2.697,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14384,8 +14423,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4004.42,
       "entry_stock_price": 0,
       "amount": 305.2000000000007,
-      "pnl_pct": 38.4,
-      "collateral_ratio": 2.516,
+      "pnl_pct": 53.73,
+      "collateral_ratio": 2.795,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14395,8 +14434,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4026.45,
       "entry_stock_price": 0,
       "amount": 45.69999999999709,
-      "pnl_pct": 37.42,
-      "collateral_ratio": 2.499,
+      "pnl_pct": 52.69,
+      "collateral_ratio": 2.776,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14406,8 +14445,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3953.76,
       "entry_stock_price": 0,
       "amount": 347.5,
-      "pnl_pct": 40.7,
-      "collateral_ratio": 2.558,
+      "pnl_pct": 56.17,
+      "collateral_ratio": 2.839,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14417,8 +14456,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4150.39,
       "entry_stock_price": 0,
       "amount": 14.400000000001455,
-      "pnl_pct": 32.08,
-      "collateral_ratio": 2.402,
+      "pnl_pct": 47.05,
+      "collateral_ratio": 2.674,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14428,8 +14467,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4170.63,
       "entry_stock_price": 0,
       "amount": 232.5,
-      "pnl_pct": 31.24,
-      "collateral_ratio": 2.386,
+      "pnl_pct": 46.16,
+      "collateral_ratio": 2.657,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14439,8 +14478,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4011.57,
       "entry_stock_price": 0,
       "amount": 143.79999999999927,
-      "pnl_pct": 38.08,
-      "collateral_ratio": 2.511,
+      "pnl_pct": 53.39,
+      "collateral_ratio": 2.789,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14450,8 +14489,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4089.25,
       "entry_stock_price": 0,
       "amount": 203.79999999999927,
-      "pnl_pct": 34.68,
-      "collateral_ratio": 2.449,
+      "pnl_pct": 49.79,
+      "collateral_ratio": 2.723,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14461,8 +14500,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3953.62,
       "entry_stock_price": 0,
       "amount": 199.0,
-      "pnl_pct": 40.71,
-      "collateral_ratio": 2.558,
+      "pnl_pct": 56.17,
+      "collateral_ratio": 2.84,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14472,8 +14511,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3929.51,
       "entry_stock_price": 0,
       "amount": 46.400000000001455,
-      "pnl_pct": 41.82,
-      "collateral_ratio": 2.579,
+      "pnl_pct": 57.35,
+      "collateral_ratio": 2.861,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14483,8 +14522,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4004.85,
       "entry_stock_price": 0,
       "amount": 7.700000000000728,
-      "pnl_pct": 38.38,
-      "collateral_ratio": 2.516,
+      "pnl_pct": 53.71,
+      "collateral_ratio": 2.795,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14494,8 +14533,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3926.59,
       "entry_stock_price": 0,
       "amount": 7.099999999998545,
-      "pnl_pct": 41.96,
-      "collateral_ratio": 2.581,
+      "pnl_pct": 57.5,
+      "collateral_ratio": 2.864,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14505,8 +14544,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3920.37,
       "entry_stock_price": 0,
       "amount": 136.20000000000073,
-      "pnl_pct": 42.25,
-      "collateral_ratio": 2.586,
+      "pnl_pct": 57.8,
+      "collateral_ratio": 2.869,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14516,8 +14555,8 @@ export const COHORT_DATA = {
       "entry_kospi": 3994.93,
       "entry_stock_price": 0,
       "amount": 209.5,
-      "pnl_pct": 38.83,
-      "collateral_ratio": 2.524,
+      "pnl_pct": 54.18,
+      "collateral_ratio": 2.803,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14527,8 +14566,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4036.3,
       "entry_stock_price": 0,
       "amount": 24.200000000000728,
-      "pnl_pct": 36.98,
-      "collateral_ratio": 2.491,
+      "pnl_pct": 52.23,
+      "collateral_ratio": 2.768,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14538,8 +14577,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4028.51,
       "entry_stock_price": 0,
       "amount": 71.39999999999782,
-      "pnl_pct": 37.33,
-      "collateral_ratio": 2.497,
+      "pnl_pct": 52.6,
+      "collateral_ratio": 2.774,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14549,8 +14588,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4100.05,
       "entry_stock_price": 0,
       "amount": 182.90000000000146,
-      "pnl_pct": 34.21,
-      "collateral_ratio": 2.44,
+      "pnl_pct": 49.3,
+      "collateral_ratio": 2.715,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14560,8 +14599,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4154.85,
       "entry_stock_price": 0,
       "amount": 277.3999999999978,
-      "pnl_pct": 31.9,
-      "collateral_ratio": 2.398,
+      "pnl_pct": 46.85,
+      "collateral_ratio": 2.67,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14571,8 +14610,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4135.0,
       "entry_stock_price": 0,
       "amount": 72.69999999999709,
-      "pnl_pct": 32.73,
-      "collateral_ratio": 2.413,
+      "pnl_pct": 47.73,
+      "collateral_ratio": 2.686,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14582,8 +14621,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4090.59,
       "entry_stock_price": 0,
       "amount": 78.90000000000146,
-      "pnl_pct": 34.62,
-      "collateral_ratio": 2.448,
+      "pnl_pct": 49.73,
+      "collateral_ratio": 2.722,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14593,8 +14632,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4056.41,
       "entry_stock_price": 0,
       "amount": 197.29999999999927,
-      "pnl_pct": 36.1,
-      "collateral_ratio": 2.475,
+      "pnl_pct": 51.3,
+      "collateral_ratio": 2.751,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14604,8 +14643,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4108.62,
       "entry_stock_price": 0,
       "amount": 36.70000000000073,
-      "pnl_pct": 33.85,
-      "collateral_ratio": 2.434,
+      "pnl_pct": 48.91,
+      "collateral_ratio": 2.708,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14615,8 +14654,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4220.56,
       "entry_stock_price": 0,
       "amount": 45.70000000000073,
-      "pnl_pct": 29.2,
-      "collateral_ratio": 2.349,
+      "pnl_pct": 44.0,
+      "collateral_ratio": 2.618,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14626,8 +14665,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4309.63,
       "entry_stock_price": 0,
       "amount": 159.8000000000029,
-      "pnl_pct": 25.68,
-      "collateral_ratio": 2.285,
+      "pnl_pct": 40.28,
+      "collateral_ratio": 2.551,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14637,8 +14676,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4457.52,
       "entry_stock_price": 0,
       "amount": 203.89999999999782,
-      "pnl_pct": 20.15,
-      "collateral_ratio": 2.184,
+      "pnl_pct": 34.42,
+      "collateral_ratio": 2.444,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14648,8 +14687,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4525.48,
       "entry_stock_price": 0,
       "amount": 69.0,
-      "pnl_pct": 17.72,
-      "collateral_ratio": 2.14,
+      "pnl_pct": 31.86,
+      "collateral_ratio": 2.397,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14659,8 +14698,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4551.06,
       "entry_stock_price": 0,
       "amount": 170.90000000000146,
-      "pnl_pct": 16.83,
-      "collateral_ratio": 2.124,
+      "pnl_pct": 30.92,
+      "collateral_ratio": 2.38,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14670,8 +14709,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4552.37,
       "entry_stock_price": 0,
       "amount": 317.2999999999993,
-      "pnl_pct": 16.78,
-      "collateral_ratio": 2.123,
+      "pnl_pct": 30.87,
+      "collateral_ratio": 2.379,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14681,8 +14720,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4586.32,
       "entry_stock_price": 0,
       "amount": 158.70000000000073,
-      "pnl_pct": 15.61,
-      "collateral_ratio": 2.102,
+      "pnl_pct": 29.63,
+      "collateral_ratio": 2.357,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14692,8 +14731,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4624.79,
       "entry_stock_price": 0,
       "amount": 176.70000000000073,
-      "pnl_pct": 14.31,
-      "collateral_ratio": 2.078,
+      "pnl_pct": 28.25,
+      "collateral_ratio": 2.332,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14703,8 +14742,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4692.64,
       "entry_stock_price": 0,
       "amount": 34.29999999999927,
-      "pnl_pct": 12.06,
-      "collateral_ratio": 2.037,
+      "pnl_pct": 25.87,
+      "collateral_ratio": 2.289,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14714,8 +14753,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4723.1,
       "entry_stock_price": 0,
       "amount": 36.29999999999927,
-      "pnl_pct": 11.07,
-      "collateral_ratio": 2.02,
+      "pnl_pct": 24.83,
+      "collateral_ratio": 2.27,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14725,8 +14764,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4797.55,
       "entry_stock_price": 0,
       "amount": 150.59999999999854,
-      "pnl_pct": 8.71,
-      "collateral_ratio": 1.977,
+      "pnl_pct": 22.33,
+      "collateral_ratio": 2.224,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14736,8 +14775,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4840.74,
       "entry_stock_price": 0,
       "amount": 188.8000000000029,
-      "pnl_pct": 7.37,
-      "collateral_ratio": 1.952,
+      "pnl_pct": 20.91,
+      "collateral_ratio": 2.198,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14747,8 +14786,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4904.66,
       "entry_stock_price": 0,
       "amount": 60.89999999999782,
-      "pnl_pct": 5.44,
-      "collateral_ratio": 1.917,
+      "pnl_pct": 18.87,
+      "collateral_ratio": 2.161,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14758,8 +14797,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4909.93,
       "entry_stock_price": 0,
       "amount": 148.5,
-      "pnl_pct": 5.28,
-      "collateral_ratio": 1.914,
+      "pnl_pct": 18.7,
+      "collateral_ratio": 2.158,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14769,8 +14808,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4990.07,
       "entry_stock_price": 0,
       "amount": 100.09999999999854,
-      "pnl_pct": 2.93,
-      "collateral_ratio": 1.871,
+      "pnl_pct": 16.21,
+      "collateral_ratio": 2.113,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14780,8 +14819,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4949.59,
       "entry_stock_price": 0,
       "amount": 326.0,
-      "pnl_pct": 4.11,
-      "collateral_ratio": 1.893,
+      "pnl_pct": 17.46,
+      "collateral_ratio": 2.136,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14791,8 +14830,8 @@ export const COHORT_DATA = {
       "entry_kospi": 5170.81,
       "entry_stock_price": 0,
       "amount": 298.2999999999993,
-      "pnl_pct": -2.11,
-      "collateral_ratio": 1.78,
+      "pnl_pct": 10.88,
+      "collateral_ratio": 2.016,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14802,8 +14841,8 @@ export const COHORT_DATA = {
       "entry_kospi": 5221.25,
       "entry_stock_price": 0,
       "amount": 475.59999999999854,
-      "pnl_pct": -3.45,
-      "collateral_ratio": 1.755,
+      "pnl_pct": 9.46,
+      "collateral_ratio": 1.99,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14813,8 +14852,8 @@ export const COHORT_DATA = {
       "entry_kospi": 5224.36,
       "entry_stock_price": 0,
       "amount": 136.0,
-      "pnl_pct": -3.54,
-      "collateral_ratio": 1.754,
+      "pnl_pct": 9.38,
+      "collateral_ratio": 1.989,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14824,8 +14863,8 @@ export const COHORT_DATA = {
       "entry_kospi": 4949.67,
       "entry_stock_price": 0,
       "amount": 161.60000000000218,
-      "pnl_pct": 4.1,
-      "collateral_ratio": 1.893,
+      "pnl_pct": 17.46,
+      "collateral_ratio": 2.136,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14835,8 +14874,8 @@ export const COHORT_DATA = {
       "entry_kospi": 5288.08,
       "entry_stock_price": 0,
       "amount": 54.0,
-      "pnl_pct": -5.19,
-      "collateral_ratio": 1.724,
+      "pnl_pct": 7.62,
+      "collateral_ratio": 1.957,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14846,19 +14885,19 @@ export const COHORT_DATA = {
       "entry_kospi": 5371.1,
       "entry_stock_price": 0,
       "amount": 407.2000000000007,
-      "pnl_pct": -7.3,
-      "collateral_ratio": 1.686,
+      "pnl_pct": 5.4,
+      "collateral_ratio": 1.916,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "good"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-06",
       "entry_kospi": 5089.14,
       "entry_stock_price": 0,
       "amount": 299.5,
-      "pnl_pct": 0.12,
-      "collateral_ratio": 1.82,
+      "pnl_pct": 13.24,
+      "collateral_ratio": 2.059,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14868,8 +14907,8 @@ export const COHORT_DATA = {
       "entry_kospi": 5298.04,
       "entry_stock_price": 0,
       "amount": 510.2000000000007,
-      "pnl_pct": -5.45,
-      "collateral_ratio": 1.719,
+      "pnl_pct": 7.35,
+      "collateral_ratio": 1.952,
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
@@ -14879,99 +14918,99 @@ export const COHORT_DATA = {
       "entry_kospi": 5522.27,
       "entry_stock_price": 0,
       "amount": 146.70000000000073,
-      "pnl_pct": -10.96,
-      "collateral_ratio": 1.619,
+      "pnl_pct": 1.52,
+      "collateral_ratio": 1.846,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "good"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-13",
       "entry_kospi": 5507.01,
       "entry_stock_price": 0,
       "amount": 11.399999999997817,
-      "pnl_pct": -10.6,
-      "collateral_ratio": 1.625,
+      "pnl_pct": 1.9,
+      "collateral_ratio": 1.853,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "good"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-19",
       "entry_kospi": 5677.25,
       "entry_stock_price": 0,
       "amount": 110.70000000000073,
-      "pnl_pct": -14.52,
-      "collateral_ratio": 1.554,
+      "pnl_pct": -2.24,
+      "collateral_ratio": 1.777,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "good"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-20",
       "entry_kospi": 5808.53,
       "entry_stock_price": 0,
       "amount": 39.900000000001455,
-      "pnl_pct": -17.38,
-      "collateral_ratio": 1.502,
+      "pnl_pct": -5.27,
+      "collateral_ratio": 1.722,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "caution"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-23",
       "entry_kospi": 5846.09,
       "entry_stock_price": 0,
       "amount": 62.29999999999927,
-      "pnl_pct": -18.17,
-      "collateral_ratio": 1.488,
+      "pnl_pct": -6.11,
+      "collateral_ratio": 1.707,
       "collateral_ratio_pct": 0,
-      "status": "watch",
-      "status_6": "caution"
+      "status": "safe",
+      "status_6": "safe"
     },
     {
       "entry_date": "2026-02-24",
       "entry_kospi": 5969.64,
       "entry_stock_price": 0,
       "amount": 240.29999999999927,
-      "pnl_pct": -20.72,
-      "collateral_ratio": 1.441,
+      "pnl_pct": -8.8,
+      "collateral_ratio": 1.658,
       "collateral_ratio_pct": 0,
       "status": "watch",
-      "status_6": "caution"
+      "status_6": "good"
     },
     {
       "entry_date": "2026-02-25",
       "entry_kospi": 6083.86,
       "entry_stock_price": 0,
       "amount": 160.09999999999854,
-      "pnl_pct": -22.98,
-      "collateral_ratio": 1.4,
+      "pnl_pct": -11.19,
+      "collateral_ratio": 1.615,
       "collateral_ratio_pct": 0,
       "status": "watch",
-      "status_6": "caution"
+      "status_6": "good"
     },
     {
       "entry_date": "2026-02-26",
       "entry_kospi": 6307.27,
       "entry_stock_price": 0,
       "amount": 237.0,
-      "pnl_pct": -27.17,
-      "collateral_ratio": 1.324,
+      "pnl_pct": -15.62,
+      "collateral_ratio": 1.534,
       "collateral_ratio_pct": 0,
-      "status": "marginCall",
-      "status_6": "marginCall"
+      "status": "watch",
+      "status_6": "caution"
     },
     {
       "entry_date": "2026-02-27",
       "entry_kospi": 6244.13,
       "entry_stock_price": 0,
       "amount": 285.0,
-      "pnl_pct": -26.02,
-      "collateral_ratio": 1.345,
+      "pnl_pct": -14.4,
+      "collateral_ratio": 1.556,
       "collateral_ratio_pct": 0,
-      "status": "marginCall",
-      "status_6": "marginCall"
+      "status": "watch",
+      "status_6": "good"
     }
   ],
   "price_distribution_lifo": [
@@ -15319,8 +15358,8 @@ export const COHORT_DATA = {
     {
       "range": "5500-5600",
       "bin": 5500,
-      "safe": 0,
-      "good": 158.09999999999854,
+      "safe": 158.09999999999854,
+      "good": 0,
       "caution": 0,
       "watch": 0,
       "margin_call": 0,
@@ -15330,8 +15369,8 @@ export const COHORT_DATA = {
     {
       "range": "5600-5700",
       "bin": 5600,
-      "safe": 0,
-      "good": 110.70000000000073,
+      "safe": 110.70000000000073,
+      "good": 0,
       "caution": 0,
       "watch": 0,
       "margin_call": 0,
@@ -15341,8 +15380,8 @@ export const COHORT_DATA = {
     {
       "range": "5800-5900",
       "bin": 5800,
-      "safe": 0,
-      "good": 102.20000000000073,
+      "safe": 102.20000000000073,
+      "good": 0,
       "caution": 0,
       "watch": 0,
       "margin_call": 0,
@@ -15352,8 +15391,8 @@ export const COHORT_DATA = {
     {
       "range": "5900-6000",
       "bin": 5900,
-      "safe": 0,
-      "good": 240.29999999999927,
+      "safe": 240.29999999999927,
+      "good": 0,
       "caution": 0,
       "watch": 0,
       "margin_call": 0,
@@ -15364,8 +15403,8 @@ export const COHORT_DATA = {
       "range": "6000-6100",
       "bin": 6000,
       "safe": 0,
-      "good": 0,
-      "caution": 160.09999999999854,
+      "good": 160.09999999999854,
+      "caution": 0,
       "watch": 0,
       "margin_call": 0,
       "forced_liq": 0,
@@ -15375,8 +15414,8 @@ export const COHORT_DATA = {
       "range": "6200-6300",
       "bin": 6200,
       "safe": 0,
-      "good": 0,
-      "caution": 285.0,
+      "good": 285.0,
+      "caution": 0,
       "watch": 0,
       "margin_call": 0,
       "forced_liq": 0,
@@ -15386,8 +15425,8 @@ export const COHORT_DATA = {
       "range": "6300-6400",
       "bin": 6300,
       "safe": 0,
-      "good": 0,
-      "caution": 237.0,
+      "good": 237.0,
+      "caution": 0,
       "watch": 0,
       "margin_call": 0,
       "forced_liq": 0,
@@ -15739,8 +15778,8 @@ export const COHORT_DATA = {
     {
       "range": "5500-5600",
       "bin": 5500,
-      "safe": 0,
-      "good": 158.09999999999854,
+      "safe": 158.09999999999854,
+      "good": 0,
       "caution": 0,
       "watch": 0,
       "margin_call": 0,
@@ -15750,8 +15789,8 @@ export const COHORT_DATA = {
     {
       "range": "5600-5700",
       "bin": 5600,
-      "safe": 0,
-      "good": 110.70000000000073,
+      "safe": 110.70000000000073,
+      "good": 0,
       "caution": 0,
       "watch": 0,
       "margin_call": 0,
@@ -15761,8 +15800,8 @@ export const COHORT_DATA = {
     {
       "range": "5800-5900",
       "bin": 5800,
-      "safe": 0,
-      "good": 102.20000000000073,
+      "safe": 102.20000000000073,
+      "good": 0,
       "caution": 0,
       "watch": 0,
       "margin_call": 0,
@@ -15772,8 +15811,8 @@ export const COHORT_DATA = {
     {
       "range": "5900-6000",
       "bin": 5900,
-      "safe": 0,
-      "good": 240.29999999999927,
+      "safe": 240.29999999999927,
+      "good": 0,
       "caution": 0,
       "watch": 0,
       "margin_call": 0,
@@ -15784,8 +15823,8 @@ export const COHORT_DATA = {
       "range": "6000-6100",
       "bin": 6000,
       "safe": 0,
-      "good": 0,
-      "caution": 160.09999999999854,
+      "good": 160.09999999999854,
+      "caution": 0,
       "watch": 0,
       "margin_call": 0,
       "forced_liq": 0,
@@ -15795,8 +15834,8 @@ export const COHORT_DATA = {
       "range": "6200-6300",
       "bin": 6200,
       "safe": 0,
-      "good": 0,
-      "caution": 285.0,
+      "good": 285.0,
+      "caution": 0,
       "watch": 0,
       "margin_call": 0,
       "forced_liq": 0,
@@ -15806,8 +15845,8 @@ export const COHORT_DATA = {
       "range": "6300-6400",
       "bin": 6300,
       "safe": 0,
-      "good": 0,
-      "caution": 237.0,
+      "good": 237.0,
+      "caution": 0,
       "watch": 0,
       "margin_call": 0,
       "forced_liq": 0,
@@ -15817,129 +15856,129 @@ export const COHORT_DATA = {
   "trigger_map": [
     {
       "shock_pct": -3,
-      "expected_kospi": 4941,
+      "expected_kospi": 5416,
       "margin_call_billion": 0,
       "forced_liq_billion": 0,
       "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -2.49,
-        "000660": -4.67,
-        "005380": -2.12,
-        "000270": -2.12,
-        "035420": -2.12,
-        "006400": -2.12,
-        "373220": -2.12,
-        "068270": -2.12,
-        "105560": -2.12,
-        "005490": -2.12,
+        "005930": -2.86,
+        "000660": -3.87,
+        "005380": -2.2,
+        "000270": -2.2,
+        "035420": -2.2,
+        "006400": -2.2,
+        "373220": -2.2,
+        "068270": -2.2,
+        "105560": -2.2,
+        "005490": -2.2,
         "_residual": -3
       }
     },
     {
       "shock_pct": -5,
-      "expected_kospi": 4839,
-      "margin_call_billion": 49,
+      "expected_kospi": 5305,
+      "margin_call_billion": 0,
       "forced_liq_billion": 0,
       "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -4.15,
-        "000660": -7.78,
-        "005380": -3.54,
-        "000270": -3.54,
-        "035420": -3.54,
-        "006400": -3.54,
-        "373220": -3.54,
-        "068270": -3.54,
-        "105560": -3.54,
-        "005490": -3.54,
+        "005930": -4.76,
+        "000660": -6.45,
+        "005380": -3.67,
+        "000270": -3.67,
+        "035420": -3.67,
+        "006400": -3.67,
+        "373220": -3.67,
+        "068270": -3.67,
+        "105560": -3.67,
+        "005490": -3.67,
         "_residual": -5
       }
     },
     {
       "shock_pct": -10,
-      "expected_kospi": 4584,
-      "margin_call_billion": 189,
+      "expected_kospi": 5026,
+      "margin_call_billion": 0,
       "forced_liq_billion": 0,
       "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -8.3,
-        "000660": -15.57,
-        "005380": -7.08,
-        "000270": -7.08,
-        "035420": -7.08,
-        "006400": -7.08,
-        "373220": -7.08,
-        "068270": -7.08,
-        "105560": -7.08,
-        "005490": -7.08,
+        "005930": -9.53,
+        "000660": -12.91,
+        "005380": -7.34,
+        "000270": -7.34,
+        "035420": -7.34,
+        "006400": -7.34,
+        "373220": -7.34,
+        "068270": -7.34,
+        "105560": -7.34,
+        "005490": -7.34,
         "_residual": -10
       }
     },
     {
       "shock_pct": -15,
-      "expected_kospi": 4330,
-      "margin_call_billion": 232,
+      "expected_kospi": 4746,
+      "margin_call_billion": 0,
       "forced_liq_billion": 0,
       "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -12.45,
-        "000660": -23.35,
-        "005380": -10.62,
-        "000270": -10.62,
-        "035420": -10.62,
-        "006400": -10.62,
-        "373220": -10.62,
-        "068270": -10.62,
-        "105560": -10.62,
-        "005490": -10.62,
+        "005930": -14.29,
+        "000660": -19.36,
+        "005380": -11.01,
+        "000270": -11.01,
+        "035420": -11.01,
+        "006400": -11.01,
+        "373220": -11.01,
+        "068270": -11.01,
+        "105560": -11.01,
+        "005490": -11.01,
         "_residual": -15
       }
     },
     {
       "shock_pct": -20,
-      "expected_kospi": 4075,
-      "margin_call_billion": 258,
-      "forced_liq_billion": 106,
-      "weighted_impact_billion": 4,
+      "expected_kospi": 4467,
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -16.6,
-        "000660": -31.14,
-        "005380": -14.16,
-        "000270": -14.16,
-        "035420": -14.16,
-        "006400": -14.16,
-        "373220": -14.16,
-        "068270": -14.16,
-        "105560": -14.16,
-        "005490": -14.16,
+        "005930": -19.06,
+        "000660": -25.81,
+        "005380": -14.68,
+        "000270": -14.68,
+        "035420": -14.68,
+        "006400": -14.68,
+        "373220": -14.68,
+        "068270": -14.68,
+        "105560": -14.68,
+        "005490": -14.68,
         "_residual": -20
       }
     },
     {
       "shock_pct": -30,
-      "expected_kospi": 3565,
-      "margin_call_billion": 535,
-      "forced_liq_billion": 264,
-      "weighted_impact_billion": 9,
+      "expected_kospi": 3909,
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -24.9,
-        "000660": -46.7,
-        "005380": -21.25,
-        "000270": -21.25,
-        "035420": -21.25,
-        "006400": -21.25,
-        "373220": -21.25,
-        "068270": -21.25,
-        "105560": -21.25,
-        "005490": -21.25,
+        "005930": -28.59,
+        "000660": -38.72,
+        "005380": -22.02,
+        "000270": -22.02,
+        "035420": -22.02,
+        "006400": -22.02,
+        "373220": -22.02,
+        "068270": -22.02,
+        "105560": -22.02,
+        "005490": -22.02,
         "_residual": -30
       }
     }
   ],
-  "current_kospi": 5093.54,
-  "current_fx": 1466.7,
-  "avg_daily_trading_value_billion": 318,
-  "portfolio_beta": 1.412,
+  "current_kospi": 5583.9,
+  "current_fx": 1469.5,
+  "avg_daily_trading_value_billion": 332,
+  "portfolio_beta": 1.362,
   "params": {
     "margin_rate": 0.45,
     "loan_rate": 0.55,
@@ -15956,7 +15995,7 @@ export const COHORT_DATA = {
 };
 
 export const CRISIS_SCORE = {
-  "current": 35.9,
+  "current": 36.9,
   "classification": "normal",
   "weights": {
     "leverage_heat": 0.1,
@@ -15986,8 +16025,8 @@ export const CRISIS_SCORE = {
       "desc": "개인편중"
     },
     "price_deviation": {
-      "value": 98.8,
-      "raw": 0.3542,
+      "value": 99.7,
+      "raw": 0.4786,
       "desc": "MA200 괴리"
     },
     "credit_acceleration": {
@@ -16001,8 +16040,8 @@ export const CRISIS_SCORE = {
       "desc": "예탁금 변화"
     },
     "vix_level": {
-      "value": 70.3,
-      "raw": 23.17,
+      "value": 63.7,
+      "raw": 21.37,
       "desc": "VIX"
     },
     "volume_explosion": {
@@ -16031,13 +16070,13 @@ export const CRISIS_SCORE = {
       "desc": "신용 중단"
     },
     "institutional_selling": {
-      "value": 51.2,
-      "raw": -597.8,
+      "value": 64.8,
+      "raw": -1718.6,
       "desc": "기관 순매도"
     },
     "retail_exhaustion": {
       "value": 0.0,
-      "raw": -326.113,
+      "raw": -397.6336,
       "desc": "개인 매수력 감소"
     },
     "bull_trap": {
@@ -16047,11 +16086,6 @@ export const CRISIS_SCORE = {
     }
   },
   "history": [
-    {
-      "date": "2025-12-02",
-      "score": 63.5,
-      "classification": "caution"
-    },
     {
       "date": "2025-12-03",
       "score": 66.1,
@@ -16344,7 +16378,12 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-03-04",
-      "score": 35.9,
+      "score": 39.6,
+      "classification": "normal"
+    },
+    {
+      "date": "2026-03-05",
+      "score": 36.9,
       "classification": "normal"
     }
   ]
@@ -16404,14 +16443,6 @@ export const SCENARIOS = {
     }
   ],
   "probability_history": [
-    {
-      "date": "2025-12-02",
-      "s1": 0.0,
-      "s2": 0.0,
-      "s3": 1.0,
-      "s4": 0.0,
-      "s5": 0.0
-    },
     {
       "date": "2025-12-03",
       "s1": 0.0,
@@ -16883,30 +16914,38 @@ export const SCENARIOS = {
       "s3": 1.0,
       "s4": 0.0,
       "s5": 0.0
+    },
+    {
+      "date": "2026-03-05",
+      "s1": 0.0,
+      "s2": 0.0,
+      "s3": 1.0,
+      "s4": 0.0,
+      "s5": 0.0
     }
   ],
   "key_drivers": [
     {
-      "indicator": "institutional_flow",
-      "observed": -597.8,
-      "expected": -1000,
-      "z_score": 11.38,
+      "indicator": "retail_flow",
+      "observed": 1822.8,
+      "expected": -200,
+      "z_score": 45.23,
       "direction": "opposing",
       "scenario": "S3"
     },
     {
-      "indicator": "retail_flow",
-      "observed": 79.6,
-      "expected": -200,
-      "z_score": 6.25,
+      "indicator": "institutional_flow",
+      "observed": -1718.6,
+      "expected": -1000,
+      "z_score": -20.33,
       "direction": "opposing",
       "scenario": "S3"
     },
     {
       "indicator": "fx_rate",
-      "observed": 1466.7,
+      "observed": 1469.5,
       "expected": 1430,
-      "z_score": 2.01,
+      "z_score": 2.16,
       "direction": "opposing",
       "scenario": "S3"
     }
@@ -16955,324 +16994,324 @@ export const HISTORICAL = {
   "similarities": {
     "crisis_2008": {
       "dtw": 0.909,
-      "cosine": 0.769,
-      "hybrid": 0.853
+      "cosine": 0.763,
+      "hybrid": 0.85
     },
     "china_2015": {
-      "dtw": 0.878,
-      "cosine": 0.776,
-      "hybrid": 0.837
+      "dtw": 0.879,
+      "cosine": 0.77,
+      "hybrid": 0.835
     },
     "covid_2020": {
-      "dtw": 0.912,
-      "cosine": 0.769,
-      "hybrid": 0.855
+      "dtw": 0.913,
+      "cosine": 0.763,
+      "hybrid": 0.853
     },
     "evergrande_2021": {
-      "dtw": 0.918,
-      "cosine": 0.907,
-      "hybrid": 0.914
+      "dtw": 0.92,
+      "cosine": 0.904,
+      "hybrid": 0.913
     }
   },
   "overlay": [
     {
       "day": 0,
-      "current_pct": -36.66,
+      "current_pct": -36.01,
       "evergrande_2021_pct": -0.0
     },
     {
       "day": 1,
-      "current_pct": -36.01,
+      "current_pct": -36.13,
       "evergrande_2021_pct": -0.7
     },
     {
       "day": 2,
-      "current_pct": -36.13,
+      "current_pct": -34.99,
       "evergrande_2021_pct": -1.39
     },
     {
       "day": 3,
-      "current_pct": -34.99,
+      "current_pct": -34.13,
       "evergrande_2021_pct": -2.09
     },
     {
       "day": 4,
-      "current_pct": -34.13,
+      "current_pct": -34.31,
       "evergrande_2021_pct": -2.79
     },
     {
       "day": 5,
-      "current_pct": -34.31,
+      "current_pct": -34.44,
       "evergrande_2021_pct": -3.48
     },
     {
       "day": 6,
-      "current_pct": -34.44,
+      "current_pct": -34.83,
       "evergrande_2021_pct": -4.18
     },
     {
       "day": 7,
-      "current_pct": -34.83,
+      "current_pct": -33.93,
       "evergrande_2021_pct": -4.88
     },
     {
       "day": 8,
-      "current_pct": -33.93,
+      "current_pct": -35.14,
       "evergrande_2021_pct": -5.57
     },
     {
       "day": 9,
-      "current_pct": -35.14,
+      "current_pct": -36.59,
       "evergrande_2021_pct": -6.27
     },
     {
       "day": 10,
-      "current_pct": -36.59,
+      "current_pct": -35.69,
       "evergrande_2021_pct": -6.97
     },
     {
       "day": 11,
-      "current_pct": -35.69,
+      "current_pct": -36.67,
       "evergrande_2021_pct": -7.66
     },
     {
       "day": 12,
-      "current_pct": -36.67,
+      "current_pct": -36.26,
       "evergrande_2021_pct": -8.36
     },
     {
       "day": 13,
-      "current_pct": -36.26,
+      "current_pct": -34.9,
       "evergrande_2021_pct": -9.06
     },
     {
       "day": 14,
-      "current_pct": -34.9,
+      "current_pct": -34.72,
       "evergrande_2021_pct": -9.75
     },
     {
       "day": 15,
-      "current_pct": -34.72,
+      "current_pct": -34.86,
       "evergrande_2021_pct": -10.45
     },
     {
       "day": 16,
-      "current_pct": -34.86,
+      "current_pct": -34.53,
       "evergrande_2021_pct": -11.15
     },
     {
       "day": 17,
-      "current_pct": -34.53,
+      "current_pct": -33.08,
       "evergrande_2021_pct": -11.84
     },
     {
       "day": 18,
-      "current_pct": -33.08,
+      "current_pct": -33.19,
       "evergrande_2021_pct": -12.54
     },
     {
       "day": 19,
-      "current_pct": -33.19,
+      "current_pct": -31.67,
       "evergrande_2021_pct": -13.24
     },
     {
       "day": 20,
-      "current_pct": -31.67,
+      "current_pct": -29.33,
       "evergrande_2021_pct": -13.93
     },
     {
       "day": 21,
-      "current_pct": -29.33,
+      "current_pct": -28.25,
       "evergrande_2021_pct": -14.63
     },
     {
       "day": 22,
-      "current_pct": -28.25,
+      "current_pct": -27.84,
       "evergrande_2021_pct": -15.33
     },
     {
       "day": 23,
-      "current_pct": -27.84,
+      "current_pct": -27.82,
       "evergrande_2021_pct": -16.02
     },
     {
       "day": 24,
-      "current_pct": -27.82,
+      "current_pct": -27.29,
       "evergrande_2021_pct": -16.72
     },
     {
       "day": 25,
-      "current_pct": -27.29,
+      "current_pct": -26.68,
       "evergrande_2021_pct": -17.42
     },
     {
       "day": 26,
-      "current_pct": -26.68,
+      "current_pct": -25.6,
       "evergrande_2021_pct": -18.11
     },
     {
       "day": 27,
-      "current_pct": -25.6,
+      "current_pct": -25.12,
       "evergrande_2021_pct": -18.81
     },
     {
       "day": 28,
-      "current_pct": -25.12,
+      "current_pct": -23.94,
       "evergrande_2021_pct": -19.51
     },
     {
       "day": 29,
-      "current_pct": -23.94,
+      "current_pct": -23.25,
       "evergrande_2021_pct": -20.2
     },
     {
       "day": 30,
-      "current_pct": -23.25,
+      "current_pct": -22.24,
       "evergrande_2021_pct": -20.9
     },
     {
       "day": 31,
-      "current_pct": -22.24,
+      "current_pct": -22.54,
       "evergrande_2021_pct": -20.55
     },
     {
       "day": 32,
-      "current_pct": -22.54,
+      "current_pct": -22.15,
       "evergrande_2021_pct": -20.2
     },
     {
       "day": 33,
-      "current_pct": -22.15,
+      "current_pct": -21.48,
       "evergrande_2021_pct": -19.85
     },
     {
       "day": 34,
-      "current_pct": -21.48,
+      "current_pct": -20.88,
       "evergrande_2021_pct": -19.51
     },
     {
       "day": 35,
-      "current_pct": -20.88,
+      "current_pct": -21.53,
       "evergrande_2021_pct": -19.16
     },
     {
       "day": 36,
-      "current_pct": -21.53,
+      "current_pct": -19.38,
       "evergrande_2021_pct": -18.81
     },
     {
       "day": 37,
-      "current_pct": -19.38,
+      "current_pct": -18.02,
       "evergrande_2021_pct": -18.46
     },
     {
       "day": 38,
-      "current_pct": -18.02,
+      "current_pct": -17.22,
       "evergrande_2021_pct": -18.11
     },
     {
       "day": 39,
-      "current_pct": -17.22,
+      "current_pct": -17.17,
       "evergrande_2021_pct": -17.76
     },
     {
       "day": 40,
-      "current_pct": -17.17,
+      "current_pct": -21.52,
       "evergrande_2021_pct": -17.42
     },
     {
       "day": 41,
-      "current_pct": -21.52,
+      "current_pct": -16.16,
       "evergrande_2021_pct": -17.07
     },
     {
       "day": 42,
-      "current_pct": -16.16,
+      "current_pct": -14.84,
       "evergrande_2021_pct": -16.72
     },
     {
       "day": 43,
-      "current_pct": -14.84,
+      "current_pct": -18.13,
       "evergrande_2021_pct": -16.37
     },
     {
       "day": 44,
-      "current_pct": -18.13,
+      "current_pct": -19.31,
       "evergrande_2021_pct": -16.02
     },
     {
       "day": 45,
-      "current_pct": -19.31,
+      "current_pct": -16.0,
       "evergrande_2021_pct": -15.67
     },
     {
       "day": 46,
-      "current_pct": -16.0,
+      "current_pct": -15.94,
       "evergrande_2021_pct": -15.33
     },
     {
       "day": 47,
-      "current_pct": -15.94,
+      "current_pct": -15.11,
       "evergrande_2021_pct": -14.98
     },
     {
       "day": 48,
-      "current_pct": -15.11,
+      "current_pct": -12.45,
       "evergrande_2021_pct": -14.63
     },
     {
       "day": 49,
-      "current_pct": -12.45,
+      "current_pct": -12.69,
       "evergrande_2021_pct": -14.28
     },
     {
       "day": 50,
-      "current_pct": -12.69,
+      "current_pct": -9.99,
       "evergrande_2021_pct": -13.93
     },
     {
       "day": 51,
-      "current_pct": -9.99,
+      "current_pct": -7.91,
       "evergrande_2021_pct": -13.58
     },
     {
       "day": 52,
-      "current_pct": -7.91,
+      "current_pct": -7.31,
       "evergrande_2021_pct": -13.24
     },
     {
       "day": 53,
-      "current_pct": -7.31,
+      "current_pct": -5.35,
       "evergrande_2021_pct": -12.89
     },
     {
       "day": 54,
-      "current_pct": -5.35,
+      "current_pct": -3.54,
       "evergrande_2021_pct": -12.54
     },
     {
       "day": 55,
-      "current_pct": -3.54,
+      "current_pct": 0.0,
       "evergrande_2021_pct": -12.19
     },
     {
       "day": 56,
-      "current_pct": 0.0,
+      "current_pct": -1.0,
       "evergrande_2021_pct": -11.84
     },
     {
       "day": 57,
-      "current_pct": -1.0,
+      "current_pct": -8.17,
       "evergrande_2021_pct": -11.5
     },
     {
       "day": 58,
-      "current_pct": -8.17,
+      "current_pct": -19.24,
       "evergrande_2021_pct": -11.15
     },
     {
       "day": 59,
-      "current_pct": -19.24,
+      "current_pct": -11.47,
       "evergrande_2021_pct": -10.8
     }
   ],
@@ -17290,7 +17329,7 @@ export const HISTORICAL = {
     {
       "indicator": "price_deviation",
       "label": "MA200 괴리",
-      "current": 0.3542
+      "current": 0.4786
     },
     {
       "indicator": "credit_acceleration",
@@ -17305,7 +17344,7 @@ export const HISTORICAL = {
     {
       "indicator": "vix_level",
       "label": "VIX",
-      "current": 23.17
+      "current": 21.37
     },
     {
       "indicator": "volume_explosion",
@@ -17335,12 +17374,12 @@ export const HISTORICAL = {
     {
       "indicator": "institutional_selling",
       "label": "기관 순매도",
-      "current": -597.8
+      "current": -1718.6
     },
     {
       "indicator": "retail_exhaustion",
       "label": "개인 매수력 감소",
-      "current": -326.113
+      "current": -397.6336
     },
     {
       "indicator": "bull_trap",
@@ -17356,19 +17395,19 @@ export const DEFENSE_WALLS = [
     "capacity": 1.0,
     "id": "wall1",
     "name": "개인 매수",
-    "detail": "최근5일 평균 2601억 / 20일 611억"
+    "detail": "최근5일 평균 2920억 / 20일 587억"
   },
   {
     "status": "weakened",
     "capacity": 0.35,
-    "detail": "기관 -598억 (소폭 매도)",
+    "detail": "기관 -1719억 (소폭 매도)",
     "id": "wall2",
     "name": "연기금/기관"
   },
   {
     "status": "weakened",
     "capacity": 0.4,
-    "detail": "USD/KRW 1467 (긴장)",
+    "detail": "USD/KRW 1470 (긴장)",
     "id": "wall3",
     "name": "한은 FX 개입"
   },
@@ -17403,11 +17442,11 @@ export const LOOP_STATUS = {
     "estimated_volume_billion": 0
   },
   "loop_c": {
-    "status": "dormant",
+    "status": "warming",
     "name": "펀드 환매 캐스케이드",
     "delay": "T+1~T+3",
-    "desc": "기관 -598억 중 환매 매도 추정 0억",
-    "estimated_volume_billion": 0,
+    "desc": "기관 -1719억 중 환매 매도 추정 1031억",
+    "estimated_volume_billion": 1031,
     "confidence": "low"
   }
 };
@@ -17415,11 +17454,11 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-05T06:43:10.440315",
-  "last_date": "2026-03-04",
+  "last_updated": "2026-03-05T20:20:51.566160",
+  "last_date": "2026-03-05",
   "data_source": "pipeline",
   "data_quality": {
-    "total_days": 282,
+    "total_days": 283,
     "credit_estimated_days": 0,
     "missing_fields": []
   }
@@ -36469,7 +36508,146 @@ export const COHORT_HISTORY = {
     {
       "date": "2026-03-04",
       "kospi": 5093.54,
-      "usd_krw": 1466.7,
+      "usd_krw": 1483.1,
+      "trading_value": 626.36,
+      "amounts": {
+        "2025-01-02": 15466.2,
+        "2025-01-06": 130.7,
+        "2025-01-07": 20.2,
+        "2025-01-08": 144.9,
+        "2025-01-09": 146.3,
+        "2025-01-10": 78.8,
+        "2025-01-13": 81.3,
+        "2025-01-14": 116.4,
+        "2025-04-15": 268.6,
+        "2025-04-16": 203.2,
+        "2025-04-17": 117.1,
+        "2025-04-18": 117.8,
+        "2025-04-21": 55.1,
+        "2025-04-22": 97.2,
+        "2025-04-23": 97.5,
+        "2025-04-24": 123.1,
+        "2025-04-28": 116.9,
+        "2025-05-09": 14.0,
+        "2025-05-12": 135.4,
+        "2025-05-13": 66.0,
+        "2025-05-15": 49.8,
+        "2025-05-19": 139.5,
+        "2025-05-20": 24.4,
+        "2025-05-21": 26.7,
+        "2025-05-22": 1.3,
+        "2025-05-23": 22.2,
+        "2025-05-26": 148.3,
+        "2025-05-27": 22.7,
+        "2025-05-29": 107.4,
+        "2025-06-02": 76.1,
+        "2025-06-04": 164.3,
+        "2025-06-11": 201.2,
+        "2025-06-12": 118.8,
+        "2025-06-13": 135.5,
+        "2025-06-16": 216.5,
+        "2025-06-17": 174.7,
+        "2025-06-18": 180.0,
+        "2025-06-19": 47.5,
+        "2025-06-20": 215.5,
+        "2025-06-23": 274.4,
+        "2025-06-24": 40.9,
+        "2025-06-25": 399.0,
+        "2025-06-27": 146.5,
+        "2025-06-30": 107.0,
+        "2025-07-04": 13.0,
+        "2025-07-08": 25.7,
+        "2025-07-09": 31.6,
+        "2025-07-10": 154.5,
+        "2025-07-11": 255.1,
+        "2025-07-14": 68.5,
+        "2025-07-15": 63.2,
+        "2025-07-16": 67.8,
+        "2025-07-17": 15.7,
+        "2025-08-07": 72.9,
+        "2025-08-08": 208.8,
+        "2025-08-11": 73.7,
+        "2025-08-27": 33.4,
+        "2025-08-28": 182.5,
+        "2025-08-29": 73.7,
+        "2025-09-05": 69.0,
+        "2025-09-08": 33.4,
+        "2025-09-09": 96.7,
+        "2025-09-10": 45.1,
+        "2025-09-11": 12.4,
+        "2025-09-15": 89.2,
+        "2025-09-16": 26.1,
+        "2025-09-17": 247.5,
+        "2025-09-18": 99.4,
+        "2025-09-19": 162.5,
+        "2025-09-22": 121.5,
+        "2025-09-23": 82.4,
+        "2025-10-13": 24.9,
+        "2025-10-14": 288.4,
+        "2025-10-15": 206.0,
+        "2025-10-17": 108.0,
+        "2025-10-20": 34.0,
+        "2025-10-22": 314.1,
+        "2025-10-23": 173.6,
+        "2025-10-24": 229.2,
+        "2025-10-27": 134.7,
+        "2025-10-28": 36.4,
+        "2025-10-29": 267.2,
+        "2025-10-30": 177.7,
+        "2025-10-31": 180.5,
+        "2025-11-04": 49.3,
+        "2025-11-05": 305.2,
+        "2025-11-06": 45.7,
+        "2025-11-07": 117.5,
+        "2025-11-12": 14.4,
+        "2025-11-13": 232.5,
+        "2025-11-14": 143.8,
+        "2025-11-17": 71.1,
+        "2025-11-28": 7.1,
+        "2025-12-01": 136.2,
+        "2025-12-02": 209.5,
+        "2025-12-03": 24.2,
+        "2025-12-04": 71.4,
+        "2025-12-05": 182.9,
+        "2025-12-08": 152.5,
+        "2025-12-24": 10.1,
+        "2025-12-29": 13.8,
+        "2026-01-02": 159.8,
+        "2026-01-05": 203.9,
+        "2026-01-06": 69.0,
+        "2026-01-07": 170.9,
+        "2026-01-08": 317.3,
+        "2026-01-09": 158.7,
+        "2026-01-12": 176.7,
+        "2026-01-13": 34.3,
+        "2026-01-14": 36.3,
+        "2026-01-15": 150.6,
+        "2026-01-16": 163.3,
+        "2026-01-23": 100.1,
+        "2026-01-26": 219.7,
+        "2026-01-28": 298.3,
+        "2026-01-29": 475.6,
+        "2026-01-30": 136.0,
+        "2026-02-02": 161.6,
+        "2026-02-03": 54.0,
+        "2026-02-04": 261.0,
+        "2026-02-06": 299.5,
+        "2026-02-09": 224.0,
+        "2026-02-12": 146.7,
+        "2026-02-13": 11.4,
+        "2026-02-19": 110.7,
+        "2026-02-20": 39.9,
+        "2026-02-23": 62.3,
+        "2026-02-24": 240.3,
+        "2026-02-25": 160.1,
+        "2026-02-26": 237.0,
+        "2026-02-27": 285.0
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "kospi": 5583.9,
+      "usd_krw": 1469.5,
       "trading_value": null,
       "amounts": {
         "2025-01-02": 15466.2,
@@ -38751,7 +38929,7 @@ export const BACKTEST_DATES = [
         "individual_billion": 79.6,
         "foreign_billion": 230.3,
         "institution_billion": -597.8,
-        "trading_value_billion": null
+        "trading_value_billion": 626.36
       }
     ]
   },
@@ -38789,6 +38967,16 @@ export const BACKTEST_DATES = [
         "individual_billion": 79.6,
         "foreign_billion": 230.3,
         "institution_billion": -597.8,
+        "trading_value_billion": 626.36
+      },
+      {
+        "day": 4,
+        "date": "2026-03-05",
+        "kospi": 5583.9,
+        "credit_balance_billion": null,
+        "individual_billion": 1822.8,
+        "foreign_billion": -144.6,
+        "institution_billion": -1718.6,
         "trading_value_billion": null
       }
     ]
@@ -38807,6 +38995,16 @@ export const BACKTEST_DATES = [
         "individual_billion": 79.6,
         "foreign_billion": 230.3,
         "institution_billion": -597.8,
+        "trading_value_billion": 626.36
+      },
+      {
+        "day": 2,
+        "date": "2026-03-05",
+        "kospi": 5583.9,
+        "credit_balance_billion": null,
+        "individual_billion": 1822.8,
+        "foreign_billion": -144.6,
+        "institution_billion": -1718.6,
         "trading_value_billion": null
       }
     ]
@@ -38816,6 +39014,24 @@ export const BACKTEST_DATES = [
     "shock_pct": -12.06,
     "kospi": 5093.54,
     "prev_kospi": 5791.91,
+    "forward": [
+      {
+        "day": 1,
+        "date": "2026-03-05",
+        "kospi": 5583.9,
+        "credit_balance_billion": null,
+        "individual_billion": 1822.8,
+        "foreign_billion": -144.6,
+        "institution_billion": -1718.6,
+        "trading_value_billion": null
+      }
+    ]
+  },
+  {
+    "date": "2026-03-05",
+    "shock_pct": 9.63,
+    "kospi": 5583.9,
+    "prev_kospi": 5093.54,
     "forward": []
   }
 ];
@@ -38826,49 +39042,49 @@ export const STOCK_CREDIT = {
       "ticker": "005930",
       "name": "삼성전자",
       "group": "A",
-      "credit_billion": 16956.69,
-      "kospi_weight_pct": 52.68,
-      "current_price": 172200,
+      "credit_billion": 17079.01,
+      "kospi_weight_pct": 53.06,
+      "current_price": 191600,
       "status_breakdown": {
-        "safe": 16275.33,
-        "good": 322.03,
-        "caution": 359.33,
+        "safe": 16717.08,
+        "good": 361.93,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
         "debt_exceed": 0
       },
-      "beta": 1.17
+      "beta": 1.3
     },
     {
       "ticker": "000660",
       "name": "SK하이닉스",
       "group": "A",
-      "credit_billion": 8632.85,
-      "kospi_weight_pct": 26.82,
-      "current_price": 849000,
+      "credit_billion": 8661.82,
+      "kospi_weight_pct": 26.91,
+      "current_price": 941000,
       "status_breakdown": {
-        "safe": 8285.96,
-        "good": 163.95,
-        "caution": 182.94,
+        "safe": 8478.26,
+        "good": 183.56,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
         "debt_exceed": 0
       },
-      "beta": 2.2
+      "beta": 1.76
     },
     {
       "ticker": "005380",
       "name": "현대차",
       "group": "A",
-      "credit_billion": 1921.63,
-      "kospi_weight_pct": 5.97,
-      "current_price": 0,
+      "credit_billion": 1902.32,
+      "kospi_weight_pct": 5.91,
+      "current_price": 548000,
       "status_breakdown": {
-        "safe": 1844.41,
-        "good": 36.5,
-        "caution": 40.72,
+        "safe": 1862.0,
+        "good": 40.32,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
@@ -38880,13 +39096,13 @@ export const STOCK_CREDIT = {
       "ticker": "373220",
       "name": "LG에너지솔루션",
       "group": "A",
-      "credit_billion": 1197.4,
-      "kospi_weight_pct": 3.72,
-      "current_price": 0,
+      "credit_billion": 1158.77,
+      "kospi_weight_pct": 3.6,
+      "current_price": 371500,
       "status_breakdown": {
-        "safe": 1149.28,
-        "good": 22.74,
-        "caution": 25.38,
+        "safe": 1134.22,
+        "good": 24.55,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
@@ -38898,13 +39114,13 @@ export const STOCK_CREDIT = {
       "ticker": "000270",
       "name": "기아",
       "group": "A",
-      "credit_billion": 891.61,
-      "kospi_weight_pct": 2.77,
-      "current_price": 0,
+      "credit_billion": 856.2,
+      "kospi_weight_pct": 2.66,
+      "current_price": 166400,
       "status_breakdown": {
-        "safe": 855.78,
-        "good": 16.94,
-        "caution": 18.89,
+        "safe": 838.06,
+        "good": 18.14,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
@@ -38916,13 +39132,13 @@ export const STOCK_CREDIT = {
       "ticker": "105560",
       "name": "KB금융",
       "group": "A",
-      "credit_billion": 727.45,
-      "kospi_weight_pct": 2.26,
-      "current_price": 0,
+      "credit_billion": 711.36,
+      "kospi_weight_pct": 2.21,
+      "current_price": 149000,
       "status_breakdown": {
-        "safe": 698.22,
-        "good": 13.82,
-        "caution": 15.41,
+        "safe": 696.28,
+        "good": 15.08,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
@@ -38934,13 +39150,13 @@ export const STOCK_CREDIT = {
       "ticker": "068270",
       "name": "셀트리온",
       "group": "A",
-      "credit_billion": 637.32,
-      "kospi_weight_pct": 1.98,
-      "current_price": 0,
+      "credit_billion": 618.01,
+      "kospi_weight_pct": 1.92,
+      "current_price": 211500,
       "status_breakdown": {
-        "safe": 611.72,
-        "good": 12.1,
-        "caution": 13.5,
+        "safe": 604.92,
+        "good": 13.09,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
@@ -38952,13 +39168,13 @@ export const STOCK_CREDIT = {
       "ticker": "035420",
       "name": "NAVER",
       "group": "A",
-      "credit_billion": 457.07,
-      "kospi_weight_pct": 1.42,
-      "current_price": 0,
+      "credit_billion": 437.76,
+      "kospi_weight_pct": 1.36,
+      "current_price": 220000,
       "status_breakdown": {
-        "safe": 438.7,
-        "good": 8.69,
-        "caution": 9.68,
+        "safe": 428.48,
+        "good": 9.28,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
@@ -38970,13 +39186,13 @@ export const STOCK_CREDIT = {
       "ticker": "006400",
       "name": "삼성SDI",
       "group": "A",
-      "credit_billion": 405.57,
-      "kospi_weight_pct": 1.26,
-      "current_price": 0,
+      "credit_billion": 412.01,
+      "kospi_weight_pct": 1.28,
+      "current_price": 392500,
       "status_breakdown": {
-        "safe": 389.27,
-        "good": 7.71,
-        "caution": 8.59,
+        "safe": 403.28,
+        "good": 8.73,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
@@ -38988,13 +39204,13 @@ export const STOCK_CREDIT = {
       "ticker": "005490",
       "name": "POSCO홀딩스",
       "group": "A",
-      "credit_billion": 357.29,
-      "kospi_weight_pct": 1.11,
-      "current_price": 0,
+      "credit_billion": 350.85,
+      "kospi_weight_pct": 1.09,
+      "current_price": 346500,
       "status_breakdown": {
-        "safe": 342.93,
-        "good": 6.79,
-        "caution": 7.57,
+        "safe": 343.42,
+        "good": 7.43,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
@@ -39006,13 +39222,13 @@ export const STOCK_CREDIT = {
       "ticker": "_residual",
       "name": "기타",
       "group": "mixed",
-      "credit_billion": 3.22,
-      "kospi_weight_pct": 0.01,
+      "credit_billion": 0,
+      "kospi_weight_pct": 0.0,
       "current_price": 0,
       "status_breakdown": {
-        "safe": 3.1,
-        "good": 0.03,
-        "caution": 0.09,
+        "safe": 0,
+        "good": 0,
+        "caution": 0,
         "watch": 0,
         "margin_call": 0,
         "forced_liq": 0,
@@ -39023,128 +39239,128 @@ export const STOCK_CREDIT = {
   "weighted_trigger_map": [
     {
       "shock_pct": -3,
-      "expected_kospi": 4941,
+      "expected_kospi": 5416,
       "margin_call_billion": 0,
       "forced_liq_billion": 0,
       "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -2.49,
-        "000660": -4.67,
-        "005380": -2.12,
-        "000270": -2.12,
-        "035420": -2.12,
-        "006400": -2.12,
-        "373220": -2.12,
-        "068270": -2.12,
-        "105560": -2.12,
-        "005490": -2.12,
+        "005930": -2.86,
+        "000660": -3.87,
+        "005380": -2.2,
+        "000270": -2.2,
+        "035420": -2.2,
+        "006400": -2.2,
+        "373220": -2.2,
+        "068270": -2.2,
+        "105560": -2.2,
+        "005490": -2.2,
         "_residual": -3
       }
     },
     {
       "shock_pct": -5,
-      "expected_kospi": 4839,
-      "margin_call_billion": 49,
+      "expected_kospi": 5305,
+      "margin_call_billion": 0,
       "forced_liq_billion": 0,
       "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -4.15,
-        "000660": -7.78,
-        "005380": -3.54,
-        "000270": -3.54,
-        "035420": -3.54,
-        "006400": -3.54,
-        "373220": -3.54,
-        "068270": -3.54,
-        "105560": -3.54,
-        "005490": -3.54,
+        "005930": -4.76,
+        "000660": -6.45,
+        "005380": -3.67,
+        "000270": -3.67,
+        "035420": -3.67,
+        "006400": -3.67,
+        "373220": -3.67,
+        "068270": -3.67,
+        "105560": -3.67,
+        "005490": -3.67,
         "_residual": -5
       }
     },
     {
       "shock_pct": -10,
-      "expected_kospi": 4584,
-      "margin_call_billion": 189,
+      "expected_kospi": 5026,
+      "margin_call_billion": 0,
       "forced_liq_billion": 0,
       "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -8.3,
-        "000660": -15.57,
-        "005380": -7.08,
-        "000270": -7.08,
-        "035420": -7.08,
-        "006400": -7.08,
-        "373220": -7.08,
-        "068270": -7.08,
-        "105560": -7.08,
-        "005490": -7.08,
+        "005930": -9.53,
+        "000660": -12.91,
+        "005380": -7.34,
+        "000270": -7.34,
+        "035420": -7.34,
+        "006400": -7.34,
+        "373220": -7.34,
+        "068270": -7.34,
+        "105560": -7.34,
+        "005490": -7.34,
         "_residual": -10
       }
     },
     {
       "shock_pct": -15,
-      "expected_kospi": 4330,
-      "margin_call_billion": 232,
+      "expected_kospi": 4746,
+      "margin_call_billion": 0,
       "forced_liq_billion": 0,
       "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -12.45,
-        "000660": -23.35,
-        "005380": -10.62,
-        "000270": -10.62,
-        "035420": -10.62,
-        "006400": -10.62,
-        "373220": -10.62,
-        "068270": -10.62,
-        "105560": -10.62,
-        "005490": -10.62,
+        "005930": -14.29,
+        "000660": -19.36,
+        "005380": -11.01,
+        "000270": -11.01,
+        "035420": -11.01,
+        "006400": -11.01,
+        "373220": -11.01,
+        "068270": -11.01,
+        "105560": -11.01,
+        "005490": -11.01,
         "_residual": -15
       }
     },
     {
       "shock_pct": -20,
-      "expected_kospi": 4075,
-      "margin_call_billion": 258,
-      "forced_liq_billion": 106,
-      "weighted_impact_billion": 4,
+      "expected_kospi": 4467,
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -16.6,
-        "000660": -31.14,
-        "005380": -14.16,
-        "000270": -14.16,
-        "035420": -14.16,
-        "006400": -14.16,
-        "373220": -14.16,
-        "068270": -14.16,
-        "105560": -14.16,
-        "005490": -14.16,
+        "005930": -19.06,
+        "000660": -25.81,
+        "005380": -14.68,
+        "000270": -14.68,
+        "035420": -14.68,
+        "006400": -14.68,
+        "373220": -14.68,
+        "068270": -14.68,
+        "105560": -14.68,
+        "005490": -14.68,
         "_residual": -20
       }
     },
     {
       "shock_pct": -30,
-      "expected_kospi": 3565,
-      "margin_call_billion": 535,
-      "forced_liq_billion": 264,
-      "weighted_impact_billion": 9,
+      "expected_kospi": 3909,
+      "margin_call_billion": 0,
+      "forced_liq_billion": 0,
+      "weighted_impact_billion": 0,
       "stock_shocks": {
-        "005930": -24.9,
-        "000660": -46.7,
-        "005380": -21.25,
-        "000270": -21.25,
-        "035420": -21.25,
-        "006400": -21.25,
-        "373220": -21.25,
-        "068270": -21.25,
-        "105560": -21.25,
-        "005490": -21.25,
+        "005930": -28.59,
+        "000660": -38.72,
+        "005380": -22.02,
+        "000270": -22.02,
+        "035420": -22.02,
+        "006400": -22.02,
+        "373220": -22.02,
+        "068270": -22.02,
+        "105560": -22.02,
+        "005490": -22.02,
         "_residual": -30
       }
     }
   ],
   "betas": {
-    "005930": 1.17,
-    "000660": 2.2,
+    "005930": 1.3,
+    "000660": 1.76,
     "005380": 1.0,
     "000270": 1.0,
     "035420": 1.0,
@@ -39241,51 +39457,63 @@ export const STOCK_CREDIT = {
 export const RSPI_DATA = {
   "history": [
     {
-      "date": "2026-03-04",
-      "rspi": 0.0,
-      "cascade_force": 0.0,
-      "damping_force": 0.0,
-      "cascade_risk": "low",
+      "date": "2026-03-05",
+      "rspi": -27.0,
+      "cascade_force": 15.0,
+      "damping_force": 42.0,
+      "cascade_risk": "none",
       "cf_components": {
         "caution_zone": 0.0,
         "cumulative_decline": 0.0,
-        "individual_flow": 0.0,
+        "individual_flow": 15.0,
         "credit_accel": 0.0
       },
       "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 0.0,
+        "overnight_recovery": 11.0,
+        "credit_inflow": 6.0,
         "foreign_exhaustion": 0.0,
-        "safe_buffer": 0.0
+        "safe_buffer": 25.0
       },
       "raw_variables": {
-        "v1": 0.0, "v2": 0.0, "v3": 0.0, "v4": 0.0,
-        "d1": 0.0, "d2": 0.0, "d3": 0.0, "d4": 0.0
+        "v1": 0.0,
+        "v2": 0.0,
+        "v3": 0.6,
+        "v4": 0.0,
+        "d1": 0.3665,
+        "d2": 0.3,
+        "d3": 0.0,
+        "d4": 1.0
       },
       "impact": null
     }
   ],
   "latest": {
-    "date": "2026-03-04",
-    "rspi": 0.0,
-    "cascade_force": 0.0,
-    "damping_force": 0.0,
-    "cascade_risk": "low",
+    "date": "2026-03-05",
+    "rspi": -27.0,
+    "cascade_force": 15.0,
+    "damping_force": 42.0,
+    "cascade_risk": "none",
     "cf_components": {
       "caution_zone": 0.0,
       "cumulative_decline": 0.0,
-      "individual_flow": 0.0,
+      "individual_flow": 15.0,
       "credit_accel": 0.0
     },
     "df_components": {
-      "overnight_recovery": 0.0,
-      "credit_inflow": 0.0,
+      "overnight_recovery": 11.0,
+      "credit_inflow": 6.0,
       "foreign_exhaustion": 0.0,
-      "safe_buffer": 0.0
+      "safe_buffer": 25.0
     },
     "raw_variables": {
-      "v1": 0.0, "v2": 0.0, "v3": 0.0, "v4": 0.0,
-      "d1": 0.0, "d2": 0.0, "d3": 0.0, "d4": 0.0
+      "v1": 0.0,
+      "v2": 0.0,
+      "v3": 0.6,
+      "v4": 0.0,
+      "d1": 0.3665,
+      "d2": 0.3,
+      "d3": 0.0,
+      "d4": 1.0
     },
     "impact": null
   },
@@ -39293,34 +39521,44 @@ export const RSPI_DATA = {
     {
       "label": "낙관적",
       "ewy_pct": 2.5,
-      "rspi": -10.0,
-      "cascade_force": 20.0,
-      "damping_force": 30.0,
-      "cascade_risk": "low"
+      "rspi": -35.5,
+      "cascade_force": 15.0,
+      "damping_force": 50.5,
+      "cascade_risk": "none"
     },
     {
       "label": "기본",
       "ewy_pct": -1.0,
-      "rspi": 5.0,
-      "cascade_force": 25.0,
-      "damping_force": 20.0,
-      "cascade_risk": "medium"
+      "rspi": -16.0,
+      "cascade_force": 15.0,
+      "damping_force": 31.0,
+      "cascade_risk": "low"
     },
     {
       "label": "비관적",
       "ewy_pct": -4.0,
-      "rspi": 30.0,
-      "cascade_force": 40.0,
-      "damping_force": 10.0,
-      "cascade_risk": "high"
+      "rspi": -16.0,
+      "cascade_force": 15.0,
+      "damping_force": 31.0,
+      "cascade_risk": "low"
     }
   ]
 };
 
 export const RSPI_CONFIG = {
   "weights": {
-    "cf": {"cf1": 0.30, "cf2": 0.25, "cf3": 0.25, "cf4": 0.20},
-    "df": {"df1": 0.30, "df2": 0.20, "df3": 0.25, "df4": 0.25}
+    "cf": {
+      "cf1": 0.3,
+      "cf2": 0.25,
+      "cf3": 0.25,
+      "cf4": 0.2
+    },
+    "df": {
+      "df1": 0.3,
+      "df2": 0.2,
+      "df3": 0.25,
+      "df4": 0.25
+    }
   },
   "status_thresholds": {
     "debt_exceed": 100,
@@ -39330,28 +39568,94 @@ export const RSPI_CONFIG = {
     "good": 170
   },
   "cf_variables": [
-    {"key": "v1", "label": "주의구간 비중", "desc": "담보비율 140~170% 코호트 비중", "range": "0~1"},
-    {"key": "v2", "label": "연속 하락", "desc": "연속 하락일수 + 누적 하락률", "range": "0~1"},
-    {"key": "v3", "label": "개인 수급", "desc": "전일 개인 순매수 패턴", "range": "0~1"},
-    {"key": "v4", "label": "신용 가속", "desc": "신용잔고 감소 가속 모멘텀", "range": "0~0.7"}
+    {
+      "key": "v1",
+      "label": "주의구간 비중",
+      "desc": "담보비율 140~170% 코호트 비중",
+      "range": "0~1"
+    },
+    {
+      "key": "v2",
+      "label": "연속 하락",
+      "desc": "연속 하락일수 + 누적 하락률",
+      "range": "0~1"
+    },
+    {
+      "key": "v3",
+      "label": "개인 수급",
+      "desc": "전일 개인 순매수 패턴",
+      "range": "0~1"
+    },
+    {
+      "key": "v4",
+      "label": "신용 가속",
+      "desc": "신용잔고 감소 가속 모멘텀",
+      "range": "0~0.7"
+    }
   ],
   "df_variables": [
-    {"key": "d1", "label": "야간 반등", "desc": "EWY/KORU/야간선물/US 반등 + coherence", "range": "0~1"},
-    {"key": "d2", "label": "신용 유입", "desc": "하락일 신용증가 = 저가매수 (D+1 시차)", "range": "0~1"},
-    {"key": "d3", "label": "외국인 소진", "desc": "외국인 매도 규모 감소/전환", "range": "0~1"},
-    {"key": "d4", "label": "안전 버퍼", "desc": "안전구간 코호트 비중 (방화벽)", "range": "0~1"}
+    {
+      "key": "d1",
+      "label": "야간 반등",
+      "desc": "EWY/KORU/야간선물/US 반등 + coherence",
+      "range": "0~1"
+    },
+    {
+      "key": "d2",
+      "label": "신용 유입",
+      "desc": "하락일 신용증가 = 저가매수 (D+1 시차)",
+      "range": "0~1"
+    },
+    {
+      "key": "d3",
+      "label": "외국인 소진",
+      "desc": "외국인 매도 규모 감소/전환",
+      "range": "0~1"
+    },
+    {
+      "key": "d4",
+      "label": "안전 버퍼",
+      "desc": "안전구간 코호트 비중 (방화벽)",
+      "range": "0~1"
+    }
   ],
   "levels": [
-    {"min": -100, "max": -20, "label": "반등 압력", "color": "#4caf50"},
-    {"min": -20, "max": 0, "label": "균형", "color": "#8bc34a"},
-    {"min": 0, "max": 20, "label": "약한 하락", "color": "#ffc107"},
-    {"min": 20, "max": 40, "label": "하락 우세", "color": "#ff9800"},
-    {"min": 40, "max": 100, "label": "캐스케이드", "color": "#f44336"}
+    {
+      "min": -100,
+      "max": -20,
+      "label": "반등 압력",
+      "color": "#4caf50"
+    },
+    {
+      "min": -20,
+      "max": 0,
+      "label": "균형",
+      "color": "#8bc34a"
+    },
+    {
+      "min": 0,
+      "max": 20,
+      "label": "약한 하락",
+      "color": "#ffc107"
+    },
+    {
+      "min": 20,
+      "max": 40,
+      "label": "하락 우세",
+      "color": "#ff9800"
+    },
+    {
+      "min": 40,
+      "max": 100,
+      "label": "캐스케이드",
+      "color": "#f44336"
+    }
   ],
   "impact_params": {
     "sensitivity": 0.15,
     "sigmoid_k": 0.08,
-    "sigmoid_mid": 50
+    "sigmoid_mid": 50,
+    "samsung_credit_weight": 0.5
   }
 };
 
