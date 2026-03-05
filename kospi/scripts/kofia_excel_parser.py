@@ -28,7 +28,7 @@ FIELD_MAP = {
     "자금동향>증시자금>실제반대매매": ("forced_liq_billion", 1e3),
     "자금동향>신용공여>신용거래융자": ("credit_balance_billion", 1e3),
     "주식시장>국내지수>KOSPI": ("kospi", None),
-    "주식시장>거래대금>KOSPI": ("kospi_trading_value_billion", 10),
+    "주식시장>거래대금>KOSPI": ("kospi_trading_value_billion", 1e3),
 }
 
 

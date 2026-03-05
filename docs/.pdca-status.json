@@ -1,8 +1,8 @@
 {
   "version": "2.0",
   "lastUpdated": "2026-03-06T12:00:00.000Z",
-  "activeFeatures": ["kospi-v2.1.1-kofia-credit-pipeline"],
-  "primaryFeature": "kospi-v2.1.1-kofia-credit-pipeline",
+  "activeFeatures": [],
+  "primaryFeature": null,
   "features": {
     "kospi-vlpi-v1.5.0": {
       "phase": "archived",
@@ -44,6 +44,22 @@
       "startedAt": "2026-03-06T06:00:00.000Z",
       "completedAt": "2026-03-06T12:00:00.000Z",
       "description": "RSPI 실데이터 통합 + Raw Data 전면 확장 + 탭 비활성화 + backfill"
+    },
+    "kospi-rspi-v2.2.0": {
+      "phase": "completed",
+      "matchRate": 97.6,
+      "iterationCount": 1,
+      "startedAt": "2026-03-06T16:00:00.000Z",
+      "completedAt": "2026-03-06T20:00:00.000Z",
+      "description": "RSPI 5변수 + Volume Amplifier 전면 재설계"
+    },
+    "kospi-rspi-v2.2.1": {
+      "phase": "completed",
+      "matchRate": 100,
+      "iterationCount": 0,
+      "startedAt": "2026-03-06T21:00:00.000Z",
+      "completedAt": "2026-03-06T23:00:00.000Z",
+      "description": "KOFIA 단위 버그, RSPI pending 상태, V1 proximity 수정, 코호트 경로 통합"
     }
   },
   "pipeline": {
@@ -62,6 +78,18 @@
       "feature": "kospi-v2.1.0",
       "phase": "completed",
       "action": "documents-updated"
+    },
+    {
+      "timestamp": "2026-03-06T20:00:00.000Z",
+      "feature": "kospi-rspi-v2.2.0",
+      "phase": "completed",
+      "action": "5-variable + Volume Amplifier redesign"
+    },
+    {
+      "timestamp": "2026-03-06T23:00:00.000Z",
+      "feature": "kospi-rspi-v2.2.1",
+      "phase": "completed",
+      "action": "6-bug minor fix (KOFIA unit, pending, V1, cohort path)"
     }
   ]
 }

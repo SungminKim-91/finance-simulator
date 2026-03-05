@@ -1825,9 +1825,13 @@ def run_all_models() -> dict:
             if sam_price <= 0:
                 continue
 
-            # 해당 날짜 기준 야간 데이터 (D-1~D-3 역추적)
+            # 해당 날짜 기준 야간 데이터
+            # 최신일(마지막): 당일만 확인 (미수집 시 0 처리)
+            # 과거일: D-1~D-3 lookback 허용 (수집 누락 보정)
             on_data = {}
-            for lb in range(0, min(4, idx + 1)):
+            is_latest = (idx == len(ts) - 1)
+            lookback_range = 1 if is_latest else min(4, idx + 1)
+            for lb in range(0, lookback_range):
                 cand = ts[idx - lb]
                 if cand.get("ewy_change_pct") is not None:
                     on_data = {
@@ -1865,7 +1869,8 @@ def run_all_models() -> dict:
         samsung_adv = sum(samsung_volumes) / len(samsung_volumes) / 1000 if samsung_volumes else 30000
 
         rv = latest_rspi.get("raw_variables", {})
-        if rv and samsung_credit_bn > 0 and samsung_price > 0:
+        is_pending = latest_rspi.get("pending", False)
+        if rv and not is_pending and samsung_credit_bn > 0 and samsung_price > 0:
             scenario_matrix = rspi_engine.calculate_scenario_matrix(
                 v1=rv["v1"], v2=rv["v2"], v4=rv["v4"], v5=rv["v5"],
                 volume_amp=latest_rspi.get("volume_amp", 1.0),

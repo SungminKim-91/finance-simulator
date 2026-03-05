@@ -210,6 +210,26 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **탭 비활성화**: 위기분석/과거비교 탭 greyed out (코드 보존, 준비중 표시)
 - **GLOBAL_DATA 확장**: ewy_close, ewy_change_pct, koru_close, koru_change_pct, sp500_change_pct 추가
 
+### v2.2.0 — RSPI 5변수 + Volume Amplifier
+- **RSPI 전면 재설계**: CF/DF 8변수 → 5변수(V1~V5) + Volume Amplifier
+  - V1: 코호트 proximity (마진콜 근접도)
+  - V2: 외국인 z-score (3일 누적 매도 강도)
+  - V3: 야간 회복 (EWY+KORU+S&P500+선물 4소스 coherence)
+  - V4: 개인 수급 패턴 (순매도 전환 + 가속도)
+  - V5: 신용 모멘텀 (잔고 변화율)
+- **Volume Amplifier**: 거래량 폭증 시 RSPI 증폭 (1.0~1.5x)
+- **Impact Function**: Sigmoid → Kyle's Lambda 가격영향
+- **프론트엔드**: RSPIGauge + DualBreakdown + ImpactTable + V1~V5 색상/용어
+- **Match Rate**: 97.6% (1 iteration)
+
+### v2.2.1 — Minor Fix (데이터 정합성 + Pending 상태)
+- **KOFIA 거래대금 단위 수정**: divisor 10→1000 (백만원→십억원, 100x 과대 버그)
+- **yfinance 거래량 제거**: ^KS11 volume 단위 불일치 → ECOS only 정책
+- **RSPI pending 상태**: 야간 데이터 미확보 시 rspi=None, level="pending" (0 계산 방지)
+- **V1 코호트 proximity 수정**: entry_kospi 필드명 + KOSPI 지수 가격 사용 (삼성 가격 X)
+- **코호트 경로 통합**: "오늘" / 기준일 선택 모두 reconstructCohorts() 단일 경로
+- **V3 lookback 제한**: 최신일은 당일만 확인 (stale overnight 데이터 사용 방지)
+
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
 - **Y축 줌 (Domain-only)**: Drag + Wheel 지원, domain만 변경 (SVG 찌그러짐 없음)
@@ -278,6 +298,8 @@ web/src/simulators/kospi/        # React 대시보드
 | kospi-crisis | v1.4.0 | 100% | 자동청산 + 백테스트 차트 |
 | kospi-crisis | v2.1.0 | — | RSPI 실데이터 + Raw Data |
 | kofia-auto-download | v2.1.2 | 100% | Playwright 자동 다운로드 + crontab |
+| kospi-rspi | v2.2.0 | 97.6% | 5변수 + Volume Amplifier 재설계 |
+| kospi-rspi | v2.2.1 | 100% | 데이터 정합성 + pending 상태 |
 
 ## CLI (KOSPI)
 ```bash

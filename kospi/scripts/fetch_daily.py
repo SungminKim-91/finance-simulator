@@ -320,7 +320,7 @@ def build_snapshot(
         "market": {
             "kospi": {
                 "close": kospi_close,
-                "volume": int(volume_k * 1000) if volume_k else data["kospi_volume"],
+                "volume": int(volume_k * 1000) if volume_k else None,  # yfinance ^KS11 volume 단위 불일치 → ECOS only
                 "trading_value_billion": trading_value_b,
             } if kospi_close else None,
             "kosdaq": {

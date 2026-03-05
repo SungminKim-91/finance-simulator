@@ -296,9 +296,11 @@ def export_all() -> None:
 
     # === 17. RSPI_DATA (v2.0.0, VLPI 대체) ===
     rspi_raw = model_output.get("rspi", {})
+    rspi_history = rspi_raw.get("history", [])
+    rspi_latest = rspi_raw.get("latest")
     rspi_data = {
-        "history": rspi_raw.get("history", []),
-        "latest": rspi_raw.get("latest"),
+        "history": rspi_history,
+        "latest": rspi_latest,
         "scenario_matrix": rspi_raw.get("scenario_matrix", []),
     }
 
@@ -379,7 +381,10 @@ def export_all() -> None:
     sc_stocks = stock_credit.get("stocks", [])
     print(f"  StockCred: {len(sc_stocks)} stocks, weighted={stock_credit.get('stock_weighted', False)}")
     rspi_latest = rspi_data.get("latest")
-    rspi_score = rspi_latest.get("rspi", "N/A") if rspi_latest else "N/A"
+    if rspi_latest and rspi_latest.get("pending"):
+        rspi_score = "pending"
+    else:
+        rspi_score = rspi_latest.get("rspi", "N/A") if rspi_latest else "N/A"
     print(f"  RSPI:      score={rspi_score}, history={len(rspi_data.get('history', []))}, scenarios={len(rspi_data.get('scenario_matrix', []))}")
 
 

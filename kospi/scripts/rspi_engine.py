@@ -88,13 +88,13 @@ def calc_cohort_proximity(current_price: float, cohorts: list[dict]) -> float:
     weighted_proximity = 0.0
 
     for cohort in cohorts:
-        entry_price = cohort.get("entry_price", 0)
+        entry_price = cohort.get("entry_kospi") or cohort.get("entry_price", 0)
         if entry_price <= 0:
             continue
         ratio = calc_collateral_ratio(current_price, entry_price)
         proximity = max(0.0, min(1.0, 1.0 - (ratio - V1_MARGIN_CALL_RATIO) / V1_SAFE_RANGE))
 
-        w = cohort.get("weight", 0)
+        w = cohort.get("remaining_amount_billion") or cohort.get("weight", 0)
         weighted_proximity += proximity * w
         total_weight += w
 
@@ -323,12 +323,7 @@ def calc_rspi(
     """RSPI = -1 * (weighted_sum) * volume_amp * 100.
 
     Returns:
-        rspi: float (-100~+100)
-        level: str (7단계 키)
-        raw: float (부호 반전 전 가중합)
-        volume_amp: float
-        raw_variables: {v1, v2, v3, v4, v5}
-        variable_contributions: {v1_contrib, ...}
+        rspi, level, raw, volume_amp, raw_variables, variable_contributions
     """
     w = weights or RSPI_WEIGHTS
 
@@ -449,9 +444,10 @@ class RSPIEngine:
         idx = next((i for i, r in enumerate(ts) if r["date"] == date), len(ts) - 1)
 
         t1_price = current_price or ts[idx].get("samsung", 0) or 0
+        kospi_price = ts[idx].get("kospi", 0) or 0
 
-        # V1: 코호트 proximity
-        v1 = calc_cohort_proximity(t1_price, cohorts) if cohorts and t1_price > 0 else 0.0
+        # V1: 코호트 proximity (KOSPI 지수 기반 — 코호트는 entry_kospi 기준)
+        v1 = calc_cohort_proximity(kospi_price, cohorts) if cohorts and kospi_price > 0 else 0.0
 
         # V2: 외국인 수급 z-score
         foreign_flows = [
@@ -462,6 +458,28 @@ class RSPIEngine:
 
         # V3: 야간시장 시그널
         on = overnight_data or {}
+        has_overnight = any(on.get(k) is not None for k in
+                           ["ewy_pct", "koru_pct", "kospi_futures_pct", "us_market_pct"])
+
+        # 최신일에 야간 데이터 미확보 → RSPI 계산 불가 (pending)
+        is_latest = (idx == len(ts) - 1)
+        if is_latest and not has_overnight:
+            pending_result = {
+                "rspi": None,
+                "level": "pending",
+                "raw": None,
+                "volume_amp": None,
+                "raw_variables": {"v1": round(v1, 4), "v2": round(v2, 4),
+                                  "v3": None, "v4": None, "v5": None},
+                "variable_contributions": {"v1": None, "v2": None,
+                                           "v3": None, "v4": None, "v5": None},
+                "impact": None,
+                "pending": True,
+            }
+            entry = {"date": date, **pending_result}
+            self.history.append(entry)
+            return pending_result
+
         v3 = calc_overnight_signal(
             ewy_pct=on.get("ewy_pct"),
             koru_pct=on.get("koru_pct"),

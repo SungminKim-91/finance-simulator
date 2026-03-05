@@ -900,14 +900,15 @@ export default function CohortAnalysis() {
     return snaps.slice(-60).reverse().map(s => s.date);
   }, []);
 
-  /* Section 1 코호트 — 날짜 선택 시 히스토리에서 복원 */
+  /* Section 1 코호트 — 항상 COHORT_HISTORY에서 복원 (오늘/과거 동일 경로) */
   const { activeCohorts, cohortKospi } = useMemo(() => {
-    if (!cohortDate) {
+    const snaps = COHORT_HISTORY?.snapshots;
+    const targetDate = cohortDate || snaps?.[snaps.length - 1]?.date;
+    const snap = targetDate ? snaps?.find(s => s.date === targetDate) : null;
+    if (!snap) {
       return { activeCohorts: cohortMode === "LIFO" ? lifo : fifo, cohortKospi: current_kospi };
     }
-    const snap = COHORT_HISTORY?.snapshots?.find(s => s.date === cohortDate);
-    if (!snap) return { activeCohorts: [], cohortKospi: current_kospi };
-    const dateIdx = MARKET_DATA.findIndex(r => r.date === cohortDate);
+    const dateIdx = MARKET_DATA.findIndex(r => r.date === targetDate);
     const btBeta = dateIdx >= 0 ? computeBacktestBeta(dateIdx) : portfolioBeta;
     return {
       activeCohorts: reconstructCohorts(COHORT_HISTORY.registry, snap, params, btBeta),
@@ -1275,7 +1276,9 @@ export default function CohortAnalysis() {
           </span>
           {rspiIsExact && rspiForDate && (
             <span style={{ color: C.muted }}>
-              RSPI {rspiForDate.rspi > 0 ? "+" : ""}{rspiForDate.rspi?.toFixed(1)} | {rspiForDate.level}
+              {rspiForDate.pending
+                ? "RSPI 계산 대기중 (야간 데이터 미확보)"
+                : `RSPI ${rspiForDate.rspi > 0 ? "+" : ""}${rspiForDate.rspi?.toFixed(1)} | ${rspiForDate.level}`}
             </span>
           )}
         </div>
@@ -1298,7 +1301,7 @@ export default function CohortAnalysis() {
         {rspiIsExact ? (
           <>
             {/* A: Gauge + B: Variable Breakdown */}
-            {rspiForDate && RSPI_CONFIG && (
+            {rspiForDate && RSPI_CONFIG && !rspiForDate.pending && (
               <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 20, alignItems: "start", marginBottom: 12 }}>
                 <RSPIGauge
                   score={rspiForDate.rspi}
@@ -1310,6 +1313,12 @@ export default function CohortAnalysis() {
                   variables={RSPI_CONFIG.variables}
                   volumeAmp={rspiForDate.volume_amp}
                 />
+              </div>
+            )}
+            {rspiForDate?.pending && (
+              <div style={{ padding: "20px", textAlign: "center", color: C.muted, fontSize: 13,
+                background: C.panel, border: `1px solid ${C.border}`, borderRadius: 8, marginBottom: 12 }}>
+                RSPI 계산 대기중 — 야간시장(EWY/KORU/S&P500) 데이터 확보 후 확정됩니다
               </div>
             )}
 
