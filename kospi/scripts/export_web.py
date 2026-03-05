@@ -150,7 +150,7 @@ def export_all() -> None:
             "institution_billion": institution,
         })
 
-    # === 4. GLOBAL_DATA ===
+    # === 4. GLOBAL_DATA (+ 야간 데이터) ===
     global_data = [
         {
             "date": r["date"],
@@ -158,6 +158,11 @@ def export_all() -> None:
             "wti": r.get("wti"),
             "vix": r.get("vix"),
             "sp500": r.get("sp500"),
+            "ewy_close": r.get("ewy_close"),
+            "ewy_change_pct": r.get("ewy_change_pct"),
+            "koru_close": r.get("koru_close"),
+            "koru_change_pct": r.get("koru_change_pct"),
+            "sp500_change_pct": r.get("sp500_change_pct"),
         }
         for r in ts
     ]

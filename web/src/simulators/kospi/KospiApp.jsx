@@ -12,8 +12,8 @@ const FONT = "'JetBrains Mono', monospace";
 const TABS = [
   { id: "pulse", label: "시장 현황 (Market Pulse)" },
   { id: "cohort", label: "코호트 분석 (Cohort)" },
-  { id: "scenario", label: "위기 분석 (Crisis)" },
-  { id: "history", label: "과거 비교 (History)" },
+  { id: "scenario", label: "위기 분석 (Crisis)", disabled: true },
+  { id: "history", label: "과거 비교 (History)", disabled: true },
   { id: "rawdata", label: "원시 데이터 (Raw Data)" },
 ];
 
@@ -32,13 +32,14 @@ export default function KospiApp() {
         position: "sticky", top: 76, zIndex: 99,
       }}>
         {TABS.map(t => (
-          <button key={t.id} onClick={() => setTab(t.id)} style={{
+          <button key={t.id} onClick={() => !t.disabled && setTab(t.id)} style={{
             background: tab === t.id ? C.kospi : "transparent",
-            color: tab === t.id ? "#fff" : C.muted,
+            color: t.disabled ? C.dim : tab === t.id ? "#fff" : C.muted,
             border: "none", borderRadius: 6, padding: "6px 14px",
-            fontSize: 11, fontWeight: 600, cursor: "pointer", fontFamily: FONT,
+            fontSize: 11, fontWeight: 600, cursor: t.disabled ? "not-allowed" : "pointer", fontFamily: FONT,
             transition: "all 0.15s",
-          }}>{t.label}</button>
+            opacity: t.disabled ? 0.4 : 1,
+          }}>{t.label}{t.disabled ? " (준비중)" : ""}</button>
         ))}
       </div>
 
