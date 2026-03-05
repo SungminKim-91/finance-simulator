@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-06T00:31:18.361242
+ * Generated: 2026-03-06T00:40:40.018403
  * Source: kospi/data/ (pipeline)
  * Exports: 18
  */
@@ -3416,119 +3416,119 @@ export const CREDIT_DATA = [
     "date": "2025-01-02",
     "credit_balance_billion": 15572.9,
     "deposit_billion": 57058.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.4,
     "estimated": false
   },
   {
     "date": "2025-01-03",
     "credit_balance_billion": 15466.2,
     "deposit_billion": 54550.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.3,
     "estimated": false
   },
   {
     "date": "2025-01-06",
     "credit_balance_billion": 15596.9,
     "deposit_billion": 53795.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.5,
     "estimated": false
   },
   {
     "date": "2025-01-07",
     "credit_balance_billion": 15617.1,
     "deposit_billion": 52336.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 2.7,
     "estimated": false
   },
   {
     "date": "2025-01-08",
     "credit_balance_billion": 15762.0,
     "deposit_billion": 51940.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 2.0,
     "estimated": false
   },
   {
     "date": "2025-01-09",
     "credit_balance_billion": 15908.3,
     "deposit_billion": 52755.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.6,
     "estimated": false
   },
   {
     "date": "2025-01-10",
     "credit_balance_billion": 15987.1,
     "deposit_billion": 52279.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.8,
     "estimated": false
   },
   {
     "date": "2025-01-13",
     "credit_balance_billion": 16068.4,
     "deposit_billion": 53747.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.6,
     "estimated": false
   },
   {
     "date": "2025-01-14",
     "credit_balance_billion": 16202.2,
     "deposit_billion": 53769.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.9,
     "estimated": false
   },
   {
     "date": "2025-01-15",
     "credit_balance_billion": 16309.2,
     "deposit_billion": 52787.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.1,
     "estimated": false
   },
   {
     "date": "2025-01-16",
     "credit_balance_billion": 16379.9,
     "deposit_billion": 51869.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.5,
     "estimated": false
   },
   {
     "date": "2025-01-17",
     "credit_balance_billion": 16395.6,
     "deposit_billion": 51270.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.9,
     "estimated": false
   },
   {
     "date": "2025-01-20",
     "credit_balance_billion": 16347.5,
     "deposit_billion": 53225.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.0,
     "estimated": false
   },
   {
     "date": "2025-01-21",
     "credit_balance_billion": 16468.1,
     "deposit_billion": 52798.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.6,
     "estimated": false
   },
   {
     "date": "2025-01-22",
     "credit_balance_billion": 16567.2,
     "deposit_billion": 52102.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.9,
     "estimated": false
   },
   {
     "date": "2025-01-23",
     "credit_balance_billion": 16640.4,
     "deposit_billion": 52112.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.6,
     "estimated": false
   },
   {
     "date": "2025-01-24",
     "credit_balance_billion": 16572.0,
     "deposit_billion": 54144.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.0,
     "estimated": false
   },
   {
@@ -3563,147 +3563,147 @@ export const CREDIT_DATA = [
     "date": "2025-01-31",
     "credit_balance_billion": 16725.8,
     "deposit_billion": 55578.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.1,
     "estimated": false
   },
   {
     "date": "2025-02-03",
     "credit_balance_billion": 16646.5,
     "deposit_billion": 58231.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.4,
     "estimated": false
   },
   {
     "date": "2025-02-04",
     "credit_balance_billion": 16795.0,
     "deposit_billion": 57753.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.5,
     "estimated": false
   },
   {
     "date": "2025-02-05",
     "credit_balance_billion": 16699.0,
     "deposit_billion": 53333.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.5,
     "estimated": false
   },
   {
     "date": "2025-02-06",
     "credit_balance_billion": 16603.7,
     "deposit_billion": 54673.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.1,
     "estimated": false
   },
   {
     "date": "2025-02-07",
     "credit_balance_billion": 16650.8,
     "deposit_billion": 52824.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.5,
     "estimated": false
   },
   {
     "date": "2025-02-10",
     "credit_balance_billion": 16727.4,
     "deposit_billion": 53106.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 2.9,
     "estimated": false
   },
   {
     "date": "2025-02-11",
     "credit_balance_billion": 16883.1,
     "deposit_billion": 53364.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.9,
     "estimated": false
   },
   {
     "date": "2025-02-12",
     "credit_balance_billion": 17012.5,
     "deposit_billion": 52892.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.6,
     "estimated": false
   },
   {
     "date": "2025-02-13",
     "credit_balance_billion": 17097.8,
     "deposit_billion": 53922.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.9,
     "estimated": false
   },
   {
     "date": "2025-02-14",
     "credit_balance_billion": 17219.3,
     "deposit_billion": 54510.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.7,
     "estimated": false
   },
   {
     "date": "2025-02-17",
     "credit_balance_billion": 17248.5,
     "deposit_billion": 53508.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.6,
     "estimated": false
   },
   {
     "date": "2025-02-18",
     "credit_balance_billion": 17384.7,
     "deposit_billion": 53914.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.8,
     "estimated": false
   },
   {
     "date": "2025-02-19",
     "credit_balance_billion": 17486.1,
     "deposit_billion": 55117.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.0,
     "estimated": false
   },
   {
     "date": "2025-02-20",
     "credit_balance_billion": 17669.8,
     "deposit_billion": 54622.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 2.3,
     "estimated": false
   },
   {
     "date": "2025-02-21",
     "credit_balance_billion": 17687.7,
     "deposit_billion": 54958.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.2,
     "estimated": false
   },
   {
     "date": "2025-02-24",
     "credit_balance_billion": 17764.0,
     "deposit_billion": 54029.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.9,
     "estimated": false
   },
   {
     "date": "2025-02-25",
     "credit_balance_billion": 17818.8,
     "deposit_billion": 54898.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.5,
     "estimated": false
   },
   {
     "date": "2025-02-26",
     "credit_balance_billion": 17955.9,
     "deposit_billion": 54494.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.1,
     "estimated": false
   },
   {
     "date": "2025-02-27",
     "credit_balance_billion": 18067.3,
     "deposit_billion": 55218.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.9,
     "estimated": false
   },
   {
     "date": "2025-02-28",
     "credit_balance_billion": 18108.2,
     "deposit_billion": 56052.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.8,
     "estimated": false
   },
   {
@@ -3717,294 +3717,294 @@ export const CREDIT_DATA = [
     "date": "2025-03-04",
     "credit_balance_billion": 18178.6,
     "deposit_billion": 57232.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 10.9,
     "estimated": false
   },
   {
     "date": "2025-03-05",
     "credit_balance_billion": 18236.0,
     "deposit_billion": 53548.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 10.5,
     "estimated": false
   },
   {
     "date": "2025-03-06",
     "credit_balance_billion": 18081.3,
     "deposit_billion": 52877.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.2,
     "estimated": false
   },
   {
     "date": "2025-03-07",
     "credit_balance_billion": 18092.8,
     "deposit_billion": 51289.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.9,
     "estimated": false
   },
   {
     "date": "2025-03-10",
     "credit_balance_billion": 18128.5,
     "deposit_billion": 53767.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.4,
     "estimated": false
   },
   {
     "date": "2025-03-11",
     "credit_balance_billion": 18029.8,
     "deposit_billion": 53300.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.1,
     "estimated": false
   },
   {
     "date": "2025-03-12",
     "credit_balance_billion": 18055.7,
     "deposit_billion": 52806.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.3,
     "estimated": false
   },
   {
     "date": "2025-03-13",
     "credit_balance_billion": 18030.5,
     "deposit_billion": 52246.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.0,
     "estimated": false
   },
   {
     "date": "2025-03-14",
     "credit_balance_billion": 17983.0,
     "deposit_billion": 51356.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.5,
     "estimated": false
   },
   {
     "date": "2025-03-17",
     "credit_balance_billion": 18044.2,
     "deposit_billion": 51861.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.9,
     "estimated": false
   },
   {
     "date": "2025-03-18",
     "credit_balance_billion": 18080.1,
     "deposit_billion": 50956.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.5,
     "estimated": false
   },
   {
     "date": "2025-03-19",
     "credit_balance_billion": 18093.6,
     "deposit_billion": 51913.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.0,
     "estimated": false
   },
   {
     "date": "2025-03-20",
     "credit_balance_billion": 18161.4,
     "deposit_billion": 52497.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.9,
     "estimated": false
   },
   {
     "date": "2025-03-21",
     "credit_balance_billion": 18164.0,
     "deposit_billion": 53615.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.3,
     "estimated": false
   },
   {
     "date": "2025-03-24",
     "credit_balance_billion": 18031.9,
     "deposit_billion": 53282.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.6,
     "estimated": false
   },
   {
     "date": "2025-03-25",
     "credit_balance_billion": 17842.7,
     "deposit_billion": 55162.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.6,
     "estimated": false
   },
   {
     "date": "2025-03-26",
     "credit_balance_billion": 17830.8,
     "deposit_billion": 55671.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.3,
     "estimated": false
   },
   {
     "date": "2025-03-27",
     "credit_balance_billion": 17718.4,
     "deposit_billion": 54693.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.1,
     "estimated": false
   },
   {
     "date": "2025-03-28",
     "credit_balance_billion": 17572.4,
     "deposit_billion": 56932.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.6,
     "estimated": false
   },
   {
     "date": "2025-03-31",
     "credit_balance_billion": 17471.2,
     "deposit_billion": 58474.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 11.5,
     "estimated": false
   },
   {
     "date": "2025-04-01",
     "credit_balance_billion": 17259.6,
     "deposit_billion": 59496.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 13.9,
     "estimated": false
   },
   {
     "date": "2025-04-02",
     "credit_balance_billion": 16992.8,
     "deposit_billion": 54357.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.1,
     "estimated": false
   },
   {
     "date": "2025-04-03",
     "credit_balance_billion": 16855.2,
     "deposit_billion": 55320.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.9,
     "estimated": false
   },
   {
     "date": "2025-04-04",
     "credit_balance_billion": 16920.1,
     "deposit_billion": 55607.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.0,
     "estimated": false
   },
   {
     "date": "2025-04-07",
     "credit_balance_billion": 16833.8,
     "deposit_billion": 57843.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.7,
     "estimated": false
   },
   {
     "date": "2025-04-08",
     "credit_balance_billion": 16843.1,
     "deposit_billion": 55909.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.0,
     "estimated": false
   },
   {
     "date": "2025-04-09",
     "credit_balance_billion": 16667.6,
     "deposit_billion": 54160.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 16.6,
     "estimated": false
   },
   {
     "date": "2025-04-10",
     "credit_balance_billion": 16426.5,
     "deposit_billion": 54692.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.5,
     "estimated": false
   },
   {
     "date": "2025-04-11",
     "credit_balance_billion": 16321.7,
     "deposit_billion": 53618.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.6,
     "estimated": false
   },
   {
     "date": "2025-04-14",
     "credit_balance_billion": 16184.8,
     "deposit_billion": 54875.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.0,
     "estimated": false
   },
   {
     "date": "2025-04-15",
     "credit_balance_billion": 16453.4,
     "deposit_billion": 54754.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.7,
     "estimated": false
   },
   {
     "date": "2025-04-16",
     "credit_balance_billion": 16656.6,
     "deposit_billion": 52977.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 1.6,
     "estimated": false
   },
   {
     "date": "2025-04-17",
     "credit_balance_billion": 16773.7,
     "deposit_billion": 53633.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.9,
     "estimated": false
   },
   {
     "date": "2025-04-18",
     "credit_balance_billion": 16891.5,
     "deposit_billion": 53824.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 2.7,
     "estimated": false
   },
   {
     "date": "2025-04-21",
     "credit_balance_billion": 16946.6,
     "deposit_billion": 53836.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.6,
     "estimated": false
   },
   {
     "date": "2025-04-22",
     "credit_balance_billion": 17043.8,
     "deposit_billion": 53962.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.0,
     "estimated": false
   },
   {
     "date": "2025-04-23",
     "credit_balance_billion": 17141.3,
     "deposit_billion": 54397.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 2.9,
     "estimated": false
   },
   {
     "date": "2025-04-24",
     "credit_balance_billion": 17297.2,
     "deposit_billion": 54307.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.1,
     "estimated": false
   },
   {
     "date": "2025-04-25",
     "credit_balance_billion": 17264.4,
     "deposit_billion": 55310.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.6,
     "estimated": false
   },
   {
     "date": "2025-04-28",
     "credit_balance_billion": 17384.7,
     "deposit_billion": 55941.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.5,
     "estimated": false
   },
   {
     "date": "2025-04-29",
     "credit_balance_billion": 17395.8,
     "deposit_billion": 57561.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.2,
     "estimated": false
   },
   {
     "date": "2025-04-30",
     "credit_balance_billion": 17429.0,
     "deposit_billion": 57547.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.8,
     "estimated": false
   },
   {
@@ -4018,7 +4018,7 @@ export const CREDIT_DATA = [
     "date": "2025-05-02",
     "credit_balance_billion": 17401.1,
     "deposit_billion": 56530.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.8,
     "estimated": false
   },
   {
@@ -4039,133 +4039,133 @@ export const CREDIT_DATA = [
     "date": "2025-05-07",
     "credit_balance_billion": 17483.8,
     "deposit_billion": 56449.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.8,
     "estimated": false
   },
   {
     "date": "2025-05-08",
     "credit_balance_billion": 17381.3,
     "deposit_billion": 56436.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.0,
     "estimated": false
   },
   {
     "date": "2025-05-09",
     "credit_balance_billion": 17395.3,
     "deposit_billion": 54262.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.8,
     "estimated": false
   },
   {
     "date": "2025-05-12",
     "credit_balance_billion": 17530.7,
     "deposit_billion": 56162.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.5,
     "estimated": false
   },
   {
     "date": "2025-05-13",
     "credit_balance_billion": 17654.8,
     "deposit_billion": 55206.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.4,
     "estimated": false
   },
   {
     "date": "2025-05-14",
     "credit_balance_billion": 17596.7,
     "deposit_billion": 57471.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.5,
     "estimated": false
   },
   {
     "date": "2025-05-15",
     "credit_balance_billion": 17672.1,
     "deposit_billion": 56518.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.8,
     "estimated": false
   },
   {
     "date": "2025-05-16",
     "credit_balance_billion": 17646.5,
     "deposit_billion": 56274.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.2,
     "estimated": false
   },
   {
     "date": "2025-05-19",
     "credit_balance_billion": 17786.0,
     "deposit_billion": 56185.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.1,
     "estimated": false
   },
   {
     "date": "2025-05-20",
     "credit_balance_billion": 17810.4,
     "deposit_billion": 56545.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.6,
     "estimated": false
   },
   {
     "date": "2025-05-21",
     "credit_balance_billion": 17837.1,
     "deposit_billion": 56101.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.9,
     "estimated": false
   },
   {
     "date": "2025-05-22",
     "credit_balance_billion": 17838.4,
     "deposit_billion": 56213.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.8,
     "estimated": false
   },
   {
     "date": "2025-05-23",
     "credit_balance_billion": 17860.6,
     "deposit_billion": 56750.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.8,
     "estimated": false
   },
   {
     "date": "2025-05-26",
     "credit_balance_billion": 18008.9,
     "deposit_billion": 56756.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.3,
     "estimated": false
   },
   {
     "date": "2025-05-27",
     "credit_balance_billion": 18039.4,
     "deposit_billion": 57500.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.1,
     "estimated": false
   },
   {
     "date": "2025-05-28",
     "credit_balance_billion": 18031.6,
     "deposit_billion": 56402.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.2,
     "estimated": false
   },
   {
     "date": "2025-05-29",
     "credit_balance_billion": 18207.0,
     "deposit_billion": 58029.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.4,
     "estimated": false
   },
   {
     "date": "2025-05-30",
     "credit_balance_billion": 18139.0,
     "deposit_billion": 57297.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.8,
     "estimated": false
   },
   {
     "date": "2025-06-02",
     "credit_balance_billion": 18215.1,
     "deposit_billion": 60188.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.7,
     "estimated": false
   },
   {
@@ -4179,14 +4179,14 @@ export const CREDIT_DATA = [
     "date": "2025-06-04",
     "credit_balance_billion": 18379.8,
     "deposit_billion": 60035.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.6,
     "estimated": false
   },
   {
     "date": "2025-06-05",
     "credit_balance_billion": 18418.4,
     "deposit_billion": 58369.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.5,
     "estimated": false
   },
   {
@@ -4200,343 +4200,343 @@ export const CREDIT_DATA = [
     "date": "2025-06-09",
     "credit_balance_billion": 18397.6,
     "deposit_billion": 59660.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 1.6,
     "estimated": false
   },
   {
     "date": "2025-06-10",
     "credit_balance_billion": 18379.4,
     "deposit_billion": 62349.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.2,
     "estimated": false
   },
   {
     "date": "2025-06-11",
     "credit_balance_billion": 18580.6,
     "deposit_billion": 61982.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.5,
     "estimated": false
   },
   {
     "date": "2025-06-12",
     "credit_balance_billion": 18699.4,
     "deposit_billion": 62944.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.6,
     "estimated": false
   },
   {
     "date": "2025-06-13",
     "credit_balance_billion": 18834.9,
     "deposit_billion": 63819.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.0,
     "estimated": false
   },
   {
     "date": "2025-06-16",
     "credit_balance_billion": 19051.4,
     "deposit_billion": 64965.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.7,
     "estimated": false
   },
   {
     "date": "2025-06-17",
     "credit_balance_billion": 19226.1,
     "deposit_billion": 65020.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.6,
     "estimated": false
   },
   {
     "date": "2025-06-18",
     "credit_balance_billion": 19406.1,
     "deposit_billion": 63498.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.2,
     "estimated": false
   },
   {
     "date": "2025-06-19",
     "credit_balance_billion": 19453.6,
     "deposit_billion": 63604.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.0,
     "estimated": false
   },
   {
     "date": "2025-06-20",
     "credit_balance_billion": 19669.1,
     "deposit_billion": 64214.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 11.2,
     "estimated": false
   },
   {
     "date": "2025-06-23",
     "credit_balance_billion": 19943.5,
     "deposit_billion": 65017.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.2,
     "estimated": false
   },
   {
     "date": "2025-06-24",
     "credit_balance_billion": 19984.4,
     "deposit_billion": 66411.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.6,
     "estimated": false
   },
   {
     "date": "2025-06-25",
     "credit_balance_billion": 20423.7,
     "deposit_billion": 66676.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.6,
     "estimated": false
   },
   {
     "date": "2025-06-26",
     "credit_balance_billion": 20383.4,
     "deposit_billion": 69056.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.2,
     "estimated": false
   },
   {
     "date": "2025-06-27",
     "credit_balance_billion": 20529.9,
     "deposit_billion": 67712.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.9,
     "estimated": false
   },
   {
     "date": "2025-06-30",
     "credit_balance_billion": 20638.7,
     "deposit_billion": 68972.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.8,
     "estimated": false
   },
   {
     "date": "2025-07-01",
     "credit_balance_billion": 20734.7,
     "deposit_billion": 70413.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.3,
     "estimated": false
   },
   {
     "date": "2025-07-02",
     "credit_balance_billion": 20736.7,
     "deposit_billion": 66053.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 10.5,
     "estimated": false
   },
   {
     "date": "2025-07-03",
     "credit_balance_billion": 20636.9,
     "deposit_billion": 66285.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 10.9,
     "estimated": false
   },
   {
     "date": "2025-07-04",
     "credit_balance_billion": 20661.0,
     "deposit_billion": 65384.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 18.2,
     "estimated": false
   },
   {
     "date": "2025-07-07",
     "credit_balance_billion": 20649.9,
     "deposit_billion": 67337.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.8,
     "estimated": false
   },
   {
     "date": "2025-07-08",
     "credit_balance_billion": 20675.6,
     "deposit_billion": 66503.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.1,
     "estimated": false
   },
   {
     "date": "2025-07-09",
     "credit_balance_billion": 20707.2,
     "deposit_billion": 65195.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.2,
     "estimated": false
   },
   {
     "date": "2025-07-10",
     "credit_balance_billion": 20861.7,
     "deposit_billion": 65937.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.5,
     "estimated": false
   },
   {
     "date": "2025-07-11",
     "credit_balance_billion": 21116.8,
     "deposit_billion": 66369.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 2.3,
     "estimated": false
   },
   {
     "date": "2025-07-14",
     "credit_balance_billion": 21185.3,
     "deposit_billion": 68081.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 2.7,
     "estimated": false
   },
   {
     "date": "2025-07-15",
     "credit_balance_billion": 21248.5,
     "deposit_billion": 66852.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 2.9,
     "estimated": false
   },
   {
     "date": "2025-07-16",
     "credit_balance_billion": 21316.3,
     "deposit_billion": 65595.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.9,
     "estimated": false
   },
   {
     "date": "2025-07-17",
     "credit_balance_billion": 21434.2,
     "deposit_billion": 66635.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.5,
     "estimated": false
   },
   {
     "date": "2025-07-18",
     "credit_balance_billion": 21588.8,
     "deposit_billion": 65364.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.9,
     "estimated": false
   },
   {
     "date": "2025-07-21",
     "credit_balance_billion": 21600.0,
     "deposit_billion": 65265.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.4,
     "estimated": false
   },
   {
     "date": "2025-07-22",
     "credit_balance_billion": 21573.6,
     "deposit_billion": 65607.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.5,
     "estimated": false
   },
   {
     "date": "2025-07-23",
     "credit_balance_billion": 21566.2,
     "deposit_billion": 66402.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.7,
     "estimated": false
   },
   {
     "date": "2025-07-24",
     "credit_balance_billion": 21667.4,
     "deposit_billion": 64766.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.8,
     "estimated": false
   },
   {
     "date": "2025-07-25",
     "credit_balance_billion": 21672.5,
     "deposit_billion": 65162.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.3,
     "estimated": false
   },
   {
     "date": "2025-07-28",
     "credit_balance_billion": 21626.1,
     "deposit_billion": 67724.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.7,
     "estimated": false
   },
   {
     "date": "2025-07-29",
     "credit_balance_billion": 21635.2,
     "deposit_billion": 67357.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.2,
     "estimated": false
   },
   {
     "date": "2025-07-30",
     "credit_balance_billion": 21705.3,
     "deposit_billion": 68236.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.6,
     "estimated": false
   },
   {
     "date": "2025-07-31",
     "credit_balance_billion": 21635.3,
     "deposit_billion": 68685.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.3,
     "estimated": false
   },
   {
     "date": "2025-08-01",
     "credit_balance_billion": 21611.4,
     "deposit_billion": 71297.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.7,
     "estimated": false
   },
   {
     "date": "2025-08-04",
     "credit_balance_billion": 21615.4,
     "deposit_billion": 70294.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 16.9,
     "estimated": false
   },
   {
     "date": "2025-08-05",
     "credit_balance_billion": 21481.8,
     "deposit_billion": 67008.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 13.4,
     "estimated": false
   },
   {
     "date": "2025-08-06",
     "credit_balance_billion": 21332.0,
     "deposit_billion": 66281.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.8,
     "estimated": false
   },
   {
     "date": "2025-08-07",
     "credit_balance_billion": 21404.9,
     "deposit_billion": 66876.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.3,
     "estimated": false
   },
   {
     "date": "2025-08-08",
     "credit_balance_billion": 21613.7,
     "deposit_billion": 67473.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.6,
     "estimated": false
   },
   {
     "date": "2025-08-11",
     "credit_balance_billion": 21861.9,
     "deposit_billion": 67961.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.9,
     "estimated": false
   },
   {
     "date": "2025-08-12",
     "credit_balance_billion": 22013.5,
     "deposit_billion": 68083.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.6,
     "estimated": false
   },
   {
     "date": "2025-08-13",
     "credit_balance_billion": 22025.6,
     "deposit_billion": 67833.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.8,
     "estimated": false
   },
   {
     "date": "2025-08-14",
     "credit_balance_billion": 22034.5,
     "deposit_billion": 69397.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.5,
     "estimated": false
   },
   {
@@ -4550,238 +4550,238 @@ export const CREDIT_DATA = [
     "date": "2025-08-18",
     "credit_balance_billion": 22066.3,
     "deposit_billion": 67601.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 11.2,
     "estimated": false
   },
   {
     "date": "2025-08-19",
     "credit_balance_billion": 22101.5,
     "deposit_billion": 67493.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.0,
     "estimated": false
   },
   {
     "date": "2025-08-20",
     "credit_balance_billion": 22118.5,
     "deposit_billion": 68508.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.5,
     "estimated": false
   },
   {
     "date": "2025-08-21",
     "credit_balance_billion": 21983.1,
     "deposit_billion": 67463.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.6,
     "estimated": false
   },
   {
     "date": "2025-08-22",
     "credit_balance_billion": 21776.2,
     "deposit_billion": 66622.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 13.1,
     "estimated": false
   },
   {
     "date": "2025-08-25",
     "credit_balance_billion": 21779.9,
     "deposit_billion": 66124.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.0,
     "estimated": false
   },
   {
     "date": "2025-08-26",
     "credit_balance_billion": 21687.4,
     "deposit_billion": 68274.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.8,
     "estimated": false
   },
   {
     "date": "2025-08-27",
     "credit_balance_billion": 21720.8,
     "deposit_billion": 66861.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.9,
     "estimated": false
   },
   {
     "date": "2025-08-28",
     "credit_balance_billion": 21903.3,
     "deposit_billion": 67359.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.7,
     "estimated": false
   },
   {
     "date": "2025-08-29",
     "credit_balance_billion": 21987.4,
     "deposit_billion": 66299.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.1,
     "estimated": false
   },
   {
     "date": "2025-09-01",
     "credit_balance_billion": 22051.2,
     "deposit_billion": 68477.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.7,
     "estimated": false
   },
   {
     "date": "2025-09-02",
     "credit_balance_billion": 22088.3,
     "deposit_billion": 66185.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.1,
     "estimated": false
   },
   {
     "date": "2025-09-03",
     "credit_balance_billion": 22016.9,
     "deposit_billion": 65459.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.7,
     "estimated": false
   },
   {
     "date": "2025-09-04",
     "credit_balance_billion": 21977.0,
     "deposit_billion": 65940.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.9,
     "estimated": false
   },
   {
     "date": "2025-09-05",
     "credit_balance_billion": 22046.0,
     "deposit_billion": 64979.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.2,
     "estimated": false
   },
   {
     "date": "2025-09-08",
     "credit_balance_billion": 22079.4,
     "deposit_billion": 65800.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.3,
     "estimated": false
   },
   {
     "date": "2025-09-09",
     "credit_balance_billion": 22176.1,
     "deposit_billion": 68378.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.3,
     "estimated": false
   },
   {
     "date": "2025-09-10",
     "credit_balance_billion": 22221.2,
     "deposit_billion": 70590.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.1,
     "estimated": false
   },
   {
     "date": "2025-09-11",
     "credit_balance_billion": 22271.3,
     "deposit_billion": 71011.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.4,
     "estimated": false
   },
   {
     "date": "2025-09-12",
     "credit_balance_billion": 22233.6,
     "deposit_billion": 72887.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.6,
     "estimated": false
   },
   {
     "date": "2025-09-15",
     "credit_balance_billion": 22322.8,
     "deposit_billion": 74764.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 2.7,
     "estimated": false
   },
   {
     "date": "2025-09-16",
     "credit_balance_billion": 22348.9,
     "deposit_billion": 74928.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.4,
     "estimated": false
   },
   {
     "date": "2025-09-17",
     "credit_balance_billion": 22596.4,
     "deposit_billion": 73025.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.0,
     "estimated": false
   },
   {
     "date": "2025-09-18",
     "credit_balance_billion": 22695.8,
     "deposit_billion": 73606.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.9,
     "estimated": false
   },
   {
     "date": "2025-09-19",
     "credit_balance_billion": 22858.3,
     "deposit_billion": 72551.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.2,
     "estimated": false
   },
   {
     "date": "2025-09-22",
     "credit_balance_billion": 22979.8,
     "deposit_billion": 73560.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.1,
     "estimated": false
   },
   {
     "date": "2025-09-23",
     "credit_balance_billion": 23100.4,
     "deposit_billion": 74921.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.5,
     "estimated": false
   },
   {
     "date": "2025-09-24",
     "credit_balance_billion": 23171.4,
     "deposit_billion": 75197.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.5,
     "estimated": false
   },
   {
     "date": "2025-09-25",
     "credit_balance_billion": 23326.0,
     "deposit_billion": 75995.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.4,
     "estimated": false
   },
   {
     "date": "2025-09-26",
     "credit_balance_billion": 23349.6,
     "deposit_billion": 75897.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 11.7,
     "estimated": false
   },
   {
     "date": "2025-09-29",
     "credit_balance_billion": 23268.9,
     "deposit_billion": 76808.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 19.7,
     "estimated": false
   },
   {
     "date": "2025-09-30",
     "credit_balance_billion": 23305.5,
     "deposit_billion": 76447.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 14.5,
     "estimated": false
   },
   {
     "date": "2025-10-01",
     "credit_balance_billion": 23160.0,
     "deposit_billion": 76530.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.7,
     "estimated": false
   },
   {
     "date": "2025-10-02",
     "credit_balance_billion": 23161.8,
     "deposit_billion": 73135.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.3,
     "estimated": false
   },
   {
@@ -4823,378 +4823,378 @@ export const CREDIT_DATA = [
     "date": "2025-10-10",
     "credit_balance_billion": 23062.2,
     "deposit_billion": 76322.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.1,
     "estimated": false
   },
   {
     "date": "2025-10-13",
     "credit_balance_billion": 23087.1,
     "deposit_billion": 80190.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.9,
     "estimated": false
   },
   {
     "date": "2025-10-14",
     "credit_balance_billion": 23375.5,
     "deposit_billion": 79974.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.7,
     "estimated": false
   },
   {
     "date": "2025-10-15",
     "credit_balance_billion": 23641.5,
     "deposit_billion": 78651.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.9,
     "estimated": false
   },
   {
     "date": "2025-10-16",
     "credit_balance_billion": 23581.5,
     "deposit_billion": 76537.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.9,
     "estimated": false
   },
   {
     "date": "2025-10-17",
     "credit_balance_billion": 23689.5,
     "deposit_billion": 78314.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 10.9,
     "estimated": false
   },
   {
     "date": "2025-10-20",
     "credit_balance_billion": 23862.1,
     "deposit_billion": 80625.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.5,
     "estimated": false
   },
   {
     "date": "2025-10-21",
     "credit_balance_billion": 23723.5,
     "deposit_billion": 80329.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.2,
     "estimated": false
   },
   {
     "date": "2025-10-22",
     "credit_balance_billion": 24037.6,
     "deposit_billion": 80480.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.4,
     "estimated": false
   },
   {
     "date": "2025-10-23",
     "credit_balance_billion": 24211.2,
     "deposit_billion": 80168.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.2,
     "estimated": false
   },
   {
     "date": "2025-10-24",
     "credit_balance_billion": 24440.4,
     "deposit_billion": 79482.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 14.9,
     "estimated": false
   },
   {
     "date": "2025-10-27",
     "credit_balance_billion": 24575.1,
     "deposit_billion": 81091.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.7,
     "estimated": false
   },
   {
     "date": "2025-10-28",
     "credit_balance_billion": 24611.5,
     "deposit_billion": 83873.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.0,
     "estimated": false
   },
   {
     "date": "2025-10-29",
     "credit_balance_billion": 24878.7,
     "deposit_billion": 85915.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.8,
     "estimated": false
   },
   {
     "date": "2025-10-30",
     "credit_balance_billion": 25056.4,
     "deposit_billion": 85713.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 11.0,
     "estimated": false
   },
   {
     "date": "2025-10-31",
     "credit_balance_billion": 25306.4,
     "deposit_billion": 85456.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.2,
     "estimated": false
   },
   {
     "date": "2025-11-03",
     "credit_balance_billion": 25236.9,
     "deposit_billion": 86770.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 13.4,
     "estimated": false
   },
   {
     "date": "2025-11-04",
     "credit_balance_billion": 25286.2,
     "deposit_billion": 86822.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 16.3,
     "estimated": false
   },
   {
     "date": "2025-11-05",
     "credit_balance_billion": 25591.4,
     "deposit_billion": 88270.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.0,
     "estimated": false
   },
   {
     "date": "2025-11-06",
     "credit_balance_billion": 25637.1,
     "deposit_billion": 86955.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 21.9,
     "estimated": false
   },
   {
     "date": "2025-11-07",
     "credit_balance_billion": 25984.6,
     "deposit_billion": 85722.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 38.0,
     "estimated": false
   },
   {
     "date": "2025-11-10",
     "credit_balance_billion": 25882.9,
     "deposit_billion": 83109.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 19.0,
     "estimated": false
   },
   {
     "date": "2025-11-11",
     "credit_balance_billion": 25754.6,
     "deposit_billion": 83030.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 19.6,
     "estimated": false
   },
   {
     "date": "2025-11-12",
     "credit_balance_billion": 25769.0,
     "deposit_billion": 82468.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.5,
     "estimated": false
   },
   {
     "date": "2025-11-13",
     "credit_balance_billion": 26001.5,
     "deposit_billion": 82584.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.0,
     "estimated": false
   },
   {
     "date": "2025-11-14",
     "credit_balance_billion": 26145.3,
     "deposit_billion": 82724.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 10.3,
     "estimated": false
   },
   {
     "date": "2025-11-17",
     "credit_balance_billion": 26349.1,
     "deposit_billion": 85944.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.7,
     "estimated": false
   },
   {
     "date": "2025-11-18",
     "credit_balance_billion": 26548.1,
     "deposit_billion": 79661.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 33.2,
     "estimated": false
   },
   {
     "date": "2025-11-19",
     "credit_balance_billion": 26594.5,
     "deposit_billion": 80027.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 10.6,
     "estimated": false
   },
   {
     "date": "2025-11-20",
     "credit_balance_billion": 26602.2,
     "deposit_billion": 78212.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.8,
     "estimated": false
   },
   {
     "date": "2025-11-21",
     "credit_balance_billion": 26524.8,
     "deposit_billion": 78826.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 16.8,
     "estimated": false
   },
   {
     "date": "2025-11-24",
     "credit_balance_billion": 26515.5,
     "deposit_billion": 80195.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 11.4,
     "estimated": false
   },
   {
     "date": "2025-11-25",
     "credit_balance_billion": 26416.9,
     "deposit_billion": 75622.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 37.3,
     "estimated": false
   },
   {
     "date": "2025-11-26",
     "credit_balance_billion": 26260.9,
     "deposit_billion": 77954.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.0,
     "estimated": false
   },
   {
     "date": "2025-11-27",
     "credit_balance_billion": 26216.4,
     "deposit_billion": 77471.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.1,
     "estimated": false
   },
   {
     "date": "2025-11-28",
     "credit_balance_billion": 26223.5,
     "deposit_billion": 77912.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.1,
     "estimated": false
   },
   {
     "date": "2025-12-01",
     "credit_balance_billion": 26359.7,
     "deposit_billion": 80176.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.4,
     "estimated": false
   },
   {
     "date": "2025-12-02",
     "credit_balance_billion": 26569.2,
     "deposit_billion": 77067.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.9,
     "estimated": false
   },
   {
     "date": "2025-12-03",
     "credit_balance_billion": 26593.4,
     "deposit_billion": 76964.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 3.5,
     "estimated": false
   },
   {
     "date": "2025-12-04",
     "credit_balance_billion": 26664.8,
     "deposit_billion": 77407.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.0,
     "estimated": false
   },
   {
     "date": "2025-12-05",
     "credit_balance_billion": 26847.7,
     "deposit_billion": 78137.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.1,
     "estimated": false
   },
   {
     "date": "2025-12-08",
     "credit_balance_billion": 27125.1,
     "deposit_billion": 79386.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.8,
     "estimated": false
   },
   {
     "date": "2025-12-09",
     "credit_balance_billion": 27103.4,
     "deposit_billion": 80575.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.3,
     "estimated": false
   },
   {
     "date": "2025-12-10",
     "credit_balance_billion": 27176.1,
     "deposit_billion": 80566.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.7,
     "estimated": false
   },
   {
     "date": "2025-12-11",
     "credit_balance_billion": 27161.6,
     "deposit_billion": 81641.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.9,
     "estimated": false
   },
   {
     "date": "2025-12-12",
     "credit_balance_billion": 27095.0,
     "deposit_billion": 83941.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.4,
     "estimated": false
   },
   {
     "date": "2025-12-15",
     "credit_balance_billion": 27173.9,
     "deposit_billion": 82864.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.3,
     "estimated": false
   },
   {
     "date": "2025-12-16",
     "credit_balance_billion": 27097.0,
     "deposit_billion": 84352.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 10.7,
     "estimated": false
   },
   {
     "date": "2025-12-17",
     "credit_balance_billion": 27294.3,
     "deposit_billion": 83526.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.1,
     "estimated": false
   },
   {
     "date": "2025-12-18",
     "credit_balance_billion": 27108.6,
     "deposit_billion": 81710.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 15.2,
     "estimated": false
   },
   {
     "date": "2025-12-19",
     "credit_balance_billion": 27034.1,
     "deposit_billion": 81034.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.3,
     "estimated": false
   },
   {
     "date": "2025-12-22",
     "credit_balance_billion": 27009.7,
     "deposit_billion": 81719.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.2,
     "estimated": false
   },
   {
     "date": "2025-12-23",
     "credit_balance_billion": 27000.2,
     "deposit_billion": 81076.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.1,
     "estimated": false
   },
   {
     "date": "2025-12-24",
     "credit_balance_billion": 27036.9,
     "deposit_billion": 83304.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.0,
     "estimated": false
   },
   {
@@ -5208,21 +5208,21 @@ export const CREDIT_DATA = [
     "date": "2025-12-26",
     "credit_balance_billion": 27010.3,
     "deposit_billion": 85425.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 4.5,
     "estimated": false
   },
   {
     "date": "2025-12-29",
     "credit_balance_billion": 27056.0,
     "deposit_billion": 86475.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.9,
     "estimated": false
   },
   {
     "date": "2025-12-30",
     "credit_balance_billion": 27024.1,
     "deposit_billion": 87398.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.8,
     "estimated": false
   },
   {
@@ -5243,217 +5243,217 @@ export const CREDIT_DATA = [
     "date": "2026-01-02",
     "credit_balance_billion": 27183.9,
     "deposit_billion": 89521.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.1,
     "estimated": false
   },
   {
     "date": "2026-01-05",
     "credit_balance_billion": 27387.8,
     "deposit_billion": 89130.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.2,
     "estimated": false
   },
   {
     "date": "2026-01-06",
     "credit_balance_billion": 27456.8,
     "deposit_billion": 88633.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 5.2,
     "estimated": false
   },
   {
     "date": "2026-01-07",
     "credit_balance_billion": 27627.7,
     "deposit_billion": 89765.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.2,
     "estimated": false
   },
   {
     "date": "2026-01-08",
     "credit_balance_billion": 27945.0,
     "deposit_billion": 92853.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.4,
     "estimated": false
   },
   {
     "date": "2026-01-09",
     "credit_balance_billion": 28103.7,
     "deposit_billion": 88872.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 11.8,
     "estimated": false
   },
   {
     "date": "2026-01-12",
     "credit_balance_billion": 28280.4,
     "deposit_billion": 88988.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 13.1,
     "estimated": false
   },
   {
     "date": "2026-01-13",
     "credit_balance_billion": 28314.7,
     "deposit_billion": 88048.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.2,
     "estimated": false
   },
   {
     "date": "2026-01-14",
     "credit_balance_billion": 28351.0,
     "deposit_billion": 89309.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 11.5,
     "estimated": false
   },
   {
     "date": "2026-01-15",
     "credit_balance_billion": 28501.6,
     "deposit_billion": 92603.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.9,
     "estimated": false
   },
   {
     "date": "2026-01-16",
     "credit_balance_billion": 28690.4,
     "deposit_billion": 91218.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 15.0,
     "estimated": false
   },
   {
     "date": "2026-01-19",
     "credit_balance_billion": 28751.3,
     "deposit_billion": 93862.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.7,
     "estimated": false
   },
   {
     "date": "2026-01-20",
     "credit_balance_billion": 28680.7,
     "deposit_billion": 95526.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.4,
     "estimated": false
   },
   {
     "date": "2026-01-21",
     "credit_balance_billion": 28829.2,
     "deposit_billion": 96331.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.3,
     "estimated": false
   },
   {
     "date": "2026-01-22",
     "credit_balance_billion": 28664.9,
     "deposit_billion": 95727.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.9,
     "estimated": false
   },
   {
     "date": "2026-01-23",
     "credit_balance_billion": 28765.0,
     "deposit_billion": 93809.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 14.2,
     "estimated": false
   },
   {
     "date": "2026-01-26",
     "credit_balance_billion": 29091.0,
     "deposit_billion": 97540.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 11.9,
     "estimated": false
   },
   {
     "date": "2026-01-27",
     "credit_balance_billion": 28984.7,
     "deposit_billion": 100282.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 19.3,
     "estimated": false
   },
   {
     "date": "2026-01-28",
     "credit_balance_billion": 29283.0,
     "deposit_billion": 103362.3,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.7,
     "estimated": false
   },
   {
     "date": "2026-01-29",
     "credit_balance_billion": 29758.6,
     "deposit_billion": 103707.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.5,
     "estimated": false
   },
   {
     "date": "2026-01-30",
     "credit_balance_billion": 29894.6,
     "deposit_billion": 106032.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.7,
     "estimated": false
   },
   {
     "date": "2026-02-02",
     "credit_balance_billion": 30056.2,
     "deposit_billion": 111296.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.0,
     "estimated": false
   },
   {
     "date": "2026-02-03",
     "credit_balance_billion": 30110.2,
     "deposit_billion": 105584.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 15.9,
     "estimated": false
   },
   {
     "date": "2026-02-04",
     "credit_balance_billion": 30517.4,
     "deposit_billion": 100817.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 13.3,
     "estimated": false
   },
   {
     "date": "2026-02-05",
     "credit_balance_billion": 30371.2,
     "deposit_billion": 104866.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.8,
     "estimated": false
   },
   {
     "date": "2026-02-06",
     "credit_balance_billion": 30670.7,
     "deposit_billion": 109009.9,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.3,
     "estimated": false
   },
   {
     "date": "2026-02-09",
     "credit_balance_billion": 31180.9,
     "deposit_billion": 98590.5,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 36.0,
     "estimated": false
   },
   {
     "date": "2026-02-10",
     "credit_balance_billion": 31139.8,
     "deposit_billion": 95299.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 16.9,
     "estimated": false
   },
   {
     "date": "2026-02-11",
     "credit_balance_billion": 30894.7,
     "deposit_billion": 98163.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.0,
     "estimated": false
   },
   {
     "date": "2026-02-12",
     "credit_balance_billion": 31041.4,
     "deposit_billion": 103018.4,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 12.0,
     "estimated": false
   },
   {
     "date": "2026-02-13",
     "credit_balance_billion": 31052.8,
     "deposit_billion": 99273.6,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 6.3,
     "estimated": false
   },
   {
@@ -5481,49 +5481,49 @@ export const CREDIT_DATA = [
     "date": "2026-02-19",
     "credit_balance_billion": 31163.5,
     "deposit_billion": 106570.0,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.4,
     "estimated": false
   },
   {
     "date": "2026-02-20",
     "credit_balance_billion": 31203.4,
     "deposit_billion": 104129.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 8.7,
     "estimated": false
   },
   {
     "date": "2026-02-23",
     "credit_balance_billion": 31265.7,
     "deposit_billion": 108290.1,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.1,
     "estimated": false
   },
   {
     "date": "2026-02-24",
     "credit_balance_billion": 31506.0,
     "deposit_billion": 107903.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 9.7,
     "estimated": false
   },
   {
     "date": "2026-02-25",
     "credit_balance_billion": 31666.1,
     "deposit_billion": 109467.7,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 29.1,
     "estimated": false
   },
   {
     "date": "2026-02-26",
     "credit_balance_billion": 31903.1,
     "deposit_billion": 119483.2,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 15.4,
     "estimated": false
   },
   {
     "date": "2026-02-27",
     "credit_balance_billion": 32188.1,
     "deposit_billion": 118748.8,
-    "forced_liq_billion": null,
+    "forced_liq_billion": 7.7,
     "estimated": false
   },
   {
@@ -5535,9 +5535,9 @@ export const CREDIT_DATA = [
   },
   {
     "date": "2026-03-03",
-    "credit_balance_billion": null,
-    "deposit_billion": null,
-    "forced_liq_billion": null,
+    "credit_balance_billion": 32804.1,
+    "deposit_billion": 129818.8,
+    "forced_liq_billion": 9.2,
     "estimated": false
   },
   {
@@ -18913,7 +18913,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-06T00:31:18.360763",
+  "last_updated": "2026-03-06T00:40:40.017806",
   "last_date": "2026-03-05",
   "data_source": "pipeline",
   "data_quality": {

@@ -116,16 +116,16 @@ def export_all() -> None:
             "forced_liq_billion": settlement.get("forced_liquidation_billion"),
             "estimated": credit.get("estimated", False),
         })
-    # Fallback: ts 기반 credit data (daily snapshot 없을 때)
-    if not credit_data and ts:
-        for r in ts:
-            credit_data.append({
-                "date": r["date"],
-                "credit_balance_billion": r.get("credit_balance_billion"),
-                "deposit_billion": r.get("deposit_billion"),
-                "forced_liq_billion": r.get("forced_liq_billion"),
-                "estimated": r.get("credit_estimated", False),
-            })
+    # Merge: timeseries 값으로 snapshot 빈 값 보완
+    ts_map = {r["date"]: r for r in ts} if ts else {}
+    for cd in credit_data:
+        tr = ts_map.get(cd["date"], {})
+        if cd["credit_balance_billion"] is None:
+            cd["credit_balance_billion"] = tr.get("credit_balance_billion")
+        if cd["deposit_billion"] is None:
+            cd["deposit_billion"] = tr.get("deposit_billion")
+        if cd["forced_liq_billion"] is None:
+            cd["forced_liq_billion"] = tr.get("forced_liq_billion")
 
     # === 3. INVESTOR_FLOWS ===
     investor_flows = []
