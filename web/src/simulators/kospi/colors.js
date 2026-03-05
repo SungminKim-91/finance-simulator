@@ -15,7 +15,11 @@ export const C = {
   safe6: "#4caf50", good6: "#8bc34a", caution6: "#ffc107",
   marginCall6: "#ff9800", forcedLiq6: "#ff5252", debtExceed6: "#ff1744",
 
-  /* RSPI variable colors (v2.0.0) — CF(가속력) 4 + DF(감쇠력) 4 */
-  rspiCF1: "#5c6bc0", rspiCF2: "#ef5350", rspiCF3: "#f59e0b", rspiCF4: "#26a69a",
-  rspiDF1: "#4caf50", rspiDF2: "#42a5f5", rspiDF3: "#ab47bc", rspiDF4: "#8bc34a",
+  /* RSPI variable colors (v2.2.0) — 5-variable + Volume Amplifier */
+  rspiV1: "#ef5350",   // Red - cohort proximity
+  rspiV2: "#42a5f5",   // Blue - foreign flow
+  rspiV3: "#4caf50",   // Green - overnight
+  rspiV4: "#ec4899",   // Pink - individual flow
+  rspiV5: "#ab47bc",   // Purple - credit momentum
+  rspiVA: "#78909c",   // Blue Grey - volume amplifier
 };

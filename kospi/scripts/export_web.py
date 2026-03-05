@@ -20,8 +20,8 @@ Exports (18):
  14. COHORT_HISTORY    — 코호트 히스토리 (레지스트리 + 일별 스냅샷)
  15. BACKTEST_DATES    — 급변동일 목록 + D+1~D+5 실제 데이터
  16. STOCK_CREDIT      — 종목별 신용잔고 배분 + 가중 트리거맵
- 17. VLPI_DATA         — 자발적 청산 압력 지수 (히스토리 + 시나리오 매트릭스)
- 18. VLPI_CONFIG       — VLPI 가중치, 상태기준, 변수 설명, 영향 파라미터
+ 17. RSPI_DATA         — RSPI 히스토리 + 시나리오 매트릭스 (v2.2.0 5변수+VA)
+ 18. RSPI_CONFIG       — RSPI 가중치, 7단계 레벨, 변수 설명, 영향 파라미터
 
 Usage:
     python kospi/scripts/export_web.py
@@ -41,7 +41,7 @@ if str(PROJECT_ROOT) not in _sys.path:
 from config.constants import (
     MARGIN_RATE, LOAN_RATE, STATUS_THRESHOLDS, LEVERAGE,
     SAMSUNG_CREDIT_WEIGHT,
-    RSPI_CF_WEIGHTS, RSPI_DF_WEIGHTS,
+    RSPI_WEIGHTS,
     RSPI_SENSITIVITY, RSPI_SIGMOID_K, RSPI_SIGMOID_MID,
 )
 
@@ -302,28 +302,26 @@ def export_all() -> None:
         "scenario_matrix": rspi_raw.get("scenario_matrix", []),
     }
 
-    # === 18. RSPI_CONFIG ===
+    # === 18. RSPI_CONFIG (v2.2.0 — 5변수 + VA) ===
     rspi_config = {
-        "weights": rspi_raw.get("weights", {"cf": RSPI_CF_WEIGHTS, "df": RSPI_DF_WEIGHTS}),
+        "weights": rspi_raw.get("weights", RSPI_WEIGHTS),
         "status_thresholds": STATUS_THRESHOLDS,
-        "cf_variables": [
-            {"key": "v1", "label": "주의구간 비중", "desc": "담보비율 140~170% 코호트 비중", "range": "0~1"},
-            {"key": "v2", "label": "연속 하락", "desc": "연속 하락일수 + 누적 하락률", "range": "0~1"},
-            {"key": "v3", "label": "개인 수급", "desc": "전일 개인 순매수 패턴", "range": "0~1"},
-            {"key": "v4", "label": "신용 가속", "desc": "신용잔고 감소 가속 모멘텀", "range": "0~0.7"},
+        "variables": [
+            {"key": "v1", "label": "코호트 proximity", "desc": "담보비율 마진콜(140%)까지 거리", "range": "0~1", "direction": "unidirectional"},
+            {"key": "v2", "label": "외국인 수급", "desc": "외국인 순매매 z-score (20일)", "range": "-1~1", "direction": "bidirectional"},
+            {"key": "v3", "label": "야간시장", "desc": "EWY/KORU/야간선물/미국증시 4소스 + coherence", "range": "-1~1", "direction": "bidirectional"},
+            {"key": "v4", "label": "개인 수급", "desc": "개인 순매수 패턴 (항복/흡수)", "range": "-1~1", "direction": "bidirectional"},
+            {"key": "v5", "label": "신용잔고", "desc": "신용잔고 변화율 (D+1 시차)", "range": "-1~1", "direction": "bidirectional"},
         ],
-        "df_variables": [
-            {"key": "d1", "label": "야간 반등", "desc": "EWY/KORU/야간선물/US 반등 + coherence", "range": "0~1"},
-            {"key": "d2", "label": "신용 유입", "desc": "하락일 신용증가 = 저가매수 (D+1 시차)", "range": "0~1"},
-            {"key": "d3", "label": "외국인 소진", "desc": "외국인 매도 규모 감소/전환", "range": "0~1"},
-            {"key": "d4", "label": "안전 버퍼", "desc": "안전구간 코호트 비중 (방화벽)", "range": "0~1"},
-        ],
+        "volume_amplifier": {"label": "거래량 증폭기", "range": "0.3~2.0", "desc": "적응형 기준선 + log2 확신도"},
         "levels": [
-            {"min": -100, "max": -20, "label": "반등 압력", "color": "#4caf50"},
-            {"min": -20,  "max": 0,   "label": "균형",      "color": "#8bc34a"},
-            {"min": 0,    "max": 20,  "label": "약한 하락",  "color": "#ffc107"},
-            {"min": 20,   "max": 40,  "label": "하락 우세",  "color": "#ff9800"},
-            {"min": 40,   "max": 100, "label": "캐스케이드", "color": "#f44336"},
+            {"min": -100, "max": -40, "key": "extreme_sell",    "label": "극단 매도",  "color": "#b71c1c"},
+            {"min": -40,  "max": -20, "key": "strong_sell",     "label": "강한 매도",  "color": "#f44336"},
+            {"min": -20,  "max": -5,  "key": "mild_sell",       "label": "약한 매도",  "color": "#ffc107"},
+            {"min": -5,   "max": 5,   "key": "neutral",         "label": "중립",       "color": "#9e9e9e"},
+            {"min": 5,    "max": 20,  "key": "mild_rebound",    "label": "약한 반등",  "color": "#8bc34a"},
+            {"min": 20,   "max": 40,  "key": "strong_rebound",  "label": "강한 반등",  "color": "#4caf50"},
+            {"min": 40,   "max": 100, "key": "extreme_rebound", "label": "극단 반등",  "color": "#1b5e20"},
         ],
         "impact_params": {
             "sensitivity": RSPI_SENSITIVITY,

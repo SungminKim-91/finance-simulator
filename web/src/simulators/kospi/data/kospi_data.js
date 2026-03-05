@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-06T01:47:07.260839
+ * Generated: 2026-03-06T05:50:09.175919
  * Source: kospi/data/ (pipeline)
  * Exports: 18
  */
@@ -14213,6 +14213,17 @@ export const COHORT_DATA = {
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
+    },
+    {
+      "entry_date": "2026-03-04",
+      "entry_kospi": 5093.54,
+      "entry_stock_price": 0,
+      "amount": 393.59999999999854,
+      "pnl_pct": 13.11,
+      "collateral_ratio": 2.057,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
     }
   ],
   "fifo": [
@@ -16448,6 +16459,17 @@ export const COHORT_DATA = {
       "collateral_ratio_pct": 0,
       "status": "safe",
       "status_6": "safe"
+    },
+    {
+      "entry_date": "2026-03-04",
+      "entry_kospi": 5093.54,
+      "entry_stock_price": 0,
+      "amount": 393.59999999999854,
+      "pnl_pct": 13.11,
+      "collateral_ratio": 2.057,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
     }
   ],
   "price_distribution_lifo": [
@@ -16751,7 +16773,7 @@ export const COHORT_DATA = {
     {
       "range": "5000-5100",
       "bin": 5000,
-      "safe": 299.5,
+      "safe": 693.0999999999985,
       "good": 0,
       "caution": 0,
       "watch": 0,
@@ -17182,7 +17204,7 @@ export const COHORT_DATA = {
     {
       "range": "5000-5100",
       "bin": 5000,
-      "safe": 299.5,
+      "safe": 693.0999999999985,
       "good": 0,
       "caution": 0,
       "watch": 0,
@@ -17416,7 +17438,7 @@ export const COHORT_DATA = {
     {
       "shock_pct": -30,
       "expected_kospi": 3909,
-      "margin_call_billion": 0,
+      "margin_call_billion": 106,
       "forced_liq_billion": 0,
       "weighted_impact_billion": 0,
       "stock_shocks": {
@@ -17454,7 +17476,7 @@ export const COHORT_DATA = {
 };
 
 export const CRISIS_SCORE = {
-  "current": 36.9,
+  "current": 41.6,
   "classification": "normal",
   "weights": {
     "leverage_heat": 0.1,
@@ -17479,8 +17501,8 @@ export const CRISIS_SCORE = {
       "desc": "신용/시총"
     },
     "flow_concentration": {
-      "value": 11.9,
-      "raw": 0,
+      "value": 12.6,
+      "raw": 0.0402,
       "desc": "개인편중"
     },
     "price_deviation": {
@@ -17504,8 +17526,8 @@ export const CRISIS_SCORE = {
       "desc": "VIX"
     },
     "volume_explosion": {
-      "value": 7.6,
-      "raw": 0.0,
+      "value": 100,
+      "raw": 17.4465,
       "desc": "거래폭증"
     },
     "forced_liq_intensity": {
@@ -17837,12 +17859,12 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-03-04",
-      "score": 39.6,
-      "classification": "normal"
+      "score": 55.0,
+      "classification": "caution"
     },
     {
       "date": "2026-03-05",
-      "score": 36.9,
+      "score": 41.6,
       "classification": "normal"
     }
   ]
@@ -17878,7 +17900,7 @@ export const SCENARIOS = {
         2100,
         2400
       ],
-      "current_prob": 1.0
+      "current_prob": 0.0
     },
     {
       "id": "S4",
@@ -17888,7 +17910,7 @@ export const SCENARIOS = {
         1800,
         2100
       ],
-      "current_prob": 0.0
+      "current_prob": 1.0
     },
     {
       "id": "S5",
@@ -18378,35 +18400,35 @@ export const SCENARIOS = {
       "date": "2026-03-05",
       "s1": 0.0,
       "s2": 0.0,
-      "s3": 1.0,
-      "s4": 0.0,
+      "s3": 0.0,
+      "s4": 1.0,
       "s5": 0.0
     }
   ],
   "key_drivers": [
     {
+      "indicator": "credit_change",
+      "observed": -100.0,
+      "expected": 1.5,
+      "z_score": -90.78,
+      "direction": "opposing",
+      "scenario": "S4"
+    },
+    {
       "indicator": "retail_flow",
       "observed": 1822.8,
-      "expected": -200,
-      "z_score": 45.23,
+      "expected": -1000,
+      "z_score": 48.89,
       "direction": "opposing",
-      "scenario": "S3"
+      "scenario": "S4"
     },
     {
       "indicator": "institutional_flow",
       "observed": -1718.6,
-      "expected": -1000,
-      "z_score": -20.33,
+      "expected": -3000,
+      "z_score": 28.65,
       "direction": "opposing",
-      "scenario": "S3"
-    },
-    {
-      "indicator": "fx_rate",
-      "observed": 1469.5,
-      "expected": 1430,
-      "z_score": 2.16,
-      "direction": "opposing",
-      "scenario": "S3"
+      "scenario": "S4"
     }
   ]
 };
@@ -18783,7 +18805,7 @@ export const HISTORICAL = {
     {
       "indicator": "flow_concentration",
       "label": "개인편중",
-      "current": 0
+      "current": 0.0402
     },
     {
       "indicator": "price_deviation",
@@ -18808,7 +18830,7 @@ export const HISTORICAL = {
     {
       "indicator": "volume_explosion",
       "label": "거래폭증",
-      "current": 0.0
+      "current": 17.4465
     },
     {
       "indicator": "forced_liq_intensity",
@@ -18913,7 +18935,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-06T01:47:07.260249",
+  "last_updated": "2026-03-06T05:50:09.175388",
   "last_date": "2026-03-05",
   "data_source": "pipeline",
   "data_quality": {
@@ -19533,6 +19555,9 @@ export const COHORT_HISTORY = {
     },
     "2026-03-03": {
       "entry_kospi": 5791.91
+    },
+    "2026-03-04": {
+      "entry_kospi": 5093.54
     }
   },
   "snapshots": [
@@ -38105,14 +38130,15 @@ export const COHORT_HISTORY = {
         "2026-02-25": 160.1,
         "2026-02-26": 237.0,
         "2026-02-27": 285.0,
-        "2026-03-03": 616.0
+        "2026-03-03": 616.0,
+        "2026-03-04": 393.6
       }
     },
     {
       "date": "2026-03-05",
       "kospi": 5583.9,
       "usd_krw": 1469.5,
-      "trading_value": null,
+      "trading_value": 45309.0,
       "amounts": {
         "2025-01-02": 15466.2,
         "2025-01-06": 130.7,
@@ -38245,7 +38271,8 @@ export const COHORT_HISTORY = {
         "2026-02-25": 160.1,
         "2026-02-26": 237.0,
         "2026-02-27": 285.0,
-        "2026-03-03": 616.0
+        "2026-03-03": 616.0,
+        "2026-03-04": 393.6
       }
     }
   ]
@@ -40390,7 +40417,7 @@ export const BACKTEST_DATES = [
         "day": 5,
         "date": "2026-03-04",
         "kospi": 5093.54,
-        "credit_balance_billion": null,
+        "credit_balance_billion": 33197.7,
         "individual_billion": 79.6,
         "foreign_billion": 230.3,
         "institution_billion": -597.8,
@@ -40428,7 +40455,7 @@ export const BACKTEST_DATES = [
         "day": 3,
         "date": "2026-03-04",
         "kospi": 5093.54,
-        "credit_balance_billion": null,
+        "credit_balance_billion": 33197.7,
         "individual_billion": 79.6,
         "foreign_billion": 230.3,
         "institution_billion": -597.8,
@@ -40442,7 +40469,7 @@ export const BACKTEST_DATES = [
         "individual_billion": 1822.8,
         "foreign_billion": -144.6,
         "institution_billion": -1718.6,
-        "trading_value_billion": null
+        "trading_value_billion": 45309.0
       }
     ]
   },
@@ -40456,7 +40483,7 @@ export const BACKTEST_DATES = [
         "day": 1,
         "date": "2026-03-04",
         "kospi": 5093.54,
-        "credit_balance_billion": null,
+        "credit_balance_billion": 33197.7,
         "individual_billion": 79.6,
         "foreign_billion": 230.3,
         "institution_billion": -597.8,
@@ -40470,7 +40497,7 @@ export const BACKTEST_DATES = [
         "individual_billion": 1822.8,
         "foreign_billion": -144.6,
         "institution_billion": -1718.6,
-        "trading_value_billion": null
+        "trading_value_billion": 45309.0
       }
     ]
   },
@@ -40488,7 +40515,7 @@ export const BACKTEST_DATES = [
         "individual_billion": 1822.8,
         "foreign_billion": -144.6,
         "institution_billion": -1718.6,
-        "trading_value_billion": null
+        "trading_value_billion": 45309.0
       }
     ]
   },
@@ -40507,11 +40534,11 @@ export const STOCK_CREDIT = {
       "ticker": "005930",
       "name": "삼성전자",
       "group": "A",
-      "credit_billion": 17405.86,
+      "credit_billion": 17614.7,
       "kospi_weight_pct": 53.06,
       "current_price": 191600,
       "status_breakdown": {
-        "safe": 17043.93,
+        "safe": 17252.77,
         "good": 361.93,
         "caution": 0,
         "watch": 0,
@@ -40525,11 +40552,11 @@ export const STOCK_CREDIT = {
       "ticker": "000660",
       "name": "SK하이닉스",
       "group": "A",
-      "credit_billion": 8827.58,
+      "credit_billion": 8933.5,
       "kospi_weight_pct": 26.91,
       "current_price": 941000,
       "status_breakdown": {
-        "safe": 8644.02,
+        "safe": 8749.94,
         "good": 183.56,
         "caution": 0,
         "watch": 0,
@@ -40543,11 +40570,11 @@ export const STOCK_CREDIT = {
       "ticker": "005380",
       "name": "현대차",
       "group": "A",
-      "credit_billion": 1938.72,
+      "credit_billion": 1961.98,
       "kospi_weight_pct": 5.91,
       "current_price": 548000,
       "status_breakdown": {
-        "safe": 1898.4,
+        "safe": 1921.66,
         "good": 40.32,
         "caution": 0,
         "watch": 0,
@@ -40561,11 +40588,11 @@ export const STOCK_CREDIT = {
       "ticker": "373220",
       "name": "LG에너지솔루션",
       "group": "A",
-      "credit_billion": 1180.95,
+      "credit_billion": 1195.12,
       "kospi_weight_pct": 3.6,
       "current_price": 371500,
       "status_breakdown": {
-        "safe": 1156.4,
+        "safe": 1170.57,
         "good": 24.55,
         "caution": 0,
         "watch": 0,
@@ -40579,11 +40606,11 @@ export const STOCK_CREDIT = {
       "ticker": "000270",
       "name": "기아",
       "group": "A",
-      "credit_billion": 872.59,
+      "credit_billion": 883.06,
       "kospi_weight_pct": 2.66,
       "current_price": 166400,
       "status_breakdown": {
-        "safe": 854.45,
+        "safe": 864.92,
         "good": 18.14,
         "caution": 0,
         "watch": 0,
@@ -40597,11 +40624,11 @@ export const STOCK_CREDIT = {
       "ticker": "105560",
       "name": "KB금융",
       "group": "A",
-      "credit_billion": 724.97,
+      "credit_billion": 733.67,
       "kospi_weight_pct": 2.21,
       "current_price": 149000,
       "status_breakdown": {
-        "safe": 709.89,
+        "safe": 718.59,
         "good": 15.08,
         "caution": 0,
         "watch": 0,
@@ -40615,11 +40642,11 @@ export const STOCK_CREDIT = {
       "ticker": "068270",
       "name": "셀트리온",
       "group": "A",
-      "credit_billion": 629.84,
+      "credit_billion": 637.4,
       "kospi_weight_pct": 1.92,
       "current_price": 211500,
       "status_breakdown": {
-        "safe": 616.75,
+        "safe": 624.31,
         "good": 13.09,
         "caution": 0,
         "watch": 0,
@@ -40633,11 +40660,11 @@ export const STOCK_CREDIT = {
       "ticker": "035420",
       "name": "NAVER",
       "group": "A",
-      "credit_billion": 446.14,
+      "credit_billion": 451.49,
       "kospi_weight_pct": 1.36,
       "current_price": 220000,
       "status_breakdown": {
-        "safe": 436.86,
+        "safe": 442.21,
         "good": 9.28,
         "caution": 0,
         "watch": 0,
@@ -40651,11 +40678,11 @@ export const STOCK_CREDIT = {
       "ticker": "006400",
       "name": "삼성SDI",
       "group": "A",
-      "credit_billion": 419.89,
+      "credit_billion": 424.93,
       "kospi_weight_pct": 1.28,
       "current_price": 392500,
       "status_breakdown": {
-        "safe": 411.16,
+        "safe": 416.2,
         "good": 8.73,
         "caution": 0,
         "watch": 0,
@@ -40669,11 +40696,11 @@ export const STOCK_CREDIT = {
       "ticker": "005490",
       "name": "POSCO홀딩스",
       "group": "A",
-      "credit_billion": 357.56,
+      "credit_billion": 361.85,
       "kospi_weight_pct": 1.09,
       "current_price": 346500,
       "status_breakdown": {
-        "safe": 350.13,
+        "safe": 354.42,
         "good": 7.43,
         "caution": 0,
         "watch": 0,
@@ -40805,7 +40832,7 @@ export const STOCK_CREDIT = {
     {
       "shock_pct": -30,
       "expected_kospi": 3909,
-      "margin_call_billion": 0,
+      "margin_call_billion": 106,
       "forced_liq_billion": 0,
       "weighted_impact_billion": 0,
       "stock_shocks": {
@@ -40923,7892 +40950,5788 @@ export const RSPI_DATA = {
   "history": [
     {
       "date": "2025-02-05",
-      "rspi": -41.2,
-      "cascade_force": 13.6,
-      "damping_force": 54.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 8.3,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 2.5,
+      "level": "neutral",
+      "raw": -0.0278,
+      "volume_amp": 0.908,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.2765,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.1362,
+        "v3": -0.2765,
+        "v4": 0.2,
+        "v5": 0.2858
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 2.47,
+        "v3": 6.28,
+        "v4": -3.63,
+        "v5": -2.59
       },
       "impact": null
     },
     {
       "date": "2025-02-06",
-      "rspi": -36.2,
-      "cascade_force": 13.6,
-      "damping_force": 49.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 3.3,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 4.3,
+      "level": "neutral",
+      "raw": -0.0429,
+      "volume_amp": 1.013,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.1106,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.4188,
+        "v3": -0.1106,
+        "v4": 0.2,
+        "v5": 0.2853
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 8.49,
+        "v3": 2.8,
+        "v4": -4.05,
+        "v5": -2.89
       },
       "impact": null
     },
     {
       "date": "2025-02-07",
-      "rspi": -7.4,
-      "cascade_force": 23.6,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -5.2,
+      "level": "mild_sell",
+      "raw": 0.0543,
+      "volume_amp": 0.952,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1437,
+        "v3": 0.4789,
+        "v4": -0.4,
+        "v5": -0.1418
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -2.74,
+        "v3": -11.4,
+        "v4": 7.62,
+        "v5": 1.35
       },
       "impact": null
     },
     {
       "date": "2025-02-10",
-      "rspi": -19.0,
-      "cascade_force": 25.0,
-      "damping_force": 44.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 13.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -10.0,
+      "level": "mild_sell",
+      "raw": 0.101,
+      "volume_amp": 0.99,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.4342,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1625,
+        "v3": -0.4342,
+        "v4": 1.0,
+        "v5": -0.23
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.22,
+        "v3": 10.75,
+        "v4": -19.8,
+        "v5": 2.28
       },
       "impact": null
     },
     {
       "date": "2025-02-11",
-      "rspi": -48.7,
-      "cascade_force": 5.0,
-      "damping_force": 53.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 6.1,
+      "level": "mild_rebound",
+      "raw": -0.0602,
+      "volume_amp": 1.019,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0073,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.271,
+        "v3": 0.0021,
+        "v4": 0.2,
+        "v5": -0.4654
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 5.52,
+        "v3": -0.05,
+        "v4": -4.08,
+        "v5": 4.74
       },
       "impact": null
     },
     {
       "date": "2025-02-12",
-      "rspi": -43.8,
-      "cascade_force": 5.0,
-      "damping_force": 48.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 12.2,
+      "level": "mild_rebound",
+      "raw": -0.1079,
+      "volume_amp": 1.126,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0095,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.561,
+        "v3": 0.0104,
+        "v4": 0.2,
+        "v5": -0.3832
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 12.64,
+        "v3": -0.29,
+        "v4": -4.5,
+        "v5": 4.32
       },
       "impact": null
     },
     {
       "date": "2025-02-13",
-      "rspi": -42.0,
-      "cascade_force": 5.0,
-      "damping_force": 47.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 16.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 15.4,
+      "level": "mild_rebound",
+      "raw": -0.1259,
+      "volume_amp": 1.225,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.5333,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": -0.0373,
+        "v3": -0.5333,
+        "v4": 0.2,
+        "v5": -0.2507
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.91,
+        "v3": 16.33,
+        "v4": -4.9,
+        "v5": 3.07
       },
       "impact": null
     },
     {
       "date": "2025-02-14",
-      "rspi": -28.5,
-      "cascade_force": 5.0,
-      "damping_force": 33.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 2.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -3.8,
+      "level": "neutral",
+      "raw": 0.0369,
+      "volume_amp": 1.035,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0835,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.2344,
+        "v3": -0.0578,
+        "v4": 0.2,
+        "v5": -0.3553
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.85,
+        "v3": 1.5,
+        "v4": -4.14,
+        "v5": 3.68
       },
       "impact": null
     },
     {
       "date": "2025-02-17",
-      "rspi": -36.0,
-      "cascade_force": 5.0,
-      "damping_force": 41.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 2.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -3.6,
+      "level": "neutral",
+      "raw": 0.0418,
+      "volume_amp": 0.862,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0835,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.1236,
+        "v3": -0.0578,
+        "v4": 0.2,
+        "v5": -0.0848
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -2.13,
+        "v3": 1.25,
+        "v4": -3.45,
+        "v5": 0.73
       },
       "impact": null
     },
     {
       "date": "2025-02-18",
-      "rspi": -57.2,
-      "cascade_force": 5.0,
-      "damping_force": 62.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 8.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 9.8,
+      "level": "mild_rebound",
+      "raw": -0.1037,
+      "volume_amp": 0.942,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2884,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.1605,
+        "v3": -0.2884,
+        "v4": 0.2,
+        "v5": -0.3948
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 3.03,
+        "v3": 6.8,
+        "v4": -3.77,
+        "v5": 3.72
       },
       "impact": null
     },
     {
       "date": "2025-02-19",
-      "rspi": -52.4,
-      "cascade_force": 5.0,
-      "damping_force": 57.4,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 8.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 20.0,
+      "level": "strong_rebound",
+      "raw": -0.1911,
+      "volume_amp": 1.048,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2977,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.6377,
+        "v3": -0.2977,
+        "v4": 0.2,
+        "v5": -0.2916
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 13.36,
+        "v3": 7.8,
+        "v4": -4.19,
+        "v5": 3.06
       },
       "impact": null
     },
     {
       "date": "2025-02-20",
-      "rspi": -17.4,
-      "cascade_force": 15.0,
-      "damping_force": 32.4,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 10.2,
+      "level": "mild_rebound",
+      "raw": -0.0958,
+      "volume_amp": 1.06,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.046,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1912,
+        "v3": -0.0061,
+        "v4": -0.4,
+        "v5": -0.5253
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.05,
+        "v3": 0.16,
+        "v4": 8.48,
+        "v5": 5.57
       },
       "impact": null
     },
     {
       "date": "2025-02-21",
-      "rspi": -21.0,
-      "cascade_force": 17.5,
-      "damping_force": 38.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 17.5,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -25.4,
+      "level": "strong_sell",
+      "raw": 0.2794,
+      "volume_amp": 0.911,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.7,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.1166,
+        "v3": 0.4845,
+        "v4": 0.7,
+        "v5": -0.0507
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -2.12,
+        "v3": -11.03,
+        "v4": -12.75,
+        "v5": 0.46
       },
       "impact": null
     },
     {
       "date": "2025-02-24",
-      "rspi": -21.0,
-      "cascade_force": 15.0,
-      "damping_force": 36.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 5.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 5.3,
+      "level": "mild_rebound",
+      "raw": -0.0602,
+      "volume_amp": 0.875,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.2,
-        "d4": 1.0
+        "v2": 0.0973,
+        "v3": 0.0875,
+        "v4": -0.4,
+        "v5": -0.2157
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -1.7,
+        "v3": -1.92,
+        "v4": 7.0,
+        "v5": 1.89
       },
       "impact": null
     },
     {
       "date": "2025-02-25",
-      "rspi": -16.6,
-      "cascade_force": 15.0,
-      "damping_force": 31.6,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 4.4,
+      "level": "neutral",
+      "raw": -0.0502,
+      "volume_amp": 0.879,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0193,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.2041,
+        "v3": 0.0176,
+        "v4": -0.4,
+        "v5": -0.1542
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.59,
+        "v3": -0.39,
+        "v4": 7.04,
+        "v5": 1.36
       },
       "impact": null
     },
     {
       "date": "2025-02-26",
-      "rspi": -8.9,
-      "cascade_force": 25.0,
-      "damping_force": 33.9,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 2.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -17.5,
+      "level": "mild_sell",
+      "raw": 0.1845,
+      "volume_amp": 0.946,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0959,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.2349,
+        "v3": -0.0959,
+        "v4": 1.0,
+        "v5": -0.3847
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.44,
+        "v3": 2.27,
+        "v4": -18.92,
+        "v5": 3.64
       },
       "impact": null
     },
     {
       "date": "2025-02-27",
-      "rspi": -23.5,
-      "cascade_force": 15.0,
-      "damping_force": 38.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -8.4,
+      "level": "mild_sell",
+      "raw": 0.0913,
+      "volume_amp": 0.917,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.0126,
+        "v3": 0.7991,
+        "v4": -0.4,
+        "v5": -0.3102
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -0.23,
+        "v3": -18.31,
+        "v4": 7.33,
+        "v5": 2.84
       },
       "impact": null
     },
     {
       "date": "2025-02-28",
-      "rspi": -18.9,
-      "cascade_force": 15.0,
-      "damping_force": 33.9,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 2.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -16.9,
+      "level": "mild_sell",
+      "raw": 0.1434,
+      "volume_amp": 1.178,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0971,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 1.0,
+        "v3": 0.139,
+        "v4": -0.4,
+        "v5": -0.1132
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -23.56,
+        "v3": -4.09,
+        "v4": 9.42,
+        "v5": 1.33
       },
       "impact": null
     },
     {
       "date": "2025-03-04",
-      "rspi": -30.6,
-      "cascade_force": 15.0,
-      "damping_force": 45.6,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 2.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -14.3,
+      "level": "mild_sell",
+      "raw": 0.1365,
+      "volume_amp": 1.047,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.069,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.0482,
+        "v3": 0.0251,
+        "v4": 0.7,
+        "v5": -0.1944
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -1.01,
+        "v3": -0.66,
+        "v4": -14.65,
+        "v5": 2.03
       },
       "impact": null
     },
     {
       "date": "2025-03-05",
-      "rspi": -34.8,
-      "cascade_force": 15.0,
-      "damping_force": 49.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 18.8,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 24.1,
+      "level": "strong_rebound",
+      "raw": -0.238,
+      "volume_amp": 1.015,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.6265,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.0722,
+        "v3": -0.6265,
+        "v4": -0.4,
+        "v5": -0.1579
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -1.46,
+        "v3": 15.89,
+        "v4": 8.12,
+        "v5": 1.6
       },
       "impact": null
     },
     {
       "date": "2025-03-06",
-      "rspi": -17.9,
-      "cascade_force": 33.6,
-      "damping_force": 51.5,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -28.3,
+      "level": "strong_sell",
+      "raw": 0.3097,
+      "volume_amp": 0.913,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.3803,
+        "v3": 0.5736,
+        "v4": 1.0,
+        "v5": 0.4242
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 6.94,
+        "v3": -13.08,
+        "v4": -18.25,
+        "v5": -3.87
       },
       "impact": null
     },
     {
       "date": "2025-03-07",
-      "rspi": -44.2,
-      "cascade_force": 13.6,
-      "damping_force": 57.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 9.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 9.8,
+      "level": "mild_rebound",
+      "raw": -0.1029,
+      "volume_amp": 0.949,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.3103,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.3106,
+        "v3": -0.3103,
+        "v4": 0.2,
+        "v5": -0.0318
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 5.89,
+        "v3": 7.36,
+        "v4": -3.8,
+        "v5": 0.3
       },
       "impact": null
     },
     {
       "date": "2025-03-10",
-      "rspi": -7.4,
-      "cascade_force": 23.6,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -15.3,
+      "level": "mild_sell",
+      "raw": 0.1839,
+      "volume_amp": 0.833,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3082,
+        "v3": 0.8486,
+        "v4": -0.4,
+        "v5": -0.0987
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -5.13,
+        "v3": -17.67,
+        "v4": 6.66,
+        "v5": 0.82
       },
       "impact": null
     },
     {
       "date": "2025-03-11",
-      "rspi": -10.2,
-      "cascade_force": 23.6,
-      "damping_force": 33.7,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 4.7,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -12.0,
+      "level": "mild_sell",
+      "raw": 0.1326,
+      "volume_amp": 0.904,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.1575,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 1.0,
+        "v3": -0.0586,
+        "v4": -0.4,
+        "v5": 0.2722
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -18.07,
+        "v3": 1.32,
+        "v4": 7.23,
+        "v5": -2.46
       },
       "impact": null
     },
     {
       "date": "2025-03-12",
-      "rspi": -34.8,
-      "cascade_force": 33.6,
-      "damping_force": 68.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 14.8,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 5.4,
+      "level": "mild_rebound",
+      "raw": -0.0548,
+      "volume_amp": 0.985,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.4946,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.6201,
+        "v3": -0.4946,
+        "v4": 1.0,
+        "v5": -0.0718
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 12.22,
+        "v3": 12.18,
+        "v4": -19.71,
+        "v5": 0.71
       },
       "impact": null
     },
     {
       "date": "2025-03-13",
-      "rspi": -15.4,
-      "cascade_force": 13.6,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -19.5,
+      "level": "mild_sell",
+      "raw": 0.1882,
+      "volume_amp": 1.034,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.2087,
+        "v3": 0.3981,
+        "v4": 0.2,
+        "v5": 0.0698
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.31,
+        "v3": -10.29,
+        "v4": -4.14,
+        "v5": -0.72
       },
       "impact": null
     },
     {
       "date": "2025-03-14",
-      "rspi": -29.6,
-      "cascade_force": 23.6,
-      "damping_force": 53.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 16.6,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 17.6,
+      "level": "mild_rebound",
+      "raw": -0.2053,
+      "volume_amp": 0.855,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.5541,
-        "d2": 0.2,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.0003,
+        "v3": -0.5541,
+        "v4": -0.4,
+        "v5": 0.1317
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -0.0,
+        "v3": 11.85,
+        "v4": 6.84,
+        "v5": -1.13
       },
       "impact": null
     },
     {
       "date": "2025-03-17",
-      "rspi": -40.0,
-      "cascade_force": 33.6,
-      "damping_force": 73.6,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 20.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 15.0,
+      "level": "mild_rebound",
+      "raw": -0.1503,
+      "volume_amp": 0.996,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.6694,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.8299,
+        "v3": -0.6694,
+        "v4": 1.0,
+        "v5": -0.1702
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 16.54,
+        "v3": 16.67,
+        "v4": -19.93,
+        "v5": 1.7
       },
       "impact": null
     },
     {
       "date": "2025-03-18",
-      "rspi": -43.5,
-      "cascade_force": 5.0,
-      "damping_force": 48.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -1.4,
+      "level": "neutral",
+      "raw": 0.0137,
+      "volume_amp": 0.996,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.6043,
+        "v3": 0.4181,
+        "v4": 0.2,
+        "v5": -0.0995
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 12.03,
+        "v3": -10.41,
+        "v4": -3.98,
+        "v5": 0.99
       },
       "impact": null
     },
     {
       "date": "2025-03-19",
-      "rspi": -49.7,
-      "cascade_force": 5.0,
-      "damping_force": 54.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 6.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 10.5,
+      "level": "mild_rebound",
+      "raw": -0.1066,
+      "volume_amp": 0.986,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2078,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.4546,
+        "v3": -0.2078,
+        "v4": 0.2,
+        "v5": -0.0373
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 8.97,
+        "v3": 5.12,
+        "v4": -3.95,
+        "v5": 0.37
       },
       "impact": null
     },
     {
       "date": "2025-03-20",
-      "rspi": -43.5,
-      "cascade_force": 5.0,
-      "damping_force": 48.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 6.1,
+      "level": "mild_rebound",
+      "raw": -0.0611,
+      "volume_amp": 1.004,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.661,
+        "v3": 0.1993,
+        "v4": 0.2,
+        "v5": -0.1874
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 13.27,
+        "v3": -5.0,
+        "v4": -4.02,
+        "v5": 1.88
       },
       "impact": null
     },
     {
       "date": "2025-03-21",
-      "rspi": -45.0,
-      "cascade_force": 5.0,
-      "damping_force": 50.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 15.0,
+      "level": "mild_rebound",
+      "raw": -0.1364,
+      "volume_amp": 1.097,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0502,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.8155,
+        "v3": -0.0502,
+        "v4": 0.2,
+        "v5": -0.0072
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 17.89,
+        "v3": 1.38,
+        "v4": -4.39,
+        "v5": 0.08
       },
       "impact": null
     },
     {
       "date": "2025-03-24",
-      "rspi": -43.5,
-      "cascade_force": 13.6,
-      "damping_force": 57.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 10.6,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 2.1,
+      "level": "neutral",
+      "raw": -0.0329,
+      "volume_amp": 0.623,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.3528,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.1054,
+        "v3": -0.3528,
+        "v4": 0.2,
+        "v5": 0.3636
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.31,
+        "v3": 5.49,
+        "v4": -2.49,
+        "v5": -2.26
       },
       "impact": null
     },
     {
       "date": "2025-03-25",
-      "rspi": -4.4,
-      "cascade_force": 25.0,
-      "damping_force": 29.4,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.4,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -7.2,
+      "level": "mild_sell",
+      "raw": 0.094,
+      "volume_amp": 0.761,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.7,
-        "d1": 0.0149,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": -0.0283,
+        "v3": 0.0287,
+        "v4": 0.2,
+        "v5": 0.5246
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.43,
+        "v3": -0.55,
+        "v4": -3.05,
+        "v5": -3.99
       },
       "impact": null
     },
     {
       "date": "2025-03-26",
-      "rspi": -26.5,
-      "cascade_force": 25.0,
-      "damping_force": 51.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -2.1,
+      "level": "neutral",
+      "raw": 0.0288,
+      "volume_amp": 0.712,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.7,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.3545,
+        "v3": 0.2255,
+        "v4": 0.2,
+        "v5": 0.0333
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 5.05,
+        "v3": -4.01,
+        "v4": -2.85,
+        "v5": -0.24
       },
       "impact": null
     },
     {
       "date": "2025-03-27",
-      "rspi": -11.5,
-      "cascade_force": 35.0,
-      "damping_force": 46.5,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 2.7,
+      "level": "neutral",
+      "raw": -0.0378,
+      "volume_amp": 0.725,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.1211,
+        "v3": 0.1394,
+        "v4": -0.4,
+        "v5": 0.3152
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.76,
+        "v3": -2.53,
+        "v4": 5.8,
+        "v5": -2.28
       },
       "impact": null
     },
     {
       "date": "2025-03-28",
-      "rspi": 6.0,
-      "cascade_force": 35.0,
-      "damping_force": 29.0,
-      "cascade_risk": "medium",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -17.4,
+      "level": "mild_sell",
+      "raw": 0.254,
+      "volume_amp": 0.686,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.4524,
+        "v3": 0.8092,
+        "v4": -0.4,
+        "v5": 0.412
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -6.2,
+        "v3": -13.87,
+        "v4": 5.48,
+        "v5": -2.82
       },
       "impact": null
     },
     {
       "date": "2025-03-31",
-      "rspi": 4.7,
-      "cascade_force": 35.0,
-      "damping_force": 30.3,
-      "cascade_risk": "medium",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.3,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -14.1,
+      "level": "mild_sell",
+      "raw": 0.1739,
+      "volume_amp": 0.812,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 0.0423,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 1.0,
+        "v3": 0.1005,
+        "v4": -0.4,
+        "v5": 0.288
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -16.24,
+        "v3": -2.04,
+        "v4": 6.5,
+        "v5": -2.34
       },
       "impact": null
     },
     {
       "date": "2025-04-01",
-      "rspi": -16.4,
-      "cascade_force": 35.0,
-      "damping_force": 51.4,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 9.9,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -11.8,
+      "level": "mild_sell",
+      "raw": 0.1658,
+      "volume_amp": 0.71,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
+        "v2": 0.2383,
+        "v3": -0.3295,
         "v4": 0.7,
-        "d1": 0.3295,
-        "d2": 0.2,
-        "d3": 0.5,
-        "d4": 1.0
+        "v5": 0.6056
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.38,
+        "v3": 5.85,
+        "v4": -9.93,
+        "v5": -4.3
       },
       "impact": null
     },
     {
       "date": "2025-04-02",
-      "rspi": 4.8,
-      "cascade_force": 35.0,
-      "damping_force": 30.2,
-      "cascade_risk": "medium",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.2,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -7.1,
+      "level": "mild_sell",
+      "raw": 0.0926,
+      "volume_amp": 0.768,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 0.0386,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.4752,
+        "v3": 0.0011,
+        "v4": -0.4,
+        "v5": 0.7729
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.3,
+        "v3": -0.02,
+        "v4": 6.14,
+        "v5": -5.93
       },
       "impact": null
     },
     {
       "date": "2025-04-03",
-      "rspi": 6.0,
-      "cascade_force": 35.0,
-      "damping_force": 29.0,
-      "cascade_risk": "medium",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -33.1,
+      "level": "strong_sell",
+      "raw": 0.3816,
+      "volume_amp": 0.867,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.8555,
+        "v3": 1.0,
+        "v4": -0.4,
+        "v5": 0.4049
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -14.84,
+        "v3": -21.68,
+        "v4": 6.94,
+        "v5": -3.51
       },
       "impact": null
     },
     {
       "date": "2025-04-04",
-      "rspi": 4.0,
-      "cascade_force": 35.0,
-      "damping_force": 31.0,
-      "cascade_risk": "medium",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -36.7,
+      "level": "strong_sell",
+      "raw": 0.3458,
+      "volume_amp": 1.061,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.9754,
+        "v3": 1.0,
+        "v4": -0.4,
+        "v5": -0.1925
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -20.7,
+        "v3": -26.53,
+        "v4": 8.49,
+        "v5": 2.04
       },
       "impact": null
     },
     {
       "date": "2025-04-07",
-      "rspi": -5.4,
-      "cascade_force": 23.6,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -20.5,
+      "level": "strong_sell",
+      "raw": 0.1966,
+      "volume_amp": 1.043,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.9981,
+        "v3": 0.2059,
+        "v4": -0.4,
+        "v5": 0.255
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -20.81,
+        "v3": -5.37,
+        "v4": 8.34,
+        "v5": -2.66
       },
       "impact": null
     },
     {
       "date": "2025-04-08",
-      "rspi": -19.9,
-      "cascade_force": 23.6,
-      "damping_force": 43.5,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -16.3,
+      "level": "mild_sell",
+      "raw": 0.1724,
+      "volume_amp": 0.947,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.1924,
+        "v3": 0.8667,
+        "v4": -0.4,
+        "v5": -0.0276
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.65,
+        "v3": -20.53,
+        "v4": 7.58,
+        "v5": 0.26
       },
       "impact": null
     },
     {
       "date": "2025-04-09",
-      "rspi": -24.0,
-      "cascade_force": 35.0,
-      "damping_force": 59.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 30.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 20.2,
+      "level": "strong_rebound",
+      "raw": -0.204,
+      "volume_amp": 0.991,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 1.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3694,
+        "v3": -1.0,
+        "v4": -0.4,
+        "v5": 0.521
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.32,
+        "v3": 24.78,
+        "v4": 7.93,
+        "v5": -5.16
       },
       "impact": null
     },
     {
       "date": "2025-04-10",
-      "rspi": -6.5,
-      "cascade_force": 45.0,
-      "damping_force": 51.5,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -46.6,
+      "level": "extreme_sell",
+      "raw": 0.44,
+      "volume_amp": 1.058,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.7,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.4081,
+        "v3": 0.9971,
+        "v4": 1.0,
+        "v5": 0.7233
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 8.64,
+        "v3": -26.38,
+        "v4": -21.17,
+        "v5": -7.65
       },
       "impact": null
     },
     {
       "date": "2025-04-11",
-      "rspi": -24.0,
-      "cascade_force": 35.0,
-      "damping_force": 59.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 30.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 21.9,
+      "level": "strong_rebound",
+      "raw": -0.2605,
+      "volume_amp": 0.841,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 1.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.188,
+        "v3": -1.0,
+        "v4": -0.4,
+        "v5": 0.319
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.16,
+        "v3": 21.02,
+        "v4": 6.73,
+        "v5": -2.68
       },
       "impact": null
     },
     {
       "date": "2025-04-14",
-      "rspi": -9.3,
-      "cascade_force": 35.0,
-      "damping_force": 44.3,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 2.8,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 5.8,
+      "level": "mild_rebound",
+      "raw": -0.0753,
+      "volume_amp": 0.77,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 0.0935,
-        "d2": 0.2,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": -0.1078,
+        "v3": -0.0628,
+        "v4": -0.4,
+        "v5": 0.4194
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.66,
+        "v3": 1.21,
+        "v4": 6.16,
+        "v5": -3.23
       },
       "impact": null
     },
     {
       "date": "2025-04-15",
-      "rspi": -18.9,
-      "cascade_force": 25.0,
-      "damping_force": 43.9,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -6.0,
+      "level": "mild_sell",
+      "raw": 0.0773,
+      "volume_amp": 0.773,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0144,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": -0.2072,
+        "v3": 0.0068,
+        "v4": 1.0,
+        "v5": -0.8298
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 3.2,
+        "v3": -0.13,
+        "v4": -15.46,
+        "v5": 6.41
       },
       "impact": null
     },
     {
       "date": "2025-04-16",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 4.0,
+      "level": "neutral",
+      "raw": -0.0495,
+      "volume_amp": 0.818,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": -0.016,
+        "v3": 0.3817,
+        "v4": -0.4,
+        "v5": -0.6175
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.26,
+        "v3": -7.8,
+        "v4": 6.54,
+        "v5": 5.05
       },
       "impact": null
     },
     {
       "date": "2025-04-17",
-      "rspi": -16.9,
-      "cascade_force": 25.0,
-      "damping_force": 41.9,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 3.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -9.3,
+      "level": "mild_sell",
+      "raw": 0.1127,
+      "volume_amp": 0.827,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.1127,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": -0.1197,
+        "v3": -0.1127,
+        "v4": 1.0,
+        "v5": -0.3515
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.98,
+        "v3": 2.33,
+        "v4": -16.55,
+        "v5": 2.91
       },
       "impact": null
     },
     {
       "date": "2025-04-18",
-      "rspi": -41.9,
-      "cascade_force": 5.0,
-      "damping_force": 46.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 3.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.0,
+      "level": "mild_rebound",
+      "raw": -0.0934,
+      "volume_amp": 0.752,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.1127,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": -0.3504,
+        "v3": -0.1127,
+        "v4": 0.2,
+        "v5": -0.3511
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 5.27,
+        "v3": 2.12,
+        "v4": -3.01,
+        "v5": 2.64
       },
       "impact": null
     },
     {
       "date": "2025-04-21",
-      "rspi": -16.7,
-      "cascade_force": 15.0,
-      "damping_force": 31.7,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.7,
+      "level": "mild_rebound",
+      "raw": -0.1085,
+      "volume_amp": 0.706,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0217,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": -0.228,
+        "v3": 0.1335,
+        "v4": -0.4,
+        "v5": -0.1631
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 3.22,
+        "v3": -2.36,
+        "v4": 5.64,
+        "v5": 1.15
       },
       "impact": null
     },
     {
       "date": "2025-04-22",
-      "rspi": -34.3,
-      "cascade_force": 15.0,
-      "damping_force": 49.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 13.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 5.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 22.9,
+      "level": "strong_rebound",
+      "raw": -0.2738,
+      "volume_amp": 0.835,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.4437,
-        "d2": 0.3,
-        "d3": 0.2,
-        "d4": 1.0
+        "v2": -0.271,
+        "v3": -0.4437,
+        "v4": -0.4,
+        "v5": -0.2868
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.52,
+        "v3": 9.26,
+        "v4": 6.68,
+        "v5": 2.39
       },
       "impact": null
     },
     {
       "date": "2025-04-23",
-      "rspi": -24.5,
-      "cascade_force": 25.0,
-      "damping_force": 49.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 13.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 5.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 0.9,
+      "level": "neutral",
+      "raw": -0.0092,
+      "volume_amp": 0.998,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.4488,
-        "d2": 0.3,
-        "d3": 0.2,
-        "d4": 1.0
+        "v2": -0.3418,
+        "v3": -0.4488,
+        "v4": 1.0,
+        "v5": -0.286
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 6.83,
+        "v3": 11.2,
+        "v4": -19.97,
+        "v5": 2.86
       },
       "impact": null
     },
     {
       "date": "2025-04-24",
-      "rspi": -39.6,
-      "cascade_force": 15.0,
-      "damping_force": 54.6,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 11.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 30.3,
+      "level": "strong_rebound",
+      "raw": -0.318,
+      "volume_amp": 0.953,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.3689,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": -0.5016,
+        "v3": -0.3689,
+        "v4": -0.4,
+        "v5": -0.4547
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 9.56,
+        "v3": 8.79,
+        "v4": 7.62,
+        "v5": 4.33
       },
       "impact": null
     },
     {
       "date": "2025-04-25",
-      "rspi": -27.9,
-      "cascade_force": 25.0,
-      "damping_force": 52.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.4,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -3.3,
+      "level": "neutral",
+      "raw": 0.031,
+      "volume_amp": 1.08,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0454,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.8717,
+        "v3": -0.0166,
+        "v4": 1.0,
+        "v5": 0.0948
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 18.83,
+        "v3": 0.45,
+        "v4": -21.6,
+        "v5": -1.02
       },
       "impact": null
     },
     {
       "date": "2025-04-28",
-      "rspi": -26.1,
-      "cascade_force": 5.0,
-      "damping_force": 31.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 5.2,
+      "level": "mild_rebound",
+      "raw": -0.0526,
+      "volume_amp": 0.998,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0025,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": -0.3169,
+        "v3": 0.0227,
+        "v4": 0.2,
+        "v5": -0.3484
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 6.33,
+        "v3": -0.57,
+        "v4": -3.99,
+        "v5": 3.48
       },
       "impact": null
     },
     {
       "date": "2025-04-29",
-      "rspi": -55.1,
-      "cascade_force": 5.0,
-      "damping_force": 60.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 6.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 19.7,
+      "level": "mild_rebound",
+      "raw": -0.1813,
+      "volume_amp": 1.087,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2194,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.8162,
+        "v3": -0.2194,
+        "v4": 0.2,
+        "v5": -0.0319
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 17.75,
+        "v3": 5.97,
+        "v4": -4.35,
+        "v5": 0.35
       },
       "impact": null
     },
     {
       "date": "2025-04-30",
-      "rspi": -17.3,
-      "cascade_force": 15.0,
-      "damping_force": 32.3,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 13.7,
+      "level": "mild_rebound",
+      "raw": -0.1358,
+      "volume_amp": 1.012,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0448,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": -0.175,
+        "v3": -0.0448,
+        "v4": -0.4,
+        "v5": -0.0954
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 3.54,
+        "v3": 1.13,
+        "v4": 8.1,
+        "v5": 0.97
       },
       "impact": null
     },
     {
       "date": "2025-05-02",
-      "rspi": -30.5,
-      "cascade_force": 25.0,
-      "damping_force": 55.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 26.5,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 4.0,
+      "level": "neutral",
+      "raw": -0.0404,
+      "volume_amp": 0.984,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.8838,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": -0.1374,
+        "v3": -0.8838,
+        "v4": 1.0,
+        "v5": 0.08
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 2.71,
+        "v3": 21.75,
+        "v4": -19.69,
+        "v5": -0.79
       },
       "impact": null
     },
     {
       "date": "2025-05-07",
-      "rspi": -49.3,
-      "cascade_force": 5.0,
-      "damping_force": 54.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.8,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 6.3,
+      "level": "mild_rebound",
+      "raw": -0.0614,
+      "volume_amp": 1.032,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0261,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.507,
+        "v3": 0.095,
+        "v4": 0.2,
+        "v5": -0.2376
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 10.47,
+        "v3": -2.45,
+        "v4": -4.13,
+        "v5": 2.45
       },
       "impact": null
     },
     {
       "date": "2025-05-08",
-      "rspi": -34.2,
-      "cascade_force": 13.6,
-      "damping_force": 47.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 1.3,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -2.2,
+      "level": "neutral",
+      "raw": 0.02,
+      "volume_amp": 1.092,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.0436,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.3238,
+        "v3": 0.0619,
+        "v4": 0.2,
+        "v5": 0.2931
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.07,
+        "v3": -1.69,
+        "v4": -4.37,
+        "v5": -3.2
       },
       "impact": null
     },
     {
       "date": "2025-05-09",
-      "rspi": -28.6,
-      "cascade_force": 23.6,
-      "damping_force": 52.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 3.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 13.6,
+      "level": "mild_rebound",
+      "raw": -0.1458,
+      "volume_amp": 0.934,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.1227,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.2107,
+        "v3": -0.0784,
+        "v4": -0.4,
+        "v5": -0.0403
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 3.94,
+        "v3": 1.83,
+        "v4": 7.47,
+        "v5": 0.38
       },
       "impact": null
     },
     {
       "date": "2025-05-12",
-      "rspi": -21.0,
-      "cascade_force": 25.0,
-      "damping_force": 46.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 15.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -2.4,
+      "level": "neutral",
+      "raw": 0.0241,
+      "volume_amp": 0.976,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.499,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": -0.061,
+        "v3": -0.499,
+        "v4": 1.0,
+        "v5": -0.3892
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.19,
+        "v3": 12.17,
+        "v4": -19.52,
+        "v5": 3.8
       },
       "impact": null
     },
     {
       "date": "2025-05-13",
-      "rspi": -51.3,
-      "cascade_force": 5.0,
-      "damping_force": 56.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 2.8,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 8.7,
+      "level": "mild_rebound",
+      "raw": -0.0884,
+      "volume_amp": 0.987,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0924,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.3497,
+        "v3": -0.0924,
+        "v4": 0.2,
+        "v5": -0.354
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 6.9,
+        "v3": 2.28,
+        "v4": -3.95,
+        "v5": 3.49
       },
       "impact": null
     },
     {
       "date": "2025-05-14",
-      "rspi": -47.0,
-      "cascade_force": 5.0,
-      "damping_force": 52.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 5.5,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 14.0,
+      "level": "mild_rebound",
+      "raw": -0.1405,
+      "volume_amp": 1.0,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.1824,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.7567,
+        "v3": -0.1824,
+        "v4": 0.2,
+        "v5": 0.1645
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 15.13,
+        "v3": 4.56,
+        "v4": -4.0,
+        "v5": -1.65
       },
       "impact": null
     },
     {
       "date": "2025-05-15",
-      "rspi": -37.0,
-      "cascade_force": 15.0,
-      "damping_force": 52.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 3.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 18.9,
+      "level": "mild_rebound",
+      "raw": -0.2093,
+      "volume_amp": 0.904,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.1158,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.3947,
+        "v3": -0.1158,
+        "v4": -0.4,
+        "v5": -0.2142
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.13,
+        "v3": 2.62,
+        "v4": 7.23,
+        "v5": 1.94
       },
       "impact": null
     },
     {
       "date": "2025-05-16",
-      "rspi": -14.1,
-      "cascade_force": 33.6,
-      "damping_force": 47.7,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 1.2,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -15.3,
+      "level": "mild_sell",
+      "raw": 0.1566,
+      "volume_amp": 0.977,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.0398,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.2054,
+        "v3": -0.0382,
+        "v4": 1.0,
+        "v5": 0.0724
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.01,
+        "v3": 0.93,
+        "v4": -19.53,
+        "v5": -0.71
       },
       "impact": null
     },
     {
       "date": "2025-05-19",
-      "rspi": -16.6,
-      "cascade_force": 15.0,
-      "damping_force": 31.6,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 5.7,
+      "level": "mild_rebound",
+      "raw": -0.0646,
+      "volume_amp": 0.884,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0196,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.2993,
+        "v3": -0.0196,
+        "v4": -0.4,
+        "v5": -0.3953
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -5.29,
+        "v3": 0.43,
+        "v4": 7.07,
+        "v5": 3.49
       },
       "impact": null
     },
     {
       "date": "2025-05-20",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -23.9,
+      "level": "strong_sell",
+      "raw": 0.2441,
+      "volume_amp": 0.979,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3363,
+        "v3": 0.1747,
+        "v4": 0.7,
+        "v5": -0.0686
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -6.59,
+        "v3": -4.27,
+        "v4": -13.71,
+        "v5": 0.67
       },
       "impact": null
     },
     {
       "date": "2025-05-21",
-      "rspi": -33.7,
-      "cascade_force": 25.0,
-      "damping_force": 58.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 5.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -14.2,
+      "level": "mild_sell",
+      "raw": 0.1499,
+      "volume_amp": 0.95,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.1747,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.1918,
+        "v3": -0.0171,
+        "v4": 1.0,
+        "v5": -0.075
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 3.64,
+        "v3": 0.41,
+        "v4": -19.0,
+        "v5": 0.71
       },
       "impact": null
     },
     {
       "date": "2025-05-22",
-      "rspi": -16.1,
-      "cascade_force": 15.0,
-      "damping_force": 31.1,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -7.4,
+      "level": "mild_sell",
+      "raw": 0.0693,
+      "volume_amp": 1.068,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0031,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.5789,
+        "v3": 0.1355,
+        "v4": -0.4,
+        "v5": -0.0036
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -12.36,
+        "v3": -3.62,
+        "v4": 8.54,
+        "v5": 0.04
       },
       "impact": null
     },
     {
       "date": "2025-05-23",
-      "rspi": -33.3,
-      "cascade_force": 15.0,
-      "damping_force": 48.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.8,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -18.2,
+      "level": "mild_sell",
+      "raw": 0.1761,
+      "volume_amp": 1.032,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.1616,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.3003,
+        "v3": -0.0708,
+        "v4": 0.7,
+        "v5": -0.0622
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -6.2,
+        "v3": 1.83,
+        "v4": -14.44,
+        "v5": 0.64
       },
       "impact": null
     },
     {
       "date": "2025-05-26",
-      "rspi": -33.3,
-      "cascade_force": 25.0,
-      "damping_force": 58.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.8,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -14.6,
+      "level": "mild_sell",
+      "raw": 0.1457,
+      "volume_amp": 1.002,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.1616,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": 0.0246,
+        "v3": -0.0708,
+        "v4": 1.0,
+        "v5": -0.4152
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -0.49,
+        "v3": 1.78,
+        "v4": -20.05,
+        "v5": 4.16
       },
       "impact": null
     },
     {
       "date": "2025-05-27",
-      "rspi": -33.0,
-      "cascade_force": 15.0,
-      "damping_force": 48.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 17.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 15.0,
+      "level": "mild_rebound",
+      "raw": -0.1562,
+      "volume_amp": 0.961,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.5662,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3691,
+        "v3": -0.5662,
+        "v4": -0.4,
+        "v5": -0.0847
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.09,
+        "v3": 13.6,
+        "v4": 7.69,
+        "v5": 0.81
       },
       "impact": null
     },
     {
       "date": "2025-05-28",
-      "rspi": -32.0,
-      "cascade_force": 25.0,
-      "damping_force": 57.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 5.5,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -10.5,
+      "level": "mild_sell",
+      "raw": 0.0909,
+      "volume_amp": 1.158,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.183,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.4405,
+        "v3": -0.0926,
+        "v4": 1.0,
+        "v5": 0.0216
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 10.2,
+        "v3": 2.68,
+        "v4": -23.17,
+        "v5": -0.25
       },
       "impact": null
     },
     {
       "date": "2025-05-29",
-      "rspi": -54.8,
-      "cascade_force": 5.0,
-      "damping_force": 59.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 11.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 19.8,
+      "level": "mild_rebound",
+      "raw": -0.1786,
+      "volume_amp": 1.106,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.3771,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.3786,
+        "v3": -0.3771,
+        "v4": 0.2,
+        "v5": -0.4864
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 8.37,
+        "v3": 10.42,
+        "v4": -4.42,
+        "v5": 5.38
       },
       "impact": null
     },
     {
       "date": "2025-05-30",
-      "rspi": -14.0,
-      "cascade_force": 15.0,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -28.9,
+      "level": "strong_sell",
+      "raw": 0.2334,
+      "volume_amp": 1.238,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 1.0,
+        "v3": 0.3788,
+        "v4": -0.4,
+        "v5": 0.1867
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -24.77,
+        "v3": -11.73,
+        "v4": 9.91,
+        "v5": -2.31
       },
       "impact": null
     },
     {
       "date": "2025-06-02",
-      "rspi": -51.1,
-      "cascade_force": 15.0,
-      "damping_force": 66.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 12.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 1.0,
+      "level": "neutral",
+      "raw": -0.0122,
+      "volume_amp": 0.804,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.4213,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.1295,
+        "v3": -0.4213,
+        "v4": 0.7,
+        "v5": -0.2098
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 2.08,
+        "v3": 8.47,
+        "v4": -11.25,
+        "v5": 1.69
       },
       "impact": null
     },
     {
       "date": "2025-06-04",
-      "rspi": -38.0,
-      "cascade_force": 25.0,
-      "damping_force": 63.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 14.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 13.5,
+      "level": "mild_rebound",
+      "raw": -0.1293,
+      "volume_amp": 1.042,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.482,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -1.0,
+        "v3": -0.3362,
+        "v4": 1.0,
+        "v5": -0.4521
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 20.84,
+        "v3": 8.76,
+        "v4": -20.84,
+        "v5": 4.71
       },
       "impact": null
     },
     {
       "date": "2025-06-05",
-      "rspi": -53.1,
-      "cascade_force": 5.0,
-      "damping_force": 58.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 9.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 23.7,
+      "level": "strong_rebound",
+      "raw": -0.2187,
+      "volume_amp": 1.084,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.3191,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -1.0,
+        "v3": -0.1929,
+        "v4": 0.2,
+        "v5": -0.105
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 21.68,
+        "v3": 5.23,
+        "v4": -4.34,
+        "v5": 1.14
       },
       "impact": null
     },
     {
       "date": "2025-06-09",
-      "rspi": -50.0,
-      "cascade_force": 5.0,
-      "damping_force": 55.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 8.5,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 23.6,
+      "level": "strong_rebound",
+      "raw": -0.2177,
+      "volume_amp": 1.086,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2847,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.961,
+        "v3": -0.2847,
+        "v4": 0.2,
+        "v5": 0.0565
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 20.87,
+        "v3": 7.73,
+        "v4": -4.34,
+        "v5": -0.61
       },
       "impact": null
     },
     {
       "date": "2025-06-10",
-      "rspi": -34.0,
-      "cascade_force": 13.6,
-      "damping_force": 47.6,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 1.1,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 5.4,
+      "level": "mild_rebound",
+      "raw": -0.049,
+      "volume_amp": 1.105,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.0355,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.4895,
+        "v3": 0.0157,
+        "v4": 0.2,
+        "v5": 0.0495
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 10.82,
+        "v3": -0.43,
+        "v4": -4.42,
+        "v5": -0.55
       },
       "impact": null
     },
     {
       "date": "2025-06-11",
-      "rspi": -49.0,
-      "cascade_force": 5.0,
-      "damping_force": 54.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 5.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 2.5,
+      "level": "neutral",
+      "raw": -0.0257,
+      "volume_amp": 0.957,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.1832,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": 0.0839,
+        "v3": -0.1108,
+        "v4": 0.2,
+        "v5": -0.5474
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -1.61,
+        "v3": 2.65,
+        "v4": -3.83,
+        "v5": 5.24
       },
       "impact": null
     },
     {
       "date": "2025-06-12",
-      "rspi": -50.8,
-      "cascade_force": 5.0,
-      "damping_force": 55.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 7.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 10.5,
+      "level": "mild_rebound",
+      "raw": -0.092,
+      "volume_amp": 1.14,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2445,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.1943,
+        "v3": -0.2445,
+        "v4": 0.2,
+        "v5": -0.3197
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.43,
+        "v3": 6.97,
+        "v4": -4.56,
+        "v5": 3.64
       },
       "impact": null
     },
     {
       "date": "2025-06-13",
-      "rspi": -33.5,
-      "cascade_force": 15.0,
-      "damping_force": 48.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -3.7,
+      "level": "neutral",
+      "raw": 0.0339,
+      "volume_amp": 1.104,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": 0.1321,
+        "v3": 0.4948,
+        "v4": -0.4,
+        "v5": -0.3623
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -2.92,
+        "v3": -13.66,
+        "v4": 8.83,
+        "v5": 4.0
       },
       "impact": null
     },
     {
       "date": "2025-06-16",
-      "rspi": -34.7,
-      "cascade_force": 15.0,
-      "damping_force": 49.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 18.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -4.7,
+      "level": "neutral",
+      "raw": 0.0492,
+      "volume_amp": 0.961,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.6222,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.6109,
+        "v3": -0.6222,
+        "v4": 0.7,
+        "v5": -0.5747
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -11.75,
+        "v3": 14.95,
+        "v4": -13.46,
+        "v5": 5.52
       },
       "impact": null
     },
     {
       "date": "2025-06-17",
-      "rspi": -28.5,
-      "cascade_force": 15.0,
-      "damping_force": 43.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -7.9,
+      "level": "mild_sell",
+      "raw": 0.0732,
+      "volume_amp": 1.085,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.326,
+        "v3": 0.5353,
+        "v4": -0.4,
+        "v5": -0.4585
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.08,
+        "v3": -14.52,
+        "v4": 8.68,
+        "v5": 4.98
       },
       "impact": null
     },
     {
       "date": "2025-06-18",
-      "rspi": -36.6,
-      "cascade_force": 25.0,
-      "damping_force": 61.6,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 8.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -8.1,
+      "level": "mild_sell",
+      "raw": 0.0875,
+      "volume_amp": 0.921,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.2684,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.0943,
+        "v3": -0.1872,
+        "v4": 1.0,
+        "v5": -0.4681
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.74,
+        "v3": 4.31,
+        "v4": -18.43,
+        "v5": 4.31
       },
       "impact": null
     },
     {
       "date": "2025-06-19",
-      "rspi": -24.1,
-      "cascade_force": 15.0,
-      "damping_force": 39.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 8.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 6.4,
+      "level": "mild_rebound",
+      "raw": -0.0708,
+      "volume_amp": 0.909,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.2684,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3413,
+        "v3": -0.1872,
+        "v4": -0.4,
+        "v5": -0.1224
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -6.2,
+        "v3": 4.25,
+        "v4": 7.27,
+        "v5": 1.11
       },
       "impact": null
     },
     {
       "date": "2025-06-20",
-      "rspi": -32.7,
-      "cascade_force": 25.0,
-      "damping_force": 57.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -5.0,
+      "level": "mild_sell",
+      "raw": 0.0458,
+      "volume_amp": 1.095,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.1414,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.3882,
+        "v3": -0.0847,
+        "v4": 1.0,
+        "v5": -0.5539
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 8.5,
+        "v3": 2.32,
+        "v4": -21.91,
+        "v5": 6.07
       },
       "impact": null
     },
     {
       "date": "2025-06-23",
-      "rspi": -26.7,
-      "cascade_force": 15.0,
-      "damping_force": 41.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 10.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 11.3,
+      "level": "mild_rebound",
+      "raw": -0.1063,
+      "volume_amp": 1.06,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.3575,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.6643,
+        "v3": -0.3575,
+        "v4": -0.4,
+        "v5": -0.6975
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -14.09,
+        "v3": 9.48,
+        "v4": 8.48,
+        "v5": 7.4
       },
       "impact": null
     },
     {
       "date": "2025-06-24",
-      "rspi": -58.5,
-      "cascade_force": 25.0,
-      "damping_force": 83.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 30.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 11.5,
+      "level": "mild_rebound",
+      "raw": -0.1045,
+      "volume_amp": 1.098,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 1.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.221,
+        "v3": -1.0,
+        "v4": 1.0,
+        "v5": -0.1025
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.85,
+        "v3": 27.45,
+        "v4": -21.96,
+        "v5": 1.13
       },
       "impact": null
     },
     {
       "date": "2025-06-25",
-      "rspi": -16.1,
-      "cascade_force": 15.0,
-      "damping_force": 31.1,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 10.1,
+      "level": "mild_rebound",
+      "raw": -0.094,
+      "volume_amp": 1.077,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0037,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3873,
+        "v3": 0.0341,
+        "v4": -0.4,
+        "v5": -1.0
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -8.34,
+        "v3": -0.92,
+        "v4": 8.61,
+        "v5": 10.77
       },
       "impact": null
     },
     {
       "date": "2025-06-26",
-      "rspi": -15.5,
-      "cascade_force": 15.0,
-      "damping_force": 30.5,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.5,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -9.4,
+      "level": "mild_sell",
+      "raw": 0.0992,
+      "volume_amp": 0.947,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0492,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.83,
+        "v3": 0.0134,
+        "v4": -0.4,
+        "v5": 0.0987
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -15.72,
+        "v3": -0.32,
+        "v4": 7.58,
+        "v5": -0.93
       },
       "impact": null
     },
     {
       "date": "2025-06-27",
-      "rspi": -16.9,
-      "cascade_force": 15.0,
-      "damping_force": 31.9,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -9.2,
+      "level": "mild_sell",
+      "raw": 0.1106,
+      "volume_amp": 0.836,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0311,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.9558,
+        "v3": 0.1415,
+        "v4": -0.4,
+        "v5": -0.3594
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -15.98,
+        "v3": -2.96,
+        "v4": 6.69,
+        "v5": 3.01
       },
       "impact": null
     },
     {
       "date": "2025-06-30",
-      "rspi": -33.5,
-      "cascade_force": 15.0,
-      "damping_force": 48.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 10.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 4.5,
+      "level": "neutral",
+      "raw": -0.0536,
+      "volume_amp": 0.841,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.3317,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.6789,
+        "v3": -0.3317,
+        "v4": -0.4,
+        "v5": -0.265
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -11.42,
+        "v3": 6.97,
+        "v4": 6.73,
+        "v5": 2.23
       },
       "impact": null
     },
     {
       "date": "2025-07-01",
-      "rspi": -28.5,
-      "cascade_force": 25.0,
-      "damping_force": 53.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -17.6,
+      "level": "mild_sell",
+      "raw": 0.1816,
+      "volume_amp": 0.97,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.0312,
+        "v3": 0.0443,
+        "v4": 1.0,
+        "v5": -0.2326
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.6,
+        "v3": -1.07,
+        "v4": -19.39,
+        "v5": 2.26
       },
       "impact": null
     },
     {
       "date": "2025-07-02",
-      "rspi": -20.2,
-      "cascade_force": 15.0,
-      "damping_force": 35.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 3.1,
+      "level": "neutral",
+      "raw": -0.0322,
+      "volume_amp": 0.966,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.1389,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.4151,
+        "v3": -0.1389,
+        "v4": -0.4,
+        "v5": -0.0048
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -8.02,
+        "v3": 3.36,
+        "v4": 7.73,
+        "v5": 0.05
       },
       "impact": null
     },
     {
       "date": "2025-07-03",
-      "rspi": -26.3,
-      "cascade_force": 33.6,
-      "damping_force": 59.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 8.3,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -4.6,
+      "level": "neutral",
+      "raw": 0.0483,
+      "volume_amp": 0.963,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.2783,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.531,
+        "v3": -0.2783,
+        "v4": 1.0,
+        "v5": 0.2406
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 10.22,
+        "v3": 6.7,
+        "v4": -19.25,
+        "v5": -2.32
       },
       "impact": null
     },
     {
       "date": "2025-07-04",
-      "rspi": -33.3,
-      "cascade_force": 23.6,
-      "damping_force": 56.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 8.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 15.9,
+      "level": "mild_rebound",
+      "raw": -0.1774,
+      "volume_amp": 0.895,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.2783,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.1099,
+        "v3": -0.2783,
+        "v4": -0.4,
+        "v5": -0.0584
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.97,
+        "v3": 6.23,
+        "v4": 7.16,
+        "v5": 0.52
       },
       "impact": null
     },
     {
       "date": "2025-07-07",
-      "rspi": -5.4,
-      "cascade_force": 23.6,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -9.6,
+      "level": "mild_sell",
+      "raw": 0.1375,
+      "volume_amp": 0.699,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1178,
+        "v3": 0.765,
+        "v4": -0.4,
+        "v5": 0.0269
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -1.65,
+        "v3": -13.36,
+        "v4": 5.59,
+        "v5": -0.19
       },
       "impact": null
     },
     {
       "date": "2025-07-08",
-      "rspi": -40.8,
-      "cascade_force": 25.0,
-      "damping_force": 65.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 12.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -5.2,
+      "level": "mild_sell",
+      "raw": 0.0582,
+      "volume_amp": 0.902,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.4089,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.3248,
+        "v3": -0.2825,
+        "v4": 1.0,
+        "v5": -0.0622
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 5.86,
+        "v3": 6.37,
+        "v4": -18.04,
+        "v5": 0.56
       },
       "impact": null
     },
     {
       "date": "2025-07-09",
-      "rspi": -17.7,
-      "cascade_force": 15.0,
-      "damping_force": 32.7,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 1.3,
+      "level": "neutral",
+      "raw": -0.0152,
+      "volume_amp": 0.855,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0553,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.4521,
+        "v3": -0.0719,
+        "v4": -0.4,
+        "v5": -0.0764
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.73,
+        "v3": 1.54,
+        "v4": 6.84,
+        "v5": 0.65
       },
       "impact": null
     },
     {
       "date": "2025-07-10",
-      "rspi": -37.9,
-      "cascade_force": 25.0,
-      "damping_force": 62.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 9.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 3.7,
+      "level": "neutral",
+      "raw": -0.0394,
+      "volume_amp": 0.942,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.3123,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.6199,
+        "v3": -0.3123,
+        "v4": 1.0,
+        "v5": -0.3731
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 11.68,
+        "v3": 7.36,
+        "v4": -18.84,
+        "v5": 3.51
       },
       "impact": null
     },
     {
       "date": "2025-07-11",
-      "rspi": -33.5,
-      "cascade_force": 15.0,
-      "damping_force": 48.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 16.2,
+      "level": "mild_rebound",
+      "raw": -0.1779,
+      "volume_amp": 0.911,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.426,
+        "v3": 0.194,
+        "v4": -0.4,
+        "v5": -0.6114
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.76,
+        "v3": -4.42,
+        "v4": 7.29,
+        "v5": 5.57
       },
       "impact": null
     },
     {
       "date": "2025-07-14",
-      "rspi": -29.1,
-      "cascade_force": 25.0,
-      "damping_force": 54.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 5.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -4.1,
+      "level": "neutral",
+      "raw": 0.0498,
+      "volume_amp": 0.814,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.1877,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.4351,
+        "v3": -0.1877,
+        "v4": 1.0,
+        "v5": -0.1622
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.09,
+        "v3": 3.82,
+        "v4": -16.29,
+        "v5": 1.32
       },
       "impact": null
     },
     {
       "date": "2025-07-15",
-      "rspi": -43.5,
-      "cascade_force": 5.0,
-      "damping_force": 48.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -0.0,
+      "level": "neutral",
+      "raw": 0.0004,
+      "volume_amp": 0.869,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.2272,
+        "v3": 0.0831,
+        "v4": 0.2,
+        "v5": -0.1492
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 3.95,
+        "v3": -1.81,
+        "v4": -3.48,
+        "v5": 1.3
       },
       "impact": null
     },
     {
       "date": "2025-07-16",
-      "rspi": -34.4,
-      "cascade_force": 15.0,
-      "damping_force": 49.4,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 9.2,
+      "level": "mild_rebound",
+      "raw": -0.1123,
+      "volume_amp": 0.822,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.031,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0555,
+        "v3": -0.0208,
+        "v4": -0.4,
+        "v5": -0.1595
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.91,
+        "v3": 0.43,
+        "v4": 6.57,
+        "v5": 1.31
       },
       "impact": null
     },
     {
       "date": "2025-07-17",
-      "rspi": -24.7,
-      "cascade_force": 25.0,
-      "damping_force": 49.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -16.2,
+      "level": "mild_sell",
+      "raw": 0.1559,
+      "volume_amp": 1.037,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0386,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0402,
+        "v3": -0.0337,
+        "v4": 1.0,
+        "v5": -0.2765
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.83,
+        "v3": 0.87,
+        "v4": -20.75,
+        "v5": 2.87
       },
       "impact": null
     },
     {
       "date": "2025-07-18",
-      "rspi": -43.5,
-      "cascade_force": 5.0,
-      "damping_force": 48.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -0.2,
+      "level": "neutral",
+      "raw": 0.0017,
+      "volume_amp": 0.871,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.2386,
+        "v3": 0.1821,
+        "v4": 0.2,
+        "v5": -0.3606
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.15,
+        "v3": -3.96,
+        "v4": -3.48,
+        "v5": 3.14
       },
       "impact": null
     },
     {
       "date": "2025-07-21",
-      "rspi": -55.8,
-      "cascade_force": 5.0,
-      "damping_force": 60.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 12.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 20.7,
+      "level": "strong_rebound",
+      "raw": -0.2562,
+      "volume_amp": 0.807,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.4085,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.9574,
+        "v3": -0.4085,
+        "v4": 0.2,
+        "v5": -0.0259
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 15.46,
+        "v3": 8.25,
+        "v4": -3.23,
+        "v5": 0.21
       },
       "impact": null
     },
     {
       "date": "2025-07-22",
-      "rspi": -14.0,
-      "cascade_force": 15.0,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 0.3,
+      "level": "neutral",
+      "raw": -0.0033,
+      "volume_amp": 0.888,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0012,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1874,
+        "v3": 0.1323,
+        "v4": -0.4,
+        "v5": 0.0611
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.33,
+        "v3": -2.94,
+        "v4": 7.11,
+        "v5": -0.54
       },
       "impact": null
     },
     {
       "date": "2025-07-23",
-      "rspi": -28.2,
-      "cascade_force": 33.6,
-      "damping_force": 61.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 10.3,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -3.1,
+      "level": "neutral",
+      "raw": 0.0324,
+      "volume_amp": 0.945,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.3421,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.4189,
+        "v3": -0.3421,
+        "v4": 1.0,
+        "v5": 0.0172
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.91,
+        "v3": 8.08,
+        "v4": -18.89,
+        "v5": -0.16
       },
       "impact": null
     },
     {
       "date": "2025-07-24",
-      "rspi": -43.6,
-      "cascade_force": 5.0,
-      "damping_force": 48.6,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 10.7,
+      "level": "mild_rebound",
+      "raw": -0.1074,
+      "volume_amp": 1.001,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0019,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.7091,
+        "v3": 0.0717,
+        "v4": 0.2,
+        "v5": -0.2346
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 14.2,
+        "v3": -1.79,
+        "v4": -4.0,
+        "v5": 2.35
       },
       "impact": null
     },
     {
       "date": "2025-07-25",
-      "rspi": -44.3,
-      "cascade_force": 5.0,
-      "damping_force": 49.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.8,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -0.9,
+      "level": "neutral",
+      "raw": 0.0113,
+      "volume_amp": 0.811,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0268,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.1213,
+        "v3": -0.0128,
+        "v4": 0.2,
+        "v5": -0.0118
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.97,
+        "v3": 0.26,
+        "v4": -3.24,
+        "v5": 0.1
       },
       "impact": null
     },
     {
       "date": "2025-07-28",
-      "rspi": -41.5,
-      "cascade_force": 5.0,
-      "damping_force": 46.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -1.2,
+      "level": "neutral",
+      "raw": 0.0112,
+      "volume_amp": 1.058,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.3695,
+        "v3": 0.1376,
+        "v4": 0.2,
+        "v5": 0.107
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.82,
+        "v3": -3.64,
+        "v4": -4.23,
+        "v5": -1.13
       },
       "impact": null
     },
     {
       "date": "2025-07-29",
-      "rspi": -39.6,
-      "cascade_force": 13.6,
-      "damping_force": 53.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 4.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 9.0,
+      "level": "mild_rebound",
+      "raw": -0.0894,
+      "volume_amp": 1.005,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.1542,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.5227,
+        "v3": -0.0911,
+        "v4": 0.2,
+        "v5": -0.021
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 10.51,
+        "v3": 2.29,
+        "v4": -4.02,
+        "v5": 0.21
       },
       "impact": null
     },
     {
       "date": "2025-07-30",
-      "rspi": -44.8,
-      "cascade_force": 5.0,
-      "damping_force": 49.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.2,
+      "level": "mild_rebound",
+      "raw": -0.0701,
+      "volume_amp": 1.022,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0421,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.4429,
+        "v3": -0.0214,
+        "v4": 0.2,
+        "v5": -0.162
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 9.05,
+        "v3": 0.55,
+        "v4": -4.09,
+        "v5": 1.66
       },
       "impact": null
     },
     {
       "date": "2025-07-31",
-      "rspi": -31.5,
-      "cascade_force": 15.0,
-      "damping_force": 46.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 1.6,
+      "level": "neutral",
+      "raw": -0.0141,
+      "volume_amp": 1.16,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0936,
+        "v3": 0.2741,
+        "v4": -0.4,
+        "v5": 0.1613
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 2.17,
+        "v3": -7.95,
+        "v4": 9.28,
+        "v5": -1.87
       },
       "impact": null
     },
     {
       "date": "2025-08-01",
-      "rspi": -5.4,
-      "cascade_force": 23.6,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -32.9,
+      "level": "strong_sell",
+      "raw": 0.3139,
+      "volume_amp": 1.049,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 1.0,
+        "v3": 0.7533,
+        "v4": -0.4,
+        "v5": 0.0552
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -20.99,
+        "v3": -19.76,
+        "v4": 8.4,
+        "v5": -0.58
       },
       "impact": null
     },
     {
       "date": "2025-08-04",
-      "rspi": -38.9,
-      "cascade_force": 33.6,
-      "damping_force": 72.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 19.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -6.9,
+      "level": "mild_sell",
+      "raw": 0.0898,
+      "volume_amp": 0.767,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.632,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": 0.2435,
+        "v3": -0.632,
+        "v4": 1.0,
+        "v5": -0.0093
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.73,
+        "v3": 12.11,
+        "v4": -15.33,
+        "v5": 0.07
       },
       "impact": null
     },
     {
       "date": "2025-08-05",
-      "rspi": -36.2,
-      "cascade_force": 13.6,
-      "damping_force": 49.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 3.3,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -4.4,
+      "level": "neutral",
+      "raw": 0.0506,
+      "volume_amp": 0.872,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.1091,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0458,
+        "v3": -0.0446,
+        "v4": 0.2,
+        "v5": 0.309
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.8,
+        "v3": 0.97,
+        "v4": -3.49,
+        "v5": -2.69
       },
       "impact": null
     },
     {
       "date": "2025-08-06",
-      "rspi": -16.4,
-      "cascade_force": 35.0,
-      "damping_force": 51.4,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.9,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.4,
+      "level": "mild_rebound",
+      "raw": -0.0815,
+      "volume_amp": 0.904,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 0.1619,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": 0.0207,
+        "v3": -0.1619,
+        "v4": -0.4,
+        "v5": 0.3487
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -0.37,
+        "v3": 3.66,
+        "v4": 7.23,
+        "v5": -3.15
       },
       "impact": null
     },
     {
       "date": "2025-08-07",
-      "rspi": 1.0,
-      "cascade_force": 33.6,
-      "damping_force": 32.6,
-      "cascade_risk": "medium",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 1.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -24.4,
+      "level": "strong_sell",
+      "raw": 0.2629,
+      "volume_amp": 0.928,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.0524,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.4387,
+        "v3": -0.031,
+        "v4": 1.0,
+        "v5": -0.1709
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -8.14,
+        "v3": 0.72,
+        "v4": -18.57,
+        "v5": 1.59
       },
       "impact": null
     },
     {
       "date": "2025-08-08",
-      "rspi": -19.0,
-      "cascade_force": 15.0,
-      "damping_force": 34.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 3.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 3.3,
+      "level": "neutral",
+      "raw": -0.0349,
+      "volume_amp": 0.947,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0998,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.5939,
+        "v3": -0.0998,
+        "v4": -0.4,
+        "v5": -0.4877
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -11.25,
+        "v3": 2.36,
+        "v4": 7.57,
+        "v5": 4.62
       },
       "impact": null
     },
     {
       "date": "2025-08-11",
-      "rspi": -28.5,
-      "cascade_force": 25.0,
-      "damping_force": 53.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -16.2,
+      "level": "mild_sell",
+      "raw": 0.1844,
+      "volume_amp": 0.88,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": 0.0305,
+        "v3": 0.1429,
+        "v4": 1.0,
+        "v5": -0.5742
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -0.54,
+        "v3": -3.14,
+        "v4": -17.6,
+        "v5": 5.05
       },
       "impact": null
     },
     {
       "date": "2025-08-12",
-      "rspi": -28.0,
-      "cascade_force": 15.0,
-      "damping_force": 43.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 12.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 11.5,
+      "level": "mild_rebound",
+      "raw": -0.1319,
+      "volume_amp": 0.874,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.3994,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.4131,
+        "v3": -0.3994,
+        "v4": -0.4,
+        "v5": -0.3467
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.22,
+        "v3": 8.73,
+        "v4": 6.99,
+        "v5": 3.03
       },
       "impact": null
     },
     {
       "date": "2025-08-13",
-      "rspi": -34.4,
-      "cascade_force": 25.0,
-      "damping_force": 59.4,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 5.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -3.5,
+      "level": "neutral",
+      "raw": 0.0395,
+      "volume_amp": 0.89,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.198,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.5411,
+        "v3": -0.198,
+        "v4": 1.0,
+        "v5": -0.0275
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 9.63,
+        "v3": 4.4,
+        "v4": -17.8,
+        "v5": 0.24
       },
       "impact": null
     },
     {
       "date": "2025-08-14",
-      "rspi": -26.0,
-      "cascade_force": 5.0,
-      "damping_force": 31.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -14.5,
+      "level": "mild_sell",
+      "raw": 0.1645,
+      "volume_amp": 0.881,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0006,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.4534,
+        "v3": 0.1435,
+        "v4": 0.2,
+        "v5": -0.0202
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.99,
+        "v3": -3.16,
+        "v4": -3.53,
+        "v5": 0.18
       },
       "impact": null
     },
     {
       "date": "2025-08-18",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -10.6,
+      "level": "mild_sell",
+      "raw": 0.131,
+      "volume_amp": 0.81,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.8939,
+        "v3": 0.1576,
+        "v4": -0.4,
+        "v5": -0.0722
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -14.48,
+        "v3": -3.19,
+        "v4": 6.48,
+        "v5": 0.58
       },
       "impact": null
     },
     {
       "date": "2025-08-19",
-      "rspi": -21.0,
-      "cascade_force": 15.0,
-      "damping_force": 36.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 5.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -30.9,
+      "level": "strong_sell",
+      "raw": 0.3913,
+      "volume_amp": 0.79,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.2,
-        "d4": 1.0
+        "v2": 0.779,
+        "v3": 0.4137,
+        "v4": 0.7,
+        "v5": -0.0798
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -12.31,
+        "v3": -8.17,
+        "v4": -11.06,
+        "v5": 0.63
       },
       "impact": null
     },
     {
       "date": "2025-08-20",
-      "rspi": -18.5,
-      "cascade_force": 25.0,
-      "damping_force": 43.5,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -30.7,
+      "level": "strong_sell",
+      "raw": 0.3025,
+      "volume_amp": 1.014,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.4623,
+        "v3": 0.0555,
+        "v4": 1.0,
+        "v5": -0.0385
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -9.38,
+        "v3": -1.41,
+        "v4": -20.28,
+        "v5": 0.39
       },
       "impact": null
     },
     {
       "date": "2025-08-21",
-      "rspi": -27.9,
-      "cascade_force": 13.6,
-      "damping_force": 41.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -12.2,
+      "level": "mild_sell",
+      "raw": 0.1271,
+      "volume_amp": 0.962,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.1745,
+        "v3": 0.0862,
+        "v4": 0.2,
+        "v5": 0.3061
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.36,
+        "v3": -2.07,
+        "v4": -3.85,
+        "v5": -2.94
       },
       "impact": null
     },
     {
       "date": "2025-08-22",
-      "rspi": -50.2,
-      "cascade_force": 25.0,
-      "damping_force": 75.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 23.7,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 10.6,
+      "level": "mild_rebound",
+      "raw": -0.1356,
+      "volume_amp": 0.784,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.7,
-        "d1": 0.7884,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.1278,
+        "v3": -0.7884,
+        "v4": 0.2,
+        "v5": 0.4706
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 2.0,
+        "v3": 15.45,
+        "v4": -3.14,
+        "v5": -3.69
       },
       "impact": null
     },
     {
       "date": "2025-08-25",
-      "rspi": -23.5,
-      "cascade_force": 25.0,
-      "damping_force": 48.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -7.0,
+      "level": "mild_sell",
+      "raw": 0.0916,
+      "volume_amp": 0.768,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.7,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0544,
+        "v3": 0.2532,
+        "v4": 0.2,
+        "v5": -0.0085
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.84,
+        "v3": -4.86,
+        "v4": -3.07,
+        "v5": 0.07
       },
       "impact": null
     },
     {
       "date": "2025-08-26",
-      "rspi": 5.2,
-      "cascade_force": 35.0,
-      "damping_force": 29.8,
-      "cascade_risk": "medium",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.8,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -14.8,
+      "level": "mild_sell",
+      "raw": 0.1334,
+      "volume_amp": 1.11,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.7,
-        "d1": 0.0261,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.9321,
+        "v3": 0.0231,
+        "v4": -0.4,
+        "v5": 0.2124
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -20.7,
+        "v3": -0.64,
+        "v4": 8.88,
+        "v5": -2.36
       },
       "impact": null
     },
     {
       "date": "2025-08-27",
-      "rspi": -21.3,
-      "cascade_force": 23.6,
-      "damping_force": 44.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 1.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -14.7,
+      "level": "mild_sell",
+      "raw": 0.1733,
+      "volume_amp": 0.848,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.045,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.2613,
+        "v3": -0.045,
+        "v4": 0.7,
+        "v5": -0.077
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.43,
+        "v3": 0.95,
+        "v4": -11.88,
+        "v5": 0.65
       },
       "impact": null
     },
     {
       "date": "2025-08-28",
-      "rspi": -28.8,
-      "cascade_force": 25.0,
-      "damping_force": 53.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 10.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -6.2,
+      "level": "mild_sell",
+      "raw": 0.0662,
+      "volume_amp": 0.938,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.3425,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": -0.031,
+        "v3": -0.3425,
+        "v4": 1.0,
+        "v5": -0.4201
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.58,
+        "v3": 8.03,
+        "v4": -18.75,
+        "v5": 3.94
       },
       "impact": null
     },
     {
       "date": "2025-08-29",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -8.7,
+      "level": "mild_sell",
+      "raw": 0.0968,
+      "volume_amp": 0.894,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.446,
+        "v3": 0.4272,
+        "v4": -0.4,
+        "v5": -0.192
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.97,
+        "v3": -9.54,
+        "v4": 7.15,
+        "v5": 1.72
       },
       "impact": null
     },
     {
       "date": "2025-09-01",
-      "rspi": -23.5,
-      "cascade_force": 15.0,
-      "damping_force": 38.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -6.8,
+      "level": "mild_sell",
+      "raw": 0.0816,
+      "volume_amp": 0.837,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.3467,
+        "v3": 0.4272,
+        "v4": -0.4,
+        "v5": -0.1451
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -5.8,
+        "v3": -8.94,
+        "v4": 6.7,
+        "v5": 1.21
       },
       "impact": null
     },
     {
       "date": "2025-09-02",
-      "rspi": -28.5,
-      "cascade_force": 25.0,
-      "damping_force": 53.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -8.5,
+      "level": "mild_sell",
+      "raw": 0.0945,
+      "volume_amp": 0.899,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.7009,
+        "v3": 0.1723,
+        "v4": 1.0,
+        "v5": -0.0841
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 12.61,
+        "v3": -3.87,
+        "v4": -17.99,
+        "v5": 0.76
       },
       "impact": null
     },
     {
       "date": "2025-09-03",
-      "rspi": -51.1,
-      "cascade_force": 5.0,
-      "damping_force": 56.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 9.6,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 15.5,
+      "level": "mild_rebound",
+      "raw": -0.1685,
+      "volume_amp": 0.918,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.3197,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.7239,
+        "v3": -0.3197,
+        "v4": 0.2,
+        "v5": 0.1616
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 13.29,
+        "v3": 7.34,
+        "v4": -3.67,
+        "v5": -1.48
       },
       "impact": null
     },
     {
       "date": "2025-09-04",
-      "rspi": -37.0,
-      "cascade_force": 13.6,
-      "damping_force": 50.6,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 4.1,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 5.2,
+      "level": "mild_rebound",
+      "raw": -0.0607,
+      "volume_amp": 0.858,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.1371,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.3775,
+        "v3": -0.1371,
+        "v4": 0.2,
+        "v5": 0.0906
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 6.48,
+        "v3": 2.94,
+        "v4": -3.43,
+        "v5": -0.78
       },
       "impact": null
     },
     {
       "date": "2025-09-05",
-      "rspi": -20.7,
-      "cascade_force": 13.6,
-      "damping_force": 34.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 3.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -4.1,
+      "level": "neutral",
+      "raw": 0.0374,
+      "volume_amp": 1.087,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.1084,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.137,
+        "v3": -0.0572,
+        "v4": 0.2,
+        "v5": -0.157
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -2.98,
+        "v3": 1.55,
+        "v4": -4.35,
+        "v5": 1.71
       },
       "impact": null
     },
     {
       "date": "2025-09-08",
-      "rspi": -53.5,
-      "cascade_force": 5.0,
-      "damping_force": 58.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 5.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.9,
+      "level": "mild_rebound",
+      "raw": -0.0881,
+      "volume_amp": 0.892,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.1674,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.3934,
+        "v3": -0.1674,
+        "v4": 0.2,
+        "v5": -0.0758
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.02,
+        "v3": 3.74,
+        "v4": -3.57,
+        "v5": 0.68
       },
       "impact": null
     },
     {
       "date": "2025-09-09",
-      "rspi": -49.9,
-      "cascade_force": 5.0,
-      "damping_force": 54.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 6.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 24.3,
+      "level": "strong_rebound",
+      "raw": -0.2259,
+      "volume_amp": 1.077,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2146,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.9518,
+        "v3": -0.2146,
+        "v4": 0.2,
+        "v5": -0.219
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 20.5,
+        "v3": 5.78,
+        "v4": -4.31,
+        "v5": 2.36
       },
       "impact": null
     },
     {
       "date": "2025-09-10",
-      "rspi": -57.7,
-      "cascade_force": 5.0,
-      "damping_force": 62.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 14.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 34.8,
+      "level": "strong_rebound",
+      "raw": -0.2887,
+      "volume_amp": 1.206,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.474,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -1.0,
+        "v3": -0.474,
+        "v4": 0.2,
+        "v5": -0.1017
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 24.13,
+        "v3": 14.29,
+        "v4": -4.83,
+        "v5": 1.23
       },
       "impact": null
     },
     {
       "date": "2025-09-11",
-      "rspi": -55.4,
-      "cascade_force": 5.0,
-      "damping_force": 60.4,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 11.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 14.8,
+      "level": "mild_rebound",
+      "raw": -0.1257,
+      "volume_amp": 1.177,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.3977,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.275,
+        "v3": -0.3977,
+        "v4": 0.2,
+        "v5": -0.1127
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 6.48,
+        "v3": 11.71,
+        "v4": -4.71,
+        "v5": 1.33
       },
       "impact": null
     },
     {
       "date": "2025-09-12",
-      "rspi": -46.0,
-      "cascade_force": 5.0,
-      "damping_force": 51.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.5,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 19.3,
+      "level": "mild_rebound",
+      "raw": -0.1771,
+      "volume_amp": 1.091,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.1485,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -1.0,
+        "v3": -0.1021,
+        "v4": 0.2,
+        "v5": 0.0846
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 21.81,
+        "v3": 2.78,
+        "v4": -4.36,
+        "v5": -0.92
       },
       "impact": null
     },
     {
       "date": "2025-09-15",
-      "rspi": -49.2,
-      "cascade_force": 5.0,
-      "damping_force": 54.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 5.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 4.6,
+      "level": "neutral",
+      "raw": -0.0471,
+      "volume_amp": 0.977,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.1893,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0985,
+        "v3": -0.1893,
+        "v4": 0.2,
+        "v5": -0.2006
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.92,
+        "v3": 4.62,
+        "v4": -3.91,
+        "v5": 1.96
       },
       "impact": null
     },
     {
       "date": "2025-09-16",
-      "rspi": -51.9,
-      "cascade_force": 5.0,
-      "damping_force": 56.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 8.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 21.5,
+      "level": "strong_rebound",
+      "raw": -0.2128,
+      "volume_amp": 1.009,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2809,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -1.0,
+        "v3": -0.1879,
+        "v4": 0.2,
+        "v5": -0.0585
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 20.18,
+        "v3": 4.74,
+        "v4": -4.04,
+        "v5": 0.59
       },
       "impact": null
     },
     {
       "date": "2025-09-17",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 2.4,
+      "level": "neutral",
+      "raw": -0.0273,
+      "volume_amp": 0.893,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.262,
+        "v3": 0.2229,
+        "v4": -0.4,
+        "v5": -0.5537
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.68,
+        "v3": -4.98,
+        "v4": 7.14,
+        "v5": 4.94
       },
       "impact": null
     },
     {
       "date": "2025-09-18",
-      "rspi": -36.8,
-      "cascade_force": 25.0,
-      "damping_force": 61.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 8.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -10.8,
+      "level": "mild_sell",
+      "raw": 0.111,
+      "volume_amp": 0.969,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.2775,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": 0.0119,
+        "v3": -0.2775,
+        "v4": 1.0,
+        "v5": -0.2199
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -0.23,
+        "v3": 6.72,
+        "v4": -19.37,
+        "v5": 2.13
       },
       "impact": null
     },
     {
       "date": "2025-09-22",
-      "rspi": -41.1,
-      "cascade_force": 25.0,
-      "damping_force": 66.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 12.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -2.4,
+      "level": "neutral",
+      "raw": 0.0253,
+      "volume_amp": 0.94,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.4199,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.2157,
+        "v3": -0.4199,
+        "v4": 1.0,
+        "v5": -0.2658
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.06,
+        "v3": 9.87,
+        "v4": -18.8,
+        "v5": 2.5
       },
       "impact": null
     },
     {
       "date": "2025-09-23",
-      "rspi": -43.5,
-      "cascade_force": 5.0,
-      "damping_force": 48.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -3.6,
+      "level": "neutral",
+      "raw": 0.037,
+      "volume_amp": 0.971,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": 0.006,
+        "v3": 0.0882,
+        "v4": 0.2,
+        "v5": -0.2624
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -0.12,
+        "v3": -2.14,
+        "v4": -3.88,
+        "v5": 2.55
       },
       "impact": null
     },
     {
       "date": "2025-09-24",
-      "rspi": -23.5,
-      "cascade_force": 7.5,
-      "damping_force": 31.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 7.5,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -9.4,
+      "level": "mild_sell",
+      "raw": 0.0995,
+      "volume_amp": 0.948,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.3,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.5112,
+        "v3": 0.3706,
+        "v4": -0.4,
+        "v5": -0.1537
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -9.69,
+        "v3": -8.78,
+        "v4": 7.58,
+        "v5": 1.46
       },
       "impact": null
     },
     {
       "date": "2025-09-25",
-      "rspi": -48.5,
-      "cascade_force": 5.0,
-      "damping_force": 53.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -21.1,
+      "level": "strong_sell",
+      "raw": 0.2121,
+      "volume_amp": 0.994,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": 0.1203,
+        "v3": 0.0857,
+        "v4": 1.0,
+        "v5": -0.3336
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -2.39,
+        "v3": -2.13,
+        "v4": -19.89,
+        "v5": 3.32
       },
       "impact": null
     },
     {
       "date": "2025-09-26",
-      "rspi": -17.1,
-      "cascade_force": 15.0,
-      "damping_force": 32.1,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -9.6,
+      "level": "mild_sell",
+      "raw": 0.0944,
+      "volume_amp": 1.021,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0361,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.7785,
+        "v3": 0.0949,
+        "v4": -0.4,
+        "v5": -0.0506
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -15.9,
+        "v3": -2.42,
+        "v4": 8.17,
+        "v5": 0.52
       },
       "impact": null
     },
     {
       "date": "2025-09-29",
-      "rspi": -37.2,
-      "cascade_force": 25.0,
-      "damping_force": 62.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 10.7,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -10.3,
+      "level": "mild_sell",
+      "raw": 0.117,
+      "volume_amp": 0.879,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.3572,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.0549,
+        "v3": -0.3572,
+        "v4": 1.0,
+        "v5": 0.1728
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.96,
+        "v3": 7.85,
+        "v4": -17.57,
+        "v5": -1.52
       },
       "impact": null
     },
     {
       "date": "2025-09-30",
-      "rspi": -35.6,
-      "cascade_force": 13.6,
-      "damping_force": 49.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -8.6,
+      "level": "mild_sell",
+      "raw": 0.0899,
+      "volume_amp": 0.955,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.023,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": 0.296,
+        "v3": -0.0059,
+        "v4": 0.2,
+        "v5": -0.0786
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -5.65,
+        "v3": 0.14,
+        "v4": -3.82,
+        "v5": 0.75
       },
       "impact": null
     },
     {
       "date": "2025-10-01",
-      "rspi": -46.7,
-      "cascade_force": 13.6,
-      "damping_force": 60.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 13.8,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 12.4,
+      "level": "mild_rebound",
+      "raw": -0.122,
+      "volume_amp": 1.017,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.4601,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.391,
+        "v3": -0.4601,
+        "v4": 0.2,
+        "v5": 0.3122
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.96,
+        "v3": 11.7,
+        "v4": -4.07,
+        "v5": -3.18
       },
       "impact": null
     },
     {
       "date": "2025-10-02",
-      "rspi": -46.9,
-      "cascade_force": 13.6,
-      "damping_force": 60.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 12.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 33.4,
+      "level": "strong_rebound",
+      "raw": -0.2602,
+      "volume_amp": 1.285,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.3991,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -1.0,
+        "v3": -0.3991,
+        "v4": 0.2,
+        "v5": -0.0039
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 25.69,
+        "v3": 12.82,
+        "v4": -5.14,
+        "v5": 0.05
       },
       "impact": null
     },
     {
       "date": "2025-10-10",
-      "rspi": -21.5,
-      "cascade_force": 25.0,
-      "damping_force": 46.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -28.9,
+      "level": "strong_sell",
+      "raw": 0.2377,
+      "volume_amp": 1.217,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.7,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.2821,
+        "v3": 0.9303,
+        "v4": 0.2,
+        "v5": 0.215
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 6.87,
+        "v3": -28.3,
+        "v4": -4.87,
+        "v5": -2.62
       },
       "impact": null
     },
     {
       "date": "2025-10-13",
-      "rspi": -33.0,
-      "cascade_force": 23.6,
-      "damping_force": 56.6,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 25.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 13.6,
+      "level": "mild_rebound",
+      "raw": -0.144,
+      "volume_amp": 0.947,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.8523,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.7725,
+        "v3": -0.8523,
+        "v4": -0.4,
+        "v5": -0.054
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -14.63,
+        "v3": 20.17,
+        "v4": 7.57,
+        "v5": 0.51
       },
       "impact": null
     },
     {
       "date": "2025-10-14",
-      "rspi": -36.0,
-      "cascade_force": 17.5,
-      "damping_force": 53.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 17.5,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -14.1,
+      "level": "mild_sell",
+      "raw": 0.1307,
+      "volume_amp": 1.081,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.7,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.0142,
+        "v3": 0.2239,
+        "v4": 0.7,
+        "v5": -0.6246
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.31,
+        "v3": -6.05,
+        "v4": -15.13,
+        "v5": 6.75
       },
       "impact": null
     },
     {
       "date": "2025-10-15",
-      "rspi": -62.0,
-      "cascade_force": 5.0,
-      "damping_force": 67.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 18.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -2.1,
+      "level": "neutral",
+      "raw": 0.025,
+      "volume_amp": 0.844,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.6159,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": 0.1794,
+        "v3": -0.6159,
+        "v4": 1.0,
+        "v5": -0.569
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.03,
+        "v3": 13.0,
+        "v4": -16.88,
+        "v5": 4.8
       },
       "impact": null
     },
     {
       "date": "2025-10-16",
-      "rspi": -55.5,
-      "cascade_force": 5.0,
-      "damping_force": 60.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 14.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 3.9,
+      "level": "neutral",
+      "raw": -0.0376,
+      "volume_amp": 1.033,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.468,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0948,
+        "v3": -0.2853,
+        "v4": 0.2,
+        "v5": 0.1269
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.96,
+        "v3": 7.37,
+        "v4": -4.13,
+        "v5": -1.31
       },
       "impact": null
     },
     {
       "date": "2025-10-17",
-      "rspi": -49.5,
-      "cascade_force": 5.0,
-      "damping_force": 54.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 6.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 3.5,
+      "level": "neutral",
+      "raw": -0.0334,
+      "volume_amp": 1.037,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2004,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0021,
+        "v3": -0.2004,
+        "v4": 0.2,
+        "v5": -0.229
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 0.04,
+        "v3": 5.2,
+        "v4": -4.15,
+        "v5": 2.37
       },
       "impact": null
     },
     {
       "date": "2025-10-20",
-      "rspi": -42.1,
-      "cascade_force": 5.0,
-      "damping_force": 47.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 16.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 4.7,
+      "level": "neutral",
+      "raw": -0.052,
+      "volume_amp": 0.896,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.5362,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3924,
+        "v3": -0.5362,
+        "v4": 0.2,
+        "v5": -0.3643
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.03,
+        "v3": 12.01,
+        "v4": -3.58,
+        "v5": 3.26
       },
       "impact": null
     },
     {
       "date": "2025-10-21",
-      "rspi": -36.5,
-      "cascade_force": 5.0,
-      "damping_force": 41.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -23.1,
+      "level": "strong_sell",
+      "raw": 0.2067,
+      "volume_amp": 1.117,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.2133,
+        "v3": 0.3801,
+        "v4": 0.2,
+        "v5": 0.2904
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.76,
+        "v3": -10.61,
+        "v4": -4.47,
+        "v5": -3.24
       },
       "impact": null
     },
     {
       "date": "2025-10-22",
-      "rspi": -30.0,
-      "cascade_force": 5.0,
-      "damping_force": 35.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -7.5,
+      "level": "mild_sell",
+      "raw": 0.0799,
+      "volume_amp": 0.94,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.1349,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.6081,
+        "v3": -0.0621,
+        "v4": 0.2,
+        "v5": -0.662
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -11.43,
+        "v3": 1.46,
+        "v4": -3.76,
+        "v5": 6.22
       },
       "impact": null
     },
     {
       "date": "2025-10-23",
-      "rspi": -29.4,
-      "cascade_force": 15.0,
-      "damping_force": 44.4,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 5.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 8.5,
+      "level": "mild_rebound",
+      "raw": -0.0855,
+      "volume_amp": 0.989,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.1968,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.3989,
+        "v3": -0.1968,
+        "v4": -0.4,
+        "v5": -0.3611
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.89,
+        "v3": 4.87,
+        "v4": 7.91,
+        "v5": 3.57
       },
       "impact": null
     },
     {
       "date": "2025-10-24",
-      "rspi": -43.9,
-      "cascade_force": 25.0,
-      "damping_force": 68.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 15.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 1.0,
+      "level": "neutral",
+      "raw": -0.0092,
+      "volume_amp": 1.05,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.5139,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.1671,
+        "v3": -0.5139,
+        "v4": 1.0,
+        "v5": -0.4733
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 3.51,
+        "v3": 13.49,
+        "v4": -21.0,
+        "v5": 4.97
       },
       "impact": null
     },
     {
       "date": "2025-10-27",
-      "rspi": -61.7,
-      "cascade_force": 5.0,
-      "damping_force": 66.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 18.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 19.7,
+      "level": "mild_rebound",
+      "raw": -0.1806,
+      "volume_amp": 1.088,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.6063,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.2076,
+        "v3": -0.6063,
+        "v4": 0.2,
+        "v5": -0.2756
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.52,
+        "v3": 16.5,
+        "v4": -4.35,
+        "v5": 3.0
       },
       "impact": null
     },
     {
       "date": "2025-10-28",
-      "rspi": -17.7,
-      "cascade_force": 15.0,
-      "damping_force": 32.7,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -10.4,
+      "level": "mild_sell",
+      "raw": 0.097,
+      "volume_amp": 1.071,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0575,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.994,
+        "v3": -0.0575,
+        "v4": -0.4,
+        "v5": -0.0741
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -21.29,
+        "v3": 1.54,
+        "v4": 8.57,
+        "v5": 0.79
       },
       "impact": null
     },
     {
       "date": "2025-10-29",
-      "rspi": -33.5,
-      "cascade_force": 25.0,
-      "damping_force": 58.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 15.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -6.1,
+      "level": "mild_sell",
+      "raw": 0.0556,
+      "volume_amp": 1.1,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.4987,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.1727,
+        "v3": -0.4987,
+        "v4": 1.0,
+        "v5": -0.5428
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.8,
+        "v3": 13.71,
+        "v4": -22.0,
+        "v5": 5.97
       },
       "impact": null
     },
     {
       "date": "2025-10-30",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -3.3,
+      "level": "neutral",
+      "raw": 0.0296,
+      "volume_amp": 1.11,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1688,
+        "v3": 0.4462,
+        "v4": -0.4,
+        "v5": -0.3571
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.75,
+        "v3": -12.38,
+        "v4": 8.88,
+        "v5": 3.96
       },
       "impact": null
     },
     {
       "date": "2025-10-31",
-      "rspi": -39.9,
-      "cascade_force": 25.0,
-      "damping_force": 64.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 11.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 5.6,
+      "level": "mild_rebound",
+      "raw": -0.0543,
+      "volume_amp": 1.037,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.3793,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.548,
+        "v3": -0.3793,
+        "v4": 1.0,
+        "v5": -0.4989
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 11.37,
+        "v3": 9.83,
+        "v4": -20.74,
+        "v5": 5.17
       },
       "impact": null
     },
     {
       "date": "2025-11-03",
-      "rspi": -36.8,
-      "cascade_force": 15.0,
-      "damping_force": 51.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 22.8,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 15.3,
+      "level": "mild_rebound",
+      "raw": -0.1509,
+      "volume_amp": 1.013,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.7612,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.5281,
+        "v3": -0.7612,
+        "v4": -0.4,
+        "v5": 0.1373
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -10.7,
+        "v3": 19.28,
+        "v4": 8.1,
+        "v5": -1.39
       },
       "impact": null
     },
     {
       "date": "2025-11-04",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -33.9,
+      "level": "strong_sell",
+      "raw": 0.3602,
+      "volume_amp": 0.942,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 1.0,
+        "v3": 1.0,
+        "v4": -0.4,
+        "v5": -0.0977
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -18.83,
+        "v3": -23.54,
+        "v4": 7.53,
+        "v5": 0.92
       },
       "impact": null
     },
     {
       "date": "2025-11-05",
-      "rspi": -27.2,
-      "cascade_force": 15.0,
-      "damping_force": 42.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 6.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 5.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 2.3,
+      "level": "neutral",
+      "raw": -0.0203,
+      "volume_amp": 1.142,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.2054,
-        "d2": 0.3,
-        "d3": 0.2,
-        "d4": 1.0
+        "v2": 0.8569,
+        "v3": -0.2054,
+        "v4": -0.4,
+        "v5": -0.6035
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -19.57,
+        "v3": 5.86,
+        "v4": 9.14,
+        "v5": 6.89
       },
       "impact": null
     },
     {
       "date": "2025-11-06",
-      "rspi": -21.0,
-      "cascade_force": 15.0,
-      "damping_force": 36.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 5.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -22.2,
+      "level": "strong_sell",
+      "raw": 0.2371,
+      "volume_amp": 0.938,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.2,
-        "d4": 1.0
+        "v2": 0.7125,
+        "v3": 0.734,
+        "v4": -0.4,
+        "v5": -0.0893
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -13.36,
+        "v3": -17.2,
+        "v4": 7.5,
+        "v5": 0.84
       },
       "impact": null
     },
     {
       "date": "2025-11-07",
-      "rspi": -28.7,
-      "cascade_force": 15.0,
-      "damping_force": 43.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.8,
+      "level": "mild_rebound",
+      "raw": -0.0901,
+      "volume_amp": 0.867,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0062,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.0568,
+        "v3": 0.1852,
+        "v4": -0.4,
+        "v5": -0.6777
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -0.99,
+        "v3": -4.02,
+        "v4": 6.94,
+        "v5": 5.88
       },
       "impact": null
     },
     {
       "date": "2025-11-10",
-      "rspi": -45.9,
-      "cascade_force": 25.0,
-      "damping_force": 70.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 29.4,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 3.5,
+      "level": "neutral",
+      "raw": -0.0429,
+      "volume_amp": 0.821,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.9814,
-        "d2": 0.2,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": -0.0858,
+        "v3": -0.9814,
+        "v4": 1.0,
+        "v5": 0.1957
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.41,
+        "v3": 20.14,
+        "v4": -16.42,
+        "v5": -1.61
       },
       "impact": null
     },
     {
       "date": "2025-11-11",
-      "rspi": -46.9,
-      "cascade_force": 5.0,
-      "damping_force": 51.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.4,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -2.6,
+      "level": "neutral",
+      "raw": 0.0269,
+      "volume_amp": 0.96,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0143,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.2228,
+        "v3": 0.0268,
+        "v4": 0.2,
+        "v5": 0.2478
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.28,
+        "v3": -0.64,
+        "v4": -3.84,
+        "v5": -2.38
       },
       "impact": null
     },
     {
       "date": "2025-11-12",
-      "rspi": -21.5,
-      "cascade_force": 13.6,
-      "damping_force": 35.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 4.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -0.8,
+      "level": "neutral",
+      "raw": 0.0098,
+      "volume_amp": 0.838,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.1354,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.0323,
+        "v3": -0.1354,
+        "v4": 0.2,
+        "v5": -0.028
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -0.54,
+        "v3": 2.84,
+        "v4": -3.35,
+        "v5": 0.23
       },
       "impact": null
     },
     {
       "date": "2025-11-13",
-      "rspi": -48.5,
-      "cascade_force": 5.0,
-      "damping_force": 53.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 0.7,
+      "level": "neutral",
+      "raw": -0.0072,
+      "volume_amp": 0.918,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.7137,
+        "v3": 0.5627,
+        "v4": 0.2,
+        "v5": -0.4511
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 13.11,
+        "v3": -12.92,
+        "v4": -3.67,
+        "v5": 4.14
       },
       "impact": null
     },
     {
       "date": "2025-11-14",
-      "rspi": -16.4,
-      "cascade_force": 15.0,
-      "damping_force": 31.4,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -6.8,
+      "level": "mild_sell",
+      "raw": 0.073,
+      "volume_amp": 0.935,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0137,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.9145,
+        "v3": -0.009,
+        "v4": -0.4,
+        "v5": -0.2765
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -17.11,
+        "v3": 0.21,
+        "v4": 7.48,
+        "v5": 2.59
       },
       "impact": null
     },
     {
       "date": "2025-11-17",
-      "rspi": -28.5,
-      "cascade_force": 25.0,
-      "damping_force": 53.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -11.8,
+      "level": "mild_sell",
+      "raw": 0.1525,
+      "volume_amp": 0.773,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.4647,
+        "v3": 0.3377,
+        "v4": 1.0,
+        "v5": -0.3897
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.18,
+        "v3": -6.53,
+        "v4": -15.46,
+        "v5": 3.01
       },
       "impact": null
     },
     {
       "date": "2025-11-18",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 0.9,
+      "level": "neutral",
+      "raw": -0.0121,
+      "volume_amp": 0.769,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.0346,
+        "v3": 0.395,
+        "v4": -0.4,
+        "v5": -0.3776
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -0.53,
+        "v3": -7.59,
+        "v4": 6.15,
+        "v5": 2.9
       },
       "impact": null
     },
     {
       "date": "2025-11-19",
-      "rspi": -16.7,
-      "cascade_force": 15.0,
-      "damping_force": 31.7,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 1.1,
+      "level": "neutral",
+      "raw": -0.0134,
+      "volume_amp": 0.796,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0243,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.265,
+        "v3": 0.0894,
+        "v4": -0.4,
+        "v5": -0.0874
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.22,
+        "v3": -1.78,
+        "v4": 6.37,
+        "v5": 0.7
       },
       "impact": null
     },
     {
       "date": "2025-11-20",
-      "rspi": -28.5,
-      "cascade_force": 25.0,
-      "damping_force": 53.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -19.9,
+      "level": "mild_sell",
+      "raw": 0.2412,
+      "volume_amp": 0.825,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.5458,
+        "v3": 0.6074,
+        "v4": 1.0,
+        "v5": -0.0145
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 9.01,
+        "v3": -12.53,
+        "v4": -16.5,
+        "v5": 0.12
       },
       "impact": null
     },
     {
       "date": "2025-11-21",
-      "rspi": -13.3,
-      "cascade_force": 23.6,
-      "damping_force": 36.9,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 7.9,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -4.6,
+      "level": "neutral",
+      "raw": 0.0582,
+      "volume_amp": 0.784,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.2625,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.9462,
+        "v3": -0.2625,
+        "v4": -0.4,
+        "v5": 0.1455
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -14.84,
+        "v3": 5.15,
+        "v4": 6.27,
+        "v5": -1.14
       },
       "impact": null
     },
     {
       "date": "2025-11-24",
-      "rspi": -20.0,
-      "cascade_force": 33.6,
-      "damping_force": 53.6,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 12.1,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -12.0,
+      "level": "mild_sell",
+      "raw": 0.1116,
+      "volume_amp": 1.079,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.4026,
-        "d2": 0.2,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.0525,
+        "v3": -0.4026,
+        "v4": 1.0,
+        "v5": 0.0175
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -1.13,
+        "v3": 10.86,
+        "v4": -21.59,
+        "v5": -0.19
       },
       "impact": null
     },
     {
       "date": "2025-11-25",
-      "rspi": -39.7,
-      "cascade_force": 13.6,
-      "damping_force": 53.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 1.8,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -0.4,
+      "level": "neutral",
+      "raw": 0.0056,
+      "volume_amp": 0.747,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.0585,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.2687,
+        "v3": 0.0029,
+        "v4": 0.2,
+        "v5": 0.1859
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.01,
+        "v3": -0.05,
+        "v4": -2.99,
+        "v5": -1.39
       },
       "impact": null
     },
     {
       "date": "2025-11-26",
-      "rspi": -46.6,
-      "cascade_force": 13.6,
-      "damping_force": 60.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 13.6,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 12.3,
+      "level": "mild_rebound",
+      "raw": -0.1389,
+      "volume_amp": 0.883,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.4549,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.4734,
+        "v3": -0.4549,
+        "v4": 0.2,
+        "v5": 0.2953
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 8.37,
+        "v3": 10.05,
+        "v4": -3.53,
+        "v5": -2.61
       },
       "impact": null
     },
     {
       "date": "2025-11-27",
-      "rspi": -35.1,
-      "cascade_force": 25.0,
-      "damping_force": 60.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 13.6,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 9.7,
+      "level": "mild_rebound",
+      "raw": -0.1268,
+      "volume_amp": 0.766,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.7,
-        "d1": 0.4549,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.3077,
+        "v3": -0.4549,
+        "v4": 0.2,
+        "v5": 0.0847
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.72,
+        "v3": 8.72,
+        "v4": -3.07,
+        "v5": -0.65
       },
       "impact": null
     },
     {
       "date": "2025-11-28",
-      "rspi": -8.5,
-      "cascade_force": 23.6,
-      "damping_force": 32.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 1.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -3.5,
+      "level": "neutral",
+      "raw": 0.048,
+      "volume_amp": 0.726,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.0342,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.5933,
+        "v3": 0.0426,
+        "v4": -0.4,
+        "v5": -0.0135
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -8.62,
+        "v3": -0.77,
+        "v4": 5.81,
+        "v5": 0.1
       },
       "impact": null
     },
     {
       "date": "2025-12-01",
-      "rspi": -38.5,
-      "cascade_force": 15.0,
-      "damping_force": 53.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -4.6,
+      "level": "neutral",
+      "raw": 0.0613,
+      "volume_amp": 0.742,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.3964,
+        "v3": 0.1064,
+        "v4": 0.7,
+        "v5": -0.2597
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 5.88,
+        "v3": -1.97,
+        "v4": -10.39,
+        "v5": 1.93
       },
       "impact": null
     },
     {
       "date": "2025-12-02",
-      "rspi": -33.1,
-      "cascade_force": 25.0,
-      "damping_force": 58.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 9.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 5.6,
+      "level": "mild_rebound",
+      "raw": -0.0704,
+      "volume_amp": 0.798,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.3212,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.7518,
+        "v3": -0.3212,
+        "v4": 1.0,
+        "v5": -0.3974
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 11.99,
+        "v3": 6.4,
+        "v4": -15.95,
+        "v5": 3.17
       },
       "impact": null
     },
     {
       "date": "2025-12-03",
-      "rspi": -50.5,
-      "cascade_force": 5.0,
-      "damping_force": 55.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 7.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.4,
+      "level": "mild_rebound",
+      "raw": -0.0834,
+      "volume_amp": 0.885,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2327,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.3034,
+        "v3": -0.2327,
+        "v4": 0.2,
+        "v5": -0.0455
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 5.37,
+        "v3": 5.15,
+        "v4": -3.54,
+        "v5": 0.4
       },
       "impact": null
     },
     {
       "date": "2025-12-04",
-      "rspi": -16.1,
-      "cascade_force": 15.0,
-      "damping_force": 31.1,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 2.7,
+      "level": "neutral",
+      "raw": -0.0292,
+      "volume_amp": 0.922,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.005,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1736,
+        "v3": 0.1179,
+        "v4": -0.4,
+        "v5": -0.1342
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.2,
+        "v3": -2.72,
+        "v4": 7.37,
+        "v5": 1.24
       },
       "impact": null
     },
     {
       "date": "2025-12-05",
-      "rspi": -44.0,
-      "cascade_force": 25.0,
-      "damping_force": 69.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 15.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 8.3,
+      "level": "mild_rebound",
+      "raw": -0.0784,
+      "volume_amp": 1.052,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.5174,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.574,
+        "v3": -0.5174,
+        "v4": 1.0,
+        "v5": -0.343
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 12.08,
+        "v3": 13.61,
+        "v4": -21.05,
+        "v5": 3.61
       },
       "impact": null
     },
     {
       "date": "2025-12-08",
-      "rspi": -47.1,
-      "cascade_force": 5.0,
-      "damping_force": 52.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 3.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.9,
+      "level": "mild_rebound",
+      "raw": -0.0784,
+      "volume_amp": 1.005,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.1188,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.2532,
+        "v3": -0.0645,
+        "v4": 0.2,
+        "v5": -0.5166
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 5.09,
+        "v3": 1.62,
+        "v4": -4.02,
+        "v5": 5.19
       },
       "impact": null
     },
     {
       "date": "2025-12-09",
-      "rspi": -26.3,
-      "cascade_force": 5.0,
-      "damping_force": 31.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 2.3,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -1.7,
+      "level": "neutral",
+      "raw": 0.0181,
+      "volume_amp": 0.927,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0755,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": -0.0703,
+        "v3": -0.0473,
+        "v4": 0.2,
+        "v5": 0.04
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.3,
+        "v3": 1.09,
+        "v4": -3.71,
+        "v5": -0.37
       },
       "impact": null
     },
     {
       "date": "2025-12-10",
-      "rspi": -57.8,
-      "cascade_force": 5.0,
-      "damping_force": 62.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 9.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 9.2,
+      "level": "mild_rebound",
+      "raw": -0.1029,
+      "volume_amp": 0.895,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.3088,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.2615,
+        "v3": -0.3088,
+        "v4": 0.2,
+        "v5": -0.1341
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.68,
+        "v3": 6.91,
+        "v4": -3.58,
+        "v5": 1.2
       },
       "impact": null
     },
     {
       "date": "2025-12-11",
-      "rspi": -31.9,
-      "cascade_force": 15.0,
-      "damping_force": 46.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.4,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 10.8,
+      "level": "mild_rebound",
+      "raw": -0.0904,
+      "volume_amp": 1.192,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0143,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.2787,
+        "v3": 0.1708,
+        "v4": -0.4,
+        "v5": 0.0267
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 6.65,
+        "v3": -5.09,
+        "v4": 9.54,
+        "v5": -0.32
       },
       "impact": null
     },
     {
       "date": "2025-12-12",
-      "rspi": -12.9,
-      "cascade_force": 33.6,
-      "damping_force": 46.5,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -35.7,
+      "level": "strong_sell",
+      "raw": 0.3429,
+      "volume_amp": 1.042,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0812,
+        "v3": 0.5877,
+        "v4": 1.0,
+        "v5": 0.1226
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.69,
+        "v3": -15.31,
+        "v4": -20.85,
+        "v5": -1.28
       },
       "impact": null
     },
     {
       "date": "2025-12-15",
-      "rspi": -7.5,
-      "cascade_force": 23.6,
-      "damping_force": 31.1,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 1.3,
+      "level": "neutral",
+      "raw": -0.0135,
+      "volume_amp": 0.99,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.0034,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3977,
+        "v3": 0.006,
+        "v4": -0.4,
+        "v5": -0.1456
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -7.88,
+        "v3": -0.15,
+        "v4": 7.92,
+        "v5": 1.44
       },
       "impact": null
     },
     {
       "date": "2025-12-16",
-      "rspi": -5.4,
-      "cascade_force": 23.6,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -8.9,
+      "level": "mild_sell",
+      "raw": 0.0879,
+      "volume_amp": 1.01,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.4171,
+        "v3": 0.2815,
+        "v4": -0.4,
+        "v5": 0.1415
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -8.43,
+        "v3": -7.11,
+        "v4": 8.08,
+        "v5": -1.43
       },
       "impact": null
     },
     {
       "date": "2025-12-17",
-      "rspi": -18.5,
-      "cascade_force": 25.0,
-      "damping_force": 43.5,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -19.2,
+      "level": "mild_sell",
+      "raw": 0.2312,
+      "volume_amp": 0.833,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": -0.0673,
+        "v3": 0.3241,
+        "v4": 1.0,
+        "v5": -0.3641
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.12,
+        "v3": -6.75,
+        "v4": -16.65,
+        "v5": 3.03
       },
       "impact": null
     },
     {
       "date": "2025-12-18",
-      "rspi": -17.5,
-      "cascade_force": 23.6,
-      "damping_force": 41.1,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 12.1,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 12.1,
+      "level": "mild_rebound",
+      "raw": -0.1331,
+      "volume_amp": 0.905,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.4038,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.0691,
+        "v3": -0.4038,
+        "v4": -0.4,
+        "v5": 0.3402
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -1.25,
+        "v3": 9.14,
+        "v4": 7.24,
+        "v5": -3.08
       },
       "impact": null
     },
     {
       "date": "2025-12-19",
-      "rspi": -6.6,
-      "cascade_force": 33.6,
-      "damping_force": 40.1,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 11.1,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -22.3,
+      "level": "strong_sell",
+      "raw": 0.2081,
+      "volume_amp": 1.072,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.3,
-        "d1": 0.3708,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.4354,
+        "v3": -0.3708,
+        "v4": 1.0,
+        "v5": 0.1374
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -9.34,
+        "v3": 9.94,
+        "v4": -21.45,
+        "v5": -1.47
       },
       "impact": null
     },
     {
       "date": "2025-12-22",
-      "rspi": -31.4,
-      "cascade_force": 25.0,
-      "damping_force": 56.4,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 20.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.9,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 13.2,
+      "level": "mild_rebound",
+      "raw": -0.142,
+      "volume_amp": 0.926,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.7,
-        "d1": 0.1626,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.7292,
+        "v3": -0.1626,
+        "v4": 0.2,
+        "v5": 0.0451
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 13.51,
+        "v3": 3.77,
+        "v4": -3.71,
+        "v5": -0.42
       },
       "impact": null
     },
     {
       "date": "2025-12-23",
-      "rspi": -40.6,
-      "cascade_force": 13.6,
-      "damping_force": 54.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 7.6,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 13.1,
+      "level": "mild_rebound",
+      "raw": -0.1379,
+      "volume_amp": 0.953,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.254,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.581,
+        "v3": -0.254,
+        "v4": 0.2,
+        "v5": 0.0176
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 11.07,
+        "v3": 6.05,
+        "v4": -3.81,
+        "v5": -0.17
       },
       "impact": null
     },
     {
       "date": "2025-12-24",
-      "rspi": -56.2,
-      "cascade_force": 5.0,
-      "damping_force": 61.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 12.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 11.9,
+      "level": "mild_rebound",
+      "raw": -0.1344,
+      "volume_amp": 0.886,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.4232,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.309,
+        "v3": -0.4232,
+        "v4": 0.2,
+        "v5": -0.068
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 5.48,
+        "v3": 9.38,
+        "v4": -3.55,
+        "v5": 0.6
       },
       "impact": null
     },
     {
       "date": "2025-12-26",
-      "rspi": -47.2,
-      "cascade_force": 5.0,
-      "damping_force": 52.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 5.7,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 19.3,
+      "level": "mild_rebound",
+      "raw": -0.1773,
+      "volume_amp": 1.091,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.1915,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.9441,
+        "v3": -0.1334,
+        "v4": 0.2,
+        "v5": 0.0492
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 20.6,
+        "v3": 3.64,
+        "v4": -4.36,
+        "v5": -0.54
       },
       "impact": null
     },
     {
       "date": "2025-12-29",
-      "rspi": -46.7,
-      "cascade_force": 15.0,
-      "damping_force": 61.7,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 13.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 17.5,
+      "level": "mild_rebound",
+      "raw": -0.1741,
+      "volume_amp": 1.003,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.4406,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0707,
+        "v3": -0.286,
+        "v4": -0.4,
+        "v5": -0.0846
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.42,
+        "v3": 7.17,
+        "v4": 8.02,
+        "v5": 0.85
       },
       "impact": null
     },
     {
       "date": "2025-12-30",
-      "rspi": -5.4,
-      "cascade_force": 23.6,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -2.3,
+      "level": "neutral",
+      "raw": 0.0248,
+      "volume_amp": 0.931,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.4483,
+        "v3": 0.037,
+        "v4": -0.4,
+        "v5": 0.059
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -8.34,
+        "v3": -0.86,
+        "v4": 7.44,
+        "v5": -0.55
       },
       "impact": null
     },
     {
       "date": "2026-01-02",
-      "rspi": -58.1,
-      "cascade_force": 25.0,
-      "damping_force": 83.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 29.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 15.8,
+      "level": "mild_rebound",
+      "raw": -0.1405,
+      "volume_amp": 1.122,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.9852,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.3231,
+        "v3": -0.9852,
+        "v4": 1.0,
+        "v5": -0.2957
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 7.25,
+        "v3": 27.63,
+        "v4": -22.43,
+        "v5": 3.32
       },
       "impact": null
     },
     {
       "date": "2026-01-05",
-      "rspi": -60.5,
-      "cascade_force": 5.0,
-      "damping_force": 65.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 17.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 41.3,
+      "level": "extreme_rebound",
+      "raw": -0.3394,
+      "volume_amp": 1.217,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.5677,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -1.0,
+        "v3": -0.5677,
+        "v4": 0.2,
+        "v5": -0.375
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 24.34,
+        "v3": 17.27,
+        "v4": -4.87,
+        "v5": 4.56
       },
       "impact": null
     },
     {
       "date": "2026-01-06",
-      "rspi": -33.4,
-      "cascade_force": 15.0,
-      "damping_force": 48.4,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 17.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 16.2,
+      "level": "mild_rebound",
+      "raw": -0.1323,
+      "volume_amp": 1.224,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.5801,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.5265,
+        "v3": -0.5801,
+        "v4": -0.4,
+        "v5": -0.126
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -12.88,
+        "v3": 17.75,
+        "v4": 9.79,
+        "v5": 1.54
       },
       "impact": null
     },
     {
       "date": "2026-01-07",
-      "rspi": -28.5,
-      "cascade_force": 25.0,
-      "damping_force": 53.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -11.0,
+      "level": "mild_sell",
+      "raw": 0.0902,
+      "volume_amp": 1.215,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.5741,
+        "v3": 0.1446,
+        "v4": 1.0,
+        "v5": -0.3112
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 13.95,
+        "v3": -4.39,
+        "v4": -24.3,
+        "v5": 3.78
       },
       "impact": null
     },
     {
       "date": "2026-01-08",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 8.4,
+      "level": "mild_rebound",
+      "raw": -0.0772,
+      "volume_amp": 1.083,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.2071,
+        "v3": 0.0753,
+        "v4": -0.4,
+        "v5": -0.5742
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.49,
+        "v3": -2.04,
+        "v4": 8.66,
+        "v5": 6.22
       },
       "impact": null
     },
     {
       "date": "2026-01-09",
-      "rspi": -30.3,
-      "cascade_force": 15.0,
-      "damping_force": 45.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 14.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -17.0,
+      "level": "mild_sell",
+      "raw": 0.1819,
+      "volume_amp": 0.935,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.4754,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.9455,
+        "v3": -0.4754,
+        "v4": 0.7,
+        "v5": -0.284
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -17.69,
+        "v3": 11.12,
+        "v4": -13.1,
+        "v5": 2.66
       },
       "impact": null
     },
     {
       "date": "2026-01-12",
-      "rspi": -19.6,
-      "cascade_force": 25.0,
-      "damping_force": 44.6,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 1.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -19.5,
+      "level": "mild_sell",
+      "raw": 0.2116,
+      "volume_amp": 0.921,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.0362,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": 0.2605,
+        "v3": -0.0362,
+        "v4": 1.0,
+        "v5": -0.3144
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.8,
+        "v3": 0.83,
+        "v4": -18.42,
+        "v5": 2.9
       },
       "impact": null
     },
     {
       "date": "2026-01-13",
-      "rspi": -33.5,
-      "cascade_force": 5.0,
-      "damping_force": 38.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -14.2,
+      "level": "mild_sell",
+      "raw": 0.1436,
+      "volume_amp": 0.988,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.2051,
+        "v3": 0.2747,
+        "v4": 0.2,
+        "v5": -0.0606
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.05,
+        "v3": -6.78,
+        "v4": -3.95,
+        "v5": 0.6
       },
       "impact": null
     },
     {
       "date": "2026-01-14",
-      "rspi": -34.5,
-      "cascade_force": 5.0,
-      "damping_force": 39.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 8.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -4.0,
+      "level": "neutral",
+      "raw": 0.0403,
+      "volume_amp": 0.986,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2833,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.2434,
+        "v3": -0.1678,
+        "v4": 0.2,
+        "v5": -0.0641
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -4.8,
+        "v3": 4.14,
+        "v4": -3.94,
+        "v5": 0.63
       },
       "impact": null
     },
     {
       "date": "2026-01-15",
-      "rspi": -56.9,
-      "cascade_force": 5.0,
-      "damping_force": 61.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 8.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.7,
+      "level": "mild_rebound",
+      "raw": -0.0771,
+      "volume_amp": 0.996,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.2809,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.1015,
+        "v3": -0.2809,
+        "v4": 0.2,
+        "v5": -0.2656
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 2.02,
+        "v3": 6.99,
+        "v4": -3.98,
+        "v5": 2.64
       },
       "impact": null
     },
     {
       "date": "2026-01-16",
-      "rspi": -48.1,
-      "cascade_force": 5.0,
-      "damping_force": 53.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 4.5,
+      "level": "neutral",
+      "raw": -0.0419,
+      "volume_amp": 1.064,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.154,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.1154,
+        "v3": -0.1028,
+        "v4": 0.2,
+        "v5": -0.3312
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 2.46,
+        "v3": 2.73,
+        "v4": -4.26,
+        "v5": 3.52
       },
       "impact": null
     },
     {
       "date": "2026-01-19",
-      "rspi": -48.1,
-      "cascade_force": 5.0,
-      "damping_force": 53.1,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 2.9,
+      "level": "neutral",
+      "raw": -0.0294,
+      "volume_amp": 1.004,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.154,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.1653,
+        "v3": -0.1028,
+        "v4": 0.2,
+        "v5": -0.1061
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 3.32,
+        "v3": 2.58,
+        "v4": -4.01,
+        "v5": 1.07
       },
       "impact": null
     },
     {
       "date": "2026-01-20",
-      "rspi": -31.5,
-      "cascade_force": 15.0,
-      "damping_force": 46.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -6.6,
+      "level": "mild_sell",
+      "raw": 0.063,
+      "volume_amp": 1.046,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": 0.0902,
+        "v3": 0.4508,
+        "v4": -0.4,
+        "v5": 0.1228
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -1.89,
+        "v3": -11.79,
+        "v4": 8.37,
+        "v5": -1.28
       },
       "impact": null
     },
     {
       "date": "2026-01-21",
-      "rspi": -51.6,
-      "cascade_force": 25.0,
-      "damping_force": 76.6,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 28.1,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.8,
+      "level": "mild_rebound",
+      "raw": -0.0714,
+      "volume_amp": 1.088,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.9359,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.0574,
+        "v3": -0.9359,
+        "v4": 1.0,
+        "v5": -0.2589
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 1.25,
+        "v3": 25.45,
+        "v4": -21.75,
+        "v5": 2.82
       },
       "impact": null
     },
     {
       "date": "2026-01-22",
-      "rspi": -9.1,
-      "cascade_force": 23.6,
-      "damping_force": 32.6,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 3.6,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 2.2,
+      "level": "neutral",
+      "raw": -0.0201,
+      "volume_amp": 1.105,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.1214,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3088,
+        "v3": -0.1214,
+        "v4": -0.4,
+        "v5": 0.285
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -6.82,
+        "v3": 3.35,
+        "v4": 8.84,
+        "v5": -3.15
       },
       "impact": null
     },
     {
       "date": "2026-01-23",
-      "rspi": -38.2,
-      "cascade_force": 25.0,
-      "damping_force": 63.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 9.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -11.5,
+      "level": "mild_sell",
+      "raw": 0.1125,
+      "volume_amp": 1.023,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.324,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": 0.0548,
+        "v3": -0.324,
+        "v4": 1.0,
+        "v5": -0.1746
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -1.12,
+        "v3": 8.29,
+        "v4": -20.46,
+        "v5": 1.79
       },
       "impact": null
     },
     {
       "date": "2026-01-26",
-      "rspi": -16.9,
-      "cascade_force": 15.0,
-      "damping_force": 31.9,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 7.4,
+      "level": "mild_rebound",
+      "raw": -0.0878,
+      "volume_amp": 0.838,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0311,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.2173,
+        "v3": 0.0215,
+        "v4": -0.4,
+        "v5": -0.5667
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.64,
+        "v3": -0.45,
+        "v4": 6.7,
+        "v5": 4.75
       },
       "impact": null
     },
     {
       "date": "2026-01-27",
-      "rspi": -53.8,
-      "cascade_force": 25.0,
-      "damping_force": 78.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 27.3,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 9.9,
+      "level": "mild_rebound",
+      "raw": -0.1001,
+      "volume_amp": 0.99,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.909,
-        "d2": 0.2,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.4555,
+        "v3": -0.909,
+        "v4": 1.0,
+        "v5": 0.1827
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 9.02,
+        "v3": 22.51,
+        "v4": -19.81,
+        "v5": -1.81
       },
       "impact": null
     },
     {
       "date": "2026-01-28",
-      "rspi": -43.9,
-      "cascade_force": 15.0,
-      "damping_force": 58.9,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 10.4,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 23.4,
+      "level": "strong_rebound",
+      "raw": -0.2242,
+      "volume_amp": 1.044,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.3473,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.1606,
+        "v3": -0.2425,
+        "v4": -0.4,
+        "v5": -0.5146
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 3.35,
+        "v3": 6.33,
+        "v4": 8.35,
+        "v5": 5.37
       },
       "impact": null
     },
     {
       "date": "2026-01-29",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -8.9,
+      "level": "mild_sell",
+      "raw": 0.0781,
+      "volume_amp": 1.138,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.9604,
+        "v3": 0.1888,
+        "v4": -0.4,
+        "v5": -0.8121
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -21.86,
+        "v3": -5.37,
+        "v4": 9.11,
+        "v5": 9.24
       },
       "impact": null
     },
     {
       "date": "2026-01-30",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -20.8,
+      "level": "strong_sell",
+      "raw": 0.1882,
+      "volume_amp": 1.104,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 1.0,
+        "v3": 0.3642,
+        "v4": -0.4,
+        "v5": -0.2285
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -22.09,
+        "v3": -10.06,
+        "v4": 8.84,
+        "v5": 2.52
       },
       "impact": null
     },
     {
       "date": "2026-02-02",
-      "rspi": -16.9,
-      "cascade_force": 15.0,
-      "damping_force": 31.9,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -11.3,
+      "level": "mild_sell",
+      "raw": 0.1144,
+      "volume_amp": 0.99,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0311,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 1.0,
+        "v3": 0.0858,
+        "v4": -0.4,
+        "v5": -0.2703
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -19.79,
+        "v3": -2.12,
+        "v4": 7.92,
+        "v5": 2.67
       },
       "impact": null
     },
     {
       "date": "2026-02-03",
-      "rspi": -40.4,
-      "cascade_force": 25.0,
-      "damping_force": 65.4,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 11.9,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -3.9,
+      "level": "neutral",
+      "raw": 0.0417,
+      "volume_amp": 0.935,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.3964,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.4658,
+        "v3": -0.2246,
+        "v4": 1.0,
+        "v5": -0.0898
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 8.71,
+        "v3": 5.25,
+        "v4": -18.69,
+        "v5": 0.84
       },
       "impact": null
     },
     {
       "date": "2026-02-04",
-      "rspi": -26.0,
-      "cascade_force": 5.0,
-      "damping_force": 31.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -19.6,
+      "level": "mild_sell",
+      "raw": 0.2076,
+      "volume_amp": 0.946,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3493,
+        "v3": 0.6613,
+        "v4": 0.2,
+        "v5": -0.6762
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -6.61,
+        "v3": -15.65,
+        "v4": -3.79,
+        "v5": 6.4
       },
       "impact": null
     },
     {
       "date": "2026-02-05",
-      "rspi": -14.0,
-      "cascade_force": 15.0,
-      "damping_force": 29.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -18.6,
+      "level": "mild_sell",
+      "raw": 0.1852,
+      "volume_amp": 1.007,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 1.0,
+        "v3": 0.1651,
+        "v4": -0.4,
+        "v5": 0.2395
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -20.14,
+        "v3": -4.15,
+        "v4": 8.05,
+        "v5": -2.41
       },
       "impact": null
     },
     {
       "date": "2026-02-06",
-      "rspi": -51.2,
-      "cascade_force": 15.0,
-      "damping_force": 66.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 27.7,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 17.5,
+      "level": "mild_rebound",
+      "raw": -0.179,
+      "volume_amp": 0.975,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.9234,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.9057,
+        "v3": -0.9234,
+        "v4": -0.4,
+        "v5": -0.4931
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -17.66,
+        "v3": 22.51,
+        "v4": 7.8,
+        "v5": 4.81
       },
       "impact": null
     },
     {
       "date": "2026-02-09",
-      "rspi": -36.5,
-      "cascade_force": 25.0,
-      "damping_force": 61.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 8.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 1.6,
+      "level": "neutral",
+      "raw": -0.018,
+      "volume_amp": 0.913,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.2658,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.3417,
+        "v3": -0.2658,
+        "v4": 1.0,
+        "v5": -0.8317
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 6.24,
+        "v3": 6.07,
+        "v4": -18.26,
+        "v5": 7.59
       },
       "impact": null
     },
     {
       "date": "2026-02-10",
-      "rspi": -41.5,
-      "cascade_force": 5.0,
-      "damping_force": 46.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -5.5,
+      "level": "mild_sell",
+      "raw": 0.0655,
+      "volume_amp": 0.843,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.2387,
+        "v3": 0.2667,
+        "v4": 0.2,
+        "v5": 0.0659
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 4.03,
+        "v3": -5.62,
+        "v4": -3.37,
+        "v5": -0.56
       },
       "impact": null
     },
     {
       "date": "2026-02-11",
-      "rspi": -62.8,
-      "cascade_force": 5.0,
-      "damping_force": 67.8,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 21.3,
-        "credit_inflow": 4.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 12.1,
+      "level": "mild_rebound",
+      "raw": -0.1328,
+      "volume_amp": 0.911,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 0.7101,
-        "d2": 0.2,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.4408,
+        "v3": -0.4958,
+        "v4": 0.2,
+        "v5": 0.3935
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 8.03,
+        "v3": 11.29,
+        "v4": -3.64,
+        "v5": -3.58
       },
       "impact": null
     },
     {
       "date": "2026-02-12",
-      "rspi": -36.0,
-      "cascade_force": 13.6,
-      "damping_force": 49.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 1.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 17.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 17.4,
+      "level": "mild_rebound",
+      "raw": -0.1629,
+      "volume_amp": 1.068,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.3,
-        "d1": 0.0349,
-        "d2": 0.3,
-        "d3": 0.7,
-        "d4": 1.0
+        "v2": -0.9852,
+        "v3": 0.0714,
+        "v4": 0.2,
+        "v5": -0.2374
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 21.04,
+        "v3": -1.91,
+        "v4": -4.27,
+        "v5": 2.54
       },
       "impact": null
     },
     {
       "date": "2026-02-13",
-      "rspi": -21.4,
-      "cascade_force": 23.6,
-      "damping_force": 45.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 8.6
-      },
-      "df_components": {
-        "overnight_recovery": 14.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 17.6,
+      "level": "mild_rebound",
+      "raw": -0.1708,
+      "volume_amp": 1.029,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.3,
-        "d1": 0.4672,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1391,
+        "v3": -0.4672,
+        "v4": -0.4,
+        "v5": -0.0184
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -2.86,
+        "v3": 12.02,
+        "v4": 8.23,
+        "v5": 0.19
       },
       "impact": null
     },
     {
       "date": "2026-02-19",
-      "rspi": -13.5,
-      "cascade_force": 25.0,
-      "damping_force": 38.5,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 7.5,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -16.4,
+      "level": "mild_sell",
+      "raw": 0.1674,
+      "volume_amp": 0.979,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.2487,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1233,
+        "v3": -0.1579,
+        "v4": 1.0,
+        "v5": -0.1782
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -2.41,
+        "v3": 3.87,
+        "v4": -19.58,
+        "v5": 1.75
       },
       "impact": null
     },
     {
       "date": "2026-02-20",
-      "rspi": -63.5,
-      "cascade_force": 5.0,
-      "damping_force": 68.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 5.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 30.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 22.0,
+      "level": "strong_rebound",
+      "raw": -0.2059,
+      "volume_amp": 1.067,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.2,
-        "v4": 0.0,
-        "d1": 1.0,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.0523,
+        "v3": -1.0,
+        "v4": 0.2,
+        "v5": -0.064
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -1.12,
+        "v3": 26.68,
+        "v4": -4.27,
+        "v5": 0.68
       },
       "impact": null
     },
     {
       "date": "2026-02-23",
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -5.2,
+      "level": "mild_sell",
+      "raw": 0.0511,
+      "volume_amp": 1.013,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1404,
+        "v3": 0.4522,
+        "v4": -0.4,
+        "v5": -0.0998
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -2.85,
+        "v3": -11.46,
+        "v4": 8.11,
+        "v5": 1.01
       },
       "impact": null
     },
     {
       "date": "2026-02-24",
-      "rspi": -42.3,
-      "cascade_force": 25.0,
-      "damping_force": 67.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 25.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 23.8,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 12.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 6.3,
+      "level": "mild_rebound",
+      "raw": -0.0626,
+      "volume_amp": 1.003,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 1.0,
-        "v4": 0.0,
-        "d1": 0.7919,
-        "d2": 0.3,
-        "d3": 0.5,
-        "d4": 1.0
+        "v2": -0.1312,
+        "v3": -0.7919,
+        "v4": 1.0,
+        "v5": -0.3843
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 2.63,
+        "v3": 19.85,
+        "v4": -20.05,
+        "v5": 3.85
       },
       "impact": null
     },
     {
       "date": "2026-02-25",
-      "rspi": -36.2,
-      "cascade_force": 15.0,
-      "damping_force": 51.2,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 20.2,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 25.4,
+      "level": "strong_rebound",
+      "raw": -0.238,
+      "volume_amp": 1.067,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.6725,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.1779,
+        "v3": -0.6725,
+        "v4": -0.4,
+        "v5": -0.2541
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -3.8,
+        "v3": 17.94,
+        "v4": 8.54,
+        "v5": 2.71
       },
       "impact": null
     },
     {
       "date": "2026-02-26",
-      "rspi": -20.3,
-      "cascade_force": 15.0,
-      "damping_force": 35.3,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 4.3,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 6.2,
+      "level": "mild_rebound",
+      "raw": -0.0568,
+      "volume_amp": 1.094,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.1432,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 0.3846,
+        "v3": -0.0654,
+        "v4": -0.4,
+        "v5": -0.3742
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -8.42,
+        "v3": 1.79,
+        "v4": 8.76,
+        "v5": 4.1
       },
       "impact": null
     },
     {
       "date": "2026-02-27",
-      "rspi": -18.6,
-      "cascade_force": 15.0,
-      "damping_force": 33.6,
-      "cascade_risk": "low",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 2.6,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": -8.5,
+      "level": "mild_sell",
+      "raw": 0.0674,
+      "volume_amp": 1.256,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0881,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": 1.0,
+        "v3": -0.0318,
+        "v4": -0.4,
+        "v5": -0.4467
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -25.12,
+        "v3": 1.0,
+        "v4": 10.05,
+        "v5": 5.61
       },
       "impact": null
     },
     {
       "date": "2026-03-03",
-      "rspi": -23.5,
-      "cascade_force": 15.0,
-      "damping_force": 38.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 0.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 7.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": -27.2,
+      "level": "strong_sell",
+      "raw": 0.2367,
+      "volume_amp": 1.151,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.0,
-        "d2": 0.3,
-        "d3": 0.3,
-        "d4": 1.0
+        "v2": 0.8121,
+        "v3": 1.0,
+        "v4": -0.4,
+        "v5": -0.9569
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": -18.69,
+        "v3": -28.77,
+        "v4": 9.21,
+        "v5": 11.01
       },
       "impact": null
     },
     {
       "date": "2026-03-04",
-      "rspi": -49.5,
-      "cascade_force": 15.0,
-      "damping_force": 64.5,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 11.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 22.5,
-        "safe_buffer": 25.0
-      },
+      "rspi": 9.8,
+      "level": "mild_rebound",
+      "raw": -0.0828,
+      "volume_amp": 1.179,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.3665,
-        "d2": 0.3,
-        "d3": 0.9,
-        "d4": 1.0
+        "v2": -0.3558,
+        "v3": -0.3665,
+        "v4": 0.7,
+        "v5": -0.5999
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 8.39,
+        "v3": 10.8,
+        "v4": -16.51,
+        "v5": 7.07
       },
       "impact": null
     },
     {
       "date": "2026-03-05",
-      "rspi": -27.0,
-      "cascade_force": 15.0,
-      "damping_force": 42.0,
-      "cascade_risk": "none",
-      "cf_components": {
-        "caution_zone": 0.0,
-        "cumulative_decline": 0.0,
-        "individual_flow": 15.0,
-        "credit_accel": 0.0
-      },
-      "df_components": {
-        "overnight_recovery": 11.0,
-        "credit_inflow": 6.0,
-        "foreign_exhaustion": 0.0,
-        "safe_buffer": 25.0
-      },
+      "rspi": 44.4,
+      "level": "extreme_rebound",
+      "raw": -0.2222,
+      "volume_amp": 2.0,
       "raw_variables": {
         "v1": 0.0,
-        "v2": 0.0,
-        "v3": 0.6,
-        "v4": 0.0,
-        "d1": 0.3665,
-        "d2": 0.3,
-        "d3": 0.0,
-        "d4": 1.0
+        "v2": -0.2526,
+        "v3": -0.3665,
+        "v4": -0.4,
+        "v5": 0.0
+      },
+      "variable_contributions": {
+        "v1": -0.0,
+        "v2": 10.1,
+        "v3": 18.33,
+        "v4": 16.0,
+        "v5": -0.0
       },
       "impact": null
     }
   ],
   "latest": {
     "date": "2026-03-05",
-    "rspi": -27.0,
-    "cascade_force": 15.0,
-    "damping_force": 42.0,
-    "cascade_risk": "none",
-    "cf_components": {
-      "caution_zone": 0.0,
-      "cumulative_decline": 0.0,
-      "individual_flow": 15.0,
-      "credit_accel": 0.0
-    },
-    "df_components": {
-      "overnight_recovery": 11.0,
-      "credit_inflow": 6.0,
-      "foreign_exhaustion": 0.0,
-      "safe_buffer": 25.0
-    },
+    "rspi": 44.4,
+    "level": "extreme_rebound",
+    "raw": -0.2222,
+    "volume_amp": 2.0,
     "raw_variables": {
       "v1": 0.0,
-      "v2": 0.0,
-      "v3": 0.6,
-      "v4": 0.0,
-      "d1": 0.3665,
-      "d2": 0.3,
-      "d3": 0.0,
-      "d4": 1.0
+      "v2": -0.2526,
+      "v3": -0.3665,
+      "v4": -0.4,
+      "v5": 0.0
+    },
+    "variable_contributions": {
+      "v1": -0.0,
+      "v2": 10.1,
+      "v3": 18.33,
+      "v4": 16.0,
+      "v5": -0.0
     },
     "impact": null
   },
@@ -48816,44 +46739,39 @@ export const RSPI_DATA = {
     {
       "label": "낙관적",
       "ewy_pct": 2.5,
-      "rspi": -35.5,
-      "cascade_force": 15.0,
-      "damping_force": 50.5,
-      "cascade_risk": "none"
+      "rspi": 58.6,
+      "level": "extreme_rebound",
+      "raw": -0.293,
+      "volume_amp": 2.0
     },
     {
       "label": "기본",
       "ewy_pct": -1.0,
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low"
+      "rspi": 13.7,
+      "level": "mild_rebound",
+      "raw": -0.0684,
+      "volume_amp": 2.0
     },
     {
       "label": "비관적",
       "ewy_pct": -4.0,
-      "rspi": -16.0,
-      "cascade_force": 15.0,
-      "damping_force": 31.0,
-      "cascade_risk": "low"
+      "rspi": -23.9,
+      "level": "strong_sell",
+      "raw": 0.1195,
+      "volume_amp": 2.0,
+      "sell_volume_억": 4991816.0,
+      "price_impact_pct": 0
     }
   ]
 };
 
 export const RSPI_CONFIG = {
   "weights": {
-    "cf": {
-      "cf1": 0.3,
-      "cf2": 0.25,
-      "cf3": 0.25,
-      "cf4": 0.2
-    },
-    "df": {
-      "df1": 0.3,
-      "df2": 0.2,
-      "df3": 0.25,
-      "df4": 0.25
-    }
+    "v1": 0.25,
+    "v2": 0.2,
+    "v3": 0.25,
+    "v4": 0.2,
+    "v5": 0.1
   },
   "status_thresholds": {
     "debt_exceed": 100,
@@ -48862,88 +46780,97 @@ export const RSPI_CONFIG = {
     "caution": 155,
     "good": 170
   },
-  "cf_variables": [
+  "variables": [
     {
       "key": "v1",
-      "label": "주의구간 비중",
-      "desc": "담보비율 140~170% 코호트 비중",
-      "range": "0~1"
+      "label": "코호트 proximity",
+      "desc": "담보비율 마진콜(140%)까지 거리",
+      "range": "0~1",
+      "direction": "unidirectional"
     },
     {
       "key": "v2",
-      "label": "연속 하락",
-      "desc": "연속 하락일수 + 누적 하락률",
-      "range": "0~1"
+      "label": "외국인 수급",
+      "desc": "외국인 순매매 z-score (20일)",
+      "range": "-1~1",
+      "direction": "bidirectional"
     },
     {
       "key": "v3",
-      "label": "개인 수급",
-      "desc": "전일 개인 순매수 패턴",
-      "range": "0~1"
+      "label": "야간시장",
+      "desc": "EWY/KORU/야간선물/미국증시 4소스 + coherence",
+      "range": "-1~1",
+      "direction": "bidirectional"
     },
     {
       "key": "v4",
-      "label": "신용 가속",
-      "desc": "신용잔고 감소 가속 모멘텀",
-      "range": "0~0.7"
+      "label": "개인 수급",
+      "desc": "개인 순매수 패턴 (항복/흡수)",
+      "range": "-1~1",
+      "direction": "bidirectional"
+    },
+    {
+      "key": "v5",
+      "label": "신용잔고",
+      "desc": "신용잔고 변화율 (D+1 시차)",
+      "range": "-1~1",
+      "direction": "bidirectional"
     }
   ],
-  "df_variables": [
-    {
-      "key": "d1",
-      "label": "야간 반등",
-      "desc": "EWY/KORU/야간선물/US 반등 + coherence",
-      "range": "0~1"
-    },
-    {
-      "key": "d2",
-      "label": "신용 유입",
-      "desc": "하락일 신용증가 = 저가매수 (D+1 시차)",
-      "range": "0~1"
-    },
-    {
-      "key": "d3",
-      "label": "외국인 소진",
-      "desc": "외국인 매도 규모 감소/전환",
-      "range": "0~1"
-    },
-    {
-      "key": "d4",
-      "label": "안전 버퍼",
-      "desc": "안전구간 코호트 비중 (방화벽)",
-      "range": "0~1"
-    }
-  ],
+  "volume_amplifier": {
+    "label": "거래량 증폭기",
+    "range": "0.3~2.0",
+    "desc": "적응형 기준선 + log2 확신도"
+  },
   "levels": [
     {
       "min": -100,
+      "max": -40,
+      "key": "extreme_sell",
+      "label": "극단 매도",
+      "color": "#b71c1c"
+    },
+    {
+      "min": -40,
       "max": -20,
-      "label": "반등 압력",
-      "color": "#4caf50"
+      "key": "strong_sell",
+      "label": "강한 매도",
+      "color": "#f44336"
     },
     {
       "min": -20,
-      "max": 0,
-      "label": "균형",
-      "color": "#8bc34a"
+      "max": -5,
+      "key": "mild_sell",
+      "label": "약한 매도",
+      "color": "#ffc107"
     },
     {
-      "min": 0,
+      "min": -5,
+      "max": 5,
+      "key": "neutral",
+      "label": "중립",
+      "color": "#9e9e9e"
+    },
+    {
+      "min": 5,
       "max": 20,
-      "label": "약한 하락",
-      "color": "#ffc107"
+      "key": "mild_rebound",
+      "label": "약한 반등",
+      "color": "#8bc34a"
     },
     {
       "min": 20,
       "max": 40,
-      "label": "하락 우세",
-      "color": "#ff9800"
+      "key": "strong_rebound",
+      "label": "강한 반등",
+      "color": "#4caf50"
     },
     {
       "min": 40,
       "max": 100,
-      "label": "캐스케이드",
-      "color": "#f44336"
+      "key": "extreme_rebound",
+      "label": "극단 반등",
+      "color": "#1b5e20"
     }
   ],
   "impact_params": {

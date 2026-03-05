@@ -106,69 +106,69 @@ STATUS_THRESHOLDS = {
 # Samsung 신용잔고 추정 비중
 SAMSUNG_CREDIT_WEIGHT = 0.50
 
-# ── v2.0.0 RSPI 상수 (VLPI 대체) ──
+# ── v2.2.0 RSPI 상수 (5변수 + 거래량 증폭기) ──
 
-# RSPI Cascade Force (CF) 가중치 — 가속력 4변수
-RSPI_CF_WEIGHTS = {
-    "cf1": 0.30,  # V1: 주의구간 코호트 비중
-    "cf2": 0.25,  # V2: 연속 하락 심각도
-    "cf3": 0.25,  # V3: 개인 수급 방향
-    "cf4": 0.20,  # V4: 신용잔고 가속 모멘텀
+# RSPI 5변수 가중치
+RSPI_WEIGHTS = {
+    "v1": 0.25,  # 코호트 proximity (0~1, 단방향)
+    "v2": 0.20,  # 외국인 수급 방향 (-1~+1, z-score)
+    "v3": 0.25,  # 야간시장 시그널 (-1~+1, 4소스+coherence)
+    "v4": 0.20,  # 개인 수급 방향 (-1~+1, 패턴)
+    "v5": 0.10,  # 신용잔고 모멘텀 (-1~+1, 변화율)
 }
 
-# RSPI Damping Force (DF) 가중치 — 감쇠력 4변수
-RSPI_DF_WEIGHTS = {
-    "df1": 0.30,  # D1: 야간시장 반등 강도
-    "df2": 0.20,  # D2: 신용잔고 유입률
-    "df3": 0.25,  # D3: 외국인 매도 소진도
-    "df4": 0.25,  # D4: 안전 코호트 버퍼
-}
+# V1: 코호트 proximity
+V1_MARGIN_CALL_RATIO = 140   # 마진콜 기준 담보비율
+V1_SAFE_RANGE = 60           # proximity 감쇠 범위 (140~200%)
 
-# D1: 야간시장 감쇠 4소스 가중치
+# V2: 외국인 수급 z-score
+V2_LOOKBACK = 20             # z-score 계산 기간 (거래일)
+V2_DIVISOR = 2.0             # z=±2 → V2=±1.0
+
+# V3: 야간시장 4소스 가중치
 OVERNIGHT_WEIGHTS = {
     "ewy":       0.30,  # iShares MSCI South Korea ETF (1x)
     "koru":      0.25,  # Direxion Daily South Korea Bull 3X
     "futures":   0.25,  # KOSPI200 야간선물 (SGX/KRX)
     "us_market": 0.20,  # S&P500
 }
-OVERNIGHT_EWY_DIVISOR = 5.0       # 5% 반등 = signal 1.0
-OVERNIGHT_KORU_DIVISOR = 15.0     # 15% 반등 = signal 1.0 (3x 레버리지)
-OVERNIGHT_FUTURES_DIVISOR = 8.0   # 8% = 상한가 = signal 1.0
-OVERNIGHT_US_DIVISOR = 3.0        # 3% 반등 = signal 1.0
+OVERNIGHT_EWY_DIVISOR = 5.0       # 5% 변동 = signal ±1.0
+OVERNIGHT_KORU_DIVISOR = 15.0     # 15% 변동 = signal ±1.0 (3x 레버리지)
+OVERNIGHT_FUTURES_DIVISOR = 8.0   # 8% = 상한가 = signal ±1.0
+OVERNIGHT_US_DIVISOR = 3.0        # 3% 변동 = signal ±1.0
+OVERNIGHT_COHERENCE_BONUS = 1.3   # 전원 같은 방향 → 1.3x
+OVERNIGHT_COHERENCE_PENALTY = 0.7 # 방향 혼재 → 0.7x
 
-# RSPI Impact Function 파라미터
-RSPI_SENSITIVITY = 0.15           # RSPI=100일 때 매도 비율
+# V4: 개인 수급 패턴 임계값 (억원)
+V4_CAPITULATION_PREV = 300   # 전일 대량 매수 기준
+V4_CAPITULATION_CURR = 50    # 당일 급감 기준
+V4_LARGE_BUY = 300           # 대량 매수 유지 기준
+V4_DECLINE_RATIO = 0.3       # 매수 급감 비율
+
+# V5: 신용잔고 모멘텀
+V5_DIVISOR = 2.0             # ±2% 변화 → V5=±1.0
+
+# VA: 거래량 증폭기
+VA_FLOOR = 0.3               # 최소 배율
+VA_CEILING = 2.0             # 최대 배율
+VA_LOG_SCALE = 0.5           # log2 스케일링 계수
+
+# RSPI Impact Function 파라미터 (RSPI 음수=매도일 때 적용)
+RSPI_SENSITIVITY = 0.15           # |RSPI|=100일 때 매도 비율
 RSPI_SIGMOID_K = 0.08             # sigmoid 기울기
 RSPI_SIGMOID_MID = 50             # sigmoid 중점
-RSPI_LIQUIDITY_FACTOR = 0.5       # 유동성 계수 (단일값, 정책 분기 제거)
+RSPI_LIQUIDITY_FACTOR = 0.5       # 유동성 계수
 
-# RSPI 5단계 판정 기준
-RSPI_LEVELS = {
-    "critical":  40,   # +40~+100: 캐스케이드 위험
-    "high":      20,   # +20~+40: 하락 우세
-    "medium":     0,   # 0~+20: 약한 하락
-    "low":      -20,   # -20~0: 균형~약한 반등
-    # -100~-20: 반등 압력 → "none"
-}
-
-# ── (deprecated) VLPI 호환 상수 — vlpi_engine.py 참조용 ──
-VLPI_DEFAULT_WEIGHTS = {
-    "w1": 0.25, "w2": 0.10, "w3": 0.20,
-    "w4": 0.20, "w5": 0.15, "w6": 0.10,
-}
-POLICY_SHOCK_MAP = {
-    "credit_suspension_major": 1.0, "credit_suspension_minor": 0.5,
-    "credit_tightening": 0.3, "short_selling_ban": 0.2,
-    "regulator_warning": 0.4, "circuit_breaker_triggered": 0.8,
-}
-EWY_GAP_WEIGHTS = {"ewy": 0.6, "futures": 0.3, "fx": 0.1}
-EWY_GAP_DIVISOR = 5.0
-VLPI_SENSITIVITY = 0.15
-VLPI_SIGMOID_K = 0.08
-VLPI_SIGMOID_MID = 50
-VLPI_POLICY_MULTIPLIER = 1.5
-VLPI_LIQUIDITY_NORMAL = 0.5
-VLPI_LIQUIDITY_CRISIS = 0.4
+# RSPI 7단계 레벨 (음수=매도, 양수=반등)
+RSPI_LEVELS = [
+    {"min": -100, "max": -40, "key": "extreme_sell",    "label": "극단 매도"},
+    {"min": -40,  "max": -20, "key": "strong_sell",     "label": "강한 매도"},
+    {"min": -20,  "max": -5,  "key": "mild_sell",       "label": "약한 매도"},
+    {"min": -5,   "max": 5,   "key": "neutral",         "label": "중립"},
+    {"min": 5,    "max": 20,  "key": "mild_rebound",    "label": "약한 반등"},
+    {"min": 20,   "max": 40,  "key": "strong_rebound",  "label": "강한 반등"},
+    {"min": 40,   "max": 100, "key": "extreme_rebound", "label": "극단 반등"},
+]
 
 # KOFIA API (공공데이터포털)
 KOFIA_API_BASE = "https://apis.data.go.kr/1160100/service/GetFinaStatInfoSvc"

@@ -1867,8 +1867,8 @@ def run_all_models() -> dict:
         rv = latest_rspi.get("raw_variables", {})
         if rv and samsung_credit_bn > 0 and samsung_price > 0:
             scenario_matrix = rspi_engine.calculate_scenario_matrix(
-                v1=rv["v1"], v2=rv["v2"], v3=rv["v3"], v4=rv["v4"],
-                d2=rv["d2"], d3=rv["d3"], d4=rv["d4"],
+                v1=rv["v1"], v2=rv["v2"], v4=rv["v4"], v5=rv["v5"],
+                volume_amp=latest_rspi.get("volume_amp", 1.0),
                 samsung_credit_bn=samsung_credit_bn,
                 current_price=int(samsung_price),
                 adv_shares_k=samsung_adv,
@@ -1878,7 +1878,7 @@ def run_all_models() -> dict:
 
         rspi_result_data["scenario_matrix"] = scenario_matrix
         n_hist = len(rspi_result_data.get("history", []))
-        print(f"  RSPI: {latest_rspi.get('rspi')} ({latest_rspi.get('cascade_risk')}), history={n_hist} days")
+        print(f"  RSPI: {latest_rspi.get('rspi')} ({latest_rspi.get('level')}), history={n_hist} days")
     except Exception as e:
         import traceback
         print(f"  RSPI: Error ({e})")

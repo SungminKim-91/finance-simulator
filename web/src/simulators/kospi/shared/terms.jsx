@@ -346,26 +346,46 @@ export const TERM = {
     desc: "담보비율 < 100%. 원금 초과 손실",
   },
 
-  /* RSPI terms (v2.0.0) */
+  /* RSPI terms (v2.2.0) — 5-variable + Volume Amplifier */
   rspi: {
     label: "RSPI",
-    desc: "개인 매도 압력 지수 (-100~+100). CF(가속력)-DF(감쇠력). 양수=매도압력, 음수=반등압력",
+    desc: "개인 매도 압력 지수 (-100~+100). 5변수 + Volume Amplifier. 음수=매도압력, 양수=반등압력",
   },
   rspi_gauge: {
     label: "RSPI 게이지",
-    desc: "RSPI 스코어를 시각적으로 표시. 반등압력(-100~-20)/균형(-20~0)/약한하락(0~20)/하락우세(20~40)/캐스케이드(40~100)",
+    desc: "RSPI 스코어를 시각적으로 표시. 7단계 레벨 (강한반등~패닉셀링)",
   },
-  rspi_cf: {
-    label: "가속력 (CF)",
-    desc: "매도 가속 4변수: V1주의구간+V2연속하락+V3개인수급+V4신용가속 (0~100)",
+  rspi_v1: {
+    label: "V1 코호트 근접도",
+    desc: "담보비율 위험구간 코호트 비중. 마진콜 임박 비율이 높을수록 매도압력 증가",
   },
-  rspi_df: {
-    label: "감쇠력 (DF)",
-    desc: "매도 감쇠 4변수: D1야간반등+D2신용유입+D3외국인소진+D4안전버퍼 (0~100)",
+  rspi_v2: {
+    label: "V2 외국인 수급",
+    desc: "외국인 순매수/순매도 흐름. 순매도 연속 시 매도압력 가중",
+  },
+  rspi_v3: {
+    label: "V3 야간 회복",
+    desc: "야간시장(EWY, KORU, 선물, 미증시) 등락률. 야간 반등 시 반등압력 기여",
+  },
+  rspi_v4: {
+    label: "V4 개인 수급",
+    desc: "개인투자자 매수/매도 흐름. 개인 순매도 시 매도압력 증가",
+  },
+  rspi_v5: {
+    label: "V5 신용 모멘텀",
+    desc: "신용잔고 증감 추세. 신용 급감 시 투매 신호, 증가 시 완충 효과",
+  },
+  rspi_va: {
+    label: "Volume Amplifier",
+    desc: "거래량 배율. 거래폭증 시 RSPI 신호를 증폭 (1.0 = 보통, >1.2 = 폭증)",
+  },
+  rspi_level: {
+    label: "RSPI 레벨",
+    desc: "RSPI 7단계 분류: 강한반등/반등/약한반등/균형/약한매도/매도우세/패닉셀링",
   },
   rspi_scenario: {
     label: "RSPI 시나리오",
-    desc: "D1(야간시장) 시나리오별 RSPI 예측과 예상 매도압력",
+    desc: "야간시장 시나리오별 RSPI 예측과 예상 매도압력",
   },
   risk_map: {
     label: "위험 분포도 (Risk Map)",
@@ -373,7 +393,7 @@ export const TERM = {
   },
   caution_zone: {
     label: "주의구간 비중 (V1)",
-    desc: "담보비율 140~170% 코호트 비중. RSPI 가속력의 핵심 선행 입력",
+    desc: "담보비율 140~170% 코호트 비중. RSPI의 핵심 선행 입력",
   },
 
   /* Stock-weighted cohort terms (v1.3.0) */

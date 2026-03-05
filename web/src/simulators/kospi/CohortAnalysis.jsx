@@ -46,14 +46,13 @@ function normalizeStatus6(s) {
   return MAP[s] || s;
 }
 
-/* ── RSPI variable colors (v2.0.0) ── */
-const CF_COMPONENT_COLORS = {
-  caution_zone: C.rspiCF1, cumulative_decline: C.rspiCF2,
-  individual_flow: C.rspiCF3, credit_accel: C.rspiCF4,
-};
-const DF_COMPONENT_COLORS = {
-  overnight_recovery: C.rspiDF1, credit_inflow: C.rspiDF2,
-  foreign_exhaustion: C.rspiDF3, safe_buffer: C.rspiDF4,
+/* ── RSPI variable colors (v2.2.0) — 5-variable model ── */
+const VARIABLE_COLORS = {
+  v1: C.rspiV1 || "#ef5350",
+  v2: C.rspiV2 || "#42a5f5",
+  v3: C.rspiV3 || "#4caf50",
+  v4: C.rspiV4 || "#ec4899",
+  v5: C.rspiV5 || "#ab47bc",
 };
 
 /* ── Sub-components ── */
@@ -531,7 +530,7 @@ function StockCreditBreakdown({ selectedDate }) {
 
 
 /* ── RSPI Gauge (SVG semicircle, v2.0.0 — bidirectional -100~+100) ── */
-function RSPIGauge({ score, cascadeRisk, levels }) {
+function RSPIGauge({ score, level, levels }) {
   const w = 240, h = 140, cx = 120, cy = 120, r = 90, thickness = 22;
   const ri = r - thickness;
 
@@ -600,53 +599,58 @@ function RSPIGauge({ score, cascadeRisk, levels }) {
   );
 }
 
-/* ── RSPI Dual Breakdown (v2.0.0 — CF + DF side by side) ── */
-
-const RSPI_KEY_MAP = {
-  v1: "caution_zone", v2: "cumulative_decline", v3: "individual_flow", v4: "credit_accel",
-  d1: "overnight_recovery", d2: "credit_inflow", d3: "foreign_exhaustion", d4: "safe_buffer",
-};
-
-function BreakdownPanel({ title, termKey, components, variables, colorMap }) {
-  if (!components || !variables) return null;
-  const data = variables.map(v => {
-    const compKey = RSPI_KEY_MAP[v.key];
-    return {
-      name: v.label,
-      value: components[compKey] || 0,
-      color: colorMap[compKey] || C.muted,
-    };
-  });
-  const maxVal = Math.max(...data.map(d => d.value), 1);
+/* ── RSPI Variable Breakdown (v2.2.0 — 5-variable + VA) ── */
+function VariableBreakdown({ variableContributions, variables, volumeAmp }) {
+  if (!variableContributions || !variables) return null;
+  const data = variables.map(v => ({
+    name: v.label,
+    key: v.key,
+    value: variableContributions[v.key] || 0,
+    color: VARIABLE_COLORS[v.key] || C.muted,
+  }));
+  const maxAbs = Math.max(...data.map(d => Math.abs(d.value)), 1);
   return (
     <div>
       <div style={{ fontSize: 12, color: C.muted, marginBottom: 8, fontWeight: 600 }}>
-        {title} <TermLabel dataKey={termKey} color={C.dim} />
+        변수 기여도 (Variable Contributions) <TermLabel dataKey="rspi" color={C.dim} />
       </div>
-      {data.map((d, i) => (
-        <div key={i} style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 5 }}>
-          <div style={{ width: 70, fontSize: 11, color: C.muted, textAlign: "right", flexShrink: 0 }}>{d.name}</div>
-          <div style={{ flex: 1, height: 14, background: C.bg, borderRadius: 3, overflow: "hidden" }}>
-            <div style={{ width: `${maxVal > 0 ? (d.value / maxVal) * 100 : 0}%`, height: "100%", background: d.color, borderRadius: 3, transition: "width 0.3s" }} />
+      {data.map((d, i) => {
+        const pct = maxAbs > 0 ? (Math.abs(d.value) / maxAbs) * 100 : 0;
+        const isNeg = d.value < 0;
+        return (
+          <div key={i} style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 5 }}>
+            <div style={{ width: 80, fontSize: 11, color: C.muted, textAlign: "right", flexShrink: 0 }}>{d.name}</div>
+            <div style={{ flex: 1, height: 14, background: C.bg, borderRadius: 3, overflow: "hidden", position: "relative" }}>
+              <div style={{
+                width: `${pct}%`, height: "100%", background: d.color,
+                borderRadius: 3, transition: "width 0.3s", opacity: isNeg ? 0.6 : 0.9,
+              }} />
+            </div>
+            <div style={{
+              width: 44, fontSize: 11, fontWeight: 600, textAlign: "right", fontFamily: FONT,
+              color: d.value > 0 ? C.danger : d.value < 0 ? C.safe : C.dim,
+            }}>
+              {d.value > 0 ? "+" : ""}{d.value.toFixed(1)}
+            </div>
           </div>
-          <div style={{ width: 36, fontSize: 11, color: d.value > 0 ? C.text : C.dim, fontWeight: 600, textAlign: "right", fontFamily: FONT }}>{d.value.toFixed(1)}</div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function DualBreakdown({ cfComponents, dfComponents, cfVariables, dfVariables, cascadeForce, dampingForce }) {
-  return (
-    <div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-        <BreakdownPanel title="가속력 (CF)" termKey="rspi_cf" components={cfComponents} variables={cfVariables} colorMap={CF_COMPONENT_COLORS} />
-        <BreakdownPanel title="감쇠력 (DF)" termKey="rspi_df" components={dfComponents} variables={dfVariables} colorMap={DF_COMPONENT_COLORS} />
-      </div>
-      <div style={{ fontSize: 11, color: C.dim, marginTop: 8, fontFamily: FONT, textAlign: "center" }}>
-        CF = <span style={{ color: C.marginCall6, fontWeight: 600 }}>{cascadeForce?.toFixed(1) || "—"}</span>
-        {" "}&minus;{" "}
-        DF = <span style={{ color: C.safe6, fontWeight: 600 }}>{dampingForce?.toFixed(1) || "—"}</span>
+        );
+      })}
+      {/* Volume Amplifier indicator */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: 6, marginTop: 8,
+        padding: "6px 10px", background: `${C.bg}cc`, borderRadius: 6,
+        border: `1px solid ${C.border}`,
+      }}>
+        <span style={{ fontSize: 11, color: C.muted, fontWeight: 600 }}>Volume Amp</span>
+        <span style={{
+          fontSize: 13, fontWeight: 700, fontFamily: FONT,
+          color: (volumeAmp || 1) > 1.2 ? C.danger : (volumeAmp || 1) > 1.0 ? C.yellow : C.muted,
+        }}>
+          x{(volumeAmp || 1).toFixed(2)}
+        </span>
+        <span style={{ fontSize: 10, color: C.dim }}>
+          {(volumeAmp || 1) > 1.2 ? "거래폭증" : (volumeAmp || 1) > 1.0 ? "활발" : "보통"}
+        </span>
       </div>
     </div>
   );
@@ -677,7 +681,7 @@ function ImpactTable({ scenarios, currentRspi }) {
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, fontFamily: FONT }}>
           <thead>
             <tr style={{ borderBottom: `1px solid ${C.border}` }}>
-              {["시나리오", "EWY", "CF", "DF", "RSPI", "매도추정"].map(h => (
+              {["시나리오", "EWY", "Raw", "VA", "RSPI", "매도추정"].map(h => (
                 <th key={h} style={{ padding: "6px 10px", textAlign: "right", color: C.muted, fontWeight: 600 }}>{h}</th>
               ))}
             </tr>
@@ -685,7 +689,7 @@ function ImpactTable({ scenarios, currentRspi }) {
           <tbody>
             {scenarios.map((s, i) => {
               const isHighlight = i === closestIdx;
-              const rspiColor = s.rspi > 20 ? C.danger : s.rspi > 0 ? C.yellow : C.safe;
+              const rspiColor = s.rspi < -20 ? C.danger : s.rspi < 0 ? C.yellow : C.safe;
               return (
                 <tr key={s.label} style={{
                   borderBottom: `1px solid ${C.border}22`,
@@ -698,11 +702,11 @@ function ImpactTable({ scenarios, currentRspi }) {
                   <td style={{ padding: "6px 10px", textAlign: "right", color: s.ewy_pct >= 0 ? C.safe : C.danger }}>
                     {s.ewy_pct > 0 ? "+" : ""}{s.ewy_pct}%
                   </td>
-                  <td style={{ padding: "6px 10px", textAlign: "right", color: C.marginCall6 }}>
-                    {s.cascade_force?.toFixed(1)}
+                  <td style={{ padding: "6px 10px", textAlign: "right", color: (s.raw || 0) < 0 ? C.danger : C.safe }}>
+                    {(s.raw || 0) > 0 ? "+" : ""}{s.raw?.toFixed(1)}
                   </td>
-                  <td style={{ padding: "6px 10px", textAlign: "right", color: C.safe6 }}>
-                    {s.damping_force?.toFixed(1)}
+                  <td style={{ padding: "6px 10px", textAlign: "right", color: (s.volume_amp || 1) > 1.2 ? C.danger : C.muted }}>
+                    x{(s.volume_amp || 1).toFixed(2)}
                   </td>
                   <td style={{ padding: "6px 10px", textAlign: "right", color: rspiColor, fontWeight: 600 }}>
                     {s.rspi > 0 ? "+" : ""}{s.rspi?.toFixed(1)}
@@ -1271,7 +1275,7 @@ export default function CohortAnalysis() {
           </span>
           {rspiIsExact && rspiForDate && (
             <span style={{ color: C.muted }}>
-              RSPI {rspiForDate.rspi > 0 ? "+" : ""}{rspiForDate.rspi?.toFixed(1)} | {rspiForDate.cascade_risk}
+              RSPI {rspiForDate.rspi > 0 ? "+" : ""}{rspiForDate.rspi?.toFixed(1)} | {rspiForDate.level}
             </span>
           )}
         </div>
@@ -1283,9 +1287,9 @@ export default function CohortAnalysis() {
           fontSize: 12, color: C.muted, lineHeight: 1.7, fontFamily: FONT,
         }}>
           <div style={{ fontWeight: 700, color: C.text, marginBottom: 4 }}>RSPI란?</div>
-          개인 매도 압력 지수 (<span style={{ color: C.safe }}>-100</span>~<span style={{ color: C.danger }}>+100</span>).
-          가속력(CF)과 감쇠력(DF)의 차이로 산출합니다.
-          <strong> 양수</strong>는 매도 압력, <strong>음수</strong>는 반등 압력을 의미합니다.
+          개인 매도 압력 지수 (<span style={{ color: C.danger }}>-100</span>~<span style={{ color: C.safe }}>+100</span>).
+          5개 변수 + Volume Amplifier로 산출합니다.
+          <strong> 음수</strong>는 매도 압력, <strong>양수</strong>는 반등 압력을 의미합니다.
           <div style={{ marginTop: 6 }}>
             KOSPI: <span style={{ color: C.kospi, fontWeight: 700 }}>{cohortKospi.toLocaleString()}</span>
           </div>
@@ -1293,21 +1297,18 @@ export default function CohortAnalysis() {
 
         {rspiIsExact ? (
           <>
-            {/* A: Gauge + B: Dual Breakdown */}
+            {/* A: Gauge + B: Variable Breakdown */}
             {rspiForDate && RSPI_CONFIG && (
               <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 20, alignItems: "start", marginBottom: 12 }}>
                 <RSPIGauge
                   score={rspiForDate.rspi}
-                  cascadeRisk={rspiForDate.cascade_risk}
+                  level={rspiForDate.level}
                   levels={RSPI_CONFIG.levels}
                 />
-                <DualBreakdown
-                  cfComponents={rspiForDate.cf_components}
-                  dfComponents={rspiForDate.df_components}
-                  cfVariables={RSPI_CONFIG.cf_variables}
-                  dfVariables={RSPI_CONFIG.df_variables}
-                  cascadeForce={rspiForDate.cascade_force}
-                  dampingForce={rspiForDate.damping_force}
+                <VariableBreakdown
+                  variableContributions={rspiForDate.variable_contributions}
+                  variables={RSPI_CONFIG.variables}
+                  volumeAmp={rspiForDate.volume_amp}
                 />
               </div>
             )}

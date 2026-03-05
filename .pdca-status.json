@@ -45,5 +45,14 @@
     "completedAt": "2026-03-03T12:00:00Z",
     "version": "1.0.0",
     "note": "Phase 1 (Market Pulse) complete. Phase 2-4 future work."
+  },
+  "kospi-rspi-v2.2.0": {
+    "phase": "completed",
+    "matchRate": 97.6,
+    "iterationCount": 0,
+    "startedAt": "2026-03-06T10:00:00Z",
+    "completedAt": "2026-03-06T21:00:00Z",
+    "version": "2.2.0",
+    "note": "5-variable + VA full redesign — COMPLETE"
   }
 }
