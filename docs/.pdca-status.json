@@ -1,8 +1,8 @@
 {
   "version": "2.0",
   "lastUpdated": "2026-03-06T12:00:00.000Z",
-  "activeFeatures": [],
-  "primaryFeature": null,
+  "activeFeatures": ["kospi-v2.1.1-kofia-credit-pipeline"],
+  "primaryFeature": "kospi-v2.1.1-kofia-credit-pipeline",
   "features": {
     "kospi-vlpi-v1.5.0": {
       "phase": "archived",
@@ -27,6 +27,15 @@
       "startedAt": "2026-03-05T23:00:00.000Z",
       "archivedAt": "2026-03-06T02:10:00.000Z",
       "archivedTo": "docs/archive/2026-03/kospi-rspi-v2.0.0/"
+    },
+    "kospi-v2.1.1-kofia-credit-pipeline": {
+      "phase": "archived",
+      "matchRate": 100,
+      "iterationCount": 0,
+      "startedAt": "2026-03-06T13:00:00.000Z",
+      "archivedAt": "2026-03-06T15:36:00.000Z",
+      "archivedTo": "docs/archive/2026-03/kospi-v2.1.1-kofia-credit-pipeline/",
+      "description": "KOFIA API로 신용잔고/예탁금/반대매매 소스 전환 (D-2→D-1)"
     },
     "kospi-v2.1.0": {
       "phase": "completed",

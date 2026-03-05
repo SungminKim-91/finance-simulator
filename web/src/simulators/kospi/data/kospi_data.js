@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-05T23:28:12.253555
+ * Generated: 2026-03-06T00:31:18.361242
  * Source: kospi/data/ (pipeline)
  * Exports: 18
  */
@@ -14202,6 +14202,17 @@ export const COHORT_DATA = {
       "collateral_ratio_pct": 0,
       "status": "watch",
       "status_6": "good"
+    },
+    {
+      "entry_date": "2026-03-03",
+      "entry_kospi": 5791.91,
+      "entry_stock_price": 0,
+      "amount": 616.0,
+      "pnl_pct": -4.89,
+      "collateral_ratio": 1.729,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
     }
   ],
   "fifo": [
@@ -16426,6 +16437,17 @@ export const COHORT_DATA = {
       "collateral_ratio_pct": 0,
       "status": "watch",
       "status_6": "good"
+    },
+    {
+      "entry_date": "2026-03-03",
+      "entry_kospi": 5791.91,
+      "entry_stock_price": 0,
+      "amount": 616.0,
+      "pnl_pct": -4.89,
+      "collateral_ratio": 1.729,
+      "collateral_ratio_pct": 0,
+      "status": "safe",
+      "status_6": "safe"
     }
   ],
   "price_distribution_lifo": [
@@ -16785,6 +16807,17 @@ export const COHORT_DATA = {
       "range": "5600-5700",
       "bin": 5600,
       "safe": 110.70000000000073,
+      "good": 0,
+      "caution": 0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0,
+      "debt_exceed": 0
+    },
+    {
+      "range": "5700-5800",
+      "bin": 5700,
+      "safe": 616.0,
       "good": 0,
       "caution": 0,
       "watch": 0,
@@ -17213,6 +17246,17 @@ export const COHORT_DATA = {
       "debt_exceed": 0
     },
     {
+      "range": "5700-5800",
+      "bin": 5700,
+      "safe": 616.0,
+      "good": 0,
+      "caution": 0,
+      "watch": 0,
+      "margin_call": 0,
+      "forced_liq": 0,
+      "debt_exceed": 0
+    },
+    {
       "range": "5800-5900",
       "bin": 5800,
       "safe": 102.20000000000073,
@@ -17513,7 +17557,7 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2025-12-05",
-      "score": 58.4,
+      "score": 58.5,
       "classification": "caution"
     },
     {
@@ -17538,12 +17582,12 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2025-12-12",
-      "score": 54.7,
+      "score": 54.8,
       "classification": "caution"
     },
     {
       "date": "2025-12-15",
-      "score": 64.7,
+      "score": 64.8,
       "classification": "caution"
     },
     {
@@ -17563,12 +17607,12 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2025-12-19",
-      "score": 60.1,
+      "score": 60.2,
       "classification": "caution"
     },
     {
       "date": "2025-12-22",
-      "score": 56.3,
+      "score": 56.4,
       "classification": "caution"
     },
     {
@@ -17578,7 +17622,7 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2025-12-24",
-      "score": 54.5,
+      "score": 54.6,
       "classification": "caution"
     },
     {
@@ -17603,7 +17647,7 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-01-05",
-      "score": 58.1,
+      "score": 58.2,
       "classification": "caution"
     },
     {
@@ -17613,27 +17657,27 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-01-07",
-      "score": 61.8,
+      "score": 61.9,
       "classification": "caution"
     },
     {
       "date": "2026-01-08",
-      "score": 68.2,
+      "score": 68.3,
       "classification": "caution"
     },
     {
       "date": "2026-01-09",
-      "score": 62.2,
+      "score": 62.3,
       "classification": "caution"
     },
     {
       "date": "2026-01-12",
-      "score": 62.7,
+      "score": 62.8,
       "classification": "caution"
     },
     {
       "date": "2026-01-13",
-      "score": 68.4,
+      "score": 68.5,
       "classification": "caution"
     },
     {
@@ -17668,7 +17712,7 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-01-22",
-      "score": 52.6,
+      "score": 52.7,
       "classification": "caution"
     },
     {
@@ -17683,7 +17727,7 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-01-27",
-      "score": 59.5,
+      "score": 59.6,
       "classification": "caution"
     },
     {
@@ -17693,7 +17737,7 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-01-29",
-      "score": 67.4,
+      "score": 67.5,
       "classification": "caution"
     },
     {
@@ -17703,12 +17747,12 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-02-02",
-      "score": 61.5,
+      "score": 61.6,
       "classification": "caution"
     },
     {
       "date": "2026-02-03",
-      "score": 56.7,
+      "score": 56.8,
       "classification": "caution"
     },
     {
@@ -17728,12 +17772,12 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-02-09",
-      "score": 61.5,
+      "score": 61.6,
       "classification": "caution"
     },
     {
       "date": "2026-02-10",
-      "score": 62.0,
+      "score": 62.1,
       "classification": "caution"
     },
     {
@@ -17743,7 +17787,7 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-02-12",
-      "score": 68.5,
+      "score": 68.6,
       "classification": "caution"
     },
     {
@@ -17768,12 +17812,12 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-02-24",
-      "score": 63.1,
+      "score": 63.2,
       "classification": "caution"
     },
     {
       "date": "2026-02-25",
-      "score": 58.2,
+      "score": 58.4,
       "classification": "caution"
     },
     {
@@ -17783,13 +17827,13 @@ export const CRISIS_SCORE = {
     },
     {
       "date": "2026-02-27",
-      "score": 59.4,
+      "score": 59.5,
       "classification": "caution"
     },
     {
       "date": "2026-03-03",
-      "score": 47.1,
-      "classification": "normal"
+      "score": 62.4,
+      "classification": "caution"
     },
     {
       "date": "2026-03-04",
@@ -18869,7 +18913,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-05T23:28:12.253208",
+  "last_updated": "2026-03-06T00:31:18.360763",
   "last_date": "2026-03-05",
   "data_source": "pipeline",
   "data_quality": {
@@ -19486,6 +19530,9 @@ export const COHORT_HISTORY = {
     },
     "2026-02-27": {
       "entry_kospi": 6244.13
+    },
+    "2026-03-03": {
+      "entry_kospi": 5791.91
     }
   },
   "snapshots": [
@@ -37917,7 +37964,8 @@ export const COHORT_HISTORY = {
         "2026-02-24": 240.3,
         "2026-02-25": 160.1,
         "2026-02-26": 237.0,
-        "2026-02-27": 285.0
+        "2026-02-27": 285.0,
+        "2026-03-03": 616.0
       }
     },
     {
@@ -38056,7 +38104,8 @@ export const COHORT_HISTORY = {
         "2026-02-24": 240.3,
         "2026-02-25": 160.1,
         "2026-02-26": 237.0,
-        "2026-02-27": 285.0
+        "2026-02-27": 285.0,
+        "2026-03-03": 616.0
       }
     },
     {
@@ -38195,7 +38244,8 @@ export const COHORT_HISTORY = {
         "2026-02-24": 240.3,
         "2026-02-25": 160.1,
         "2026-02-26": 237.0,
-        "2026-02-27": 285.0
+        "2026-02-27": 285.0,
+        "2026-03-03": 616.0
       }
     }
   ]
@@ -40330,7 +40380,7 @@ export const BACKTEST_DATES = [
         "day": 4,
         "date": "2026-03-03",
         "kospi": 5791.91,
-        "credit_balance_billion": null,
+        "credit_balance_billion": 32804.1,
         "individual_billion": 5797.4,
         "foreign_billion": -5148.7,
         "institution_billion": -885.9,
@@ -40368,7 +40418,7 @@ export const BACKTEST_DATES = [
         "day": 2,
         "date": "2026-03-03",
         "kospi": 5791.91,
-        "credit_balance_billion": null,
+        "credit_balance_billion": 32804.1,
         "individual_billion": 5797.4,
         "foreign_billion": -5148.7,
         "institution_billion": -885.9,
@@ -40457,11 +40507,11 @@ export const STOCK_CREDIT = {
       "ticker": "005930",
       "name": "삼성전자",
       "group": "A",
-      "credit_billion": 17079.01,
+      "credit_billion": 17405.86,
       "kospi_weight_pct": 53.06,
       "current_price": 191600,
       "status_breakdown": {
-        "safe": 16717.08,
+        "safe": 17043.93,
         "good": 361.93,
         "caution": 0,
         "watch": 0,
@@ -40475,11 +40525,11 @@ export const STOCK_CREDIT = {
       "ticker": "000660",
       "name": "SK하이닉스",
       "group": "A",
-      "credit_billion": 8661.82,
+      "credit_billion": 8827.58,
       "kospi_weight_pct": 26.91,
       "current_price": 941000,
       "status_breakdown": {
-        "safe": 8478.26,
+        "safe": 8644.02,
         "good": 183.56,
         "caution": 0,
         "watch": 0,
@@ -40493,11 +40543,11 @@ export const STOCK_CREDIT = {
       "ticker": "005380",
       "name": "현대차",
       "group": "A",
-      "credit_billion": 1902.32,
+      "credit_billion": 1938.72,
       "kospi_weight_pct": 5.91,
       "current_price": 548000,
       "status_breakdown": {
-        "safe": 1862.0,
+        "safe": 1898.4,
         "good": 40.32,
         "caution": 0,
         "watch": 0,
@@ -40511,11 +40561,11 @@ export const STOCK_CREDIT = {
       "ticker": "373220",
       "name": "LG에너지솔루션",
       "group": "A",
-      "credit_billion": 1158.77,
+      "credit_billion": 1180.95,
       "kospi_weight_pct": 3.6,
       "current_price": 371500,
       "status_breakdown": {
-        "safe": 1134.22,
+        "safe": 1156.4,
         "good": 24.55,
         "caution": 0,
         "watch": 0,
@@ -40529,11 +40579,11 @@ export const STOCK_CREDIT = {
       "ticker": "000270",
       "name": "기아",
       "group": "A",
-      "credit_billion": 856.2,
+      "credit_billion": 872.59,
       "kospi_weight_pct": 2.66,
       "current_price": 166400,
       "status_breakdown": {
-        "safe": 838.06,
+        "safe": 854.45,
         "good": 18.14,
         "caution": 0,
         "watch": 0,
@@ -40547,11 +40597,11 @@ export const STOCK_CREDIT = {
       "ticker": "105560",
       "name": "KB금융",
       "group": "A",
-      "credit_billion": 711.36,
+      "credit_billion": 724.97,
       "kospi_weight_pct": 2.21,
       "current_price": 149000,
       "status_breakdown": {
-        "safe": 696.28,
+        "safe": 709.89,
         "good": 15.08,
         "caution": 0,
         "watch": 0,
@@ -40565,11 +40615,11 @@ export const STOCK_CREDIT = {
       "ticker": "068270",
       "name": "셀트리온",
       "group": "A",
-      "credit_billion": 618.01,
+      "credit_billion": 629.84,
       "kospi_weight_pct": 1.92,
       "current_price": 211500,
       "status_breakdown": {
-        "safe": 604.92,
+        "safe": 616.75,
         "good": 13.09,
         "caution": 0,
         "watch": 0,
@@ -40583,11 +40633,11 @@ export const STOCK_CREDIT = {
       "ticker": "035420",
       "name": "NAVER",
       "group": "A",
-      "credit_billion": 437.76,
+      "credit_billion": 446.14,
       "kospi_weight_pct": 1.36,
       "current_price": 220000,
       "status_breakdown": {
-        "safe": 428.48,
+        "safe": 436.86,
         "good": 9.28,
         "caution": 0,
         "watch": 0,
@@ -40601,11 +40651,11 @@ export const STOCK_CREDIT = {
       "ticker": "006400",
       "name": "삼성SDI",
       "group": "A",
-      "credit_billion": 412.01,
+      "credit_billion": 419.89,
       "kospi_weight_pct": 1.28,
       "current_price": 392500,
       "status_breakdown": {
-        "safe": 403.28,
+        "safe": 411.16,
         "good": 8.73,
         "caution": 0,
         "watch": 0,
@@ -40619,11 +40669,11 @@ export const STOCK_CREDIT = {
       "ticker": "005490",
       "name": "POSCO홀딩스",
       "group": "A",
-      "credit_billion": 350.85,
+      "credit_billion": 357.56,
       "kospi_weight_pct": 1.09,
       "current_price": 346500,
       "status_breakdown": {
-        "safe": 343.42,
+        "safe": 350.13,
         "good": 7.43,
         "caution": 0,
         "watch": 0,

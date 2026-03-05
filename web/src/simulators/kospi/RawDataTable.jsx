@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback } from "react";
 import { C } from "./colors";
 import {
   MARKET_DATA, CREDIT_DATA, GLOBAL_DATA, INVESTOR_FLOWS,
-  SHORT_SELLING, RSPI_DATA, META,
+  SHORT_SELLING, META,
 } from "./data/kospi_data";
 
 const FONT = "'JetBrains Mono', monospace";
@@ -79,18 +79,6 @@ const COLUMN_GROUPS = [
       { key: "gov_ban", label: "금지", align: "center", fmt: v => v ? "BAN" : "" },
     ],
   },
-  {
-    group: "RSPI",
-    color: "#f39c12",
-    columns: [
-      { key: "rspi", label: "RSPI", align: "right", fmt: decFmt(1), color: pctColor },
-      { key: "cascade_force", label: "CF", align: "right", fmt: decFmt(1) },
-      { key: "damping_force", label: "DF", align: "right", fmt: decFmt(1) },
-      { key: "cascade_risk", label: "위험등급", align: "center",
-        fmt: v => v || "—",
-        color: v => v === "critical" ? "#e74c3c" : v === "high" ? "#e67e22" : v === "medium" ? "#f39c12" : v === "low" ? "#3498db" : C.muted },
-    ],
-  },
 ];
 
 const ALL_COLUMNS = COLUMN_GROUPS.flatMap(g => g.columns);
@@ -128,17 +116,12 @@ export default function RawDataTable() {
     for (const f of INVESTOR_FLOWS) flowMap[f.date] = f;
     const shortMap = {};
     for (const s of SHORT_SELLING) shortMap[s.date] = s;
-    const rspiMap = {};
-    if (RSPI_DATA?.history) {
-      for (const r of RSPI_DATA.history) rspiMap[r.date] = r;
-    }
 
     return MARKET_DATA.map(m => {
       const gl = globalMap[m.date] || {};
       const cr = creditMap[m.date] || {};
       const fl = flowMap[m.date] || {};
       const sh = shortMap[m.date] || {};
-      const rp = rspiMap[m.date] || {};
       return {
         date: m.date,
         kospi: m.kospi,
@@ -169,10 +152,6 @@ export default function RawDataTable() {
         sp500_change_pct: gl.sp500_change_pct ?? null,
         short_billion: sh.market_total_billion ?? null,
         gov_ban: sh.gov_ban ?? false,
-        rspi: rp.rspi ?? null,
-        cascade_force: rp.cascade_force ?? null,
-        damping_force: rp.damping_force ?? null,
-        cascade_risk: rp.cascade_risk ?? null,
       };
     });
   }, []);
@@ -259,7 +238,6 @@ export default function RawDataTable() {
       { label: "투자자", count: allRows.filter(r => r.individual_billion != null).length },
       { label: "EWY%", count: allRows.filter(r => r.ewy_change_pct != null).length },
       { label: "KORU%", count: allRows.filter(r => r.koru_change_pct != null).length },
-      { label: "RSPI", count: allRows.filter(r => r.rspi != null).length },
     ];
     return { total, fields };
   }, [allRows]);

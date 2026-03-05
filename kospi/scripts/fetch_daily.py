@@ -39,7 +39,7 @@ except ImportError:
 from scripts.ecos_fetcher import fetch_ecos_daily
 from scripts.naver_scraper import fetch_naver_deposit_credit, fetch_naver_investor_flows, fetch_stock_market_caps, fetch_stock_daily_prices
 from scripts.krx_auth import create_krx_session, inject_pykrx_session
-from scripts.kofia_fetcher import fetch_credit_balance as fetch_kofia_credit
+from scripts.kofia_fetcher import fetch_all as fetch_kofia_all
 from config.constants import TOP_10_TICKERS
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -290,17 +290,29 @@ def build_snapshot(
     # pykrx 공매도
     shorts = fetch_short_selling(date)
 
-    # Naver 예탁금/신용잔고
+    # Naver 예탁금/신용잔고 (fallback)
     deposit_b = naver_day.get("deposit_billion")
     credit_b = naver_day.get("credit_balance_billion")
-
-    # v1.5.0: KOFIA 신용잔고 (D-1) > Naver (D-2) fallback
+    forced_liq_b = None
+    unsettled_b = None
+    credit_kospi_b = None
     credit_source = "naver"
-    kofia_credit = fetch_kofia_credit(date)
-    if kofia_credit:
-        credit_b = kofia_credit["kospi_stock_credit_mm"] / 1e3  # 백만원 → 십억원
-        credit_source = kofia_credit["source"]
-        print(f"  [KOFIA] Credit from {credit_source}: {credit_b:.1f}B")
+
+    # KOFIA API (data.go.kr) > Naver fallback
+    kofia = fetch_kofia_all(date)
+    if kofia:
+        credit_source = kofia["source"]
+        if kofia.get("credit_balance_billion") is not None:
+            credit_b = kofia["credit_balance_billion"]
+        if kofia.get("credit_kospi_billion") is not None:
+            credit_kospi_b = kofia["credit_kospi_billion"]
+        if kofia.get("deposit_billion") is not None:
+            deposit_b = kofia["deposit_billion"]
+        if kofia.get("forced_liq_billion") is not None:
+            forced_liq_b = kofia["forced_liq_billion"]
+        if kofia.get("unsettled_billion") is not None:
+            unsettled_b = kofia["unsettled_billion"]
+        print(f"  [KOFIA] {credit_source}: credit={credit_b}, deposit={deposit_b}, forced_liq={forced_liq_b}")
 
     snapshot = {
         "date": date,
@@ -333,6 +345,8 @@ def build_snapshot(
         },
         "credit": {
             "total_balance_billion": credit_b,
+            "kospi_balance_billion": credit_kospi_b,
+            "source": credit_source,
             "estimated": False,
         },
         "deposit": {
@@ -340,8 +354,8 @@ def build_snapshot(
             "estimated": False,
         },
         "settlement": {
-            "unsettled_margin_billion": None,
-            "forced_liquidation_billion": None,  # OLS 추정 (estimate_missing.py)
+            "unsettled_margin_billion": unsettled_b,
+            "forced_liquidation_billion": forced_liq_b,
             "estimated": False,
         },
         "short_selling": shorts,
@@ -447,9 +461,11 @@ def append_timeseries(date: str, snapshot: dict) -> None:
         "institution_billion": flows_mkt.get("institution_billion"),
         "financial_invest_billion": flows_mkt.get("financial_invest_billion"),
         "credit_balance_billion": credit.get("total_balance_billion"),
+        "credit_source": credit.get("source", "naver"),
         "credit_estimated": credit.get("estimated", False),
         "deposit_billion": deposit.get("customer_deposit_billion"),
         "forced_liq_billion": settlement.get("forced_liquidation_billion"),
+        "unsettled_billion": settlement.get("unsettled_margin_billion"),
         "usd_krw": global_d.get("usd_krw"),
         "wti": global_d.get("wti"),
         "vix": global_d.get("vix"),
@@ -679,6 +695,215 @@ def backfill_change_pct():
     print(f"\n완료: {patched}/{len(missing)}일 패치 (yfinance only, API 호출 없음)")
 
 
+from scripts.kofia_fetcher import backfill_credit as kofia_backfill
+
+OVERRIDES_PATH = DATA_DIR / "manual_overrides.json"
+
+
+def _load_overrides() -> dict:
+    """manual_overrides.json 로드."""
+    if not OVERRIDES_PATH.exists():
+        return {}
+    with open(OVERRIDES_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data.get("overrides", {})
+
+
+def _save_overrides(overrides: dict) -> None:
+    """manual_overrides.json 저장."""
+    if OVERRIDES_PATH.exists():
+        with open(OVERRIDES_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    else:
+        data = {}
+    data["overrides"] = overrides
+    with open(OVERRIDES_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def backfill_credit_data():
+    """timeseries.json에서 credit/deposit/forced_liq이 None인 날짜를 KOFIA API로 패치."""
+    _init_env()
+
+    ts_path = DATA_DIR / "timeseries.json"
+    if not ts_path.exists():
+        print("[ERROR] timeseries.json 없음")
+        return
+
+    with open(ts_path, "r", encoding="utf-8") as f:
+        ts = json.load(f)
+
+    if not ts:
+        print("[ERROR] timeseries.json 비어있음")
+        return
+
+    # None인 날짜 찾기
+    missing = [r for r in ts if r.get("credit_balance_billion") is None
+               or r.get("forced_liq_billion") is None]
+    print(f"\n총 {len(ts)}일 중 credit/forced_liq 누락: {len(missing)}일")
+
+    if not missing:
+        print("패치할 데이터 없음")
+        return
+
+    # KOFIA API 일괄 조회
+    start = ts[0]["date"]
+    end = ts[-1]["date"]
+    print(f"KOFIA API 일괄 조회: {start} ~ {end}")
+
+    api_data = kofia_backfill(start, end)
+    print(f"  API 응답: {len(api_data)}일")
+
+    if not api_data:
+        print("[WARN] API 데이터 없음")
+        return
+
+    # date → data 매핑 (API는 YYYYMMDD, timeseries는 YYYY-MM-DD)
+    api_map = {}
+    for d in api_data:
+        raw_date = d["date"]
+        iso_date = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:8]}" if len(raw_date) == 8 else raw_date
+        api_map[iso_date] = d
+
+    # 머지
+    patched = 0
+    for rec in ts:
+        date = rec["date"]
+        if date not in api_map:
+            continue
+        api = api_map[date]
+        for field in ["credit_balance_billion", "deposit_billion", "forced_liq_billion", "unsettled_billion"]:
+            if rec.get(field) is None and api.get(field) is not None:
+                rec[field] = api[field]
+                patched += 1
+
+    with open(ts_path, "w", encoding="utf-8") as f:
+        json.dump(ts, f, ensure_ascii=False, indent=2, default=str)
+
+    print(f"\n완료: {patched}개 필드 패치 (KOFIA API)")
+
+
+def apply_overrides():
+    """manual_overrides.json의 값을 timeseries.json에 머지.
+
+    - 해당 날짜 레코드가 있으면: None인 필드만 오버라이드 (API 데이터 보존)
+    - 해당 날짜 레코드가 없으면: 새 레코드 생성
+    - force=True 필드는 기존 값도 덮어씀
+    """
+    overrides = _load_overrides()
+    if not overrides:
+        print("[override] 오버라이드 데이터 없음")
+        return
+
+    ts_path = DATA_DIR / "timeseries.json"
+    with open(ts_path, "r", encoding="utf-8") as f:
+        ts = json.load(f)
+
+    ts_map = {r["date"]: r for r in ts}
+    applied = 0
+
+    for date, fields in overrides.items():
+        if not isinstance(fields, dict):
+            continue
+
+        force = fields.pop("_force", False)
+
+        if date in ts_map:
+            rec = ts_map[date]
+            for k, v in fields.items():
+                if k.startswith("_"):
+                    continue
+                if force or rec.get(k) is None:
+                    rec[k] = v
+                    applied += 1
+        else:
+            rec = {"date": date}
+            for k, v in fields.items():
+                if not k.startswith("_"):
+                    rec[k] = v
+                    applied += 1
+            ts.append(rec)
+
+    ts.sort(key=lambda r: r["date"])
+    with open(ts_path, "w", encoding="utf-8") as f:
+        json.dump(ts, f, ensure_ascii=False, indent=2, default=str)
+
+    print(f"[override] {len(overrides)}일, {applied}개 필드 적용 완료")
+
+
+def manual_input(date: str):
+    """대화형 수동 입력 — 날짜의 주요 필드를 프롬프트로 입력받아 overrides에 저장."""
+    FIELDS = [
+        ("kospi",                    "KOSPI 종가",           float),
+        ("credit_balance_billion",   "신용잔고 (십억원)",      float),
+        ("deposit_billion",          "투자자예탁금 (십억원)",   float),
+        ("forced_liq_billion",       "반대매매금액 (십억원)",   float),
+        ("individual_billion",       "개인 순매수 (십억원)",    float),
+        ("foreign_billion",          "외국인 순매수 (십억원)",   float),
+        ("institution_billion",      "기관 순매수 (십억원)",    float),
+        ("samsung",                  "삼성전자 종가 (원)",      int),
+        ("hynix",                    "SK하이닉스 종가 (원)",    int),
+        ("usd_krw",                  "USD/KRW",              float),
+        ("vix",                      "VIX",                  float),
+    ]
+
+    print(f"\n{'='*50}")
+    print(f"  수동 입력: {date}")
+    print(f"  (빈 엔터 = 건너뛰기, q = 종료)")
+    print(f"{'='*50}\n")
+
+    overrides = _load_overrides()
+    entry = overrides.get(date, {})
+    count = 0
+
+    for field, label, typ in FIELDS:
+        existing = entry.get(field)
+        prompt = f"  {label} [{field}]"
+        if existing is not None:
+            prompt += f" (현재: {existing})"
+        prompt += ": "
+
+        val = input(prompt).strip()
+        if val.lower() == "q":
+            break
+        if val == "":
+            continue
+        try:
+            entry[field] = typ(val.replace(",", ""))
+            count += 1
+        except ValueError:
+            print(f"    → 무시 (숫자 아님)")
+
+    # 추가 자유 필드
+    print(f"\n  추가 필드 입력 (key=value, 빈 엔터=완료):")
+    while True:
+        val = input("  > ").strip()
+        if not val:
+            break
+        if "=" in val:
+            k, v = val.split("=", 1)
+            k = k.strip()
+            v = v.strip()
+            try:
+                entry[k] = float(v.replace(",", ""))
+                count += 1
+            except ValueError:
+                entry[k] = v
+                count += 1
+
+    if count > 0:
+        overrides[date] = entry
+        _save_overrides(overrides)
+        print(f"\n  → {count}개 필드 저장 (manual_overrides.json)")
+
+        # 바로 적용할지 물어봄
+        yn = input("\n  timeseries.json에 바로 적용? (y/n): ").strip().lower()
+        if yn == "y":
+            apply_overrides()
+    else:
+        print("\n  → 입력 없음, 저장하지 않음")
+
+
 def main():
     parser = argparse.ArgumentParser(description="KOSPI daily data fetcher")
     parser.add_argument("--date", type=str, help="Specific date (YYYY-MM-DD)")
@@ -686,9 +911,21 @@ def main():
                         help="Date range (YYYY-MM-DD YYYY-MM-DD)")
     parser.add_argument("--backfill", action="store_true",
                         help="Backfill change_pct only (yfinance, no ECOS/Naver/KRX)")
+    parser.add_argument("--backfill-credit", action="store_true",
+                        help="Backfill credit/deposit/forced_liq via KOFIA API")
+    parser.add_argument("--manual", type=str, metavar="DATE",
+                        help="Interactive manual input for DATE (YYYY-MM-DD)")
+    parser.add_argument("--apply-overrides", action="store_true",
+                        help="Apply manual_overrides.json to timeseries.json")
     args = parser.parse_args()
 
-    if args.backfill:
+    if args.manual:
+        manual_input(args.manual)
+    elif args.apply_overrides:
+        apply_overrides()
+    elif args.backfill_credit:
+        backfill_credit_data()
+    elif args.backfill:
         backfill_change_pct()
     elif args.range:
         run_range(args.range[0], args.range[1])

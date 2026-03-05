@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-금투협(KOFIA) 신용공여잔고 데이터 수집.
+금투협(KOFIA) 신용공여잔고/예탁금/반대매매 데이터 수집.
 
-소스 우선순위:
-1. 공공데이터포털 API (data.go.kr, 인증키 필요)
-2. FreeSIS XHR (freesis.kofia.or.kr, 리버스 엔지니어링)
-3. Naver Finance fallback (D-2 지연)
+소스: 공공데이터포털 data.go.kr — GetKofiaStatisticsInfoService
+  - Operation 1: getGrantingOfCreditBalanceInfo (신용공여잔고추이)
+  - Operation 2: getSecuritiesMarketTotalCapitalInfo (증시자금추이)
 
-환경변수: KOFIA_API_KEY (공공데이터포털)
+환경변수: DATA_GO_KR_API_KEY (.env)
+단위: API 원(Won) → /1e9 = 십억원(billion)
 """
 import os
 
@@ -16,86 +16,176 @@ try:
 except ImportError:
     requests = None
 
-KOFIA_API_KEY = os.getenv("KOFIA_API_KEY", "")
-KOFIA_API_BASE = "https://apis.data.go.kr/1160100/service/GetFinaStatInfoSvc"
+BASE_URL = "https://apis.data.go.kr/1160100/service/GetKofiaStatisticsInfoService"
+TIMEOUT = 10
+
+
+def _api_key() -> str:
+    """환경변수에서 API 키 조회 (lazy — dotenv 로드 후에도 작동)."""
+    return os.getenv("DATA_GO_KR_API_KEY", "")
+
+
+def _get(operation: str, params: dict) -> list[dict]:
+    """공통 API 호출. items 리스트 반환, 실패 시 빈 리스트."""
+    key = _api_key()
+    if not requests or not key:
+        return []
+
+    params = {
+        "serviceKey": key,
+        "resultType": "json",
+        **params,
+    }
+    try:
+        resp = requests.get(f"{BASE_URL}/{operation}", params=params, timeout=TIMEOUT)
+        if resp.status_code != 200:
+            print(f"  [KOFIA] HTTP {resp.status_code} for {operation}")
+            return []
+        data = resp.json()
+        body = data.get("response", {}).get("body", {})
+        if body.get("totalCount", 0) == 0:
+            return []
+        items = body.get("items", {}).get("item", [])
+        return items if isinstance(items, list) else [items]
+    except Exception as e:
+        print(f"  [KOFIA] {operation} error: {e}")
+        return []
+
+
+def _to_billion(value) -> float | None:
+    """원(Won) → 십억원(billion). 문자열/숫자 모두 처리."""
+    if value is None:
+        return None
+    try:
+        return round(float(str(value).replace(",", "")) / 1e9, 1)
+    except (ValueError, TypeError):
+        return None
 
 
 def fetch_credit_balance(date: str) -> dict | None:
-    """3-tier fallback으로 신용잔고 수집.
+    """신용공여잔고 조회 (Operation 1).
 
-    Returns:
-        {
-            "date": "2026-03-04",
-            "kospi_stock_credit_mm": 21778077,   # 유가증권 신용잔고 (백만원)
-            "kosdaq_credit_mm": 11025996,
-            "total_credit_mm": 32804073,
-            "source": "kofia_api" | "freesis" | "naver",
-        }
+    Returns: {credit_balance_billion, credit_total_billion, ...} or None
     """
-    # Tier 1: 공공데이터포털 API
-    if KOFIA_API_KEY and requests:
-        result = _fetch_from_data_go_kr(date)
-        if result:
-            return {**result, "source": "kofia_api"}
-
-    # Tier 2: FreeSIS XHR
-    result = _fetch_from_freesis(date)
-    if result:
-        return {**result, "source": "freesis"}
-
-    # Tier 3: Naver fallback (기존 naver_scraper에서 처리)
-    return None
-
-
-def _fetch_from_data_go_kr(date: str) -> dict | None:
-    """공공데이터포털 금융투자협회종합통계 API.
-
-    Note: API 엔드포인트/스키마는 실제 서비스 확인 후 조정 필요.
-    """
-    if not requests:
-        return None
-
-    params = {
-        "serviceKey": KOFIA_API_KEY,
-        "numOfRows": 10,
-        "pageNo": 1,
-        "resultType": "json",
+    items = _get("getGrantingOfCreditBalanceInfo", {
+        "numOfRows": 1, "pageNo": 1,
         "basDt": date.replace("-", ""),
+    })
+    if not items:
+        return None
+
+    it = items[0]
+    return {
+        "date": it.get("basDt", date.replace("-", "")),
+        "credit_balance_billion": _to_billion(it.get("crdTrFingScrs")),
+        "credit_kosdaq_billion": _to_billion(it.get("crdTrFingKosdaq")),
+        "credit_total_billion": _to_billion(it.get("crdTrFingWhl")),
     }
-    try:
-        resp = requests.get(
-            f"{KOFIA_API_BASE}/getItemBasiInfo",
-            params=params, timeout=10,
-        )
-        if resp.status_code == 200:
-            data = resp.json()
-            return _parse_kofia_response(data)
-    except Exception:
-        pass
-    return None
 
 
-def _parse_kofia_response(data: dict) -> dict | None:
-    """공공데이터포털 API 응답 파싱.
+def fetch_market_fund(date: str) -> dict | None:
+    """증시자금추이 조회 (Operation 2).
 
-    TODO: 실제 API 응답 스키마에 맞게 구현.
+    Returns: {deposit_billion, forced_liq_billion, unsettled_billion, ...} or None
     """
-    try:
-        body = data.get("response", {}).get("body", {})
-        items = body.get("items", {}).get("item", [])
-        if not items:
-            return None
-        # 파싱 로직 추가 예정
-        return None
-    except Exception:
+    items = _get("getSecuritiesMarketTotalCapitalInfo", {
+        "numOfRows": 1, "pageNo": 1,
+        "basDt": date.replace("-", ""),
+    })
+    if not items:
         return None
 
+    it = items[0]
+    return {
+        "date": it.get("basDt", date.replace("-", "")),
+        "deposit_billion": _to_billion(it.get("invrDpsgAmt")),
+        "forced_liq_billion": _to_billion(it.get("brkTrdUcolMnyVsOppsTrdAmt")),
+        "unsettled_billion": _to_billion(it.get("brkTrdUcolMny")),
+    }
 
-def _fetch_from_freesis(date: str) -> dict | None:
-    """FreeSIS SPA XHR 엔드포인트.
 
-    Note: 리버스 엔지니어링 필요. 초기에는 None 반환.
-    향후 브라우저 DevTools로 XHR 패턴 확인 후 구현.
+def fetch_all(date: str) -> dict | None:
+    """2개 API 통합 호출. 하나라도 성공하면 결과 반환."""
+    credit = fetch_credit_balance(date)
+    fund = fetch_market_fund(date)
+
+    if not credit and not fund:
+        return None
+
+    result = {"date": date, "source": "data.go.kr"}
+
+    if credit:
+        result["credit_balance_billion"] = credit["credit_total_billion"]  # 전체 (Naver 호환)
+        result["credit_kospi_billion"] = credit["credit_balance_billion"]  # KOSPI만 (참고용)
+
+    if fund:
+        result["deposit_billion"] = fund["deposit_billion"]
+        result["forced_liq_billion"] = fund["forced_liq_billion"]
+        result["unsettled_billion"] = fund["unsettled_billion"]
+
+    return result
+
+
+def backfill_credit(start: str, end: str) -> list[dict]:
+    """날짜 범위의 데이터를 일괄 조회 (페이지네이션).
+
+    Returns: [{date, credit_balance_billion, deposit_billion, forced_liq_billion, ...}, ...]
     """
-    # TODO: FreeSIS XHR 엔드포인트 구현
-    return None
+    start_d = start.replace("-", "")
+    end_d = end.replace("-", "")
+
+    results = []
+
+    # Operation 1: 신용잔고 일괄
+    credit_map = {}
+    items = _get("getGrantingOfCreditBalanceInfo", {
+        "numOfRows": 365, "pageNo": 1,
+    })
+    for it in items:
+        d = it.get("basDt", "")
+        if start_d <= d <= end_d:
+            credit_map[d] = {
+                "credit_balance_billion": _to_billion(it.get("crdTrFingWhl")),  # 전체 (Naver 호환)
+            }
+
+    # Operation 2: 증시자금 일괄
+    fund_map = {}
+    items = _get("getSecuritiesMarketTotalCapitalInfo", {
+        "numOfRows": 365, "pageNo": 1,
+    })
+    for it in items:
+        d = it.get("basDt", "")
+        if start_d <= d <= end_d:
+            fund_map[d] = {
+                "deposit_billion": _to_billion(it.get("invrDpsgAmt")),
+                "forced_liq_billion": _to_billion(it.get("brkTrdUcolMnyVsOppsTrdAmt")),
+                "unsettled_billion": _to_billion(it.get("brkTrdUcolMny")),
+            }
+
+    # Merge
+    all_dates = sorted(set(list(credit_map.keys()) + list(fund_map.keys())))
+    for d in all_dates:
+        entry = {"date": d, "source": "data.go.kr"}
+        entry.update(credit_map.get(d, {}))
+        entry.update(fund_map.get(d, {}))
+        results.append(entry)
+
+    return results
+
+
+if __name__ == "__main__":
+    import sys
+    from dotenv import load_dotenv
+    from pathlib import Path
+
+    load_dotenv(Path(__file__).resolve().parent.parent.parent / ".env")
+
+    date = sys.argv[2] if len(sys.argv) > 2 and sys.argv[1] == "--test" else "2026-03-03"
+    print(f"Testing KOFIA API for {date}...")
+
+    result = fetch_all(date)
+    if result:
+        for k, v in result.items():
+            print(f"  {k}: {v}")
+    else:
+        print("  No data available")
