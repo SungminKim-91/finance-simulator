@@ -2,5 +2,11 @@
   "_comment": "관리자 수동 입력. timeseries.json의 어떤 필드든 오버라이드 가능. API 데이터 도착 시 자동 대체됨.",
   "_usage": "python -m scripts.fetch_daily --apply-overrides  |  python -m scripts.fetch_daily --manual 2026-03-04",
   "_fields": "kospi, samsung, hynix, credit_balance_billion, deposit_billion, forced_liq_billion, individual_billion, foreign_billion, institution_billion, usd_krw, vix, wti, sp500, ...",
-  "overrides": {}
+  "overrides": {
+    "2026-03-04": {
+      "credit_balance_billion": 33197.7,
+      "deposit_billion": 132000.0,
+      "forced_liq_billion": 22.5
+    }
+  }
 }

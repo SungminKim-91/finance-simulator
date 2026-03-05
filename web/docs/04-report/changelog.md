@@ -1,5 +1,26 @@
 # KOSPI Crisis Detector — Changelog
 
+## [2026-03-06] - v2.1.2 KOFIA 자동 다운로드 + crontab 자동화
+
+### Added
+- **kofia_downloader.py**: Playwright headless 브라우저로 FreeSIS "한눈에 보는 자본시장통계" EXCEL 자동 다운로드
+  - `--auto`: 다운로드 → 파싱 → timeseries 머지 → export_web → archive 이동 (원스텝)
+  - `--headful`: 브라우저 표시 디버깅 모드
+- **kofia_cron.sh**: crontab wrapper (venv 활성화 + 로그 + 30일 자동 로테이션)
+- **crontab 등록**: 평일 KST 18:00 자동 실행 (`0 18 * * 1-5`)
+- **`/auto-kospi` 슬래시 명령어**: Claude Code 내 수동 1회 실행
+
+### Fixed
+- **kofia_excel_parser.py**: `read_only=True` → `False` (eXbuilder6 엑셀 dimensions 미인식 버그)
+- **kofia_downloader.py**: auto import 완료 후 `kofia_excel_archive/`로 자동 이동
+
+### Verified
+- 다운로드: FreeSIS SPA 접속 → 메뉴 클릭 → EXCEL저장 (4초)
+- 파싱: 6개 필드, 2개 날짜 (deposit, unsettled, forced_liq, credit_balance, kospi, trading_value)
+- 전체 파이프라인: download → parse → merge → export_web → archive 정상 동작
+
+---
+
 ## [2026-03-06] - v2.1.0 RSPI 실데이터 통합 + Raw Data 전면 확장
 
 ### Added

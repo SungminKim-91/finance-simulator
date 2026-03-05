@@ -7266,10 +7266,10 @@
     "foreign_billion": 230.3,
     "institution_billion": -597.8,
     "financial_invest_billion": -583.0,
-    "credit_balance_billion": null,
+    "credit_balance_billion": 33197.7,
     "credit_estimated": false,
-    "deposit_billion": null,
-    "forced_liq_billion": null,
+    "deposit_billion": 132000.0,
+    "forced_liq_billion": 22.5,
     "usd_krw": 1483.1,
     "wti": 74.66,
     "vix": 21.15,
@@ -7290,13 +7290,14 @@
       "068270": 197400,
       "105560": 137700,
       "005490": 321500
-    }
+    },
+    "unsettled_billion": 1204.065
   },
   {
     "date": "2026-03-05",
     "kospi": 5583.9,
     "kospi_volume": 1660710,
-    "kospi_trading_value_billion": null,
+    "kospi_trading_value_billion": 45309.0,
     "samsung": 191600,
     "hynix": 941000,
     "individual_billion": 1822.8,

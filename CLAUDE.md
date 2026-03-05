@@ -1,6 +1,6 @@
 # Finance Simulator — Multi-Asset Analysis Platform
 
-> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v2.1.1) | 통합 웹 대시보드
+> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v2.1.2) | 통합 웹 대시보드
 
 ## Project Overview
 1. **BTC Liquidity Model**: 글로벌 유동성 지표(5개 변수) 기반 BTC 가격 방향성 선행 예측
@@ -222,8 +222,8 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 ### 폴더 구조
 ```
 kospi/                           # Python 데이터 파이프라인
-├── scripts/                     # fetch_daily, kofia_scraper, kofia_fetcher, vlpi_engine, compute_models, export_web, ...
-├── data/                        # samsung_cohorts.json (시드), daily/, historical/
+├── scripts/                     # fetch_daily, kofia_downloader, kofia_watcher, kofia_excel_parser, vlpi_engine, compute_models, export_web, ...
+├── data/                        # samsung_cohorts.json (시드), daily/, kofia_excel/, kofia_excel_archive/
 └── config/constants.py          # 공용 상수 (경로, 종목, VLPI 파라미터, 6단계 기준)
 
 web/src/simulators/kospi/        # React 대시보드
@@ -277,6 +277,7 @@ web/src/simulators/kospi/        # React 대시보드
 | kospi-crisis | v1.3.0 | — | 종목별 가중 모델 |
 | kospi-crisis | v1.4.0 | 100% | 자동청산 + 백테스트 차트 |
 | kospi-crisis | v2.1.0 | — | RSPI 실데이터 + Raw Data |
+| kofia-auto-download | v2.1.2 | 100% | Playwright 자동 다운로드 + crontab |
 
 ## CLI (KOSPI)
 ```bash
@@ -291,6 +292,11 @@ python -m scripts.fetch_daily --import-excel "path/to/file.xlsx"  # KOFIA 엑셀
 python -m scripts.kofia_watcher                  # kofia_excel/ 감시 (foreground)
 python -m scripts.kofia_watcher --once file.xlsx  # 단발 처리
 
+# KOFIA 자동 다운로드 (Playwright headless)
+python -m scripts.kofia_downloader              # 다운로드만 (kofia_excel/)
+python -m scripts.kofia_downloader --auto       # 다운로드 + import + export_web + archive
+python -m scripts.kofia_downloader --headful    # 브라우저 표시 (디버깅)
+
 # 모델 계산 + 웹 내보내기
 python -m scripts.compute_models
 python -m scripts.export_web
@@ -300,11 +306,19 @@ python -m scripts.export_web
 - **kofia_excel_parser.py**: FreeSIS "한눈에 보는 자본시장통계" 엑셀 파싱 (6개 지표 매핑)
 - **kofia_watcher.py**: `kofia_excel/` 폴더 watchdog 감시 → 자동 파싱 + timeseries 머지 → `kofia_excel_archive/` 이동
 - **fetch_daily.py --import-excel**: 단발 엑셀 import + export_web 자동 실행
-- **Playwright MCP 설치 완료**: 다음 세션에서 freesis.kofia.or.kr 자동 다운로드 스크립트 구현 예정
 - 엑셀 구조: 56행×5열, A열 지표명(`>`구분), B열 `YY/MM/DD`, C열 쉼표 문자열
 
+### v2.1.2 — KOFIA 자동 다운로드 + crontab 자동화
+- **kofia_downloader.py**: Playwright headless → FreeSIS "한눈에 보는 자본시장통계" EXCEL 자동 다운로드
+  - `--auto`: 다운로드 → 파싱 → timeseries 머지 → export_web → archive 이동 (원스텝)
+  - `--headful`: 브라우저 표시 디버깅 모드
+- **kofia_cron.sh**: crontab wrapper (venv 활성화 + 로그 + 30일 로테이션)
+- **crontab**: 평일 KST 18:00 자동 실행 (`0 18 * * 1-5`)
+- **kofia_excel_parser.py 버그 수정**: `read_only=True` → `False` (eXbuilder6 엑셀 호환)
+- **Claude Code 슬래시 명령어**: `/auto-kospi` → 수동 1회 실행
+- 다운로드 흐름: FreeSIS 접속 → SPA 메뉴 클릭 → EXCEL저장 → kofia_excel/ → import → archive/
+
 ## Backlog
-- **kofia-auto-download**: Playwright MCP로 freesis.kofia.or.kr 자동 엑셀 다운로드 + crontab KST 18:00
 - **kospi Phase 5**: Deploy (GitHub Actions cron + Vercel)
 - **위기분석 탭 재활성화**: CrisisAnalysis.jsx (코드 보존, disabled=true 제거로 복원)
 - **과거비교 탭 재활성화**: HistoricalComp.jsx (코드 보존, disabled=true 제거로 복원)

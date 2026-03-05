@@ -41,9 +41,28 @@ node_modules/
 web/dist/
 web/.next/
 
-# KOFIA 엑셀 (수동 import + 아카이브)
+# KOFIA 엑셀 (자동 다운로드 + 아카이브)
 kospi/data/kofia_excel/
 kospi/data/kofia_excel_archive/
+
+# KOSPI daily snapshots (raw API, timeseries.json이 canonical)
+kospi/data/daily/
+
+# Playwright temp
+.playwright-mcp/
+web/.playwright-mcp/
+
+# KOFIA 탐색 임시 파일
+kospi/data/kofia_screenshot_*.png
+kospi/data/kofia_network.md
+
+# cron logs
+kospi/data/logs/
+
+# bkit state
+.bkit/
+web/.bkit/
+docs/.pdca-snapshots/
 
 # Claude internal
 .claude/

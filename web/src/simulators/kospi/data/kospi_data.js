@@ -1,6 +1,6 @@
 /**
  * KOSPI Crisis Detector Data (auto-generated)
- * Generated: 2026-03-06T00:40:40.018403
+ * Generated: 2026-03-06T01:47:07.260839
  * Source: kospi/data/ (pipeline)
  * Exports: 18
  */
@@ -3400,7 +3400,7 @@ export const MARKET_DATA = [
     "samsung_change_pct": 11.27,
     "hynix_change_pct": 10.84,
     "volume": 1660710,
-    "trading_value_billion": null
+    "trading_value_billion": 45309.0
   }
 ];
 
@@ -5542,9 +5542,9 @@ export const CREDIT_DATA = [
   },
   {
     "date": "2026-03-04",
-    "credit_balance_billion": null,
-    "deposit_billion": null,
-    "forced_liq_billion": null,
+    "credit_balance_billion": 33197.7,
+    "deposit_billion": 132000.0,
+    "forced_liq_billion": 22.5,
     "estimated": false
   },
   {
@@ -17436,7 +17436,7 @@ export const COHORT_DATA = {
   ],
   "current_kospi": 5583.9,
   "current_fx": 1469.5,
-  "avg_daily_trading_value_billion": 332,
+  "avg_daily_trading_value_billion": 2597,
   "portfolio_beta": 1.362,
   "params": {
     "margin_rate": 0.45,
@@ -18913,7 +18913,7 @@ export const LOOP_STATUS = {
 export const EVENTS = [];
 
 export const META = {
-  "last_updated": "2026-03-06T00:40:40.017806",
+  "last_updated": "2026-03-06T01:47:07.260249",
   "last_date": "2026-03-05",
   "data_source": "pipeline",
   "data_quality": {

@@ -83,7 +83,7 @@ def parse_kofia_excel(path: str | Path) -> dict[str, dict]:
     if not path.exists():
         raise FileNotFoundError(f"파일 없음: {path}")
 
-    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    wb = openpyxl.load_workbook(path, data_only=True)
 
     # 시트 찾기: 정확한 이름 또는 첫 번째 시트
     sheet_name = "한눈에 보는 자본시장통계"
