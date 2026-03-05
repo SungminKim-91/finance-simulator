@@ -1,10 +1,10 @@
 {
-  "sessionCount": 20,
+  "sessionCount": 21,
   "lastSession": {
-    "startedAt": "2026-03-05T23:00:00.000Z",
+    "startedAt": "2026-03-06T06:00:00.000Z",
     "platform": "claude",
     "level": "Dynamic"
   },
-  "currentFeature": "kospi-rspi-v2.0.0",
+  "currentFeature": "kospi-v2.1.0",
   "currentPhase": "completed"
 }

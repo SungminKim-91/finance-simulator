@@ -1,6 +1,6 @@
 # Finance Simulator — Multi-Asset Analysis Platform
 
-> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v1.5.0) | 통합 웹 대시보드
+> BTC Liquidity (v2.1) + KOSPI Crisis Detector (v2.1.0) | 통합 웹 대시보드
 
 ## Project Overview
 1. **BTC Liquidity Model**: 글로벌 유동성 지표(5개 변수) 기반 BTC 가격 방향성 선행 예측
@@ -181,16 +181,34 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
 - **핵심 철학 전환**: 반대매매 중심 → **자발적 투매(VLPI)** 모델. 2026.03.04 삼성전자 -11.74% 폭락에서 마진콜 코호트 0개 → 반대매매로 설명 불가, 공포 매도가 핵심
 - **VLPI 2단계 아키텍처**:
   - Stage 1: Pre-VLPI (6변수 → 0~100 스코어)
-    - V1: 주의구간 비중 (w=0.25), V2: 신용잔고 모멘텀 (w=0.10), V3: 정책 쇼크 (w=0.20)
-    - V4: 야간 갭 EWY (w=0.20), V5: 연속 하락 심각도 (w=0.15), V6: 개인 수급 (w=0.10)
   - Stage 2: Impact Function (Pre-VLPI → Sigmoid → 매도비율 → Kyle's Lambda 가격영향)
-- **6단계 상태 분류**: debt_exceed(<100%) → forced_liq(<120%) → margin_call(<140%) → caution(<155%) → good(<170%) → safe(≥170%)
-- **담보비율 공식 변경**: `현재가 / (매수가 × LOAN_RATE)` (LOAN_RATE=0.55, portfolio_beta 제거)
-- **신규 파일**: `vlpi_engine.py` (~380줄), `kofia_fetcher.py` (3-tier stub), `samsung_cohorts.json` (시드데이터)
-- **데이터 수집**: EWY (iShares MSCI South Korea ETF) yfinance 추가, KOFIA API 플러밍
-- **export**: 16 → 18 exports (VLPI_DATA #17 + VLPI_CONFIG #18)
-- **하위호환**: `status` = legacy 4단계, `status_6` = 신규 6단계 (프론트엔드 v1.6.0까지 기존 UI 유지)
-- **Match Rate**: 99.1% (1 iteration, 3 gaps fixed)
+- **6단계 상태 분류**: debt_exceed → forced_liq → margin_call → caution → good → safe
+- **Match Rate**: 99.1% (1 iteration)
+
+### v1.6.0 — VLPI Frontend Dashboard + Date-Aware Cohort
+- **CohortRiskMap**: 게이지 + 변수분해 시각화, 6단계 코호트 색상
+- **기준일 선택**: 전 섹션 연동, Seed Cohort 수정(16.7T→32.2T)
+- **Section 3 시뮬레이터**: 비활성화 (v1.6.1)
+- **종목별 신용잔고**: 날짜 인식 (date-aware stock credit)
+- **Match Rate**: 98.6%
+
+### v2.0.0 — RSPI (Retail Selling Pressure Index)
+- **VLPI→RSPI 전면 전환**: 단방향(0~100) → **양방향(-100~+100)** 모델
+- **CF(가속력) 4변수**: V1 주의구간비중, V2 연속하락, V3 개인수급, V4 신용가속
+- **DF(감쇠력) 4변수**: D1 야간회복(EWY+KORU+선물+미증시 4소스 coherence), D2 신용유입, D3 외국인소진, D4 안전완충
+- **rspi_engine.py**: 660줄 신규, calc_rspi + 8개 변수 함수 + Impact Function
+- **프론트엔드**: RSPIGauge + DualBreakdown + ImpactTable 전면 재작성
+- **Match Rate**: 98.7%
+
+### v2.1.0 — RSPI 실데이터 통합 + Raw Data 전면 확장
+- **RSPI 전체 히스토리**: 262일 일별 RSPI 계산 (과거 기준일 선택 시에도 대시보드 작동)
+- **야간 데이터 backfill**: `--backfill` 명령 (yfinance only, ECOS/Naver/KRX API 없이 5초)
+  - D1 커버리지: 2/262 → 193/262 (73.7%)
+- **fetch_daily.py 버그 수정**: change_pct break 위치, yfinance 7일 lookback, D-1~D-3 overnight lookback
+- **Raw Data 테이블 전면 확장**: 7개 그룹 33컬럼 (시장/신용/투자자/글로벌/야간/공매도/RSPI)
+  - 그룹 토글 버튼, 데이터 커버리지 통계, CSV 다운로드
+- **탭 비활성화**: 위기분석/과거비교 탭 greyed out (코드 보존, 준비중 표시)
+- **GLOBAL_DATA 확장**: ewy_close, ewy_change_pct, koru_close, koru_change_pct, sp500_change_pct 추가
 
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
@@ -209,12 +227,13 @@ kospi/                           # Python 데이터 파이프라인
 └── config/constants.py          # 공용 상수 (경로, 종목, VLPI 파라미터, 6단계 기준)
 
 web/src/simulators/kospi/        # React 대시보드
-├── KospiApp.jsx                 # 4탭 메인 + KospiHeader 통합
+├── KospiApp.jsx                 # 5탭 메인 (Pulse/Cohort/Crisis(준비중)/History(준비중)/RawData)
 ├── KospiHeader.jsx              # 공통 헤더 (탭 전환 시 유지)
 ├── MarketPulse.jsx              # Tab A: 시장 현황 (1350줄)
-├── CohortAnalysis.jsx           # Tab B: 코호트 & 반대매매 + 백테스트 + 신뢰도 (~1400줄)
+├── CohortAnalysis.jsx           # Tab B: 코호트 & RSPI 대시보드 (~2000줄)
+├── RawDataTable.jsx             # Tab E: 전체 파이프라인 Raw Data (7그룹 33컬럼)
 ├── colors.js                    # 색상 팔레트
-├── data/kospi_data.js           # 정적 JSON 데이터 (18 exports: MARKET_DATA~VLPI_CONFIG)
+├── data/kospi_data.js           # 정적 JSON 데이터 (18 exports: MARKET_DATA~RSPI_CONFIG)
 └── shared/                      # 공유 컴포넌트
     └── terms.jsx                # 용어 사전 (TERM), fmtBillion, TermLabel, TermHint, CustomLegend, CustomTooltipContent
 ```
@@ -235,21 +254,45 @@ web/src/simulators/kospi/        # React 대시보드
 ---
 
 ## PDCA Status
-- **btc-liquidity-model v1.0.0**: Archived (Match Rate 93%) → `docs/archive/2026-03/btc-liquidity-model/`
-- **btc-liquidity-v2 v2.0.0**: Archived (Match Rate 92%, 1 iteration) → `docs/archive/2026-03/btc-liquidity-v2/`
-- **web-dashboard v1.0.0**: Completed (Match Rate 93.5%, 1 iteration)
-- **web v2.1 dual-band**: Archived (Match Rate 97.4%) → `docs/archive/2026-03/web/`
-- **kospi-crisis v1.0.2**: Completed (Phase 1 차트 가독성, Match Rate 100%)
-- **kospi-crisis-phase2 v1.1.0**: Completed (Phase 2 UX 전면 개선, Match Rate 98.9%)
-- **kospi-phase4.1-data-sources v4.1**: Completed (ECOS+Naver+KRX 실데이터 통합, Match Rate 93%)
-- **kospi-crisis-v1.1.1-bugfix**: Completed (Naver investor, 코호트 bugfix, UI개선, Match Rate 100%)
-- **kospi-crisis-v1.2.0**: Completed (백테스트 시뮬레이터 + 담보비율 분포 개편 + 신뢰도 대시보드)
-- **kospi-vlpi-v1.5.0**: Completed (VLPI Backend Engine — 6변수 투매 압력 모델, Match Rate 99.1%)
-- **Archive**: docs/archive/2026-03/
+
+### Archived (docs/archive/2026-03/)
+| Feature | Version | Match Rate | Iterations |
+|---------|---------|-----------|------------|
+| btc-liquidity-model | v1.0.0 | 93% | 0 |
+| btc-liquidity-v2 | v2.0.0 | 92% | 1 |
+| web dual-band | v2.1.0 | 97.4% | 0 |
+| kospi-vlpi | v1.5.0 | 99.1% | 1 |
+| kospi-vlpi | v1.6.0 | 98.6% | 0 |
+| kospi-rspi | v2.0.0 | 98.7% | 0 |
+
+### Completed (not yet archived)
+| Feature | Version | Match Rate | Note |
+|---------|---------|-----------|------|
+| web-dashboard | v1.0.0 | 93.5% | BTC v1 dashboard |
+| kospi-crisis | v1.0.2 | 100% | Phase 1 차트 가독성 |
+| kospi-crisis-phase2 | v1.1.0 | 98.9% | Phase 2 UX |
+| kospi-phase4.1 | v4.1 | 93% | 실데이터 통합 |
+| kospi-crisis | v1.1.1 | 100% | Naver + bugfix |
+| kospi-crisis | v1.2.0 | — | 백테스트 + 담보비율 |
+| kospi-crisis | v1.3.0 | — | 종목별 가중 모델 |
+| kospi-crisis | v1.4.0 | 100% | 자동청산 + 백테스트 차트 |
+| kospi-crisis | v2.1.0 | — | RSPI 실데이터 + Raw Data |
+
+## CLI (KOSPI)
+```bash
+# 일간 데이터 수집
+python -m scripts.fetch_daily                    # 오늘
+python -m scripts.fetch_daily --date 2026-03-05  # 특정일
+python -m scripts.fetch_daily --range START END  # 범위 (전체 API)
+python -m scripts.fetch_daily --backfill         # change_pct만 패치 (yfinance only, 5초)
+
+# 모델 계산 + 웹 내보내기
+python -m scripts.compute_models
+python -m scripts.export_web
+```
 
 ## Backlog
-- **kospi-vlpi-v1.6.0**: Frontend Cohort Redesign — 6단계 UI + VLPI 게이지 + Component Breakdown + Impact 테이블
-- **kospi-vlpi-v1.7.0**: VLPI Simulator — EWY 슬라이더 + 정책 쇼크 체크박스 + 밤사이 시나리오
-- **kospi-vlpi-v1.8.0**: Model Learning Tab — Bayesian 가중치 학습 + 성과 대시보드
-- **gm2-data-improvement**: 2025년 lag=6 불일치 개선 — GM2 데이터 고착(11개월), HY 단기 충격, BTC 독자 요인 → `docs/01-plan/features/gm2-data-improvement.plan.md`
-- **kospi-crisis Phase 5**: Deploy (GitHub Actions cron + Vercel) — `docs/01-plan/features/kospi-crisis.plan.md`
+- **kospi Phase 5**: Deploy (GitHub Actions cron + Vercel)
+- **위기분석 탭 재활성화**: CrisisAnalysis.jsx (코드 보존, disabled=true 제거로 복원)
+- **과거비교 탭 재활성화**: HistoricalComp.jsx (코드 보존, disabled=true 제거로 복원)
+- **gm2-data-improvement**: GM2 11개월 고착 → BTC lag 불일치
