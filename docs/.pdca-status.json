@@ -84,6 +84,14 @@
       "startedAt": "2026-03-07T04:00:00.000Z",
       "completedAt": "2026-03-07T06:00:00.000Z",
       "description": "v3.1 곱셈 모델 + 3단계 순차 최적화 — Q3 75.4% PASS, Q1 20.9% FAIL (부분유효)"
+    },
+    "kospi-data-infra-v2.4.0": {
+      "phase": "completed",
+      "matchRate": 100,
+      "iterationCount": 0,
+      "startedAt": "2026-03-07T07:00:00.000Z",
+      "completedAt": "2026-03-07T09:00:00.000Z",
+      "description": "25년 데이터 확장 (283→6335일) + 단위 검증 파이프라인 + OOM/SPY 수정"
     }
   },
   "pipeline": {
@@ -120,6 +128,12 @@
       "feature": "kospi-rspi-v2.2.2",
       "phase": "completed",
       "action": "V1 look-ahead bias fix — per-date cohort snapshots"
+    },
+    {
+      "timestamp": "2026-03-07T09:00:00.000Z",
+      "feature": "kospi-data-infra-v2.4.0",
+      "phase": "completed",
+      "action": "25yr data expansion + validation pipeline + OOM fix + SPY→^GSPC"
     }
   ]
 }

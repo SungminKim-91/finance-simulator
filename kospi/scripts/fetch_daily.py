@@ -40,6 +40,7 @@ from scripts.ecos_fetcher import fetch_ecos_daily
 from scripts.naver_scraper import fetch_naver_deposit_credit, fetch_naver_investor_flows, fetch_stock_market_caps, fetch_stock_daily_prices
 from scripts.krx_auth import create_krx_session, inject_pykrx_session
 from scripts.kofia_fetcher import fetch_all as fetch_kofia_all
+from scripts.validate_data import validate_record
 from config.constants import TOP_10_TICKERS
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -59,7 +60,7 @@ YF_SYMBOLS = {
     "usd_krw": "USDKRW=X",
     "wti": "CL=F",
     "vix": "^VIX",
-    "sp500": "SPY",
+    "sp500": "^GSPC",
     "ewy": "EWY",
     "koru": "KORU",
 }
@@ -488,6 +489,11 @@ def append_timeseries(date: str, snapshot: dict) -> None:
     sp = snapshot.get("stock_prices") or {}
     if sp:
         record["stock_prices"] = sp
+
+    # 단위 검증 (범위 밖 값 → None으로 교체 + 경고)
+    warnings = validate_record(record, date=date, source="fetch_daily", fix=True)
+    for w in warnings:
+        print(f"  {w}")
 
     # 데이터가 있는 날만 추가 (kospi 또는 samsung 존재)
     if record["kospi"] or record["samsung"]:

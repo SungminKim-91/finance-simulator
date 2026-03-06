@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import {
   /* ComposedChart, — v1.6.1: Section 3 주석 처리 */
   Bar,
@@ -19,7 +19,7 @@ import { C } from "./colors";
 import { TERM, TermLabel, TermHint, fmtBillion } from "./shared/terms";
 import {
   COHORT_DATA, /* INVESTOR_FLOWS, */ MARKET_DATA, /* SHORT_SELLING, */
-  COHORT_HISTORY, STOCK_CREDIT, RSPI_DATA, RSPI_CONFIG,
+  STOCK_CREDIT, RSPI_DATA, RSPI_CONFIG,
 } from "./data/kospi_data";
 
 const FONT = "'JetBrains Mono', monospace";
@@ -878,6 +878,15 @@ function MiniCohortChart({ cohorts, currentKospi }) {
 export default function CohortAnalysis() {
   const { lifo, fifo, trigger_map, current_kospi, current_fx,
     avg_daily_trading_value_billion, params, portfolio_beta: portfolioBeta = 1.0 } = COHORT_DATA;
+
+  /* COHORT_HISTORY lazy load (별도 JSON in public/, ~33MB) */
+  const [COHORT_HISTORY, setCohortHistory] = useState(null);
+  useEffect(() => {
+    fetch("/data/cohort_history.json")
+      .then(r => r.json())
+      .then(setCohortHistory)
+      .catch(() => setCohortHistory({ registry: {}, snapshots: [] }));
+  }, []);
 
   /* 전체 시장 신용잔고 (MARKET_DATA 최신 유효값) */
   const totalMarketCredit = useMemo(() => {

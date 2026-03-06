@@ -122,5 +122,16 @@ def parse_kofia_excel(path: str | Path) -> dict[str, dict]:
         matched += 1
 
     wb.close()
-    print(f"  [EXCEL] {path.name}: {matched}개 필드 파싱, {len(result)}개 날짜")
+
+    # 단위 검증
+    from scripts.validate_data import validate_record
+    fix_count = 0
+    for date_str, fields in result.items():
+        warnings = validate_record(fields, date=date_str, source=f"excel:{path.name}", fix=True)
+        for w in warnings:
+            print(f"  {w}")
+            fix_count += 1
+
+    print(f"  [EXCEL] {path.name}: {matched}개 필드 파싱, {len(result)}개 날짜" +
+          (f", {fix_count}건 범위 밖 제거" if fix_count else ""))
     return result

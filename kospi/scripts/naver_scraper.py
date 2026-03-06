@@ -193,9 +193,27 @@ def fetch_naver_investor_flows(start: str, end: str) -> dict[str, dict]:
     session = requests.Session()
     result: dict[str, dict] = {}
     done = False
-    max_pages = 100  # ~1000 trading days
 
-    print(f"  [Naver Investor] {start_dt.date()} ~ {end_dt.date()} 조회")
+    # 동적 max page 감지
+    try:
+        resp0 = session.get(
+            INVESTOR_URL,
+            params={"bizdate": bizdate, "sosok": "01", "page": 1},
+            headers=HEADERS, timeout=15,
+        )
+        resp0.encoding = "euc-kr"
+        soup0 = BeautifulSoup(resp0.text, "html.parser")
+        paging = soup0.select("td.pgRR a")
+        if paging:
+            href = paging[0].get("href", "")
+            match = re.search(r"page=(\d+)", href)
+            max_pages = int(match.group(1)) if match else 600
+        else:
+            max_pages = 600
+    except Exception:
+        max_pages = 600
+
+    print(f"  [Naver Investor] 총 {max_pages}페이지, {start_dt.date()} ~ {end_dt.date()} 조회")
 
     for page in range(1, max_pages + 1):
         if done:

@@ -254,6 +254,21 @@ python main.py compare         # 4개 방법 비교 (PCA/ICA/SparsePCA/DFM)
   - V3(야간) 최강 변수, V4(개인수급) 무효, power=2.5 유지 확정
   - False alarm 9건 (주범 V2 5건, V4 3건)
 
+### v2.4.0 — 25년 데이터 확장 + 파이프라인 단위 검증
+- **timeseries 25년 확장**: 283일 → 6,335일 (2000-12 ~ 2026-03)
+  - KOFIA 엑셀 3파일 import (예탁금/신용잔고/시장지표, 2000~2026)
+  - yfinance backfill (samsung, hynix, kosdaq, usd_krw, vix, wti, sp500, ewy, koru)
+  - Naver investor 21년 확장 (max_pages 동적 감지, 519페이지 = 5,182일)
+- **S&P 500 수정**: `SPY` ETF (~$680) → `^GSPC` 인덱스 (~6800), 5,522건 교체
+- **OOM 수정**: COHORT_HISTORY(51MB) → `public/data/cohort_history.json` 분리, lazy load
+  - kospi_data.js: 61MB → 11MB, Vite 159ms 정상 시작
+- **CREDIT_DATA 전체 기간**: snapshots(788일) → timeseries(6,335일) 기반 빌드
+- **validate_data.py (신규)**: 27개 필드 기대 범위 검증
+  - fetch_daily.py: `append_timeseries()` 후 자동 검증
+  - kofia_excel_parser.py: 파싱 후 자동 검증
+  - export_web.py: 내보내기 전 최종 검증
+- **RSPI 히스토리**: 262일 → 6,211일, 코호트 3,592개, 백테스트 762건
+
 ### 차트 기능
 - **niceScale**: 깔끔한 Y축 눈금 자동 계산
 - **Y축 줌 (Domain-only)**: Drag + Wheel 지원, domain만 변경 (SVG 찌그러짐 없음)
@@ -327,6 +342,7 @@ web/src/simulators/kospi/        # React 대시보드
 | kospi-rspi | v2.2.2 | 100% | V1 look-ahead bias 제거 |
 | kospi-rspi | v2.3.0 | — | V1 비선형 proximity + 9단계 검증 |
 | kospi-rspi | v2.3.0-v31 | — | v3.1 곱셈 모델 + 3단계 최적화 (Q3 75.4%) |
+| kospi-data-infra | v2.4.0 | 100% | 25년 데이터 확장 + 단위 검증 + OOM + SPY 수정 |
 
 ## CLI (KOSPI)
 ```bash
@@ -364,8 +380,8 @@ python -m scripts.export_web
   fetch_daily.py --range START END
     → ECOS (KOSPI/외국인/거래대금/시총, 무제한 페이지네이션)
     → Naver sise_deposit (예탁금/신용잔고, ~7년, 294페이지)
-    → Naver investorDealTrendDay (투자자 수급, ~1000일)
-    → yfinance (삼전/하닉/EWY/KORU/VIX/SPY, 무제한)
+    → Naver investorDealTrendDay (투자자 수급, 동적 페이지, ~5200일)
+    → yfinance (삼전/하닉/EWY/KORU/VIX/^GSPC, 무제한)
     → KOFIA data.go.kr (신용잔고/예탁금/반대매매, 페이지네이션)
     → merge → daily/{YYYY-MM-DD}.json + timeseries.json
 

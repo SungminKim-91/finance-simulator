@@ -75,6 +75,11 @@ def export_all() -> None:
     snapshots = load_daily_snapshots()
     model_output = load_json(DATA_DIR / "model_output.json") or {}
 
+    # 내보내기 전 단위 검증
+    from scripts.validate_data import validate_timeseries
+    print("[VALIDATE] timeseries 단위 검증...")
+    validate_timeseries(ts, fix=True, quiet=False)
+
     if not ts and not snapshots:
         print("No data found. Run fetch_daily.py first.")
         return
@@ -103,29 +108,22 @@ def export_all() -> None:
                     (curr[key] / prev[key] - 1) * 100, 2
                 )
 
-    # === 2. CREDIT_DATA ===
+    # === 2. CREDIT_DATA (timeseries 기반, 전체 기간) ===
+    snap_map = {s["date"]: s for s in snapshots}
     credit_data = []
-    for s in snapshots:
-        credit = s.get("credit", {})
-        deposit = s.get("deposit", {})
-        settlement = s.get("settlement", {})
+    for r in ts:
+        date = r["date"]
+        snap = snap_map.get(date, {})
+        credit = snap.get("credit", {})
+        deposit = snap.get("deposit", {})
+        settlement = snap.get("settlement", {})
         credit_data.append({
-            "date": s["date"],
-            "credit_balance_billion": credit.get("total_balance_billion"),
-            "deposit_billion": deposit.get("customer_deposit_billion"),
-            "forced_liq_billion": settlement.get("forced_liquidation_billion"),
+            "date": date,
+            "credit_balance_billion": credit.get("total_balance_billion") or r.get("credit_balance_billion"),
+            "deposit_billion": deposit.get("customer_deposit_billion") or r.get("deposit_billion"),
+            "forced_liq_billion": settlement.get("forced_liquidation_billion") or r.get("forced_liq_billion"),
             "estimated": credit.get("estimated", False),
         })
-    # Merge: timeseries 값으로 snapshot 빈 값 보완
-    ts_map = {r["date"]: r for r in ts} if ts else {}
-    for cd in credit_data:
-        tr = ts_map.get(cd["date"], {})
-        if cd["credit_balance_billion"] is None:
-            cd["credit_balance_billion"] = tr.get("credit_balance_billion")
-        if cd["deposit_billion"] is None:
-            cd["deposit_billion"] = tr.get("deposit_billion")
-        if cd["forced_liq_billion"] is None:
-            cd["forced_liq_billion"] = tr.get("forced_liq_billion")
 
     # === 3. INVESTOR_FLOWS ===
     investor_flows = []
@@ -263,8 +261,13 @@ def export_all() -> None:
         },
     }
 
-    # === 14. COHORT_HISTORY ===
+    # === 14. COHORT_HISTORY → 별도 JSON in public/ (lazy load) ===
     cohort_history = model_output.get("cohort_history", {"registry": {}, "snapshots": []})
+    public_data_dir = WEB_DATA_DIR.parent.parent.parent.parent / "public" / "data"
+    public_data_dir.mkdir(parents=True, exist_ok=True)
+    cohort_json_path = public_data_dir / "cohort_history.json"
+    with open(cohort_json_path, "w", encoding="utf-8") as chf:
+        json.dump(cohort_history, chf, ensure_ascii=False, separators=(",", ":"))
 
     # === 15. BACKTEST_DATES ===
     backtest_dates = model_output.get("backtest_dates", [])
@@ -359,7 +362,7 @@ def export_all() -> None:
         f.write(to_js_export("LOOP_STATUS", loop_status))
         f.write(to_js_export("EVENTS", events))
         f.write(to_js_export("META", meta))
-        f.write(to_js_export("COHORT_HISTORY", cohort_history))
+        # COHORT_HISTORY → 별도 JSON 파일 (51MB+ 방지, lazy load)
         f.write(to_js_export("BACKTEST_DATES", backtest_dates))
         f.write(to_js_export("STOCK_CREDIT", stock_credit))
         f.write(to_js_export("RSPI_DATA", rspi_data))
