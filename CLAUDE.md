@@ -287,9 +287,9 @@ web/src/simulators/kospi/        # React 대시보드
 - **naver_scraper.py**: Naver Finance sise_deposit 스크래핑 (고객예탁금 + 신용잔고, 억원, 294페이지)
 - **krx_auth.py**: KRX 로그인 세션 + pykrx webio monkey-patch
 - **fetch_daily.py 통합**: 5단계 파이프라인 (env → KRX → ECOS → Naver → yfinance → merge)
-- **데이터 우선순위**: ECOS > yfinance (지수), pykrx > ECOS (외국인), Naver (예탁금/신용잔고)
-- **실적**: 282일, Credit 99%, Deposit 99%, Foreign 100%, Trading Value 100%
-- **환경변수**: `ECOS_API_KEY`, `KRX_USER_ID`, `KRX_USER_PW` (`.env`)
+- **데이터 우선순위**: ECOS > yfinance (지수), pykrx > ECOS (외국인), Naver (예탁금/신용잔고), KOFIA data.go.kr (반대매매)
+- **실적**: 732일 (2023-03 ~ 2026-03), Credit 100%, Deposit 100%, Foreign 100%, KOSPI 100%
+- **환경변수**: `ECOS_API_KEY`, `KRX_USER_ID`, `KRX_USER_PW`, `DATA_GO_KR_API_KEY` (`.env`)
 
 ### Phase 4.2~5 (미구현, 향후)
 - **Phase 4.2**: pykrx 대체 투자자 수급 소스 (individual/institution 데이터)
@@ -326,28 +326,50 @@ web/src/simulators/kospi/        # React 대시보드
 | kospi-rspi | v2.2.1 | 100% | 데이터 정합성 + pending 상태 |
 | kospi-rspi | v2.2.2 | 100% | V1 look-ahead bias 제거 |
 | kospi-rspi | v2.3.0 | — | V1 비선형 proximity + 9단계 검증 |
+| kospi-rspi | v2.3.0-v31 | — | v3.1 곱셈 모델 + 3단계 최적화 (Q3 75.4%) |
 
 ## CLI (KOSPI)
 ```bash
-# 일간 데이터 수집
+# ── 일간 데이터 수집 ──
 python -m scripts.fetch_daily                    # 오늘
 python -m scripts.fetch_daily --date 2026-03-05  # 특정일
-python -m scripts.fetch_daily --range START END  # 범위 (전체 API)
+python -m scripts.fetch_daily --range START END  # 범위 (전체 API 배치)
 python -m scripts.fetch_daily --backfill         # change_pct만 패치 (yfinance only, 5초)
+python -m scripts.fetch_daily --backfill-credit  # credit/deposit/forced_liq KOFIA API 패치
 python -m scripts.fetch_daily --import-excel "path/to/file.xlsx"  # KOFIA 엑셀 직접 import
 
-# KOFIA 엑셀 자동 감시 (폴더 모니터링 데몬)
+# ── KOFIA 일간 파이프라인 (예탁금/신용잔고/반대매매) ──
+# 방법 1: Playwright 자동 (공식 — crontab KST 18:00)
+python -m scripts.kofia_downloader --auto       # 다운로드 + import + export_web + archive
+python -m scripts.kofia_downloader              # 다운로드만 (kofia_excel/)
+python -m scripts.kofia_downloader --headful    # 브라우저 표시 (디버깅)
+# 방법 2: 엑셀 폴더 감시 (수동 드롭)
 python -m scripts.kofia_watcher                  # kofia_excel/ 감시 (foreground)
 python -m scripts.kofia_watcher --once file.xlsx  # 단발 처리
 
-# KOFIA 자동 다운로드 (Playwright headless)
-python -m scripts.kofia_downloader              # 다운로드만 (kofia_excel/)
-python -m scripts.kofia_downloader --auto       # 다운로드 + import + export_web + archive
-python -m scripts.kofia_downloader --headful    # 브라우저 표시 (디버깅)
-
-# 모델 계산 + 웹 내보내기
+# ── 모델 계산 + 웹 내보내기 ──
 python -m scripts.compute_models
 python -m scripts.export_web
+```
+
+### 데이터 파이프라인 구조
+```
+[일간 자동] crontab KST 18:00
+  kofia_cron.sh → kofia_downloader.py --auto
+    → Playwright headless → FreeSIS EXCEL 다운로드
+    → kofia_excel_parser.py → timeseries.json 머지
+    → export_web.py → kospi_data.js
+
+[일간 수동 / 범위]
+  fetch_daily.py --range START END
+    → ECOS (KOSPI/외국인/거래대금/시총, 무제한 페이지네이션)
+    → Naver sise_deposit (예탁금/신용잔고, ~7년, 294페이지)
+    → Naver investorDealTrendDay (투자자 수급, ~1000일)
+    → yfinance (삼전/하닉/EWY/KORU/VIX/SPY, 무제한)
+    → KOFIA data.go.kr (신용잔고/예탁금/반대매매, 페이지네이션)
+    → merge → daily/{YYYY-MM-DD}.json + timeseries.json
+
+[모델] compute_models.py → model_output.json → export_web.py → kospi_data.js
 ```
 
 ### v2.1.1 — KOFIA 엑셀 자동 파싱 + 폴더 모니터링
@@ -371,3 +393,4 @@ python -m scripts.export_web
 - **위기분석 탭 재활성화**: CrisisAnalysis.jsx (코드 보존, disabled=true 제거로 복원)
 - **과거비교 탭 재활성화**: HistoricalComp.jsx (코드 보존, disabled=true 제거로 복원)
 - **gm2-data-improvement**: GM2 11개월 고착 → BTC lag 불일치
+- **RSPI Q1 개선**: V3 dead zone / gating 메커니즘 (중립 비율 20.9% → 65%+ 목표)

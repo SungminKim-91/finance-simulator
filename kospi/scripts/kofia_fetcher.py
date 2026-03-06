@@ -135,32 +135,50 @@ def backfill_credit(start: str, end: str) -> list[dict]:
     end_d = end.replace("-", "")
 
     results = []
+    page_size = 500
 
-    # Operation 1: 신용잔고 일괄
+    # Operation 1: 신용잔고 일괄 (페이지네이션)
     credit_map = {}
-    items = _get("getGrantingOfCreditBalanceInfo", {
-        "numOfRows": 365, "pageNo": 1,
-    })
-    for it in items:
-        d = it.get("basDt", "")
-        if start_d <= d <= end_d:
-            credit_map[d] = {
-                "credit_balance_billion": _to_billion(it.get("crdTrFingWhl")),  # 전체 (Naver 호환)
-            }
+    for page_no in range(1, 20):  # 최대 10000일 (약 40년)
+        items = _get("getGrantingOfCreditBalanceInfo", {
+            "numOfRows": page_size, "pageNo": page_no,
+        })
+        if not items:
+            break
+        for it in items:
+            d = it.get("basDt", "")
+            if start_d <= d <= end_d:
+                credit_map[d] = {
+                    "credit_balance_billion": _to_billion(it.get("crdTrFingWhl")),
+                }
+        # API가 최신→과거 순이면, 마지막 항목이 start보다 이전이면 중단
+        last_d = items[-1].get("basDt", "")
+        if last_d < start_d:
+            break
+        if len(items) < page_size:
+            break
 
-    # Operation 2: 증시자금 일괄
+    # Operation 2: 증시자금 일괄 (페이지네이션)
     fund_map = {}
-    items = _get("getSecuritiesMarketTotalCapitalInfo", {
-        "numOfRows": 365, "pageNo": 1,
-    })
-    for it in items:
-        d = it.get("basDt", "")
-        if start_d <= d <= end_d:
-            fund_map[d] = {
-                "deposit_billion": _to_billion(it.get("invrDpsgAmt")),
-                "forced_liq_billion": _to_billion(it.get("brkTrdUcolMnyVsOppsTrdAmt")),
-                "unsettled_billion": _to_billion(it.get("brkTrdUcolMny")),
-            }
+    for page_no in range(1, 20):
+        items = _get("getSecuritiesMarketTotalCapitalInfo", {
+            "numOfRows": page_size, "pageNo": page_no,
+        })
+        if not items:
+            break
+        for it in items:
+            d = it.get("basDt", "")
+            if start_d <= d <= end_d:
+                fund_map[d] = {
+                    "deposit_billion": _to_billion(it.get("invrDpsgAmt")),
+                    "forced_liq_billion": _to_billion(it.get("brkTrdUcolMnyVsOppsTrdAmt")),
+                    "unsettled_billion": _to_billion(it.get("brkTrdUcolMny")),
+                }
+        last_d = items[-1].get("basDt", "")
+        if last_d < start_d:
+            break
+        if len(items) < page_size:
+            break
 
     # Merge
     all_dates = sorted(set(list(credit_map.keys()) + list(fund_map.keys())))
@@ -170,6 +188,7 @@ def backfill_credit(start: str, end: str) -> list[dict]:
         entry.update(fund_map.get(d, {}))
         results.append(entry)
 
+    print(f"  [KOFIA backfill] credit={len(credit_map)}일, fund={len(fund_map)}일, merged={len(results)}일")
     return results
 
 
